@@ -1,0 +1,702 @@
+/*-----------------------------------------------------------------------------------------------------------------------------*/
+/*-------------------------This shit has been made to make you go blind the next time you go out!------------------------------*/
+/* Made by Izheil ---------~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~------------------------------*/
+/*------------------------------------------------------------------------------------------- Last updated: 23/11/2017 --------*/
+
+/*----------------------- This first part is the common for all firefox pages (includes the colors for the 404 page)  ---------*/
+
+:root {
+	--in-content-page-color: #ccc !important;
+	--in-content-page-background: #222 !important;
+	--in-content-text-color: #ccc !important;
+	--in-content-box-background: #444 !important;
+	--in-content-box-background-hover: #555 !important;
+	--in-content-box-background-active: #333 !important;
+	--in-content-box-border-color: #777 !important;
+}
+
+/* This part covers the preferences page update scrollbox (No, I couldn't put it inside the preferences section) */
+
+richlistbox#historyItems .scrollbox-innerbox {
+	background-color: #444 !important;
+}
+
+.update-name {
+	color: #20dd20 !important;
+}
+
+.update-type {
+	color: orange !important;
+}
+
+.tab-middle, .treecol-text {
+	color: white !important;
+}
+
+/* This part covers all the dialog boxes backgrounds */
+
+dialog,
+window,
+prefpane,
+prefwindow,
+.windowDialog {
+ 	background-color: #202020 !important;
+ 	color: #ccc !important;
+}
+
+/*------------------------- No need to say that this next part belongs to the home page ----------------- */ 
+
+@-moz-document url-prefix(about:home){
+
+body { 
+ 	background-color: #202020  !important;
+    color: #50AAFF !important;
+    overflow: auto !important;
+     }
+
+/* Context menus of the web area */
+
+.context-menu {
+	background-color: #505050 !important;
+	color: #ccc;
+}
+
+.context-menu > ul > li > a:hover, .context-menu > ul > li > a:focus {
+	background-color: #0a50AA !important;
+}
+
+/* Context menus of the about information area */
+
+.info-option {
+	background-color: #505050 !important;
+}
+
+.info-option p {
+	color: #ccc !important;
+}
+
+.info-option-manage button {
+	color: #3088FF !important;
+}
+
+.info-option-manage button:hover {
+	color: cyan !important;
+}
+
+/* The sidebar/settings panel part starts here */
+
+.prefs-pane {
+	color: gray !important;
+}
+
+.prefs-pane .sidebar {
+	background-color: #303030 !important;
+  	}
+
+.prefs-pane .prefs-modal-inner-wrapper .options {
+	background-color: #404040 !important;
+}
+
+.prefs-pane .prefs-modal-inner-wrapper .options:hover {
+	background-color: #202020 !important;
+}
+
+.prefs-pane .actions {
+	background-color: #151515 !important;
+} 
+
+.prefs-pane [type='checkbox']:not(:checked) + label::before,
+.prefs-pane [type='checkbox']:checked + label::before {
+    background: #111 !important;
+}
+
+.prefs-pane-button button {
+	fill: rgba(255, 255, 255, 0.8) !important;
+}
+
+.prefs-pane-button button:hover {
+    background-color: #151515 !important; 
+}
+
+.prefs-pane-button button:active {
+    background-color: #050505 !important; 
+}
+
+/* The popups part starts here */
+
+.modal-overlay {
+ 	background: #000000 !important;
+}
+
+.modal {
+ 	background: #222 !important;
+    border: 1px solid #555 !important;
+}
+
+/* The cards borders part starts here */
+
+.card-outer {
+    background: #303030 !important;
+  }
+
+.card-outer .context-menu-button, .top-sites-list .top-site-outer .context-menu-button {
+    background-color: #555 !important;
+    border: 1px solid #333 !important;
+    fill: rgba(170, 170, 170, 0.8) !important;
+}
+
+.top-sites-list .top-site-outer > a.active .tile, .top-sites-list .top-site-outer > a:focus .tile, 
+.card-outer > a.active .card, .card-outer > a:focus .card {
+    box-shadow: inset 0 0 0 1px rgba(0, 0, 0, 0.1), 0 0 0 5px #000 !important;
+}
+
+.top-sites-list .top-site-outer:hover .tile, .top-sites-list .top-site-outer:focus .tile, 
+.top-sites-list .top-site-outer.active .tile, .card-outer:-moz-any(:hover, :focus, 
+.active):not(.placeholder) {
+  	box-shadow: inset 0 0 0 1px rgba(0, 0, 0, 0.1), 0 0 0 5px #555 !important;
+}
+
+/* No need to say this goes for the buttons */
+
+.actions button {
+    background: #111 !important;
+    border: 1px solid #555 !important;
+}
+
+.actions button:hover {
+    box-shadow: 0 0 0 5px #555 !important;
+}
+
+.actions button.done {
+    background: #0a50AA !important;
+    border: solid 1px #0a50AA !important;
+}
+
+/* Search box style */
+
+.search-label {
+	fill: #2066dd !important;;
+}
+
+input {
+	background-color: #151515  !important;
+}
+
+.contentSearchSuggestionTable {
+    background-color: #444 !important;
+    border: 1px solid black !important;
+}
+
+.contentSearchSuggestionsList {
+    border-bottom: 1px solid black !important;
+    color: #ccc !important;
+}
+
+.contentSearchOneOffsTable {
+	background: linear-gradient(#559,#115) !important;
+}
+
+.contentSearchOneOffItem:not(.last-row) {
+    border-bottom: 1px solid black !important;
+}
+
+.contentSearchHeader {
+ 	background-color: #333 !important;
+ 	color: #777 !important;
+ 	border-bottom: 1px solid black !important;
+  }
+
+.contentSearchSettingsButton {
+    background: linear-gradient(#333,#111) !important;
+    color: #777 !important;
+}
+
+.contentSearchSettingsButton.selected {
+    color: #555 !important;
+}
+
+.contentSearchSettingsButton:active {
+    background: linear-gradient(#111,#333) !important;
+}
+
+.search-button {
+	fill: #2066dd !important;
+}
+
+/* Firefox news at the bottom of the screen snippets */
+
+#snippets-container {
+	background-color: #151515 !important;
+}
+
+#snippets-container p {
+	color: #50AAFF !important;
+}
+
+.button-link {
+	background-color: #0aAA50 !important;
+	color: white !important;
+	border: 1px solid green !important;
+}
+
+.button-link:hover {
+	background-color: #0bbb60 !important;
+	color: white !important;
+	border: 1px solid green !important;
+}
+
+.button-link:active {
+	background-color: #099940 !important;
+	color: white !important;
+	border: 1px solid green !important;
+}
+
+}
+
+/*---------------------- The blank page starts here... as stated by the "url" part (D'uh!) ------------------------------*/
+
+@-moz-document url(about:blank){
+* { 
+ 	background-color: #202020  !important;
+    color: #50AAFF !important;
+     }}
+
+/*-------------------------------- The about page starts here... as stated by the "url" part ---------------------------*/
+
+@-moz-document url(about:about){
+body { 
+ 	background-color: #202020  !important;
+     }
+p {
+	color: #AAA !important;
+ }
+
+h1 {
+	color: white !important;
+}
+}
+
+/*----------------------------- The cache pages starts here... as stated by the "url" part ----------------------------*/
+
+@-moz-document url-prefix(about:cache){
+html { 
+ 	background-color: #202020  !important;
+ 	color: #aaa;
+     }
+
+a:link {
+	color: #4080CC;
+}
+
+table#entries tr:nth-child(even) {
+	background-color: #151515 !important;
+}
+
+}
+
+/*------------------------ The config page starts here... as stated by the "url" part ----------------------------*/
+
+@-moz-document url(about:config) {
+:root {
+	--in-content-page-color: #aaa !important;
+	--in-content-page-background: #202020 !important;
+	--in-content-primary-button-background: #d55 !important;
+	--in-content-primary-button-background-hover: #d22 !important;
+	--in-content-primary-button-background-active: #D00 !important;
+	--in-content-text-color: #0da !important;
+	--in-content-item-selected: #4080CC !important;
+	--in-content-box-background: #333 !important;
+	--in-content-box-background-hover: #444 !important;
+	--in-content-box-background-active: #555 !important;
+}
+
+/* Warning pre-title before the actual config page (D'uh) */
+
+#warningTitle {
+	color: white !important;
+}
+}
+
+/*----------------------- The plugins page starts here... as stated by the "url" part -----------------------------*/
+
+@-moz-document url-prefix(about:plugins){
+html, body { 
+ 	background-color: #202020 !important;
+     }
+
+h1 {
+	color: white !important;
+}
+
+.notice {
+	background-color: #101010 !important;
+	color: orange !important;
+}
+
+.notice a:link {
+	color: #4080CC !important;
+}
+
+h2, dl {
+	color: #aaa !important;
+}
+
+tbody {
+	background-color: #555 !important;
+	color: white !important;
+}
+
+th {
+	background-color: #333 !important;
+}
+}
+
+/*----------------------- The memory page starts here... as stated by the "url" part -------------------------*/
+
+@-moz-document url-prefix(about:memory){
+html {
+	background-color: #202020 !important;
+}
+
+.opsRow {
+	background-color: #303030 !important;
+	color: #AAA !important;
+}
+}
+
+/*--------------------------- The downloads page starts here --------------------------------*/
+
+@-moz-document url(about:downloads){
+:root {
+	--in-content-page-background: #202020 !important;
+	--in-content-text-color: #aaa !important;
+	--in-content-box-background: #404040 !important;
+	--in-content-box-border-color: #777 !important;
+}
+}
+
+/*------------------------------------ The support page starts here ------------------------------------*/
+
+@-moz-document url-prefix(about:support){
+
+:root {
+	--in-content-table-header-background: #333 !important;
+	--aboutSupport-table-background: #555 !important;
+	--in-content-link-color-hover: cyan !important;
+	--in-content-box-border-color: #aaa !important;
+	--in-content-table-border-dark-color: #000 !important;
+	--in-content-border-color: #000 !important;
+}
+
+html {
+	background-color: #202020 !important;
+}
+
+h1 {
+	color: white !important;
+}
+
+h2, .page-subtitle {
+	color: #aaa !important;
+}
+
+button {
+	background: linear-gradient(#2050AA, #203050) !important;
+    color: white !important;
+	}
+
+button:hover {
+	background: linear-gradient(#203050, #2050AA) !important;
+    color: cyan !important;
+	}
+
+}
+
+/*------------------------------------ The preferences page starts here ------------------------------------*/
+
+@-moz-document url-prefix(about:preferences){
+
+/* Sidebar */
+:root {
+	--in-content-page-background: #202020 !important;
+	--in-content-category-text: #fff !important;
+	--in-content-text-color: #fff !important;
+	--in-content-selected-text: #000 !important;
+	--in-content-item-selected: #0a50AA !important;
+	--in-content-item-hover: rgba(0,90,170,0.25) !important;
+	background-color: #303030 !important;
+	}
+
+/* Main Content */
+
+.main-content {
+ 	background-color: #202020 !important;
+    color: #AAAAAA !important;
+     }
+
+.groupbox-title {
+	color: white !important;
+}
+
+.accessory-button, button {
+	background: linear-gradient(#2050AA, #203050) !important;
+    color: white !important;
+	}
+
+.accessory-button:hover, button:hover {
+	background: linear-gradient(#203050, #2050AA) !important;
+    color: cyan !important;
+	}
+
+#searchInput {
+	background-color: #303030 !important;
+}
+
+/* General Panel */
+
+#isDefaultLabel {
+	color: white !important;
+}
+
+#browserHomePage {
+	background-color: #303030 !important;
+}
+
+#updateBox {
+	color: white !important;
+}
+
+/* Search Panel */
+
+#engineList {
+	background-color: #303030 !important;
+}
+
+/* Dialog boxes */
+
+.dialogBox {
+	background-color: #202020 !important;
+}
+
+.dialogBox > .groupbox-title {
+	background-color: #303030 !important;
+}
+
+/* Selector tables */
+
+#applicationsGroup richlistitem[selected="true"] {
+	background-color: rgba(255,255,255, 0.2) !important;
+	color: cyan !important;
+}
+
+treecol {
+	background-color: #555 !important;
+	color: white !important;
+}
+
+treecol:hover {
+	background-color: #666 !important;
+}
+}
+
+/*------------------------------------ The addons page starts here ------------------------------------*/
+
+@-moz-document url-prefix(about:addons){
+
+/* Sidebar */
+
+:root {
+	--in-content-page-background: #202020 !important;
+	--in-content-category-text: #fff !important;
+	--in-content-text-color: #fff !important;
+	--in-content-selected-text: #000 !important;
+	--in-content-item-selected: #0a50AA !important;
+	--in-content-item-hover: rgba(0,90,170,0.25) !important;
+	background-color: #303030 !important;
+	}
+
+/* Main Content */
+
+.main-content {
+ 	background-color: #202020 !important;
+    color: #AAAAAA !important;
+     }
+
+.groupbox-title {
+	color: white !important;
+}
+
+#header-utils-btn {
+	background-color: #151515 !important;
+}
+
+#header-utils-btn:hover {
+	background-color: #000 !important;
+}
+
+/* Context menus*/
+
+#header-utils-btn .scrollbox-innerbox {
+	background-color: #444 !important;
+}
+
+.arrowscrollbox-scrollbox {
+	background-color: #444 !important;
+}
+
+/* This changes the color of the context menus */
+
+menuitem {
+	color: #ccc !important;
+	padding-top: 3px;
+	padding-bottom: 2px;
+}
+
+menupopup {
+	-moz-appearance: none !important;
+	border: 2px solid #111 !important;
+	padding-top: 2px;
+}
+
+/* This changes the color on hover of the context-menu items */
+
+menuitem:hover,
+menu:hover {
+	-moz-appearance: none !important;
+	background-color: #25a !important;
+} 
+
+/* This does the same but for disabled ones */
+
+menuitem:hover[disabled="true"],
+menu:hover[disabled="true"] {
+	-moz-appearance: none !important;
+	padding-top: 3px;
+	padding-bottom: 2px;
+	background-color: #333 !important;
+} 
+
+/* This changes some of the buttons color */
+
+.accessory-button, button {
+	background: linear-gradient(#2050AA, #203050) !important;
+    color: white !important;
+    border: 1px solid #5080dd !important;
+	}
+
+.accessory-button:hover, button:hover {
+	background: linear-gradient(#203050, #2050AA) !important;
+    color: cyan !important;
+	}
+
+#searchInput {
+	background-color: #303030 !important;
+}
+
+.addon {
+	color: #4080CC !important;
+}
+
+richlistitem.addon.addon-view[selected="true"] {
+	color: white !important;
+}
+
+.addon:hover {
+    background-color: #151515 !important;
+}
+
+/* Should be self explanatory... but this is the alert message that goes over the addons list */
+
+.alert {
+	background-color: #101010 !important ;
+	color: orange !important;
+}
+
+/* Description of the addons/themes */
+
+.detail-view-container {
+	color: #aaa !important;
+	}
+
+#detail-contributions {
+	background-color: #111 !important;
+}
+
+#detail-contrib-description {
+	color: orange;
+}
+
+#addon-options {
+	border: 1px solid #aaa !important;
+	border-radius: 15px !important;
+	background-color: #505050 !important;
+}
+}
+/* This is still in the addons page, it's the "discover" page thing */
+
+@-moz-document url-prefix(https://addons-discovery.cdn.mozilla.net) {
+
+.disco-content h1 {
+	color: white !important;
+}
+
+.disco-content p {
+	color: #AAA !important;
+}
+
+#react-view  {
+	background-color: #202020 !important;
+}
+
+.addon.theme, .addon.extension, .addon.theme {
+	background-color: #303030 !important;
+}
+
+.content h2 {
+	color: white !important;
+}
+
+.content p, .content blockquote {
+	color: #AAA !important;
+}
+}
+
+@-moz-document url-prefix(https://discovery.addons.mozilla.org) {
+	
+.disco-content h1 {
+	color: white !important;
+}
+
+.disco-content p {
+	color: #AAA !important;
+}
+
+#react-view  {
+	background-color: #202020 !important;
+}
+
+.addon.theme, .addon.extension, .addon.theme {
+	background-color: #303030 !important;
+}
+
+.content h2 {
+	color: white !important;
+}
+
+.content p, .content blockquote {
+	color: #AAA !important;
+}
+}
+
+/* This is a little fix for all pages in case you have a dark windows theme, so that the 
+letters will have a blue neutral color to be seen in either a white or dark background for 
+text-inputting things (Feel free to comment it out with if you don't like it) */
+
+@-moz-document url-prefix(http){
+
+form select, input[type=text], input[type=email], input[type=password], input[type=date], 
+input[type=datetime-local], input[type=time], input[type=week], input[type=month], 
+input[type=number], input[type=search], input[type=tel], input[type=url] {
+	color: #2066dd !important;
+}
+}
