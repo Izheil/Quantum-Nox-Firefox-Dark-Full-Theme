@@ -12,7 +12,7 @@ basic css or color coding, it shouldn't be too hard)</p><br />
 
 <h3>Main browser UI</h3>
 <p>Most of the job is already done with the userContent.css and userChrome.css files that you have to place in the 
-chrome folder of your firefox profile (Look below for "the chrome folder" section if you don't know where that is).</p>
+chrome folder of your firefox profile (Look below for "the chrome folder" section if you don't know where that is). For this to work as intended, you should be using a persona (lightweight theme) instead of any of the default white or black themes.</p>
 <p>If you are only looking for how to change the default scrollbars, you can apply just that without the need
 of using the usercontent or userchrome files provided here.</p>
 
