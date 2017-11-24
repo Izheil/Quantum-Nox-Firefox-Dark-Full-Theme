@@ -109,7 +109,7 @@ scrollbar * {
 }
 
 scrollbar[orient="vertical"] {
-	-moz-margin-start: -12px !important;
+	-moz-margin-start: -16px !important;
 	max-width: 16px !important;
 	min-width: 16px !important;
 
@@ -121,7 +121,7 @@ scrollbar[orient="vertical"] {
 }
 
 scrollbar[orient="horizontal"] {
-	margin-top: -5px !important;
+	margin-top: -16px !important;
 	max-height: 16px !important;
 	min-height: 16px !important;
   
