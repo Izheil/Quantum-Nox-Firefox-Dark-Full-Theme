@@ -347,10 +347,6 @@ menupopup {
   display: none !important;
 }
 
-.illustrated.dnsNotFound.neterror {
-	background-color: #222 !important;
-}
-
 /* Multirow tabs */
 
 .tabbrowser-tab:not([pinned]) {
