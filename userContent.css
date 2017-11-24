@@ -44,6 +44,18 @@ prefwindow,
  	color: #ccc !important;
 }
 
+/* This is a little fix for all pages in case you have a dark windows theme, so that the 
+letters will have a blue neutral color to be seen in either a white or dark background for 
+text-inputting things (Feel free to comment it out with if you don't like it) */
+
+@-moz-document url-prefix(http){
+
+form select, input[type=text], input[type=email], input[type=password], input[type=date], 
+input[type=datetime-local], input[type=time], input[type=week], input[type=month], 
+input[type=number], input[type=search], input[type=tel], input[type=url] {
+	color: #2066dd !important;
+}
+}
 /*------------------------- No need to say that this next part belongs to the home page ----------------- */ 
 
 @-moz-document url-prefix(about:home){
@@ -687,16 +699,78 @@ richlistitem.addon.addon-view[selected="true"] {
 	color: #AAA !important;
 }
 }
+/*--------------------------- Here starts mozilla addons page -------------------------*/
 
-/* This is a little fix for all pages in case you have a dark windows theme, so that the 
-letters will have a blue neutral color to be seen in either a white or dark background for 
-text-inputting things (Feel free to comment it out with if you don't like it) */
+@-moz-document url-prefix(https://addons.mozilla.org) {
 
-@-moz-document url-prefix(http){
+.App-content {
+	background: #202020 !important;
+}
 
-form select, input[type=text], input[type=email], input[type=password], input[type=date], 
-input[type=datetime-local], input[type=time], input[type=week], input[type=month], 
-input[type=number], input[type=search], input[type=tel], input[type=url] {
-	color: #2066dd !important;
+.Hero .Card-contents, .Home-SubjectShelf .Card-contents, 
+.CardList .Card-header, .CardList .Card-contents, a.SearchResult-link, 
+.Card-contents, .Card-Header, ul.AddonsCard-list li.SearchResult, ul.AddonsCard-list,
+.ExpandableCard .Card-header, span .Paginate-item.disabled.Paginate-previous,
+.Card-header, .Card-footer-text, .Card-footer-link, a.ShowMoreCard-expand-link,
+a.Addon-all-reviews-link, .MetadataCard {
+	background-color: #303030 !important;
+	color: #ccc !important;
+}
+
+button {
+	background-color: #555 !important;
+	color: white !important;
+}
+
+button:hover {
+	background-color: #444 !important;
+	color: #1494FB !important;
+}
+
+button.DropdownMenu-button {
+	background: transparent !important;
+}
+
+ul.DropdownMenu-items, button.SearchForm-submit-button {
+	background-color: #151515 !important;
+	color: #ccc !important;
+}
+
+.Home-SubjectShelf-link:active, .Home-SubjectShelf-link:focus, .Home-SubjectShelf-link:hover {
+    color: #0d96ff !important;
+}
+
+.Home-SubjectShelf-link:link, .Home-SubjectShelf-link:visited {
+    color: #343a40 !important;
+}
+
+a.SearchResult-link h2, span, label *, p, a {
+	color: #ccc !important;
+}
+
+.Paginate .Paginate-item {
+	background-color: #303030 !important;
+}
+
+.Paginate .Paginate-item:disabled, .Paginate .Paginate-item.disabled, .Paginate .Paginate-item:hover {
+	background-color: #151515 !important;
+}
+
+a.SearchResult-link:hover h2, span:hover, a:hover {
+	color: #1494FB !important;
+}
+
+h2.Home-SubjectShelf-subheading, .CardList h2.Card-header, h1, .Paginate-page-number, .Badge {
+	color: white !important;
+}
+
+input.SearchForm-query, select#SearchFilters-Sort, select#SearchFilters-AddonType, 
+select#SearchFilters-AddonType, select#SearchFilters-OperatingSystem {
+	background-color: #222 !important;
+	color: white !important;
+}
+
+.ShowMoreCard-contents::after {
+	background: linear-gradient(rgba(0, 0, 0, 0), #000) !important;
 }
 }
