@@ -1,4 +1,4 @@
-<h1>Firefox 57+ full dark theme with dark scrollbars</h1>
+<h1>Firefox 57+ full dark theme with dark scrollbars and multirow tabs</h1>
 
 <p>This repository includes the files requires to (almost) fully dark theme firefox quantum to dark-gray colors 
 (with #222-#444 colors mostly). </p>
@@ -86,5 +86,6 @@ styled.</p>
 "New Scrollbar starts here" line. The reason for this is that to change the scrollbars we had to override the actual scrollbars
 default file of the program, so you have to keep the original lines above your changes to prevent firefox from crashing (as
 well as having a default scrollbar in case you wanted to play around with the new scrollbar attributes).</p> <br />
+<h2>Credits</h2>
 <p>The original code for the custom scrollbars belongs to <b>Arty2</b>, and you can find it <a href="https://gist.github.com/Arty2/fdf19aea2c601032410516f059d58eb1">here</a>.
 <p>The original code for the multirow tabs was written by <b>Andreicristianpetcu</b>, and you can find it <a href="https://discourse.mozilla.org/t/tabs-in-two-or-more-rows-like-tabmixpro-in-quantum/21657/2">here</a>, or for just the code, <a href="https://github.com/andreicristianpetcu/UserChrome-Tweaks/blob/09fa38a304af88b685f4086bc8ea9997dd7db0fd/tabs/multi_row_tabs_firefox_v57.css">here</a>.
