@@ -51,7 +51,7 @@ in the file.</p>
 <p>It will also turn dark the autocomplete popups (mostly a side-effect)</p>
 <br />
 
-<p>This userchrome will also make the close button on tabs always show, as well as adding multirow tabs support thanks to <a href="https://github.com/andreicristianpetcu/UserChrome-Tweaks/blob/09fa38a304af88b685f4086bc8ea9997dd7db0fd/tabs/multi_row_tabs_firefox_v57.css">the code</a> of <b>Andreicristianpetcu</b>. It will also hide some (at least to me) useless options of the main context menu, such as "send image", 
+<p>This userchrome will also make the close button on tabs always show, as well as adding multiple row tabs support thanks to <a href="https://github.com/andreicristianpetcu/UserChrome-Tweaks/blob/09fa38a304af88b685f4086bc8ea9997dd7db0fd/tabs/multi_row_tabs_firefox_v57.css">the code</a> of <b>Andreicristianpetcu</b>. It will also hide some (at least to me) useless options of the main context menu, such as "send image", 
 "set as desktop background", "bookmark page", "send page", "bookmark this link", "send link" and "send tab/page/link to device".</p>
 <p>If for some reason you wanted to keep any of those, you can still recover them deleting the css entries for the ones you are 
 interested on (or commenting them between /* and */)</p>
