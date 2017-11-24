@@ -63,7 +63,7 @@ interested on (or commenting them between /* and */)</p>
 <h2>The userContent.css file</h2>
 
 <p>The usercontent file will turn dark the most commonly used <code>about</code> pages.</p>
-<img src="https://i.imgur.com/d4CEUZL.png" title="Dark preferences page" /></a>
+<img src="https://i.imgur.com/e4zVTC7.png" title="Dark preferences page" /></a>
 <p>These include:</p>
 <ul>
   <li>Home</li>
