@@ -703,8 +703,24 @@ richlistitem.addon.addon-view[selected="true"] {
 
 @-moz-document url-prefix(https://addons.mozilla.org) {
 
-.App-content {
+html, .App-content, tr.LanguageTools-table-row:nth-child(even), 
+#main-wrapper, #search-tools-sidebar, .primary, .secondary, #search-tools-sidebar li a {
 	background: #202020 !important;
+}
+
+#footer {
+    background-color: #202020 !important;
+    background-image: linear-gradient(to bottom,#202020 0,#202020 123px,
+    	black 123px,black 200px,#101010 200px,rgba(90,90,90,0) 400px) !important;
+}
+
+.listing-header, .listing .item, .object-lead, .listing-footer {
+	background: linear-gradient(#202020, #333) !important;
+	border-bottom: 1px solid black !important;
+}	
+
+#search-tools-sidebar {
+	border-radius: 0px !important;
 }
 
 .Hero .Card-contents, .Home-SubjectShelf .Card-contents, 
@@ -712,9 +728,14 @@ richlistitem.addon.addon-view[selected="true"] {
 .Card-contents, .Card-Header, ul.AddonsCard-list li.SearchResult, ul.AddonsCard-list,
 .ExpandableCard .Card-header, span .Paginate-item.disabled.Paginate-previous,
 .Card-header, .Card-footer-text, .Card-footer-link, a.ShowMoreCard-expand-link,
-a.Addon-all-reviews-link, .MetadataCard {
+a.Addon-all-reviews-link, .MetadataCard, .Card-contents ul li, .LandingPage-header,
+.highlight {
 	background-color: #303030 !important;
 	color: #ccc !important;
+}
+
+.Card-contents ul li {
+	border-bottom: 1px solid black !important;
 }
 
 button {
@@ -727,16 +748,41 @@ button:hover {
 	color: #1494FB !important;
 }
 
-button.DropdownMenu-button {
+.other-categories .divider {
+    border-top: 1px dotted black !important;
+}
+
+.listing-footer {
+	border-top: 1px solid black !important;
+}
+
+.item .item-info {
+    border-left: 1px dotted black !important;
+}
+
+button.DropdownMenu-button, button.TooltipMenu-opener, 
+button.SearchForm-submit-button, ul.LanguageTools-addon-list li,
+#aux-nav > ul > li {
 	background: transparent !important;
 }
 
-ul.DropdownMenu-items, button.SearchForm-submit-button {
+ul.DropdownMenu-items, ul.TooltipMenu-list, .TooltipMenu-arrow, 
+ul.TooltipMenu-list li.ListItem, tr.LanguageTools-table-row:nth-child(odd) {
 	background-color: #151515 !important;
 	color: #ccc !important;
 }
 
-.Home-SubjectShelf-link:active, .Home-SubjectShelf-link:focus, .Home-SubjectShelf-link:hover {
+ul.TooltipMenu-list li.ListItem, ul.LanguageTools-addon-list li,
+.highlight {
+	border: none !important;
+}
+
+th.LanguageTools-header-cell {
+	background-color: #101010 !important;
+}
+
+.Home-SubjectShelf-link:active, .Home-SubjectShelf-link:focus, 
+.Home-SubjectShelf-link:hover, a.Button.Categories-link:hover {
     color: #0d96ff !important;
 }
 
@@ -744,15 +790,30 @@ ul.DropdownMenu-items, button.SearchForm-submit-button {
     color: #343a40 !important;
 }
 
-a.SearchResult-link h2, span, label *, p, a {
+a.SearchResult-link h2, span, label *, 
+p, a, h4, h2, blockquote, li, .num-results {
 	color: #ccc !important;
 }
 
-.Paginate .Paginate-item {
+.header-bg {
+    background-color: black !important;
+    background-image: linear-gradient(to bottom,transparent 0,transparent 100px),
+    linear-gradient(to bottom,rgba(90,90,90,0) 0,#555 500px,#fff 0),
+    repeating-linear-gradient(118deg,rgba(12,153,213,0) 0,#444 550px,rgba(90,90,90,0) 550px,#444 800px,
+    rgba(90,90,90,0) 800px,#444 950px) !important;
+}
+
+.Paginate .Paginate-item, li.p-popular {
 	background-color: #303030 !important;
 }
 
-.Paginate .Paginate-item:disabled, .Paginate .Paginate-item.disabled, .Paginate .Paginate-item:hover {
+.Paginate .Paginate-item:disabled, .Paginate .Paginate-item.disabled, 
+.Paginate .Paginate-item:hover, li.p-popular:hover, #search-tools-sidebar li a:hover,
+.other-apps li a:hover, #site-search-suggestions a.sel, #site-search-suggestions a:hover, 
+#site-search-suggestions.sel a.sel:hover, #site-search-suggestions li p a:hover, 
+#other-apps ul.other-apps, #addon-list-options li:not(.selected) a:hover, 
+.pagination li:not(.selected) a:hover, #aux-nav > ul > li:not(:first-child)::before, 
+#addon-list-options li:not(.selected) a:focus, .pagination li:not(.selected) a:focus {
 	background-color: #151515 !important;
 }
 
@@ -760,17 +821,52 @@ a.SearchResult-link:hover h2, span:hover, a:hover {
 	color: #1494FB !important;
 }
 
-h2.Home-SubjectShelf-subheading, .CardList h2.Card-header, h1, .Paginate-page-number, .Badge {
+h2.Home-SubjectShelf-subheading, .CardList h2.Card-header, 
+h1, .Paginate-page-number, .Badge, a.Button.Categories-link,
+.install a * {
 	color: white !important;
 }
 
+.install a.caution {
+	text-shadow: 1px 1px red !important
+}
+
+.install strong {
+	color: orange !important;
+}
+
 input.SearchForm-query, select#SearchFilters-Sort, select#SearchFilters-AddonType, 
-select#SearchFilters-AddonType, select#SearchFilters-OperatingSystem {
+select#SearchFilters-AddonType, select#SearchFilters-OperatingSystem, select#language,
+input#search-q {
 	background-color: #222 !important;
 	color: white !important;
 }
 
+#site-search-suggestions .wrap, ul.other-apps {
+    background: #151515 !important;
+    border: 1px solid #101010 !important;
+    }
+
 .ShowMoreCard-contents::after {
 	background: linear-gradient(rgba(0, 0, 0, 0), #000) !important;
+}
+}
+
+/*--------------------------- Here starts mozilla login page -------------------------*/
+
+@-moz-document url-prefix(https://accounts.firefox.com) {
+
+html, body {
+	background-color: #202020 !important;
+}
+
+#stage.fade-in-forward .sign-in #main-content.card, #stage #main-content.panel {
+	background-color: #303030 !important;
+	color: #ccc !important;
+}
+
+form input, .show-password-label {
+	background-color: #444 !important;
+	color: #ccc !important;
 }
 }
