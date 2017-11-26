@@ -1,7 +1,7 @@
 /*-----------------------------------------------------------------------------------------------------------------------------*/
 /*-------------------------This shit has been made to make you go blind the next time you go out!------------------------------*/
 /* Made by Izheil ---------~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~------------------------------*/
-/*------------------------------------------------------------------------------------------- Last updated: 25/11/2017 --------*/
+/*------------------------------------------------------------------------------------------- Last updated: 26/11/2017 --------*/
 
 @namespace url("http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul");
 
@@ -59,6 +59,12 @@ or white one) */
   --url-and-searchbar-background-color: rgb(71, 71, 73);
   --url-and-searchbar-color: #FFF;
   --urlbar-separator-color: #5F6670;
+}
+
+/* Tabs border color */
+
+.tabbrowser-tab {
+    border-right: 1px solid rgba(255,255,255, .15) !important;
 }
 
 /* Main menu colors */
