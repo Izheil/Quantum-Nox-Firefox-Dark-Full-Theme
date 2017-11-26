@@ -6,8 +6,8 @@
 is change the correct values (which class or id does what is commented above each) on the .css files (as far as you know some 
 basic css or color coding, it shouldn't be too hard)</p>
 <p>What this "theme" will not affect will be your persona, the text color used by it, and the accent color (line above active tab). To change those settings, you can change them manually through the <code>about:config</code> page, searching 
-<b>lightweightThemes.usedThemes</b> there, and changing the textcolor or accentcolor codes of your used persona respectively.</p>
-<p><b>Why use this method instead of using stylus?</b></p><br />
+<b>lightweightThemes.usedThemes</b> there, and changing the textcolor or accentcolor codes of your used persona respectively.</p><br />
+<p><b>Why use this method instead of using stylus?</b></p>
 <p>The main reason is that you can't style firefox about pages nor the scrollbar with just stylus.</p>
 
 <h2>Installation</h2>
