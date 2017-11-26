@@ -28,7 +28,7 @@ The reason for this is that to style the scrollbars we can't use external styles
 as well as <b>placing the scrollbars.css file inside firefox's root folder</b>.</p> 
 <p>Firefox root folder is where the <code>firefox.exe</code> file is located inside the mozilla firefox folder inside program 
 files (or the x86 program files if you have a 32-bits firefox).</p>
-<p>Once you have located the <code>chrome.manifest</code> file, edit it with notepad (or any other program you see fit for the
+<p>Once you have located the <code>chrome.manifest</code> file on firefox root folder (there is another one inside the "browser" folder that you don't have to edit), edit it with notepad (or any code editor program you see fit for the
 job). You will see a blank file (it was 0kb heavy after all), where you should add the line:</p>
 
 <code>override chrome://global/skin/scrollbars.css scrollbars.css</code>
