@@ -19,9 +19,6 @@ browser[type="content-primary"], tabbrowser tabpanels, #appcontent > #content {
 
 @media (-moz-windows-default-theme) {
   :root {
-    --tabs-border: rgba(0,0,0,.3) !important;
-    --tab-line-color: #0a84ff !important;
-
     --toolbar-non-lwt-bgcolor: #303030 !important;
     --toolbar-non-lwt-textcolor: #fff !important;
 }
