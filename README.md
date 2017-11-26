@@ -4,18 +4,20 @@
 (with #222-#444 colors mostly). </p>
 <p><b>Of course... you could as well use these files to color your firefox any way you wanted</b>, the only thing you'd have to do
 is change the correct values (which class or id does what is commented above each) on the .css files (as far as you know some 
-basic css or color coding, it shouldn't be too hard)</p><br />
-<p><b>Why use this method instead of using stylus?</b></p>
+basic css or color coding, it shouldn't be too hard)</p>
+<p>What this "theme" will not affect will be your persona, the text color used by it, and the accent color (line above active tab). To change those settings, you can change them manually through the <code>about:config</code> page, searching 
+<b>lightweightThemes.usedThemes</b> there, and changing the textcolor or accentcolor codes of your used persona respectively.</p>
+<p><b>Why use this method instead of using stylus?</b></p><br />
 <p>The main reason is that you can't style firefox about pages nor the scrollbar with just stylus.</p>
 
-<h2>Instalation</h2>
+<h2>Installation</h2>
 
 <h3>Main browser UI</h3>
 
 <img src="https://i.imgur.com/a2HnUxz.png" title="Dark firefox overall UI" />
 
 <p>Most of the job is already done with the userContent.css and userChrome.css files that you have to place in the 
-chrome folder of your firefox profile (Look below for "the chrome folder" section if you don't know where that is). For this to work as intended, you should be using a persona (aka lightweight theme) instead of any of the default white or black themes (The persona used on the screenshot is "<a href="https://addons.mozilla.org/en-US/firefox/addon/deep-dark-blue-forest/">Deek Dark Blue forest</a>" by <b>Sondergaard</b>.</p>
+chrome folder of your firefox profile (Look below for "the chrome folder" section if you don't know where that is). For this to work as intended, you should be using a persona (aka lightweight theme) or the default dark theme (The persona used on the screenshot is "<a href="https://addons.mozilla.org/en-US/firefox/addon/deep-dark-blue-forest/">Deek Dark Blue forest</a>" by <b>Sondergaard</b>).</p>
 <p>If you are only looking for how to change the default scrollbars, you can apply just that without the need
 of using the usercontent or userchrome files provided here.</p>
 
