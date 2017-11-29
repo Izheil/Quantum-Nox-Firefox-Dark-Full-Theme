@@ -1,475 +1,296 @@
-/*-----------------------------------------------------------------------------------------------------------------------------*/
-/*-------------------------This shit has been made to make you go blind the next time you go out!------------------------------*/
-/* Made by Izheil ---------~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~------------------------------*/
-/*------------------------------------------------------------------------------------------- Last updated: 26/11/2017 --------*/
+/* You can find an updated version here: https://github.com/Izheil/Firefox-57-full-dark-theme-with-scrollbars */
+/* Made by Izheil */
+/* Last updated: 29/11/2017 */
 
+/* DO NOT DELETE THIS LINE */
 @namespace url("http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul");
 
-/* Fix to make the pre-render loading page dark instead of white */
+/* COLORING PART STARTS HERE */
 
-browser[type="content-primary"], tabbrowser tabpanels, #appcontent > #content {
-  background-color: #202020 !important;
-}
+/* v Fix to make the pre-render loading page dark instead of white v */
+browser[type="content-primary"], tabbrowser tabpanels, #appcontent > #content
+{background-color: #202020 !important}
 
-/* TOOLBAR AND URL BAR */
+/* TOOLBAR, TABS AND URL BAR */
 
-/* URL boxes and the customizing page background (as well as the toolbar background color) */
-
-/* The windows default theme colors will mainly affect the customizing page if you have other theme installed */
-
-@media (-moz-windows-default-theme) {
-  :root {
-    --toolbar-non-lwt-bgcolor: #303030 !important;
-    --toolbar-non-lwt-textcolor: #fff !important;
-}
-}
-
-/* The customization page button colors */
-
-.customizationmode-button {
-    background: linear-gradient(#555, #222) !important;
-    color: white !important;
-}
-
-.customizationmode-button:hover {
-	background: linear-gradient(#222, #555) !important;
-	color: white !important;
-}
-
-#customization-done-button {
-	background: linear-gradient(#2050AA, #203050) !important;
-	border: 1px solid #0a84ff !important;
-}
-
-#customization-done-button:hover {
-	background: linear-gradient(#203050, #2050AA) !important;
-    color: cyan !important;
-}
-
-/* This other root class will modify the colors of the persona you have installed (must not be the dark 
-or white one) */
-
+/* This root class will modify the colors of toolbar background color (by default is transparent white 
+without this change) */
 :root:-moz-lwtheme {
   --toolbar-bgcolor: rgba(0,0,0,.6) !important;
 
   /* Url and search bars */
   --url-and-searchbar-background-color: rgb(71, 71, 73);
   --url-and-searchbar-color: #FFF;
-  --urlbar-separator-color: #5F6670;
-}
+  --urlbar-separator-color: #5F6670}
 
 /* Tabs border color */
-
-.tabbrowser-tab {
-    border-right: 1px solid rgba(255,255,255, .15) !important;
-}
-
-/* Main menu colors */
-
-:root {
-	--panel-separator-color: black !important;
-	--arrowpanel-background: #444 !important;
-	--arrowpanel-color: #ccc !important;
-	--panel-arrow-image-vertical: #444 !important;
-	--in-content-box-background: #333 !important;
-	--in-content-box-background-hover: #444 !important;
-}
+.tabbrowser-tab {border-right: 1px solid rgba(255,255,255, .15) !important}
 
 /* Max, min and close buttons */
 
-#titlebar-min:not(:hover) {
-  background-color: transparent !important;
-}
+/* This prevents any custom windows theme to change the background color
+of the minimize, maximize and close buttons */
+#titlebar-min:not(:hover), #titlebar-max:not(:hover), 
+#main-window[sizemode="maximized"] #titlebar-max:not(:hover),
+#titlebar-close:not(:hover) 
+{background-color: transparent !important}
 
-#titlebar-min:hover {
-  background-color: #2050AA !important;
-}
+/* This changes the color on hover of the minimize and maximize buttons */
+#titlebar-min:hover, #titlebar-max:hover, 
+#main-window[sizemode="maximized"] #titlebar-max:hover 
+{background-color: #2050AA !important}
 
-#titlebar-max:not(:hover) {
-  background-color: transparent !important;
-}
-
-#titlebar-max:hover {
-  background-color: #2050AA !important;
-}
-
-#main-window[sizemode="maximized"] #titlebar-max:not(:hover) {
-  background-color: transparent !important;
-}
-
-#main-window[sizemode="maximized"] #titlebar-max:hover {
-  background-color: #2050AA !important;
-}
-
-#titlebar-close:not(:hover) {
-  background-color: transparent !important;
-}
-
-#titlebar-close:hover {
-  background-color: red !important;
-}
+/* This changes the close button hover color */
+#titlebar-close:hover {background-color: #FF0000 !important}
 
 /* The downloads progress bar color */
+.progress-bar {background: #3070dd !important}
 
-.progress-bar {
-	background: #3070dd !important;
+/* CUSTOMIZATION PAGE */
+
+/* The windows default theme colors will mainly affect the customizing page (when
+you aren't using the default dark theme of mozilla, that is) */
+@media (-moz-windows-default-theme) {
+  :root {
+    --toolbar-non-lwt-bgcolor: #303030 !important;
+    --toolbar-non-lwt-textcolor: #fff !important}
 }
 
-/* Zoom reset button on the main menu */
+/* The customization page button colors */
+.customizationmode-button {
+    background: linear-gradient(#555, #222) !important;
+    color: white !important}
 
-#appMenu-zoomReset-button {
-	background-color: #666 !important;
-	color: #ccc !important;
-}
+.customizationmode-button:hover {
+	background: linear-gradient(#222, #555) !important;
+	color: white !important}
 
-#appMenu-zoomReset-button:hover {
-	background-color: #333 !important;
-	color: #ccc !important;
-}
+#customization-done-button {
+	background: linear-gradient(#2050AA, #203050) !important;
+	border: 1px solid #0a84ff !important}
 
-#appMenu-zoomReset-button:active{
-	background-color: #222 !important;
-	color: #ccc !important;
-}
-
-/* Toolbar text color */
-/*
- .toolbarbutton-text { 
- 	color: #000 !important; 
-}
-*/
-
-/* Active tab background (Only the borders will be shown with Photon) */
-/*
-#TabsToolbar .tabbrowser-tab[selected] {
- 	background: red !important; 
-}
-*/
+#customization-done-button:hover {
+	background: linear-gradient(#203050, #2050AA) !important;
+    color: cyan !important}
 
 /* CONTEXT MENUS */
 
-/* Web page area right click context menu */
-/*
-#contentAreaContextMenu .scrollbox-innerbox {
-	background-color: #555 !important;
-	 -moz-appearance: none !important;
-}
+/* Main menu colors */
+:root {
+	--panel-separator-color: rgba(0,0,0, .5) !important;
+	--arrowpanel-background: #444 !important;
+	--arrowpanel-color: #ccc !important;
+	--in-content-box-background: #333 !important;
+	--in-content-box-background-hover: #444 !important}
 
-/* Tabs right click context menu */
-/*
-#tabContextMenu .scrollbox-innerbox {
-	background-color: #555 !important;
-	color: #aaa !important;
-}
+/* Fix for the panel arrows (Thanks to BelladonnavGF for pointing out the bug) */
+.panel-arrow {filter: invert(73%) !important;}
 
-/* Bookmark right click context menu */
-/*
-#placesContext .scrollbox-innerbox {
-	background-color: #555 !important;
-	color: #aaa !important;
-}
-
-/* Bookmarks folder context menu */
-/*
-.bookmark-item .scrollbox-innerbox  {
-	background-color: #555 !important;
-}
-
-/* URL bar right click context menu */
-/*
-.textbox-contextmenu .scrollbox-innerbox {
-	background-color: #555 !important;
-	color: #aaa !important;
-}
-
-/* Toolbar right click context menu */
-/*
-#toolbar-context-menu .scrollbox-innerbox {
-	background-color: #555 !important;
-	color: #aaa !important;
-}
-*/
-
+/* Zoom reset button on the main menu */
+#appMenu-zoomReset-button {background-color: #666 !important}
+#appMenu-zoomReset-button:hover {background-color: #333 !important}
+#appMenu-zoomReset-button:active {background-color: #222 !important}
 
 /* This one changes the letters color of all context menus */
-
 menu, menuitem {
 	color: #aaa !important;
-	-moz-appearance: none !important;
-}
+	-moz-appearance: none !important}
 
 /* Padding for all menu items (do NOT change unless you want an spaced or indented upon 
-selection effect) */
-
-menuitem {
+selection effect). The open in tabs bookmark item is added here since it also needs the 
+padding that we remove in the next rule */ 
+menuitem, .bookmark-item .openintabs-menuitem {
 	padding-top: 3px !important;
-	padding-bottom: 2px !important;
-}
+	padding-bottom: 2px !important}
 
 /* This removes the unnecesary padding from the bookmark items */
-
 .bookmark-item menuitem {
 	padding-top: 0px !important;
-	padding-bottom: 0px !important;
-}
-
-/* This adds the necessary padding on the open in tabs bookmark item */
-
-.bookmark-item .openintabs-menuitem {
-	padding-top: 3px !important;
-	padding-bottom: 2px !important;
-}
+	padding-bottom: 0px !important}
 
 /* This changes the color on hover of the context-menu items */
-
 menubar > menu[_moz-menuactive="true"],
 menupopup > menu[_moz-menuactive="true"],
 popup > menu[_moz-menuactive="true"],
-menuitem[_moz-menuactive="true"] {
-	background-color: #25a !important;
-}
+menuitem[_moz-menuactive="true"] 
+{background-color: #25a !important}
 
 /* This does the same but for disabled ones */
-
 menubar > menu[_moz-menuactive="true"][disabled="true"],
 menupopup > menu[_moz-menuactive="true"][disabled="true"],
 popup > menu[_moz-menuactive="true"][disabled="true"],
-menuitem[_moz-menuactive="true"][disabled="true"] {
-	background-color: #333 !important;
-} 
+menuitem[_moz-menuactive="true"][disabled="true"] 
+{background-color: #333 !important} 
 
 /* This changes the text color of the greyed out actions on the context menus */
-
-menuitem[disabled="true"]{
-	color: #222 !important;
-}
+menuitem[disabled="true"]{color: #222 !important}
 
 /* This one applies to all context menus (If you want to theme the browser this one is better instead 
 of going one by one) */
+menupopup .scrollbox-innerbox {background-color: #444 !important}
 
-menupopup .scrollbox-innerbox {
-	background-color: #444 !important;
-}
-
-/* The following code changes the borders of all the context menus (except the ones above mentioned) */
-
+/* The following code changes the borders of all the context menus (except the ones above mentioned),
+as well as ignoring the bookmark menu context menu */
 menupopup {
 	-moz-appearance: none !important;
-	border: 2px solid #111 !important;
-}
+	border: 2px solid #111 !important}
 
-/* The search autocomplete "-" lines */
-
-.ac-separator {
-	color: #333 !important;
-}
+/* This removes the borders for the bookmark menu button next to the url bar */
+#BMB_bookmarksPopup, #BMB_bookmarksPopup menupopup {border: none !important}
 
 /* Fix for the padding of "save as" after the navigation buttons have been eliminated */
+#context-savepage {padding-top: 3px !important}
 
-#context-savepage {
-	padding-top: 6px !important;
-}
-/* Autocomplete colors */
+/* AUTOCOMPLETE COLORS */
 
-.autocomplete-richlistbox {
-	background-color: #444 !important;
-}
+/* This changes the autocomplete background color of the URL bar */
+.autocomplete-richlistbox,
+/* Changes the color of searchbox  old searches (Continues from above) */
+.search-panel-tree {background-color: #444 !important}
 
-.autocomplete-richlistbox .ac-action-text, 
-.autocomplete-richlistbox .ac-tags-text,
-.autocomplete-richlistbox .ac-title-text {
-	color: #ccc !important;
-}
+/* Changes the color of the highlighted item (only the selected one) on the url and searchbar */
+.autocomplete-richlistitem[selected="true"], 
+.search-panel-tree > .autocomplete-treebody::-moz-tree-cell(fromhistory, selected)
+{background-color: #25a !important}
 
 /* Changes the color of the autocomplete on the URL bar */
-
 #PopupAutoCompleteRichResult .ac-title-text,
 #PopupAutoCompleteRichResult .ac-tags-text,
-#PopupAutoCompleteRichResult .ac-action-text {
-    color: #ccc !important;
-}
+#PopupAutoCompleteRichResult .ac-action-text,
+
+/* Changes the color of the autocomplete on web area inputs (Continues from above) */
+.autocomplete-richlistbox .ac-action-text, 
+.autocomplete-richlistbox .ac-tags-text,
+.autocomplete-richlistbox .ac-title-text,
+
+/* Changes the color of search old searches (Continues from above) */
+.search-panel-tree 
+{color: #ccc !important}
+
+/* The search autocomplete "-" lines */
+.ac-separator {color: #222 !important}
 
 /* Changes the color of the autocomplete links on the URL bar */
-
-#PopupAutoCompleteRichResult .ac-url-text {
-	color: rgb(0,160,200) !important;
-}
+#PopupAutoCompleteRichResult .ac-url-text {color: rgb(0,160,200) !important}
 
 /* Changes the color of header of the search option */
-
 .search-panel-header {
 	background-color: #333 !important;
-	color: #ccc !important;
-}
+	color: #ccc !important}
 
 /* Changes the color of search engines choices */
-
-.search-panel-one-offs {
-	background: linear-gradient(#337,#115) !important;
-}
+.search-panel-one-offs {background: linear-gradient(#337,#115) !important}
 
 /* Changes the color of search engine options button */
-
 .search-setting-button {
     background: linear-gradient(#333,#111) !important;
-    color: #777 !important;
-}
+    color: #777 !important}
 
-.search-setting-button:hover {
-	background: linear-gradient(#111,#333) !important;
-}
-
-/* Changes the color of search old searches */
-
-.search-panel-tree {
-    background-color: #444 !important;
-    color: #ccc !important;
-}
+.search-setting-button:hover {background: linear-gradient(#111,#333) !important}
 
 /* Changes the color of searched item on the search popup */
+.search-panel-input-value {color: #00FFFF !important}
 
-.search-panel-input-value {
-	color: cyan !important;
-}
+/* ^ COLORING PART ENDS HERE - FEATURES PART STARTS HERE v */
 
-/* Changes the color of the web area autocomplete */
+/* URL bar */
 
-.autocomplete-richlistitem {
-	color: #ccc !important;
-}
+/* This allows you to change the font of the url to prevent ULR spoofing with a more
+differentiable font (Thanks to BelladonnavGF for the tip) */ 
+
+/* v Delete the "/*" after this comment to use it */ 
+  /*
+#urlbar {font-family: Georgia !important}
+
 /* TABS */
 
-/* tab close - always visible*/
+/* Tab bar below (You can set the order of each bar here. 1 for top, and 3 bottom) */
 
+/* For best results, you should enable the "Title bar" when using this (or you won't be able
+to use the close, minimize, and resize buttons */
+
+/* #nav-bar is the ID for the URL bar, #PersonalToolbar the ID for the bookmarks bar, and
+#TabsToolbar should be self-explanatory (The tabs on bottom are already set by default here) */
+
+/* v Delete the "/*" after this comment to use it */ 
+  /*
+#nav-bar {-moz-box-ordinal-group: 1 !important}
+#PersonalToolbar {-moz-box-ordinal-group: 2 !important}
+#TabsToolbar {-moz-box-ordinal-group: 3 !important}
+
+/* Tab close button always visible*/
 #TabsToolbar #tabbrowser-tabs .tabbrowser-tab:not([pinned]) .tab-close-button {
-  visibility: visible !important;
-  display: block !important;
-}
+  	visibility: visible !important;
+  	display: block !important}
+
 #TabsToolbar #tabbrowser-tabs .tabbrowser-tab:not([pinned])[faviconized="true"] .tab-close-button {
-  visibility: collapse !important;
-  display: none !important;
-}
+  	visibility: collapse !important;
+  	display: none !important}
 
 /* Multirow tabs */
-
 .tabbrowser-tab:not([pinned]) {
     flex-grow:1;
-    min-width:150px;
-}
-.tabbrowser-tab,.tab-background {
-    height:var(--tab-min-height);
-}
-.tab-stack {
-    width: 100%;
-}
+    min-width:150px}
+
+.tabbrowser-tab,.tab-background {height:var(--tab-min-height)}
+
+.tab-stack {width: 100%}
+
 .tabbrowser-tabs .scrollbox-innerbox {
     display: flex;
-    flex-wrap: wrap;
-}
+    flex-wrap: wrap}
+
 .tabbrowser-tabs .arrowscrollbox-scrollbox {
     overflow: visible;
-    display: block;
-}
-#titlebar,#titlebar-buttonbox{
-    height:var(--tab-min-height) !important;
-}
-#titlebar{
-    margin-bottom:calc(1px + var(--tab-min-height)*-1) !important;
-}
-#main-window[sizemode="maximized"] #titlebar{
-    margin-bottom:calc(8px + var(--tab-min-height)*-1) !important;
-}
-#main-window[sizemode="maximized"] #TabsToolbar{
-    margin-left:var(--tab-min-height);
-}
-#titlebar:active{
-    margin-bottom:0 !important;
-}
-#titlebar:active #titlebar-content{
-    margin-bottom:var(--tab-min-height) !important;
-}
-.tabbrowser-tabs .scrollbutton-up,.tabbrowser-tabs .scrollbutton-down,#alltabs-button,.tabbrowser-tab:not([fadein]){
-    display: none;
-}
+    display: block}
 
-/* Rounded tabs */
-/*
-.tab-background {
-  border-radius: 15px 15px 0px 0px !important;
-  border-image: none !important;
-}
+#titlebar, #titlebar-buttonbox {height:var(--tab-min-height) !important}
 
-.tab-line {
-  margin-left: 12px;
-  margin-right: 12px;
-  } 
-*/
+#titlebar {margin-bottom:calc(1px + var(--tab-min-height)*-1) !important}
 
-/* ----------------------------The context menu commands hiding starts here -------------------------*/
+#main-window[sizemode="maximized"] #titlebar 
+{margin-bottom:calc(8px + var(--tab-min-height)*-1) !important}
 
+#titlebar:active {margin-bottom: 0 !important}
 
-/* --------------------------- Navigation buttons --------------------------- */
+#titlebar:active #titlebar-content {margin-bottom:var(--tab-min-height) !important}
 
-/* Back, forward and reload buttons */ 
+.tabbrowser-tabs .scrollbutton-up,.tabbrowser-tabs .scrollbutton-down,#alltabs-button,.tabbrowser-tab:not([fadein])
+{display: none}
 
-#context-navigation {
-	display: none !important;
-}
-/* ----------------------------- Images ------------------------------ */
+/* CONTEXT MENU COMMANDS */
+
+/* All of these commands are divided so that they can be explained, but they are all
+part of the same rule */
+
+/* Navigation buttons (Back, forward and reload buttons) */
+#context-navigation,
 
 /* Send image... */ 
-
-#context-sendimage {
-	display: none !important;
-}
+#context-sendimage,
 
 /* Set image as desktop background... */
-
- #context-setDesktopBackground {
- 	display: none !important;
-}
-
-/* --------------------------- Bookmarking ---------------------------- */
+#context-setDesktopBackground, 
 
 /* Bookmark this page */ 
-#context-bookmarkpage {
-	display: none !important;
-}
+#context-bookmarkpage,
 
 /* Send page... */ 
-
-#context-sendpage {
-	display: none !important;
-}
-/* --------------------------------- Links ---------------------------- */
+#context-sendpage,
 
 /* Bookmark this link */ 
+#context-bookmarklink,
 
-#context-bookmarklink {
-	display: none !important;
-}
 /* Send link... */ 
-#context-sendlink {
-	display: none !important;
-}
-/* ------------------------------- Send to device ---------------------------- */
+#context-sendlink,
 
-/* Send tab to device... */ 
+/* Send tab to device... (including it's separator) */ 
+#context_sendTabToDevice, #context_sendTabToDevice_separator,
 
-#context_sendTabToDevice, #context_sendTabToDevice_separator {
-	display: none !important;
-}
+/* Send page to device... (including it's separator)*/ 
+#context-sendpagetodevice, #context-sep-sendpagetodevice,
 
-/* Send page to device... */ 
-
-#context-sendpagetodevice, #context-sep-sendpagetodevice {
-	display: none !important;
-}
-
-/* Send link to device... */ 
-
+/* Send link to device... (including it's separator)*/ 
 #contentAreaContextMenu #context-sendlinktodevice, 
-#contentAreaContextMenu #context-sep-sendlinktodevice {
-	display: none !important;
-}
-
+#contentAreaContextMenu #context-sep-sendlinktodevice 
+{display: none !important}
