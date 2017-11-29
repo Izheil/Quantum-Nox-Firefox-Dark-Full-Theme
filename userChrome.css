@@ -259,8 +259,13 @@ to use the close, minimize, and resize buttons */
 
 #titlebar {margin-bottom:calc(1px + var(--tab-min-height)*-1) !important}
 
-#main-window[sizemode="maximized"] #titlebar 
-{margin-bottom:calc(8px + var(--tab-min-height)*-1) !important}
+#main-window[sizemode="maximized"] #titlebar
+{margin-bottom: calc(8px + var(--tab-min-height)*-1)!important}
+
+#main-window[sizemode="maximized"][uidensity=compact] #titlebar
+{margin-bottom: calc(6px + var(--tab-min-height)*-1)!important}
+
+#main-window[sizemode="maximized"] .tab-line {height: 3px !important}
 
 #titlebar:active {margin-bottom: 0 !important}
 
