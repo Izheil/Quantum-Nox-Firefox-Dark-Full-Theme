@@ -199,7 +199,7 @@ menupopup {
   background-color: #303030 !important;
   -moz-appearance: none !important} 
 
-#sidebar-search-container, #bookmarks-view-children, #historyTree {
+#sidebar-search-container, #bookmarks-view-children, #historyTree. #sidebar {
   -moz-appearance: none !important;
   background-color: #404040 !important;
   color: #ccc !important}
