@@ -7,11 +7,11 @@ is change the correct values (what each class or id does is commented above each
 basic css or color coding, it shouldn't be too hard)</p>
 <p>What this "theme" will not affect will be your persona, the text color used by it, and the accent color (line above active tab). To change those settings, you can change them manually through the <code>about:config</code> page, searching 
 <b>lightweightThemes.usedThemes</b> there, and changing the textcolor or accentcolor codes of your used persona respectively.</p>
-<h3>Last update: <b>29/11/2017</b></h3>
+<h3>Last update: <b>29/11/2017 v2</b></h3>
 <p>Files updated:</p>
 <ul>
-  <li><b>Userchrome.css</b> -> Added url bar fonts and tab positioning.</li>
-  <li><b>Usercontent.css</b> -> Cleaned up the code.</li>
+  <li><b>Userchrome.css</b> -> Added url bar fonts and tab positioning, themed the sidebar (thanks to <b>Hakerdefo</b> for noting it).</li>
+  <li><b>Usercontent.css</b> -> Cleaned up the code, added some missing colors on mozilla pages.</li>
   <li><b>Scrollbars.css</b> -> Fixed a problem the scrollbars overlapping text on divs.</li>
 </ul><br />
 <p><b>Why use this method instead of using <a href="https://addons.mozilla.org/es/firefox/addon/styl-us/">Stylus</a>?</b></p>
@@ -22,12 +22,11 @@ basic css or color coding, it shouldn't be too hard)</p>
   <li>Multiple row tabs.</li>
   <li>Hides some rarely used commands on the context menu such as "Set image as desktop background".</li>
   <li>Changes the tab close button to always be visible.</li>
+  <li>You can hide the sidebar completelly resizing it instead of having to click the sidebar button.</li>
   <li>Can change the URL bar font (You have to change the commented line on userchrome to use it).</li>
   <li>Can change the tabs position under the URL bar (You have to change the commented line on userchrome to use it).</li>
 </ul>
 <p>You can turn these features on or off changing the commented lines on the CSS file (To change them you just have to open the userchrome.css with notepad or any code editor, and encase between "/*" and "*/" the lines you don't want to take effect)</p>
-
-
 
 <h2>Installation</h2>
 
@@ -114,4 +113,4 @@ well as having a default scrollbar in case you wanted to play around with the ne
 <h2>Credits</h2>
 <p>The original code for the custom scrollbars belongs to <b>Arty2</b>, and you can find it <a href="https://gist.github.com/Arty2/fdf19aea2c601032410516f059d58eb1">here</a>.
 <p>The original code for the multirow tabs was written by <b>Andreicristianpetcu</b>, and you can find it <a href="https://discourse.mozilla.org/t/tabs-in-two-or-more-rows-like-tabmixpro-in-quantum/21657/2">here</a>, or for just the code, <a href="https://github.com/andreicristianpetcu/UserChrome-Tweaks/blob/09fa38a304af88b685f4086bc8ea9997dd7db0fd/tabs/multi_row_tabs_firefox_v57.css">here</a>.
-<p>Thanks to <b>BelladonnavGF</b> noting some issues with the theme, and for the addition of the url font and and tabs below url bar suggestions.</p>
+<p>Thanks to <b>BelladonnavGF</b> and <b>Hakerdefo</b> for noting some issues with the theme, and <b>BelladonnavGF</b> for the addition of the url font and and tabs below url bar suggestions.</p>
