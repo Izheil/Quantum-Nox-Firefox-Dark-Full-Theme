@@ -9,6 +9,16 @@ basic css or color coding, it shouldn't be too hard)</p>
 <b>lightweightThemes.usedThemes</b> there, and changing the textcolor or accentcolor codes of your used persona respectively.</p><br />
 <p><b>Why use this method instead of using stylus?</b></p>
 <p>The main reason is that you can't style firefox about pages nor the scrollbar with just stylus.</p>
+<p><b>What features does this theme have?</b></p>
+<p>The main features (apart from the theming) are:</p>
+<ul>
+  <li>Multiple row tabs.</li>
+  <li>Hides some rarely used commands on the context menu such as "Set image as desktop background".</li>
+  <li>Changes the tab close button to always be visible.</li>
+  <li>Can change the URL bar font (You have to change the commented line on userchrome to use it).</li>
+  <li>Can change the tabs position under the URL bar (You have to change the commented line on userchrome to use it).</li>
+</ul>
+<p>You can turn these features on or off changing the commented lines on the CSS file (To change them you just have to open the userchrome.css with notepad or any code editor, and encase between "/*" and "*/" the lines you don't want to take effect)</p>
 
 <h2>Installation</h2>
 
@@ -95,3 +105,4 @@ well as having a default scrollbar in case you wanted to play around with the ne
 <h2>Credits</h2>
 <p>The original code for the custom scrollbars belongs to <b>Arty2</b>, and you can find it <a href="https://gist.github.com/Arty2/fdf19aea2c601032410516f059d58eb1">here</a>.
 <p>The original code for the multirow tabs was written by <b>Andreicristianpetcu</b>, and you can find it <a href="https://discourse.mozilla.org/t/tabs-in-two-or-more-rows-like-tabmixpro-in-quantum/21657/2">here</a>, or for just the code, <a href="https://github.com/andreicristianpetcu/UserChrome-Tweaks/blob/09fa38a304af88b685f4086bc8ea9997dd7db0fd/tabs/multi_row_tabs_firefox_v57.css">here</a>.
+<p>Thanks to <b>BelladonnavGF</b> noting some issues with the theme, and for the addition of the url font and and tabs below url bar suggestions.</p>
