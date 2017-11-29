@@ -20,6 +20,14 @@ basic css or color coding, it shouldn't be too hard)</p>
 </ul>
 <p>You can turn these features on or off changing the commented lines on the CSS file (To change them you just have to open the userchrome.css with notepad or any code editor, and encase between "/*" and "*/" the lines you don't want to take effect)</p>
 
+<h3>Last update: <b>29/11/2017</b></h3>
+<p>Files updated:</p>
+<ul>
+  <li><b>Userchrome.css</b> -> Added url bar fonts and tab positioning.</li>
+  <li><b>Usercontent.css</b> -> Cleaned up the code.</li>
+  <li><b>Scrollbars.css</b> -> Fixed a problem the scrollbars overlapping text on divs.</li>
+</ul>
+
 <h2>Installation</h2>
 
 <h3>Main browser UI</h3>
