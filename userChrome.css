@@ -191,7 +191,43 @@ menupopup {
 /* Changes the color of searched item on the search popup */
 .search-panel-input-value {color: #00FFFF !important}
 
+/* SIDEBAR */
+
+/* These change the color of the sidebar */
+#sidebar-header {
+  color: #fff !important;
+  background-color: #303030 !important;
+  -moz-appearance: none !important} 
+
+#sidebar-search-container, #bookmarks-view-children, #historyTree {
+  -moz-appearance: none !important;
+  background-color: #404040 !important;
+  color: #ccc !important}
+
+.sidebar-splitter {
+  border-right: 2px solid #000 !important;
+  -moz-appearance: none !important}
+
+#bookmarks-view treechildren::-moz-tree-cell(hover),
+#bookmarks-view treechildren::-moz-tree-cell(selected) {
+  -moz-appearance: none !important;
+  background-color: #25a !important}
+
+#bookmarks-view treechildren::-moz-tree-cell-text(hover),
+#bookmarks-view treechildren::-moz-tree-cell-text(selected) {
+  color: #fff !important}
+
 /* ^ COLORING PART ENDS HERE - FEATURES PART STARTS HERE v */
+
+/* SIDEBAR */
+
+/* Allow sidebar to be closed completely using the slider */
+#sidebar-box {overflow-x: hidden !important}
+
+#sidebar {
+  min-width: 0px !important;
+  max-width: none !important;
+  overflow-x: hidden !important}
 
 /* URL bar */
 
