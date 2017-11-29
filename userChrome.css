@@ -208,13 +208,21 @@ menupopup {
   border-right: 2px solid #000 !important;
   -moz-appearance: none !important}
 
+/* These change the highlight colors */
 #bookmarks-view treechildren::-moz-tree-cell(hover),
 #bookmarks-view treechildren::-moz-tree-cell(selected) {
   -moz-appearance: none !important;
   background-color: #25a !important}
 
+/* These change the text colors upon hovering/selection */
 #bookmarks-view treechildren::-moz-tree-cell-text(hover),
 #bookmarks-view treechildren::-moz-tree-cell-text(selected) {
+  color: #fff !important}
+
+/* This changes the sidebar searchbar*/
+#sidebar-search-container * {
+  -moz-appearance: none !important;
+  background-color: #222 !important;
   color: #fff !important}
 
 /* ^ COLORING PART ENDS HERE - FEATURES PART STARTS HERE v */
