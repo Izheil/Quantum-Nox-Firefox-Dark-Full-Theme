@@ -107,7 +107,7 @@ body {
     background: #111 !important;
     border: 1px solid #555 !important}
 
-.actions button:hover {box-shadow: 0 0 0 5px #555 !important}
+.actions button:hover {box-shadow: 0 0 0 5px #0a50AA !important}
 
 .actions button.done {
     background: #0a50AA !important;
