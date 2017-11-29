@@ -218,6 +218,17 @@ to use the close, minimize, and resize buttons */
 #PersonalToolbar {-moz-box-ordinal-group: 2 !important}
 #TabsToolbar {-moz-box-ordinal-group: 3 !important}
 
+/* Rounded tabs */ 
+/* v Delete the "/*" after this comment to use it */ 
+  /*
+.tab-background {
+  border-radius: 15px 15px 0px 0px !important;
+  border-image: none !important}
+
+.tab-line {
+  margin-left: 12px;
+  margin-right: 12px} 
+
 /* Tab close button always visible*/
 #TabsToolbar #tabbrowser-tabs .tabbrowser-tab:not([pinned]) .tab-close-button {
   	visibility: visible !important;
