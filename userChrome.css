@@ -139,7 +139,7 @@ menupopup {
 #BMB_bookmarksPopup, #BMB_bookmarksPopup menupopup {border: none !important}
 
 /* Fix for the padding of "save as" after the navigation buttons have been eliminated */
-#context-savepage {padding-top: 3px !important}
+#context-savepage {padding-top: 6px !important}
 
 /* AUTOCOMPLETE COLORS */
 
