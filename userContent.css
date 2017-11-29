@@ -454,6 +454,8 @@ html, .App-content, tr.LanguageTools-table-row:nth-child(even),
 
 #search-tools-sidebar {border-radius: 0px !important}
 
+#react-autowhatever-1 * {background-color: #444 !important}	
+	
 .Hero .Card-contents, .Home-SubjectShelf .Card-contents, 
 .CardList .Card-header, .CardList .Card-contents, a.SearchResult-link, 
 .Card-contents, .Card-Header, ul.AddonsCard-list li.SearchResult, ul.AddonsCard-list,
