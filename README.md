@@ -6,7 +6,14 @@
 is change the correct values (what each class or id does is commented above each) in the .css files (as far as you know some 
 basic css or color coding, it shouldn't be too hard)</p>
 <p>What this "theme" will not affect will be your persona, the text color used by it, and the accent color (line above active tab). To change those settings, you can change them manually through the <code>about:config</code> page, searching 
-<b>lightweightThemes.usedThemes</b> there, and changing the textcolor or accentcolor codes of your used persona respectively.</p><br />
+<b>lightweightThemes.usedThemes</b> there, and changing the textcolor or accentcolor codes of your used persona respectively.</p>
+<h3>Last update: <b>29/11/2017</b></h3>
+<p>Files updated:</p>
+<ul>
+  <li><b>Userchrome.css</b> -> Added url bar fonts and tab positioning.</li>
+  <li><b>Usercontent.css</b> -> Cleaned up the code.</li>
+  <li><b>Scrollbars.css</b> -> Fixed a problem the scrollbars overlapping text on divs.</li>
+</ul><br />
 <p><b>Why use this method instead of using <a href="https://addons.mozilla.org/es/firefox/addon/styl-us/">Stylus</a>?</b></p>
 <p>The main reason is that you can't style firefox about: pages nor the scrollbar with just stylus.</p>
 <p><b>What features does this theme have?</b></p>
@@ -20,13 +27,7 @@ basic css or color coding, it shouldn't be too hard)</p>
 </ul>
 <p>You can turn these features on or off changing the commented lines on the CSS file (To change them you just have to open the userchrome.css with notepad or any code editor, and encase between "/*" and "*/" the lines you don't want to take effect)</p>
 
-<h3>Last update: <b>29/11/2017</b></h3>
-<p>Files updated:</p>
-<ul>
-  <li><b>Userchrome.css</b> -> Added url bar fonts and tab positioning.</li>
-  <li><b>Usercontent.css</b> -> Cleaned up the code.</li>
-  <li><b>Scrollbars.css</b> -> Fixed a problem the scrollbars overlapping text on divs.</li>
-</ul>
+
 
 <h2>Installation</h2>
 
