@@ -265,6 +265,9 @@ to use the close, minimize, and resize buttons */
 #main-window[sizemode="maximized"][uidensity=compact] #titlebar
 {margin-bottom: calc(6px + var(--tab-min-height)*-1)!important}
 
+/* Change the tab line size in case you don't see it while on resized mode*/
+.tab-line {height: 2px !important}
+
 /* Change the tab line size in case you don't see it while on maximized mode*/
 #main-window[sizemode="maximized"] .tab-line {height: 2px !important}
 
