@@ -32,7 +32,7 @@ basic css or color coding, it shouldn't be too hard)</p>
 
 <h3>Main browser UI</h3>
 
-<img src="https://i.imgur.com/a2HnUxz.png" title="Dark firefox overall UI" />
+<img src="https://i.imgur.com/dmIuudb.png" title="Dark firefox overall UI" />
 
 <p>Most of the job is already done with the userContent.css and userChrome.css files that you have to place in the 
 chrome folder of your firefox profile (Look below for "the chrome folder" section if you don't know where that is). For this to work as intended, you should be using a persona (aka lightweight theme) or the default dark theme (The persona used on the screenshot is "<a href="https://addons.mozilla.org/en-US/firefox/addon/deep-dark-blue-forest/">Deek Dark Blue forest</a>" by <b>Sondergaard</b>).</p>
