@@ -26,7 +26,7 @@ basic css or color coding, it shouldn't be too hard)</p>
   <li>Can change the URL bar font (You have to change the commented line on userchrome to use it).</li>
   <li>Can change the tabs position under the URL bar (You have to change the commented line on userchrome to use it).</li>
 </ul>
-<p>You can turn these features on or off changing the commented lines on the CSS file (To change them you just have to open the userchrome.css with notepad or any code editor, and encase between "/*" and "*/" the lines you don't want to take effect)</p>
+<p>You can turn these features on or off changing the commented lines on the CSS file (To change them you just have to open the userchrome.css with notepad or any code editor, and encase between "/*" and "*/" (without the quotation marks) the lines you don't want to take effect)</p>
 
 <h2>Installation</h2>
 
@@ -47,7 +47,7 @@ as well as <b>placing the scrollbars.css file inside firefox's root folder</b>.<
 <p>Firefox root folder is where the <code>firefox.exe</code> file is located inside the mozilla firefox folder inside program 
 files (or the x86 program files if you have a 32-bits firefox).</p>
 <p>Once you have located the <code>chrome.manifest</code> file on firefox root folder (there is another one inside the "browser" folder that you don't have to edit), edit it with notepad (or any code editor program you see fit for the
-job). You will see a blank file (it was 0kb heavy after all), where you should add the line:</p>
+job, but do NOT use Word or any other enriched text editor). You will see a blank file (it was 0kb heavy after all), where you should add the line:</p>
 
 <code>override chrome://global/skin/scrollbars.css scrollbars.css</code>
 
