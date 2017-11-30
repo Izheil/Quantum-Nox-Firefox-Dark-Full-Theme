@@ -210,17 +210,21 @@ menupopup {
 
 /* These change the highlight colors */
 #bookmarks-view treechildren::-moz-tree-cell(hover),
-#bookmarks-view treechildren::-moz-tree-cell(selected) {
+#bookmarks-view treechildren::-moz-tree-cell(selected),
+#historyTree treechildren::-moz-tree-cell(hover),
+#historyTree treechildren::-moz-tree-cell(selected){
   -moz-appearance: none !important;
   background-color: #25a !important}
 
 /* These change the text colors upon hovering/selection */
-#bookmarks-view treechildren::-moz-tree-cell-text(hover),
-#bookmarks-view treechildren::-moz-tree-cell-text(selected) {
+#bookmarks-view treechildren::-moz-tree-cell(hover),
+#bookmarks-view treechildren::-moz-tree-cell(selected),
+#historyTree treechildren::-moz-tree-cell(hover),
+#historyTree treechildren::-moz-tree-cell(selected){
   color: #fff !important}
 
-/* This changes the sidebar searchbar*/
-#sidebar-search-container * {
+/* This changes the sidebar searchbar */
+#sidebar-search-container #search-box {
   -moz-appearance: none !important;
   background-color: #222 !important;
   color: #fff !important}
