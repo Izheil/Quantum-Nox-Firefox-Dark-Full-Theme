@@ -28,14 +28,14 @@ prefwindow, .windowDialog {
 
 /* This is a little fix for all pages in case you have a dark windows theme, so that the 
 letters will have a blue neutral color to be seen in either a white or dark background for 
-text-inputting things (Feel free to comment it out with if you don't like it) */
+text-inputting things (Feel free to comment it out if you don't like it, or delete any of 
+the inputs that you prefer to show black letters (the text boxes are "textarea") */
 @-moz-document url-prefix(http){
 
 form select, input[type=text], input[type=email], input[type=password], input[type=date], 
 input[type=datetime-local], input[type=time], input[type=week], input[type=month], 
-input[type=number], input[type=search], input[type=tel], input[type=url] 
-{color: #2066dd !important}
-}
+input[type=number], input[type=search], input[type=tel], input[type=url], textarea 
+{color: #2066dd !important}}
 
 /*------ HOME PAGE (About:home) ------*/ 
 @-moz-document url-prefix(about:home){
