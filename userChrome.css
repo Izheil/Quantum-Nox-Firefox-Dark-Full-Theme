@@ -177,10 +177,13 @@ menupopup {
 /* Changes the color of the autocomplete links on the URL bar */
 #PopupAutoCompleteRichResult .ac-url-text {color: rgb(0,160,200) !important}
 
-/* Changes the color of header of the search option */
-.search-panel-header {
+/* Changes the color of header of the search option (and "add new engine") */
+.search-panel-header, .addengine-item {
 	background-color: #333 !important;
 	color: #ccc !important}
+
+/* Changes the color of the "Add x new search engine" hover effect */
+.addengine-item:hover {background-color: #444 !important}
 
 /* Changes the color of search engines choices */
 .search-panel-one-offs {background: linear-gradient(#337,#115) !important}
