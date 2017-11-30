@@ -143,6 +143,10 @@ menupopup {
 
 /* AUTOCOMPLETE COLORS */
 
+/* This changes the autocomplete popup borders */
+#PopupAutoCompleteRichResult, #PopupSearchAutoComplete, #PopupAutoComplete
+{border: 1px solid #000 !important}
+
 /* This changes the autocomplete background color of the URL bar */
 .autocomplete-richlistbox,
 /* Changes the color of searchbox  old searches (Continues from above) */
