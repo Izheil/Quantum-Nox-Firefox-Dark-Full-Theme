@@ -7,12 +7,10 @@ is change the correct values (what each class or id does is commented above each
 basic css or color coding, it shouldn't be too hard)</p>
 <p>What this "theme" will not affect will be your persona, the text color used by it, and the accent color (line above active tab). To change those settings, you can change them manually through the <code>about:config</code> page, searching 
 <b>lightweightThemes.usedThemes</b> there, and changing the textcolor or accentcolor codes of your used persona respectively.</p>
-<h3>Last update: <b>29/11/2017 v2</b></h3>
+<h3>Last update: <b>01/12/2017</b></h3>
 <p>Files updated:</p>
 <ul>
-  <li><b>Userchrome.css</b> -> Added url bar fonts and tab positioning, themed the sidebar (thanks to <b>Hakerdefo</b> for noting it).</li>
-  <li><b>Usercontent.css</b> -> Cleaned up the code, added some missing colors on mozilla pages.</li>
-  <li><b>Scrollbars.css</b> -> Fixed a problem the scrollbars overlapping text on divs.</li>
+  <li><b>Usercontent.css</b> -> Added the possibility to change the Ublock origin blocked page popup background (you need to edit usercontent with the proper dynamic ID of your extension. Further explanation given above the lines in there).</li>
 </ul><br />
 <p><b>Why use this method instead of using <a href="https://addons.mozilla.org/es/firefox/addon/styl-us/">Stylus</a>?</b></p>
 <p>The main reason is that you can't style firefox about: pages nor the scrollbar with just stylus.</p>
@@ -25,6 +23,7 @@ basic css or color coding, it shouldn't be too hard)</p>
   <li>You can hide the sidebar completelly resizing it instead of having to click the sidebar button.</li>
   <li>Can change the URL bar font (You have to change the commented line on userchrome to use it).</li>
   <li>Can change the tabs position under the URL bar (You have to change the commented line on userchrome to use it).</li>
+  <li>Change the Ublock Origin blocking page to a dark version (You need to change the commented line on usercontent).</li>
 </ul>
 <p>You can turn these features on or off changing the commented lines on the CSS file (To change them you just have to open the userchrome.css with notepad or any code editor, and encase between "/*" and "*/" (without the quotation marks) the lines you don't want to take effect)</p>
 
