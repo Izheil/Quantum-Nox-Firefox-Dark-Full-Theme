@@ -39,8 +39,9 @@ input[type=number], input[type=search], input[type=tel], input[type=url], textar
 
 /*------ UBLOCK ORIGIN BLOCKING PAGE ------*/
 /* To use this part of the code, you will have to find the dynamic ID of your ublock origin extension,
-and replace it where the random numbers are (the numbers after moz-extension://), and then uncomment this
-by deleting the "/*" under this line */
+and replace it where the random numbers are (the numbers after moz-extension://).To find it, just open the 
+advanced settings page and copy the numbers in the URL after moz-extension there in here, and then uncomment this
+by deleting the "/*" under this line. */
 /*
 @-moz-document url-prefix(moz-extension://1e3752b9-2b9d-4dd5-8c06-64abbbd32538/document-blocked.html){
 
