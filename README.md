@@ -11,7 +11,13 @@ basic css or color coding, it shouldn't be too hard)</p>
 <p>Files updated:</p>
 <ul>
   <li><b>Usercontent.css</b> -> Added the possibility to change the Ublock origin add-on blocked page popup (you need to edit usercontent with the proper dynamic ID of your extension. Further explanation given above the lines in there).</li>
-</ul><br />
+</ul>
+<h3>Pre-Last update: <b>31/11/2017</b></h3>
+<p>Files updated:</p>
+<ul>
+  <li><b>Userchrome.css</b> -> Changed the borders of all autocompletes (including the search box and URL bar ones).</li>
+</ul>
+<br />
 <p><b>Why use this method instead of using <a href="https://addons.mozilla.org/es/firefox/addon/styl-us/">Stylus</a>?</b></p>
 <p>The main reason is that you can't style firefox about: pages nor the scrollbar with just stylus.</p>
 <p><b>What features does this theme have?</b></p>
