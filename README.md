@@ -10,7 +10,7 @@ basic css or color coding, it shouldn't be too hard)</p>
 <h3>Last update: <b>01/12/2017</b></h3>
 <p>Files updated:</p>
 <ul>
-  <li><b>Usercontent.css</b> -> Added the possibility to change the Ublock origin blocked page popup background (you need to edit usercontent with the proper dynamic ID of your extension. Further explanation given above the lines in there).</li>
+  <li><b>Usercontent.css</b> -> Added the possibility to change the Ublock origin add-on blocked page popup (you need to edit usercontent with the proper dynamic ID of your extension. Further explanation given above the lines in there).</li>
 </ul><br />
 <p><b>Why use this method instead of using <a href="https://addons.mozilla.org/es/firefox/addon/styl-us/">Stylus</a>?</b></p>
 <p>The main reason is that you can't style firefox about: pages nor the scrollbar with just stylus.</p>
