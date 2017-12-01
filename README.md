@@ -67,10 +67,8 @@ usercontent.css and userchrome.css files.<p>
 
 <p>The userchrome file turns dark all context menus, bookmarks, the url bar, the search bar, the main menu, and the toolbar. 
 It will, although, not turn dark the extension popups you may have. <p>
-<img src="https://i.imgur.com/wWjBcqz.png" title="Dark search menu (spanish)" /></a>
-<p>You can also opt to only change the layout of certain context menus, but not all of them, using the commented lines
-in the file.</p>
-<img src="https://i.imgur.com/7zj3SSq.png" title="Dark context menu (spanish)" /></a>
+<img src="https://i.imgur.com/wWjBcqz.png" title="Dark search menu (spanish)" />
+<img src="https://i.imgur.com/7zj3SSq.png" title="Dark context menu (spanish)" />
 <p>It will also turn dark the autocomplete popups (mostly a side-effect)</p>
 <br />
 
