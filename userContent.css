@@ -37,6 +37,34 @@ input[type=datetime-local], input[type=time], input[type=week], input[type=month
 input[type=number], input[type=search], input[type=tel], input[type=url], textarea 
 {color: #2066dd !important}}
 
+/*------ UBLOCK ORIGIN BLOCKING PAGE ------*/
+/* To use this part of the code, you will have to find the dynamic ID of your ublock origin extension,
+and replace it where the random numbers are (the numbers after moz-extension://), and then uncomment this
+by deleting the "/*" under this line */
+/*
+@-moz-document url-prefix(moz-extension://1e3752b9-2b9d-4dd5-8c06-64abbbd32538/document-blocked.html){
+
+html, body {background-color: #222 !important}
+
+body {margin-top: 10em}
+
+p, span {color: #ccc !important}
+
+.fa {color: #fa0 !important}
+
+button, select {
+	-moz-appearance: none !important;
+	background-color: #333 !important;
+	border: 1px solid black !important;
+	color: #ccc !important}
+
+button:hover, select:hover {
+	background-color: #444 !important}
+
+a:link {color: #0084ff !important}
+a:hover {color: #0ff !important}
+a:active {color: #fff !important}
+}
 /*------ HOME PAGE (About:home) ------*/ 
 @-moz-document url-prefix(about:home){
 
