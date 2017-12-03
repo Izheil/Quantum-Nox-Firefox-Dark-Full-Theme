@@ -7,15 +7,15 @@ is change the correct values (what each class or id does is commented above each
 basic css or color coding, it shouldn't be too hard)</p>
 <p>What this "theme" will not affect will be your persona, the text color used by it, and the accent color (line above active tab). To change those settings, you can change them manually through the <code>about:config</code> page, searching 
 <b>lightweightThemes.usedThemes</b> there, and changing the textcolor or accentcolor codes of your used persona respectively.</p>
-<h3>Last update: <b>01/12/2017</b></h3>
+<h3>Last update: <b>03/12/2017</b></h3>
+<p>Files updated:</p>
+<ul>
+  <li><b>Userchrome.css</b> -> Added multirow support for the bookmarks toolbar (thanks to the code fixed by <b>jscher2000</b> in <a href="https://www.reddit.com/r/firefox/comments/75wya9/multiple_row_bookmark_toolbar_for_firefox_5758/">this reddit thread</a>). Also fixed some issue with Windows 8 close/min/resize buttons showing a bigger background with multirow tabs enabled.</li>
+</ul>
+<h3>Pre-Last update: <b>01/12/2017</b></h3>
 <p>Files updated:</p>
 <ul>
   <li><b>Usercontent.css</b> -> Added the possibility to change the Ublock origin add-on blocked page popup (you need to edit usercontent with the proper dynamic ID of your extension. Further explanation given above the lines in there).</li>
-</ul>
-<h3>Pre-Last update: <b>30/11/2017</b></h3>
-<p>Files updated:</p>
-<ul>
-  <li><b>Userchrome.css</b> -> Changed the borders of all autocompletes (including the search box and URL bar ones).</li>
 </ul>
 <br />
 <p><b>Why use this method instead of using <a href="https://addons.mozilla.org/es/firefox/addon/styl-us/">Stylus</a>?</b></p>
@@ -24,6 +24,7 @@ basic css or color coding, it shouldn't be too hard)</p>
 <p>The main features (apart from the theming) are:</p>
 <ul>
   <li>Multiple row tabs.</li>
+  <li>Multiple row bookmarks toolbar.</li>
   <li>Hides some rarely used commands on the context menu such as "Set image as desktop background".</li>
   <li>Changes the tab close button to always be visible.</li>
   <li>You can hide the sidebar completelly resizing it instead of having to click the sidebar button.</li>
@@ -116,4 +117,5 @@ well as having a default scrollbar in case you wanted to play around with the ne
 <h2>Credits</h2>
 <p>The original code for the custom scrollbars belongs to <b>Arty2</b>, and you can find it <a href="https://gist.github.com/Arty2/fdf19aea2c601032410516f059d58eb1">here</a>.
 <p>The original code for the multirow tabs was written by <b>Andreicristianpetcu</b>, and you can find it <a href="https://discourse.mozilla.org/t/tabs-in-two-or-more-rows-like-tabmixpro-in-quantum/21657/2">here</a>, or for just the code, <a href="https://github.com/andreicristianpetcu/UserChrome-Tweaks/blob/09fa38a304af88b685f4086bc8ea9997dd7db0fd/tabs/multi_row_tabs_firefox_v57.css">here</a>.
+<p>The original code for the multirow bookmarks toolbar belongs to the original creator mentioned in <a href="https://www.reddit.com/r/firefox/comments/75wya9/multiple_row_bookmark_toolbar_for_firefox_5758/">this reddit thread</a>, whose code was fixed by <b>jscher2000</b> to use in our current firefox.
 <p>Thanks to <b>BelladonnavGF</b> and <b>Hakerdefo</b> for noting some issues with the theme, and <b>BelladonnavGF</b> for the addition of the url font and and tabs below url bar suggestions.</p>
