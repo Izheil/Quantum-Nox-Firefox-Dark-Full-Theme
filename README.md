@@ -1,4 +1,4 @@
-<h1>Firefox 57+ full dark theme with dark scrollbars and multirow tabs</h1>
+<h1>Firefox 57+ full dark theme with dark scrollbars and multirow tabs/bookmarks</h1>
 
 <p>This repository includes the files requires to (almost) fully dark theme firefox quantum to dark-gray colors 
 (with #222-#444 colors mostly). </p>
@@ -24,7 +24,7 @@ basic css or color coding, it shouldn't be too hard)</p>
 <p>The main features (apart from the theming) are:</p>
 <ul>
   <li>Multiple row tabs.</li>
-  <li>Multiple row bookmarks toolbar.</li>
+  <li>Multiple row bookmarks toolbar (2 usable rows by default, you can add more editing userchrome).</li>
   <li>Hides some rarely used commands on the context menu such as "Set image as desktop background".</li>
   <li>Changes the tab close button to always be visible.</li>
   <li>You can hide the sidebar completelly resizing it instead of having to click the sidebar button.</li>
