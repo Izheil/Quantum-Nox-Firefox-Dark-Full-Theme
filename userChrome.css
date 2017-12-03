@@ -310,7 +310,11 @@ to use the close, minimize, and resize buttons */
     overflow: visible;
     display: block}
 
-#titlebar, #titlebar-buttonbox {height:var(--tab-min-height) !important}
+/* A little fix that should only be required for Win10 (since it would be a bit problematic on Win8) */
+@media (-moz-os-version: windows-win10) {
+         #titlebar-buttonbox {height:var(--tab-min-height) !important}}
+
+#titlebar {height:var(--tab-min-height) !important}
 
 #titlebar {margin-bottom:calc(1px + var(--tab-min-height)*-1) !important}
 
@@ -332,6 +336,21 @@ to use the close, minimize, and resize buttons */
 
 .tabbrowser-tabs .scrollbutton-up,.tabbrowser-tabs .scrollbutton-down,#alltabs-button,.tabbrowser-tab:not([fadein])
 {display: none}
+
+/* Multi-Row Bookmarks Toolbar */
+#PersonalToolbar {max-height: 104px !important}  /* Provide room for up to 4 rows at 26px */
+#PlacesToolbarItems > box {display: inline-block !important}
+
+#PersonalToolbar #PlacesToolbarItems {
+  /* Override hiding */
+  overflow-x: visible !important;
+  overflow-y: visible !important;
+  padding-bottom: 1px}
+
+#PersonalToolbar #PlacesToolbarItems .bookmark-item {
+  /* Reduce padding on individual bookmarks to fit rows closer together */
+  padding-top: 1px !important;
+  padding-bottom: 1px !important}
 
 /* CONTEXT MENU COMMANDS */
 
