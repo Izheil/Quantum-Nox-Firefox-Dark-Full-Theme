@@ -338,9 +338,9 @@ to use the close, minimize, and resize buttons */
 {display: none}
 
 /* Multi-Row Bookmarks Toolbar */
-/* Provide room for up to 2 rows at 20px each + 1px margin top and bottom */
-/* v Delete the "/*" after this comment to use it */ 
-  /*
+
+/* (Delete the "/*" after the next comment to use this) */ 
+/* Provide room for up to 2 rows at 20px each + 1px margin top and bottom */ /*
 #PersonalToolbar {max-height: 42px !important} 
 
 #PlacesToolbarItems > box {display: inline-block}
