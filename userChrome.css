@@ -257,7 +257,7 @@ differentiable font (Thanks to BelladonnavGF for the tip) */
   /*
 #urlbar {font-family: Georgia !important}
 
-/* TABS */
+/* TABS & BOOKMARK TOOLBAR */
 
 /* Tab bar below (You can set the order of each bar here. 1 for top, and 3 bottom) */
 
@@ -338,19 +338,14 @@ to use the close, minimize, and resize buttons */
 {display: none}
 
 /* Multi-Row Bookmarks Toolbar */
-#PersonalToolbar {max-height: 52px !important}  /* Provide room for up to 4 rows at 26px each */
-#PlacesToolbarItems > box {display: inline-block !important}
+/* Provide room for up to 2 rows at 20px each + 1px margin top and bottom */
+/* v Delete the "/*" after this comment to use it */ 
+  /*
+#PersonalToolbar {max-height: 42px !important} 
 
-#PersonalToolbar #PlacesToolbarItems {
-  /* Override hiding */
-  overflow-x: visible !important;
-  overflow-y: visible !important;
-  padding-bottom: 1px}
+#PlacesToolbarItems > box {display: inline-block}
 
-#PersonalToolbar #PlacesToolbarItems .bookmark-item {
-  /* Reduce padding on individual bookmarks to fit rows closer together */
-  padding-top: 1px !important;
-  padding-bottom: 1px !important}
+#PlacesToolbarItems {overflow: visible !important}
 
 /* CONTEXT MENU COMMANDS */
 
