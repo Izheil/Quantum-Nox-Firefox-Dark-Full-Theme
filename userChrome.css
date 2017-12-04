@@ -346,6 +346,8 @@ to use the close, minimize, and resize buttons */
 #PlacesToolbarItems > box {display: inline-block}
 
 #PlacesToolbarItems {overflow: visible !important}
+/* ^ You can change this to "overflow: auto" to have scrollable bookmark lines, but it will add
+an empty scrollbar on the side (sadly can't be fixed without breaking customizability) */
 
 /* CONTEXT MENU COMMANDS */
 
