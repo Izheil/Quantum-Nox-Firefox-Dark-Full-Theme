@@ -7,10 +7,10 @@ is change the correct values (what each class or id does is commented above each
 basic css or color coding, it shouldn't be too hard)</p>
 <p>What this "theme" will not affect will be your persona, the text color used by it, and the accent color (line above active tab). To change those settings, you can change them manually through the <code>about:config</code> page, searching 
 <b>lightweightThemes.usedThemes</b> there, and changing the textcolor or accentcolor codes of your used persona respectively.</p>
-<h3>Last update: <b>03/12/2017</b></h3>
+<h3>Last update: <b>04/12/2017</b></h3>
 <p>Files updated:</p>
 <ul>
-  <li><b>Userchrome.css</b> -> Added multirow support for the bookmarks toolbar (thanks to the code fixed by <b>jscher2000</b> in <a href="https://www.reddit.com/r/firefox/comments/75wya9/multiple_row_bookmark_toolbar_for_firefox_5758/">this reddit thread</a>). Also fixed some issue with Windows 8 close/min/resize buttons showing a bigger background with multirow tabs enabled.</li>
+  <li><b>Userchrome.css</b> -> Added multirow support for the bookmarks toolbar (thanks to the code fixed by <b>jscher2000</b> in <a href="https://www.reddit.com/r/firefox/comments/75wya9/multiple_row_bookmark_toolbar_for_firefox_5758/">this reddit thread</a>) It won't be enabled by default, so you have to edit userchrome to use this feature. Also fixed some issue with Windows 8 close/min/resize buttons showing a bigger background with multirow tabs enabled.</li>
 </ul>
 <h3>Pre-Last update: <b>01/12/2017</b></h3>
 <p>Files updated:</p>
@@ -24,7 +24,7 @@ basic css or color coding, it shouldn't be too hard)</p>
 <p>The main features (apart from the theming) are:</p>
 <ul>
   <li>Multiple row tabs.</li>
-  <li>Multiple row bookmarks toolbar (2 usable rows by default, you can add more editing userchrome).</li>
+  <li>Multiple row bookmarks toolbar (2 usable rows by default, but it is NOT enabled by default. You can add more rows editing userchrome).</li>
   <li>Hides some rarely used commands on the context menu such as "Set image as desktop background".</li>
   <li>Changes the tab close button to always be visible.</li>
   <li>You can hide the sidebar completelly resizing it instead of having to click the sidebar button.</li>
