@@ -17,6 +17,9 @@ basic css or color coding, it shouldn't be too hard)</p>
 <ul>
   <li><b>Usercontent.css</b> -> Added the possibility to change the Ublock origin add-on blocked page popup (you need to edit usercontent with the proper dynamic ID of your extension. Further explanation given above the lines in there).</li>
 </ul>
+<h3>Known issues:</h3>
+<p><b>If you are using the method to change the scrollbars found here, you will have to edit the <code>chrome.manifest</code> file with each firefox update, since the update resets this file to become empty again</b> (which should at least give you one or two months before having to re-edit it).</p>
+<p>I'm currently working on a way to make scrollbars change more permanent, but it may take some time... so you will still have to change the <code>chrome.manifest</code> manually until then.
 <br />
 <p><b>Why use this method instead of using <a href="https://addons.mozilla.org/es/firefox/addon/styl-us/">Stylus</a>?</b></p>
 <p>The main reason is that you can't style firefox about: pages nor the scrollbar with just stylus.</p>
@@ -50,6 +53,7 @@ of using the usercontent or userchrome files provided here.</p>
 The reason for this is that to style the scrollbars we can't use external styles through the stylus extension or userchrome.</p>
 <p>To install the scrollbars, you will have to edit a file (<code>chrome.manifest</code>) yourself (Don't worry, it's just 1 line), 
 as well as <b>placing the scrollbars.css file inside firefox's root folder</b>.</p> 
+<p><b>Since firefox resets the <code>chrome.manifest</code> file with each new update, you will have to change it each time firefox updates</b> (which should at least give you one or two months before having to re-edit it)</p>
 <p>Firefox root folder is where the <code>firefox.exe</code> file is located inside the mozilla firefox folder inside program 
 files (or the x86 program files if you have a 32-bits firefox).</p>
 <p>Once you have located the <code>chrome.manifest</code> file on firefox root folder (there is another one inside the "browser" folder that you don't have to edit), edit it with notepad (or any code editor program you see fit for the
