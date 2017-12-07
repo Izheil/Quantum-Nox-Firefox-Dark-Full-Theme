@@ -58,10 +58,10 @@ of using the usercontent or userchrome files provided here.</p>
 <p>The scrollbars file isn't as easy to install as userchrome or usercontent (but still pretty simple). 
 The reason for this is that to style the scrollbars we can't use external styles through the stylus extension or userchrome.</p>
 <p>To install the scrollbars, you will have to overwrite (or edit it, since it's just a line) a file (<code>chrome.manifest</code>), as well as <b>placing the scrollbars.css file inside firefox's root folder</b>.</p>
-<p>To overwrite <code>chrome.manifest</code>, and place the scrollbars.css file inside firefox's root folder you can either use the .bat files inside the "Scrollbars patchers" folder <b>with admin rights</b> (which will do the job for you), or you can do it manually.<p>
+<p>To overwrite <code>chrome.manifest</code>, and place the scrollbars.css file inside firefox's root folder you can either use the batch files inside the "Scrollbars patchers" folder <b>with admin rights</b> (which will do the job for you), or you can do it manually (The batch files method is only available for Windows right now. I'll be making a similar method for linux and Mac later on this week).<p>
 <p><b>Since firefox resets the <code>chrome.manifest</code> file with each new update, you will have to change it each time firefox updates</b> (which should at least give you one or two months before having to re-edit it). Again, you can do this manually, or applying the right "re-patcher" batch file (giving it admin rights) on the "Scrollbar patchers" folder after each firefox update.</p>
 
-<p>For those that want to do it manually, I'll explain the method to patch the scrollbars below. The first thing to do would be finding <b>firefox's root folder</b> to place the scrollbars.css file in there, as well as editing the <code>chrome.manifest</code> file.<p>
+<p>For those that want (or have) to do it manually, I'll explain the method to patch the scrollbars below. The first thing to do would be finding <b>firefox's root folder</b> to place the scrollbars.css file in there, as well as editing the <code>chrome.manifest</code> file.<p>
 
 <p>Depending on your OS, the root folder will be in a different location (information taken from <a href="http://kb.mozillazine.org/Installation_directory">here</a>):</p>
 
