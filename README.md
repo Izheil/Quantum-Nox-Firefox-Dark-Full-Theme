@@ -58,23 +58,29 @@ The reason for this is that to style the scrollbars we can't use external styles
 <p>Depending on your OS, the root folder will be in a different location (information taken from <a href="http://kb.mozillazine.org/Installation_directory">here</a>):</p>
 
 <h4>For Windows, you can find firefox root folder here:</h4>
-<code>32-bits Firefox -> C:\Program Files (x86)\Mozilla Firefox\</code>
-<code>64-bits Firefox -> C:\Program Files\Mozilla Firefox\</code>
-<br /><p>If you have a 32-bits Windows, you will only see the 64-bits path.</p>
+
+<pre>32bits Firefox -> C:\Program Files (x86)\Mozilla Firefox\
+64bits Firefox -> C:\Program Files\Mozilla Firefox\</pre>
+
+<p>If you have a 32-bits Windows, you will only see the 64-bits path.</p>
 
 <h4>For Linux, you can find firefox root folder here:</h4>
-<code>32-bits Firefox -> 	/usr/lib/firefox-(version) -> For example, if using Firefox 57: /usr/lib/firefox-57.0</code>
-<code>64-bits Firefox -> /usr/lib64/firefox-(version) -> F.ex, for Firefox 57: /usr/lib64/firefox-57.0</code>
-<br /><p>The installation directory path may vary depending on the distribution if you use a package manager to install the application from their repository.</p>
+
+<pre>32-bits Firefox ->	/usr/lib/firefox-(version) -> For example, if using Firefox 57: /usr/lib/firefox-57.0
+64-bits Firefox -> /usr/lib64/firefox-(version) -> F.ex, for Firefox 57: /usr/lib64/firefox-57.0</pre>
+
+<p>The installation directory path may vary depending on the distribution if you use a package manager to install the application from their repository.</p>
 
 <h4>For Mac, you can find firefox root folder here:</h4>
-<code>/Applications/Firefox.app</code>
-<br /><p>To open one of these folders, Ctrl-click it and select Show Package Contents. If you simply click it, you will start the application.</p>
+
+<pre>/Applications/Firefox.app</pre>
+
+<p>To open one of these folders, Ctrl-click it and select Show Package Contents. If you simply click it, you will start the application.</p>
 
 <p>Once you have located the <code>chrome.manifest</code> file on firefox root folder (there is another one inside the "browser" folder that you don't have to edit), overwrite it with the <code>chrome.manifest</code> uploaded here.</p>
 <p>If for some reason you wanted to edit it yourself, you can do so by editing it with notepad (or any code editor program you see fit for the job, but do NOT use Word or any other enriched text editor). You will see a blank file (it was 0kb heavy after all), where you should add the line:</p>
 
-<code>override chrome://global/skin/scrollbars.css scrollbars.css</code>
+<pre>override chrome://global/skin/scrollbars.css scrollbars.css</pre>
 
 <p>If you have done everything correctly, firefox should have the custom-made scrollbars now (or after you restart firefox if
 you had it open).</p>
@@ -87,30 +93,30 @@ you will be redirected to, on the section labed as "profile folder" click the <b
 
 <h4>On Windows 7 and above, profile folders are in this location, by default:</h4>
 
-<code>C:\Users\(Windows login/user name)\AppData\Roaming\Mozilla\Firefox\Profiles\(profile folder)</code>
+<pre>C:\Users\(Windows login/user name)\AppData\Roaming\Mozilla\Firefox\Profiles\(profile folder)</pre>
   
 <p>The AppData folder is a hidden folder; to show hidden folders, open a Windows Explorer window and choose "Tools → Folder Options → View (tab) → Show hidden files and folders".</p>
 
 <p>You can also use this path to find the profile folder, even when it is hidden:</p>
 
-<code>%APPDATA%\Mozilla\Firefox\Profiles\(profile folder)</code>
+<pre>%APPDATA%\Mozilla\Firefox\Profiles\(profile folder)</pre>
 
 <h4>On Linux, profile folders are located in this other location:</h4>
 
-<code>~/.mozilla/firefox/(profile folder)</code>
+<pre>~/.mozilla/firefox/(profile folder)</pre>
 
 <p>The ".mozilla" folder is a hidden folder. To show hidden files in Nautilus (Gnome desktop's default file browser), choose "View -> Show Hidden Files".</p>
 
 <h4>On Mac, profile folders are in one of these locations:</h4>
 
-<code> ~/Library/Application Support/Firefox/Profiles/(profile folder)</code>
-<code> ~/Library/Mozilla/Firefox/Profiles/(profile folder)</code>
+<pre>~/Library/Application Support/Firefox/Profiles/(profile folder)
+~/Library/Mozilla/Firefox/Profiles/(profile folder)</pre>
 
 <p>The tilde character (~) refers to the current user's Home folder, so ~/Library is the /Macintosh HD/Users/(username)/Library folder. For OS X 10.7 Lion and above, the ~/Library folder is hidden by default.</p>
 
 <p>You can make them visible by typing the following in a terminal window.</p>
-<code>defaults write com.apple.finder AppleShowAllFiles TRUE</code><br />
-<code>killall Finder</code>
+<pre>defaults write com.apple.finder AppleShowAllFiles TRUE
+killall Finder</pre>
 <br /><p>This will also cause any file icons to take on a hazy, 50% alpha look. To restore the old settings (hide the files and make the icons look normal) issue the same commands again, but enter FALSE instead of TRUE.<p>
 
 <h2>The userChrome.css file</h2>
