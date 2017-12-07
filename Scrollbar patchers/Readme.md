@@ -1,7 +1,7 @@
 <h1>Scrollbar patchers</h1>
 
-<p><b>If using for the first time, apply the "First time patch".</b></p>
-<p>After this, you should only apply the re-patcher after each firefox update.</p>
+<p><b>If using for the first time, make sure that the "scrollbars.css" file is in the same folder as the .bat files, and then apply the "First time patch".</b></p>
+<p>After this, you should only need to apply the re-patcher after each firefox update (No need to have the scrollbars.css file to re-patch).</p>
 
 <ul>
   <li>Use Scrollbars re-patcher (32-bits) if you have a 64-bits Windows and you are using a 32-bits Firefox.</li>
