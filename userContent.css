@@ -528,7 +528,7 @@ a.Addon-all-reviews-link, .MetadataCard, .Card-contents ul li, .LandingPage-head
 	background-color: #303030 !important;
 	color: #ccc !important}
 
-.Card-contents ul li {border-bottom: 1px solid #000 !important}
+.Search .AddonsCard-list .SearchResult {border-bottom: 1px solid #000 !important}
 
 button {
 	background-color: #555 !important;
