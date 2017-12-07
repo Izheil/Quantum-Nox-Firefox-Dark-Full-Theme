@@ -52,27 +52,66 @@ of using the usercontent or userchrome files provided here.</p>
 <h3>The scrollbars</h3>
 <p>The scrollbars file isn't as easy to install as userchrome or usercontent (but still pretty simple). 
 The reason for this is that to style the scrollbars we can't use external styles through the stylus extension or userchrome.</p>
-<p>To install the scrollbars, you will have to edit a file (<code>chrome.manifest</code>) yourself (Don't worry, it's just 1 line), 
-as well as <b>placing the scrollbars.css file inside firefox's root folder</b>.</p> 
+<p>To install the scrollbars, you will have to overwrite (or edit it, since it's just a line) a file (<code>chrome.manifest</code>), as well as <b>placing the scrollbars.css file inside firefox's root folder</b>.</p> 
 <p><b>Since firefox resets the <code>chrome.manifest</code> file with each new update, you will have to change it each time firefox updates</b> (which should at least give you one or two months before having to re-edit it). I'll be trying to make a more permanent fix, but right now, this should be the fastest way to change the scrollbars.</p>
-<p>Firefox root folder is where the <code>firefox.exe</code> file is located inside the mozilla firefox folder inside program 
-files (or the x86 program files if you have a 32-bits firefox).</p>
-<p>Once you have located the <code>chrome.manifest</code> file on firefox root folder (there is another one inside the "browser" folder that you don't have to edit), edit it with notepad (or any code editor program you see fit for the
-job, but do NOT use Word or any other enriched text editor). You will see a blank file (it was 0kb heavy after all), where you should add the line:</p>
+
+<p>Depending on your OS, the root folder will be in a different location (information taken from <a href="http://kb.mozillazine.org/Installation_directory">here</a>):</p>
+
+<h4>For Windows, you can find firefox root folder here:</h4>
+<code>32-bits Firefox -> C:\Program Files (x86)\Mozilla Firefox\</code>
+<code>64-bits Firefox -> C:\Program Files\Mozilla Firefox\</code>
+<br /><p>If you have a 32-bits Windows, you will only see the 64-bits path.</p>
+
+<h4>For Linux, you can find firefox root folder here:</h4>
+<code>32-bits Firefox -> 	/usr/lib/firefox-(version) -> For example, if using Firefox 57: /usr/lib/firefox-57.0</code>
+<code>64-bits Firefox -> /usr/lib64/firefox-(version) -> For example, if using Firefox 57: /usr/lib64/firefox-57.0</code>
+<br /><p>The installation directory path may vary depending on the distribution if you use a package manager to install the application from their repository.</p>
+
+<h4>For Mac, you can find firefox root folder here:</h4>
+<code>/Applications/Firefox.app</code>
+<br /><p>To open one of these folders, Ctrl-click it and select Show Package Contents. If you simply click it, you will start the application.</p>
+
+<p>Once you have located the <code>chrome.manifest</code> file on firefox root folder (there is another one inside the "browser" folder that you don't have to edit), overwrite it with the <code>chrome.manifest</code> uploaded here.</p>
+<p>If for some reason you wanted to edit it yourself, you can do so by editing it with notepad (or any code editor program you see fit for the job, but do NOT use Word or any other enriched text editor). You will see a blank file (it was 0kb heavy after all), where you should add the line:</p>
 
 <code>override chrome://global/skin/scrollbars.css scrollbars.css</code>
 
-<p>...Or you could be lazy and just copy the chrome.manifest uploaded here directly to firefox root folder.</p>
 <p>If you have done everything correctly, firefox should have the custom-made scrollbars now (or after you restart firefox if
 you had it open).</p>
 <h3>The chrome folder</h3>
 <p>If you don't know where that is, just type <code>about:support</code> on the URL bar of your firefox, and in the page
 you will be redirected to, on the section labed as "profile folder" click the <b>open folder</b> button.</p>
-<p>After this, your profile folder will be open, it should be located somewhere like: 
-<code>C:/Users/(your-username)/AppData/Roaming/Mozilla/Firefox/Profiles/(random-letters-and-numbers.default)/</code><p>
-<p>You may or may not see the chrome folder. If you don't see it, just create it and place inside the 
-usercontent.css and userchrome.css files.<p>
+<p>After this, your profile folder will be open. You may or may not see the chrome folder. If you don't see it, just create it and place inside the usercontent.css and userchrome.css files.</p>
 
+<p>If you want to know the exact location for profile folders (information taken from <a href="http://kb.mozillazine.org/Profile_folder_-_Firefox">here</a>):</p>
+
+<h4>On Windows 7 and above, profile folders are in this location, by default:</h4>
+
+<code>C:\Users\(Windows login/user name)\AppData\Roaming\Mozilla\Firefox\Profiles\(profile folder)</code>
+  
+<p>The AppData folder is a hidden folder; to show hidden folders, open a Windows Explorer window and choose "Tools → Folder Options → View (tab) → Show hidden files and folders".</p>
+
+<p>You can also use this path to find the profile folder, even when it is hidden:</p>
+
+<code>%APPDATA%\Mozilla\Firefox\Profiles\(profile folder)</code>
+
+<h4>On Linux, profile folders are located in this other location:</h4>
+
+<code>~/.mozilla/firefox/(profile folder)</code>
+
+<p>The ".mozilla" folder is a hidden folder. To show hidden files in Nautilus (Gnome desktop's default file browser), choose "View -> Show Hidden Files".</p>
+
+<h4>On Mac, profile folders are in one of these locations:</h4>
+
+<code> ~/Library/Application Support/Firefox/Profiles/(profile folder)</code>
+<code> ~/Library/Mozilla/Firefox/Profiles/(profile folder)</code>
+
+<p>The tilde character (~) refers to the current user's Home folder, so ~/Library is the /Macintosh HD/Users/(username)/Library folder. For OS X 10.7 Lion and above, the ~/Library folder is hidden by default.</p>
+
+<p>You can make them visible by typing the following in a terminal window.</p>
+<code>defaults write com.apple.finder AppleShowAllFiles TRUE</code>
+<code>killall Finder</code>
+<br /><p>This will also cause any file icons to take on a hazy, 50% alpha look. To restore the old settings (hide the files and make the icons look normal) issue the same commands again, but enter FALSE instead of TRUE.<p>
 
 <h2>The userChrome.css file</h2>
 
@@ -105,6 +144,7 @@ interested on (or commenting them between /* and */)</p>
   <li>Plugins</li>
   <li>Memory</li>
   <li>Downloads</li>
+  <li>Debugging</li>
   <li>Support</li>
 </ul>
 
