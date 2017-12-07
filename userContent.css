@@ -182,6 +182,9 @@ body {
 #snippets-container p {
 	color: #50AAFF !important}
 
+.block-snippet-button {
+	filter: invert(50%) !important}
+	
 .button-link {
 	background-color: #0aAA50 !important;
 	color: #FFF !important;
