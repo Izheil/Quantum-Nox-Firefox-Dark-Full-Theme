@@ -7,15 +7,16 @@ is change the correct values (what each class or id does is commented above each
 basic css or color coding, it shouldn't be too hard)</p>
 <p>What this "theme" will not affect will be your persona, the text color used by it, and the accent color (line above active tab). To change those settings, you can change them manually through the <code>about:config</code> page, searching 
 <b>lightweightThemes.usedThemes</b> there, and changing the textcolor or accentcolor codes of your used persona respectively.</p>
-<h3>Last update: <b>04/12/2017</b></h3>
+<h3>Last update: <b>07/12/2017</b></h3>
+<p>Files updated:</p>
+<ul>
+  <li><b>Userchrome.css</b> -> Changed the "done" button border color to a darker blue on the customization page.</li>
+  <li><b>Usercontent.css</b> -> Changed all about: pages buttons to have a darker blue border. Added the theme to the <code>about:support</code> page.</li>
+</ul>
+<h3>Pre-Last update: <b>04/12/2017</b></h3>
 <p>Files updated:</p>
 <ul>
   <li><b>Userchrome.css</b> -> Added multirow support for the bookmarks toolbar (thanks to the code fixed by <b>jscher2000</b> in <a href="https://www.reddit.com/r/firefox/comments/75wya9/multiple_row_bookmark_toolbar_for_firefox_5758/">this reddit thread</a>) It won't be enabled by default, so you have to edit userchrome to use this feature. Also fixed some issue with Windows 8 close/min/resize buttons showing a bigger background with multirow tabs enabled.</li>
-</ul>
-<h3>Pre-Last update: <b>01/12/2017</b></h3>
-<p>Files updated:</p>
-<ul>
-  <li><b>Usercontent.css</b> -> Added the possibility to change the Ublock origin add-on blocked page popup (you need to edit usercontent with the proper dynamic ID of your extension. Further explanation given above the lines in there).</li>
 </ul>
 <h3>Known issues:</h3>
 <p><b>If you are using the method to change the scrollbars found here, you will have to edit the <code>chrome.manifest</code> file with each firefox update, since the update resets this file to become empty again</b> (which should at least give you one or two months before having to re-edit it).</p>
