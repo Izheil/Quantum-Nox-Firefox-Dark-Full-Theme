@@ -2,14 +2,15 @@
 
 <p>This repository includes the files requires to (almost) fully dark theme firefox quantum to dark-gray colors 
 (with #222-#444 colors mostly). </p>
-<p><b>Of course... you could as well use these files to color your firefox any way you wanted</b>, the only thing you'd have to do
-is change the correct values (what each class or id does is commented above each) in the .css files (as far as you know some 
+<p><b>Of course... you could as well use these files to color your firefox any way you wanted</b>, the only thing you'd have to do is change the correct values (what each class or id does is commented above each) in the .css files (as far as you know some 
 basic css or color coding, it shouldn't be too hard)</p>
 <p>What this "theme" will not affect will be your persona, the text color used by it, and the accent color (line above active tab). To change those settings, you can change them manually through the <code>about:config</code> page, searching 
 <b>lightweightThemes.usedThemes</b> there, and changing the textcolor or accentcolor codes of your used persona respectively.</p>
+
 <h3>Last update: <b>07/12/2017</b></h3>
 <p>Files updated:</p>
 <ul>
+  <li><b>Scrollbar patchers</b> -> Created Windows patchers to change the scrollbars of firefox in a more automated way (You still need to re-patch using these after a firefox update).</li>
   <li><b>Userchrome.css</b> -> Changed the "done" button border color to a darker blue on the customization page.</li>
   <li><b>Usercontent.css</b> -> Changed all about: pages buttons to have a darker blue border. Added the theme to the <code>about:support</code> page.</li>
 </ul>
@@ -18,13 +19,17 @@ basic css or color coding, it shouldn't be too hard)</p>
 <ul>
   <li><b>Userchrome.css</b> -> Added multirow support for the bookmarks toolbar (thanks to the code fixed by <b>jscher2000</b> in <a href="https://www.reddit.com/r/firefox/comments/75wya9/multiple_row_bookmark_toolbar_for_firefox_5758/">this reddit thread</a>) It won't be enabled by default, so you have to edit userchrome to use this feature. Also fixed some issue with Windows 8 close/min/resize buttons showing a bigger background with multirow tabs enabled.</li>
 </ul>
-<h3>Known issues:</h3>
-<p><b>If you are using the method to change the scrollbars found here, you will have to edit the <code>chrome.manifest</code> file with each firefox update, since the update resets this file to become empty again</b> (which should at least give you one or two months before having to re-edit it).</p>
-<p>I'm currently working on a way to make scrollbars change more permanent, but it may take some time... so you will still have to change the <code>chrome.manifest</code> manually until then.</p>
+
 <h2>FAQ:</h2>
-<p><b>Why use this method instead of using <a href="https://addons.mozilla.org/es/firefox/addon/styl-us/">Stylus</a>?</b></p>
+
+<h3>The scrollbars go back to the default ones after a firefox update!</h3>
+<p>To fix this you have to re-patch the <code>chrome.manifest</code> file after each firefox update either following the manual steps found in here, <b>or applying the right re-patcher found on the "Scrollbar patchers" folder</b> (which should at least give you one or two months before having to re-patch it until the next firefox update).</p>
+<p>This problem happens because firefox overwrites the omni.ja and the <code>chrome.manifest</code> file with each firefox update to "clear" any possible problem with the old version, making our change only temporary without re-patching it after each update.</p>
+
+<h3>Why use this method instead of using <a href="https://addons.mozilla.org/es/firefox/addon/styl-us/">Stylus</a>?</h3>
 <p>The main reason is that you can't style firefox about: pages nor the scrollbar with just stylus.</p>
-<p><b>What features does this theme have?</b></p>
+
+<h3>What features does this theme have?</h3>
 <p>The main features (apart from the theming) are:</p>
 <ul>
   <li>Multiple row tabs.</li>
@@ -52,8 +57,11 @@ of using the usercontent or userchrome files provided here.</p>
 <h3>The scrollbars</h3>
 <p>The scrollbars file isn't as easy to install as userchrome or usercontent (but still pretty simple). 
 The reason for this is that to style the scrollbars we can't use external styles through the stylus extension or userchrome.</p>
-<p>To install the scrollbars, you will have to overwrite (or edit it, since it's just a line) a file (<code>chrome.manifest</code>), as well as <b>placing the scrollbars.css file inside firefox's root folder</b>.</p> 
-<p><b>Since firefox resets the <code>chrome.manifest</code> file with each new update, you will have to change it each time firefox updates</b> (which should at least give you one or two months before having to re-edit it). I'll be trying to make a more permanent fix, but right now, this should be the fastest way to change the scrollbars.</p>
+<p>To install the scrollbars, you will have to overwrite (or edit it, since it's just a line) a file (<code>chrome.manifest</code>), as well as <b>placing the scrollbars.css file inside firefox's root folder</b>.</p>
+<p>To overwrite <code>chrome.manifest</code>, and place the scrollbars.css file inside firefox's root folder you can either use the .bat files inside the "Scrollbars patchers" folder <b>with admin rights</b> (which will do the job for you), or you can do it manually.<p>
+<p><b>Since firefox resets the <code>chrome.manifest</code> file with each new update, you will have to change it each time firefox updates</b> (which should at least give you one or two months before having to re-edit it). Again, you can do this manually, or applying the right "re-patcher" batch file (giving it admin rights) on the "Scrollbar patchers" folder after each firefox update.</p>
+
+<p>For those that want to do it manually, I'll explain the method to patch the scrollbars below. The first thing to do would be finding <b>firefox's root folder</b> to place the scrollbars.css file in there, as well as editing the <code>chrome.manifest</code> file.<p>
 
 <p>Depending on your OS, the root folder will be in a different location (information taken from <a href="http://kb.mozillazine.org/Installation_directory">here</a>):</p>
 
@@ -84,6 +92,7 @@ The reason for this is that to style the scrollbars we can't use external styles
 
 <p>If you have done everything correctly, firefox should have the custom-made scrollbars now (or after you restart firefox if
 you had it open).</p>
+
 <h3>The chrome folder</h3>
 <p>If you don't know where that is, just type <code>about:support</code> on the URL bar of your firefox, and in the page
 you will be redirected to, on the section labed as "profile folder" click the <b>open folder</b> button.</p>
@@ -142,7 +151,7 @@ interested on (or commenting them between /* and */)</p>
 <ul>
   <li>Home</li>
   <li>Preferences</li>
-  <li>Addons*</li>
+  <li>Addons</li>
   <li>About</li>
   <li>Error</li>
   <li>Cache</li>
@@ -153,10 +162,7 @@ interested on (or commenting them between /* and */)</p>
   <li>Debugging</li>
   <li>Support</li>
 </ul>
-
-<p>*The addons page has a popup (the one that appears when you right click an addon and choose "about...") that couldn't be
-styled.</p>
-<p>As of 24/11/2017, a dark theme for the Mozilla addons page was also added.</p>
+<p>It will also turn dark the <a href="https://addons.mozilla.org">Mozilla addons page</a>, both the old and the new.</p>
 
 <h2>The scrollbars.css file</h2>
 <img src="https://i.imgur.com/2WBVmxY.png?1" title="Dark blue scrollbar" /></a>
@@ -164,7 +170,8 @@ styled.</p>
 <p>Same as with the other files, you can edit the scrollbars appearance using the scrollbars.css, editing only past the 
 "New Scrollbar starts here" line. The reason for this is that to change the scrollbars we had to override the actual scrollbars
 default file of the program, so you have to keep the original lines above your changes to prevent firefox from crashing (as
-well as having a default scrollbar in case you wanted to play around with the new scrollbar attributes).</p> <br />
+well as having a default scrollbar in case you wanted to play around with the new scrollbar attributes).</p>
+
 <h2>Credits</h2>
 <p>The original code for the custom scrollbars belongs to <b>Arty2</b>, and you can find it <a href="https://gist.github.com/Arty2/fdf19aea2c601032410516f059d58eb1">here</a>.
 <p>The original code for the multirow tabs was written by <b>Andreicristianpetcu</b>, and you can find it <a href="https://discourse.mozilla.org/t/tabs-in-two-or-more-rows-like-tabmixpro-in-quantum/21657/2">here</a>, or for just the code, <a href="https://github.com/andreicristianpetcu/UserChrome-Tweaks/blob/09fa38a304af88b685f4086bc8ea9997dd7db0fd/tabs/multi_row_tabs_firefox_v57.css">here</a>.
