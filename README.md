@@ -64,7 +64,7 @@ The reason for this is that to style the scrollbars we can't use external styles
 
 <h4>For Linux, you can find firefox root folder here:</h4>
 <code>32-bits Firefox -> 	/usr/lib/firefox-(version) -> For example, if using Firefox 57: /usr/lib/firefox-57.0</code>
-<code>64-bits Firefox -> /usr/lib64/firefox-(version) -> For example, if using Firefox 57: /usr/lib64/firefox-57.0</code>
+<code>64-bits Firefox -> /usr/lib64/firefox-(version) -> F.ex, for Firefox 57: /usr/lib64/firefox-57.0</code>
 <br /><p>The installation directory path may vary depending on the distribution if you use a package manager to install the application from their repository.</p>
 
 <h4>For Mac, you can find firefox root folder here:</h4>
@@ -109,7 +109,7 @@ you will be redirected to, on the section labed as "profile folder" click the <b
 <p>The tilde character (~) refers to the current user's Home folder, so ~/Library is the /Macintosh HD/Users/(username)/Library folder. For OS X 10.7 Lion and above, the ~/Library folder is hidden by default.</p>
 
 <p>You can make them visible by typing the following in a terminal window.</p>
-<code>defaults write com.apple.finder AppleShowAllFiles TRUE</code>
+<code>defaults write com.apple.finder AppleShowAllFiles TRUE</code><br />
 <code>killall Finder</code>
 <br /><p>This will also cause any file icons to take on a hazy, 50% alpha look. To restore the old settings (hide the files and make the icons look normal) issue the same commands again, but enter FALSE instead of TRUE.<p>
 
