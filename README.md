@@ -3,9 +3,11 @@
 <p>This repository includes the files requires to (almost) fully dark theme firefox quantum to dark-gray colors 
 (with #222-#444 colors mostly). </p>
 <p><b>Of course... you could as well use these files to color your firefox any way you wanted</b>, the only thing you'd have to do is change the correct values (what each class or id does is commented above each) in the .css files (as far as you know some 
-basic css or color coding, it shouldn't be too hard)</p>
+basic css or <a href="https://www.w3schools.com/colors/colors_picker.asp">color coding</a>, it shouldn't be too hard)</p>
 <p>What this "theme" will not affect will be your persona, the text color used by it, and the accent color (line above active tab). To change those settings, you can change them manually through the <code>about:config</code> page, searching 
-<b>lightweightThemes.usedThemes</b> there, and changing the textcolor or accentcolor codes of your used persona respectively.</p>
+<b>lightweightThemes.usedThemes</b> there, and changing the textcolor or accentcolor codes of your used persona respectively as seen on the image below:</p>
+<img src="https://i.imgur.com/3lzN95E.png">
+<p>To change these you will have to use the right hex codes. You can find a color picker to hex code in <a href="https://www.w3schools.com/colors/colors_picker.asp">this page</a>.
 
 <h3>Last update: <b>07/12/2017</b></h3>
 <p>Files updated:</p>
