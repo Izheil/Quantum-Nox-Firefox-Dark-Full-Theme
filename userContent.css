@@ -1,6 +1,6 @@
 /* You can find an updated version here: https://github.com/Izheil/Firefox-57-full-dark-theme-with-scrollbars */
 /* Made by Izheil */
-/* Last updated: 01/12/2017 */
+/* Last updated: 07/12/2017 */
 
 /*------ COMMON PART FOR ALL FIREFOX PAGES (MAINLY USED FOR THE 404 PAGE) ------*/
 :root {
@@ -221,6 +221,37 @@ a:link {color: #4080CC}
 table#entries tr:nth-child(even) {background-color: #151515 !important}
 }
 
+/*------ DEBUGGING PAGE (about:debugging) ------*/
+@-moz-document url-prefix(about:debugging){
+
+/* This affects the categories part */
+#categories {background-color: #303030 !important}
+
+#categories button {
+	background-color: #303030 !important;
+	color: #fff !important}
+
+#categories button:hover {background-color: #252525 !important}
+
+#categories button.selected {color: #0084ff !important}
+
+/* This affects the main content part */
+.target-list .addon-target-container {background-color: #303030 !important}
+
+.main-content button {
+	background: linear-gradient(#2050AA, #203050) !important;
+    color: #FFF !important;
+	border: 1px solid #0050aa !important}
+
+.main-content button:hover {
+	background: linear-gradient(#203050, #2050AA) !important;
+    color: #0FF !important}
+
+/* These are the alert message that appears on the "workers" category, and the status notice */
+.service-worker-multi-process {background-color: #d70 !important; color: #000 !important}
+
+span.target-status {background-color: #151515 !important}
+}
 /*------ CONFIGURATION PAGE (about:config) ------*/
 @-moz-document url(about:config) {
 :root {
@@ -296,11 +327,12 @@ h2, .page-subtitle {color: #aaa !important}
 
 button {
 	background: linear-gradient(#2050AA, #203050) !important;
-    color: #FFF !important}
+    	color: #FFF !important;
+	border: 1px solid #0050aa !important}
 
 button:hover {
 	background: linear-gradient(#203050, #2050AA) !important;
-    color: #0FF !important}
+    	color: #0FF !important}
 }
 
 /*------ SETTINGS PAGE (about:preferences) ------*/
@@ -329,11 +361,12 @@ default browser) */
 
 .accessory-button, button {
 	background: linear-gradient(#2050AA, #203050) !important;
-    color: #FFF !important}
+    	color: #FFF !important;
+	border: 1px solid #0050aa !important}
 
 .accessory-button:hover, button:hover {
 	background: linear-gradient(#203050, #2050AA) !important;
-    color: #0FF !important}
+    	color: #0FF !important}
 
 /* Search Panel, Dialog boxes and inputs in general */
 #engineList, .dialogBox > .groupbox-title, #browserHomePage,
@@ -407,12 +440,12 @@ menu:hover[disabled="true"] {
 
 .accessory-button, button {
 	background: linear-gradient(#2050AA, #203050) !important;
-    color: #FFF !important;
-    border: 1px solid #5080dd !important}
+    	color: #FFF !important;
+    	border: 1px solid #0050aa !important}
 
 .accessory-button:hover, button:hover {
 	background: linear-gradient(#203050, #2050AA) !important;
-    color: #0FF !important}
+    	color: #0FF !important}
 
 #searchInput {background-color: #303030 !important}
 
