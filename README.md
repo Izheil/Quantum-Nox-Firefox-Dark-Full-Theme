@@ -14,7 +14,7 @@ basic css or <a href="https://www.w3schools.com/colors/colors_picker.asp">color 
 <ul>
   <li><b>Scrollbar patchers</b> -> Created Windows patchers to change the scrollbars of firefox in a more automated way (You still need to re-patch using these after a firefox update).</li>
   <li><b>Userchrome.css</b> -> Changed the "done" button border color to a darker blue on the customization page.</li>
-  <li><b>Usercontent.css</b> -> Changed all about: pages buttons to have a darker blue border. Added the theme to the <code>about:support</code> page. Also fixed some problem with a border on bottom on mozilla addons pages.</li>
+  <li><b>Usercontent.css</b> -> Changed all about: pages buttons to have a darker blue border. Added the theme to the <code>about:support</code> page. Also fixed some problem with a border on bottom on mozilla addons pages, and the color of the closing button of the <code>about:home</code> snippet.</li>
 </ul>
 <h3>Pre-Last update: <b>04/12/2017</b></h3>
 <p>Files updated:</p>
