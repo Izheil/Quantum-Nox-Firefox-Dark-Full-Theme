@@ -9,23 +9,23 @@ basic css or <a href="https://www.w3schools.com/colors/colors_picker.asp">color 
 <img src="https://i.imgur.com/3lzN95E.png">
 <p>To change these you will have to use the right hex codes. You can find a color picker to hex code in <a href="https://www.w3schools.com/colors/colors_picker.asp">this page</a>.
 
-<h3>Last update: <b>07/12/2017</b></h3>
+<h3>Last update: <b>08/12/2017</b></h3>
+<p>Files updated:</p>
+<ul>
+  <li><b>Scrollbar patchers</b> -> Created Linux and Mac patchers to change the scrollbars of firefox in a more automated way (You still need to re-patch using these after a firefox update).</li>
+</ul>
+<h3>Pre-Last update: <b>07/12/2017</b></h3>
 <p>Files updated:</p>
 <ul>
   <li><b>Scrollbar patchers</b> -> Created Windows patchers to change the scrollbars of firefox in a more automated way (You still need to re-patch using these after a firefox update).</li>
   <li><b>Userchrome.css</b> -> Changed the "done" button border color to a darker blue on the customization page.</li>
   <li><b>Usercontent.css</b> -> Changed all about: pages buttons to have a darker blue border. Added the theme to the <code>about:support</code> page. Also fixed some problem with a border on bottom on mozilla addons pages, and the color of the closing button of the <code>about:home</code> snippet.</li>
 </ul>
-<h3>Pre-Last update: <b>04/12/2017</b></h3>
-<p>Files updated:</p>
-<ul>
-  <li><b>Userchrome.css</b> -> Added multirow support for the bookmarks toolbar (thanks to the code fixed by <b>jscher2000</b> in <a href="https://www.reddit.com/r/firefox/comments/75wya9/multiple_row_bookmark_toolbar_for_firefox_5758/">this reddit thread</a>) It won't be enabled by default, so you have to edit userchrome to use this feature. Also fixed some issue with Windows 8 close/min/resize buttons showing a bigger background with multirow tabs enabled.</li>
-</ul>
 
 <h2>FAQ:</h2>
 
 <h3>The scrollbars go back to the default ones after a firefox update!</h3>
-<p>To fix this you have to re-patch the <code>chrome.manifest</code> file after each firefox update either following the manual steps found in here (For Linux and Mac users this is the only way as of right now), <b>or applying the right re-patcher found on the "Scrollbar patchers" folder</b> (which should at least give you one or two months before having to re-patch it until the next firefox update).</p>
+<p>To fix this you have to re-patch the <code>chrome.manifest</code> file after each firefox update either following the manual steps found in here, <b>or applying the right re-patcher found on the "Scrollbar patchers" folder</b> (which should at least give you one or two months before having to re-patch it until the next firefox update).</p>
 <p>This problem happens because firefox overwrites the omni.ja and the <code>chrome.manifest</code> file with each firefox update to "clear" any possible problem with the old version, making our change only temporary without re-patching it after each update.</p>
 
 <h3>Why use this method instead of using <a href="https://addons.mozilla.org/es/firefox/addon/styl-us/">Stylus</a>?</h3>
@@ -60,7 +60,7 @@ of using the usercontent or userchrome files provided here.</p>
 <p>The scrollbars file isn't as easy to install as userchrome or usercontent (but still pretty simple). 
 The reason for this is that to style the scrollbars we can't use external styles through the stylus extension or userchrome.</p>
 <p>To install the scrollbars, you will have to overwrite (or edit it, since it's just a line) a file (<code>chrome.manifest</code>), as well as <b>placing the scrollbars.css file inside firefox's root folder</b>.</p>
-<p>To overwrite <code>chrome.manifest</code>, and place the scrollbars.css file inside firefox's root folder you can either use the batch files inside the "Scrollbars patchers" folder <b>with admin rights</b> (which will do the job for you), or you can do it manually (The batch files method is only available for Windows right now. I'll be making a similar method for linux and Mac later on this week).<p>
+<p>To overwrite <code>chrome.manifest</code>, and place the scrollbars.css file inside firefox's root folder you can either use the batch files inside the "Scrollbars patchers" folder <b>with admin rights</b> (which will do the job for you), or you can do it manually.<p>
 <p><b>Since firefox resets the <code>chrome.manifest</code> file with each new update, you will have to change it each time firefox updates</b> (which should at least give you one or two months before having to re-edit it). Again, you can do this manually, or applying the right "re-patcher" batch file (giving it admin rights) on the "Scrollbar patchers" folder after each firefox update.</p>
 
 <p>For those that want (or have) to do it manually, I'll explain the method to patch the scrollbars below. The first thing to do would be finding <b>firefox's root folder</b> to place the scrollbars.css file in there, as well as editing the <code>chrome.manifest</code> file.<p>
