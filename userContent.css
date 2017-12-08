@@ -66,8 +66,8 @@ a:link {color: #0084ff !important}
 a:hover {color: #0ff !important}
 a:active {color: #fff !important}
 }
-/*------ HOME PAGE (About:home) ------*/ 
-@-moz-document url-prefix(about:home){
+/*------ HOME/NEWTAB PAGE (About:home, about:newtab) ------*/ 
+@-moz-document url-prefix(about:home), url-prefix(about:newtab){
 
 body { 
  	background-color: #202020  !important;
@@ -201,13 +201,8 @@ body {
 	border: 1px solid #090 !important}
 }
 
-/*------ BLANK PAGE (about:blank) ------*/
-@-moz-document url(about:blank){
-body {background-color: #202020 !important}
-}
-
-/*------ ABOUT PAGE (about:about) ------*/
-@-moz-document url(about:about){
+/*------ ABOUT/BLANK PAGE (about:about, about:blank) ------*/
+@-moz-document url(about:about), url(about:blank){
 body {background-color: #202020  !important}
 p {color: #AAA !important}
 h1 {color: #FFF !important}
@@ -338,8 +333,8 @@ button:hover {
     	color: #0FF !important}
 }
 
-/*------ SETTINGS PAGE (about:preferences) ------*/
-@-moz-document url-prefix(about:preferences){
+/*------ SETTINGS/ADDONS COMMON PART (about:preferences, about:addons) ------*/
+@-moz-document url-prefix(about:preferences), url-prefix(about:addons){
 
 /* Sidebar */
 :root {
@@ -374,6 +369,10 @@ default browser) */
 /* Search Panel, Dialog boxes and inputs in general */
 #engineList, .dialogBox > .groupbox-title, #browserHomePage,
 #searchInput {background-color: #303030 !important}
+}
+
+/*------ SETTINGS PAGE (about:preferences) ------*/
+@-moz-document url-prefix(about:preferences), url-prefix(about:addons){	
 
 .dialogBox {background-color: #202020 !important}
 
@@ -391,23 +390,6 @@ treecol:hover {background-color: #666 !important}
 
 /*------ EXTENSIONS PAGE (about:addons) ------*/
 @-moz-document url-prefix(about:addons){
-
-/* Sidebar */
-:root {
-	--in-content-page-background: #202020 !important;
-	--in-content-category-text: #fff !important;
-	--in-content-text-color: #fff !important;
-	--in-content-selected-text: #000 !important;
-	--in-content-item-selected: #0a50AA !important;
-	--in-content-item-hover: rgba(0,90,170,0.25) !important;
-	background-color: #303030 !important}
-
-/* Main Content */
-.main-content {
- 	background-color: #202020 !important;
-    color: #AAA !important}
-
-.groupbox-title {color: #FFF !important}
 
 /* Context menus*/
 #header-utils-btn .scrollbox-innerbox,
@@ -439,19 +421,6 @@ menu:hover[disabled="true"] {
 	padding-bottom: 2px;
 	background-color: #333 !important} 
 
-/* This changes some of the buttons color */
-
-.accessory-button, button {
-	background: linear-gradient(#2050AA, #203050) !important;
-    	color: #FFF !important;
-    	border: 1px solid #0050aa !important}
-
-.accessory-button:hover, button:hover {
-	background: linear-gradient(#203050, #2050AA) !important;
-    	color: #0FF !important}
-
-#searchInput {background-color: #303030 !important}
-
 richlistitem.addon.addon-view[selected="true"] {color: #FFF !important}
 
 .addon {color: #4080CC !important}
@@ -478,18 +447,7 @@ richlistitem.addon.addon-view[selected="true"] {color: #FFF !important}
 	background-color: #505050 !important}
 }
 /* This is still in the addons page, it's the "discover" page thing */
-@-moz-document url-prefix(https://addons-discovery.cdn.mozilla.net) {
-
-.disco-content h1, .content h2 {color: #FFF !important}
-
-.disco-content p, .content p, .content blockquote {color: #AAA !important}
-
-#react-view {background-color: #202020 !important}
-
-.addon.theme, .addon.extension, .addon.theme {background-color: #303030 !important}
-}
-
-@-moz-document url-prefix(https://discovery.addons.mozilla.org) {
+@-moz-document url-prefix(https://addons-discovery.cdn.mozilla.net), url-prefix(https://discovery.addons.mozilla.org) {
 
 .disco-content h1, .content h2 {color: #FFF !important}
 
