@@ -25,6 +25,10 @@ dialog, window, prefpane,
 prefwindow, .windowDialog {
  	background-color: #202020 !important;
  	color: #ccc !important}
+/* This changes the "add certificate exception" dialog background color */
+#badCertAdvancedPanel {background-color: #303030 !important}
+
+.exceptionDialogButtonContainer {background-color: #252525 !important}
 
 /* This is a little fix for all pages in case you have a dark windows theme, so that the 
 letters will have a blue neutral color to be seen in either a white or dark background for 
