@@ -6,7 +6,8 @@ sudo sh -c 'echo "override chrome://global/skin/scrollbars.css scrollbars.css" >
 For 32-bits Firefox:
 sudo sh -c 'echo "override chrome://global/skin/scrollbars.css scrollbars.css" > /usr/lib/firefox/chrome.manifest'
 
-(If you want a more automated way, you can always make an executable file with "chmod +x /your-route-goes-here/patch.sh" typing the codes of the patch inside the "patch.sh" file)
+(If you want a more automated way, you can always make an executable file with "chmod +x /your-route-goes-here/patch.sh" 
+typing the codes of the patch inside the "patch.sh" file)
 
 The installation directory path may vary depending on the distribution if you use a package manager to install the 
 application from their repository, so change if necessary.
