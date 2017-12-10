@@ -9,17 +9,15 @@ basic css or <a href="https://www.w3schools.com/colors/colors_picker.asp">color 
 <img src="https://i.imgur.com/3lzN95E.png">
 <p>To change these you will have to use the right hex codes. You can find a color picker to hex code in <a href="https://www.w3schools.com/colors/colors_picker.asp">this page</a>.
 
-<h3>Last update: <b>08/12/2017</b></h3>
+<h3>Last update: <b>10/12/2017</b></h3>
+<p>Files updated:</p>
+<ul>
+  <li><b>Usercontent</b> -> Themed the "donate" buttons on the <code>about:home</code> and <code>about:newtab</code> pages.</li>
+</ul>
+<h3>Pre-Last update: <b>08/12/2017</b></h3>
 <p>Files updated:</p>
 <ul>
   <li><b>Scrollbar patchers</b> -> Created Linux and Mac patchers to change the scrollbars of firefox in a more automated way (You still need to re-patch using these after a firefox update).</li>
-</ul>
-<h3>Pre-Last update: <b>07/12/2017</b></h3>
-<p>Files updated:</p>
-<ul>
-  <li><b>Scrollbar patchers</b> -> Created Windows patchers to change the scrollbars of firefox in a more automated way (You still need to re-patch using these after a firefox update).</li>
-  <li><b>Userchrome.css</b> -> Changed the "done" button border color to a darker blue on the customization page.</li>
-  <li><b>Usercontent.css</b> -> Changed all about: pages buttons to have a darker blue border. Added the theme to the <code>about:support</code> page. Also fixed some problem with a border on bottom on mozilla addons pages, and the color of the closing button of the <code>about:home</code> snippet.</li>
 </ul>
 
 <h2>FAQ:</h2>
