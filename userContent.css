@@ -186,6 +186,12 @@ body {
 #snippets-container p {
 	color: #50AAFF !important}
 
+.snippet p em {
+	background: transparent !important;
+	font-weight: 900 !important}
+
+.monthly-checkbox-label {color: #ccc !important}	
+	
 .block-snippet-button {
 	filter: invert(50%) !important}
 	
@@ -203,6 +209,16 @@ body {
 	background-color: #099940 !important;
 	color: #FFF !important;
 	border: 1px solid #090 !important}
+
+.button.donation-amount.donation-amount-first, .button.donation-amount.donation-amount-second,
+.button.donation-amount.donation-amount-third, .button.donation-amount.donation-amount-fourth {
+	background-color: #444 !important;
+	color: #fff !important;
+	border: 1px solid #333 !important}
+
+#snippets-container .button-selected {
+	background-color: #222 !important;
+	border: 1px solid #0084ff !important}
 }
 
 /*------ ABOUT/BLANK PAGE (about:about, about:blank) ------*/
