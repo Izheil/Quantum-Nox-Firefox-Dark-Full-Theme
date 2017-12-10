@@ -1,6 +1,6 @@
 /* You can find an updated version here: https://github.com/Izheil/Firefox-57-full-dark-theme-with-scrollbars */
 /* Made by Izheil */
-/* Last updated: 04/12/2017 */
+/* Last updated: 10/12/2017 */
 
 /* DO NOT DELETE THIS LINE */
 @namespace url("http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul");
@@ -140,6 +140,12 @@ menupopup {
 
 /* Fix for the padding of "save as" after the navigation buttons have been eliminated */
 #context-savepage {padding-top: 6px !important}
+
+/* Fix for context menu addons separator appearing doubled */
+#contentAreaContextMenu > menuseparator:nth-child(92) {display: none !important}
+
+/* Fix for context menu separators randomly appearing full-width */
+menuseparator {margin-left: 0.5px !important}
 
 /* AUTOCOMPLETE COLORS */
 
