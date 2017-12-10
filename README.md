@@ -13,7 +13,7 @@ basic css or <a href="https://www.w3schools.com/colors/colors_picker.asp">color 
 <p>Files updated:</p>
 <ul>
   <li><b>Usercontent</b> -> Themed the "donate" buttons on the <code>about:home</code> and <code>about:newtab</code> pages.</li>
-  <li><b>Userchrome</b> -> Fixed some issues with the context menu separators (they would randomly go full width upon hover).</li>
+  <li><b>Userchrome</b> -> Fixed some issues with the context menu separators (they would randomly go full width upon hover). Also hid the "take a screenshot" option on the context menu along with it's separator (would make the separator below "inspect content" look double the size (You can still take screenshots using the 3 dots on the urlbar or from the main menu > Catalog).</li>
 </ul>
 <h3>Pre-Last update: <b>08/12/2017</b></h3>
 <p>Files updated:</p>
