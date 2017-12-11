@@ -1,5 +1,15 @@
 For Linux, you would just need to run these on the commands window:
 
+You can either use the "1st-patch.sh" file here, for which you'd first have to give it executable permisions with this:
+
+chmod +x (route of 1st-patch.sh here)/1st-patch.sh
+
+And then you can run it just typing:
+
+sh 1st-patch.sh
+
+Alternativelly, you can just type these commands directly on the terminal:
+
 sudo mv ./scrollbars.css /usr/lib/firefox/browser
 sudo sh -c 'echo "override chrome://global/skin/scrollbars.css scrollbars.css" > /usr/lib/firefox/browser/chrome.manifest'
 
@@ -10,6 +20,5 @@ For some distributions they make a difference between 64-bits firefox, so in cas
 For 64-bits Firefox:
 sudo mv ./scrollbars.css /usr/lib64/firefox/browser
 sudo sh -c 'echo "override chrome://global/skin/scrollbars.css scrollbars.css" > /usr/lib64/firefox//browser/chrome.manifest'
-
 
 ^ The default path of both of these may vary depending on your distribution or if you used a custom path.
