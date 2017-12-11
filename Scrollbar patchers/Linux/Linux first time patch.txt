@@ -1,11 +1,15 @@
-For Linux, you would just need to run these on the commands window, depending on your firefox version:
+For Linux, you would just need to run these on the commands window:
+
+sudo mv ./scrollbars.css /usr/lib/firefox/browser
+sudo sh -c 'echo "override chrome://global/skin/scrollbars.css scrollbars.css" > /usr/lib/firefox/browser/chrome.manifest'
+
+Where "./scrollbars.css" assumes that you are in the folder where the scrollbars.css file is (if not, change the path as necessary).
+
+For some distributions they make a difference between 64-bits firefox, so in case it gives you an error, you can try the 64-bits path:
 
 For 64-bits Firefox:
 sudo mv ./scrollbars.css /usr/lib64/firefox/browser
 sudo sh -c 'echo "override chrome://global/skin/scrollbars.css scrollbars.css" > /usr/lib64/firefox//browser/chrome.manifest'
 
-For 32-bits Firefox:
-sudo mv ./scrollbars.css /usr/lib/firefox/browser
-sudo sh -c 'echo "override chrome://global/skin/scrollbars.css scrollbars.css" > /usr/lib/firefox/browser/chrome.manifest'
 
-^ The path may vary depending on your distribution or if you used a custom path.
+^ The default path of both of these may vary depending on your distribution or if you used a custom path.
