@@ -1,3 +1,5 @@
+You'd only have to apply the first-time patch once (either manually, or following the steps here).
+
 For Linux, you would just need to run these on the commands window:
 
 You can either use the "1st-patch.sh" file here, for which you'd first have to give it executable permisions with this:
