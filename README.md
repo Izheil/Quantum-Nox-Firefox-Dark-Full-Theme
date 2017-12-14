@@ -46,6 +46,8 @@ basic css or <a href="https://www.w3schools.com/colors/colors_picker.asp">color 
 
 <h2>Installation</h2>
 
+<p>There is a short steps version (TL;DR version) after the description of the installing method</p>
+
 <h3>Main browser UI</h3>
 
 <img src="https://i.imgur.com/dmIuudb.png" title="Dark firefox overall UI" />
@@ -55,7 +57,19 @@ chrome folder of your firefox profile (Look below for "the chrome folder" sectio
 <p>If you are only looking for how to change the default scrollbars, you can apply just that without the need
 of using the usercontent or userchrome files provided here.</p>
 
+<h4>Short version:</h4>
+<ul>
+  <li>Type <code>about:support</code> in your URL bar, then go to that page.</li>
+  <li>Click the "open folder" button inside the "profile folder" section.</li>
+  <li>Create a folder named "chrome" in your profile folder if it doesn't exist yet.</li>
+  <li>Place "usercontent.css" and "userchrome.css" inside the "chrome" folder.</li>
+  <li>(Optional) Edit userchrome.css to disable or re-enable features typing "/*" before the lines you don't want to apply, and "/*" after them (If you want some line to apply that is within those slashes, just delete the starting "/*".</li>
+  <li>(Optional) If you have Ublock Origin and want the blocked page to be dark as well, edit usercontent.css (the url line explained in there) to have the dynamic url of your ublock extension.
+</ul>
+
 <h3>The scrollbars</h3>
+<img src="https://i.imgur.com/2WBVmxY.png?1" title="Dark blue scrollbar" />
+
 <p>The scrollbars file isn't as easy to install as userchrome or usercontent (but still pretty simple). 
 The reason for this is that to style the scrollbars we can't use external styles through the stylus extension or userchrome.</p>
 <p>To install the scrollbars, you will have to overwrite (or edit it, since it's just a line) a file (<code>chrome.manifest</code>), as well as <b>placing the scrollbars.css file in the same folder as the <code>chrome.manifest</code> we have to edit</b>.</p>
@@ -96,6 +110,39 @@ The reason for this is that to style the scrollbars we can't use external styles
 
 <p>If you have done everything correctly, firefox should have the custom-made scrollbars now (or after you restart firefox if
 you had it open).</p>
+  
+<h4>Short version (Windows):</h4>
+<ul>
+  <li>Download the repository files, and go to the windows scrollbar patchers folder.</li>
+  <li>Make sure there is a "scrollbars.css" file inside the folder where the .bat files are.</li>
+  <li>Find out if you have a 32-bits windows or a 64-bits one (If you have a "program files (x86)" folder on your c: drive you have a 64-bits Windows).</li>
+  <li>If you have a 32-bits windows, launch the "First time patch (64-bits).bat" file (Yes, the 64 bits one).</li>
+  <li>If you have a 64-bits windows, open firefox, open the hamburguer menu, go to help > about firefox, and check if you have a 32-bits or a 64-bits firefox. If 32-bits firefox, launch "First time patch (32-bits).bat", otherwise the 64-bits one.</li>
+  <li>Restart firefox if you had it open for the changes to apply.</li>
+  <li>(Optional) Copy the "re-patcher.bat" file that applies to your windows and firefox somewhere so that you can re-apply it after a firefox update to get back the custom scrollbars (only once after each update).</li>
+</ul>
+
+<h4>Short version (Linux):</h4>
+<ul>
+  <li>Download the repository files, and go to the linux scrollbar patchers folder.</li>
+  <li>Make sure there is a "scrollbars.css" file inside the folder where the .sh files are.</li>
+  <li>(Optional) Move the "scrollbars.css" and "1st-patch.sh" files to a short path folder.</li>
+  <li>If you have a custom path for firefox installation folder, update the path routes on the patch files.</li>
+  <li>Open a terminal, and type <code>chmod +x /(the path where the 1st-patch.sh file is)/1st-patch.sh</code>.</li>
+  <li>Type <code>sh /(the path where the 1st-patch.sh file is)/1st-patch.sh</code>.</li>
+  <li>Restart firefox if you had it open for the changes to apply.</li>
+  <li>(Optional) Copy the "re-patcher.sh" file somewhere safe so that you can re-apply it after a firefox update to get back the custom scrollbars (only once after each update).</li>
+</ul>
+
+<h4>Short version (Mac):</h4>
+<ul>
+  <li>Download the repository files, and go to the linux scrollbar patchers folder.</li>
+  <li>Make sure there is a "scrollbars.css" file inside the folder where the patch files are.</li>
+  <li>If you have a custom path for firefox installation folder, update the path routes on the patch files.</li>
+  <li>Execute the first time patch (Or run it's commands on a terminal)</li>
+  <li>Restart firefox if you had it open for the changes to apply.</li>
+  <li>(Optional) Copy the re-patch file somewhere safe so that you can re-apply it after a firefox update to get back the custom scrollbars (only once after each update).</li>
+</ul>
 
 <h3>The chrome folder</h3>
 <p>If you don't know where that is, just type <code>about:support</code> on the URL bar of your firefox, and in the page
@@ -168,7 +215,7 @@ interested on (or commenting them between /* and */)</p>
 <p>It will also turn dark the <a href="https://addons.mozilla.org">Mozilla addons page</a>, both the old and the new.</p>
 
 <h2>The scrollbars.css file</h2>
-<img src="https://i.imgur.com/2WBVmxY.png?1" title="Dark blue scrollbar" /></a>
+<img src="https://i.imgur.com/2WBVmxY.png?1" title="Dark blue scrollbar" />
 
 <p>Same as with the other files, you can edit the scrollbars appearance using the scrollbars.css, editing only past the 
 "New Scrollbar starts here" line. The reason for this is that to change the scrollbars we had to override the actual scrollbars
