@@ -1,6 +1,6 @@
 /* You can find an updated version here: https://github.com/Izheil/Firefox-57-full-dark-theme-with-scrollbars */
 /* Made by Izheil */
-/* Last updated:10/12/2017 */
+/* Last updated:15/12/2017 */
 
 /*------ COMMON PART FOR ALL FIREFOX PAGES (MAINLY USED FOR THE 404 PAGE) ------*/
 :root {
@@ -41,11 +41,11 @@ input[type=datetime-local], input[type=time], input[type=week], input[type=month
 input[type=number], input[type=search], input[type=tel], input[type=url], textarea 
 {color: #2066dd !important}}
 
-/*------ UBLOCK ORIGIN BLOCKING PAGE ------*/
+/*------ UBLOCK ORIGIN ADDON PAGES ------*/
 /* To use this part of the code, you will have to find the dynamic ID of your ublock origin extension,
 and replace it where the random numbers are (the numbers after moz-extension://).To find it, just open the 
 advanced settings page and copy the numbers in the URL after moz-extension there in here, and then uncomment this
-by deleting the "/*" under this line. */
+by deleting the "/*" under this line (Feel free to delete all these if you don't use Ublock Origin). */
 /*
 @-moz-document url-prefix(moz-extension://1e3752b9-2b9d-4dd5-8c06-64abbbd32538/document-blocked.html){
 
@@ -69,6 +69,125 @@ button:hover, select:hover {
 a:link {color: #0084ff !important}
 a:hover {color: #0ff !important}
 a:active {color: #fff !important}
+}
+
+@-moz-document url-prefix(moz-extension://1e3752b9-2b9d-4dd5-8c06-64abbbd32538/dashboard.html) {
+
+#dashboard-nav-widgets {background: #222 !important; border-bottom: 1px solid black !important}
+
+#dashboard-nav-widgets span {color: #ccc !important}
+
+a {
+	background-color: #444 !important; 
+	color: #777 !important;
+	border: 1px solid black !important;
+	border-bottom: 1px solid transparent !important}
+
+a.tabButton.selected {
+	background-color: #333 !important; 
+	color: #ccc !important;
+	border: 1px solid black !important;
+	border-bottom: 1px solid transparent !important}
+}
+
+
+@-moz-document url(moz-extension://1e3752b9-2b9d-4dd5-8c06-64abbbd32538/settings.html),
+url(moz-extension://1e3752b9-2b9d-4dd5-8c06-64abbbd32538/3p-filters.html),
+url(moz-extension://1e3752b9-2b9d-4dd5-8c06-64abbbd32538/1p-filters.html),
+url(moz-extension://1e3752b9-2b9d-4dd5-8c06-64abbbd32538/dyna-rules.html),
+url(moz-extension://1e3752b9-2b9d-4dd5-8c06-64abbbd32538/whitelist.html),
+url(moz-extension://1e3752b9-2b9d-4dd5-8c06-64abbbd32538/about.html),
+url(moz-extension://1e3752b9-2b9d-4dd5-8c06-64abbbd32538/advanced-settings.html){
+body, html {
+	background: #333 !important;
+	color: #ccc !important;
+}
+
+a:link {color: #0084ff !important}
+a:hover {color: #0ff !important}
+a:active {color: #0050aa !important}
+
+a.fa.info, a.fa.mustread, a.fa.support, 
+.fa.status.cache {color: #bbb !important}
+
+button:not(.whatisthis):not(#buttonUpdate) {
+	background: linear-gradient(#333, #111) !important;
+    color: #ccc !important;
+	border: 1px solid #000 !important}
+
+button:not(.whatisthis):not(#buttonUpdate):hover {
+	background: linear-gradient(#111, #333) !important;
+    color: #fff !important}
+
+button.whatisthis {filter: brightness(200%) !important}
+
+#buttonUpdate, button.important {
+	background: linear-gradient(#fa0, #a20) !important;
+	background-image: linear-gradient(#fa0, #a20) !important;
+    color: #ddd !important;
+	border: 1px solid #f50 !important}
+
+#buttonUpdate:hover, button.important:hover {
+	background: linear-gradient(#a20, #fa0) !important;
+	background-image: linear-gradient(#a20, #fa0) !important;
+    color: #fff !important}
+
+a.fa.info.important {color: #fa0 !important}
+
+.fa.status.unsecure, a.fa.remove {color: #f33 !important}
+
+textarea, .whatisthis-expanded {
+	-moz-appearance: none !important; 
+	background-color: #222 !important; 
+	color: #aaa !important;
+	border: 2px solid #000 !important}
+
+
+code {background-color: #222 !important}
+
+.rulesContainer li:nth-child(odd) {background-color: #222 !important}
+.rulesContainer li:nth-child(even) {background-color: #444 !important}
+
+input[type=number] {
+	-moz-appearance: none !important;
+	background: #222 !important;
+	border: 1px solid #000 !important;
+	color: #ccc !important}
+}
+
+@-moz-document url-prefix(moz-extension://1e3752b9-2b9d-4dd5-8c06-64abbbd32538/popup.html) {
+
+#appinfo {background: #111 !important}
+
+#refresh, #saveRules, #revertRules {background-color: #222 !important; border: 1px solid #000 !important}
+
+.tooltipContainer, #panes {background-color: #333 !important}
+
+.tool.enabled:hover {color: #fff !important}
+
+p {color: #ccc !important}
+.statValue {color: #888 !important}
+
+h2 {
+	background-color: #222 !important; 
+	color: #ddd !important}
+
+#extraTools, #tooltip {
+	background-color: #444 !important;
+	color: #ccc !important}
+
+#extraTools span:hover {color: #888 !important}
+
+#firewallContainer span {
+	background-image: linear-gradient(rgba(0,0,0,0.7),rgba(0,0,0,0.7)) !important; 
+	border-bottom: 1px solid #000 !important;
+	color: #ccc !important}
+
+#firewallContainer span:hover {background-image: linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5)) !important}
+
+#firewallContainer span span, #firewallContainer span span:hover  {
+	background-image: none !important;
+	border-bottom: 1px solid transparent !important}
 }
 /*------ HOME/NEWTAB PAGE (About:home, about:newtab) ------*/ 
 @-moz-document url-prefix(about:home), url-prefix(about:newtab){
