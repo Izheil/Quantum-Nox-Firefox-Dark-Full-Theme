@@ -12,7 +12,7 @@ basic css or <a href="https://www.w3schools.com/colors/colors_picker.asp">color 
 <h3>Last update: <b>15/12/2017</b></h3>
 <p>Files updated:</p>
 <ul>
-  <li><b>Usercontent</b> -> Themed most (if not all) of Ublock Origin addon pages, including the popup. For some reason Firefox doesn't want to load some classes for the popup (even tho I've tested they work on the actual popup page from the extension), so some little things won't seem themed. Let's hope mozilla fixes this later on... if not, it's still darker than the regular popup, so I guess it's a little improvement.</li>
+  <li><b>Usercontent</b> -> Themed most (if not all) of Ublock Origin addon pages, including the popup. For some reason Firefox doesn't want to load some classes for the popup (even tho I've tested they work on the actual popup page from the extension), so some little things won't seem themed. Let's hope mozilla fixes this later on... if not, it's still darker than the regular popup, so I guess it's a little improvement. Also changed the "folder browser" page link colors.</li>
 </ul>
 <h3>Pre-Last update: <b>10/12/2017</b></h3>
 <p>Files updated:</p>
