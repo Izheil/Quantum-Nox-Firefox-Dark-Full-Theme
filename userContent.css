@@ -41,6 +41,13 @@ input[type=datetime-local], input[type=time], input[type=week], input[type=month
 input[type=number], input[type=search], input[type=tel], input[type=url], textarea 
 {color: #2066dd !important}}
 
+/*------ FILE BROWSING ------*/
+@-moz-document url-prefix(file://){
+#UI_goUp a.up:link, a.file:link, a.dir:link {color: #0084ff !important}
+#UI_goUp a.up:hover, .ellipsis a.file:hover, .ellipsis a.dir:hover {color: #0ff !important}
+#UI_goUp a.up:active, .ellipsis a.file:active, .ellipsis a.dir:active {color: #0050aa !important}
+}
+
 /*------ UBLOCK ORIGIN ADDON PAGES ------*/
 /* To use this part of the code, you will have to find the dynamic ID of your ublock origin extension,
 and replace it where the random numbers are (the numbers after moz-extension://).To find it, just open the 
