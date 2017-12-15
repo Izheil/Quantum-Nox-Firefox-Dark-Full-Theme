@@ -9,16 +9,16 @@ basic css or <a href="https://www.w3schools.com/colors/colors_picker.asp">color 
 <img src="https://i.imgur.com/3lzN95E.png">
 <p>To change these you will have to use the right hex codes. You can find a color picker to hex code in <a href="https://www.w3schools.com/colors/colors_picker.asp">this page</a>.
 
-<h3>Last update: <b>10/12/2017</b></h3>
+<h3>Last update: <b>15/12/2017</b></h3>
+<p>Files updated:</p>
+<ul>
+  <li><b>Usercontent</b> -> Themed most (if not all) of Ublock Origin addon pages, including the popup. For some reason Firefox doesn't want to load some classes for the popup (even tho I've tested they work on the actual popup page from the extension), so some little things won't seem themed. Let's hope mozilla fixes this later on... if not, it's still darker than the regular popup, so I guess it's a little improvement.</li>
+</ul>
+<h3>Pre-Last update: <b>10/12/2017</b></h3>
 <p>Files updated:</p>
 <ul>
   <li><b>Usercontent</b> -> Themed the "donate" buttons on the <code>about:home</code> and <code>about:newtab</code> pages.</li>
   <li><b>Userchrome</b> -> Fixed some issues with the context menu separators (they would randomly go full width upon hover). Also hid the "take a screenshot" option on the context menu along with it's separator (would make the separator below "inspect content" look double the size (You can still take screenshots using the 3 dots on the urlbar or from the main menu > Catalog).</li>
-</ul>
-<h3>Pre-Last update: <b>08/12/2017</b></h3>
-<p>Files updated:</p>
-<ul>
-  <li><b>Scrollbar patchers</b> -> Created Linux and Mac patchers to change the scrollbars of firefox in a more automated way (You still need to re-patch using these after a firefox update).</li>
 </ul>
 
 <h2>FAQ:</h2>
@@ -40,9 +40,9 @@ basic css or <a href="https://www.w3schools.com/colors/colors_picker.asp">color 
   <li>You can hide the sidebar completelly resizing it instead of having to click the sidebar button.</li>
   <li>Can change the URL bar font (You have to change the commented line on userchrome to use it).</li>
   <li>Can change the tabs position under the URL bar (You have to change the commented line on userchrome to use it).</li>
-  <li>Change the Ublock Origin blocking page to a dark version (You need to change the commented line on usercontent).</li>
+  <li>Change the Ublock Origin blocking/control panel/popup page to a dark version (You need to change the commented lines and update the dynamic url of the extension on usercontent).</li>
 </ul>
-<p>You can turn these features on or off changing the commented lines on the CSS file (To change them you just have to open the userchrome.css with notepad or any code editor, and encase between "/*" and "*/" (without the quotation marks) the lines you don't want to take effect)</p>
+<p>You can turn these features on or off changing the commented lines on the CSS file (To change them you just have to open the userchrome.css with notepad or any code editor, and encase between "/*" and "*/" (without the quotation marks) the lines you don't want to take effect). Of course, if you think that you are NEVER going to use certain feature, you can always delete the specific lines you don't want without any other side-effect.</p>
 
 <h2>Installation</h2>
 
