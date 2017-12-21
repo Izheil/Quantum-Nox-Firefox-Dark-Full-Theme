@@ -12,13 +12,13 @@ basic css or <a href="https://www.w3schools.com/colors/colors_picker.asp">color 
 <h3>Last update: <b>15/12/2017</b></h3>
 <p>Files updated:</p>
 <ul>
-  <li><b>Usercontent</b> -> Themed most (if not all) of Ublock Origin addon pages, including the popup. For some reason Firefox doesn't want to load some classes for the popup (even tho I've tested they work on the actual popup page from the extension), so some little things won't seem themed. Let's hope mozilla fixes this later on... if not, it's still darker than the regular popup, so I guess it's a little improvement. Also changed the "folder browser" page link colors.</li>
+  <li><b>Usercontent</b> -> Changed the bolded text color on <code>about:home</code> so that it matches the regular one.</li>
 </ul>
 <h3>Pre-Last update: <b>10/12/2017</b></h3>
 <p>Files updated:</p>
 <ul>
-  <li><b>Usercontent</b> -> Themed the "donate" buttons on the <code>about:home</code> and <code>about:newtab</code> pages.</li>
-  <li><b>Userchrome</b> -> Fixed some issues with the context menu separators (they would randomly go full width upon hover). Also hid the "take a screenshot" option on the context menu along with it's separator (would make the separator below "inspect content" look double the size (You can still take screenshots using the 3 dots on the urlbar or from the main menu > Catalog).</li>
+  <li><b>Usercontent</b> -> Themed most (if not all) of Ublock Origin addon pages, including the popup. For some reason Firefox doesn't want to load some classes for the popup (even tho I've tested they work on the actual popup page from the extension), so some little things won't seem themed. Let's hope mozilla fixes this later on... if not, it's still darker than the regular popup, so I guess it's a little improvement. Also changed the "folder browser" page link colors.</li>
+</ul>
 </ul>
 
 <h2>FAQ:</h2>
