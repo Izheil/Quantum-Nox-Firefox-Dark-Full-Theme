@@ -1,6 +1,6 @@
 /* You can find an updated version here: https://github.com/Izheil/Firefox-57-full-dark-theme-with-scrollbars */
 /* Made by Izheil */
-/* Last updated: 21/12/2017 */
+/* Last updated: 30/12/2017 */
 
 /*------ COMMON PART FOR ALL FIREFOX PAGES (MAINLY USED FOR THE 404 PAGE) ------*/
 :root {
@@ -603,6 +603,27 @@ richlistitem.addon.addon-view[selected="true"] {color: #FFF !important}
 #react-view {background-color: #202020 !important}
 
 .addon.theme, .addon.extension, .addon.theme {background-color: #303030 !important}
+}
+
+/*------ HEALTHREPORT PAGE (about:healthreport) ------*/
+@-moz-document url-prefix(https://fhr.cdn.mozilla.net/){
+.headerContainer, .persistentHeader {
+	background: #222 !important;
+	color: #ddd !important}
+
+.sidebar, #health, body, .tipBox-container {
+	background: #333 !important;
+	color: #ddd !important}
+
+li {color: #ddd !important}
+
+span, .statsBoxSection-header {color: #fff !important}
+
+.tipBox-header {
+	background: #444 !important;
+	color: #ddd !important}
+
+.tipBox-content {background: #555 !important}
 }
 
 /*------ MOZILLA ADDONS PAGE (Includes both the new and the old) ------*/
