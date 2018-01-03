@@ -9,15 +9,15 @@ basic css or <a href="https://www.w3schools.com/colors/colors_picker.asp">color 
 <img src="https://i.imgur.com/3lzN95E.png">
 <p>To change these you will have to use the right hex codes. You can find a color picker to hex code in <a href="https://www.w3schools.com/colors/colors_picker.asp">this page</a>.
 
+<h3>Last update: <b>03/01/2017</b></h3>
+<p>Files updated:</p>
+<ul>
+  <li><b>Usercontent</b> -> Added the <code>about:profiles</code> page.</li>
+</ul>
 <h3>Last update: <b>30/12/2017</b></h3>
 <p>Files updated:</p>
 <ul>
   <li><b>Usercontent</b> -> Added the <code>about:healthreport</code> page (it is actually an external page hidden as an about: page... so it could be styled with a userstyle.</li>
-</ul>
-<h3>Last update: <b>21/12/2017</b></h3>
-<p>Files updated:</p>
-<ul>
-  <li><b>Usercontent</b> -> Changed the bolded text color on <code>about:home</code> so that it matches the regular one.</li>
 </ul>
 
 <h2>FAQ:</h2>
