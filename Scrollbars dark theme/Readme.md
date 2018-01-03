@@ -17,7 +17,7 @@
 
 <p>After that, type <code>about:profiles</code> on the URL bar of firefox, and open the local profile folder through that page. In here you will have enter the "startupcache" folder and delete all files here so that the scrollbars show properly next time you reset firefox (You will have to delete the cache every time you make a change to the scrollbars.uc.js file for it to take effect). You may have to close firefox to be able to delete all the files in the "startupcache" folder.</p>
 
-<p><b>Optional</b>:If you aren't fully convinced by the default custom scrollbar, you can try any of the other scrollbar types (only use one) using any of the scrollbar-*.uc.js files inside the "alternative scrollbars" instead of the scrollbar.uc.js inside the "profile" folder in here.</p>
+<p><b>Optional</b>: If you aren't fully convinced by the default custom scrollbar, you can try any of the other scrollbar types (only use one) using any of the scrollbar-*.uc.js files inside the "alternative scrollbars" instead of the scrollbar.uc.js inside the "profile" folder in here.</p>
 
 <p>If you have done everything right, you should see the custom scrollbars next time you open firefox (or after you restart it)</p>
 
