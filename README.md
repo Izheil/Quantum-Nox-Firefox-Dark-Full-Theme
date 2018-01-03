@@ -69,7 +69,7 @@ of using the usercontent or userchrome files provided here.</p>
 </ul>
 
 <h3>The scrollbars</h3>
-<img src="https://i.imgur.com/2WBVmxY.png?1" title="Dark blue scrollbar" />
+<img src="https://i.imgur.com/s668zt7.png" title="Dark blue scrollbar" />
 
 <p>To install the custom scrollbars to match the dark theme, you will have to use one of the 2 methods found on the "Scrollbars dark theme" or "Scrollbars patchers(Old method)" folders inside this repository. You should be using the "Scrollbars dark theme" folder method, since it's the most permanent, but if you find some bug or if the scrollbars lag for you, you could try using the old method one instead. The problem with the old method is that you will have to re-patch the scrollbars with each firefox update, but it's a mainly CSS method with no JavaScript involved, so the scrollbars shouldn't lag at all.</b>
 
@@ -144,13 +144,11 @@ interested on (or commenting them between /* and */)</p>
 </ul>
 <p>It will also turn dark the <a href="https://addons.mozilla.org">Mozilla addons page</a>, both the old and the new.</p>
 
-<h2>The scrollbars.css file</h2>
-<img src="https://i.imgur.com/2WBVmxY.png?1" title="Dark blue scrollbar" />
+<h2>The scrollbars.uc.js file</h2>
+<img src="https://i.imgur.com/s668zt7.png" title="Dark blue scrollbar" />
 
-<p>Same as with the other files, you can edit the scrollbars appearance using the scrollbars.css, editing only past the 
-"New Scrollbar starts here" line. The reason for this is that to change the scrollbars we had to override the actual scrollbars
-default file of the program, so you have to keep the original lines above your changes to prevent firefox from crashing (as
-well as having a default scrollbar in case you wanted to play around with the new scrollbar attributes).</p>
+<p>Same as with the other files, you can edit the scrollbars appearance using the scrollbars.uc.js, editing only past the 
+`s you will find there (which are the CSS code).</p>
 
 <h2>Credits</h2>
 <p>The original code for the custom scrollbars belongs to <b>Arty2</b>, and you can find it <a href="https://gist.github.com/Arty2/fdf19aea2c601032410516f059d58eb1">here</a>.
