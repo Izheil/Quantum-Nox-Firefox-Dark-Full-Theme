@@ -1,6 +1,6 @@
 /* You can find an updated version here: https://github.com/Izheil/Firefox-57-full-dark-theme-with-scrollbars */
 /* Made by Izheil */
-/* Last updated: 30/12/2017 */
+/* Last updated: 03/01/2018 */
 
 /*------ COMMON PART FOR ALL FIREFOX PAGES (MAINLY USED FOR THE 404 PAGE) ------*/
 :root {
@@ -454,11 +454,12 @@ html {background-color: #202020 !important}
 }
 
 /*------ PROFILE INFORMATION PAGE (about:support) ------*/
-@-moz-document url-prefix(about:support){
+@-moz-document url-prefix(about:support), url-prefix(about:profiles) {
 
 :root {
 	--in-content-table-header-background: #333 !important;
 	--aboutSupport-table-background: #555 !important;
+	--aboutProfiles-table-background: #555 !important;
 	--in-content-link-color-hover: #0FF !important;
 	--in-content-box-border-color: #aaa !important;
 	--in-content-table-border-dark-color: #000 !important;
