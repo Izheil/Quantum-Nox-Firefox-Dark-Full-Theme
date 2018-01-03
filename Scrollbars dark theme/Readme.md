@@ -11,7 +11,7 @@
 <h2>Installation</h2>
 <p>To install userChrome.js you have to do a few more steps than just copying it to your chrome folder. The reason for this is that Firefox doesn't allow userChrome.js by default, so we have to apply certain modifications so that it allows it.</p>
 
-<p>First, copy the contents of the "Root" folder found here to Firefox's root folder. These contents include the <b>config.js</b>, <b>userChromeJS.js</b> and the <b>config-prefs.js</b> file inside the "default/prefs" folders (You have to keep this path structure when moving the files to Firefox root folder). If you don't know where that is, you can find an explanation on how to find it in the last section of this page.<p>
+<p>First, copy the contents of the "Root" folder found here to Firefox's root folder. These contents include the <b>config.js</b>, <b>userChromeJS.js</b> and the <b>config-prefs.js</b> file inside the "defaults/pref" folders (You have to keep this path structure when moving the files to Firefox root folder). If you don't know where that is, you can find an explanation on how to find it in the last section of this page.<p>
   
 <p>Once you have done this, all you have to do is open the chrome folder inside your profile folder (If you don't know where that is you can find an explanation on the section below) and place the contents that are inside the "profile" folder here in there. This is the same folder where you would place userchrome.css and usercontent.css.<p>
 
