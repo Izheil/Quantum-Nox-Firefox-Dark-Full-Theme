@@ -141,12 +141,13 @@ interested on (or commenting them between /* and */)</p>
   <li>Memory</li>
   <li>Plugins</li>
   <li>Preferences</li>
+  <li>Profiles</li>
   <li>Support</li>
 </ul>
 <p>It will also turn dark the <a href="https://addons.mozilla.org">Mozilla addons page</a>, both the old and the new.</p>
 
 <h2>The scrollbars.uc.js file</h2>
-<img src="https://i.imgur.com/s668zt7.png" title="Dark blue scrollbar" />
+<img src="https://i.imgur.com/qe6tGJW.png" title="Dark blue scrollbar" />
 
 <p>Same as with the other files, you can edit the scrollbars appearance using the scrollbars.uc.js, editing only past the 
 `s you will find there (which are the CSS code).</p>
