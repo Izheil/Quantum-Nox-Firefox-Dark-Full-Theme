@@ -27,7 +27,7 @@
 <img src="https://i.imgur.com/s668zt7.png">
 <p>This one is like the default scrollbar, but has flat colors with a transition effect when hovering over it.</p>
 
-<h3>Scrollbars-slim-flat.uc.js</h3>
+<h3>Scrollbars-flat-colors-slim.uc.js</h3>
 <p>Same design than the above, but less width (12px instead of 16px).</p>
 
 <h3>No-crollbars.uc.js</h3>
