@@ -96,7 +96,6 @@ scrollbar[orient="vertical"] > scrollbarbutton[type="decrement"] {
 scrollbar {
 	z-index: 2147483647 !important;
 	position: relative !important;
-	transition: all 0s !important; 
 }
 
 scrollbar,
@@ -113,7 +112,7 @@ scrollbar[orient="vertical"] {
 	max-width: 16px !important;
 	min-width: 16px !important;
 
-	background: linear-gradient(to right, #222, #444, #222) !important;
+	background: linear-gradient(to right, #222, #444) !important;
 	background-size: 16px 16px !important;
 	background-repeat: repeat-y !important;
 	background-position: 50% 0% !important;
@@ -125,7 +124,7 @@ scrollbar[orient="horizontal"] {
 	max-height: 16px !important;
 	min-height: 16px !important;
   
-	background: linear-gradient(#222, #444, #222) !important;
+	background: linear-gradient(#222, #444) !important;
 	background-size: 16px 16px !important;
 	background-repeat: repeat-x  !important;
 	background-position: 0% 50% !important;
@@ -151,14 +150,13 @@ scrollbar thumb {
 	background: transparent !important;
 	border: 2px solid rgba(0,255,255,0) !important;
 	box-shadow: 0 0 0 8px #888 inset !important;
-	transition: all 0s !important; 
+	transition: all 0.4s !important; 
 	opacity: 1 !important; 
 }
 
 scrollbar:hover thumb,
 scrollbar thumb:active {
-	box-shadow: 0 0 0 8px #46b inset !important;
-	transition: all .3s !important; 
+	box-shadow: 0 0 0 8px #46b inset !important; 
 }
 
 scrollbar thumb:active {
