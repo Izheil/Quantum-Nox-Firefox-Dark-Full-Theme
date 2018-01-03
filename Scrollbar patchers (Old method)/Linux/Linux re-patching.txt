@@ -1,0 +1,20 @@
+For Linux, you would just need to run these on the commands window:
+
+You can either use the "re-patcher.sh" file here, for which you'd first have to give it executable permisions with this:
+
+chmod +x (route of re-patcher.sh here)/re-patcher.sh
+
+And then you can run it anytime again just typing:
+
+sh re-patcher.sh
+
+Alternativelly, you can just type this command directly on the terminal:
+
+sudo sh -c 'echo "override chrome://global/skin/scrollbars.css scrollbars.css" > /usr/lib/firefox/browser/chrome.manifest'
+
+For some distributions they make a difference between 64-bits firefox, so in case it gives you an error, you can try the 64-bits path:
+
+sudo sh -c 'echo "override chrome://global/skin/scrollbars.css scrollbars.css" > /usr/lib64/firefox//browser/chrome.manifest'
+
+The installation directory path may vary depending on the distribution if you use a package manager to install the 
+application from their repository, so change if necessary.
