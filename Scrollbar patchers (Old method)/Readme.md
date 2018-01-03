@@ -8,7 +8,7 @@
 <p>The "Scrollbars first time patch" adds the line <code>override chrome://global/skin/scrollbars.css scrollbars.css</code> to the <code>chrome.manifest</code> file. It also moves the scrollbars.css file from the folder the batch file is the one where the manifest is (which is why it should only be used the first time only).</p>
 <p>The "Scrollbars re-patcher" only edits the <code>chrome.manifest</code> file (just like the first time patch).
   
-<h3>Installation</h3>
+<h2>Installation</h2>
 
 <p>The scrollbars file isn't as easy to install as userchrome or usercontent (but still pretty simple). 
 The reason for this is that to style the scrollbars we can't use external styles through the stylus extension or userchrome.</p>
