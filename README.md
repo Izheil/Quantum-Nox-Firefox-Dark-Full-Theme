@@ -13,6 +13,7 @@ basic css or <a href="https://www.w3schools.com/colors/colors_picker.asp">color 
 <p>Files updated:</p>
 <ul>
   <li><b>Usercontent</b> -> Added the <code>about:profiles</code> page.</li>
+  <li><b>UserChrome.js</b> -> Added a new way to change the scrollbars, which should be permanent (at least until Mozilla decides to disallow the use of UserChrome.js completelly) using the method designed by <a href="http://mozilla.zeniko.ch/userchrome.js.html">Zeniko</a>, <a href="https://github.com/Endor8/userChrome.js">Endor8</a>, and <b>RAZR_96</b> <a href="https://www.reddit.com/r/firefox/comments/7dtcpm/restyle_an_userstyle_manager_that_can_edit/">in this reddit comment</a>.
 </ul>
 <h3>Last update: <b>30/12/2017</b></h3>
 <p>Files updated:</p>
@@ -227,3 +228,4 @@ well as having a default scrollbar in case you wanted to play around with the ne
 <p>The original code for the multirow tabs was written by <b>Andreicristianpetcu</b>, and you can find it <a href="https://discourse.mozilla.org/t/tabs-in-two-or-more-rows-like-tabmixpro-in-quantum/21657/2">here</a>, or for just the code, <a href="https://github.com/andreicristianpetcu/UserChrome-Tweaks/blob/09fa38a304af88b685f4086bc8ea9997dd7db0fd/tabs/multi_row_tabs_firefox_v57.css">here</a>.
 <p>The original code for the multirow bookmarks toolbar belongs to the original creator mentioned in <a href="https://www.reddit.com/r/firefox/comments/75wya9/multiple_row_bookmark_toolbar_for_firefox_5758/">this reddit thread</a>, whose code was fixed by <b>jscher2000</b> to use in our current firefox.
 <p>Thanks to <b>BelladonnavGF</b>, <b>Hakerdefo</b> and <b>YiannisNi</b> for noting some issues with the theme, and <b>BelladonnavGF</b> for the addition of the url font and and tabs below url bar suggestions.</p>
+<p>Also thanks to <a href="http://mozilla.zeniko.ch/userchrome.js.html">Zeniko</a>, <a href="https://github.com/Endor8/userChrome.js">Endor8</a>, and <b>RAZR_96</b> <a href="https://www.reddit.com/r/firefox/comments/7dtcpm/restyle_an_userstyle_manager_that_can_edit/">in this reddit comment</a> for the userChrome.js way of editing the scrollbars.</p>
