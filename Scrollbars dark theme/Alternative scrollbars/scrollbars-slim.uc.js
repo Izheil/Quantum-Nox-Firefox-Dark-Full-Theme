@@ -20,7 +20,7 @@ scrollbar[orient="vertical"] {
 	max-width: 12px !important;
 	min-width: 12px !important;
 
-	background: linear-gradient(to right, #222, #444, #222) !important;
+	background: linear-gradient(to right, #222, #444) !important;
 	background-size: 12px 12px !important;
 	background-repeat: repeat-y !important;
 	background-position: 50% 0% !important;
@@ -32,7 +32,7 @@ scrollbar[orient="horizontal"] {
 	max-height: 12px !important;
 	min-height: 12px !important;
   
-	background: linear-gradient(#222, #444, #222) !important;
+	background: linear-gradient(#222, #444) !important;
 	background-size: 12px 12px !important;
 	background-repeat: repeat-x  !important;
 	background-position: 0% 50% !important;
