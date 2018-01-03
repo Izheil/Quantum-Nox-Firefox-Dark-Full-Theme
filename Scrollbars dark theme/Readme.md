@@ -19,6 +19,14 @@
 
 <p>If you have done everything right, you should see the custom scrollbars next time you open firefox (or after you restart it)</p>
 
+<h4>Short version:</h4>
+<ul>
+  <li>Copy the contents of the "Root" folder found in this repository to Firefox root folder.</li>
+  <li>Copy the contents of the "Profile" folder found in this repository to the chrome folder inside your profile folder.</li>
+  <li>Open the <code>about:profiles</code> URL with firefox, and open the local profile folder there.</li>
+  <li>Open the "startupcache" folder and delete everything there.</li>
+</ul>
+
 <h3>The chrome folder</h3>
 <p>If you don't know where that is, just type <code>about:support</code> on the URL bar of your firefox, and in the page
 you will be redirected to, on the section labed as "profile folder" click the <b>open folder</b> button.</p>
