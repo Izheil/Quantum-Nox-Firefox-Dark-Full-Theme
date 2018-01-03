@@ -23,3 +23,5 @@
 <h3>Scrollbars-slim.uc.js</h3>
 <p>Same design than the default scrollbar from this theme, but less width (12px instead of 16px).</p>
 
+<h3>No-crollbars.uc.js</h3>
+<p>No scrollbars appear on-screen, but you can still scroll through pages (Just hides the scrollbars).</p>
