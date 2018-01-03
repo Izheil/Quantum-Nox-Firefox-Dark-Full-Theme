@@ -12,3 +12,6 @@
 <h3>Scrollbar-squared.uc.js</h3>
 <img src="https://i.imgur.com/JfopQbb.png">
 <p>This scrollbar resembles the default firefox one, except it's darkish, and has a gradient background.</p>
+
+<h3>Scrollbar-squared-slim.uc.js</h3>
+<p>Same design than the squared one, but less width (12px instead of 16px).</p>
