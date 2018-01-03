@@ -17,6 +17,10 @@
 <img src="https://i.imgur.com/2WBVmxY.png?1">
 <p>This is the old default scrollbar of this theme. It's the same as the current one, except it has a 3 colors gradient as background.</p>
 
+<h3>Scrollbars-flat-colors.uc.js</h3>
+<img src="https://i.imgur.com/s668zt7.png">
+<p>This one is like the default scrollbar, but has flat colors with a transition effect when hovering over it.</p>
+
 <h3>Scrollbars-squared-slim.uc.js</h3>
 <p>Same design than the squared one, but less width (12px instead of 16px).</p>
 
