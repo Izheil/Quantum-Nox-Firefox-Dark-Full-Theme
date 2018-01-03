@@ -6,7 +6,7 @@
 <p>To clear the start up cache you have to type <code>about:profiles</code> on firefox URL bar, go to that page, open the local profile directory through that page, and then delete all files inside the "startupCache" folder.</p>
 
 <p>This is <b>NOT</b> the same profile directory where you have to place the "chrome" folder. You access that one through <code>about:support</code>, and then clicking the "open folder" button on the "profile folder" section.</p>
-<p>You can edit the scrollbars appearance changing the CSS rules inside the scrollbar.uc.js file, just as you would change them with the old method in this repository.</p>
+<p>You can edit the scrollbars appearance changing the CSS rules inside the <b>scrollbar.uc.js</b> file, just as you would change them with the old method in this repository.</p>
   
 <h2>Installation</h2>
 <p>To install userChrome.js you have to do a few more steps than just copying it to your chrome folder. The reason for this is that Firefox doesn't allow userChrome.js by default, so we have to apply certain modifications so that it allows it.</p>
