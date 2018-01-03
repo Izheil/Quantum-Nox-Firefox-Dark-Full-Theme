@@ -3,7 +3,6 @@
 scrollbar {
 	z-index: 2147483647 !important;
 	position: relative !important;
-	transition: all 0s !important; 
 }
 
 scrollbar,
@@ -58,14 +57,13 @@ scrollbar thumb {
 	background: transparent !important;
 	border: 2px solid rgba(0,255,255,0) !important;
 	box-shadow: 0 0 0 8px #888 inset !important;
-	transition: all 0s !important; 
+	transition: all .4s !important; 
 	opacity: 1 !important; 
 }
 
 scrollbar:hover thumb,
 scrollbar thumb:active {
 	box-shadow: 0 0 0 8px #46b inset !important;
-	transition: all .3s !important; 
 }
 
 scrollbar thumb:active {
