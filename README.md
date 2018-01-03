@@ -26,7 +26,7 @@ basic css or <a href="https://www.w3schools.com/colors/colors_picker.asp">color 
 
 <h3>The scrollbars go back to the default ones after a firefox update when using the old method!</h3>
 <p>You should be using the new method (inside the scrollbars dark theme folder) for the permanent fix for them. I'm only keeping this folder for legacy reasons (or just in case Mozilla disallows the user of UserChrome.js in the future)
-<p>If you still want to use the old method because the userChrome.js method makes the scrollbars somewhat laggy, you will have to re-patch the <code>chrome.manifest</code> file after each firefox update either following the manual steps found in here, <b>or applying the right re-patcher found on the "Scrollbar patchers(Old method)" folder</b> (which should at least give you one or two months before having to re-patch it until the next firefox update).</p>
+<p>If you still want to use the old method because the userChrome.js method somehow doesn't work for you, you will have to re-patch the <code>chrome.manifest</code> file after each firefox update either following the manual steps found in here, <b>or applying the right re-patcher found on the "Scrollbar patchers(Old method)" folder</b> (which should at least give you one or two months before having to re-patch it until the next firefox update).</p>
 <p>This problem happens because firefox overwrites the omni.ja and the <code>chrome.manifest</code> file with each firefox update to "clear" any possible problem with the old version, making our change only temporary without re-patching it after each update.</p>
 
 <h3>Why use this method instead of using <a href="https://addons.mozilla.org/es/firefox/addon/styl-us/">Stylus</a>?</h3>
