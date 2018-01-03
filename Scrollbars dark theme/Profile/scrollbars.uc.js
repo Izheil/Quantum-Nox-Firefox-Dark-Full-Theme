@@ -40,44 +40,43 @@ scrollbar[orient="horizontal"] {
 
 scrollbar thumb[orient="vertical"] {
 	min-height: 32px !important;
-	width: 14px !important;
-	min-width: 14px !important;
-	max-width: 14px !important;
+	width: 16px !important;
+	min-width: 16px !important;
+	max-width: 16px !important;
+	background: linear-gradient(to right, transparent 0, transparent 1px, #888 1px, #555 15px, transparent 15px, transparent 16px) !important;
 }
 
 scrollbar thumb[orient="horizontal"] {
 	min-width: 32px !important;
-	height: 14px !important;
+	height: 16px !important;
 	min-height: 14px !important;
 	max-height: 14px !important;
+	background: linear-gradient(transparent 0, transparent 1px, #888 1px, #555 15px, transparent 15px, transparent 16px) !important;
 }
 
 scrollbar thumb {
-	border-radius: 6px !important;
-	transition: all .4s !important; 
+	border-radius: 15px !important;
 	opacity: 1 !important;
 }
 
 scrollbar:hover thumb[orient="horizontal"],
 scrollbar thumb[orient="horizontal"]:active {
-	background: linear-gradient(#46b, #249) !important;
+	background: linear-gradient(transparent 0, transparent 1px, #46b 1px, #249 15px, transparent 15px, transparent 16px) !important;
 }
 
 scrollbar:hover thumb[orient="vertical"],
 scrollbar thumb[orient="vertical"]:active {
-	background: linear-gradient(to right, #46b, #249) !important;
+	background: linear-gradient(to right, transparent 0, transparent 1px, #46b 1px, #249 15px, transparent 15px, transparent 16px) !important;
 }
 
 scrollbar thumb[orient="vertical"]:active {
-	max-width: 16px !important;
-	width: 16px !important;
-	transform: translate(0, 0);
+	background: linear-gradient(to right, #46b, #249) !important;
+	border-radius: 6px !important;
 }
 
 scrollbar thumb[orient="horizontal"]:active {
-	max-height: 16px !important;
-	height: 16px !important;
-	transform: translate(0, 0);
+	background: linear-gradient(#46b, #249) !important;
+	border-radius: 6px !important;
 }
 
 /* no buttons */
@@ -88,6 +87,7 @@ scrollbar scrollbarbutton{
 	max-width: 16px !important;
 	height: 0px !important;
 	width: 0px !important;
+	background: radial-gradient (circle, #888, #555);
 }`;
 
     var sss = Cc['@mozilla.org/content/style-sheet-service;1'].getService(Ci.nsIStyleSheetService);
