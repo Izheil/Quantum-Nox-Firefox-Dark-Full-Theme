@@ -15,3 +15,6 @@
 
 <h3>Scrollbar-squared-slim.uc.js</h3>
 <p>Same design than the squared one, but less width (12px instead of 16px).</p>
+
+<h3>Scrollbar-slim.uc.js</h3>
+<p>Same design than the default scrollbar from this theme, but less width (12px instead of 16px).</p>
