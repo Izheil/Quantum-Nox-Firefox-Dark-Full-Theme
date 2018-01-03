@@ -49,8 +49,8 @@ scrollbar thumb[orient="vertical"] {
 scrollbar thumb[orient="horizontal"] {
 	min-width: 32px !important;
 	height: 16px !important;
-	min-height: 14px !important;
-	max-height: 14px !important;
+	min-height: 16px !important;
+	max-height: 16px !important;
 	background: linear-gradient(transparent 0, transparent 1px, #888 1px, #555 15px, transparent 15px, transparent 16px) !important;
 }
 
