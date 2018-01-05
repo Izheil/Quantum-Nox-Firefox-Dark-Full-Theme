@@ -1,6 +1,6 @@
 /* You can find an updated version here: https://github.com/Izheil/Firefox-57-full-dark-theme-with-scrollbars */
 /* Made by Izheil */
-/* Last updated: 03/01/2018 */
+/* Last updated: 05/01/2018 */
 
 /*------ COMMON PART FOR ALL FIREFOX PAGES (MAINLY USED FOR THE 404 PAGE) ------*/
 :root {
@@ -346,7 +346,29 @@ body {
 #snippets-container .button-selected {
 	background-color: #222 !important;
 	border: 1px solid #0084ff !important}
-}
+	
+/* Tour pop-up */
+
+#onboarding-overlay {background: rgba(0,0,0,0.5) !important}
+
+#onboarding-overlay-dialog {
+	background: #333 !important;
+	border: 1px solid rgba(0, 0, 0, 0.2)}
+
+#onboarding-overlay p, #onboarding-overlay li.onboarding-tour-item-container span:not(.onboarding-active) {
+	color: #aaa !important}
+
+#onboarding-overlay header, #onboarding-overlay h1 {color: #FFF !important}
+
+#onboarding-skip-tour-button {
+	background: #222 !important;
+	color: #ddd !important;
+	border: 1px solid #111 !important}
+
+#onboarding-skip-tour-button:hover {background: #444 !important}
+#onboarding-skip-tour-button:active {background: #111 !important}
+	
+#onboarding-overlay img {filter: invert(90%) hue-rotate(200deg)}
 
 /*------ ABOUT/BLANK PAGE (about:about, about:blank) ------*/
 @-moz-document url(about:about), url(about:blank){
