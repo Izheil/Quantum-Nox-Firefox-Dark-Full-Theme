@@ -1,6 +1,10 @@
 /* You can find an updated version here: https://github.com/Izheil/Firefox-57-full-dark-theme-with-scrollbars */
 /* Made by Izheil */
-/* Last updated: 05/01/2018 */
+/* Last updated: 06/01/2018 */
+
+/* This part imports the Addons file if there is one, so that you don't have to edit the dynamic URL
+from the addons rules every time we update anything here */
+@import 'addons.css';
 
 /*------ COMMON PART FOR ALL FIREFOX PAGES (MAINLY USED FOR THE 404 PAGE) ------*/
 :root {
@@ -30,6 +34,23 @@ prefwindow, .windowDialog {
 #badCertAdvancedPanel {background-color: #303030 !important}
 .exceptionDialogButtonContainer {background-color: #252525 !important}
 
+/* This should change the "not found" page image colors */
+
+.connectionFailure #errorPageContainer,
+.netInterrupt #errorPageContainer,
+.netTimeout #errorPageContainer,
+.netReset #errorPageContainer,
+.netOffline #errorPageContainer,
+.dnsNotFound #errorPageContainer,
+.malformedURI #errorPageContainer {filter: invert(98%) hue-rotate(200deg)}
+
+/* This fixes the inverted colors caused by the image filter (since I couldn't directly filter 
+only the images */
+#errorPageContainer .button-container {filter: invert(98%) hue-rotate(-200deg)}
+
+#errorPageContainer #text-container {color: #555 !important}
+#errorPageContainer #text-container h1 {color: #0af !important}
+
 /* This is a little fix for all pages in case you have a dark windows theme, so that the 
 letters will have a blue neutral color to be seen in either a white or dark background for 
 text-inputting things (Feel free to comment it out if you don't like it, or delete any of 
@@ -48,154 +69,17 @@ input[type=number], input[type=search], input[type=tel], input[type=url], textar
 #UI_goUp a.up:active, .ellipsis a.file:active, .ellipsis a.dir:active {color: #0050aa !important}
 }
 
-/*------ UBLOCK ORIGIN ADDON PAGES ------*/
-/* To use this part of the code, you will have to find the dynamic ID of your ublock origin extension,
-and replace it where the random numbers are (the numbers after moz-extension://).To find it, just open the 
-advanced settings page and copy the numbers in the URL after moz-extension there in here, and then uncomment this
-by deleting the "/*" under this line (Feel free to delete all these if you don't use Ublock Origin). */
-/*
-@-moz-document url-prefix(moz-extension://1e3752b9-2b9d-4dd5-8c06-64abbbd32538/document-blocked.html){
-
-html, body {background-color: #222 !important}
-
-body {margin-top: 10em}
-
-p, span {color: #ccc !important}
-
-.fa {color: #fa0 !important}
-
-button, select {
-	-moz-appearance: none !important;
-	background-color: #333 !important;
-	border: 1px solid black !important;
-	color: #ccc !important}
-
-button:hover, select:hover {
-	background-color: #444 !important}
-
-a:link {color: #0084ff !important}
-a:hover {color: #0ff !important}
-a:active {color: #fff !important}
-}
-
-@-moz-document url-prefix(moz-extension://1e3752b9-2b9d-4dd5-8c06-64abbbd32538/dashboard.html) {
-
-#dashboard-nav-widgets {background: #222 !important; border-bottom: 1px solid black !important}
-
-#dashboard-nav-widgets span {color: #ccc !important}
-
-a {
-	background-color: #444 !important; 
-	color: #777 !important;
-	border: 1px solid black !important;
-	border-bottom: 1px solid transparent !important}
-
-a.tabButton.selected {
-	background-color: #333 !important; 
-	color: #ccc !important;
-	border: 1px solid black !important;
-	border-bottom: 1px solid transparent !important}
-}
-
-
-@-moz-document url(moz-extension://1e3752b9-2b9d-4dd5-8c06-64abbbd32538/settings.html),
-url(moz-extension://1e3752b9-2b9d-4dd5-8c06-64abbbd32538/3p-filters.html),
-url(moz-extension://1e3752b9-2b9d-4dd5-8c06-64abbbd32538/1p-filters.html),
-url(moz-extension://1e3752b9-2b9d-4dd5-8c06-64abbbd32538/dyna-rules.html),
-url(moz-extension://1e3752b9-2b9d-4dd5-8c06-64abbbd32538/whitelist.html),
-url(moz-extension://1e3752b9-2b9d-4dd5-8c06-64abbbd32538/about.html),
-url(moz-extension://1e3752b9-2b9d-4dd5-8c06-64abbbd32538/advanced-settings.html){
-body, html {
-	background: #333 !important;
-	color: #ccc !important;
-}
-
-a:link {color: #0084ff !important}
-a:hover {color: #0ff !important}
-a:active {color: #0050aa !important}
-
-a.fa.info, a.fa.mustread, a.fa.support, 
-.fa.status.cache {color: #bbb !important}
-
-button:not(.whatisthis):not(#buttonUpdate) {
-	background: linear-gradient(#333, #111) !important;
-    color: #ccc !important;
-	border: 1px solid #000 !important}
-
-button:not(.whatisthis):not(#buttonUpdate):hover {
-	background: linear-gradient(#111, #333) !important;
-    color: #fff !important}
-
-button.whatisthis {filter: brightness(200%) !important}
-
-#buttonUpdate, button.important {
-	background: linear-gradient(#fa0, #a20) !important;
-	background-image: linear-gradient(#fa0, #a20) !important;
-    color: #ddd !important;
-	border: 1px solid #f50 !important}
-
-#buttonUpdate:hover, button.important:hover {
-	background: linear-gradient(#a20, #fa0) !important;
-	background-image: linear-gradient(#a20, #fa0) !important;
-    color: #fff !important}
-
-a.fa.info.important {color: #fa0 !important}
-
-.fa.status.unsecure, a.fa.remove {color: #f33 !important}
-
-textarea, .whatisthis-expanded {
-	-moz-appearance: none !important; 
-	background-color: #222 !important; 
-	color: #aaa !important;
-	border: 2px solid #000 !important}
-
-
-code {background-color: #222 !important}
-
-.rulesContainer li:nth-child(odd) {background-color: #222 !important}
-.rulesContainer li:nth-child(even) {background-color: #444 !important}
-
-input[type=number] {
-	-moz-appearance: none !important;
+/*------ VIEW SOURCE ------*/
+@-moz-document url-prefix(view-source:){
+html {
 	background: #222 !important;
-	border: 1px solid #000 !important;
 	color: #ccc !important}
+
+.attribute-name {color: #fff !important}
+.start-tag, .end-tag {color: #f00 !important}
+.attribute-value {color: #0084ff !important}
 }
 
-@-moz-document url-prefix(moz-extension://1e3752b9-2b9d-4dd5-8c06-64abbbd32538/popup.html) {
-
-#appinfo {background: #111 !important}
-
-#refresh, #saveRules, #revertRules {background-color: #222 !important; border: 1px solid #000 !important}
-
-.tooltipContainer, #panes {background-color: #333 !important}
-
-.tool.enabled:hover {color: #fff !important}
-
-p {color: #ccc !important}
-.statValue {color: #888 !important}
-
-h2 {
-	background-color: #222 !important; 
-	color: #ddd !important}
-
-#extraTools, #tooltip {
-	background-color: #444 !important;
-	color: #ccc !important}
-
-#extraTools span:hover {color: #888 !important}
-
-#firewallContainer span {
-	background-image: linear-gradient(rgba(0,0,0,0.7),rgba(0,0,0,0.7)) !important; 
-	border-bottom: 1px solid #000 !important;
-	color: #ccc !important}
-
-#firewallContainer span:hover {background-image: linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5)) !important}
-
-#firewallContainer span span, #firewallContainer span span:hover  {
-	background-image: none !important;
-	border-bottom: 1px solid transparent !important}
-}
 /*------ HOME/NEWTAB PAGE (About:home, about:newtab) ------*/ 
 @-moz-document url-prefix(about:home), url-prefix(about:newtab){
 
@@ -372,7 +256,7 @@ body {
 
 /*------ ABOUT/BLANK PAGE (about:about, about:blank) ------*/
 @-moz-document url(about:about), url(about:blank){
-body {background-color: #202020  !important}
+body {background-color: #202020}
 p {color: #AAA !important}
 h1 {color: #FFF !important}
 }
