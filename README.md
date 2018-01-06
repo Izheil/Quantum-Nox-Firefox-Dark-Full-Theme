@@ -9,17 +9,16 @@ basic css or <a href="https://www.w3schools.com/colors/colors_picker.asp">color 
 <img src="https://i.imgur.com/3lzN95E.png">
 <p>To change these you will have to use the right hex codes. You can find a color picker to hex code in <a href="https://www.w3schools.com/colors/colors_picker.asp">this page</a>.
 
-<h3>Last update: <b>05/01/2017</b></h3>
+<h3>Last update: <b>06/01/2017</b></h3>
 <p>Files updated:</p>
 <ul>
-  <li><b>Usercontent</b> -> Themed the tour pop-up on the <code>about:home</code> page.</li>
+  <li><b>Usercontent.css</b> -> Fixed some bug with Ublock element picker overlay page being non-transparent. Also split the addons related theming on a different file, "addons.css", so that you don't have to re-link the dynamic URLs with each usercontent update.</li>
+  <li><b>Addons.css</b> -> Added an improved theming for <a href="https://addons.mozilla.org/es/firefox/addon/ublock-origin/">Ublock Origin</a> (it should now cover all things from it). Also added theming for <a href="https://addons.mozilla.org/es/firefox/addon/flash-video-downloader/">Flash Video Downloader</a> and for <a href="https://addons.mozilla.org/es/firefox/addon/video-downloadhelper/">Video Download Helper</a>.
 </ul>
-<h3>Pre-Last update: <b>03/01/2017</b></h3>
+<h3>Pre-Last update: <b>05/01/2017</b></h3>
 <p>Files updated:</p>
 <ul>
-  <li><b>Usercontent</b> -> Added the <code>about:profiles</code> page.</li>
-  <li><b>UserChrome.js</b> -> Added a new way to change the scrollbars, which should be permanent (at least until Mozilla decides to disallow the use of UserChrome.js completelly) using the method designed by <a href="http://mozilla.zeniko.ch/userchrome.js.html">Zeniko</a>, <a href="https://github.com/Endor8/userChrome.js">Endor8</a>, and <b>RAZR_96</b> <a href="https://www.reddit.com/r/firefox/comments/7dtcpm/restyle_an_userstyle_manager_that_can_edit/">in this reddit comment</a>.</li>
-  <li><b>scrollbars*.uc.js</b> -> Added a few variations of the default scrollbar that was being used for this dark theme (such as a slim, a squared, or a better gradient version).</li>
+  <li><b>Usercontent.css</b> -> Themed the tour pop-up on the <code>about:home</code> page.</li>
 </ul>
 
 <h2>FAQ:</h2>
@@ -42,7 +41,9 @@ basic css or <a href="https://www.w3schools.com/colors/colors_picker.asp">color 
   <li>You can hide the sidebar completelly resizing it instead of having to click the sidebar button.</li>
   <li>Can change the URL bar font (You have to change the commented line on userchrome to use it).</li>
   <li>Can change the tabs position under the URL bar (You have to change the commented line on userchrome to use it).</li>
-  <li>Change the Ublock Origin blocking/control panel/popup page to a dark version (You need to change the commented lines and update the dynamic url of the extension on usercontent).</li>
+  <li>Change the <a href="https://addons.mozilla.org/es/firefox/addon/ublock-origin/">Ublock Origin</a> blocking/control panel/popup page to a dark version (You need to change the dynamic url of the extension on "addons.css").</li>
+  <li>Change the <a href="https://addons.mozilla.org/es/firefox/addon/flash-video-downloader/">Flash Video Downloader</a> popup and panel to a dark version (You need to change the dynamic url of the extension on "addons.css").</li>
+  <li>Change the <a href="https://addons.mozilla.org/es/firefox/addon/video-downloadhelper/">Video Download Helper</a> popup and panel to a dark version (You need to change the dynamic url of the extension on "addons.css").</li>
 </ul>
 <p>You can turn these features on or off changing the commented lines on the CSS file (To change them you just have to open the userchrome.css with notepad or any code editor, and encase between "/*" and "*/" (without the quotation marks) the lines you don't want to take effect). Of course, if you think that you are NEVER going to use certain feature, you can always delete the specific lines you don't want without any other side-effect.</p>
 
@@ -56,7 +57,8 @@ basic css or <a href="https://www.w3schools.com/colors/colors_picker.asp">color 
 
 <p>Most of the job is already done with the userContent.css and userChrome.css files that you have to place in the 
 chrome folder of your firefox profile (Look below for "the chrome folder" section if you don't know where that is). For this to work as intended, you should be using a persona (aka lightweight theme) or the default dark theme (The persona used on the screenshot is "<a href="https://addons.mozilla.org/en-US/firefox/addon/deep-dark-blue-forest/">Deek Dark Blue forest</a>" by <b>Sondergaard</b>).</p>
-<p>If you are only looking for how to change the default scrollbars, you can apply just that without the need
+<p>If you would also like a dark version of either <a href="https://addons.mozilla.org/es/firefox/addon/ublock-origin/">Ublock Origin</a>, <a href="https://addons.mozilla.org/es/firefox/addon/flash-video-downloader/">Flash Video Downloader</a>, or <a href="https://addons.mozilla.org/es/firefox/addon/video-downloadhelper/">Video Download Helper</a>, copy the "addons.css" file in your chrome folder as well.</p>
+<p>In case that you just want to change the default scrollbars, you can apply just that without the need
 of using the usercontent or userchrome files provided here.</p>
 
 <h4>Short version:</h4>
@@ -66,7 +68,8 @@ of using the usercontent or userchrome files provided here.</p>
   <li>Create a folder named "chrome" in your profile folder if it doesn't exist yet.</li>
   <li>Place "usercontent.css" and "userchrome.css" inside the "chrome" folder.</li>
   <li>(Optional) Edit userchrome.css to disable or re-enable features typing "/*" before the lines you don't want to apply, and "/*" after them (If you want some line to apply that is within those slashes, just delete the starting "/*".</li>
-  <li>(Optional) If you have Ublock Origin and want the blocked page to be dark as well, edit usercontent.css (the url line explained in there) to have the dynamic url of your ublock extension.
+  <li>(Optional) If you have <a href="https://addons.mozilla.org/es/firefox/addon/ublock-origin/">Ublock Origin</a> and want the blocked page to be dark as well, edit addons.css (the url line explained in there) to have the dynamic url of your ublock extension, and then place it in the "chrome" folder as well.</li>
+  <li>(Optional) If you want a dark version of the <a href="https://addons.mozilla.org/es/firefox/addon/flash-video-downloader/">Flash Video Downloader</a> or <a href="https://addons.mozilla.org/es/firefox/addon/video-downloadhelper/">Video Download Helper</a> extensions, edit the "addons.css" file to update the dynamic URLs of the addons, and then copy it in the "chrome" folder as well (further explanations inside the "addons.css" file).</li>
 </ul>
 
 <h3>The scrollbars</h3>
@@ -144,7 +147,7 @@ interested on (or commenting them between /* and */)</p>
   <li>Profiles</li>
   <li>Support</li>
 </ul>
-<p>It will also turn dark the <a href="https://addons.mozilla.org">Mozilla addons page</a>, both the old and the new.</p>
+<p>It will also turn dark the <a href="https://addons.mozilla.org">Mozilla addons page</a>, both the old and the new, the file explorer inside firefox, and the "view source of page" page.</p>
 
 <h2>The scrollbars.uc.js file</h2>
 <img src="https://i.imgur.com/qe6tGJW.png" title="Dark blue scrollbar" />
