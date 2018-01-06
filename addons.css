@@ -3,10 +3,11 @@
 /* Last updated: 06/01/2018 */
 
 /*------ HOW TO MAKE THE ADDON THEMES WORK ------*/
-/* To use this part of the code, you will have to find the dynamic ID of your extensions,
-and replace it where the random numbers are (the numbers after moz-extension://). To find it, just open the 
-advanced settings page from the selected addon, and copy the numbers in the URL after moz-extension there in here.
-If you did everything right, next time you start (or restart) firefox, the addons will be themed. */
+/* To use this part of the code, you will have to find the dynamic ID of your extensions, and replace it where the 
+random numbers are (the numbers after moz-extension://) on each of the sections of the extension.
+To find these, just open the advanced settings page from the selected addon, and copy the numbers in the URL after
+moz-extension there in here. If you did everything right, next time you start (or restart) firefox, the addons will 
+be themed. */
 
 /*------ UBLOCK ORIGIN BLOCKING PAGE ------*/
 @-moz-document url-prefix(moz-extension://1e3752b9-2b9d-4dd5-8c06-64abbbd32538/document-blocked.html){
