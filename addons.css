@@ -276,20 +276,88 @@ header, select {background: #222 !important; color: #fff !important}
 .active.nav-link {background: #444 !important; color: #0ff !important}
 }
 
-/*------ VIDEO DOWNLOAD HELPER ADDON POPUP ------*/
-@-moz-document url-prefix(moz-extension://711939e6-6e2a-4563-8944-9f0fa3b01df7/content/popup.html) {
-html, .vdh-fullwidth.hit-descr, 
-.hit-thumbnail, .click.hit-actions, 
-.no-media {background: #333 !important}
+/*------ VIDEO DOWNLOAD HELPER ADDON COMMON PART ------*/
+@-moz-document url-prefix(moz-extension://711939e6-6e2a-4563-8944-9f0fa3b01df7/) {
+main {background: #333 !important; color: #ccc !important}
+select {background: #222 !important; color: #fff !important}
 
-.vdh-fullwidth.hit-descr:hover, 
-.hit-thumbnail:hover, .click.hit-actions:hover {background: #444 !important}
+.dropdown-toggle {background: #333 !important; border-bottom: 1px solid #fff !important}
 
-footer, .buttons-opener, button, .buttons-container {background: #222 !important}
-button:hover {background: #444 !important}
-.hit-title-text, .no-media {color: #fff !important}
+a[aria-expanded="true"] {background: #444 !important; color: #0ff !important}
+
+.btn-group {background: none !important}
+.btn-group:active {outline: none !important}
+
+.btn-toolbar {background: #333 !important; color: #ccc !important}
+
+.btn-outline-secondary, .btn-secondary, header {
+	background: linear-gradient(#333,#111) !important; 
+	color: #ddd !important;
+	border: 1px solid #000 !important}
+
+.btn-outline-secondary:hover, .btn-secondary:hover, .btn-success:hover {color: #fff !important}
+.btn-outline-secondary:active, .btn-secondary:active {background: linear-gradient(#111,#333) !important}
+
+.btn-success {
+	background: linear-gradient(#080,#050) !important; 
+	color: #ddd !important;
+	border: 1px solid #030 !important}
+
+.btn-success:active {background: linear-gradient(#050,#080) !important}
+
+.form-control {
+	background: #222 !important;
+	border:1px solid #000 !important;
+	color: #fff !important}
+
+.section-header, .dropdown-item:hover {background: #555 !important; color: #fff !important}
+.card-body, .dropdown-menu.show, .dropdown-item {background: #444 !important; color: #ccc !important}
+
+.modal-content {background: #333 !important}
+.modal-header, .param {background: #222 !important; color: #fff !important; border-bottom: 1px solid #000 !important}
+.modal-body {color: #ddd !important}
+.modal-footer {border-top: 1px solid #888 !important}
+.close {color: #fff !important}
+
+.active.nav-link {background: #444 !important; color: #0ff !important}
+.nav-link {cursor: pointer !important}
 }
 
+/*------ VIDEO DOWNLOAD HELPER ADDON POPUP ------*/
+@-moz-document url-prefix(moz-extension://711939e6-6e2a-4563-8944-9f0fa3b01df7/content/popup.html) {
+html, .content-hits, .vdh-fullwidth.hit-descr, 
+.hit-thumbnail, .click.hit-actions, .vdh-container,
+.no-media {background: #333 !important}
+
+.vdh-fullwidth.hit-descr:hover, .vdh-container:hover,
+.hit-thumbnail:hover, .click.hit-actions:hover {background: #444 !important}
+
+footer, .buttons-opener, button, .buttons-container, .default-check,
+.actions, .back-margin {background: #222 !important}
+
+.actions {box-shadow: -5px 0 5px 0px #000 !important}
+
+button:hover {background: #444 !important}
+
+.hit-title-text, .no-media, .action-title {color: #fff !important}
+
+.action-descr, .default-check, code {color: #aaa !important}
+}
+
+/*------ VIDEO DOWNLOAD HELPER ADDON ALERT UPON DOWNLOAD ------*/
+@-moz-document url-prefix(moz-extension://711939e6-6e2a-4563-8944-9f0fa3b01df7/content/alert.html) {
+.dialog-in-tab {background: #222 !important}
+	
+.alert-dialog .alert-dialog-content {
+	background: #444 !important;
+	color: #ddd !important}
+
+.alert-dialog header, .alert-dialog footer {
+	background: #333 !important;
+	color: #fff !important}
+}
+
+/*------ VIDEO DOWNLOAD HELPER ADDON DETAILS PAGE ------*/
 @-moz-document url-prefix(moz-extension://711939e6-6e2a-4563-8944-9f0fa3b01df7/content/details.html) {
 header, tr:nth-child(even) {background: #222 !important; color: #fff !important}
 main, tr:nth-child(odd) {background: #333 !important; color: #fff !important}
