@@ -12,7 +12,7 @@ basic css or <a href="https://www.w3schools.com/colors/colors_picker.asp">color 
 <h3>Last update: <b>07/01/2017</b></h3>
 <p>Files updated:</p>
 <ul>
-  <li><b>tooltips.uc.js</b> -> You can now turn the tooltips dark using the same method described for the scrollbars, and then placing <b>tooltips.uc.js</b> (contained inside the "Scrollbars dark theme" folder along with the scrollbars.uc.js file) inside the chrome folder.</li>
+  <li><b>tooltips.uc.js</b> -> You can now turn the tooltips dark using the same method described for the scrollbars, and then placing <b>tooltips.uc.js</b> (contained inside the "Scrollbars & tooltips dark theme" folder along with the scrollbars.uc.js file) inside the chrome folder.</li>
 </ul>
 <h3>Pre-Last update: <b>06/01/2017</b></h3>
 <p>Files updated:</p>
@@ -24,7 +24,7 @@ basic css or <a href="https://www.w3schools.com/colors/colors_picker.asp">color 
 <h2>FAQ:</h2>
 
 <h3>The scrollbars go back to the default ones after a firefox update when using the old method!</h3>
-<p>You should be using the new method (inside the scrollbars dark theme folder) for the permanent fix for them. I'm only keeping this folder for legacy reasons (or just in case Mozilla disallows the user of UserChrome.js in the future)
+<p>You should be using the new method (inside the "scrollbars & tooltips dark theme" folder) for the permanent fix for them. I'm only keeping this folder for legacy reasons (or just in case Mozilla disallows the user of UserChrome.js in the future)
 <p>If you still want to use the old method because the userChrome.js method somehow doesn't work for you, you will have to re-patch the <code>chrome.manifest</code> file after each firefox update either following the manual steps found in here, <b>or applying the right re-patcher found on the "Scrollbar patchers(Old method)" folder</b> (which should at least give you one or two months before having to re-patch it until the next firefox update).</p>
 <p>This problem happens because firefox overwrites the omni.ja and the <code>chrome.manifest</code> file with each firefox update to "clear" any possible problem with the old version, making our change only temporary without re-patching it after each update.</p>
 
@@ -67,7 +67,7 @@ of using the usercontent or userchrome files provided here.</p>
   <li>Click the "open folder" button inside the "profile folder" section.</li>
   <li>Create a folder named "chrome" in your profile folder if it doesn't exist yet.</li>
   <li>Place "usercontent.css" and "userchrome.css" inside the "chrome" folder.</li>
-   <li>(Optional) Follow the method described to change the scrollbars to change the tooltip using the "tooltip.uc.js" file inside the "Scrollbars dark theme/profile/" folder in this repository.</li>
+   <li>(Optional) Follow the method described to change the scrollbars to change the tooltip using the "tooltip.uc.js" file inside the "Scrollbars & tooltips dark theme/profile/" folder in this repository.</li>
   <li>(Optional) Edit userchrome.css to disable or re-enable features typing "/*" before the lines you don't want to apply, and "/*" after them (If you want some line to apply that is within those slashes, just delete the starting "/*".</li>
   <li>(Optional) If you have <a href="https://addons.mozilla.org/es/firefox/addon/ublock-origin/">Ublock Origin</a> and want the blocked page to be dark as well, edit addons.css (the url line explained in there) to have the dynamic url of your ublock extension, and then place it in the "chrome" folder as well.</li>
   <li>(Optional) If you want a dark version of the <a href="https://addons.mozilla.org/es/firefox/addon/flash-video-downloader/">Flash Video Downloader</a> or <a href="https://addons.mozilla.org/es/firefox/addon/video-downloadhelper/">Video Download Helper</a> extensions, edit the "addons.css" file to update the dynamic URLs of the addons, and then copy it in the "chrome" folder as well (further explanations inside the "addons.css" file).</li>
@@ -76,7 +76,7 @@ of using the usercontent or userchrome files provided here.</p>
 <h3>The scrollbars</h3>
 <img src="https://i.imgur.com/qe6tGJW.png" title="Dark blue scrollbar" />
 
-<p>To install the custom scrollbars to match the dark theme, you will have to use one of the 2 methods found on the "Scrollbars dark theme" or "Scrollbars patchers(Old method)" folders inside this repository. You should be using the "Scrollbars dark theme" folder method, since it's the most permanent, but if you find some bug or if the scrollbars lag for you, you could try using the old method one instead. The problem with the old method is that you will have to re-patch the scrollbars with each firefox update, but it's a mainly CSS method with no JavaScript involved, so the scrollbars shouldn't lag at all.</b>
+<p>To install the custom scrollbars to match the dark theme, you will have to use one of the 2 methods found on the "Scrollbars & tooltips dark theme" or "Scrollbars patchers(Old method)" folders inside this repository. You should be using the "Scrollbars & tooltips dark theme" folder method, since it's the most permanent, but if you find some bug or if the scrollbars lag for you, you could try using the old method one instead. The problem with the old method is that you will have to re-patch the scrollbars with each firefox update, but it's a mainly CSS method with no JavaScript involved, so the scrollbars shouldn't lag at all.</b>
 
 <h3>The chrome folder</h3>
 <p>If you don't know where that is, just type <code>about:support</code> on the URL bar of your firefox, and in the page
