@@ -9,16 +9,16 @@ basic css or <a href="https://www.w3schools.com/colors/colors_picker.asp">color 
 <img src="https://i.imgur.com/3lzN95E.png">
 <p>To change these you will have to use the right hex codes. You can find a color picker to hex code in <a href="https://www.w3schools.com/colors/colors_picker.asp">this page</a>.
 
-<h3>Last update: <b>06/01/2017</b></h3>
+<h3>Last update: <b>07/01/2017</b></h3>
+<p>Files updated:</p>
+<ul>
+  <li><b>tooltips.uc.js</b> -> You can now turn the tooltips dark using the same method described for the scrollbars, and then placing <b>tooltips.uc.js</b> (contained inside the "Scrollbars dark theme" folder along with the scrollbars.uc.js file) inside the chrome folder.</li>
+</ul>
+<h3>Pre-Last update: <b>06/01/2017</b></h3>
 <p>Files updated:</p>
 <ul>
   <li><b>Usercontent.css</b> -> Fixed some bug with Ublock element picker overlay page being non-transparent. Also split the addons related theming on a different file, "addons.css", so that you don't have to re-link the dynamic URLs with each usercontent update.</li>
   <li><b>Addons.css</b> -> Added an improved theming for <a href="https://addons.mozilla.org/es/firefox/addon/ublock-origin/">Ublock Origin</a> (it should now cover all things from it). Also added theming for <a href="https://addons.mozilla.org/es/firefox/addon/flash-video-downloader/">Flash Video Downloader</a> and for <a href="https://addons.mozilla.org/es/firefox/addon/video-downloadhelper/">Video Download Helper</a>.
-</ul>
-<h3>Pre-Last update: <b>05/01/2017</b></h3>
-<p>Files updated:</p>
-<ul>
-  <li><b>Usercontent.css</b> -> Themed the tour pop-up on the <code>about:home</code> page.</li>
 </ul>
 
 <h2>FAQ:</h2>
@@ -67,6 +67,7 @@ of using the usercontent or userchrome files provided here.</p>
   <li>Click the "open folder" button inside the "profile folder" section.</li>
   <li>Create a folder named "chrome" in your profile folder if it doesn't exist yet.</li>
   <li>Place "usercontent.css" and "userchrome.css" inside the "chrome" folder.</li>
+   <li>(Optional) Follow the method described to change the scrollbars to change the tooltip using the "tooltip.uc.js" file inside the "Scrollbars dark theme/profile/" folder in this repository.</li>
   <li>(Optional) Edit userchrome.css to disable or re-enable features typing "/*" before the lines you don't want to apply, and "/*" after them (If you want some line to apply that is within those slashes, just delete the starting "/*".</li>
   <li>(Optional) If you have <a href="https://addons.mozilla.org/es/firefox/addon/ublock-origin/">Ublock Origin</a> and want the blocked page to be dark as well, edit addons.css (the url line explained in there) to have the dynamic url of your ublock extension, and then place it in the "chrome" folder as well.</li>
   <li>(Optional) If you want a dark version of the <a href="https://addons.mozilla.org/es/firefox/addon/flash-video-downloader/">Flash Video Downloader</a> or <a href="https://addons.mozilla.org/es/firefox/addon/video-downloadhelper/">Video Download Helper</a> extensions, edit the "addons.css" file to update the dynamic URLs of the addons, and then copy it in the "chrome" folder as well (further explanations inside the "addons.css" file).</li>
