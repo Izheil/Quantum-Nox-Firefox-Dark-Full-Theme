@@ -1,8 +1,8 @@
-<h1>Custom Scrollbars through UserChrome.js</h1>
+<h1>Custom Scrollbars and dark tooltips through UserChrome.js</h1>
 <img src="https://i.imgur.com/qe6tGJW.png">
-<p>This method should be the same for all OS, and it adds CSS code with agent sheet access level through JavaScript to change the scrollbars (This means that we aren't making JavaScript scrollbars, which can be laggy sometimes. We would be actually styling the default scrollbars through Agent Sheet level CSS, which couldn't be done by default on userchrome.css because of some fix for a bug by Mozilla).</p>
+<p>This method should be the same for all OS, and it adds CSS code with agent sheet access level through JavaScript to change the scrollbars (This means that we aren't making JavaScript scrollbars, which can be laggy sometimes. We would be actually styling the default scrollbars through Agent Sheet level CSS, which couldn't be done by default on userchrome.css because of some fix for a bug by Mozilla) as well as all the tooltips.</p>
 
-<p>The only little problem with this method is that you will have to delete the start up cache files for the changes to take effect every time you make a change to the <b>scrollbars.uc.js</b> file (which is the one where the CSS rules go to change the scrollbar colors).</p>
+<p>The only little problem with this method is that you will have to delete the start up cache files for the changes to take effect every time you make a change to any of the <b>*.uc.js</b> files (which are the ones where the CSS rules go to change the scrollbar or tooltip colors).</p>
 
 <p>To clear the start up cache you have to type <code>about:profiles</code> on firefox URL bar, go to that page, open the local profile directory through that page, and then delete all files inside the "startupCache" folder.</p>
 
@@ -20,7 +20,7 @@
 
 <p><b>Optional</b>: If you aren't fully convinced by the default custom scrollbar, you can try any of the other scrollbar types (only use one) using any of the scrollbar-*.uc.js files inside the "alternative scrollbars" instead of the scrollbar.uc.js inside the "profile" folder in here.</p>
 
-<p><b>Optional</b>: You may also try the <b>tooltips.uc.js</b> file if you want dark tooltips (such as the url tooltip, or when you hover over a bookmark).</p>
+<p><b>Optional</b>: You may delete the <b>tooltips.uc.js</b> file if you don't want dark tooltips (such as the url tooltip, or when you hover over a bookmark).</p>
 
 <p>If you have done everything right, you should see the custom scrollbars next time you open firefox (or after you restart it)</p>
 
@@ -31,7 +31,7 @@
   <li>Open the <code>about:profiles</code> URL with firefox, and open the local profile folder there.</li>
   <li>Open the "startupcache" folder and delete everything there.</li>
   <li><b>Optional</b>: You can try the other scrollbar types inside the "alternative scrollbars" folder.</li>
-  <li><b>Optional</b>: You can install dark tooltips placing the <b>tooltips.uc.js</b> in the chrome folder as well.</li>
+  <li><b>Optional</b>: You can go back to the default tooltip style deleting (or not placing at all) the <b>tooltips.uc.js</b> file in the chrome folder.</li>
 </ul>
 
 <h3>The chrome folder</h3>
