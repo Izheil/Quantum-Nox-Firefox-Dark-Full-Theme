@@ -1,5 +1,5 @@
 <h1>Alternative scrollbar styles</h1>
-<p>You can find other scrollbar styles in here with some screenshots.</p>
+<p>You can find other scrollbar styles in here with some screenshots. You should only use 1 at a time, and each time you change the style, you'll have to clear the "startupcache" folder on the local folder inside <code>about:profiles</code>.</p></p>
 
 <h3>Scrollbars-minimal.uc.js</h3>
 <img src="https://i.imgur.com/eWYEmiU.png">
