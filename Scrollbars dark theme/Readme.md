@@ -20,7 +20,7 @@
 
 <p><b>Optional</b>: If you aren't fully convinced by the default custom scrollbar, you can try any of the other scrollbar types (only use one) using any of the scrollbar-*.uc.js files inside the "alternative scrollbars" instead of the scrollbar.uc.js inside the "profile" folder in here.</p>
 
-<p><b>Optional</b>: You may delete the <b>tooltips.uc.js</b> file if you don't want dark tooltips (such as the url tooltip, or when you hover over a bookmark).</p>
+<p><b>Optional</b>: You may use the <b>tooltips.uc.js</b> file or any of the variants included on the "alternative tooltips" (such as the semi-transparent background ones) if you want dark tooltips (such as the url tooltip, or when you hover over a bookmark).</p>
 
 <p>If you have done everything right, you should see the custom scrollbars next time you open firefox (or after you restart it)</p>
 
@@ -31,7 +31,7 @@
   <li>Open the <code>about:profiles</code> URL with firefox, and open the local profile folder there.</li>
   <li>Open the "startupcache" folder and delete everything there.</li>
   <li><b>Optional</b>: You can try the other scrollbar types inside the "alternative scrollbars" folder.</li>
-  <li><b>Optional</b>: You can go back to the default tooltip style deleting (or not placing at all) the <b>tooltips.uc.js</b> file in the chrome folder.</li>
+  <li><b>Optional</b>: Use the <b>tooltips.uc.js</b> file to change the default color of the tooltips to fit the theme (or any of the variants on the "alternative tooltips", such as the semi-transparent background one).</li>
 </ul>
 
 <h3>The chrome folder</h3>
