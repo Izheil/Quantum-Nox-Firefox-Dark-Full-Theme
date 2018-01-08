@@ -12,7 +12,7 @@ basic css or <a href="https://www.w3schools.com/colors/colors_picker.asp">color 
 <h3>Last update: <b>08/01/2017</b></h3>
 <p>Files updated:</p>
 <ul>
-  <li><b>UserChrome.css</b> -> Themed the context menu separators so that they aren't white by default anymore.</li>
+  <li><b>UserChrome.css</b> -> Themed the context menu separators so that they aren't white by default anymore. Also fixed the highlighting on the sidebar items so that there are no white borders anymore.</li>
 </ul>
 <h3>Pre-Last update: <b>06/01/2017</b></h3>
 <p>Files updated:</p>
