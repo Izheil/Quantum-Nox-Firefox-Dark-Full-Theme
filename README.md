@@ -23,7 +23,7 @@ basic css or <a href="https://www.w3schools.com/colors/colors_picker.asp">color 
 
 <h2>FAQ:</h2>
 
-<h3>I only want to use the multirow/(enter any other other) feature, but not the dark colors on my browser!</h3>
+<h3>I only want to use the multirow/(Any other) feature, but not the dark colors on my browser!</h3>
 <p>Since this is suposed to be mainly a theme, you won't find the "only features" part, but you can edit <b>userChrome.css</b>, and delete the lines that you don't want to apply (Every function has a comment above it saying what each ruleset does), or if you think you may want them later, just encase the coloring parts that you don't want to apply encased between /* and */:</p>
 <code>/* This Line wouldn't be read since it's commented */</code>
 <p>The features part starts on line 244, where it says "/* SIDEBAR */", so you can delete anything above that if you don't want the theming part to take effect (It would be good if you keep the header of the file in case you pass on the file to someone else so that they know where you downloaded it from, or in case you wanted to check for updates later on, but that's up to you).</p>
