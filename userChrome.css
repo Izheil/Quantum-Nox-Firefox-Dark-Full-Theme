@@ -227,7 +227,6 @@ if necessary depending on if you are using a custom OS theme (which may mess up 
 
 /* Highlighted items */
 treechildren {
-  -moz-appearance: none !important;
 
 /* These change the colors of the borders when selected/hovered */
   --treechildren-selectedColor: none !important;
@@ -242,16 +241,16 @@ treechildren {
   --treechildren-hoverSelectedImage: linear-gradient(rgb(205,232,255), rgb(205,232,255)) !important}
 
 /* This is a fix for those using an OS theme (they change the background and text color on hover), 
-if you don't see a blue hover color on items on the sidebar, use this method instead *//*
+if you don't see a blue hover color on items on the sidebar, use this method instead (Delete the comment 
+starter slash in the line below) */
+/*
 #bookmarks-view treechildren::-moz-tree-cell(hover),
 #historyTree treechildren::-moz-tree-cell(hover) {
-  -moz-appearance: none !important;
   background-image: linear-gradient(rgb(34,85,170), rgb(34,85,170)) !important;
   color: #fff !important}
 
 #bookmarks-view treechildren::-moz-tree-cell(selected),
 #historyTree treechildren::-moz-tree-cell(selected){
-  -moz-appearance: none !important;
   background-image: linear-gradient(rgb(40,40,40), rgb(40,40,40)) !important;
   color: #000 !important}
 
