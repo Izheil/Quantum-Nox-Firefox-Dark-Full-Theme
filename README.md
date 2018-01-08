@@ -9,16 +9,15 @@ basic css or <a href="https://www.w3schools.com/colors/colors_picker.asp">color 
 <img src="https://i.imgur.com/3lzN95E.png">
 <p>To change these you will have to use the right hex codes. You can find a color picker to hex code in <a href="https://www.w3schools.com/colors/colors_picker.asp">this page</a>.
 
-<h3>Last update: <b>07/01/2017</b></h3>
+<h3>Last update: <b>08/01/2017</b></h3>
 <p>Files updated:</p>
 <ul>
-  <li><b>tooltips.uc.js</b> -> You can now turn the tooltips dark using the same method described for the scrollbars, and then placing <b>tooltips.uc.js</b> (contained inside the "Scrollbars & tooltips dark theme" folder along with the scrollbars.uc.js file) inside the chrome folder.</li>
+  <li><b>UserChrome.css</b> -> Changed the default padding over the "save us" option on the context menu. For those using a custom OS theme, you may have to edit this padding so that it doesn't look "too flattened" or close to the border.</li>
 </ul>
 <h3>Pre-Last update: <b>06/01/2017</b></h3>
 <p>Files updated:</p>
 <ul>
-  <li><b>Usercontent.css</b> -> Fixed some bug with Ublock element picker overlay page being non-transparent. Also split the addons related theming on a different file, "addons.css", so that you don't have to re-link the dynamic URLs with each usercontent update.</li>
-  <li><b>Addons.css</b> -> Added an improved theming for <a href="https://addons.mozilla.org/es/firefox/addon/ublock-origin/">Ublock Origin</a> (it should now cover all things from it). Also added theming for <a href="https://addons.mozilla.org/es/firefox/addon/flash-video-downloader/">Flash Video Downloader</a> and for <a href="https://addons.mozilla.org/es/firefox/addon/video-downloadhelper/">Video Download Helper</a>.
+  <li><b>tooltips.uc.js</b> -> You can now turn the tooltips dark using the same method described for the scrollbars, and then placing <b>tooltips.uc.js</b> (contained inside the "Scrollbars & tooltips dark theme" folder along with the scrollbars.uc.js file) inside the chrome folder.</li>
 </ul>
 
 <h2>FAQ:</h2>
@@ -28,10 +27,13 @@ basic css or <a href="https://www.w3schools.com/colors/colors_picker.asp">color 
 
 <code>/* This is an example of a comment that wouldn't be read on a .css file */</code>
 
-<p>The features part starts on line 244, where it says "/* SIDEBAR */", so you can delete anything above that if you don't want the theming part to take effect (It would be good if you keep the header of the file in case you pass on the file to someone else so that they know where you downloaded it from, or in case you wanted to check for updates later on, but that's up to you).</p>
+<p>The features part starts on line 245, where it says "/* SIDEBAR */", so you can delete anything above that if you don't want the theming part to take effect (It would be good if you keep the header of the file in case you pass on the file to someone else so that they know where you downloaded it from, or in case you wanted to check for updates later on, but that's up to you).</p>
 
 <h3>Why use this method instead of using <a href="https://addons.mozilla.org/es/firefox/addon/styl-us/">Stylus</a>?</h3>
 <p>The main reason is that you can't style firefox about: pages nor the scrollbar with just stylus.</p>
+
+<h3>The "save as..." option of the context menu is too close to the top border</h3>
+<p>If you are using a custom OS theme, the menu separators may get their padding removed (not because of this theme), since they would get inherited from the OS theme you are using. If this is the case, you may have to change line 143 (where it says fix for the space above the "save as" option) from 3px to 6px.</p>
 
 <h3>What features does this theme have?</h3>
 <p>The main features (apart from the theming) are:</p>
