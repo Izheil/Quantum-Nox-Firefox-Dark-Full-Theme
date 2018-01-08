@@ -12,7 +12,7 @@ basic css or <a href="https://www.w3schools.com/colors/colors_picker.asp">color 
 <h3>Last update: <b>08/01/2017</b></h3>
 <p>Files updated:</p>
 <ul>
-  <li><b>UserChrome.css</b> -> Changed the default padding over the "save us" option on the context menu. For those using a custom OS theme, you may have to edit this padding so that it doesn't look "too flattened" or close to the border.</li>
+  <li><b>UserChrome.css</b> -> Themed the context menu separators so that they aren't white by default anymore.</li>
 </ul>
 <h3>Pre-Last update: <b>06/01/2017</b></h3>
 <p>Files updated:</p>
@@ -27,13 +27,10 @@ basic css or <a href="https://www.w3schools.com/colors/colors_picker.asp">color 
 
 <code>/* This is an example of a comment that wouldn't be read on a .css file */</code>
 
-<p>The features part starts on line 245, where it says "/* SIDEBAR */", so you can delete anything above that if you don't want the theming part to take effect (It would be good if you keep the header of the file in case you pass on the file to someone else so that they know where you downloaded it from, or in case you wanted to check for updates later on, but that's up to you).</p>
+<p>The features part starts on line 251, where it says "/* SIDEBAR */", so you can delete anything above that if you don't want the theming part to take effect (It would be good if you keep the header of the file in case you pass on the file to someone else so that they know where you downloaded it from, or in case you wanted to check for updates later on, but that's up to you).</p>
 
 <h3>Why use this method instead of using <a href="https://addons.mozilla.org/es/firefox/addon/styl-us/">Stylus</a>?</h3>
 <p>The main reason is that you can't style firefox about: pages nor the scrollbar with just stylus.</p>
-
-<h3>The "save as..." option of the context menu is too close to the top border</h3>
-<p>If you are using a custom OS theme, the menu separators may get their padding removed (not because of this theme), since they would get inherited from the OS theme you are using. If this is the case, you may have to change line 143 (where it says fix for the space above the "save as" option) from 3px to 6px.</p>
 
 <h3>What features does this theme have?</h3>
 <p>The main features (apart from the theming) are:</p>
