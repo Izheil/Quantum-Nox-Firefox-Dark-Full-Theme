@@ -225,20 +225,35 @@ if necessary depending on if you are using a custom OS theme (which may mess up 
   border-right: 2px solid #000 !important;
   -moz-appearance: none !important}
 
-/* These change the highlight colors */
+/* Highlighted items */
+treechildren {
+  -moz-appearance: none !important;
+
+/* These change the colors of the borders when selected/hovered */
+  --treechildren-selectedColor: none !important;
+  --treechildren-focusColor: rgb(123,195,255) !important;
+  --treechildren-hoverColor: none !important;
+  --treechildren-selectedFocusColor: rgb(205,232,255) !important;
+
+/* These change the background colors when hovered/selected */  
+  --treechildren-selectedImage: linear-gradient(rgb(190,190,190), rgb(190,190,190)) !important; 
+  --treechildren-hoverImage: linear-gradient(rgb(34,85,170), rgb(34,85,170)) !important; 
+  --treechildren-hoverCurrentImage: linear-gradient(rgba(34,85,170,.16), rgba(34,85,170,.16)) !important;
+  --treechildren-hoverSelectedImage: linear-gradient(rgb(205,232,255), rgb(205,232,255)) !important}
+
+/* This is a fix for those using an OS theme (they change the background and text color on hover), 
+if you don't see a blue hover color on items on the sidebar, use this method instead *//*
 #bookmarks-view treechildren::-moz-tree-cell(hover),
+#historyTree treechildren::-moz-tree-cell(hover) {
+  -moz-appearance: none !important;
+  background-image: linear-gradient(rgb(34,85,170), rgb(34,85,170)) !important;
+  color: #fff !important}
+
 #bookmarks-view treechildren::-moz-tree-cell(selected),
-#historyTree treechildren::-moz-tree-cell(hover),
 #historyTree treechildren::-moz-tree-cell(selected){
   -moz-appearance: none !important;
-  background-color: #25a !important}
-
-/* These change the text colors upon hovering/selection */
-#bookmarks-view treechildren::-moz-tree-cell(hover),
-#bookmarks-view treechildren::-moz-tree-cell(selected),
-#historyTree treechildren::-moz-tree-cell(hover),
-#historyTree treechildren::-moz-tree-cell(selected){
-  color: #fff !important}
+  background-image: linear-gradient(rgb(40,40,40), rgb(40,40,40)) !important;
+  color: #000 !important}
 
 /* This changes the sidebar searchbar */
 #sidebar-search-container #search-box {
