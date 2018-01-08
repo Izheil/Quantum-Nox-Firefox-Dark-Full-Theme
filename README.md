@@ -23,10 +23,10 @@ basic css or <a href="https://www.w3schools.com/colors/colors_picker.asp">color 
 
 <h2>FAQ:</h2>
 
-<h3>The scrollbars go back to the default ones after a firefox update when using the old method!</h3>
-<p>You should be using the new method (inside the "scrollbars & tooltips dark theme" folder) for the permanent fix for them. I'm only keeping this folder for legacy reasons (or just in case Mozilla disallows the user of UserChrome.js in the future)
-<p>If you still want to use the old method because the userChrome.js method somehow doesn't work for you, you will have to re-patch the <code>chrome.manifest</code> file after each firefox update either following the manual steps found in here, <b>or applying the right re-patcher found on the "Scrollbar patchers(Old method)" folder</b> (which should at least give you one or two months before having to re-patch it until the next firefox update).</p>
-<p>This problem happens because firefox overwrites the omni.ja and the <code>chrome.manifest</code> file with each firefox update to "clear" any possible problem with the old version, making our change only temporary without re-patching it after each update.</p>
+<h3>I only want to use the multirow/(enter any other other) feature, but not the dark colors on my browser!</h3>
+<p>Since this is suposed to be mainly a theme, you won't find the "only features" part, but you can edit <b>userChrome.css</b>, and delete the lines that you don't want to apply (Every function has a comment above it saying what each ruleset does), or if you think you may want them later, just encase the coloring parts that you don't want to apply encased between /* and */:</p>
+<code>/* This Line wouldn't be read since it's commented */</code>
+<p>The features part starts on line 244, where it says "/* SIDEBAR */", so you can delete anything above that if you don't want the theming part to take effect (It would be good if you keep the header of the file in case you pass on the file to someone else so that they know where you downloaded it from, or in case you wanted to check for updates later on, but that's up to you).</p>
 
 <h3>Why use this method instead of using <a href="https://addons.mozilla.org/es/firefox/addon/styl-us/">Stylus</a>?</h3>
 <p>The main reason is that you can't style firefox about: pages nor the scrollbar with just stylus.</p>
