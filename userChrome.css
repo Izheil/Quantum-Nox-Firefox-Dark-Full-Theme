@@ -138,8 +138,9 @@ menupopup {
 /* This removes the borders for the bookmark menu button next to the url bar */
 #BMB_bookmarksPopup, #BMB_bookmarksPopup menupopup {border: none !important}
 
-/* Fix for the padding of "save as" after the navigation buttons have been eliminated */
-#context-savepage {padding-top: 6px !important}
+/* Fix for the space above the "save as" option after the navigation buttons have been eliminated. Change 
+if necessary depending on if you are using a custom OS theme (which may mess up the padding of the separators) */
+#context-savepage {padding-top: 3px !important}
 
 /* Fix for context menu separators randomly appearing full-width */
 menuseparator {margin-left: 0.5px !important}
