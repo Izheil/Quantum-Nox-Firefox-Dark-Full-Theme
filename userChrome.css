@@ -135,15 +135,21 @@ menupopup {
 	-moz-appearance: none !important;
 	border: 2px solid #111 !important}
 
+/* This changes the color of the default separators */
+menuseparator {
+  -moz-appearance: none !important;
+  margin: 1px 0 1px 2.3em !important;
+  height: 1px !important;
+  border: none !important;
+  background: #222 !important;
+  padding: 0 !important}
+
 /* This removes the borders for the bookmark menu button next to the url bar */
 #BMB_bookmarksPopup, #BMB_bookmarksPopup menupopup {border: none !important}
 
 /* Fix for the space above the "save as" option after the navigation buttons have been eliminated. Change 
 if necessary depending on if you are using a custom OS theme (which may mess up the padding of the separators) */
 #context-savepage {padding-top: 3px !important}
-
-/* Fix for context menu separators randomly appearing full-width */
-menuseparator {margin-left: 0.5px !important}
 
 /* AUTOCOMPLETE COLORS */
 
@@ -358,8 +364,8 @@ an empty scrollbar on the side (sadly can't be fixed without breaking customizab
 /* All of these commands are divided so that they can be explained, but they are all
 part of the same rule */
 
-/* Navigation buttons (Back, forward and reload buttons) */
-#context-navigation,
+/* Navigation buttons (Back, forward and reload buttons) & it's separator */
+#context-navigation, #context-sep-navigation,
 
 /* Send image... */ 
 #context-sendimage,
