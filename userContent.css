@@ -371,7 +371,7 @@ html {background-color: #202020 !important}
 	--in-content-box-border-color: #777 !important}
 }
 
-/*------ PROFILE INFORMATION PAGE (about:support) ------*/
+/*------ SUPPORT/PROFILE INFORMATION PAGE (about:support & about:profiles) ------*/
 @-moz-document url-prefix(about:support), url-prefix(about:profiles) {
 
 :root {
@@ -447,6 +447,9 @@ default browser) */
 	background-color: rgba(255,255,255, 0.2) !important;
 	color: #0FF !important}
 
+/* Search bar images on "search" category */
+image.searchBarImage {filter: invert(92%) hue-rotate(180deg)}	
+	
 treecol {
 	background-color: #555 !important;
 	color: #FFF !important}
