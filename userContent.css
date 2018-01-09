@@ -46,10 +46,22 @@ prefwindow, .windowDialog {
 
 /* This fixes the inverted colors caused by the image filter (since I couldn't directly filter 
 only the images */
-#errorPageContainer .button-container {filter: invert(98%) hue-rotate(-200deg)}
+.connectionFailure #errorPageContainer .button-container,
+.netInterrupt #errorPageContainer .button-container,
+.netTimeout #errorPageContainer .button-container,
+.netReset #errorPageContainer .button-container,
+.netOffline #errorPageContainer .button-container,
+.dnsNotFound #errorPageContainer .button-container,
+.malformedURI #errorPageContainer .button-container,
+.connectionFailure #errorPageContainer #text-container,
+.netInterrupt #errorPageContainer #text-container,
+.netTimeout #errorPageContainer #text-container,
+.netReset #errorPageContainer #text-container,
+.netOffline #errorPageContainer #text-container,
+.dnsNotFound #errorPageContainer #text-container,
+.malformedURI #errorPageContainer #text-container {filter: invert(98%) hue-rotate(-200deg)}
 
-#errorPageContainer #text-container {color: #555 !important}
-#errorPageContainer #text-container h1 {color: #0af !important}
+#errorPageContainer #text-container h1 {color: #1C7BFF !important}
 
 /* This is a little fix for all pages in case you have a dark windows theme, so that the 
 letters will have a blue neutral color to be seen in either a white or dark background for 
