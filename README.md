@@ -68,10 +68,10 @@ of using the usercontent or userchrome files provided here.</p>
   <li>Click the "open folder" button inside the "profile folder" section.</li>
   <li>Create a folder named "chrome" in your profile folder if it doesn't exist yet.</li>
   <li>Place "usercontent.css" and "userchrome.css" inside the "chrome" folder.</li>
-   <li>(Optional) Follow the method described to change the scrollbars to change the tooltip using the "tooltip.uc.js" file inside the "Scrollbars & tooltips dark theme/profile/" folder in this repository.</li>
-  <li>(Optional) Edit userchrome.css to disable or re-enable features typing "/*" before the lines you don't want to apply, and "/*" after them (If you want some line to apply that is within those slashes, just delete the starting "/*".</li>
-  <li>(Optional) If you have <a href="https://addons.mozilla.org/es/firefox/addon/ublock-origin/">Ublock Origin</a> and want the blocked page to be dark as well, edit addons.css (the url line explained in there) to have the dynamic url of your ublock extension, and then place it in the "chrome" folder as well.</li>
-  <li>(Optional) If you want a dark version of the <a href="https://addons.mozilla.org/es/firefox/addon/flash-video-downloader/">Flash Video Downloader</a> or <a href="https://addons.mozilla.org/es/firefox/addon/video-downloadhelper/">Video Download Helper</a> extensions, edit the "addons.css" file to update the dynamic URLs of the addons, and then copy it in the "chrome" folder as well (further explanations inside the "addons.css" file).</li>
+  <li><b>Optional</b>: Follow the method described to change the scrollbars to change the tooltip using the "tooltip.uc.js" file inside the "Scrollbars & tooltips dark theme/profile/" folder in this repository.</li>
+  <li><b>Optional</b>: Edit userchrome.css to disable or re-enable features typing "/*" before the lines you don't want to apply, and "/*" after them (If you want some line to apply that is within those slashes, just delete the starting "/*".</li>
+  <li><b>Optional</b>: If you have <a href="https://addons.mozilla.org/es/firefox/addon/ublock-origin/">Ublock Origin</a> and want the blocked page to be dark as well, edit addons.css (the url line explained in there) to have the dynamic url of your ublock extension, and then place it in the "chrome" folder as well.</li>
+  <li><b>Optional</b>: If you want a dark version of the <a href="https://addons.mozilla.org/es/firefox/addon/flash-video-downloader/">Flash Video Downloader</a> or <a href="https://addons.mozilla.org/es/firefox/addon/video-downloadhelper/">Video Download Helper</a> extensions, edit the "addons.css" file to update the dynamic URLs of the addons, and then copy it in the "chrome" folder as well (further explanations inside the "addons.css" file).</li>
 </ul>
 
 <h3>The scrollbars</h3>
