@@ -23,7 +23,7 @@ basic css or <a href="https://www.w3schools.com/colors/colors_picker.asp">color 
 <h2>FAQ:</h2>
 
 <h3>I only want to use the multirow/(Any other) feature, but not the dark colors on my browser!</h3>
-<p>Since this is suposed to be mainly a theme, you won't find the "only features" part, but you can edit <b>userChrome.css</b>, and delete the lines that you don't want to apply (Every function has a comment above it saying what each ruleset does), or if you think you may want them later, just encase the coloring parts that you don't want to apply encased between /* and */:</p>
+<p>Since this is suposed to be mainly a theme, you won't find the "only features" part, but you only need the  <b>userChrome.css</b> file, so <a href="https://raw.githubusercontent.com/Izheil/Firefox-57-full-dark-theme-with-scrollbars/master/userChrome.css">download it</a> (follow the link, right click the page and choose "save as...") and delete the lines that you don't want to apply (Every function has a comment above it saying what each ruleset does), or if you think you may want them later, just encase the coloring parts that you don't want to apply between /* and */:</p>
 
 <code>/* This is an example of a comment that wouldn't be read on a .css file */</code>
 
