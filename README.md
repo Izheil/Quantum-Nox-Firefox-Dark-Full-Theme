@@ -9,15 +9,15 @@ basic css or <a href="https://www.w3schools.com/colors/colors_picker.asp">color 
 <img src="https://i.imgur.com/3lzN95E.png">
 <p>To change these you will have to use the right hex codes. You can find a color picker to hex code in <a href="https://www.w3schools.com/colors/colors_picker.asp">this page</a>.
 
-<h3>Last update: <b>08/01/2017</b></h3>
+<h3>Last update: <b>09/01/2017</b></h3>
+<p>Files updated:</p>
+<ul>
+  <li><b>UserContent.css</b> -> Fixed some of the colors of the error pages that were inverted.</li>
+</ul>
+<h3>Pre-Last update: <b>08/01/2017</b></h3>
 <p>Files updated:</p>
 <ul>
   <li><b>UserChrome.css</b> -> Themed the context menu separators so that they aren't white by default anymore. Also fixed the highlighting on the sidebar items so that there are no white borders anymore.</li>
-</ul>
-<h3>Pre-Last update: <b>06/01/2017</b></h3>
-<p>Files updated:</p>
-<ul>
-  <li><b>tooltips.uc.js</b> -> You can now turn the tooltips dark using the same method described for the scrollbars, and then placing <b>tooltips.uc.js</b> (contained inside the "Scrollbars & tooltips dark theme" folder along with the scrollbars.uc.js file) inside the chrome folder.</li>
 </ul>
 
 <h2>FAQ:</h2>
