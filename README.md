@@ -80,8 +80,7 @@ of using the usercontent or userchrome files provided here.</p>
 <p>To install the custom scrollbars to match the dark theme, you will have to use one of the 2 methods found on the "Scrollbars & tooltips dark theme" or "Scrollbars patchers(Old method)" folders inside this repository. You should be using the "Scrollbars & tooltips dark theme" folder method, since it's the most permanent, but if you find some bug or if the scrollbars lag for you, you could try using the old method one instead. The problem with the old method is that you will have to re-patch the scrollbars with each firefox update, but it's a mainly CSS method with no JavaScript involved, so the scrollbars shouldn't lag at all.</b>
 
 <h3>The chrome folder</h3>
-<p>If you don't know where that is, just type <code>about:support</code> on the URL bar of your firefox, and in the page
-you will be redirected to, on the section labed as "profile folder" click the <b>open folder</b> button.</p>
+<p>The fastest way to find it is to just type <code>about:support</code> on the URL bar of your firefox, and then click the <b>open folder</b> button inside the "profile folder" section.</p>
 <p>After this, your profile folder will be open. You may or may not see the chrome folder. If you don't see it, just create it and place inside the usercontent.css and userchrome.css files.</p>
 
 <p>If you want to know the exact location for profile folders (information taken from <a href="http://kb.mozillazine.org/Profile_folder_-_Firefox">here</a>):</p>
