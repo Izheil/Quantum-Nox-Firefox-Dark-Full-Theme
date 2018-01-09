@@ -12,7 +12,7 @@ basic css or <a href="https://www.w3schools.com/colors/colors_picker.asp">color 
 <h3>Last update: <b>09/01/2017</b></h3>
 <p>Files updated:</p>
 <ul>
-  <li><b>UserContent.css</b> -> Fixed some of the colors of the error pages that were inverted, and added a more subtle degrading color on the "show more" buttons on firefox addons page.</li>
+  <li><b>UserContent.css</b> -> Fixed some of the colors of the error pages that were inverted, added a more subtle degrading color on the "show more" buttons on firefox addons page, and turned black the searchbar images on <code>about:preferences</code>in the "search" category.</li>
 </ul>
 <h3>Pre-Last update: <b>08/01/2017</b></h3>
 <p>Files updated:</p>
