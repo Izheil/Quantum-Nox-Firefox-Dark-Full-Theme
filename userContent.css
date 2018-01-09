@@ -658,7 +658,7 @@ input#search-q {
     border: 1px solid #101010 !important}
 
 .ShowMoreCard-contents::after 
-{background: linear-gradient(rgba(0, 0, 0, 0), #000) !important}
+{background: linear-gradient(rgba(48, 48, 48, 0.3), #303030) !important}
 }
 
 /*------ MOZILLA LOGIN PAGE (The login page inside https://addons.mozilla.org) ------*/
