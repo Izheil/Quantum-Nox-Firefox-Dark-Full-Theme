@@ -34,13 +34,14 @@ a:hover {color: #0ff !important}
 a:active {color: #0050aa !important}
 
 button {
+	-moz-appearance: none !important;
 	background: linear-gradient(#333, #111) !important;
-    color: #ccc !important;
+    	color: #ccc !important;
 	border: 1px solid #000 !important}
 
 button:hover {
 	background: linear-gradient(#111, #333) !important;
-    color: #fff !important}
+    	color: #fff !important}
 
 }
 
