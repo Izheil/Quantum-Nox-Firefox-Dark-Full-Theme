@@ -76,10 +76,16 @@ input[type=number], input[type=search], input[type=tel], input[type=url], textar
 
 /*------ FILE BROWSING ------*/
 @-moz-document url-prefix(file://){
+html {background: #202020 !important}
+body {background: #333 !important}
+	
 #UI_goUp a.up:link, a.file:link, a.dir:link {color: #0084ff !important}
 #UI_goUp a.up:hover, .ellipsis a.file:hover, .ellipsis a.dir:hover {color: #0ff !important}
 #UI_goUp a.up:active, .ellipsis a.file:active, .ellipsis a.dir:active {color: #0050aa !important}
-}
+#UI_goUp a.up:visited, .ellipsis a.file:visited, .ellipsis a.dir:visited {color: #0050dd !important}
+
+th {color: #ddd !important}
+td {color: #aaa !important}}
 
 /*------ VIEW SOURCE ------*/
 @-moz-document url-prefix(view-source:){
@@ -96,9 +102,9 @@ html {
 @-moz-document url-prefix(about:home), url-prefix(about:newtab){
 
 body { 
- 	background-color: #202020  !important;
-    color: #50AAFF !important;
-    overflow: auto !important}
+	background-color: #202020  !important;
+   	color: #50AAFF !important;
+   	overflow: auto !important}
 
 /* Context menus of the web area */
 .context-menu {
@@ -266,22 +272,108 @@ body {
 	
 #onboarding-overlay img {filter: invert(90%) hue-rotate(200deg)}
 
-/*------ ABOUT/BLANK PAGE (about:about, about:blank) ------*/
-@-moz-document url(about:about), url(about:blank){
-body {background-color: #202020}
-p {color: #AAA !important}
-h1 {color: #FFF !important}
+/*------ COMMON ATTRIBUTES ON MOST ABOUT PAGES ------*/
+@-moz-document url(about:about), url(about:blank), url(about:), 
+url(https://www.mozilla.org/credits/), url-prefix(about:cache),
+url-prefix(about:checkerboard), url-prefix(about:plugins), 
+url-prefix(about:buildconfig), url-prefix(about:support), 
+url-prefix(about:profiles), url(about:crashes), url(about:license),
+url-prefix(about:memory), url-prefix(about:networking), url(about:performance),
+url(about:rights), url(about:robots), url-prefix(about:studies), 
+url-prefix(about:telemetry), url(about:url-classifier), url(about:webrtc) {
+
+p, pre, li {color: #AAA !important}
+h1 {color: #1C7BFF !important}
+h2 {color: #ddd !important}
+a:link, a {color: #0084ff !important}
+a:hover {color: #0ff !important}
+a:active {color: #0050aa !important}
+a:visited {color: #0050dd !important}
+
+button {
+	-moz-appearance: none !important;
+	background: linear-gradient(#2050AA, #203050);
+    color: #FFF !important;
+	border: 1px solid #0050aa !important;
+	padding: 0.5em}
+
+button:hover {
+	background: linear-gradient(#203050, #2050AA) !important;
+    color: #0FF !important}
+
+textarea {
+	-moz-appearance: none !important;
+	background: #333;
+	color: #aaa;
+	border: 1px solid #444}
+}
+
+/*------ BACKGROUND OF MOST ABOUT PAGES  ------*/
+@-moz-document url(about:), url(about:about), url(about:blank), url(https://www.mozilla.org/credits/),
+url-prefix(about:checkerboard), url(about:accounts), url-prefix(about:cache), 
+url-prefix(about:plugins), url-prefix(about:buildconfig), url-prefix(about:memory),
+url-prefix(about:support), url-prefix(about:profiles), url(about:robots), url(about:serviceworkers),
+url(about:webrtc) {
+body, html {background-color: #202020 !important}}
+
+/*------ ABOUT: PAGE (about:) ------*/
+@-moz-document url(about:), url(https://www.mozilla.org/credits/) {
+#aboutPageList {color: #ddd !important}}
+
+/*------ DIVS OVER BACKGROUND PAGES ------*/
+@-moz-document url(about:accounts), url(about:robots), 
+url(about:serviceworkers), url-prefix(about:studies), url(about:webrtc) {
+#stage, #errorPageContainer, .warningMessage,
+.info-box-content, .stats, .log {background: #333 !important}
+.fold-trigger {color: #fff !important}
+}
+
+/*------ SERVICE WORKERS PAGE (about:serviceworkers) ------*/
+@-moz-document url(about:serviceworkers) {
+#warning_no_serviceworkers {background: #222 !important}
+.warningMessage {color: #ddd !important}
 }
 
 /*------ CACHE PAGE (about:cache) ------*/
 @-moz-document url-prefix(about:cache){
-html { 
- 	background-color: #202020 !important;
- 	color: #aaa}
+#submit {
+	-moz-appearance: none !important;
+	background: linear-gradient(#2050AA, #203050) !important;
+    color: #FFF !important;
+    padding: 0.5em;
+	border: 1px solid #0050aa !important}
 
-a:link {color: #4080CC}
+#submit:hover {
+	background: linear-gradient(#203050, #2050AA) !important;
+    color: #0FF !important}
+
+#appid {
+	-moz-appearance: none !important;
+	background: #333;
+	border: 1px solid #555;
+	color: #ddd}
 
 table#entries tr:nth-child(even) {background-color: #151515 !important}
+}
+
+/*------ CHECKERBOARD PAGE (about:checkerboard) ------*/
+@-moz-document url-prefix(about:checkerboard) {
+#raw {color: #aaa !important}
+
+th {background: #444 !important}
+td {background: #666 !important}
+}
+
+/*------ NETWORKING PAGE (about:networking) ------*/
+@-moz-document url-prefix(about:networking), url-prefix(about:telemetry) {
+.category {color: #ddd !important}
+.category[selected="true"], .category.selected {color: #0083ff !important}
+}
+
+/*------ RIGHTS PAGE (about:rights) ------*/
+@-moz-document url-prefix(about:rights){
+.rights-header {filter: invert(98%) hue-rotate(200deg) }
+.rights-header div {filter: invert(98%) hue-rotate(-200deg)}
 }
 
 /*------ DEBUGGING PAGE (about:debugging) ------*/
@@ -334,17 +426,13 @@ span.target-status {background-color: #151515 !important}
 
 /*------ PLUGINS PAGE (about:plugins) ------*/
 @-moz-document url-prefix(about:plugins){
-html, body {background-color: #202020 !important}
-
-h1 {color: #FFF !important}
-
 .notice {
 	background-color: #101010 !important;
 	color: #FA0 !important}
 
 .notice a:link {color: #4080CC !important}
 
-h2, dl {color: #aaa !important}
+dl {color: #aaa !important}
 
 tbody {
 	background-color: #555 !important;
@@ -355,8 +443,6 @@ th {background-color: #333 !important}
 
 /*------ MEMORY LOAD PAGE (about:memory) ------*/
 @-moz-document url-prefix(about:memory){
-html {background-color: #202020 !important}
-
 .opsRow {
 	background-color: #303030 !important;
 	color: #AAA !important}
@@ -371,8 +457,9 @@ html {background-color: #202020 !important}
 	--in-content-box-border-color: #777 !important}
 }
 
-/*------ SUPPORT/PROFILE INFORMATION PAGE (about:support & about:profiles) ------*/
-@-moz-document url-prefix(about:support), url-prefix(about:profiles) {
+/*------ INFORMATION PAGES WITH TABLES ------*/
+@-moz-document url-prefix(about:support), url-prefix(about:profiles), 
+url(about:performance), url(about:url-classifier) {
 
 :root {
 	--in-content-table-header-background: #333 !important;
@@ -383,20 +470,9 @@ html {background-color: #202020 !important}
 	--in-content-table-border-dark-color: #000 !important;
 	--in-content-border-color: #000 !important}
 
-html {background-color: #202020 !important}
+td {background: #555 !important}
 
-h1 {color: #FFF !important}
-
-h2, .page-subtitle {color: #aaa !important}
-
-button {
-	background: linear-gradient(#2050AA, #203050) !important;
-    	color: #FFF !important;
-	border: 1px solid #0050aa !important}
-
-button:hover {
-	background: linear-gradient(#203050, #2050AA) !important;
-    	color: #0FF !important}
+.page-subtitle {color: #ddd !important}
 }
 
 /*------ SETTINGS/ADDONS COMMON PART (about:preferences, about:addons) ------*/
@@ -549,7 +625,6 @@ span, .statsBoxSection-header {color: #fff !important}
 }
 
 /*------ MOZILLA ADDONS PAGE (Includes both the new and the old) ------*/
-
 @-moz-document url-prefix(https://addons.mozilla.org) {
 
 html, .App-content, tr.LanguageTools-table-row:nth-child(even), 
