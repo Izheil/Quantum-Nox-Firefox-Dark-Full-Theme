@@ -87,7 +87,6 @@ scrollbar scrollbarbutton{
 	max-width: 16px !important;
 	height: 0px !important;
 	width: 0px !important;
-	background: radial-gradient (circle, #888, #555);
 }`;
 
     var sss = Cc['@mozilla.org/content/style-sheet-service;1'].getService(Ci.nsIStyleSheetService);
