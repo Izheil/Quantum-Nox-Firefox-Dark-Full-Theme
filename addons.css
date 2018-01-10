@@ -1,6 +1,6 @@
 /* You can find an updated version here: https://github.com/Izheil/Firefox-57-full-dark-theme-with-scrollbars */
 /* Made by Izheil */
-/* Last updated: 10/01/2018 */
+/* Last updated: 09/01/2018 */
 
 /*------ HOW TO MAKE THE ADDON THEMES WORK ------*/
 /* To use this part of the code, you will have to find the dynamic ID of your extensions, and replace it where the 
@@ -42,7 +42,6 @@ button {
 button:hover {
 	background: linear-gradient(#111, #333) !important;
     	color: #fff !important}
-
 }
 
 /*------ UBLOCK ORIGIN CONTROL PANEL TOP BUTTONS ------*/
