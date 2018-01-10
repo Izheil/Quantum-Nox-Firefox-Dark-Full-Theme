@@ -12,7 +12,8 @@ basic css or <a href="https://www.w3schools.com/colors/colors_picker.asp">color 
 <h3>Last update: <b>09/01/2017</b></h3>
 <p>Files updated:</p>
 <ul>
-  <li><b>UserContent.css</b> -> Fixed some of the colors of the error pages that were inverted, added a more subtle degrading color on the "show more" buttons on firefox addons page, and turned black the searchbar images on <code>about:preferences</code>in the "search" category.</li>
+  <li><b>UserContent.css</b> -> Fixed some of the colors of the error pages that were inverted, added a more subtle degrading color on the "show more" buttons on firefox addons page, and turned black the searchbar images on <code>about:preferences</code>in the "search" category. Also added all remaining about: pages</li>
+  <li><b>Addons.css</b> -> Fixed a problem with Ublock Origin blocked site buttons (forgot to reset the mozilla default button theme(Just add "-moz-appearance: none !important" in line 37).</li>
 </ul>
 <h3>Pre-Last update: <b>08/01/2017</b></h3>
 <p>Files updated:</p>
@@ -129,25 +130,9 @@ interested on (or commenting them between /* and */)</p>
 
 <h2>The userContent.css file</h2>
 
-<p>The usercontent file will turn dark the most commonly used <code>about</code> pages.</p>
+<p>The usercontent file will turn dark all the <code>about:about</code> pages.</p>
 <img src="https://i.imgur.com/e4zVTC7.png" title="Dark preferences page" /></a>
-<p>These include:</p>
-<ul>
-  <li>About</li>
-  <li>Addons</li>
-  <li>Cache</li>
-  <li>Config</li>
-  <li>Debugging</li>
-  <li>Downloads</li>
-  <li>Error</li>
-  <li>Healthreport</li>
-  <li>Home</li>
-  <li>Memory</li>
-  <li>Plugins</li>
-  <li>Preferences</li>
-  <li>Profiles</li>
-  <li>Support</li>
-</ul>
+
 <p>It will also turn dark the <a href="https://addons.mozilla.org">Mozilla addons page</a>, both the old and the new, the file explorer inside firefox, and the "view source of page" page.</p>
 
 <h2>The scrollbars.uc.js file</h2>
