@@ -43,7 +43,7 @@ scrollbar thumb[orient="vertical"] {
 	width: 12px !important;
 	min-width: 12px !important;
 	max-width: 12px !important;
-	background: linear-gradient(to right, transparent 0, transparent 1px, #888 1px, #555 11px, transparent 11px, transparent 12px) !important;
+	background: linear-gradient(to right, transparent 0, transparent 1px, #999 1px, #333 11px, transparent 11px, transparent 12px) !important;
 }
 
 scrollbar thumb[orient="horizontal"] {
@@ -51,7 +51,7 @@ scrollbar thumb[orient="horizontal"] {
 	height: 12px !important;
 	min-height: 12px !important;
 	max-height: 12px !important;
-	background: linear-gradient(transparent 0, transparent 1px, #888 1px, #555 11px, transparent 11px, transparent 12px) !important;
+	background: linear-gradient(transparent 0, transparent 1px, #999 1px, #333 11px, transparent 11px, transparent 12px) !important;
 }
 
 scrollbar thumb {
@@ -61,21 +61,21 @@ scrollbar thumb {
 
 scrollbar:hover thumb[orient="horizontal"],
 scrollbar thumb[orient="horizontal"]:active {
-	background: linear-gradient(transparent 0, transparent 1px, #46b 1px, #249 11px, transparent 11px, transparent 12px) !important;
+	background: linear-gradient(transparent 0, transparent 1px, #46b 1px, #1e2d53 11px, transparent 11px, transparent 12px) !important;
 }
 
 scrollbar:hover thumb[orient="vertical"],
 scrollbar thumb[orient="vertical"]:active {
-	background: linear-gradient(to right, transparent 0, transparent 1px, #46b 1px, #249 11px, transparent 11px, transparent 12px) !important;
+	background: linear-gradient(to right, transparent 0, transparent 1px, #46b 1px, #1e2d53 11px, transparent 11px, transparent 12px) !important;
 }
 
 scrollbar thumb[orient="vertical"]:active {
-	background: linear-gradient(to right, #46b, #249) !important;
+	background: linear-gradient(to right, #46b, #172342) !important;
 	border-radius: 6px !important;
 }
 
 scrollbar thumb[orient="horizontal"]:active {
-	background: linear-gradient(#46b, #249) !important;
+	background: linear-gradient(#46b, #172342) !important;
 	border-radius: 6px !important;
 }
 
