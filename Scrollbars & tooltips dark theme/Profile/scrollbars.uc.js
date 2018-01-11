@@ -44,7 +44,7 @@ scrollbar thumb[orient="vertical"] {
 	min-width: 16px !important;
 	max-width: 16px !important;
 	background-image: linear-gradient(to right, rgba(0,0,0,0), rgba(0,0,0,0.7)) !important;
-	transform: scale(1, 1);
+	transform: scale(0.875, 1) translate(1px, 0);
 }
 
 scrollbar thumb[orient="horizontal"] {
@@ -53,7 +53,7 @@ scrollbar thumb[orient="horizontal"] {
 	min-height: 16px !important;
 	max-height: 16px !important;
 	background-image: linear-gradient(rgba(0,0,0,0), rgba(0,0,0,0.7)) !important;
-	transform: scale(1, 1);
+	transform: scale(1, 0.875) translate(0, 1px);
 }
 
 scrollbar thumb {
@@ -67,16 +67,11 @@ scrollbar:hover thumb[orient="horizontal"] {
 	background-color: #46b !important;
 }
 
-scrollbar thumb[orient="vertical"]:active {
-	background-color: #46b !important;
-	border-radius: 6px !important;
-	transform: scale(0.875, 1);
-}
-
+scrollbar thumb[orient="vertical"]:active,
 scrollbar thumb[orient="horizontal"]:active {
 	background-color: #46b !important;
 	border-radius: 6px !important;
-	transform: scale(1, 0.875);
+	transform: scale(1, 1) translate(0, 0);
 }
 
 /* no buttons */
