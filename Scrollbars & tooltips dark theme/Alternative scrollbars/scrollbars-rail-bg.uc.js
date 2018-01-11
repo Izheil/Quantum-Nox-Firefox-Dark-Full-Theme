@@ -19,7 +19,7 @@ scrollbar[orient="vertical"] {
 	max-width: 16px !important;
 	min-width: 16px !important;
 	
-	background: linear-gradient(rgba(175,175,175,0.2), rgba(175,175,175,0.2)) !important;
+	background: linear-gradient(rgba(127,127,127,0.5), rgba(127,127,127,0.5)) !important;
 	background-size: 1px 1px !important;
 	background-repeat: repeat-y !important;
 	background-position: 50% 0% !important;
@@ -31,7 +31,7 @@ scrollbar[orient="horizontal"] {
 	max-height: 16px !important;
 	min-height: 16px !important;
     
-	background: linear-gradient(rgba(175,175,175,0.2), rgba(175,175,175,0.2)) !important;
+	background: linear-gradient(rgba(127,127,127,0.5), rgba(127,127,127,0.5)) !important;
 	background-size: 1px 1px !important;
 	background-repeat: repeat-x  !important;
 	background-position: 0% 50% !important;
