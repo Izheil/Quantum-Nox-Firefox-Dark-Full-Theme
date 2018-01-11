@@ -16,11 +16,11 @@ scrollbar * {
 
 scrollbar[orient="vertical"] {
 	-moz-margin-start: 0px !important;
-	max-width: 17px !important;
-	min-width: 17px !important;
+	max-width: 16px !important;
+	min-width: 16px !important;
 
 	background: linear-gradient(to right, #222, #444) !important;
-	background-size: 17px 17px !important;
+	background-size: 16px 16px !important;
 	background-repeat: repeat-y !important;
 	background-position: 50% 0% !important;
 	cursor: default;
@@ -28,34 +28,34 @@ scrollbar[orient="vertical"] {
 
 scrollbar[orient="horizontal"] {
 	margin-top: 0px !important;
-	max-height: 17px !important;
-	min-height: 17px !important;
+	max-height: 16px !important;
+	min-height: 16px !important;
   
 	background: linear-gradient(#222, #444) !important;
-	background-size: 17px 17px !important;
+	background-size: 16px 16px !important;
 	background-repeat: repeat-x  !important;
 	background-position: 0% 50% !important;
 	cursor: default;
 }
 
 scrollbar thumb[orient="vertical"] {
-	min-height: 34px !important;
-	width: 17px !important;
-	min-width: 17px !important;
-	max-width: 17px !important;
+	min-height: 32px !important;
+	width: 16px !important;
+	min-width: 16px !important;
+	max-width: 16px !important;
 	background-image: linear-gradient(to right, rgba(0,0,0,0), rgba(0,0,0,0.7)) !important;
 	background-color: #888 !important;
-	transform: scale(0.824, 1) translate(1px, 0);
+	transform: scale(0.8375, 1) translate(0.5px, 0);
 }
 
 scrollbar thumb[orient="horizontal"] {
-	min-width: 34px !important;
-	height: 17px !important;
-	min-height: 17px !important;
-	max-height: 17px !important;
+	min-width: 32px !important;
+	height: 16px !important;
+	min-height: 16px !important;
+	max-height: 16px !important;
 	background-image: linear-gradient(rgba(0,0,0,0), rgba(0,0,0,0.7)) !important;
 	background-color: #888 !important;
-	transform: scale(1, 0.824) translate(0, 1px);
+	transform: scale(1, 0.8375) translate(0, 0.5px);
 }
 
 scrollbar thumb {
@@ -80,8 +80,8 @@ scrollbar thumb[orient="horizontal"]:active {
 scrollbar scrollbarbutton{
 	min-height: 0px !important;
 	min-width: 0px !important;
-	max-height: 17px !important;
-	max-width: 17px !important;
+	max-height: 16px !important;
+	max-width: 16px !important;
 	height: 0px !important;
 	width: 0px !important;
 }`;
