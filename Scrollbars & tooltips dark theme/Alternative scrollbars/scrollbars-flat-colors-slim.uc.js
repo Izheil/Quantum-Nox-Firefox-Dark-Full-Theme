@@ -16,11 +16,11 @@ scrollbar * {
 
 scrollbar[orient="vertical"] {
 	-moz-margin-start: 0px !important;
-	max-width: 12px !important;
-	min-width: 12px !important;
+	max-width: 14px !important;
+	min-width: 14px !important;
 
 	background: linear-gradient(to right, #222, #444) !important;
-	background-size: 12px 12px !important;
+	background-size: 14px 14px !important;
 	background-repeat: repeat-y !important;
 	background-position: 50% 0% !important;
 	cursor: default;
@@ -28,28 +28,28 @@ scrollbar[orient="vertical"] {
 
 scrollbar[orient="horizontal"] {
 	margin-top: 0px !important;
-	max-height: 12px !important;
-	min-height: 12px !important;
+	max-height: 14px !important;
+	min-height: 14px !important;
   
 	background: linear-gradient(#222, #444) !important;
-	background-size: 12px 12px !important;
+	background-size: 14px 14px !important;
 	background-repeat: repeat-x  !important;
 	background-position: 0% 50% !important;
 	cursor: default;
 }
 
 scrollbar thumb[orient="vertical"] {
-	min-height: 24px !important;
-	width: 12px !important;
-	min-width: 12px !important;
-	max-width: 12px !important;
+	min-height: 28px !important;
+	width: 14px !important;
+	min-width: 14px !important;
+	max-width: 14px !important;
 }
 
 scrollbar thumb[orient="horizontal"] {
-	min-width: 24px !important;
-	height: 12px !important;
-	min-height: 12px !important;
-	max-height: 12px !important;
+	min-width: 28px !important;
+	height: 14px !important;
+	min-height: 14px !important;
+	max-height: 14px !important;
 }
 
 scrollbar thumb {
@@ -74,8 +74,8 @@ scrollbar thumb:active {
 scrollbar scrollbarbutton{
 	min-height: 0px !important;
 	min-width: 0px !important;
-	max-height: 12px !important;
-	max-width: 12px !important;
+	max-height: 14px !important;
+	max-width: 14px !important;
 	height: 0px !important;
 	width: 0px !important;
 }`;
