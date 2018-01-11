@@ -36,5 +36,8 @@
 <h3>Scrollbars-no-transitions.uc.js</h3>
 <p>Same design as the default one from this theme, but these won't have transitions.</p>
 
+<h3>Scrollbars-shrink.uc.js</h3>
+<p>Same design as the default one from this theme, but this one shrinks when active, instead of getting wider.</p>
+
 <h3>No-scrollbars.uc.js</h3>
 <p>No scrollbars appear on-screen, but you can still scroll through pages (Just hides the scrollbars).</p>
