@@ -43,8 +43,9 @@ scrollbar thumb[orient="vertical"] {
 	width: 14px !important;
 	min-width: 14px !important;
 	max-width: 14px !important;
+	background-color: #888 !important;
 	background-image: linear-gradient(to right, rgba(0,0,0,0), rgba(0,0,0,0.7)) !important;
-	transform: scale(0.857, 1) translate(1px, 0);
+	transform: scale(0.857, 1) translate(0.5px, 0);
 
 }
 
@@ -53,14 +54,14 @@ scrollbar thumb[orient="horizontal"] {
 	height: 14px !important;
 	min-height: 14px !important;
 	max-height: 14px !important;
+	background-color: #888 !important;
 	background-image: linear-gradient(rgba(0,0,0,0), rgba(0,0,0,0.7)) !important;
-	transform: scale(1, 0.857) translate(0, 1px);
+	transform: scale(1, 0.857) translate(0, 0.5px);
 
 }
 
 scrollbar thumb {
 	border-radius: 15px !important;
-	background-color: #888 !important;
 	transition: all 0.4s !important;
 }
 
