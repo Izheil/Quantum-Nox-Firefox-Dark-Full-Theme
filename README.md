@@ -9,16 +9,15 @@ basic css or <a href="https://www.w3schools.com/colors/colors_picker.asp">color 
 <img src="https://i.imgur.com/3lzN95E.png">
 <p>To change these you will have to use the right hex codes. You can find a color picker to hex code in <a href="https://www.w3schools.com/colors/colors_picker.asp">this page</a>.
 
-<h3>Last update: <b>10/01/2017</b></h3>
+<h3>Last update: <b>11/01/2017</b></h3>
+<p>Files updated:</p>
+<ul>
+  <li><b>Scrollbars.uc.js</b> -> Changed the gradient default one, added some other designs.</li>
+</ul>
+<h3>Pre-Last update: <b>10/01/2017</b></h3>
 <p>Files updated:</p>
 <ul>
   <li><b>Scrollbars.uc.js</b> -> Edited some of the scrollbars thumb colors. Added a gradient one with transitions.</li>
-</ul>
-<h3>Pre-Last update: <b>09/01/2017</b></h3>
-<p>Files updated:</p>
-<ul>
-  <li><b>UserContent.css</b> -> Fixed some of the colors of the error pages that were inverted, added a more subtle degrading color on the "show more" buttons on firefox addons page, and turned black the searchbar images on <code>about:preferences</code>in the "search" category. Also added all remaining about: pages</li>
-  <li><b>Addons.css</b> -> Fixed a problem with Ublock Origin blocked site buttons (forgot to reset the mozilla default button theme(Just add "-moz-appearance: none !important" in line 37).</li>
 </ul>
 
 <h2>FAQ:</h2>
