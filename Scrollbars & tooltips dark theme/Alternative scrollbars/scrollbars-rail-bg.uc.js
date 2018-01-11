@@ -16,8 +16,8 @@ scrollbar * {
 
 scrollbar[orient="vertical"] {
 	-moz-margin-start: 0px !important;
-	max-width: 16px !important;
-	min-width: 16px !important;
+	max-width: 17px !important;
+	min-width: 17px !important;
 	
 	background: linear-gradient(rgba(175,175,175,0.2), rgba(175,175,175,0.2)) !important;
 	background-size: 1px 1px !important;
@@ -28,8 +28,8 @@ scrollbar[orient="vertical"] {
 
 scrollbar[orient="horizontal"] {
 	margin-top: 0px !important;
-	max-height: 16px !important;
-	min-height: 16px !important;
+	max-height: 17px !important;
+	min-height: 17px !important;
     
 	background: linear-gradient(rgba(175,175,175,0.2), rgba(175,175,175,0.2)) !important;
 	background-size: 1px 1px !important;
@@ -40,20 +40,22 @@ scrollbar[orient="horizontal"] {
 
 scrollbar thumb[orient="vertical"] {
 	min-height: 32px !important;
-	width: 16px !important;
-	min-width: 16px !important;
-	max-width: 16px !important;
+	width: 17px !important;
+	min-width: 17px !important;
+	max-width: 17px !important;
 	background-image: linear-gradient(to right, rgba(0,0,0,0), rgba(0,0,0,0.7)) !important;
-	transform: scale(0.857, 1) translate(1px, 0);
+	background-color: #888 !important;
+	transform: scale(0.824, 1) translate(1px, 0);
 }
 
 scrollbar thumb[orient="horizontal"] {
 	min-width: 32px !important;
-	height: 16px !important;
-	min-height: 16px !important;
-	max-height: 16px !important;
+	height: 17px !important;
+	min-height: 17px !important;
+	max-height: 17px !important;
 	background-image: linear-gradient(rgba(0,0,0,0), rgba(0,0,0,0.7)) !important;
-	transform: scale(1, 0.857) translate(0, 1px);
+	background-color: #888 !important;
+	transform: scale(1, 0.824) translate(0, 1px);
 }
 
 scrollbar thumb {
@@ -78,8 +80,8 @@ scrollbar thumb[orient="horizontal"]:active {
 scrollbar scrollbarbutton{
 	min-height: 0px !important;
 	min-width: 0px !important;
-	max-height: 16px !important;
-	max-width: 16px !important;
+	max-height: 17px !important;
+	max-width: 17px !important;
 	height: 0px !important;
 	width: 0px !important;
 }`;
