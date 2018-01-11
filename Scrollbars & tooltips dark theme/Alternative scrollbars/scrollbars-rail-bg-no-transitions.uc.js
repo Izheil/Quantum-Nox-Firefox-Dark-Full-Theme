@@ -56,7 +56,6 @@ scrollbar thumb[orient="horizontal"] {
 
 scrollbar thumb {
 	border-radius: 15px !important;
-	opacity: 1 !important;
 }
 
 scrollbar:hover thumb[orient="horizontal"],
