@@ -27,9 +27,6 @@
 <img src="https://i.imgur.com/s668zt7.png">
 <p>This one is like the default scrollbar, but has flat colors with a transition effect when hovering over it.</p>
 
-<h3>Scrollbars-flat-colors-slim.uc.js</h3>
-<p>Same design than the above, but less width (12px instead of 16px).</p>
-
 <h3>Scrollbars-slim.uc.js</h3>
 <p>Same design than the default one from this theme, but less width (12px instead of 16px).</p>
 
@@ -41,3 +38,6 @@
 
 <h3>No-scrollbars.uc.js</h3>
 <p>No scrollbars appear on-screen, but you can still scroll through pages (Just hides the scrollbars).</p>
+
+<h3>(Any other combination of the above).uc.js</h3>
+<p>Those shouldn't need an explanation.</p>
