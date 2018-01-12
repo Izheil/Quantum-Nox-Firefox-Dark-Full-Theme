@@ -399,13 +399,13 @@ part of the same rule */
 /* Send link... */ 
 #context-sendlink,
 
-/* Open link in a new tab */
+/* Open link in a new tab *//*
 #context-openlinkintab,
 /* Open link in a new window */
 #context-openlink,
 /* Open link in a new private window */
 #context-openlinkprivate,
-/* Open link commands separator (should only disable if you don't use any of the "open link..." commands) */
+/* Open link commands separator (should only disable if you don't use any of the "open link..." commands) *//*
 #context-sep-open,
 
 /* Take a screenshot & it's separator */ 
