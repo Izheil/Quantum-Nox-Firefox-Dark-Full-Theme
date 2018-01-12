@@ -60,7 +60,6 @@ scrollbar thumb[orient="horizontal"] {
 
 scrollbar thumb {
 	border-radius: 15px !important;
-	background-color: #888 !important;
 	transition: all 0.4s !important;
 }
 

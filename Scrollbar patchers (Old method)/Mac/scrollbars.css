@@ -95,8 +95,7 @@ scrollbar[orient="vertical"] > scrollbarbutton[type="decrement"] {
 
 scrollbar {
 	z-index: 2147483647 !important;
-	position: relative !important;
-}
+	position: relative !important}
 
 scrollbar,
 scrollbar * {
@@ -104,8 +103,7 @@ scrollbar * {
 	margin: 0px !important;
 	padding: 0px !important;
 	border: 0px !important;
-	box-shadow: none !important;
-}
+	box-shadow: none !important}
 
 scrollbar[orient="vertical"] {
 	-moz-margin-start: 0px !important;
@@ -116,8 +114,7 @@ scrollbar[orient="vertical"] {
 	background-size: 16px 16px !important;
 	background-repeat: repeat-y !important;
 	background-position: 50% 0% !important;
-	cursor: default;
-}
+	cursor: default}
 
 scrollbar[orient="horizontal"] {
 	margin-top: 0px !important;
@@ -128,15 +125,16 @@ scrollbar[orient="horizontal"] {
 	background-size: 16px 16px !important;
 	background-repeat: repeat-x  !important;
 	background-position: 0% 50% !important;
-	cursor: default;
-}
+	cursor: default}
 
 scrollbar thumb[orient="vertical"] {
 	min-height: 32px !important;
 	width: 16px !important;
 	min-width: 16px !important;
 	max-width: 16px !important;
-	background: linear-gradient(to right, transparent 0, transparent 1px, #888 1px, #555 15px, transparent 15px, transparent 16px) !important;
+	background-image: linear-gradient(to right, rgba(0,0,0,0), rgba(0,0,0,0.7)) !important;
+	background-color: #888 !important;
+	transform: scale(0.8375, 1) translate(0.5px, 0);
 }
 
 scrollbar thumb[orient="horizontal"] {
@@ -144,32 +142,25 @@ scrollbar thumb[orient="horizontal"] {
 	height: 16px !important;
 	min-height: 14px !important;
 	max-height: 14px !important;
-	background: linear-gradient(transparent 0, transparent 1px, #888 1px, #555 15px, transparent 15px, transparent 16px) !important;
+	background-image: linear-gradient(rgba(0,0,0,0), rgba(0,0,0,0.7)) !important;
+	background-color: #888 !important;
+	transform: scale(1, 0.8375) translate(0, 0.5px);
 }
 
 scrollbar thumb {
 	border-radius: 15px !important;
-	opacity: 1 !important;
-}
-
-scrollbar:hover thumb[orient="horizontal"],
-scrollbar thumb[orient="horizontal"]:active {
-	background: linear-gradient(transparent 0, transparent 1px, #46b 1px, #249 15px, transparent 15px, transparent 16px) !important;
+	transition: all 0.4s !important;
 }
 
 scrollbar:hover thumb[orient="vertical"],
-scrollbar thumb[orient="vertical"]:active {
-	background: linear-gradient(to right, transparent 0, transparent 1px, #46b 1px, #249 15px, transparent 15px, transparent 16px) !important;
+scrollbar:hover thumb[orient="horizontal"] {
+	background-color: #46b !important;
 }
-
-scrollbar thumb[orient="vertical"]:active {
-	background: linear-gradient(to right, #46b, #249) !important;
-	border-radius: 6px !important;
-}
-
+scrollbar thumb[orient="vertical"]:active,
 scrollbar thumb[orient="horizontal"]:active {
-	background: linear-gradient(#46b, #249) !important;
+	background-color: #46b !important;
 	border-radius: 6px !important;
+	transform: scale(1, 1) translate(0, 0);
 }
 
 /* no buttons */
@@ -184,11 +175,10 @@ scrollbar scrollbarbutton{
 }
 
 /* no buttons */
-scrollbar scrollbarbutton{
+scrollbar scrollbarbutton {
 	min-height: 0px !important;
 	min-width: 0px !important;
 	max-height: 16px !important;
 	max-width: 16px !important;
 	height: 0px !important;
-	width: 0px !important;
-}
+	width: 0px !important}
