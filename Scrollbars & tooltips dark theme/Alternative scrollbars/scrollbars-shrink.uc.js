@@ -79,6 +79,11 @@ scrollbar thumb[orient="horizontal"]:active {
 	transform: scale(1, 0.875);
 }
 
+scrollcorner {
+	background-image: radial-gradient(at top left, #222, #444);
+	background-color: #444 !important;
+}
+
 /* no buttons */
 scrollbar scrollbarbutton{
 	min-height: 0px !important;
