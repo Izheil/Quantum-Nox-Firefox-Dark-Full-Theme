@@ -91,7 +91,7 @@ scrollbar[orient="vertical"] > scrollbarbutton[type="decrement"] {
   -moz-appearance: scrollbarbutton-up;
 }
 
-/*------------------ New Scrollbar starts here - Updated 29/11/2017 -------------------*/
+/*------------------ New Scrollbar starts here - Updated 12/01/2018 -------------------*/
 
 scrollbar {
 	z-index: 2147483647 !important;
