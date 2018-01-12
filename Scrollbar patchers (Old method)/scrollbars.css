@@ -169,17 +169,6 @@ scrollcorner {
 }
 
 /* no buttons */
-scrollbar scrollbarbutton{
-	min-height: 0px !important;
-	min-width: 0px !important;
-	max-height: 16px !important;
-	max-width: 16px !important;
-	height: 0px !important;
-	width: 0px !important;
-	background: radial-gradient (circle, #888, #555);
-}
-
-/* no buttons */
 scrollbar scrollbarbutton {
 	min-height: 0px !important;
 	min-width: 0px !important;
