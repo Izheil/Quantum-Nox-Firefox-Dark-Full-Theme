@@ -70,6 +70,10 @@ scrollbar thumb:active {
 	background: rgba(100,100,100,0.7) !important;
 }
 
+scrollcorner {
+	background-color: transparent !important;
+}
+
 /* no buttons */
 scrollbar scrollbarbutton{
 	min-height: 0px !important;
