@@ -9,15 +9,15 @@ basic css or <a href="https://www.w3schools.com/colors/colors_picker.asp">color 
 <img src="https://i.imgur.com/3lzN95E.png">
 <p>To change these you will have to use the right hex codes. You can find a color picker to hex code in <a href="https://www.w3schools.com/colors/colors_picker.asp">this page</a>.
 
-<h3>Last update: <b>11/01/2017</b></h3>
+<h3>Last update: <b>12/01/2017</b></h3>
+<p>Files updated:</p>
+<ul>
+  <li><b>Userchrome.css</b> -> Hid the "open link..." options in the context menu (I don't know about you, but I rarely use the "open in new window" or "open in private window" ones, but I'll keep the "open in new tab" for those that aren't used to middle/wheel click (or hold ctrl while clicking a link to open in a new tab)). You can reenable them same as the other functions.</li>
+</ul>
+<h3>Pre-Last update: <b>11/01/2017</b></h3>
 <p>Files updated:</p>
 <ul>
   <li><b>Scrollbars.uc.js</b> -> Changed the gradient default one, added some other designs.</li>
-</ul>
-<h3>Pre-Last update: <b>10/01/2017</b></h3>
-<p>Files updated:</p>
-<ul>
-  <li><b>Scrollbars.uc.js</b> -> Edited some of the scrollbars thumb colors. Added a gradient one with transitions.</li>
 </ul>
 
 <h2>FAQ:</h2>
