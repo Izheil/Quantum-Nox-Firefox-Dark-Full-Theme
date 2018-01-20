@@ -1,6 +1,6 @@
 /* You can find an updated version here: https://github.com/Izheil/Firefox-57-full-dark-theme-with-scrollbars */
 /* Made by Izheil */
-/* Last updated: 09/01/2018 */
+/* Last updated: 20/01/2018 */
 
 /* This part imports the Addons file if there is one, so that you don't have to edit the dynamic URL
 from the addons rules every time we update anything here */
@@ -574,6 +574,11 @@ richlistitem.addon.addon-view[selected="true"] {color: #FFF !important}
 
 #header-utils-btn:hover {background-color: #000 !important}
 
+/* This changes the background highlight color of uninstalled extensions */
+.addon-view[pending="disable"], .addon-view[pending="uninstall"] {
+    --view-highlight-color: #000 !important;
+}	
+	
 /* Should be self explanatory... but this is the alert message that goes over the addons list */
 .alert {
 	background-color: #101010 !important ;
