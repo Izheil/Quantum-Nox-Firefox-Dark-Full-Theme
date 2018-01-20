@@ -576,8 +576,7 @@ richlistitem.addon.addon-view[selected="true"] {color: #FFF !important}
 
 /* This changes the background highlight color of uninstalled extensions */
 .addon-view[pending="disable"], .addon-view[pending="uninstall"] {
-    --view-highlight-color: #000 !important;
-}	
+    --view-highlight-color: #000 !important}	
 	
 /* Should be self explanatory... but this is the alert message that goes over the addons list */
 .alert {
