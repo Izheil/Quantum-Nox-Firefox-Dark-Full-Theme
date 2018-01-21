@@ -13,6 +13,7 @@ basic css or <a href="https://www.w3schools.com/colors/colors_picker.asp">color 
 <p>Files updated:</p>
 <ul>
   <li><b>UserContent.css</b> -> Changed the uninstalled addons background highlight color from white to dark.</li>
+  <li><b>Tooltips.uc.js</b> -> Changed the default tooltip colors for the theme to a darker background.</li>
 </ul>
 <h3>Pre-Last update: <b>12/01/2018</b></h3>
 <p>Files updated:</p>
