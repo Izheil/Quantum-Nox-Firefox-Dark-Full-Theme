@@ -3,9 +3,9 @@
 /* TOOLTIPS */
 tooltip, .statuspanel-label {
   -moz-appearance: none !important;
-  background-color: #333 !important;
+  background-color: #202020 !important;
   color: #ddd !important;
-  border: 1px solid #111 !important;
+  border: 1px solid #333 !important;
   padding: 5px !important;
 }`;
 
