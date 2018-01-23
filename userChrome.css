@@ -1,6 +1,6 @@
 /* You can find an updated version here: https://github.com/Izheil/Firefox-57-full-dark-theme-with-scrollbars */
 /* Made by Izheil */
-/* Last updated: 12/01/2018 */
+/* Last updated: 24/01/2018 */
 
 /* DO NOT DELETE THIS LINE */
 @namespace url("http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul");
@@ -62,26 +62,26 @@ you aren't using the default dark theme of mozilla, that is) */
     color: #fff !important}
 
 .customizationmode-button:hover {
-	background: linear-gradient(#222, #555) !important;
-	color: #fff !important}
+  background: linear-gradient(#222, #555) !important;
+  color: #fff !important}
 
 #customization-done-button {
-	background: linear-gradient(#2050AA, #203050) !important;
-	border: 1px solid #0050aa !important}
+  background: linear-gradient(#2050AA, #203050) !important;
+  border: 1px solid #0050aa !important}
 
 #customization-done-button:hover {
-	background: linear-gradient(#203050, #2050AA) !important;
+  background: linear-gradient(#203050, #2050AA) !important;
     color: #0ff !important}
 
 /* CONTEXT MENUS */
 
 /* Main menu colors */
 :root {
-	--panel-separator-color: rgba(0,0,0, .5) !important;
-	--arrowpanel-background: #444 !important;
-	--arrowpanel-color: #ccc !important;
-	--in-content-box-background: #333 !important;
-	--in-content-box-background-hover: #444 !important}
+  --panel-separator-color: rgba(0,0,0, .5) !important;
+  --arrowpanel-background: #444 !important;
+  --arrowpanel-color: #ccc !important;
+  --in-content-box-background: #333 !important;
+  --in-content-box-background-hover: #444 !important}
 
 /* Fix for the panel arrows (Thanks to BelladonnavGF for pointing out the bug) */
 .panel-arrow {filter: invert(73%) !important;}
@@ -93,26 +93,26 @@ you aren't using the default dark theme of mozilla, that is) */
 
 /* This one changes the letters color of all context menus */
 menu, menuitem {
-	color: #aaa !important;
-	-moz-appearance: none !important}
+  color: #aaa !important;
+  -moz-appearance: none !important}
 
 /* Padding for all menu items (do NOT change unless you want an spaced or indented upon 
 selection effect). The open in tabs bookmark item is added here since it also needs the 
 padding that we remove in the next rule */ 
 menuitem, .bookmark-item .openintabs-menuitem {
-	padding-top: 3px !important;
-	padding-bottom: 2px !important}
+  padding-top: 3px !important;
+  padding-bottom: 2px !important}
 
 /* This removes the unnecesary padding from the bookmark items */
 .bookmark-item menuitem {
-	padding-top: 0px !important;
-	padding-bottom: 0px !important}
+  padding-top: 0px !important;
+  padding-bottom: 0px !important}
 
 /* This changes the color on hover of the context-menu items */
 menubar > menu[_moz-menuactive="true"],
 menupopup > menu[_moz-menuactive="true"],
 popup > menu[_moz-menuactive="true"],
-menuitem[_moz-menuactive="true"] 
+menuitem[_moz-menuactive="true"]
 {background-color: #25a !important}
 
 /* This does the same but for disabled ones */
@@ -132,10 +132,10 @@ menupopup .scrollbox-innerbox {background-color: #444 !important}
 /* The following code changes the borders of all the context menus (except the ones above mentioned),
 as well as ignoring the bookmark menu context menu */
 menupopup {
-	-moz-appearance: none !important;
-	border: 2px solid #111 !important}
+  -moz-appearance: none !important;
+  border: 2px solid #111 !important}
 
-/* This changes the color of the default separators */
+/* Context menu separator color override */
 menuseparator {
   -moz-appearance: none !important;
   margin: 1px 0 1px 2.3em !important;
@@ -187,10 +187,10 @@ if necessary depending on if you are using a custom OS theme (which may mess up 
 /* Changes the color of the autocomplete links on the URL bar */
 #PopupAutoCompleteRichResult .ac-url-text {color: rgb(0,160,200) !important}
 
-/* Changes the color of header of the search option (and "add new engine") */
+/* Changes the color of header of the search option */
 .search-panel-header, .addengine-item {
-	background-color: #333 !important;
-	color: #ccc !important}
+  background-color: #333 !important;
+  color: #ccc !important}
 
 /* Changes the color of the "Add x new search engine" hover effect */
 .addengine-item:hover {background-color: #444 !important}
@@ -206,7 +206,7 @@ if necessary depending on if you are using a custom OS theme (which may mess up 
 .search-setting-button:hover {background: linear-gradient(#111,#333) !important}
 
 /* Changes the color of searched item on the search popup */
-.search-panel-input-value {color: #00FFFF !important}
+.search-panel-input-value {color: #0FF !important}
 
 /* SIDEBAR */
 
@@ -216,10 +216,10 @@ if necessary depending on if you are using a custom OS theme (which may mess up 
   background-color: #303030 !important;
   -moz-appearance: none !important} 
 
-#sidebar-search-container, #bookmarks-view-children, #historyTree. #sidebar {
+#sidebar-search-container, #bookmarks-view-children, #historyTree, #sidebar {
   -moz-appearance: none !important;
   background-color: #404040 !important;
-  color: #ccc !important}
+  color: #ccc}
 
 .sidebar-splitter {
   border-right: 2px solid #000 !important;
@@ -234,16 +234,14 @@ treechildren {
   --treechildren-hoverColor: none !important;
   --treechildren-selectedFocusColor: rgb(205,232,255) !important;
 
-/* These change the background colors when hovered/selected */  
+/* These change the background colors when hovered/selected */
   --treechildren-selectedImage: linear-gradient(rgb(190,190,190), rgb(190,190,190)) !important; 
   --treechildren-hoverImage: linear-gradient(rgb(34,85,170), rgb(34,85,170)) !important; 
   --treechildren-hoverCurrentImage: linear-gradient(rgba(34,85,170,.16), rgba(34,85,170,.16)) !important;
   --treechildren-hoverSelectedImage: linear-gradient(rgb(205,232,255), rgb(205,232,255)) !important}
 
 /* This is a fix for those using an OS theme (they change the background and text color on hover), 
-if you don't see a blue hover color on items on the sidebar, use this method instead (Delete the comment 
-starter slash in the line below) */
-/*
+if you don't see a blue hover color on items on the sidebar, use this method instead *//*
 #bookmarks-view treechildren::-moz-tree-cell(hover),
 #historyTree treechildren::-moz-tree-cell(hover) {
   background-image: linear-gradient(rgb(34,85,170), rgb(34,85,170)) !important;
@@ -281,7 +279,7 @@ differentiable font (Thanks to BelladonnavGF for the tip) */
   /*
 #urlbar {font-family: Georgia !important}
 
-/* TABS & BOOKMARK TOOLBAR */
+/* TABS */
 
 /* Tab bar below (You can set the order of each bar here. 1 for top, and 3 bottom) */
 
@@ -297,7 +295,7 @@ to use the close, minimize, and resize buttons */
 #PersonalToolbar {-moz-box-ordinal-group: 2 !important}
 #TabsToolbar {-moz-box-ordinal-group: 3 !important}
 
-/* Rounded tabs */ 
+/* ROUNDED TABS */ 
 /* v Delete the "/*" after this comment to use it */ 
   /*
 .tab-background {
@@ -308,7 +306,7 @@ to use the close, minimize, and resize buttons */
   margin-left: 12px;
   margin-right: 12px} 
 
-/* Tab close button always visible*/
+/* TAB CLOSE BUTTON ALWAYS VISIBLE */
 #TabsToolbar #tabbrowser-tabs .tabbrowser-tab:not([pinned]) .tab-close-button {
   	visibility: visible !important;
   	display: block !important}
@@ -317,7 +315,7 @@ to use the close, minimize, and resize buttons */
   	visibility: collapse !important;
   	display: none !important}
 
-/* Multirow tabs */
+/* MULTIROW TABS */
 .tabbrowser-tab:not([pinned]) {
     flex-grow:1;
     min-width:150px}
@@ -334,11 +332,11 @@ to use the close, minimize, and resize buttons */
     overflow: visible;
     display: block}
 
-/* A little fix that should only be required for Win10 (since it would be a bit problematic on Win8) */
+#titlebar {height:var(--tab-min-height) !important}
+
+/* A little fix for Win10 so that it won't show on win8 a bigger background for the close/min buttons*/
 @media (-moz-os-version: windows-win10) {
          #titlebar-buttonbox {height:var(--tab-min-height) !important}}
-
-#titlebar {height:var(--tab-min-height) !important}
 
 #titlebar {margin-bottom:calc(1px + var(--tab-min-height)*-1) !important}
 
@@ -361,17 +359,14 @@ to use the close, minimize, and resize buttons */
 .tabbrowser-tabs .scrollbutton-up,.tabbrowser-tabs .scrollbutton-down,#alltabs-button,.tabbrowser-tab:not([fadein])
 {display: none}
 
-/* Multi-Row Bookmarks Toolbar */
+/* MULTI-ROW BOOKMARKS TOOLBAR */
 
-/* (Delete the "/*" after the next comment to use this) */ 
-/* Provide room for up to 2 rows at 20px each + 1px margin top and bottom */ /*
-#PersonalToolbar {max-height: 42px !important} 
-
-#PlacesToolbarItems > box {display: inline-block}
+/* Provide room for up to 1 row at 20px each + 1px margin top and bottom */
+#PersonalToolbar {max-height: 22px !important} 
+/*
+#PlacesToolbarItems > box {display: inline-block !important}
 
 #PlacesToolbarItems {overflow: visible !important}
-/* ^ You can change this to "overflow: auto" to have scrollable bookmark lines, but it will add
-an empty scrollbar on the side (sadly can't be fixed without breaking customizability) */
 
 /* CONTEXT MENU COMMANDS */
 
@@ -399,13 +394,13 @@ part of the same rule */
 /* Send link... */ 
 #context-sendlink,
 
-/* Open link in a new tab *//*
+/* Open link in a new tab */ /*
 #context-openlinkintab,
 /* Open link in a new window */
 #context-openlink,
 /* Open link in a new private window */
 #context-openlinkprivate,
-/* Open link commands separator (should only disable if you don't use any of the "open link..." commands) *//*
+/* Open link commands separator (should only disable if you don't use any of the "open link..." commands) */
 #context-sep-open,
 
 /* Take a screenshot & it's separator */ 
