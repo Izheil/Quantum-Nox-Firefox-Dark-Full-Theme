@@ -1,6 +1,6 @@
 /* You can find an updated version here: https://github.com/Izheil/Firefox-57-full-dark-theme-with-scrollbars */
 /* Made by Izheil */
-/* Last updated: 20/01/2018 */
+/* Last updated: 24/01/2018 */
 
 /* This part imports the Addons file if there is one, so that you don't have to edit the dynamic URL
 from the addons rules every time we update anything here */
@@ -29,19 +29,20 @@ dialog, window, prefpane,
 prefwindow, .windowDialog {
  	background-color: #202020 !important;
  	color: #ccc !important}
-
+ 	
 /* This changes the "add certificate exception" dialog background color */
 #badCertAdvancedPanel {background-color: #303030 !important}
+
 .exceptionDialogButtonContainer {background-color: #252525 !important}
 
 /* This should change the "not found" page image colors */
 
-.connectionFailure #errorPageContainer,
-.netInterrupt #errorPageContainer,
-.netTimeout #errorPageContainer,
-.netReset #errorPageContainer,
-.netOffline #errorPageContainer,
-.dnsNotFound #errorPageContainer,
+.connectionFailure #errorPageContainer:not(.button-container),
+.netInterrupt #errorPageContainer:not(.button-container),
+.netTimeout #errorPageContainer:not(.button-container),
+.netReset #errorPageContainer:not(.button-container),
+.netOffline #errorPageContainer:not(.button-container),
+.dnsNotFound #errorPageContainer:not(.button-container),
 .malformedURI #errorPageContainer {filter: invert(98%) hue-rotate(200deg)}
 
 /* This fixes the inverted colors caused by the image filter (since I couldn't directly filter 
@@ -65,20 +66,20 @@ only the images */
 
 /* This is a little fix for all pages in case you have a dark windows theme, so that the 
 letters will have a blue neutral color to be seen in either a white or dark background for 
-text-inputting things (Feel free to comment it out if you don't like it, or delete any of 
-the inputs that you prefer to show black letters (the text boxes are "textarea") */
+text-inputting things (Feel free to comment it out with if you don't like it) */
 @-moz-document url-prefix(http){
 
 form select, input[type=text], input[type=email], input[type=password], input[type=date], 
 input[type=datetime-local], input[type=time], input[type=week], input[type=month], 
 input[type=number], input[type=search], input[type=tel], input[type=url], textarea 
-{color: #2066dd !important}}
+{color: #2066dd !important}
+}
 
-/*------ FILE BROWSING ------*/
-@-moz-document url-prefix(file://){
+/*------ FILE BROWSING PAGES (file://, about:sync-log) ------*/
+@-moz-document url-prefix(about:sync-log), url-prefix(file://) {
 html {background: #202020 !important}
 body {background: #333 !important}
-	
+
 #UI_goUp a.up:link, a.file:link, a.dir:link {color: #0084ff !important}
 #UI_goUp a.up:hover, .ellipsis a.file:hover, .ellipsis a.dir:hover {color: #0ff !important}
 #UI_goUp a.up:active, .ellipsis a.file:active, .ellipsis a.dir:active {color: #0050aa !important}
@@ -99,12 +100,12 @@ html {
 }
 
 /*------ HOME/NEWTAB PAGE (About:home, about:newtab) ------*/ 
-@-moz-document url-prefix(about:home), url-prefix(about:newtab){
+@-moz-document url-prefix(about:home), url-prefix(about:newtab) {
 
 body { 
-	background-color: #202020  !important;
-   	color: #50AAFF !important;
-   	overflow: auto !important}
+ 	background-color: #202020  !important;
+    color: #50AAFF !important;
+    overflow: auto !important}
 
 /* Context menus of the web area */
 .context-menu {
@@ -122,6 +123,8 @@ body {
 .info-option-manage button:hover {color: #00FFFF !important}
 
 /* The sidebar/settings panel part starts here */
+.sidebar, .actions {border-left: 2px solid #000 !important} 
+
 .prefs-pane, .info-option p {color: #ccc !important}
 
 .prefs-pane .sidebar, .card-outer {background-color: #303030 !important}
@@ -219,11 +222,11 @@ body {
 	font-weight: 900 !important;
 	color: #50AAFF !important}
 
-.monthly-checkbox-label {color: #ccc !important}	
-	
+.monthly-checkbox-label {color: #ccc !important}
+
 .block-snippet-button {
 	filter: invert(50%) !important}
-	
+
 .button-link {
 	background-color: #0aAA50 !important;
 	color: #FFF !important;
@@ -248,10 +251,10 @@ body {
 #snippets-container .button-selected {
 	background-color: #222 !important;
 	border: 1px solid #0084ff !important}
-	
-/* Tour pop-up */
 
-#onboarding-overlay {background: rgba(0,0,0,0.5) !important}
+/* Tour pop-up */
+#onboarding-overlay {
+	background: rgba(0,0,0,0.5) !important}
 
 #onboarding-overlay-dialog {
 	background: #333 !important;
@@ -268,9 +271,11 @@ body {
 	border: 1px solid #111 !important}
 
 #onboarding-skip-tour-button:hover {background: #444 !important}
+
 #onboarding-skip-tour-button:active {background: #111 !important}
-	
+
 #onboarding-overlay img {filter: invert(90%) hue-rotate(200deg)}
+}
 
 /*------ COMMON ATTRIBUTES ON MOST ABOUT PAGES ------*/
 @-moz-document url(about:about), url(about:blank), url(about:), 
@@ -375,9 +380,8 @@ td {background: #666 !important}
 .rights-header {filter: invert(98%) hue-rotate(200deg) }
 .rights-header div {filter: invert(98%) hue-rotate(-200deg)}
 }
-
 /*------ DEBUGGING PAGE (about:debugging) ------*/
-@-moz-document url-prefix(about:debugging){
+@-moz-document url-prefix(about:debugging) {
 
 /* This affects the categories part */
 #categories {background-color: #303030 !important}
@@ -407,6 +411,7 @@ td {background: #666 !important}
 
 span.target-status {background-color: #151515 !important}
 }
+
 /*------ CONFIGURATION PAGE (about:config) ------*/
 @-moz-document url(about:config) {
 :root {
@@ -425,20 +430,21 @@ span.target-status {background-color: #151515 !important}
 #warningTitle {color: #FFF !important}}
 
 /*------ PLUGINS PAGE (about:plugins) ------*/
-@-moz-document url-prefix(about:plugins){
+@-moz-document url-prefix(about:plugins), url-prefix(about:buildconfig) {
 .notice {
 	background-color: #101010 !important;
 	color: #FA0 !important}
 
 .notice a:link {color: #4080CC !important}
 
-dl {color: #aaa !important}
+dl {color: #ddd !important}
 
 tbody {
 	background-color: #555 !important;
 	color: #FFF !important}
 
 th {background-color: #333 !important}
+
 }
 
 /*------ MEMORY LOAD PAGE (about:memory) ------*/
@@ -495,18 +501,19 @@ td {background: #555 !important}
 
 .groupbox-title, 
 
-/* These last two apply to some general panel labels (if it's updated and if its the 
-default browser) */
+/* These last two apply to some general panel labels in the preferences page (if 
+it's updated and if its the default browser) */
 #isDefaultLabel, #updateBox {color: #FFF !important}
 
+/* This changes some of the buttons color */
 .accessory-button, button {
 	background: linear-gradient(#2050AA, #203050) !important;
-    	color: #FFF !important;
-	border: 1px solid #0050aa !important}
+    color: #FFF !important;
+    border: 1px solid #0050aa !important}
 
 .accessory-button:hover, button:hover {
 	background: linear-gradient(#203050, #2050AA) !important;
-    	color: #0FF !important}
+    color: #0FF !important}
 
 /* Search Panel, Dialog boxes and inputs in general */
 #engineList, .dialogBox > .groupbox-title, #browserHomePage,
@@ -514,7 +521,7 @@ default browser) */
 }
 
 /*------ SETTINGS PAGE (about:preferences) ------*/
-@-moz-document url-prefix(about:preferences), url-prefix(about:addons){	
+@-moz-document url-prefix(about:preferences){
 
 .dialogBox {background-color: #202020 !important}
 
@@ -524,8 +531,8 @@ default browser) */
 	color: #0FF !important}
 
 /* Search bar images on "search" category */
-image.searchBarImage {filter: invert(92%) hue-rotate(180deg)}	
-	
+image.searchBarImage {filter: invert(92%) hue-rotate(180deg)}
+
 treecol {
 	background-color: #555 !important;
 	color: #FFF !important}
@@ -576,8 +583,8 @@ richlistitem.addon.addon-view[selected="true"] {color: #FFF !important}
 
 /* This changes the background highlight color of uninstalled extensions */
 .addon-view[pending="disable"], .addon-view[pending="uninstall"] {
-    --view-highlight-color: #000 !important}	
-	
+    --view-highlight-color: #000 !important}
+
 /* Should be self explanatory... but this is the alert message that goes over the addons list */
 .alert {
 	background-color: #101010 !important ;
@@ -595,6 +602,7 @@ richlistitem.addon.addon-view[selected="true"] {color: #FFF !important}
 	border-radius: 15px !important;
 	background-color: #505050 !important}
 }
+
 /* This is still in the addons page, it's the "discover" page thing */
 @-moz-document url-prefix(https://addons-discovery.cdn.mozilla.net), url-prefix(https://discovery.addons.mozilla.org) {
 
@@ -646,8 +654,8 @@ html, .App-content, tr.LanguageTools-table-row:nth-child(even),
 
 #search-tools-sidebar {border-radius: 0px !important}
 
-#react-autowhatever-1 * {background-color: #444 !important}	
-	
+#react-autowhatever-1 * {background-color: #444 !important}
+
 .Hero .Card-contents, .Home-SubjectShelf .Card-contents, 
 .CardList .Card-header, .CardList .Card-contents, a.SearchResult-link, 
 .Card-contents, .Card-Header, ul.AddonsCard-list li.SearchResult, ul.AddonsCard-list,
