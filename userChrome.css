@@ -373,6 +373,41 @@ to use the close, minimize, and resize buttons */
 /* All of these commands are divided so that they can be explained, but they are all
 part of the same rule */
 
+/* Tabs context menu */
+/* Reload tab *//*
+#context_reloadTab,
+
+/* Pin tab */
+#context_pinTab,
+
+/* Duplicate tab *//*
+#context_duplicateTab,
+
+/* Open tab in new window *//*
+#context_openTabInWindow,
+
+/* Separator from send tab to device */
+#context_sendTabToDevice_separator,
+
+/* Separator after the previous command */
+#tabContextMenu menuseparator:nth-child(even),
+
+/* Reload all tabs */
+#context_reloadAllTabs,
+
+/* Bookmark all tabs */
+#context_bookmarkAllTabs,
+
+/* Close all tabs to the right *//*
+#context_closeTabsToTheEnd,
+
+/* Close all other tabs */
+#context_closeOtherTabs,
+
+/* Close tab *//*
+#context_closeTab,
+
+/* Webarea context menu */
 /* Navigation buttons (Back, forward and reload buttons) & it's separator */
 #context-navigation, #context-sep-navigation,
 
