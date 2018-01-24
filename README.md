@@ -9,16 +9,17 @@ basic css or <a href="https://www.w3schools.com/colors/colors_picker.asp">color 
 <img src="https://i.imgur.com/3lzN95E.png">
 <p>To change these you will have to use the right hex codes. You can find a color picker to hex code in <a href="https://www.w3schools.com/colors/colors_picker.asp">this page</a>.
 
-<h3>Last update: <b>20/01/2018</b></h3>
+<h3>Last update: <b>24/01/2018</b></h3>
+<p>Files updated:</p>
+<ul>
+  <li><b>Userchrome.css</b> -> I uploaded my personal version of Userchrome, since I saw there were some issues with the theme with the versions here.</li>
+  <li><b>Usercontent.css</b> -> I uploaded my personal version of Usercontent, since I saw there were some issues with the theme with the versions here.</li>
+</ul>
+<h3>Pre-Last update: <b>20/01/2018</b></h3>
 <p>Files updated:</p>
 <ul>
   <li><b>UserContent.css</b> -> Changed the uninstalled addons background highlight color from white to dark.</li>
   <li><b>Tooltips.uc.js</b> -> Changed the default tooltip colors for the theme to a darker background.</li>
-</ul>
-<h3>Pre-Last update: <b>12/01/2018</b></h3>
-<p>Files updated:</p>
-<ul>
-  <li><b>Scrollbars*.uc.js</b> -> Changed the color of the scrollbars corner (where both the horizontal and vertical one link).</li>
 </ul>
 
 <h2>FAQ:</h2>
