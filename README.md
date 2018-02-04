@@ -12,15 +12,15 @@ basic css or <a href="https://www.w3schools.com/colors/colors_picker.asp">color 
 <h3>Last update: <b>24/01/2018</b></h3>
 <p>Files updated:</p>
 <ul>
-  <li><b>Userchrome.css</b> -> I uploaded my personal version of Userchrome, since I saw there were some issues with the theme with the versions here. Also added some options to delete random commands from the tabs context menu.</li>
-  <li><b>Usercontent.css</b> -> I uploaded my personal version of Usercontent, since I saw there were some issues with the theme with the versions here.</li>
+  <li><b>Userchrome.css</b> -> Pulled some request to fix multi-row tabs. Thanks to <b>Messna</b> for noting the issue.</li>
 </ul>
 <h3>Pre-Last update: <b>20/01/2018</b></h3>
 <p>Files updated:</p>
 <ul>
-  <li><b>UserContent.css</b> -> Changed the uninstalled addons background highlight color from white to dark.</li>
-  <li><b>Tooltips.uc.js</b> -> Changed the default tooltip colors for the theme to a darker background.</li>
+  <li><b>Userchrome.css</b> -> I uploaded my personal version of Userchrome, since I saw there were some issues with the theme with the versions here. Also added some options to delete random commands from the tabs context menu.</li>
+  <li><b>Usercontent.css</b> -> I uploaded my personal version of Usercontent, since I saw there were some issues with the theme with the versions here.</li>
 </ul>
+
 
 <h2>FAQ:</h2>
 
