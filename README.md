@@ -28,11 +28,10 @@ basic css or <a href="https://www.w3schools.com/colors/colors_picker.asp">color 
 
 <code>/* This is an example of a comment that wouldn't be read on a .css file */</code>
 
-<p>The features part starts on line 251, where it says "/* SIDEBAR */", so you can delete anything above that if you don't want the theming part to take effect (It would be good if you keep the header of the file in case you pass on the file to someone else so that they know where you downloaded it from, or in case you wanted to check for updates later on, but that's up to you), and then just place <b>userChrome.css</b> inside <a href="https://github.com/Izheil/Firefox-57-full-dark-theme-with-scrollbars#the-chrome-folder">the chrome folder</a> of your user profile.</p>
+<p>The features part starts on line 260, where it says "/* ^ COLORING PART ENDS HERE - FEATURES PART STARTS HERE v */", so you can delete anything above that if you don't want the theming part to take effect (It would be good if you keep the header of the file in case you pass on the file to someone else so that they know where you downloaded it from, or in case you wanted to check for updates later on, but that's up to you), and then just place <b>userChrome.css</b> inside <a href="https://github.com/Izheil/Firefox-57-full-dark-theme-with-scrollbars#the-chrome-folder">the chrome folder</a> of your user profile.</p>
 
 <h3>Multirow tabs draggability isn't working right!</h3>
-<p>There is currently a problem with the multirow-tab code (specially notizable after firefox 58) that makes dragging tabs from any other than the first row not work right, I'll be trying to find a solution, but meanwhile... yeah, that's all there is.</p>
-
+<p>There is currently a problem with the multirow-tab code (specially notizable after firefox 58) that makes dragging tabs to other rows a bit erratic, so it will only drag the tabs to the previous row for some reason. I'll be trying to find a solution, but meanwhile... yeah, that's all there is.</p>
 
 <h3>Why use this method instead of using <a href="https://addons.mozilla.org/es/firefox/addon/styl-us/">Stylus</a>?</h3>
 <p>The main reason is that you can't style firefox about: pages nor the scrollbar with just stylus.</p>
