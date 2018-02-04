@@ -314,6 +314,34 @@ to use the close, minimize, and resize buttons */
   	visibility: collapse !important;
   	display: none !important}
 
+/* TAB READ/UNREAD COLORS */
+/* You can bold the text of any tab adding "font-weight: bold !important" after their last rule, but before the "}" */
+
+/* Selected (loaded) */
+.tabbrowser-tab[selected="true"] .tab-label {    
+  color: #eee !important;    
+  font-size: 12px !important;    
+  font-style: normal !important;}
+
+/* Loaded but unread (not selected) */
+.tabbrowser-tab:not([selected="true"])[unread] .tab-label {    
+  color: #fff !important;    
+  font-size: 12px !important;    
+  font-style: italic !important;}
+
+/* Not loaded yet (also visited) */
+.tabbrowser-tab:not([selected="true"])[pending] .tab-label,
+.tabbrowser-tab:not([selected="true"])[visited] .tab-label {    
+  color: #ccc !important;    
+  font-size: 12px !important;    
+  font-style: italic !important;}
+
+/* loading */
+.tabbrowser-tab[busy] .tab-text.tab-label {    
+  color: var(--tab-line-color) !important;    
+  font-size: 12px !important;    
+  font-style: normal !important;}
+
 /* MULTIROW TABS */
 .tabbrowser-tab:not([pinned]) {
     flex-grow:1;
@@ -333,9 +361,9 @@ to use the close, minimize, and resize buttons */
 
 #titlebar {height:var(--tab-min-height) !important}
 
-/* A little fix for Win10 so that it won't show on win8 a bigger background for the close/min buttons*/
-@media (-moz-os-version: windows-win10) {
-         #titlebar-buttonbox {height:var(--tab-min-height) !important}}
+/* A little fix for Win10 so that it won't bigger background for the close/min buttons 
+(If you use w8, you may have to comment, or delete it to prevent the close/min buttons to appear double sized) */
+#titlebar-buttonbox {height:var(--tab-min-height) !important}
 
 #titlebar {margin-bottom:calc(1px + var(--tab-min-height)*-1) !important}
 
