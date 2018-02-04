@@ -41,7 +41,8 @@ basic css or <a href="https://www.w3schools.com/colors/colors_picker.asp">color 
 <ul>
   <li>Multiple row tabs.</li>
   <li>Multiple row bookmarks toolbar (2 usable rows by default, but it is NOT enabled by default. You can add more rows editing userchrome).</li>
-  <li>Hides some rarely used commands on the context menu such as "Set image as desktop background".</li>
+  <li>Hides some rarely used commands on the context menu such as "Set image as desktop background" (you can turn these on again).</li>
+  <li>Text styling for unloaded and unread tab titles.</li>
   <li>Changes the tab close button to always be visible.</li>
   <li>You can hide the sidebar completelly resizing it instead of having to click the sidebar button.</li>
   <li>Can change the URL bar font (You have to change the commented line on userchrome to use it).</li>
