@@ -1,6 +1,6 @@
 /* You can find an updated version here: https://github.com/Izheil/Firefox-57-full-dark-theme-with-scrollbars */
 /* Made by Izheil */
-/* Last updated: 24/01/2018 */
+/* Last updated: 06/02/2018 */
 
 /* This part imports the Addons file if there is one, so that you don't have to edit the dynamic URL
 from the addons rules every time we update anything here */
@@ -123,7 +123,7 @@ body {
 .info-option-manage button:hover {color: #00FFFF !important}
 
 /* The sidebar/settings panel part starts here */
-.sidebar, .actions {border-left: 2px solid #000 !important} 
+.sidebar, .sidebar .actions {border-left: 2px solid #000 !important} 
 
 .prefs-pane, .info-option p {color: #ccc !important}
 
@@ -251,7 +251,24 @@ body {
 #snippets-container .button-selected {
 	background-color: #222 !important;
 	border: 1px solid #0084ff !important}
+	
+/* Edit top sites */
+input[type=text] {color: #aaa !important}
 
+.edit-menu button.icon.icon-unpin, .edit-menu button.icon.icon-pin, 
+.edit-menu button.icon.icon-edit, .edit-menu button.icon.icon-dismiss {
+	background-color: #555 !important;	
+	border-right: none !important}
+	
+.edit-menu button.icon.icon-edit, .edit-menu button.icon.icon-dismiss {	
+	border-left: 1px solid #333 !important}
+
+.edit-menu {border: 1px solid #333 !important; background-color: #555 !important}
+
+.edit-menu button.icon.icon-unpin:hover, .edit-menu button.icon.icon-pin:hover, 
+.edit-menu button.icon.icon-edit:hover, .edit-menu button.icon.icon-dismiss:hover {
+	background-color: #777 !important}
+	
 /* Tour pop-up */
 #onboarding-overlay {
 	background: rgba(0,0,0,0.5) !important}
