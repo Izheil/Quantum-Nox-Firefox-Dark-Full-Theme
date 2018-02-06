@@ -390,6 +390,7 @@ td {background: #666 !important}
 @-moz-document url-prefix(about:networking), url-prefix(about:telemetry) {
 .category {color: #ddd !important}
 .category[selected="true"], .category.selected {color: #0083ff !important}
+#ping-picker {background-color: #333 !important}
 }
 
 /*------ RIGHTS PAGE (about:rights) ------*/
