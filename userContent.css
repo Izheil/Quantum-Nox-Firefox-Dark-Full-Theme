@@ -66,7 +66,8 @@ only the images */
 
 /* This is a little fix for all pages in case you have a dark windows theme, so that the 
 letters will have a blue neutral color to be seen in either a white or dark background for 
-text-inputting things (Feel free to comment it out with if you don't like it) */
+text-inputting things (Feel free to delete the /* under this line for it to take effect) */
+/*
 @-moz-document url-prefix(http){
 
 form select, input[type=text], input[type=email], input[type=password], input[type=date], 
