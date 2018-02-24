@@ -37,25 +37,25 @@
 <h3>The root folder:</h3>
 
 <h4>For Windows, you can find firefox root folder here:</h4>
-​
+
 <pre>32bits Firefox -> C:\Program Files (x86)\Mozilla Firefox\
 64bits Firefox -> C:\Program Files\Mozilla Firefox\</pre>
-​
+
 <p>If you have a 32-bits Windows, you will only see the 64-bits path.</p>
-​
+
 <h4>For Linux, you can find the manifest file by default in this path:</h4>
-​
+
 <pre>/usr/lib/firefox/browser</pre>
-​
+
 <p>In some cases you might find a difference between 32 and 64 bits program installation paths in Linux, in that case you'd find the path here:</p> 
-​
+
 <pre>/usr/lib64/firefox/browser</pre>
-​
+
 <p>The installation directory path may also vary depending on the distribution, and if you use a package manager to install the application from their repository.</p>
-​
+
 <h4>For Mac, you can find the chrome manifest in this path:</h4>
-​
+
 <pre>/Applications/Firefox.app/content/resources</pre>
-​
+
 <p>To open "Firefox.app", Ctrl-click it and select Show Package Contents. If you simply click it, you will start the application.</p>
 
