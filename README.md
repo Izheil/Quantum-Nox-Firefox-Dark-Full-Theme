@@ -9,15 +9,15 @@ basic css or <a href="https://www.w3schools.com/colors/colors_picker.asp">color 
 <img src="https://i.imgur.com/3lzN95E.png">
 <p>To change these you will have to use the right hex codes. You can find a color picker to hex code in <a href="https://www.w3schools.com/colors/colors_picker.asp">this page</a>.
 
-<h3>Last update: <b>06/02/2018</b></h3>
+<h3>Last update: <b>24/02/2018</b></h3>
+<p>Files updated:</p>
+<ul>
+ <li><b>Usercontent.css</b> -> Commented out the blue font lines so that now input boxes show the original text color by default. You can change this back to blue text color deleting the comment entry on line 70 of usercontent.css.</li>
+</ul>
+<h3>Pre-Last update: <b>06/02/2018</b></h3>
 <p>Files updated:</p>
 <ul>
  <li><b>Usercontent.css</b> -> Fixed some issue with the "top sites" popup on the <code>about:home</code> and <code>about:newtab</code> pages, now the input text should be readable, some misplaced dark border has dissapeared, and the "pin, unpin..." etc buttons should be dark.</li>
-</ul>
-<h3>Pre-Last update: <b>24/01/2018</b></h3>
-<p>Files updated:</p>
-<ul>
-  <li><b>Userchrome.css</b> -> Pulled some request to fix multi-row tabs, thanks to <b>Messna</b> for noting the issue. Also added the possibility to style unread/loading tabs.</li>
 </ul>
 
 <h2>FAQ:</h2>
