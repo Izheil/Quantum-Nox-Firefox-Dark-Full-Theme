@@ -12,7 +12,7 @@
 <h2>Installation</h2>
 <p>To install userChrome.js you have to do a few more steps than just copying it to your <a href="https://github.com/Izheil/Firefox-57-full-dark-theme-with-scrollbars#the-chrome-folder">the chrome folder</a>. The reason for this is that Firefox doesn't allow userChrome.js by default, so we have to apply certain modifications so that it allows it.</p>
 
-<p>First, copy the contents of the "Root" folder found here to Firefox's root folder. These contents include the <b>config.js</b>, <b>userChromeJS.js</b> and the <b>config-prefs.js</b> file inside the "defaults/pref" folders (You have to keep this path structure when moving the files to Firefox root folder). If you don't know where that is, you can find an explanation on how to find it in the last section of this page.<p>
+<p>First, copy the contents of the "Root" folder found here to <a href="https://github.com/Izheil/Firefox-57-full-dark-theme-with-scrollbars/blob/master/Scrollbars%20&%20tooltips%20dark%20theme/Readme.md#the-root-folder">Firefox root folder</a>. These contents include the <b>config.js</b>, <b>userChromeJS.js</b> and the <b>config-prefs.js</b> file inside the "defaults/pref" folders (You have to keep this path structure when moving the files to <a href="https://github.com/Izheil/Firefox-57-full-dark-theme-with-scrollbars/blob/master/Scrollbars%20&%20tooltips%20dark%20theme/Readme.md#the-root-folder">Firefox root folder</a>).<p>
   
 <p>Once you have done this, all you have to do is open the <a href="https://github.com/Izheil/Firefox-57-full-dark-theme-with-scrollbars#the-chrome-folder">the chrome folder</a> inside your profile folder (If you don't know where that is you can find an explanation on the section below) and place the contents that are inside the "profile" folder here in there. This is the same folder where you would place userchrome.css and usercontent.css.<p>
 
@@ -26,7 +26,7 @@
 
 <h4>Short version:</h4>
 <ul>
-  <li>Copy the contents of the "Root" folder found in this repository to Firefox root folder.</li>
+  <li>Copy the contents of the "Root" folder found in this repository to <a href="https://github.com/Izheil/Firefox-57-full-dark-theme-with-scrollbars/blob/master/Scrollbars%20&%20tooltips%20dark%20theme/Readme.md#the-root-folder">Firefox root folder</a>.</li>
   <li>Copy the contents of the "Profile" folder found in this repository to the <a href="https://github.com/Izheil/Firefox-57-full-dark-theme-with-scrollbars#the-chrome-folder">the chrome folder</a> inside your profile folder.</li>
   <li>Open the <code>about:profiles</code> URL with firefox, and open the local profile folder there.</li>
   <li>Open the "startupcache" folder and delete everything there.</li>
