@@ -1,6 +1,9 @@
 (function() {
     var css =`
 @-moz-document url(chrome://browser/content/syncedtabs/sidebar.xhtml){
+body, .content-header, #template-container {
+    background-color: #404040 !important}
+
 .search-box {
   -moz-appearance: none !important;
   background-color: #222 !important;
