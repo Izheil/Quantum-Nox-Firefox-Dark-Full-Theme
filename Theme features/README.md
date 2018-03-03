@@ -37,7 +37,7 @@
   	</ul></li>
 </ul>
 
-<p>If for some reason you only wanted to use only certain features but not the rest, you can always delete the lines you aren't interested to take effect on userChrome.css (or commenting them between /* and */)</p>
+<h4>You can turn the features you want on or off changing the commented lines on the CSS file (To change them you just have to open the userchrome.css with notepad or any code editor, and encase between "/*" and "*/" (without the quotation marks) the lines you don't want to take effect). Of course, if you think that you are NEVER going to use certain feature, you can always delete the specific lines you don't want without any other side-effect.</h4>
 
 <h2>Installation</h2>
 
