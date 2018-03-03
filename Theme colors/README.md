@@ -55,7 +55,7 @@ of using the usercontent or userchrome files provided here.</p>
 <p>You can make them visible by typing the following in a terminal window.</p>
 <pre>defaults write com.apple.finder AppleShowAllFiles TRUE
 killall Finder</pre>
-<br /><p>This will also cause any file icons to take on a hazy, 50% alpha look. To restore the old settings (hide the files and make the icons look normal) issue the same commands again, but enter FALSE instead of TRUE.<p>
+<p>This will also cause any file icons to take on a hazy, 50% alpha look. To restore the old settings (hide the files and make the icons look normal) issue the same commands again, but enter FALSE instead of TRUE.<p>
 
 <h2>The userChrome.css file</h2>
 
