@@ -67,7 +67,7 @@ some of them wouldn't know how to change it.</li>
 	  <li>Can change the tabs position under the URL bar (You have to change the commented line on userchrome to use it).</li>
 	</ul></li>
   <li><b>Full theme (except scrollbars)</b>: This userchrome will have the effect of both the other folders combined (but you will still need to theme the Scrollbars and tooltips apart using the method described on the folder with that name if you want those themed too).</li>
-<ul>
+</ul>
 
 <h4>You can turn the features you want on or off changing the commented lines on the CSS file (To change them you just have to open the userchrome.css with notepad or any code editor, and encase between "/*" and "*/" (without the quotation marks) the lines you don't want to take effect). Of course, if you think that you are NEVER going to use certain feature, you can always delete the specific lines you don't want without any other side-effect.</h4>
 
