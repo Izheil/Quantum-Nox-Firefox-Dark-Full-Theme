@@ -1,0 +1,193 @@
+/* You can find an updated version here: https://github.com/Izheil/Firefox-57-full-dark-theme-with-scrollbars */
+/* Last updated: 03/03/2018 */
+
+/* DO NOT DELETE THIS LINE */
+@namespace url("http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul");
+
+/* SIDEBAR */
+
+/* Allow sidebar to be closed completely using the slider */
+#sidebar-box {overflow-x: hidden !important}
+
+#sidebar {
+  min-width: 0px !important;
+  max-width: none !important;
+  overflow-x: hidden !important}
+
+/* URL bar */
+
+/* This allows you to change the font of the url to prevent ULR spoofing with a more
+differentiable font (Thanks to BelladonnavGF for the tip) */ 
+
+/* v Delete the "/*" after this comment to use it */ 
+  /*
+#urlbar {font-family: Georgia !important}
+
+/* TABS */
+
+/* Tab bar below (You can set the order of each bar here. 1 for top, and 3 bottom) */
+
+/* For best results, you should enable the "Title bar" when using this (or you won't be able
+to use the close, minimize, and resize buttons */
+
+/* #nav-bar is the ID for the URL bar, #PersonalToolbar the ID for the bookmarks bar, and
+#TabsToolbar should be self-explanatory (The tabs on bottom are already set by default here) */
+
+/* v Delete the "/*" after this comment to use it */ 
+  /*
+#nav-bar {-moz-box-ordinal-group: 1 !important}
+#PersonalToolbar {-moz-box-ordinal-group: 2 !important}
+#TabsToolbar {-moz-box-ordinal-group: 3 !important}
+
+/* ROUNDED TABS */ 
+/* v Delete the "/*" after this comment to use it */ 
+  /*
+.tab-background {
+  border-radius: 15px 15px 0px 0px !important;
+  border-image: none !important}
+
+.tab-line {
+  margin-left: 12px;
+  margin-right: 12px} 
+
+/* TAB CLOSE BUTTON ALWAYS VISIBLE */
+#TabsToolbar #tabbrowser-tabs .tabbrowser-tab:not([pinned]) .tab-close-button {
+  	visibility: visible !important;
+  	display: block !important}
+
+#TabsToolbar #tabbrowser-tabs .tabbrowser-tab:not([pinned])[faviconized="true"] .tab-close-button {
+  	visibility: collapse !important;
+  	display: none !important}
+
+/* MULTIROW TABS */
+.tabbrowser-tab:not([pinned]) {
+    flex-grow:1;
+    min-width:150px}
+
+.tabbrowser-tab,.tab-background {height:var(--tab-min-height)}
+
+.tab-stack {width: 100%}
+
+#tabbrowser-tabs .scrollbox-innerbox {
+    display: flex;
+    flex-wrap: wrap}
+
+#tabbrowser-tabs .arrowscrollbox-scrollbox {
+    overflow: visible;
+    display: block}
+
+#titlebar {height:var(--tab-min-height) !important}
+
+/* A little fix for Win10 so that it won't bigger background for the close/min buttons */
+@media (-moz-os-version: windows-win10) {#titlebar-buttonbox {height:var(--tab-min-height) !important}}
+
+#titlebar {margin-bottom:calc(1px + var(--tab-min-height)*-1) !important}
+
+#main-window[sizemode="maximized"] #titlebar
+{margin-bottom: calc(8px + var(--tab-min-height)*-1)!important}
+
+#main-window[sizemode="maximized"][uidensity=compact] #titlebar
+{margin-bottom: calc(6px + var(--tab-min-height)*-1)!important}
+
+/* Change the tab line size in case you don't see it while on resized mode*/
+.tab-line {height: 2px !important}
+
+/* Change the tab line size in case you don't see it while on maximized mode*/
+#main-window[sizemode="maximized"] .tab-line {height: 2px !important}
+
+#titlebar:active {margin-bottom: 0 !important}
+
+#titlebar:active #titlebar-content {margin-bottom:var(--tab-min-height) !important}
+
+#tabbrowser-tabs .scrollbutton-up,#tabbrowser-tabs .scrollbutton-down,#alltabs-button,.tabbrowser-tab:not([fadein])
+{display: none}
+
+/* MULTI-ROW BOOKMARKS TOOLBAR */
+
+/* Provide room for up to 1 rows at 20px each + 1px margin top and bottom, 
+change the number of px following the formula of 20*(number of rows)+2 for more rows of bookmarks */
+#PersonalToolbar {max-height: 22px !important} 
+/*
+#PlacesToolbarItems > box {display: inline-block !important}
+
+#PlacesToolbarItems {overflow: visible !important}
+
+/* CONTEXT MENU COMMANDS */
+
+/* All of these commands are divided so that they can be explained, but they are all
+part of the same rule */
+
+/* Tabs context menu */
+/* Reload tab *//*
+#context_reloadTab,
+
+/* Pin tab *//*
+#context_pinTab,
+
+/* Duplicate tab *//*
+#context_duplicateTab,
+
+/* Open tab in new window *//*
+#context_openTabInWindow,
+
+/* Reload all tabs */
+#context_reloadAllTabs,
+
+/* Bookmark all tabs */
+#context_bookmarkAllTabs,
+
+/* Close all tabs to the right *//*
+#context_closeTabsToTheEnd,
+
+/* Close all other tabs */
+#context_closeOtherTabs,
+
+/* Close tab *//*
+#context_closeTab,
+
+/* Webarea context menu */
+/* Navigation buttons (Back, forward and reload buttons) & it's separator */
+#context-navigation, #context-sep-navigation,
+
+/* Send image... */ 
+#context-sendimage,
+
+/* Set image as desktop background... */
+#context-setDesktopBackground, 
+
+/* Bookmark this page */ 
+#context-bookmarkpage,
+
+/* Send page... */ 
+#context-sendpage,
+
+/* Bookmark this link */ 
+#context-bookmarklink,
+
+/* Send link... */ 
+#context-sendlink,
+
+/* Open link in a new tab */ /*
+#context-openlinkintab,
+/* Open link in a new window */
+#context-openlink,
+/* Open link in a new private window */
+#context-openlinkprivate,
+/* Open link commands separator (should only disable if you don't use any of the "open link..." commands) */
+#context-sep-open,
+
+/* Take a screenshot & it's separator */ 
+#screenshots_mozilla_org_create-screenshot, #_479f0278-2c34-4365-b9f0-1d328d0f0a40__separator,
+
+/* Send tab to device... (including it's separators) */ 
+#context_sendTabToDevice, #context_sendTabToDevice_separator, #tabContextMenu menuseparator:nth-child(even),
+
+/* Send page to device... (including it's separator)*/ 
+#context-sendpagetodevice, #context-sep-sendpagetodevice,
+
+/* Send link to device... (including it's separator)*/ 
+#contentAreaContextMenu #context-sendlinktodevice, 
+#contentAreaContextMenu #context-sep-sendlinktodevice
+
+/* Don't delete this unless you aren't using any of the above deletions */ 
+{display: none !important}

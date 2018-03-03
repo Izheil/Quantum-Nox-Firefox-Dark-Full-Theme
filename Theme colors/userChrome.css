@@ -1,0 +1,286 @@
+/* You can find an updated version here: https://github.com/Izheil/Firefox-57-full-dark-theme-with-scrollbars */
+/* Last updated: 03/03/2018 */
+
+/* DO NOT DELETE THIS LINE */
+@namespace url("http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul");
+
+/* COLORING PART STARTS HERE */
+
+/* v Fix to make the pre-render loading page dark instead of white v */
+browser[type="content-primary"], tabbrowser tabpanels, #appcontent > #content
+{background-color: #202020 !important}
+
+/* TOOLBAR, TABS AND URL BAR */
+
+/* This root class will modify the colors of toolbar background color (by default is transparent white 
+without this change) */
+:root:-moz-lwtheme {
+  --toolbar-bgcolor: rgba(0,0,0,.6) !important;
+
+  /* Url and search bars */
+  --url-and-searchbar-background-color: rgb(71, 71, 73);
+  --url-and-searchbar-color: #FFF;
+  --urlbar-separator-color: #5F6670}
+
+/* Tabs border color */
+.tabbrowser-tab {border-right: 1px solid rgba(255,255,255, .15) !important}
+
+/* Max, min and close buttons */
+
+/* This prevents any custom windows theme to change the background color
+of the minimize, maximize and close buttons */
+#titlebar-min:not(:hover), #titlebar-max:not(:hover), 
+#main-window[sizemode="maximized"] #titlebar-max:not(:hover),
+#titlebar-close:not(:hover) 
+{background-color: transparent !important}
+
+/* This changes the color on hover of the minimize and maximize buttons */
+#titlebar-min:hover, #titlebar-max:hover, 
+#main-window[sizemode="maximized"] #titlebar-max:hover 
+{background-color: #2050AA !important}
+
+/* This changes the close button hover color */
+#titlebar-close:hover {background-color: #FF0000 !important}
+
+/* The downloads progress bar color */
+.progress-bar {background: #3070dd !important}
+
+/* CUSTOMIZATION PAGE */
+
+/* The windows default theme colors will mainly affect the customizing page (when
+you aren't using the default dark theme of mozilla, that is) */
+@media (-moz-windows-default-theme) {
+  :root {
+    --toolbar-non-lwt-bgcolor: #303030 !important;
+    --toolbar-non-lwt-textcolor: #fff !important}
+}
+
+/* The customization page button colors */
+.customizationmode-button {
+    background: linear-gradient(#555, #222) !important;
+    color: #fff !important}
+
+.customizationmode-button:hover {
+  background: linear-gradient(#222, #555) !important;
+  color: #fff !important}
+
+#customization-done-button {
+  background: linear-gradient(#2050AA, #203050) !important;
+  border: 1px solid #0050aa !important}
+
+#customization-done-button:hover {
+  background: linear-gradient(#203050, #2050AA) !important;
+    color: #0ff !important}
+
+/* CONTEXT MENUS */
+
+/* Main menu colors */
+:root {
+  --panel-separator-color: rgba(0,0,0, .5) !important;
+  --arrowpanel-background: #444 !important;
+  --arrowpanel-color: #ccc !important;
+  --in-content-box-background: #333 !important;
+  --in-content-box-background-hover: #444 !important}
+
+/* Fix for the panel arrows (Thanks to BelladonnavGF for pointing out the bug) */
+.panel-arrow {filter: invert(73%) !important;}
+
+/* Zoom reset button on the main menu */
+#appMenu-zoomReset-button {background-color: #666 !important}
+#appMenu-zoomReset-button:hover {background-color: #333 !important}
+#appMenu-zoomReset-button:active {background-color: #222 !important}
+
+/* This one changes the letters color of all context menus */
+menu, menuitem {
+  color: #aaa !important;
+  -moz-appearance: none !important}
+
+/* Padding for all menu items (do NOT change unless you want an spaced or indented upon 
+selection effect). The open in tabs bookmark item is added here since it also needs the 
+padding that we remove in the next rule */ 
+menuitem, .bookmark-item .openintabs-menuitem {
+  padding-top: 3px !important;
+  padding-bottom: 2px !important}
+
+/* This removes the unnecesary padding from the bookmark items */
+.bookmark-item menuitem {
+  padding-top: 0px !important;
+  padding-bottom: 0px !important}
+
+/* This changes the color on hover of the context-menu items */
+menubar > menu[_moz-menuactive="true"],
+menupopup > menu[_moz-menuactive="true"],
+popup > menu[_moz-menuactive="true"],
+menuitem[_moz-menuactive="true"]
+{background-color: #25a !important}
+
+/* This does the same but for disabled ones */
+menubar > menu[_moz-menuactive="true"][disabled="true"],
+menupopup > menu[_moz-menuactive="true"][disabled="true"],
+popup > menu[_moz-menuactive="true"][disabled="true"],
+menuitem[_moz-menuactive="true"][disabled="true"] 
+{background-color: #333 !important} 
+
+/* This changes the text color of the greyed out actions on the context menus */
+menuitem[disabled="true"]{color: #222 !important}
+
+/* This one applies to all context menus (If you want to theme the browser this one is better instead 
+of going one by one) */
+menupopup .scrollbox-innerbox {background-color: #444 !important}
+
+/* The following code changes the borders of all the context menus (except the ones above mentioned),
+as well as ignoring the bookmark menu context menu */
+menupopup {
+  -moz-appearance: none !important;
+  border: 2px solid #111 !important}
+
+/* Context menu separator color override */
+menuseparator {
+  -moz-appearance: none !important;
+  margin: 1px 0 1px 2.3em !important;
+  height: 1px !important;
+  border: none !important;
+  background: #222 !important;
+  padding: 0 !important}
+
+/* This removes the borders for the bookmark menu button next to the url bar */
+#BMB_bookmarksPopup, #BMB_bookmarksPopup menupopup {border: none !important}
+
+/* Fix for the space above the "save as" option after the navigation buttons have been eliminated. Change 
+if necessary depending on if you are using a custom OS theme (which may mess up the padding of the separators) */
+#context-savepage {padding-top: 3px !important}
+
+/* AUTOCOMPLETE COLORS */
+
+/* This changes the autocomplete popup borders */
+#PopupAutoCompleteRichResult, #PopupSearchAutoComplete, #PopupAutoComplete
+{border: 1px solid #000 !important}
+
+/* This changes the autocomplete background color of the URL bar */
+.autocomplete-richlistbox,
+/* Changes the color of searchbox  old searches (Continues from above) */
+.search-panel-tree {background-color: #444 !important}
+
+/* Changes the color of the highlighted item (only the selected one) on the url and searchbar */
+.autocomplete-richlistitem[selected="true"], 
+.search-panel-tree > .autocomplete-treebody::-moz-tree-cell(fromhistory, selected)
+{background-color: #25a !important}
+
+/* Changes the color of the autocomplete on the URL bar */
+#PopupAutoCompleteRichResult .ac-title-text,
+#PopupAutoCompleteRichResult .ac-tags-text,
+#PopupAutoCompleteRichResult .ac-action-text,
+
+/* Changes the color of the autocomplete on web area inputs (Continues from above) */
+.autocomplete-richlistbox .ac-action-text, 
+.autocomplete-richlistbox .ac-tags-text,
+.autocomplete-richlistbox .ac-title-text,
+
+/* Changes the color of search old searches (Continues from above) */
+.search-panel-tree 
+{color: #ccc !important}
+
+/* The search autocomplete "-" lines */
+.ac-separator {color: #222 !important}
+
+/* Changes the color of the autocomplete links on the URL bar */
+#PopupAutoCompleteRichResult .ac-url-text {color: rgb(0,160,200) !important}
+
+/* Changes the color of header of the search option */
+.search-panel-header, .addengine-item {
+  background-color: #333 !important;
+  color: #ccc !important}
+
+/* Changes the color of the "Add x new search engine" hover effect */
+.addengine-item:hover {background-color: #444 !important}
+
+/* Changes the color of search engines choices */
+.search-panel-one-offs {background: linear-gradient(#337,#115) !important}
+
+/* Changes the color of search engine options button */
+.search-setting-button {
+    background: linear-gradient(#333,#111) !important;
+    color: #777 !important}
+
+.search-setting-button:hover {background: linear-gradient(#111,#333) !important}
+
+/* Changes the color of searched item on the search popup */
+.search-panel-input-value {color: #0FF !important}
+
+/* SIDEBAR */
+
+/* These change the color of the sidebar */
+#sidebar-header {
+  color: #fff !important;
+  background-color: #303030 !important;
+  -moz-appearance: none !important} 
+
+#sidebar-search-container, #bookmarks-view-children, #historyTree, #sidebar {
+  -moz-appearance: none !important;
+  background-color: #404040 !important;
+  color: #ccc}
+
+.sidebar-splitter {
+  border-right: 2px solid #000 !important;
+  -moz-appearance: none !important}
+
+/* Highlighted items */
+treechildren {
+
+/* These change the colors of the borders when selected/hovered */
+  --treechildren-selectedColor: none !important;
+  --treechildren-focusColor: rgb(123,195,255) !important;
+  --treechildren-hoverColor: none !important;
+  --treechildren-selectedFocusColor: rgb(205,232,255) !important;
+
+/* These change the background colors when hovered/selected */
+  --treechildren-selectedImage: linear-gradient(rgb(190,190,190), rgb(190,190,190)) !important; 
+  --treechildren-hoverImage: linear-gradient(rgb(34,85,170), rgb(34,85,170)) !important; 
+  --treechildren-hoverCurrentImage: linear-gradient(rgba(34,85,170,.16), rgba(34,85,170,.16)) !important;
+  --treechildren-hoverSelectedImage: linear-gradient(rgb(205,232,255), rgb(205,232,255)) !important}
+
+/* This is a fix for those using an OS theme (they change the background and text color on hover), 
+if you don't see a blue hover color on items on the sidebar, use this method instead *//*
+#bookmarks-view treechildren::-moz-tree-cell(hover),
+#historyTree treechildren::-moz-tree-cell(hover) {
+  background-image: linear-gradient(rgb(34,85,170), rgb(34,85,170)) !important;
+  color: #fff !important}
+
+#bookmarks-view treechildren::-moz-tree-cell(selected),
+#historyTree treechildren::-moz-tree-cell(selected){
+  background-image: linear-gradient(rgb(40,40,40), rgb(40,40,40)) !important;
+  color: #000 !important}
+
+/* This changes the sidebar searchbar */
+#sidebar-search-container #search-box {
+  -moz-appearance: none !important;
+  background-color: #222 !important;
+  color: #fff !important}
+
+/* TAB READ/UNREAD COLORS */
+/* You can bold the text of any tab adding "font-weight: bold !important" after their last rule, but before the "}" */
+
+/* Selected (loaded) */
+.tabbrowser-tab[selected="true"] .tab-label {    
+  color: #eee !important;    
+  font-size: 12px !important;    
+  font-style: normal !important}
+
+/* Loaded but unread (not selected) */
+.tabbrowser-tab:not([selected="true"])[unread] .tab-label {    
+  color: #fff !important;    
+  font-size: 12px !important;    
+  font-style: italic !important}
+
+/* Not loaded yet (also visited) */
+.tabbrowser-tab:not([selected="true"])[pending] .tab-label,
+.tabbrowser-tab:not([selected="true"])[visited] .tab-label {    
+  color: #ccc !important;    
+  font-size: 12px !important;    
+  font-style: italic !important}
+
+/* loading */
+.tabbrowser-tab[busy] .tab-text.tab-label {    
+  color: var(--tab-line-color) !important;    
+  font-size: 12px !important;    
+  font-style: normal !important}

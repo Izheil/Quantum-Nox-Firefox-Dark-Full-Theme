@@ -1,0 +1,785 @@
+/* You can find an updated version here: https://github.com/Izheil/Firefox-57-full-dark-theme-with-scrollbars */
+/* Made by Izheil */
+/* Last updated: 06/02/2018 */
+
+/* This part imports the Addons file if there is one, so that you don't have to edit the dynamic URL
+from the addons rules every time we update anything here */
+@import 'addons.css';
+
+/*------ COMMON PART FOR ALL FIREFOX PAGES (MAINLY USED FOR THE 404 PAGE) ------*/
+:root {
+	--in-content-page-color: #ccc !important;
+	--in-content-page-background: #222 !important;
+	--in-content-text-color: #ccc !important;
+	--in-content-box-background: #444 !important;
+	--in-content-box-background-hover: #555 !important;
+	--in-content-box-background-active: #333 !important;
+	--in-content-box-border-color: #777 !important}
+
+/* This part covers the preferences page update scrollbox (No, I couldn't put it inside the preferences section) */
+#historyItems .scrollbox-innerbox {background-color: #444 !important}
+
+.update-name {color: #20dd20 !important}
+.update-type {color: #FA0 !important}
+
+.tab-middle, .treecol-text {color: #FFF !important}
+
+/* This part covers all the dialog boxes backgrounds */
+dialog, window, prefpane, 
+prefwindow, .windowDialog {
+ 	background-color: #202020 !important;
+ 	color: #ccc !important}
+ 	
+/* This changes the "add certificate exception" dialog background color */
+#badCertAdvancedPanel {background-color: #303030 !important}
+
+.exceptionDialogButtonContainer {background-color: #252525 !important}
+
+/* This should change the "not found" page image colors */
+
+.connectionFailure #errorPageContainer:not(.button-container),
+.netInterrupt #errorPageContainer:not(.button-container),
+.netTimeout #errorPageContainer:not(.button-container),
+.netReset #errorPageContainer:not(.button-container),
+.netOffline #errorPageContainer:not(.button-container),
+.dnsNotFound #errorPageContainer:not(.button-container),
+.malformedURI #errorPageContainer {filter: invert(98%) hue-rotate(200deg)}
+
+/* This fixes the inverted colors caused by the image filter (since I couldn't directly filter 
+only the images */
+.connectionFailure #errorPageContainer .button-container,
+.netInterrupt #errorPageContainer .button-container,
+.netTimeout #errorPageContainer .button-container,
+.netReset #errorPageContainer .button-container,
+.netOffline #errorPageContainer .button-container,
+.dnsNotFound #errorPageContainer .button-container,
+.malformedURI #errorPageContainer .button-container,
+.connectionFailure #errorPageContainer #text-container,
+.netInterrupt #errorPageContainer #text-container,
+.netTimeout #errorPageContainer #text-container,
+.netReset #errorPageContainer #text-container,
+.netOffline #errorPageContainer #text-container,
+.dnsNotFound #errorPageContainer #text-container,
+.malformedURI #errorPageContainer #text-container {filter: invert(98%) hue-rotate(-200deg)}
+
+#errorPageContainer #text-container h1 {color: #1C7BFF !important}
+
+/* This is a little fix for all pages in case you have a dark windows theme, so that the 
+letters will have a blue neutral color to be seen in either a white or dark background for 
+text-inputting things (Feel free to delete the /* under this line for it to take effect) */
+/*
+@-moz-document url-prefix(http){
+
+form select, input[type=text], input[type=email], input[type=password], input[type=date], 
+input[type=datetime-local], input[type=time], input[type=week], input[type=month], 
+input[type=number], input[type=search], input[type=tel], input[type=url], textarea 
+{color: #2066dd !important}
+}
+
+/*------ FILE BROWSING PAGES (file://, about:sync-log) ------*/
+@-moz-document url-prefix(about:sync-log), url-prefix(file://) {
+html {background: #202020 !important}
+body {background: #333 !important}
+
+#UI_goUp a.up:link, a.file:link, a.dir:link {color: #0084ff !important}
+#UI_goUp a.up:hover, .ellipsis a.file:hover, .ellipsis a.dir:hover {color: #0ff !important}
+#UI_goUp a.up:active, .ellipsis a.file:active, .ellipsis a.dir:active {color: #0050aa !important}
+#UI_goUp a.up:visited, .ellipsis a.file:visited, .ellipsis a.dir:visited {color: #0050dd !important}
+
+th {color: #ddd !important}
+td {color: #aaa !important}}
+
+/*------ VIEW SOURCE ------*/
+@-moz-document url-prefix(view-source:){
+html {
+	background: #222 !important;
+	color: #ccc !important}
+
+.attribute-name {color: #fff !important}
+.start-tag, .end-tag {color: #f00 !important}
+.attribute-value {color: #0084ff !important}
+}
+
+/*------ HOME/NEWTAB PAGE (About:home, about:newtab) ------*/ 
+@-moz-document url-prefix(about:home), url-prefix(about:newtab) {
+
+body { 
+ 	background-color: #202020  !important;
+    color: #50AAFF !important;
+    overflow: auto !important}
+
+/* Context menus of the web area */
+.context-menu {
+	background-color: #505050 !important;
+	color: #ccc}
+
+.context-menu > ul > li > a:hover, .context-menu > ul > li > a:focus {
+	background-color: #0a50AA !important}
+
+/* Context menus of the about information area */
+.info-option {background-color: #505050 !important}
+
+.info-option-manage button {color: #3088FF !important}
+
+.info-option-manage button:hover {color: #00FFFF !important}
+
+/* The sidebar/settings panel part starts here */
+.sidebar, .sidebar .actions {border-left: 2px solid #000 !important} 
+
+.prefs-pane, .info-option p {color: #ccc !important}
+
+.prefs-pane .sidebar, .card-outer {background-color: #303030 !important}
+
+.prefs-pane .prefs-modal-inner-wrapper .options {background-color: #404040 !important}
+
+.prefs-pane .prefs-modal-inner-wrapper .options:hover {background-color: #202020 !important}
+
+.prefs-pane [type='checkbox']:not(:checked) + label::before,
+.prefs-pane [type='checkbox']:checked + label::before 
+{background: #111 !important}
+
+.prefs-pane-button button {fill: rgba(255, 255, 255, 0.8) !important;}
+
+.prefs-pane-button button:hover, 
+.prefs-pane .actions {background-color: #151515 !important}
+
+.prefs-pane-button button:active {background-color: #050505 !important}
+
+/* The popups part starts here */
+.modal-overlay {background: #000 !important}
+
+.modal {
+ 	background: #222 !important;
+    border: 1px solid #555 !important}
+
+/* The cards borders part starts here (The background is at line 66) */
+.card-outer .context-menu-button, .top-sites-list .top-site-outer .context-menu-button {
+    background-color: #555 !important;
+    border: 1px solid #333 !important;
+    fill: rgba(170, 170, 170, 0.8) !important}
+
+.top-sites-list .top-site-outer > a.active .tile, .top-sites-list .top-site-outer > a:focus .tile, 
+.card-outer > a.active .card, .card-outer > a:focus .card 
+{box-shadow: inset 0 0 0 1px rgba(0, 0, 0, 0.1), 0 0 0 5px #000 !important}
+
+.top-sites-list .top-site-outer:hover .tile, .top-sites-list .top-site-outer:focus .tile, 
+.top-sites-list .top-site-outer.active .tile, .card-outer:-moz-any(:hover, :focus, 
+.active):not(.placeholder) 
+{box-shadow: inset 0 0 0 1px rgba(0, 0, 0, 0.1), 0 0 0 5px #555 !important}
+
+/* No need to say this goes for the buttons */
+.actions button {
+    background: #111 !important;
+    border: 1px solid #555 !important}
+
+.actions button:hover {box-shadow: 0 0 0 5px #0a50AA !important}
+
+.actions button.done {
+    background: #0a50AA !important;
+    border: solid 1px #0a50AA !important}
+
+/* Search box style (The background is at line 150) */
+.search-label {fill: #2066dd !important}
+
+.contentSearchSuggestionTable {
+    background-color: #444 !important;
+    border: 1px solid #000 !important}
+
+.contentSearchSuggestionsList {
+    border-bottom: 1px solid #000 !important;
+    color: #ccc !important}
+
+.contentSearchOneOffsTable {background: linear-gradient(#559,#115) !important}
+
+.contentSearchOneOffItem:not(.last-row) {border-bottom: 1px solid #000 !important}
+
+.contentSearchHeader {
+ 	background-color: #333 !important;
+ 	color: #777 !important;
+ 	border-bottom: 1px solid #000 !important}
+
+.contentSearchSettingsButton {
+    background: linear-gradient(#333,#111) !important;
+    color: #777 !important}
+
+.contentSearchSettingsButton.selected {
+    color: #555 !important}
+
+.contentSearchSettingsButton:active {
+    background: linear-gradient(#111,#333) !important}
+
+.search-button {
+	fill: #2066dd !important}
+
+/* Firefox news at the bottom of the screen snippets */
+#snippets-container, input {
+	background-color: #151515 !important}
+
+#snippets-container p {
+	color: #50AAFF !important}
+
+.snippet p em {
+	background: transparent !important;
+	font-weight: 900 !important;
+	color: #50AAFF !important}
+
+.monthly-checkbox-label {color: #ccc !important}
+
+.block-snippet-button {
+	filter: invert(50%) !important}
+
+.button-link {
+	background-color: #0aAA50 !important;
+	color: #FFF !important;
+	border: 1px solid #090 !important}
+
+.button-link:hover {
+	background-color: #0bbb60 !important;
+	color: #FFF !important;
+	border: 1px solid #090 !important}
+
+.button-link:active {
+	background-color: #099940 !important;
+	color: #FFF !important;
+	border: 1px solid #090 !important}
+
+.button.donation-amount.donation-amount-first, .button.donation-amount.donation-amount-second,
+.button.donation-amount.donation-amount-third, .button.donation-amount.donation-amount-fourth {
+	background-color: #444 !important;
+	color: #fff !important;
+	border: 1px solid #333 !important}
+
+#snippets-container .button-selected {
+	background-color: #222 !important;
+	border: 1px solid #0084ff !important}
+	
+/* Edit top sites */
+input[type=text] {color: #aaa !important}
+
+.edit-menu button.icon.icon-unpin, .edit-menu button.icon.icon-pin, 
+.edit-menu button.icon.icon-edit, .edit-menu button.icon.icon-dismiss {
+	background-color: #555 !important;	
+	border-right: none !important}
+	
+.edit-menu button.icon.icon-edit, .edit-menu button.icon.icon-dismiss {	
+	border-left: 1px solid #333 !important}
+
+.edit-menu {border: 1px solid #333 !important; background-color: #555 !important}
+
+.edit-menu button.icon.icon-unpin:hover, .edit-menu button.icon.icon-pin:hover, 
+.edit-menu button.icon.icon-edit:hover, .edit-menu button.icon.icon-dismiss:hover {
+	background-color: #777 !important}
+	
+/* Tour pop-up */
+#onboarding-overlay {
+	background: rgba(0,0,0,0.5) !important}
+
+#onboarding-overlay-dialog {
+	background: #333 !important;
+	border: 1px solid rgba(0, 0, 0, 0.2)}
+
+#onboarding-overlay p, #onboarding-overlay li.onboarding-tour-item-container span:not(.onboarding-active) {
+	color: #aaa !important}
+
+#onboarding-overlay header, #onboarding-overlay h1 {color: #FFF !important}
+
+#onboarding-skip-tour-button {
+	background: #222 !important;
+	color: #ddd !important;
+	border: 1px solid #111 !important}
+
+#onboarding-skip-tour-button:hover {background: #444 !important}
+
+#onboarding-skip-tour-button:active {background: #111 !important}
+
+#onboarding-overlay img {filter: invert(90%) hue-rotate(200deg)}
+}
+
+/*------ COMMON ATTRIBUTES ON MOST ABOUT PAGES ------*/
+@-moz-document url(about:about), url(about:blank), url(about:), 
+url(https://www.mozilla.org/credits/), url-prefix(about:cache),
+url-prefix(about:checkerboard), url-prefix(about:plugins), 
+url-prefix(about:buildconfig), url-prefix(about:support), 
+url-prefix(about:profiles), url(about:crashes), url(about:license),
+url-prefix(about:memory), url-prefix(about:networking), url(about:performance),
+url(about:rights), url(about:robots), url-prefix(about:studies), 
+url-prefix(about:telemetry), url(about:url-classifier), url(about:webrtc) {
+
+p, pre, li {color: #AAA !important}
+h1 {color: #1C7BFF !important}
+h2 {color: #ddd !important}
+a:link, a {color: #0084ff !important}
+a:hover {color: #0ff !important}
+a:active {color: #0050aa !important}
+a:visited {color: #0050dd !important}
+
+button {
+	-moz-appearance: none !important;
+	background: linear-gradient(#2050AA, #203050);
+    color: #FFF !important;
+	border: 1px solid #0050aa !important;
+	padding: 0.5em}
+
+button:hover {
+	background: linear-gradient(#203050, #2050AA) !important;
+    color: #0FF !important}
+
+textarea {
+	-moz-appearance: none !important;
+	background: #333;
+	color: #aaa;
+	border: 1px solid #444}
+}
+
+/*------ BACKGROUND OF MOST ABOUT PAGES  ------*/
+@-moz-document url(about:), url(about:about), url(about:blank), url(https://www.mozilla.org/credits/),
+url-prefix(about:checkerboard), url(about:accounts), url-prefix(about:cache), 
+url-prefix(about:plugins), url-prefix(about:buildconfig), url-prefix(about:memory),
+url-prefix(about:support), url-prefix(about:profiles), url(about:robots), url(about:serviceworkers),
+url(about:webrtc) {
+body, html {background-color: #202020 !important}}
+
+/*------ ABOUT: PAGE (about:) ------*/
+@-moz-document url(about:), url(https://www.mozilla.org/credits/) {
+#aboutPageList {color: #ddd !important}}
+
+/*------ DIVS OVER BACKGROUND PAGES ------*/
+@-moz-document url(about:accounts), url(about:robots), 
+url(about:serviceworkers), url-prefix(about:studies), url(about:webrtc) {
+#stage, #errorPageContainer, .warningMessage,
+.info-box-content, .stats, .log {background: #333 !important}
+.fold-trigger {color: #fff !important}
+}
+
+/*------ SERVICE WORKERS PAGE (about:serviceworkers) ------*/
+@-moz-document url(about:serviceworkers) {
+#warning_no_serviceworkers {background: #222 !important}
+.warningMessage {color: #ddd !important}
+}
+
+/*------ CACHE PAGE (about:cache) ------*/
+@-moz-document url-prefix(about:cache){
+#submit {
+	-moz-appearance: none !important;
+	background: linear-gradient(#2050AA, #203050) !important;
+    color: #FFF !important;
+    padding: 0.5em;
+	border: 1px solid #0050aa !important}
+
+#submit:hover {
+	background: linear-gradient(#203050, #2050AA) !important;
+    color: #0FF !important}
+
+#appid {
+	-moz-appearance: none !important;
+	background: #333;
+	border: 1px solid #555;
+	color: #ddd}
+
+table#entries tr:nth-child(even) {background-color: #151515 !important}
+}
+
+/*------ CHECKERBOARD PAGE (about:checkerboard) ------*/
+@-moz-document url-prefix(about:checkerboard) {
+#raw {color: #aaa !important}
+
+th {background: #444 !important}
+td {background: #666 !important}
+}
+
+/*------ NETWORKING PAGE (about:networking) ------*/
+@-moz-document url-prefix(about:networking), url-prefix(about:telemetry) {
+.category {color: #ddd !important}
+.category[selected="true"], .category.selected {color: #0083ff !important}
+#ping-picker {background-color: #333 !important}
+}
+
+/*------ RIGHTS PAGE (about:rights) ------*/
+@-moz-document url-prefix(about:rights){
+.rights-header {filter: invert(98%) hue-rotate(200deg) }
+.rights-header div {filter: invert(98%) hue-rotate(-200deg)}
+}
+/*------ DEBUGGING PAGE (about:debugging) ------*/
+@-moz-document url-prefix(about:debugging) {
+
+/* This affects the categories part */
+#categories {background-color: #303030 !important}
+
+#categories button {
+	background-color: #303030 !important;
+	color: #fff !important}
+
+#categories button:hover {background-color: #252525 !important}
+
+#categories button.selected {color: #0084ff !important}
+
+/* This affects the main content part */
+.target-list .addon-target-container {background-color: #303030 !important}
+
+.main-content button {
+	background: linear-gradient(#2050AA, #203050) !important;
+    color: #FFF !important;
+	border: 1px solid #0050aa !important}
+
+.main-content button:hover {
+	background: linear-gradient(#203050, #2050AA) !important;
+    color: #0FF !important}
+
+/* These are the alert message that appears on the "workers" category, and the status notice */
+.service-worker-multi-process {background-color: #d70 !important; color: #000 !important}
+
+span.target-status {background-color: #151515 !important}
+}
+
+/*------ CONFIGURATION PAGE (about:config) ------*/
+@-moz-document url(about:config) {
+:root {
+	--in-content-page-color: #aaa !important;
+	--in-content-page-background: #202020 !important;
+	--in-content-primary-button-background: #d55 !important;
+	--in-content-primary-button-background-hover: #d22 !important;
+	--in-content-primary-button-background-active: #D00 !important;
+	--in-content-text-color: #0da !important;
+	--in-content-item-selected: #4080CC !important;
+	--in-content-box-background: #333 !important;
+	--in-content-box-background-hover: #444 !important;
+	--in-content-box-background-active: #555 !important}
+
+/* Warning pre-title before the actual config page (D'uh) */
+#warningTitle {color: #FFF !important}}
+
+/*------ PLUGINS PAGE (about:plugins) ------*/
+@-moz-document url-prefix(about:plugins), url-prefix(about:buildconfig) {
+.notice {
+	background-color: #101010 !important;
+	color: #FA0 !important}
+
+.notice a:link {color: #4080CC !important}
+
+dl {color: #ddd !important}
+
+tbody {
+	background-color: #555 !important;
+	color: #FFF !important}
+
+th {background-color: #333 !important}
+
+}
+
+/*------ MEMORY LOAD PAGE (about:memory) ------*/
+@-moz-document url-prefix(about:memory){
+.opsRow {
+	background-color: #303030 !important;
+	color: #AAA !important}
+}
+
+/*------ DOWNLOADED FILES PAGE (about:downloads) ------*/
+@-moz-document url(about:downloads){
+:root {
+	--in-content-page-background: #202020 !important;
+	--in-content-text-color: #aaa !important;
+	--in-content-box-background: #404040 !important;
+	--in-content-box-border-color: #777 !important}
+}
+
+/*------ INFORMATION PAGES WITH TABLES ------*/
+@-moz-document url-prefix(about:support), url-prefix(about:profiles), 
+url(about:performance), url(about:url-classifier) {
+
+:root {
+	--in-content-table-header-background: #333 !important;
+	--aboutSupport-table-background: #555 !important;
+	--aboutProfiles-table-background: #555 !important;
+	--in-content-link-color-hover: #0FF !important;
+	--in-content-box-border-color: #aaa !important;
+	--in-content-table-border-dark-color: #000 !important;
+	--in-content-border-color: #000 !important}
+
+td {background: #555 !important}
+
+.page-subtitle {color: #ddd !important}
+}
+
+/*------ SETTINGS/ADDONS COMMON PART (about:preferences, about:addons) ------*/
+@-moz-document url-prefix(about:preferences), url-prefix(about:addons){
+
+/* Sidebar */
+:root {
+	--in-content-page-background: #202020 !important;
+	--in-content-category-text: #fff !important;
+	--in-content-text-color: #fff !important;
+	--in-content-selected-text: #000 !important;
+	--in-content-item-selected: #0a50AA !important;
+	--in-content-item-hover: rgba(0,90,170,0.25) !important;
+	background-color: #303030 !important}
+
+/* Main Content */
+.main-content {
+ 	background-color: #202020 !important;
+    color: #AAA !important}
+
+.groupbox-title, 
+
+/* These last two apply to some general panel labels in the preferences page (if 
+it's updated and if its the default browser) */
+#isDefaultLabel, #updateBox {color: #FFF !important}
+
+/* This changes some of the buttons color */
+.accessory-button, button {
+	background: linear-gradient(#2050AA, #203050) !important;
+    color: #FFF !important;
+    border: 1px solid #0050aa !important}
+
+.accessory-button:hover, button:hover {
+	background: linear-gradient(#203050, #2050AA) !important;
+    color: #0FF !important}
+
+/* Search Panel, Dialog boxes and inputs in general */
+#engineList, .dialogBox > .groupbox-title, #browserHomePage,
+#searchInput {background-color: #303030 !important}
+}
+
+/*------ SETTINGS PAGE (about:preferences) ------*/
+@-moz-document url-prefix(about:preferences){
+
+.dialogBox {background-color: #202020 !important}
+
+/* Selector tables */
+#applicationsGroup richlistitem[selected="true"] {
+	background-color: rgba(255,255,255, 0.2) !important;
+	color: #0FF !important}
+
+/* Search bar images on "search" category */
+image.searchBarImage {filter: invert(92%) hue-rotate(180deg)}
+
+treecol {
+	background-color: #555 !important;
+	color: #FFF !important}
+
+treecol:hover {background-color: #666 !important}
+}
+
+/*------ EXTENSIONS PAGE (about:addons) ------*/
+@-moz-document url-prefix(about:addons){
+
+/* Context menus*/
+#header-utils-btn .scrollbox-innerbox,
+.arrowscrollbox-scrollbox {background-color: #444 !important}
+
+/* This changes the color of the context menus */
+menuitem {
+	color: #ccc !important;
+	padding-top: 3px;
+	padding-bottom: 2px}
+
+menupopup {
+	-moz-appearance: none !important;
+	border: 2px solid #111 !important;
+	padding-top: 2px}
+
+/* This changes the color on hover of the context-menu items */
+menuitem:hover,
+menu:hover {
+	-moz-appearance: none !important;
+	background-color: #25a !important} 
+
+/* This does the same but for disabled ones */
+
+menuitem:hover[disabled="true"],
+menu:hover[disabled="true"] {
+	-moz-appearance: none !important;
+	padding-top: 3px;
+	padding-bottom: 2px;
+	background-color: #333 !important} 
+
+richlistitem.addon.addon-view[selected="true"] {color: #FFF !important}
+
+.addon {color: #4080CC !important}
+
+.addon:hover, #header-utils-btn {background-color: #151515 !important}
+
+#header-utils-btn:hover {background-color: #000 !important}
+
+/* This changes the background highlight color of uninstalled extensions */
+.addon-view[pending="disable"], .addon-view[pending="uninstall"] {
+    --view-highlight-color: #000 !important}
+
+/* Should be self explanatory... but this is the alert message that goes over the addons list */
+.alert {
+	background-color: #101010 !important ;
+	color: #FA0 !important}
+
+/* Description of the addons/themes */
+.detail-view-container {color: #aaa !important}
+
+#detail-contributions {background-color: #111 !important}
+
+#detail-contrib-description {color: #FA0}
+
+#addon-options {
+	border: 1px solid #aaa !important;
+	border-radius: 15px !important;
+	background-color: #505050 !important}
+}
+
+/* This is still in the addons page, it's the "discover" page thing */
+@-moz-document url-prefix(https://addons-discovery.cdn.mozilla.net), url-prefix(https://discovery.addons.mozilla.org) {
+
+.disco-content h1, .content h2 {color: #FFF !important}
+
+.disco-content p, .content p, .content blockquote {color: #AAA !important}
+
+#react-view {background-color: #202020 !important}
+
+.addon.theme, .addon.extension, .addon.theme {background-color: #303030 !important}
+}
+
+/*------ HEALTHREPORT PAGE (about:healthreport) ------*/
+@-moz-document url-prefix(https://fhr.cdn.mozilla.net/){
+.headerContainer, .persistentHeader {
+	background: #222 !important;
+	color: #ddd !important}
+
+.sidebar, #health, body, .tipBox-container {
+	background: #333 !important;
+	color: #ddd !important}
+
+li {color: #ddd !important}
+
+span, .statsBoxSection-header {color: #fff !important}
+
+.tipBox-header {
+	background: #444 !important;
+	color: #ddd !important}
+
+.tipBox-content {background: #555 !important}
+}
+
+/*------ MOZILLA ADDONS PAGE (Includes both the new and the old) ------*/
+@-moz-document url-prefix(https://addons.mozilla.org) {
+
+html, .App-content, tr.LanguageTools-table-row:nth-child(even), 
+#main-wrapper, #search-tools-sidebar, .primary, .secondary, #search-tools-sidebar li a 
+{background: #202020 !important}
+
+#footer {
+    background-color: #202020 !important;
+    background-image: linear-gradient(to bottom,#202020 0,#202020 123px,
+    	#000 123px,#000 200px,#101010 200px,rgba(90,90,90,0) 400px) !important}
+
+.listing-header, .listing .item, .object-lead, .listing-footer {
+	background: linear-gradient(#202020, #333) !important;
+	border-bottom: 1px solid #000 !important}	
+
+#search-tools-sidebar {border-radius: 0px !important}
+
+#react-autowhatever-1 * {background-color: #444 !important}
+
+.Hero .Card-contents, .Home-SubjectShelf .Card-contents, 
+.CardList .Card-header, .CardList .Card-contents, a.SearchResult-link, 
+.Card-contents, .Card-Header, ul.AddonsCard-list li.SearchResult, ul.AddonsCard-list,
+.ExpandableCard .Card-header, span .Paginate-item.disabled.Paginate-previous,
+.Card-header, .Card-footer-text, .Card-footer-link, a.ShowMoreCard-expand-link,
+a.Addon-all-reviews-link, .MetadataCard, .Card-contents ul li, .LandingPage-header,
+.highlight {
+	background-color: #303030 !important;
+	color: #ccc !important}
+
+.Search .AddonsCard-list .SearchResult {border-bottom: 1px solid #000 !important}
+
+button {
+	background-color: #555 !important;
+	color: #FFF !important}
+
+button:hover {
+	background-color: #444 !important;
+	color: #1494FB !important}
+
+.other-categories .divider {border-top: 1px dotted #000 !important}
+
+.listing-footer {border-top: 1px solid #000 !important}
+
+.item .item-info {
+    border-left: 1px dotted #000 !important;
+}
+
+button.DropdownMenu-button, button.TooltipMenu-opener, 
+button.SearchForm-submit-button, ul.LanguageTools-addon-list li,
+#aux-nav > ul > li {background: transparent !important}
+
+ul.DropdownMenu-items, ul.TooltipMenu-list, .TooltipMenu-arrow, 
+ul.TooltipMenu-list li.ListItem, tr.LanguageTools-table-row:nth-child(odd) {
+	background-color: #151515 !important;
+	color: #ccc !important}
+
+ul.TooltipMenu-list li.ListItem, ul.LanguageTools-addon-list li, .highlight 
+{border: none !important}
+
+th.LanguageTools-header-cell {background-color: #101010 !important}
+
+.Home-SubjectShelf-link:active, .Home-SubjectShelf-link:focus, 
+.Home-SubjectShelf-link:hover, a.Button.Categories-link:hover 
+{color: #0d96ff !important}
+
+.Home-SubjectShelf-link:link, .Home-SubjectShelf-link:visited 
+{color: #343a40 !important}
+
+a.SearchResult-link h2, span, label *, 
+p, a, h4, h2, blockquote, li, .num-results 
+{color: #ccc !important}
+
+.header-bg {
+    background-color: #000 !important;
+    background-image: linear-gradient(to bottom,transparent 0,transparent 100px),
+    linear-gradient(to bottom,rgba(90,90,90,0) 0,#555 500px,#fff 0),
+    repeating-linear-gradient(118deg,rgba(12,153,213,0) 0,#444 550px,rgba(90,90,90,0) 550px,#444 800px,
+    rgba(90,90,90,0) 800px,#444 950px) !important}
+
+.Paginate .Paginate-item, li.p-popular {background-color: #303030 !important}
+
+.Paginate .Paginate-item:disabled, .Paginate .Paginate-item.disabled, 
+.Paginate .Paginate-item:hover, li.p-popular:hover, #search-tools-sidebar li a:hover,
+.other-apps li a:hover, #site-search-suggestions a.sel, #site-search-suggestions a:hover, 
+#site-search-suggestions.sel a.sel:hover, #site-search-suggestions li p a:hover, 
+#other-apps ul.other-apps, #addon-list-options li:not(.selected) a:hover, 
+.pagination li:not(.selected) a:hover, #aux-nav > ul > li:not(:first-child)::before, 
+#addon-list-options li:not(.selected) a:focus, .pagination li:not(.selected) a:focus 
+{background-color: #151515 !important}
+
+a.SearchResult-link:hover h2, span:hover, a:hover {color: #1494FB !important}
+
+h2.Home-SubjectShelf-subheading, .CardList h2.Card-header, 
+h1, .Paginate-page-number, .Badge, a.Button.Categories-link, .install a * 
+{color: #FFF !important}
+
+.install a.caution {text-shadow: 1px 1px red !important}
+
+.install strong {color: #FA0 !important}
+
+input.SearchForm-query, select#SearchFilters-Sort, select#SearchFilters-AddonType, 
+select#SearchFilters-AddonType, select#SearchFilters-OperatingSystem, select#language,
+input#search-q {
+	background-color: #222 !important;
+	color: #FFF !important}
+
+#site-search-suggestions .wrap, ul.other-apps {
+    background: #151515 !important;
+    border: 1px solid #101010 !important}
+
+.ShowMoreCard-contents::after 
+{background: linear-gradient(rgba(48, 48, 48, 0.3), #303030) !important}
+}
+
+/*------ MOZILLA LOGIN PAGE (The login page inside https://addons.mozilla.org) ------*/
+@-moz-document url-prefix(https://accounts.firefox.com) {
+
+html, body {background-color: #202020 !important}
+
+#stage.fade-in-forward .sign-in #main-content.card, #stage #main-content.panel {
+	background-color: #303030 !important;
+	color: #ccc !important}
+
+form input, .show-password-label {
+	background-color: #444 !important;
+	color: #ccc !important}
+}

@@ -1,5 +1,5 @@
 <h1>Custom Scrollbars and dark tooltips through UserChrome.js</h1>
-<img src="https://i.imgur.com/qe6tGJW.png">
+<img src="https://i.imgur.com/qe6tGJW.png" title="Dark blue scrollbar">
 <p>This method should be the same for all OS, and it adds CSS code with agent sheet access level through JavaScript to change the scrollbars (This means that we aren't making JavaScript scrollbars, which can be laggy sometimes. We would be actually styling the default scrollbars through Agent Sheet level CSS, which couldn't be done by default on userchrome.css because of some fix for a bug by Mozilla) as well as all the tooltips.</p>
 
 <p>The only little problem with this method is that <b>you will have to delete the start up cache files for the changes to take effect every time you make a change to any of the <i>*.uc.js</i></b> files (which are the ones where the CSS rules go to change the scrollbar or tooltip colors).</p>
@@ -18,7 +18,7 @@
 
 <p>After that, type <code>about:profiles</code> on the URL bar of firefox, and open the local profile folder through that page. In here you will have enter the "startupcache" folder and delete all files here so that the scrollbars show properly next time you reset firefox (You will have to delete the cache every time you make a change to the scrollbars.uc.js file for it to take effect). You may have to close firefox to be able to delete all the files in the "startupcache" folder.</p>
 
-<blockquote><b>Optional</b>: If you aren't fully convinced by the default custom scrollbar, you can try any of the other scrollbar types (only use one) using any of the scrollbar-*.uc.js files inside the "alternative scrollbars" instead of the scrollbar.uc.js inside the "profile" folder in here.</blockquote>
+<blockquote><b>Optional</b>: If you aren't fully convinced by the default custom scrollbar, you can try any of the other scrollbar types (only use one) using any of the scrollbar-*.uc.js files inside the "alternative scrollbars" instead of the scrollbar.uc.js inside the "profile" folder in here, or you can edit the scrollbars appearance editing only past the `s you will find inside the scrollbars.uc.js file (which is the CSS code injected by javascript to edit the scrollbars appearance).</blockquote>
 
 <blockquote><b>Optional</b>: You may use the <b>tooltips.uc.js</b> file or any of the variants included on the "alternative tooltips" (such as the semi-transparent background ones) if you want dark tooltips (such as the url tooltip, or when you hover over a bookmark).</blockquote>
 
