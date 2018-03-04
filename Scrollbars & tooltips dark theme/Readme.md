@@ -43,7 +43,7 @@
 
 <p>If you have a 32-bits Windows, you will only see the 64-bits path.</p>
 
-<h4>For Linux, you can find the manifest file by default in this path:</h4>
+<h4>For Linux, you can find the root folder in this path:</h4>
 
 <pre>/usr/lib/firefox/browser</pre>
 
@@ -53,7 +53,7 @@
 
 <p>The installation directory path may also vary depending on the distribution, and if you use a package manager to install the application from their repository.</p>
 
-<h4>For Mac, you can find the chrome manifest in this path:</h4>
+<h4>For Mac, you can find the root folder in this path:</h4>
 
 <pre>/Applications/Firefox.app/content/resources</pre>
 
