@@ -35,7 +35,7 @@ of using the usercontent or userchrome files provided here.</p>
 
 <pre>C:\Users\(Windows login/user name)\AppData\Roaming\Mozilla\Firefox\Profiles\(profile folder)</pre>
 
-<p><i>If you have never used userchrome.css or usercontent.css before, you will have to create a folder named "chrome" inside the profile folder, which is where you will have to place these files.<i></p>
+<p><i>If you have never used userchrome.css or usercontent.css before, you will have to create a folder named "chrome" inside the profile folder, which is where you will have to place these files.</i></p>
 
 <p>This is where you would have to place the files once you have created the chrome folder:</p>
 
@@ -51,7 +51,7 @@ of using the usercontent or userchrome files provided here.</p>
 
 <pre>/home/(Your-username)/.mozilla/firefox/(profile folder)</pre>
 
-<p><i>If you have never used userchrome.css or usercontent.css before, you will have to create a folder named "chrome" inside the profile folder, which is where you will have to place these files.<i></p>
+<p><i>If you have never used userchrome.css or usercontent.css before, you will have to create a folder named "chrome" inside the profile folder, which is where you will have to place these files.</i></p>
 
 <p>This is where you would have to place the files once you have created the chrome folder:</p>
 
@@ -64,7 +64,7 @@ of using the usercontent or userchrome files provided here.</p>
 <pre>~/Library/Application Support/Firefox/Profiles/(profile folder)
 ~/Library/Mozilla/Firefox/Profiles/(profile folder)</pre>
 
-<p><i>If you have never used userchrome.css or usercontent.css before, you will have to create a folder named "chrome" inside the profile folder, which is where you will have to place these files.<i></p>
+<p><i>If you have never used userchrome.css or usercontent.css before, you will have to create a folder named "chrome" inside the profile folder, which is where you will have to place these files.</i></p>
 
 <p>This is where you would have to place the files once you have created the chrome folder:</p>
 
