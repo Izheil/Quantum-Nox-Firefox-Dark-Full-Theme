@@ -26,7 +26,8 @@ of using the usercontent or userchrome files provided here.</p>
 
 <h3>The chrome folder</h3>
 <p>The fastest way to find it is to just type <code>about:support</code> on the URL bar of your firefox, and then click the <b>open folder</b> button inside the "profile folder" section. After this, your profile folder will be open.</p>
-<h4>You may or may not see the chrome folder. If you don't see it, just create it and place inside the usercontent.css and userchrome.css files.</h4>
+
+<p><i>You may or may not see the chrome folder. If you don't see it, just create it and place inside the usercontent.css and userchrome.css files.</i></p>
 
 <p>If you want to know the exact location for profile folders (information taken from <a href="http://kb.mozillazine.org/Profile_folder_-_Firefox">here</a>):</p>
 
@@ -34,7 +35,7 @@ of using the usercontent or userchrome files provided here.</p>
 
 <pre>C:\Users\(Windows login/user name)\AppData\Roaming\Mozilla\Firefox\Profiles\(profile folder)</pre>
 
-<h4>If you have never used userchrome.css or usercontent.css before, you will have to create a folder named "chrome" inside the profile folder, which is where you will have to place these files.</h4>
+<p><i>If you have never used userchrome.css or usercontent.css before, you will have to create a folder named "chrome" inside the profile folder, which is where you will have to place these files.<i></p>
 
 <p>This is where you would have to place the files once you have created the chrome folder:</p>
 
@@ -50,7 +51,7 @@ of using the usercontent or userchrome files provided here.</p>
 
 <pre>/home/(Your-username)/.mozilla/firefox/(profile folder)</pre>
 
-<h4>If you have never used userchrome.css or usercontent.css before, you will have to create a folder named "chrome" inside the profile folder, which is where you will have to place these files.</h4>
+<p><i>If you have never used userchrome.css or usercontent.css before, you will have to create a folder named "chrome" inside the profile folder, which is where you will have to place these files.<i></p>
 
 <p>This is where you would have to place the files once you have created the chrome folder:</p>
 
@@ -63,10 +64,9 @@ of using the usercontent or userchrome files provided here.</p>
 <pre>~/Library/Application Support/Firefox/Profiles/(profile folder)
 ~/Library/Mozilla/Firefox/Profiles/(profile folder)</pre>
 
-<h4>If you have never used userchrome.css or usercontent.css before, you will have to create a folder named "chrome" inside the profile folder, which is where you will have to place these files.</h4>
+<p><i>If you have never used userchrome.css or usercontent.css before, you will have to create a folder named "chrome" inside the profile folder, which is where you will have to place these files.<i></p>
 
 <p>This is where you would have to place the files once you have created the chrome folder:</p>
-
 
 <pre>~/Library/Application Support/Firefox/Profiles/(profile folder)/chrome
 ~/Library/Mozilla/Firefox/Profiles/(profile folder)/chrome/</pre>
