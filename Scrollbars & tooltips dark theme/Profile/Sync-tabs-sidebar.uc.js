@@ -37,6 +37,10 @@ body, .content-header, #template-container {
 
 .item.selected > .item-title-container:hover > .item-icon-container {fill: #000 !important}
 
+.instructions {color: #ccc !important}
+
+.syncIllustrationIssue {filter: invert(85%) hue-rotate(200deg)}
+
 }`;
 
     var sss = Cc['@mozilla.org/content/style-sheet-service;1'].getService(Ci.nsIStyleSheetService);
