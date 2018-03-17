@@ -12,12 +12,12 @@ basic css or <a href="https://www.w3schools.com/colors/colors_picker.asp">color 
 <br />
 This problem doesn't happen if you use a code editor such as notepad++, atom, sublime text...</h4>
 
-<h3>Last update: <b>03/03/2018</b></h3>
+<h3>Last update: <b>17/03/2018</b></h3>
 <p>Files updated:</p>
 <ul>
- <li><b>userChrome.css</b> -> Themed the navigation tools on the context menu, and fixed the history sidebar text colors.</li>
+ <li><b>userChrome.css</b> -> Themed the navigation tools on the context menu, and fixed the history sidebar text colors. Also changed the color of the bookmarks folders drag & drop indicator.</li>
 </ul>
-<h3>Pre-Last update: <b>01/03/2018</b></h3>
+<h3>Pre-Last update: <b>03/03/2018</b></h3>
 <p>Files updated:</p>
 <ul>
  <li><b>Sync-tabs-sidebar.uc.js</b> -> Darkened the white image and made the text more readable on the synced tabs sidebar (they appear only when disabled synced tabs).</li>
