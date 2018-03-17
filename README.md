@@ -15,13 +15,12 @@ This problem doesn't happen if you use a code editor such as notepad++, atom, su
 <h3>Last update: <b>03/03/2018</b></h3>
 <p>Files updated:</p>
 <ul>
- <li><b>Sync-tabs-sidebar.uc.js</b> -> Darkened the white image and made the text more readable on the synced tabs sidebar (they appear only when disabled synced tabs).</li>
+ <li><b>userChrome.css</b> -> Themed the navigation tools on the context menu, and fixed the history sidebar text colors.</li>
 </ul>
 <h3>Pre-Last update: <b>01/03/2018</b></h3>
 <p>Files updated:</p>
 <ul>
- <li><b>Theme* folders</b> -> I decided to split the functions part from the coloring part for the theme, since some people just wanted one or the other, and then
-some of them wouldn't know how to change it.</li>
+ <li><b>Sync-tabs-sidebar.uc.js</b> -> Darkened the white image and made the text more readable on the synced tabs sidebar (they appear only when disabled synced tabs).</li>
 </ul>
 
 <h2>FAQ:</h2>
