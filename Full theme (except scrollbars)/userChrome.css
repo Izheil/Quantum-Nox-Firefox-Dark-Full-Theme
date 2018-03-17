@@ -1,5 +1,5 @@
 /* You can find an updated version here: https://github.com/Izheil/Firefox-57-full-dark-theme-with-scrollbars */
-/* Last updated: 03/03/2018 */
+/* Last updated: 17/03/2018 */
 
 /* DO NOT DELETE THIS LINE */
 @namespace url("http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul");
@@ -143,6 +143,12 @@ menuseparator {
   background: #222 !important;
   padding: 0 !important}
 
+/* Context menu navigation tools (back, forward, reload) background color */
+#context-navigation {  
+  -moz-appearance: none !important;
+  background-color: #444 !important;
+  padding-bottom: 0px !important}
+
 /* This removes the borders for the bookmark menu button next to the url bar */
 #BMB_bookmarksPopup, #BMB_bookmarksPopup menupopup {border: none !important}
 
@@ -218,7 +224,7 @@ if necessary depending on if you are using a custom OS theme (which may mess up 
 #sidebar-search-container, #bookmarks-view-children, #historyTree, #sidebar {
   -moz-appearance: none !important;
   background-color: #404040 !important;
-  color: #ccc}
+  color: #ccc !important}
 
 .sidebar-splitter {
   border-right: 2px solid #000 !important;
