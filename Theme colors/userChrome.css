@@ -155,6 +155,9 @@ menuseparator {
 /* Bookmark context menu > icon color */
 .bookmark-item .menu-right, menu .menu-right {filter: brightness(300%) !important}
 
+/* Drop indicator that appears when moving a bookmark in a bookmark folder color */
+.menupopup-drop-indicator {background-color: #999 !important}
+
 /* Fix for the space above the "save as" option after the navigation buttons have been eliminated. Change 
 if necessary depending on if you are using a custom OS theme (which may mess up the padding of the separators) */
 #context-savepage {padding-top: 3px !important}
