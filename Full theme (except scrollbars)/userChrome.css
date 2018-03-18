@@ -43,7 +43,9 @@ of the minimize, maximize and close buttons */
 #titlebar-close:hover {background-color: #FF0000 !important}
 
 /* The downloads progress bar color */
-.progress-bar {background: #3070dd !important}
+.progress-bar {
+  -moz-appearance: none !important;
+  background: #3070dd !important}
 
 /* CUSTOMIZATION PAGE */
 
@@ -57,20 +59,22 @@ you aren't using the default dark theme of mozilla, that is) */
 
 /* The customization page button colors */
 .customizationmode-button {
-    background: linear-gradient(#555, #222) !important;
-    color: #fff !important}
+  -moz-appearance: none !important;
+  background: linear-gradient(#555, #222) !important;
+  color: #fff !important}
 
 .customizationmode-button:hover {
   background: linear-gradient(#222, #555) !important;
   color: #fff !important}
 
 #customization-done-button {
+  -moz-appearance: none !important;
   background: linear-gradient(#2050AA, #203050) !important;
   border: 1px solid #0050aa !important}
 
 #customization-done-button:hover {
   background: linear-gradient(#203050, #2050AA) !important;
-    color: #0ff !important}
+  color: #0ff !important}
 
 /* CONTEXT MENUS */
 
@@ -80,10 +84,13 @@ you aren't using the default dark theme of mozilla, that is) */
   --arrowpanel-background: #444 !important;
   --arrowpanel-color: #ccc !important;
   --in-content-box-background: #333 !important;
-  --in-content-box-background-hover: #444 !important}
+  --in-content-box-background-hover: #444 !important;
+  --arrowpanel-dimmed: #2050AA !important;
+  --arrowpanel-dimmed-further: rgba(32, 80, 170, 0.75) !important;
+  --arrowpanel-dimmed-even-further: rgba(32, 80, 170, 0.5) !important}
 
 /* Fix for the panel arrows (Thanks to BelladonnavGF for pointing out the bug) */
-.panel-arrow {filter: invert(73%) !important;}
+.panel-arrow {filter: invert(73%) !important}
 
 /* Zoom reset button on the main menu */
 #appMenu-zoomReset-button {background-color: #666 !important}
@@ -152,11 +159,19 @@ menuseparator {
 /* This removes the borders for the bookmark menu button next to the url bar */
 #BMB_bookmarksPopup, #BMB_bookmarksPopup menupopup {border: none !important}
 
+/* This changes the text color of the hint text on the bookmarks popup menu */
+.menu-accel-container .menu-iconic-accel {color: #808080 !important}
+.menu-accel-container .menu-accel {color: #909090 !important}
+
 /* Bookmark context menu > icon color */
 .bookmark-item .menu-right, menu .menu-right {filter: brightness(300%) !important}
 
 /* Drop indicator that appears when moving a bookmark in a bookmark folder color */
 .menupopup-drop-indicator {background-color: #999 !important}
+
+/* Color of default icons on bookmark bar and bookmark popup (folder icons and gear icons) */
+.bookmark-item > .toolbarbutton-icon, 
+.menu-iconic-left .menu-iconic-icon {fill: #ffe793 !important}
 
 /* Fix for the space above the "save as" option after the navigation buttons have been eliminated. Change 
 if necessary depending on if you are using a custom OS theme (which may mess up the padding of the separators) */
