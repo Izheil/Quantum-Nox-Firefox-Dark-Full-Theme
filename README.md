@@ -87,3 +87,6 @@ This problem doesn't happen if you use a code editor such as notepad++, atom, su
 <p>The original code for the multirow bookmarks toolbar belongs to the original creator mentioned in <a href="https://www.reddit.com/r/firefox/comments/75wya9/multiple_row_bookmark_toolbar_for_firefox_5758/">this reddit thread</a>, whose code was fixed by <b>jscher2000</b> to use in our current firefox.
 <p>Thanks to <b>BelladonnavGF</b>, <b>Demir-delic</b>, <b>Hakerdefo</b> and <b>YiannisNi</b> for noting some issues with the theme, and <b>BelladonnavGF</b> for the addition of the url font and and tabs below url bar suggestions.</p>
 <p>Also thanks to <a href="http://mozilla.zeniko.ch/userchrome.js.html">Zeniko</a>, <a href="https://github.com/Endor8/userChrome.js">Endor8</a>, and <b>RAZR_96</b> <a href="https://www.reddit.com/r/firefox/comments/7dtcpm/restyle_an_userstyle_manager_that_can_edit/">in this reddit comment</a> for the userChrome.js way of editing anonymous content (in our case the scrollbars and tooltips).</p>
+
+<h2>Contact</h2>
+<p>If you have anything to ask or tell me about the theme that isn't a bug or an issue (such as a suggestion, or some clarification I may have missed on the documentation), you can contact me through <a href="https://www.reddit.com/message/compose/">reddit</a> (You will need an account for that), directing the message to <b>Izheil</b>. 
