@@ -85,17 +85,6 @@ you aren't using the default dark theme of mozilla, that is) */
 .customizationmode-button {padding: 0.5em !important}
 #customization-done-button {padding: 0.5em 3em 0.5em 3em !important}
 
-/* Customization page menus hover color*/
-.customization-uidensity-menuitem[active="true"],
-.customization-uidensity-menuitem:hover,
-.customization-lwtheme-menu-theme[active="true"], 
-.customization-lwtheme-menu-theme:hover {background: rgba(255,255,255,0.15) !important}
-
-.customization-uidensity-menuitem[active="true"],
-.customization-uidensity-menuitem:hover:active,
-.customization-lwtheme-menu-theme[active="true"],
-.customization-lwtheme-menu-theme:hover:active {background: rgba(255,255,255,0.25) !important}
-
 /* CONTEXT MENUS */
 
 /* Main menu colors */
@@ -105,12 +94,9 @@ you aren't using the default dark theme of mozilla, that is) */
   --arrowpanel-color: #ccc !important;
   --in-content-box-background: #333 !important;
   --in-content-box-background-hover: #444 !important;
-  --arrowpanel-dimmed: #2050AA !important;
-  --arrowpanel-dimmed-further: rgba(32, 80, 170, 0.75) !important;
-  --arrowpanel-dimmed-even-further: rgba(32, 80, 170, 0.5) !important}
-
-/* Fix for the panel arrows (Thanks to BelladonnavGF for pointing out the bug) */
-.panel-arrow {filter: invert(73%) !important}
+  --arrowpanel-dimmed: rgba(255, 255, 255, 0.1) !important;  
+  --arrowpanel-dimmed-further: rgba(255, 255, 255, 0.25) !important;  
+  --arrowpanel-dimmed-even-further: rgba(255, 255, 255, 0.4) !important}
 
 /* Zoom reset button on the main menu */
 #appMenu-zoomReset-button {background-color: #666 !important}
