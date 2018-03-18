@@ -15,7 +15,7 @@ This problem doesn't happen if you use a code editor such as notepad++, atom, su
 <h3>Last update: <b>17/03/2018</b></h3>
 <p>Files updated:</p>
 <ul>
- <li><b>userChrome.css</b> -> Themed the navigation tools on the context menu, and fixed the history sidebar text colors. Also changed the color of the bookmarks folders drag & drop indicator.</li>
+ <li><b>userChrome.css</b> -> Themed the navigation tools on the context menu, and fixed the history sidebar text colors. Also changed the color of the bookmarks folders drag & drop indicator, and the bookmarks bar and popup icons color.</li>
 </ul>
 <h3>Pre-Last update: <b>03/03/2018</b></h3>
 <p>Files updated:</p>
