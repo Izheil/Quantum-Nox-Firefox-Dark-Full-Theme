@@ -58,23 +58,43 @@ you aren't using the default dark theme of mozilla, that is) */
 }
 
 /* The customization page button colors */
-.customizationmode-button {
+.customizationmode-button, .customization-lwtheme-menu-footeritem {  
   -moz-appearance: none !important;
-  background: linear-gradient(#555, #222) !important;
+  border: 1px solid #000 !important;
+  background: linear-gradient(#333,#111) !important;
+  color: #ddd !important}
+
+.button-menu-dropmarker .dropmarker-icon {filter: invert(75%) !important}
+
+.customizationmode-button:hover, .customization-lwtheme-menu-footeritem:hover {  
+  background: linear-gradient(#111,#333) !important;
   color: #fff !important}
 
-.customizationmode-button:hover {
-  background: linear-gradient(#222, #555) !important;
-  color: #fff !important}
-
-#customization-done-button {
-  -moz-appearance: none !important;
-  background: linear-gradient(#2050AA, #203050) !important;
+#customization-done-button {  
+  -moz-appearance: none !important;  
+  background: linear-gradient(#2050AA, #203050) !important;  
   border: 1px solid #0050aa !important}
 
-#customization-done-button:hover {
-  background: linear-gradient(#203050, #2050AA) !important;
+#customization-done-button:hover {  
+  background: linear-gradient(#203050, #2050AA) !important;  
   color: #0ff !important}
+
+#customization-lwtheme-menu-footer {border-top: none !important}
+
+/* This is a fix for systems with a custom OS theme */
+.customizationmode-button {padding: 0.5em !important}
+#customization-done-button {padding: 0.5em 3em 0.5em 3em !important}
+
+/* Customization page menus hover color*/
+.customization-uidensity-menuitem[active="true"],
+.customization-uidensity-menuitem:hover,
+.customization-lwtheme-menu-theme[active="true"], 
+.customization-lwtheme-menu-theme:hover {background: rgba(255,255,255,0.15) !important}
+
+.customization-uidensity-menuitem[active="true"],
+.customization-uidensity-menuitem:hover:active,
+.customization-lwtheme-menu-theme[active="true"],
+.customization-lwtheme-menu-theme:hover:active {background: rgba(255,255,255,0.25) !important}
 
 /* CONTEXT MENUS */
 
