@@ -1,5 +1,5 @@
 /* You can find an updated version here: https://github.com/Izheil/Firefox-57-full-dark-theme-with-scrollbars */
-/* Last updated: 17/03/2018 */
+/* Last updated: 18/03/2018 */
 
 /* DO NOT DELETE THIS LINE */
 @namespace url("http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul");
@@ -317,3 +317,15 @@ if you don't see a blue hover color on items on the sidebar, use this method ins
   color: var(--tab-line-color) !important;    
   font-size: 12px !important;    
   font-style: normal !important}
+
+/* ADDON POPUPS */
+
+/* Fix for the panel arrows for extensions (Only enable if using the addons file) *//*
+#customizationui-widget-panel[viewId="PanelUI-webext-_b9db16a4-6edc-47ec-a1f4-b86292ed211d_-browser-action-view"] .panel-arrow
+{filter: brightness(20%) !important}
+
+#customizationui-widget-panel[viewId="PanelUI-webext-ublock0_raymondhill_net-browser-action-view"] .panel-arrow {
+  filter: brightness(9%) !important}
+
+#customizationui-widget-panel[viewId="PanelUI-webext-artur_dubovoy_gmail_com-browser-action-view"] .panel-arrow {
+  filter: brightness(50%) !important}
