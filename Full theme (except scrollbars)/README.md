@@ -1,7 +1,7 @@
 <h1>Theme colors + added functions</h1>
 <p>Following the method described here, you will be able to give dark colors to firefox as shown in the following image:</p>
 
-<img src="https://i.imgur.com/dmIuudb.png" title="Dark firefox overall UI" />
+<img src="https://i.imgur.com/wakfC1B.png" title="Dark firefox overall UI" />
 
 <p>You will also be able to give certain new functions (or delete some useless ones) to firefox:</p>
 <ul>
