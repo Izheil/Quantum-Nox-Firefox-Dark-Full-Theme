@@ -362,3 +362,49 @@ button:hover {background: #444 !important}
 header, tr:nth-child(even) {background: #222 !important; color: #fff !important}
 main, tr:nth-child(odd) {background: #333 !important; color: #fff !important}
 }
+
+/*------ TAB SESSION MANAGER ------*/
+@-moz-document url-prefix(moz-extension://bed28cc8-2f9a-468a-99f2-40a1b6fbc251/options/options.html),
+url-prefix(moz-extension://bed28cc8-2f9a-468a-99f2-40a1b6fbc251/popup/popup.html),
+url-prefix(moz-extension://bed28cc8-2f9a-468a-99f2-40a1b6fbc251/replaced/replaced.html?state=open_faild) {
+
+:root {
+    --main-text: #ddd !important;
+    --sub-text: #aaa !important;
+    --line: #36b2b2 !important;
+    --button: #444 !important;
+    --highlight: #36b2b2 !important;
+    --main-bg: #333 !important;
+    --new: #ff4f4f !important;
+	--confirm: #ff4f4f !important}
+
+.button {background: #444 !important}
+.button:hover {background: #222 !important}
+
+li.saveOnlyCurrentWindow {color: #ddd !important}
+li.saveOnlyCurrentWindow:hover {color: #000 !important}
+
+#setting svg, .removeTagButton svg {fill: #000 !important}
+
+#sessionsArea, .sessionName span {color: #fff !important}
+
+.tag span {color: #000 !important}
+}
+
+/* UNDO LAST TAB ADDON */
+@-moz-document url-prefix(moz-extension://5579f940-c966-4837-a163-6e75d7d2c44d/data/popup/index.html) {
+body, html {background: #333 !important}
+
+li {color: #aaa !important}
+li:hover {background-color: rgba(255,255,255, 0.1) !important}
+
+li span {
+	border-left: 1px solid #222 !important;
+	box-shadow: inset 1px 0 0 0 #000 !important}
+
+li[data-disabled="true"] {color: #666 !important}
+li[data-disabled="true"]:hover {background-color: rgba(0,0,0, 0.2) !important}
+
+.separator {
+	border-top: 1px solid #222 !important;
+	box-shadow: inset 1px 1px 0 #000 !important}}
