@@ -192,6 +192,81 @@ menuseparator {
 if necessary depending on if you are using a custom OS theme (which may mess up the padding of the separators) */
 #context-savepage {padding-top: 3px !important}
 
+/* LIBRARY MENU */
+
+#placesToolbar {background-color: #333 !important}
+
+#placesView, #placesView .scrollbox-innerbox ,
+#infoPane,
+#placesList,
+#placeContent {
+  -moz-appearance: none !important; 
+  background: #555 !important; 
+  color: #ddd !important}
+
+#placeContent treecol {
+  -moz-appearance: none !important; 
+  background: #444 !important;
+  padding: 3px !important;
+  color: #ddd !important;
+  border-left: 1px solid #333 !important;
+  border-bottom: 1px solid #333 !important}
+
+#placeContent treecol:hover {
+  -moz-appearance: none !important; 
+  background: rgba(255,255,255, 0.15) !important;
+  color: #fff !important}
+
+#placesView > splitter {border-inline-end: 1px solid #333 !important}
+
+#placesToolbar > toolbarbutton[disabled] > .toolbarbutton-icon {
+  opacity: .25 !important}
+
+#back-button > .toolbarbutton-icon,
+#forward-button > .toolbarbutton-icon {fill: #aaa !important; opacity: 1 !important}
+
+#placesMenu > menu {border: none !important}
+
+#clearDownloadsButton {color: #aaa !important}
+#clearDownloadsButton[disabled] {color: #555 !important}
+
+#searchFilter {
+  transition: all 0.25s ease-in-out !important;
+  -moz-appearance: none !important; 
+  border: 1px solid #666 !important;
+  background-color: #444 !important;
+  color: #aaa !important}
+
+#searchFilter:hover {
+  box-shadow: 0 0 4px #0050ff !important;
+  background-color: #555 !important;
+  color: #fff !important} 
+
+#detailsDeck {
+  background-color: #444 !important; 
+  color: #aaa !important;
+  border-top: 1px solid #222 !important}
+
+#infoBox textbox, #infoBox listbox {
+  transition: all 0.25s ease-in-out !important;
+  -moz-appearance: none !important; 
+  border: 1px solid #777 !important;
+  background-color: #555 !important;
+  color: #ddd !important}
+
+#infoBox textbox:hover, #infoBox listbox:hover {
+  box-shadow: 0 0 4px #0050ff !important;
+  background-color: #666 !important;
+  color: #fff !important} 
+
+#editBMPanel_tagsSelectorExpander {
+  -moz-appearance: none !important;
+  border: 1px solid #222 !important;
+  background: linear-gradient(#555,#333) !important}
+
+#editBMPanel_tagsSelectorExpander:hover { 
+  background: linear-gradient(#333,#555) !important}
+
 /* AUTOCOMPLETE COLORS */
 
 /* This changes the autocomplete popup borders */
