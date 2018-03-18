@@ -58,17 +58,26 @@ you aren't using the default dark theme of mozilla, that is) */
 }
 
 /* The customization page button colors */
-.customizationmode-button, .customization-lwtheme-menu-footeritem {
+.customizationmode-button {
   -moz-appearance: none !important;
   border: 1px solid #000 !important;
   background: linear-gradient(#333,#111) !important;
   color: #ddd !important}
 
-.button-menu-dropmarker .dropmarker-icon {filter: invert(75%) !important}
-
-.customizationmode-button:hover, .customization-lwtheme-menu-footeritem:hover {
+.customizationmode-button:hover {
   background: linear-gradient(#111,#333) !important;
   color: #fff !important}
+
+.customization-lwtheme-menu-footeritem {
+  border-right: 1px solid #222 !important;
+  background: linear-gradient(#555,#333) !important;
+  color: #ddd !important}
+
+.customization-lwtheme-menu-footeritem:hover {
+  background: linear-gradient(#333,#555) !important;
+  color: #fff !important}
+
+.button-menu-dropmarker .dropmarker-icon {filter: invert(75%) !important}
 
 #customization-done-button {
   -moz-appearance: none !important;
