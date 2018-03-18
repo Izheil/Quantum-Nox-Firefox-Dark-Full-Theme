@@ -12,10 +12,11 @@ basic css or <a href="https://www.w3schools.com/colors/colors_picker.asp">color 
 <br />
 This problem doesn't happen if you use a code editor such as notepad++, atom, sublime text...</h4>
 
-<h3>Last update: <b>17/03/2018</b></h3>
+<h3>Last update: <b>18/03/2018</b></h3>
 <p>Files updated:</p>
 <ul>
  <li><b>userChrome.css</b> -> Themed the navigation tools on the context menu, and fixed the history sidebar text colors. Also changed the color of the bookmarks folders drag & drop indicator, and the bookmarks bar and popup icons color.</li>
+ <li><b>addons.css</b> -> Added a theme for <a href="https://addons.mozilla.org/es/firefox/addon/tab-session-manager/">Tab session manager</a> and <a href="https://addons.mozilla.org/es/firefox/addon/undo-closed-tabs-revived/">Undo closed tabs button</a>.</li>
 </ul>
 <h3>Pre-Last update: <b>03/03/2018</b></h3>
 <p>Files updated:</p>
@@ -57,7 +58,9 @@ This problem doesn't happen if you use a code editor such as notepad++, atom, su
 	  <li>Change the <a href="https://addons.mozilla.org/es/firefox/addon/ublock-origin/">Ublock Origin</a> blocking/control panel/popup page to a dark version (You need to change the dynamic url of the extension on "addons.css").</li>
 	  <li>Change the <a href="https://addons.mozilla.org/es/firefox/addon/flash-video-downloader/">Flash Video Downloader</a> popup and panel to a dark version (You need to change the dynamic url of the extension on "addons.css").</li>
 	  <li>Change the <a href="https://addons.mozilla.org/es/firefox/addon/video-downloadhelper/">Video Download Helper</a> popup and panel to a dark version (You need to change the dynamic url of the extension on "addons.css").</li>
-	</ul></li>
+	  <li>Change the <a href="https://addons.mozilla.org/es/firefox/addon/tab-session-manager/">Tab session manager</a> popup and panel to a dark version (You need to change the dynamic url of the extension on "addons.css").</li>
+	  <li>Change the <a href="https://addons.mozilla.org/es/firefox/addon/undo-closed-tabs-revived/">Undo closed tabs button</a> popup and panel to a dark version (You need to change the dynamic url of the extension on "addons.css").</li>
+	</ul>
   <li><b>Theme features</b>: In this one you will find a userchrome with ONLY the features part of the theme. These features are the following:
 	<ul>
 	  <li>Multiple row tabs.</li>
