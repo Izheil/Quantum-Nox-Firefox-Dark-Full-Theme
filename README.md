@@ -44,7 +44,7 @@ This problem doesn't happen if you use a code editor such as notepad++, atom, su
 <h2>Installation</h2>
 
 <h3>Main browser UI</h3>
-<img src="https://i.imgur.com/Ig1alXz.png" title="Dark firefox overall UI" />
+<img src="https://i.imgur.com/wakfC1B.png" title="Dark firefox overall UI" />
 
 <p>Depending on if you only want to color dark your Firefox, or want to add some more functionability (like deleting some useless context menu commands, or adding multirow tab support), you will have to use the method described inside one of the 3 following folders of this repository:</p>
 
