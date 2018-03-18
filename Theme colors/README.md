@@ -1,7 +1,7 @@
 <h1>Only the dark theme for firefox</h1>
 <p>Following the method described here, you will be able to give dark colors to firefox as shown in the following picture:</p>
 
-<img src="https://i.imgur.com/wakfC1B.png" title="Dark firefox overall UI" />
+<img src="https://i.imgur.com/0JYmgPo.png" title="Dark firefox overall UI" />
 
 <h2>Installation</h2>
 
