@@ -12,16 +12,16 @@ basic css or <a href="https://www.w3schools.com/colors/colors_picker.asp">color 
 <br />
 This problem doesn't happen if you use a code editor such as notepad++, atom, sublime text...</h4>
 
-<h3>Last update: <b>18/03/2018</b></h3>
+<h3>Last update: <b>19/03/2018</b></h3>
+<p>Files updated:</p>
+<ul>
+ <li><b>userChrome.css</b> -> Themed the library, page information and related windows. Also fixed some problem with the popups on the <code>about:downloads</code> page.</li>
+</ul>
+<h3>Pre-Last update: <b>18/03/2018</b></h3>
 <p>Files updated:</p>
 <ul>
  <li><b>userChrome.css</b> -> Themed the navigation tools on the context menu, and fixed the history sidebar text colors. Also changed the color of the bookmarks folders drag & drop indicator, and the bookmarks bar and popup icons color.</li>
  <li><b>addons.css</b> -> Added a theme for <a href="https://addons.mozilla.org/es/firefox/addon/tab-session-manager/">Tab session manager</a> and <a href="https://addons.mozilla.org/es/firefox/addon/undo-closed-tabs-revived/">Undo closed tabs button</a>.</li>
-</ul>
-<h3>Pre-Last update: <b>03/03/2018</b></h3>
-<p>Files updated:</p>
-<ul>
- <li><b>Sync-tabs-sidebar.uc.js</b> -> Darkened the white image and made the text more readable on the synced tabs sidebar (they appear only when disabled synced tabs).</li>
 </ul>
 
 <h2>FAQ:</h2>
