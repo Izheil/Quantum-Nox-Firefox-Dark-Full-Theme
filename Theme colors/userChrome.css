@@ -194,16 +194,19 @@ if necessary depending on if you are using a custom OS theme (which may mess up 
 
 /* LIBRARY MENU */
 
+/* These change top bar background color */
 #placesToolbar {background-color: #333 !important}
 
+/* These change the lists background color */
 #placesView, #placesView .scrollbox-innerbox ,
-#infoPane,
-#placesList,
-#placeContent {
+#infoPane, #placesList, #placeContent, 
+/* This one changes the urlbar star bookmarking folder tree backgorund color */
+#editBMPanel_folderTree {
   -moz-appearance: none !important; 
   background: #555 !important; 
   color: #ddd !important}
 
+/* These change the list header background and text colors */
 #placeContent treecol {
   -moz-appearance: none !important; 
   background: #444 !important;
@@ -217,19 +220,25 @@ if necessary depending on if you are using a custom OS theme (which may mess up 
   background: rgba(255,255,255, 0.15) !important;
   color: #fff !important}
 
+/* This changes the right border on the left list panel */
 #placesView > splitter {border-inline-end: 1px solid #333 !important}
 
+/* This changes the forward and back buttons opacity when disabled */
 #placesToolbar > toolbarbutton[disabled] > .toolbarbutton-icon {
   opacity: .25 !important}
 
+/* This changes the forward and back buttons color */
 #back-button > .toolbarbutton-icon,
 #forward-button > .toolbarbutton-icon {fill: #aaa !important; opacity: 1 !important}
 
+/* This deletes the leftover border when clicking one of the top buttons */
 #placesMenu > menu {border: none !important}
 
+/* This changes the text color of the "clear downloads" button */
 #clearDownloadsButton {color: #aaa !important}
 #clearDownloadsButton[disabled] {color: #555 !important}
 
+/* This themes the search box */
 #searchFilter {
   transition: all 0.25s ease-in-out !important;
   -moz-appearance: none !important; 
@@ -237,35 +246,208 @@ if necessary depending on if you are using a custom OS theme (which may mess up 
   background-color: #444 !important;
   color: #aaa !important}
 
+/* This themes the search box on hover */
 #searchFilter:hover {
   box-shadow: 0 0 4px #0050ff !important;
   background-color: #555 !important;
   color: #fff !important} 
 
+/* This themes the information box on the lower part of the library menu */
 #detailsDeck {
   background-color: #444 !important; 
   color: #aaa !important;
   border-top: 1px solid #222 !important}
 
-#infoBox textbox, #infoBox listbox {
+/* This changes the text boxes inside the library bottom information box */
+#infoBox textbox, #infoBox listbox, 
+/* This changes the text boxes on the popup when bookmarking a page from the url box */
+#editBMPanel_namePicker, #editBMPanel_tagsField {
   transition: all 0.25s ease-in-out !important;
   -moz-appearance: none !important; 
   border: 1px solid #777 !important;
   background-color: #555 !important;
   color: #ddd !important}
 
-#infoBox textbox:hover, #infoBox listbox:hover {
+/* This changes the same text boxes on hover */
+#infoBox textbox:hover, #infoBox listbox:hover,
+/* This changes the same url bookmarking popup text boxes on hover */
+#editBMPanel_namePicker:hover, #editBMPanel_tagsField:hover {
   box-shadow: 0 0 4px #0050ff !important;
   background-color: #666 !important;
   color: #fff !important} 
 
-#editBMPanel_tagsSelectorExpander {
+/* This changes the "show more" button color inside the library and when bookmarking
+from the url bar. It also changes the "choose folder" selector on the bookmarking popup */
+#editBMPanel_tagsSelectorExpander, #editBMPanel_folderMenuList, 
+#editBMPanel_foldersExpander, #editBMPanel_newFolderButton {
   -moz-appearance: none !important;
   border: 1px solid #222 !important;
-  background: linear-gradient(#555,#333) !important}
+  background: linear-gradient(#555,#333) !important;
+  color: #ddd !important}
 
-#editBMPanel_tagsSelectorExpander:hover { 
-  background: linear-gradient(#333,#555) !important}
+#editBMPanel_tagsSelectorExpander:hover, #editBMPanel_folderMenuList:hover,
+#editBMPanel_foldersExpander:hover, #editBMPanel_newFolderButton:hover { 
+  background: linear-gradient(#333,#555) !important;
+  color: #fff !important}
+
+#editBMPanel_newFolderButton {padding: 1px !important}
+
+#editBMPanel_folderMenuList {padding: 1px !important; color: #ddd !important}
+
+/* These change the buttons of the bookmarking popup on the urlbox */
+#editBookmarkPanelDoneButton, #editBookmarkPanelRemoveButton {
+  -moz-appearance: none !important;
+  border: 1px solid #000 !important;
+  background: linear-gradient(#333,#111) !important;
+  color: #ddd !important;
+  padding: 2px !important}
+
+#editBookmarkPanelDoneButton:hover, #editBookmarkPanelRemoveButton:hover {
+  background: linear-gradient(#111,#333) !important;
+  color: #fff !important}
+
+/* PAGE INFORMATION WINDOW */
+
+/* This themes the top bar and it's buttons */
+#topBar, #certDetails {
+  background: #333 !important; 
+  color: #ddd !important;
+  border-bottom: 1px solid #222 !important}
+
+#viewGroup > radio:hover {
+  -moz-appearance: none !important;
+  background-color: rgba(255,255,255,0.15) !important; 
+  color: #eee !important}
+
+#viewGroup > radio[selected="true"] {
+  background-color: rgba(255,255,255,0.25) !important; 
+  color: #fff !important}
+
+/* This themes the base of the windows for all page information dialogs */
+#mainDeck, #mainDeck caption, #CookiesDialog,
+#SignonViewerDialog {
+  -moz-appearance: none !important;
+  background: #444 !important; 
+  color: #ddd !important}
+
+#mainDeck textbox, #cookieInfoBox textbox {color: #aaa !important}
+
+#mainDeck groupbox {
+  -moz-appearance: none !important; 
+  border: 1px solid #666 !important}
+
+/* This changes the feeds items links */
+#mainDeck richlistitem .text-link {-moz-appearance: none !important; color: #00aaff !important}
+#mainDeck richlistitem .text-link:hover {-moz-appearance: none !important; color: #0ff !important}
+#mainDeck richlistitem .text-link:active {-moz-appearance: none !important; color: #0050aa !important}
+#mainDeck richlistitem .text-link:visited {-moz-appearance: none !important; color: #0050dd !important}
+
+/* This changes the feeds items background color */
+#mainDeck richlistitem {
+  background: #555 !important;
+  color: #bbb !important;
+  border-bottom: 1px solid rgba(0,0,0,0.15) !important}
+
+#mainDeck richlistitem:hover {
+  background: rgba(255,255,255,0.15) !important}
+
+/* This changes the lists with a header on all windows related to the page info one */
+#mainDeck tree, #imagecontainerbox, #brokenimagecontainer,
+#mainDeck richlistbox, #cookiesList, #certDetails tree,
+#certPrettyPrint textbox, #signonsTree {
+  -moz-appearance: none !important;
+  background: #555 !important;
+  color: #bbb !important;
+  border: 1px solid #222 !important}
+
+#nameCol, #certDetails {border: none !important}
+
+/* These theme the header of the lists on all windows related to the page info one */
+#mainDeck treecol, #cookiesList treecol, #signonsTree treecol {
+  -moz-appearance: none !important; 
+  background: #333 !important;
+  padding: 3px !important;
+  color: #ddd !important;
+  border-right: 1px solid #222 !important;
+  border-bottom: 1px solid #222 !important}
+
+#mainDeck treecol:hover, #cookiesList treecol:hover, 
+#signonsTree treecol:hover {
+  -moz-appearance: none !important; 
+  background: rgba(255,255,255, 0.15) !important;
+  color: #fff !important}
+
+#mediaPanel treecols *, #signonsTree treecols * {-moz-appearance: none !important}
+#mediaPanel treecols, #signonsTree treecols {background: #333 !important}
+
+/* This themes the buttons on the main information window */
+#mainDeck button, #certDetails button {
+  -moz-appearance: none !important;
+  border: 1px solid #222 !important;
+  background: linear-gradient(#555,#333) !important;
+  color: #ddd !important;
+  padding: 0.25em 0.5em !important}
+
+#mainDeck button:hover, #certDetails button:hover { 
+  background: linear-gradient(#333,#555) !important;
+  color: #fff !important}
+
+/* This themes the permissions list */
+#permList {
+  -moz-appearance: none !important; 
+  border: 1px solid #222 !important;
+  background: #505050 !important;
+  color: #ddd !important}
+
+#permList vbox:hover {
+  -moz-appearance: none !important;
+  background: rgba(0,0,0, 0.15) !important;
+  color: #fff !important}
+
+/* This themes the cookies and the passwords window search box */
+#CookiesDialog #filter, #SignonViewerDialog #filter {
+  transition: all 0.25s ease-in-out !important;
+  -moz-appearance: none !important; 
+  border: 1px solid #666 !important;
+  background-color: #555 !important;
+  color: #aaa !important}
+
+/* This themes the search box on hover */
+#CookiesDialog #filter:hover, #SignonViewerDialog #filter:hover {
+  box-shadow: 0 0 4px #0050ff !important;
+  background-color: #666 !important;
+  color: #fff !important}
+
+/* This themes the buttons on the cookies and passwords window */
+#CookiesDialog button, #SignonViewerDialog button {  
+  -moz-appearance: none !important;
+  border: 1px solid #000 !important;
+  background: linear-gradient(#333,#111) !important;
+  color: #ddd !important;
+  padding: 2px !important}
+
+#CookiesDialog button:hover, #SignonViewerDialog button:hover {
+  background: linear-gradient(#111,#333) !important;
+  color: #fff !important}
+
+/* These are the certificates window tabs */
+#certDetails tabpanels, #certDetails tab {
+  -moz-appearance: none !important;
+  background: #444 !important;
+  color: #ddd !important;
+  border-left: 1px solid #555 !important;
+  border-right: 1px solid #555 !important}
+
+#certDetails tab {border-top: 1px solid #555 !important}
+#certDetails tabpanels {border-bottom: 1px solid #555 !important}
+
+/* The certificate window text boxes*/
+#certDetails tabpanels textbox {color: #aaa !important}
+
+#verify_info_box textbox {
+  -moz-appearance: none !important; 
+  background: #555 !important;
+  border: 1px solid #666 !important}
 
 /* AUTOCOMPLETE COLORS */
 

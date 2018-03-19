@@ -339,6 +339,46 @@ url-prefix(about:support), url-prefix(about:profiles), url(about:robots), url(ab
 url(about:webrtc) {
 body, html {background-color: #202020 !important}}
 
+/*------ CONTEXT MENUS FOR ALL ABOUT: PAGES ------*/
+@-moz-document url-prefix(about:) {
+
+/* This changes the color of the context menus */
+menuitem {
+	color: #ccc !important;
+	padding-top: 3px;
+	padding-bottom: 2px}
+
+menupopup {
+	-moz-appearance: none !important;
+	border: 2px solid #111 !important;
+	padding-top: 2px}
+
+menupopup .scrollbox-innerbox {
+	background-color: #444 !important}
+
+/* Context menu separator color override */
+menuseparator {
+  -moz-appearance: none !important;
+  margin: 1px 0 1px 2.3em !important;
+  height: 1px !important;
+  border: none !important;
+  background: #222 !important;
+  padding: 0 !important}
+
+/* This changes the color on hover of the context-menu items */
+menuitem:hover,
+menu:hover {
+	-moz-appearance: none !important;
+	background-color: #25a !important} 
+
+/* This does the same but for disabled ones */
+menuitem:hover[disabled="true"],
+menu:hover[disabled="true"] {
+	-moz-appearance: none !important;
+	padding-top: 3px;
+	padding-bottom: 2px;
+	background-color: #333 !important}}
+
 /*------ ABOUT: PAGE (about:) ------*/
 @-moz-document url(about:), url(https://www.mozilla.org/credits/) {
 #aboutPageList {color: #ddd !important}}
@@ -565,32 +605,6 @@ treecol:hover {background-color: #666 !important}
 /* Context menus*/
 #header-utils-btn .scrollbox-innerbox,
 .arrowscrollbox-scrollbox {background-color: #444 !important}
-
-/* This changes the color of the context menus */
-menuitem {
-	color: #ccc !important;
-	padding-top: 3px;
-	padding-bottom: 2px}
-
-menupopup {
-	-moz-appearance: none !important;
-	border: 2px solid #111 !important;
-	padding-top: 2px}
-
-/* This changes the color on hover of the context-menu items */
-menuitem:hover,
-menu:hover {
-	-moz-appearance: none !important;
-	background-color: #25a !important} 
-
-/* This does the same but for disabled ones */
-
-menuitem:hover[disabled="true"],
-menu:hover[disabled="true"] {
-	-moz-appearance: none !important;
-	padding-top: 3px;
-	padding-bottom: 2px;
-	background-color: #333 !important} 
 
 richlistitem.addon.addon-view[selected="true"] {color: #FFF !important}
 
