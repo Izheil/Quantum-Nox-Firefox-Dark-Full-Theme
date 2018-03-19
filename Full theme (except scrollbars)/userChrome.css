@@ -164,7 +164,8 @@ menu, menuitem {
 /* Padding for all menu items (do NOT change unless you want an spaced or indented upon 
 selection effect). The open in tabs bookmark item is added here since it also needs the 
 padding that we remove in the next rule */ 
-menuitem, .bookmark-item .openintabs-menuitem {
+menuitem, .bookmark-item .openintabs-menuitem, 
+#history-menu menupopup > menu, #view-menu menupopup > menu {
   padding-top: 3px !important;
   padding-bottom: 2px !important}
 
@@ -188,7 +189,8 @@ menuitem[_moz-menuactive="true"][disabled="true"]
 {background-color: #333 !important} 
 
 /* This changes the text color of the greyed out actions on the context menus */
-menuitem[disabled="true"]{color: #222 !important}
+menuitem[disabled="true"], popup > menu[disabled="true"],
+menupopup > menu[disabled="true"], menubar > menu[disabled="true"]{color: #222 !important}
 
 /* This one applies to all context menus (If you want to theme the browser this one is better instead 
 of going one by one) */
