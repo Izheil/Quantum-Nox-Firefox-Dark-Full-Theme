@@ -47,6 +47,23 @@ of the minimize, maximize and close buttons */
   -moz-appearance: none !important;
   background: #3070dd !important}
 
+/* Color for most dialogs */
+dialog {
+  -moz-appearance: none !important;
+  background-color: #444 !important;
+  color: #ccc !important}
+
+dialog button {
+  -moz-appearance: none !important;
+  border: 1px solid #000 !important;
+  background: linear-gradient(#333,#111) !important;
+  color: #ddd !important;
+  padding: 2px !important}
+
+dialog button:hover {
+  background: linear-gradient(#111,#333) !important;
+  color: #fff !important}
+
 /* CUSTOMIZATION PAGE */
 
 /* The windows default theme colors will mainly affect the customizing page (when
