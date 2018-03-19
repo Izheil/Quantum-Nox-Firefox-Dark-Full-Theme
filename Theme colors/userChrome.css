@@ -47,6 +47,33 @@ of the minimize, maximize and close buttons */
   -moz-appearance: none !important;
   background: #3070dd !important}
 
+/* Search bar inside the content area */
+findbar {
+  background-color: #333 !important; 
+  color: #ddd !important;
+  border-top: 1px solid #000 !important;}
+
+findbar .findbar-textbox {
+  background: #666 !important;
+  color: #fff !important;
+  border: 1px solid #000 !important}
+
+findbar .findbar-textbox[focused="true"], findbar .findbar-textbox:hover {
+  border-color: Highlight !important}
+
+.findbar-textbox[status="notfound"] {background: #f66 !important}
+
+.findbar-textbox[flash="true"] {
+  background-color: yellow !important;
+  color: black !important}
+
+findbar .findbar-find-previous, findbar .findbar-find-next {
+  background-color: linear-gradient(#555,#333) !important;
+  border-top: 1px solid #000 !important;
+  border-right: 1px solid #000 !important;
+  border-bottom: 1px solid #000 !important;
+  border-left: none !important}
+
 /* Color for most dialogs */
 dialog {
   -moz-appearance: none !important;
@@ -264,7 +291,7 @@ if necessary depending on if you are using a custom OS theme (which may mess up 
   color: #aaa !important}
 
 /* This themes the search box on hover */
-#searchFilter:hover {
+#searchFilter[focused="true"] {
   box-shadow: 0 0 4px #0050ff !important;
   background-color: #555 !important;
   color: #fff !important} 
@@ -286,9 +313,9 @@ if necessary depending on if you are using a custom OS theme (which may mess up 
   color: #ddd !important}
 
 /* This changes the same text boxes on hover */
-#infoBox textbox:hover, #infoBox listbox:hover,
+#infoBox textbox[focused="true"], #infoBox listbox[focused="true"],
 /* This changes the same url bookmarking popup text boxes on hover */
-#editBMPanel_namePicker:hover, #editBMPanel_tagsField:hover {
+#editBMPanel_namePicker[focused="true"], #editBMPanel_tagsField[focused="true"] {
   box-shadow: 0 0 4px #0050ff !important;
   background-color: #666 !important;
   color: #fff !important} 
@@ -430,7 +457,7 @@ from the url bar. It also changes the "choose folder" selector on the bookmarkin
   color: #aaa !important}
 
 /* This themes the search box on hover */
-#CookiesDialog #filter:hover, #SignonViewerDialog #filter:hover {
+#CookiesDialog #filter[focused="true"], #SignonViewerDialog #filter[focused="true"] {
   box-shadow: 0 0 4px #0050ff !important;
   background-color: #666 !important;
   color: #fff !important}
