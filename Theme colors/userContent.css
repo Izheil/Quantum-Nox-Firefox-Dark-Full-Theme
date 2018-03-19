@@ -25,8 +25,8 @@ from the addons rules every time we update anything here */
 .tab-middle, .treecol-text {color: #FFF !important}
 
 /* This part covers all the dialog boxes backgrounds */
-dialog, window, prefpane, 
-prefwindow, .windowDialog {
+dialog, window, .prefpane, 
+.prefwindow, .windowDialog {
  	background-color: #202020 !important;
  	color: #ccc !important}
  	
