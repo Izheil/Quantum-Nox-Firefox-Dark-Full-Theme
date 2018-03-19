@@ -15,7 +15,7 @@ This problem doesn't happen if you use a code editor such as notepad++, atom, su
 <h3>Last update: <b>19/03/2018</b></h3>
 <p>Files updated:</p>
 <ul>
- <li><b>userChrome.css</b> -> Themed the library, page information and related windows. Also fixed some problem with the popups on the <code>about:downloads</code> page.</li>
+ <li><b>userChrome.css</b> -> Themed the library, page information, and most dialog windows. Also fixed some problem with the popups on the <code>about:downloads</code> page, and some menu items in the menu bar.</li>
 </ul>
 <h3>Pre-Last update: <b>18/03/2018</b></h3>
 <p>Files updated:</p>
