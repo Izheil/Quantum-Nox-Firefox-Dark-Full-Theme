@@ -1,6 +1,6 @@
 /* You can find an updated version here: https://github.com/Izheil/Firefox-57-full-dark-theme-with-scrollbars */
 /* Made by Izheil */
-/* Last updated: 06/02/2018 */
+/* Last updated: 19/03/2018 */
 
 /* This part imports the Addons file if there is one, so that you don't have to edit the dynamic URL
 from the addons rules every time we update anything here */
@@ -25,8 +25,8 @@ from the addons rules every time we update anything here */
 .tab-middle, .treecol-text {color: #FFF !important}
 
 /* This part covers all the dialog boxes backgrounds */
-dialog, window, prefpane, 
-prefwindow, .windowDialog {
+dialog, window, .prefpane, 
+.prefwindow, .windowDialog {
  	background-color: #202020 !important;
  	color: #ccc !important}
  	
