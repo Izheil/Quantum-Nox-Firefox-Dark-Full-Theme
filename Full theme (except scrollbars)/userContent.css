@@ -1,6 +1,6 @@
 /* You can find an updated version here: https://github.com/Izheil/Firefox-57-full-dark-theme-with-scrollbars */
 /* Made by Izheil */
-/* Last updated: 24/01/2018 */
+/* Last updated: 20/03/2018 */
 
 /* This part imports the Addons file if there is one, so that you don't have to edit the dynamic URL
 from the addons rules every time we update anything here */
@@ -292,7 +292,7 @@ input[type=text] {color: #aaa !important}
 .edit-menu button.icon.icon-edit:hover, .edit-menu button.icon.icon-dismiss:hover {
 	background-color: #777 !important}
 
-.section-title span {color: #fff !important}
+.section-title span {color: #ccc !important}
 
 .form-wrapper input:hover {border: 1px solid #0084ff !important}
 

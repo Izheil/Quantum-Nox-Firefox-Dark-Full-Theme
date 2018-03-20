@@ -1,6 +1,6 @@
 /* You can find an updated version here: https://github.com/Izheil/Firefox-57-full-dark-theme-with-scrollbars */
 /* Made by Izheil */
-/* Last updated: 09/01/2018 */
+/* Last updated: 20/03/2018 */
 
 /*------ HOW TO MAKE THE ADDON THEMES WORK ------*/
 /* To use this part of the code, you will have to find the dynamic ID of your extensions, and replace it where the 
@@ -154,6 +154,9 @@ div:not(.tooltipContainer):not(#panes):not(#rulesetTools):not(#refresh) {
 span[data-i18n-tip="popupTipRevertRules"], span[data-i18n-tip="popupTipSaveRules"] {
 	background: #222 !important;
 	border: 1px solid black !important}
+
+span[data-src="/"], span[data-src="."] {
+	border-left: 1px solid #000 !important}
 
 #extraTools, #tooltip {
 	background: #ddd !important;
