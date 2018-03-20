@@ -119,6 +119,10 @@ dialog textbox[focused="true"] {
   background-color: #555 !important;
   color: #fff !important} 
 
+/* This is used to fix some issue with the bookmark properties window
+not showing at full height when customizing their dialog */
+#bookmarkproperties {min-height: 15em !important}
+
 /* CUSTOMIZATION PAGE */
 
 /* The windows default theme colors will mainly affect the customizing page (when
@@ -353,10 +357,17 @@ if necessary depending on if you are using a custom OS theme (which may mess up 
   background-color: #555 !important;
   color: #ddd !important}
 
+/* A fix for bookmark preferences... so that some boxes won't appear brighter than others */
+#bookmarkproperties #editBMPanel_namePicker, 
+#bookmarkproperties #editBMPanel_tagsField {
+  background-color: #444 !important}
+
 /* This changes the same text boxes on hover */
 #infoBox textbox[focused="true"], #infoBox listbox[focused="true"],
 /* This changes the same url bookmarking popup text boxes on hover */
-#editBMPanel_namePicker[focused="true"], #editBMPanel_tagsField[focused="true"] {
+#editBMPanel_namePicker[focused="true"], #editBMPanel_tagsField[focused="true"],
+#bookmarkproperties #editBMPanel_namePicker[focused="true"],
+#bookmarkproperties #editBMPanel_tagsField[focused="true"] {
   box-shadow: 0 0 4px #0050ff !important;
   background-color: #666 !important;
   color: #fff !important} 
