@@ -130,6 +130,7 @@ It will, although, not turn dark the extension popups you may have. <p>
 <h2>The userContent.css file</h2>
 
 <p>The usercontent file will turn dark all the <code>about:about</code> pages.</p>
-<img src="https://i.imgur.com/e4zVTC7.png" title="Dark preferences page" /></a>
+<img src="https://i.imgur.com/a41WkP8.png" title="Dark preferences page" />
+<img src="https://i.imgur.com/WbhhkKa.png" title="Dark addons page" />
 
 <p>It will also turn dark the <a href="https://addons.mozilla.org">Mozilla addons page</a>, both the old and the new, the file explorer inside firefox, and the "view source of page" page.</p>
