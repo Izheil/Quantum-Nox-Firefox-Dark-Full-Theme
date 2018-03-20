@@ -11,12 +11,23 @@
 browser[type="content-primary"], tabbrowser tabpanels, #appcontent > #content
 {background-color: #202020 !important}
 
+/* You can also add an image of your choice in the pre-render loading page if you want 
+Delete the final /* to use -> *//*
+browser[type="content-primary"], tabbrowser tabpanels, #appcontent > #content {
+  background-image: url("file:///C:/Users/") !important;
+  background-size: cover !important;
+  background-position: center !important}
+
 /* TOOLBAR, TABS, URL BAR AND SEARCH BAR */
 
 /* This root class will modify the colors of toolbar background color (by default is transparent white 
 without this change) */
 :root:-moz-lwtheme {
   --toolbar-bgcolor: rgba(0,0,0,.6) !important;
+
+  /* Tab line color. this makes the line over tab change to the current windows color,
+  but is disabled by default in this theme. Delete the final /* to use -> *//*
+  --tab-line-color: -moz-win-accentcolor !important;
 
   /* Url and search bars */
   --url-and-searchbar-background-color: rgb(71, 71, 73);

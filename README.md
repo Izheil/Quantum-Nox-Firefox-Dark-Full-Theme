@@ -12,18 +12,18 @@ basic css or <a href="https://www.w3schools.com/colors/colors_picker.asp">color 
 <br />
 This problem doesn't happen if you use a code editor such as notepad++, atom, sublime text...</h4>
 
-<h3>Last update: <b>20/03/2018</b></h3>
+<h3>Last update: <b>21/03/2018</b></h3>
+<p>Files updated:</p>
+<ul>
+ <li><b>userChrome.css</b> -> Added the option to change tab line from userChrome (even to Windows OS theme color).</li>
+ <li><b>userContent.css</b> -> Added the option to add an image as background on the <code>about:home</code> and <code>about:newtab</code> page.</li>
+</ul>
+<h3>Pre-Last update: <b>20/03/2018</b></h3>
 <p>Files updated:</p>
 <ul>
  <li><b>userChrome.css</b> -> Changed most rounded buttons to flat ones, also darkened the dialogs a bit more. Changed the library even rows to darker for better localization of items. Everything should be themed now.</li>
  <li><b>userContent.css</b> -> Fixed most <code>about:</code> pages, and changed the rounded buttons to flat ones.</li>
  <li><b>addons.css</b> -> Fixed some issue on <b>Tab session manager</b> popup links not showing at all.</li>
-</ul>
-<h3>Pre-Last update: <b>19/03/2018</b></h3>
-<p>Files updated:</p>
-<ul>
- <li><b>userChrome.css</b> -> Themed the library, page information, and most dialog windows. Also fixed some problem with the popups on the <code>about:downloads</code> page, and some menu items in the menu bar.</li>
- <li><b>userContent.css</b> -> Fixed some issue with the preferences panels on <code>about:preferences</code>.</li>
 </ul>
 
 <h2>FAQ:</h2>
@@ -56,7 +56,9 @@ This problem doesn't happen if you use a code editor such as notepad++, atom, su
   If you only want to use a dark theme but you aren't interested on using multirow tabs, or want to keep all the context menu options when right clicking on tabs/the web area (such as "Send image..." or "Send tab to device"), use this one. Apart from the basic Firefox UI theming, you can also theme a few other optional things (they require some editing of userchrome.css, or copying addons.css into the chrome folder):
 	<ul>
 	  <li>Styling for unloaded and unread tab titles.</li>
-	  <li>Can change the default text color of input boxes for those using a dark OS theme that affects the background of these (You have to change the commented line that is described on line 67 inside usercontent.css to use it)</li>
+	  <li>Can change the tab line color to Windows current theme color (You have to change the commented line that is described in line 27 inside userChrome.css).</li>
+	  <li>Can set an image as background for the home page (You have to change the commented line that is described in line 168 inside userContent.css).</li>
+	  <li>Can change the default text color of input boxes for those using a dark OS theme that affects the background of these (You have to change the commented line that is described on line 79 inside usercontent.css to use it)</li>
 	  <li>Change the <a href="https://addons.mozilla.org/es/firefox/addon/ublock-origin/">Ublock Origin</a> blocking/control panel/popup page to a dark version (You need to change the dynamic url of the extension on "addons.css").</li>
 	  <li>Change the <a href="https://addons.mozilla.org/es/firefox/addon/flash-video-downloader/">Flash Video Downloader</a> popup and panel to a dark version (You need to change the dynamic url of the extension on "addons.css").</li>
 	  <li>Change the <a href="https://addons.mozilla.org/es/firefox/addon/video-downloadhelper/">Video Download Helper</a> popup and panel to a dark version (You need to change the dynamic url of the extension on "addons.css").</li>

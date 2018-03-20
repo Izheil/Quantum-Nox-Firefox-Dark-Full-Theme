@@ -78,7 +78,7 @@ only the images */
 
 /* This is a little fix for all pages in case you have a dark windows theme, so that the 
 letters will have a blue neutral color to be seen in either a white or dark background for 
-text-inputting things (Feel free to comment it out with if you don't like it) *//*
+text-inputting things. Delete the final /* to use -> *//*
 @-moz-document url-prefix(http){
 
 form select, input[type=text], input[type=email], input[type=password], input[type=date], 
@@ -164,6 +164,16 @@ body {
 .prefs-pane .actions {background-color: #151515 !important}
 
 .prefs-pane-button button:active {background-color: #050505 !important}
+
+/* This adds a background image of your choice in the main area. 
+Delete the final /* to use -> *//*
+body {
+  background-image: url("file:///C:/Users/") !important;
+  background-size: cover !important;
+  background-position: center !important}
+
+.prefs-pane .sidebar, .card-outer, .prefs-pane .prefs-modal-inner-wrapper .options, 
+.sidebar .actions {background: rgba(0,0,0,0.6) !important}
 
 /* The popups part starts here */
 .modal-overlay {background: #000 !important}
