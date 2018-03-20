@@ -437,14 +437,24 @@ if necessary depending on if you are using a custom OS theme (which may mess up 
 #mainDeck richlistitem:hover {
   background: rgba(255,255,255,0.15) !important}
 
+/* A fix for certificates textboxes */
+#certDetails textbox {
+  border: none !important;
+  box-shadow: none !important;
+  background: #444 !important}
+
 /* This changes the lists with a header on all windows related to the page info one */
 #mainDeck tree, #imagecontainerbox, #brokenimagecontainer,
 #mainDeck richlistbox, #cookiesList, #certDetails tree,
 #certPrettyPrint textbox, #signonsTree {
   -moz-appearance: none !important;
   background: #555 !important;
-  color: #bbb !important;
+  color: #ddd !important;
   border: 1px solid #222 !important}
+
+#mainDeck treechildren::-moz-tree-row(odd), #cookiesList treechildren::-moz-tree-row(odd),
+#certDetails treechildren::-moz-tree-row(odd), #signonsTree treechildren::-moz-tree-row(odd) {
+  background-image: linear-gradient(rgba(0,0,0,0.25), rgba(0,0,0,0.25)) !important}
 
 #nameCol, #certDetails {border: none !important}
 
@@ -474,8 +484,12 @@ if necessary depending on if you are using a custom OS theme (which may mess up 
   color: #ddd !important;
   padding: 0.3em !important}
 
-#mainDeck button:hover, #certDetails button:hover { 
+#mainDeck button:hover {
   background: #333 !important;
+  color: #fff !important}
+
+#certDetails button:hover {
+  background: #555 !important;
   color: #fff !important}
 
 /* This themes the permissions list */

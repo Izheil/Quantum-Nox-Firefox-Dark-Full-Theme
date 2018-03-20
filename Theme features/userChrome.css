@@ -118,6 +118,7 @@ change the number of px following the formula of 20*(number of rows)+2 for more 
 part of the same rule */
 
 /* Tabs context menu */
+
 /* Reload tab *//*
 #context_reloadTab,
 
@@ -130,13 +131,19 @@ part of the same rule */
 /* Open tab in new window *//*
 #context_openTabInWindow,
 
+/* Separator from send tab to device *//*
+#context_sendTabToDevice_separator,
+
+/* Separator after the previous command *//*
+#tabContextMenu menuseparator:nth-child(even),
+
 /* Reload all tabs */
-#context_reloadAllTabs,
+#context_reloadAllTabs, #toolbar-context-reloadAllTabs
 
 /* Bookmark all tabs */
-#context_bookmarkAllTabs,
+#context_bookmarkAllTabs, #toolbar-context-bookmarkAllTabs
 
-/* Close all tabs to the right *//*
+/* Close all tabs to the right */
 #context_closeTabsToTheEnd,
 
 /* Close all other tabs */
@@ -146,6 +153,7 @@ part of the same rule */
 #context_closeTab,
 
 /* Webarea context menu */
+
 /* Navigation buttons (Back, forward and reload buttons) & it's separator */
 #context-navigation, #context-sep-navigation,
 
@@ -167,7 +175,7 @@ part of the same rule */
 /* Send link... */ 
 #context-sendlink,
 
-/* Open link in a new tab */ /*
+/* Open link in a new tab */
 #context-openlinkintab,
 /* Open link in a new window */
 #context-openlink,
@@ -179,15 +187,13 @@ part of the same rule */
 /* Take a screenshot & it's separator */ 
 #screenshots_mozilla_org_create-screenshot, #_479f0278-2c34-4365-b9f0-1d328d0f0a40__separator,
 
-/* Send tab to device... (including it's separators) */ 
-#context_sendTabToDevice, #context_sendTabToDevice_separator, #tabContextMenu menuseparator:nth-child(even),
+/* Send tab to device... (including it's separator) */
+#context_sendTabToDevice, #context_sendTabToDevice_separator,
 
 /* Send page to device... (including it's separator)*/ 
 #context-sendpagetodevice, #context-sep-sendpagetodevice,
 
 /* Send link to device... (including it's separator)*/ 
 #contentAreaContextMenu #context-sendlinktodevice, 
-#contentAreaContextMenu #context-sep-sendlinktodevice
-
-/* Don't delete this unless you aren't using any of the above deletions */ 
+#contentAreaContextMenu #context-sep-sendlinktodevice 
 {display: none !important}
