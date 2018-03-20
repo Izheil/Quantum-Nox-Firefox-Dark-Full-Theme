@@ -132,7 +132,8 @@ body {
 	background-color: #0a50AA !important}
 
 /* Context menus of the about information area */
-.info-option {background-color: #505050 !important}
+.info-option {background-color: #444 !important; border: 1px solid #000 !important}
+.info-option::before {filter: invert(73%) !important}
 
 .info-option-manage button {color: #3088FF !important}
 
@@ -141,11 +142,15 @@ body {
 /* The sidebar/settings panel part starts here */
 .sidebar, .sidebar .actions {border-left: 2px solid #000 !important} 
 
+.actions {border-top: 1px solid #222 !important}
+
 .prefs-pane, .info-option p {color: #ccc !important}
 
 .prefs-pane .sidebar, .card-outer {background-color: #303030 !important}
 
 .prefs-pane .prefs-modal-inner-wrapper .options {background-color: #404040 !important}
+
+.prefs-pane hr, .options {border: 1px solid #000 !important}
 
 .prefs-pane .prefs-modal-inner-wrapper .options:hover {background-color: #202020 !important}
 
@@ -167,7 +172,7 @@ body {
  	background: #222 !important;
     border: 1px solid #555 !important}
 
-/* The cards borders part starts here (The background is at line 66) */
+/* The cards borders part starts here */
 .card-outer .context-menu-button, .top-sites-list .top-site-outer .context-menu-button {
     background-color: #555 !important;
     border: 1px solid #333 !important;
@@ -184,16 +189,18 @@ body {
 
 /* No need to say this goes for the buttons */
 .actions button {
-    background: #111 !important;
-    border: 1px solid #555 !important}
+    background: #666 !important;
+    border: none !important;
+	color: #fff !important}
 
-.actions button:hover {box-shadow: 0 0 0 5px #0a50AA !important}
+.actions button:hover {box-shadow: 0 0 0 5px #666 !important}
+.actions button.done:hover {box-shadow: 0 0 0 5px #0a50AA !important}
 
 .actions button.done {
     background: #0a50AA !important;
     border: solid 1px #0a50AA !important}
 
-/* Search box style (The background is at line 150) */
+/* Search box style */
 .search-label {fill: #2066dd !important}
 
 .contentSearchSuggestionTable {
@@ -284,6 +291,10 @@ input[type=text] {color: #aaa !important}
 .edit-menu button.icon.icon-unpin:hover, .edit-menu button.icon.icon-pin:hover, 
 .edit-menu button.icon.icon-edit:hover, .edit-menu button.icon.icon-dismiss:hover {
 	background-color: #777 !important}
+
+.section-title span {color: #fff !important}
+
+.form-wrapper input:hover {border: 1px solid #0084ff !important}
 
 /* Tour pop-up */
 #onboarding-overlay {
