@@ -1,6 +1,6 @@
 /* You can find an updated version here: https://github.com/Izheil/Firefox-57-full-dark-theme-with-scrollbars */
 /* Made by Izheil */
-/* Last updated: 19/03/2018 */
+/* Last updated: 24/01/2018 */
 
 /* This part imports the Addons file if there is one, so that you don't have to edit the dynamic URL
 from the addons rules every time we update anything here */
@@ -43,7 +43,7 @@ dialog, window, .prefpane,
 .netReset #errorPageContainer:not(.button-container),
 .netOffline #errorPageContainer:not(.button-container),
 .dnsNotFound #errorPageContainer:not(.button-container),
-.malformedURI #errorPageContainer {filter: invert(98%) hue-rotate(200deg)}
+.malformedURI #errorPageContainer, #lic-info .license-header:not(a) {filter: invert(98%) hue-rotate(200deg)}
 
 /* This fixes the inverted colors caused by the image filter (since I couldn't directly filter 
 only the images */
@@ -60,14 +60,25 @@ only the images */
 .netReset #errorPageContainer #text-container,
 .netOffline #errorPageContainer #text-container,
 .dnsNotFound #errorPageContainer #text-container,
-.malformedURI #errorPageContainer #text-container {filter: invert(98%) hue-rotate(-200deg)}
+.malformedURI #errorPageContainer #text-container, 
+#lic-info .license-header p, #lic-info .license-header h1 {filter: invert(98%) hue-rotate(-200deg)}
 
 #errorPageContainer #text-container h1 {color: #1C7BFF !important}
 
+#startPrivateBrowsing {
+  -moz-appearance: none !important;
+  border-radius: 3px !important;
+  background: #666 !important;
+  color: #ddd !important;
+  padding: 2px !important}
+
+#startPrivateBrowsing:hover {
+  background: #333 !important;
+  color: #fff !important}
+
 /* This is a little fix for all pages in case you have a dark windows theme, so that the 
 letters will have a blue neutral color to be seen in either a white or dark background for 
-text-inputting things (Feel free to delete the /* under this line for it to take effect) */
-/*
+text-inputting things (Feel free to comment it out with if you don't like it) *//*
 @-moz-document url-prefix(http){
 
 form select, input[type=text], input[type=email], input[type=password], input[type=date], 
@@ -79,12 +90,16 @@ input[type=number], input[type=search], input[type=tel], input[type=url], textar
 /*------ FILE BROWSING PAGES (file://, about:sync-log) ------*/
 @-moz-document url-prefix(about:sync-log), url-prefix(file://) {
 html {background: #202020 !important}
-body {background: #333 !important}
+body {background: #333 !important; border: 1px solid #111 !important}
 
-#UI_goUp a.up:link, a.file:link, a.dir:link {color: #0084ff !important}
+h1 {color: #fff !important; border-bottom: none !important}
+tbody > tr:hover {outline: 1px dotted #777 !important}
+.ellipsis tr:hover {outline: none !important}
+
+#UI_goUp a.up:link, a.file:link, a.dir:link {color: #09f !important}
+#UI_goUp a.up:visited, .ellipsis a.file:visited, .ellipsis a.dir:visited {color: #0070aa !important}
 #UI_goUp a.up:hover, .ellipsis a.file:hover, .ellipsis a.dir:hover {color: #0ff !important}
-#UI_goUp a.up:active, .ellipsis a.file:active, .ellipsis a.dir:active {color: #0050aa !important}
-#UI_goUp a.up:visited, .ellipsis a.file:visited, .ellipsis a.dir:visited {color: #0050dd !important}
+#UI_goUp a.up:active, .ellipsis a.file:active, .ellipsis a.dir:active {color: #0050dd !important}
 
 th {color: #ddd !important}
 td {color: #aaa !important}}
@@ -95,9 +110,9 @@ html {
 	background: #222 !important;
 	color: #ccc !important}
 
-.attribute-name {color: #fff !important}
-.start-tag, .end-tag {color: #f00 !important}
-.attribute-value {color: #0084ff !important}
+.attribute-name {color: #093 !important}
+.start-tag, .end-tag {color: #f93 !important}
+.attribute-value {color: #09f !important}
 }
 
 /*------ HOME/NEWTAB PAGE (About:home, about:newtab) ------*/ 
@@ -252,16 +267,16 @@ body {
 #snippets-container .button-selected {
 	background-color: #222 !important;
 	border: 1px solid #0084ff !important}
-	
+
 /* Edit top sites */
 input[type=text] {color: #aaa !important}
 
 .edit-menu button.icon.icon-unpin, .edit-menu button.icon.icon-pin, 
 .edit-menu button.icon.icon-edit, .edit-menu button.icon.icon-dismiss {
-	background-color: #555 !important;	
+	background-color: #555 !important;
 	border-right: none !important}
-	
-.edit-menu button.icon.icon-edit, .edit-menu button.icon.icon-dismiss {	
+
+.edit-menu button.icon.icon-edit, .edit-menu button.icon.icon-dismiss {
 	border-left: 1px solid #333 !important}
 
 .edit-menu {border: 1px solid #333 !important; background-color: #555 !important}
@@ -269,7 +284,7 @@ input[type=text] {color: #aaa !important}
 .edit-menu button.icon.icon-unpin:hover, .edit-menu button.icon.icon-pin:hover, 
 .edit-menu button.icon.icon-edit:hover, .edit-menu button.icon.icon-dismiss:hover {
 	background-color: #777 !important}
-	
+
 /* Tour pop-up */
 #onboarding-overlay {
 	background: rgba(0,0,0,0.5) !important}
@@ -296,33 +311,36 @@ input[type=text] {color: #aaa !important}
 }
 
 /*------ COMMON ATTRIBUTES ON MOST ABOUT PAGES ------*/
-@-moz-document url(about:about), url(about:blank), url(about:), 
+@-moz-document url(about:about), url(about:), 
 url(https://www.mozilla.org/credits/), url-prefix(about:cache),
 url-prefix(about:checkerboard), url-prefix(about:plugins), 
 url-prefix(about:buildconfig), url-prefix(about:support), 
 url-prefix(about:profiles), url(about:crashes), url(about:license),
 url-prefix(about:memory), url-prefix(about:networking), url(about:performance),
 url(about:rights), url(about:robots), url-prefix(about:studies), 
-url-prefix(about:telemetry), url(about:url-classifier), url(about:webrtc) {
+url-prefix(about:telemetry), url(about:url-classifier), url(about:webrtc),
+url(about:devtools), url(about:serviceworkers) {
 
-p, pre, li {color: #AAA !important}
+p, pre, li, label {color: #AAA !important}
 h1 {color: #1C7BFF !important}
 h2 {color: #ddd !important}
-a:link, a {color: #0084ff !important}
+h3 {color: #ddd !important}
+a:link, a {color: #09f !important}
+a:visited {color: #0070aa !important}
 a:hover {color: #0ff !important}
 a:active {color: #0050aa !important}
-a:visited {color: #0050dd !important}
 
 button {
-	-moz-appearance: none !important;
-	background: linear-gradient(#2050AA, #203050);
-    color: #FFF !important;
-	border: 1px solid #0050aa !important;
-	padding: 0.5em}
+  -moz-appearance: none !important;
+  border-radius: 3px !important;
+  background: #05a !important;
+  color: #ddd !important;
+  border: 1px solid #0040aa !important;
+  padding: 0.5em !important}
 
 button:hover {
-	background: linear-gradient(#203050, #2050AA) !important;
-    color: #0FF !important}
+	background: #003080 !important;
+    color: #FFF !important}
 
 textarea {
 	-moz-appearance: none !important;
@@ -331,6 +349,22 @@ textarea {
 	border: 1px solid #444}
 }
 
+/*------ ABOUT: PAGES WITH TABLES  ------*/
+@-moz-document url-prefix(about:cache), url-prefix(about:plugins), 
+url-prefix(about:buildconfig), url-prefix(about:networking),
+url-prefix(about:telemetry) {
+
+th {background: #333 !important; 
+	color: #fff !important;
+	outline: 1px solid #000 !important;
+	padding-left: 4px !important}
+
+td {background: #555 !important; 
+	color: #ddd !important;
+	outline: 1px solid #000 !important;
+	border: none !important;
+	padding-left: 4px !important}}
+
 /*------ BACKGROUND OF MOST ABOUT PAGES  ------*/
 @-moz-document url(about:), url(about:about), url(about:blank), url(https://www.mozilla.org/credits/),
 url-prefix(about:checkerboard), url(about:accounts), url-prefix(about:cache), 
@@ -338,6 +372,27 @@ url-prefix(about:plugins), url-prefix(about:buildconfig), url-prefix(about:memor
 url-prefix(about:support), url-prefix(about:profiles), url(about:robots), url(about:serviceworkers),
 url(about:webrtc) {
 body, html {background-color: #202020 !important}}
+
+/*------ PAGES WITH PLAIN TEXT OVER BACKGROUND  ------*/
+@-moz-document url(about:about), url-prefix(https://www.mozilla.org/credits/), 
+url-prefix(about:credits), url(about:devtools), url(about:license), 
+url-prefix(about:crashes), url(about:rights), url(about:serviceworkers) {
+.container, #reportListUnsubmitted, #reportListSubmitted,
+#aboutPageContainer, #welcome-page .box, #welcome-page .features,
+#lic-info, #serviceworkers {
+	padding: 3em !important; 
+	background: #363636 !important; 
+	border-radius: 6px !important}
+
+#reportListSubmitted, #welcome-page .features {
+	margin-top: 1em !important;
+	margin-bottom: 1em !important}
+
+#welcome-page .features {border-top: none !important}
+
+#welcome-page .left-pane {filter: invert(98%) hue-rotate(200deg) !important}
+
+tbody > tr:hover {outline: 1px dotted #777 !important}}
 
 /*------ CONTEXT MENUS FOR ALL ABOUT: PAGES ------*/
 @-moz-document url-prefix(about:) {
@@ -384,10 +439,10 @@ menu:hover[disabled="true"] {
 #aboutPageList {color: #ddd !important}}
 
 /*------ DIVS OVER BACKGROUND PAGES ------*/
-@-moz-document url(about:accounts), url(about:robots), 
-url(about:serviceworkers), url-prefix(about:studies), url(about:webrtc) {
+@-moz-document url(about:robots), url(about:serviceworkers),
+url-prefix(about:studies), url(about:webrtc) {
 #stage, #errorPageContainer, .warningMessage,
-.info-box-content, .stats, .log {background: #333 !important}
+.info-box-content, .stats, .log {background: #333 !important; border: 1px solid #111 !important}
 .fold-trigger {color: #fff !important}
 }
 
@@ -429,9 +484,18 @@ td {background: #666 !important}
 
 /*------ NETWORKING PAGE (about:networking) ------*/
 @-moz-document url-prefix(about:networking), url-prefix(about:telemetry) {
-.category {color: #ddd !important}
+
+.category {color: #ddd !important; font-weight: bold !important}
 .category[selected="true"], .category.selected {color: #0083ff !important}
-#ping-picker {background-color: #333 !important}
+
+select {border: 1px solid #111 !important}
+
+#ping-picker {
+	background-color: #333 !important; 
+	border: 1px solid #111 !important}
+
+#categories, #category-raw {background: #444 !important}
+#categories {margin-bottom: 0 !important}
 }
 
 /*------ RIGHTS PAGE (about:rights) ------*/
@@ -465,8 +529,13 @@ td {background: #666 !important}
 	background: linear-gradient(#203050, #2050AA) !important;
     color: #0FF !important}
 
+.addons-tip-icon {filter: invert(100%) !important}
+
 /* These are the alert message that appears on the "workers" category, and the status notice */
-.service-worker-multi-process {background-color: #d70 !important; color: #000 !important}
+.service-worker-multi-process {
+	background-color: #a44 !important; 
+	color: #ddd !important;
+	border-radius: 6px !important}
 
 span.target-status {background-color: #151515 !important}
 }
@@ -485,6 +554,9 @@ span.target-status {background-color: #151515 !important}
 	--in-content-box-background-hover: #444 !important;
 	--in-content-box-background-active: #555 !important}
 
+#configTreeBody::-moz-tree-row(odd) {
+	background-image: linear-gradient(rgba(0,0,0,0.25), rgba(0,0,0,0.25)) !important}
+
 /* Warning pre-title before the actual config page (D'uh) */
 #warningTitle {color: #FFF !important}}
 
@@ -496,21 +568,14 @@ span.target-status {background-color: #151515 !important}
 
 .notice a:link {color: #4080CC !important}
 
-dl {color: #ddd !important}
-
-tbody {
-	background-color: #555 !important;
-	color: #FFF !important}
-
-th {background-color: #333 !important}
-
-}
+dl {color: #ddd !important}}
 
 /*------ MEMORY LOAD PAGE (about:memory) ------*/
 @-moz-document url-prefix(about:memory){
 .opsRow {
 	background-color: #303030 !important;
-	color: #AAA !important}
+	color: #AAA !important;
+	border: 1px solid #111 !important}
 }
 
 /*------ DOWNLOADED FILES PAGE (about:downloads) ------*/
@@ -519,8 +584,7 @@ th {background-color: #333 !important}
 	--in-content-page-background: #202020 !important;
 	--in-content-text-color: #aaa !important;
 	--in-content-box-background: #404040 !important;
-	--in-content-box-border-color: #777 !important}
-}
+	--in-content-box-border-color: #777 !important}}
 
 /*------ INFORMATION PAGES WITH TABLES ------*/
 @-moz-document url-prefix(about:support), url-prefix(about:profiles), 
@@ -538,6 +602,8 @@ url(about:performance), url(about:url-classifier) {
 td {background: #555 !important}
 
 .page-subtitle {color: #ddd !important}
+
+#profiles hr {display: none !important}
 }
 
 /*------ SETTINGS/ADDONS COMMON PART (about:preferences, about:addons) ------*/
@@ -564,16 +630,6 @@ td {background: #555 !important}
 it's updated and if its the default browser) */
 #isDefaultLabel, #updateBox {color: #FFF !important}
 
-/* This changes some of the buttons color */
-.accessory-button, button {
-	background: linear-gradient(#2050AA, #203050) !important;
-    color: #FFF !important;
-    border: 1px solid #0050aa !important}
-
-.accessory-button:hover, button:hover {
-	background: linear-gradient(#203050, #2050AA) !important;
-    color: #0FF !important}
-
 /* Search Panel, Dialog boxes and inputs in general */
 #engineList, .dialogBox > .groupbox-title, #browserHomePage,
 #searchInput {background-color: #303030 !important}
@@ -592,6 +648,18 @@ it's updated and if its the default browser) */
 /* Search bar images on "search" category */
 image.searchBarImage {filter: invert(92%) hue-rotate(180deg)}
 
+/* This changes some of the buttons color */
+.accessory-button, button {
+  -moz-appearance: none !important;
+  border-radius: 3px !important;
+  background: #05a !important;
+  color: #ddd !important;
+  border: 1px solid #0040aa !important}
+
+.accessory-button:hover, button:hover {
+	background: #003080 !important;
+    color: #FFF !important}
+
 treecol {
 	background-color: #555 !important;
 	color: #FFF !important}
@@ -606,13 +674,39 @@ treecol:hover {background-color: #666 !important}
 #header-utils-btn .scrollbox-innerbox,
 .arrowscrollbox-scrollbox {background-color: #444 !important}
 
-richlistitem.addon.addon-view[selected="true"] {color: #FFF !important}
+/* This changes some of the buttons color */
+.accessory-button, button, #header-utils-btn {
+  -moz-appearance: none !important;
+  border-radius: 3px !important;
+  background: #555 !important;
+  color: #eee !important;
+  border: none !important}
 
-.addon {color: #4080CC !important}
+#header-utils-btn {fill: black !important}
 
-.addon:hover, #header-utils-btn {background-color: #151515 !important}
+.accessory-button:hover, button:hover, 
+#header-utils-btn:hover {
+	background: #333 !important;
+    color: #FFF !important}
 
-#header-utils-btn:hover {background-color: #000 !important}
+.description-outer-container .button-link {
+	background: transparent !important;
+	color: #09f !important}
+
+.description-outer-container .button-link:hover {color: #0ff !important}
+.description-outer-container .button-link:active {color: #0050aa !important}
+
+.addon {color: #aaa !important}
+
+.addon:hover {background-color: #151515 !important}
+
+.content-inner-container .basicinfo-container {color: #38f !important}
+.addon.addon-view[selected="true"] .basicinfo-container {color: #0ef !important}
+
+.addon.addon-view[active="false"] .basicinfo-container, 
+.addon.addon-view[active="false"] .description {color: #888 !important}
+
+.addon.addon-view[selected="true"] {color: #FFF !important}
 
 /* This changes the background highlight color of uninstalled extensions */
 .addon-view[pending="disable"], .addon-view[pending="uninstall"] {
@@ -620,20 +714,27 @@ richlistitem.addon.addon-view[selected="true"] {color: #FFF !important}
 
 /* Should be self explanatory... but this is the alert message that goes over the addons list */
 .alert {
-	background-color: #101010 !important ;
-	color: #FA0 !important}
+	background-color: rgba(255,255,255,0.10) !important ;
+	color: #Fff !important}
 
 /* Description of the addons/themes */
 .detail-view-container {color: #aaa !important}
 
-#detail-contributions {background-color: #111 !important}
+#detail-contributions {
+	background-color: rgba(0,0,0,0.15) !important; 
+	border: 1px solid #444 !important}
 
-#detail-contrib-description {color: #FA0}
+#detail-rows * {text-shadow: none !important}
+
+#detail-rows .detail-row-label {color: #fff !important}
+
+#detail-contrib-description {color: #aaa !important}
 
 #addon-options {
 	border: 1px solid #aaa !important;
 	border-radius: 15px !important;
-	background-color: #505050 !important}
+	background-color: #555 !important;
+	color: #ddd !important}
 }
 
 /* This is still in the addons page, it's the "discover" page thing */

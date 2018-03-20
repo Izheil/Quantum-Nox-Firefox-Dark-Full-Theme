@@ -1,5 +1,6 @@
 /* You can find an updated version here: https://github.com/Izheil/Firefox-57-full-dark-theme-with-scrollbars */
-/* Last updated: 19/03/2018 */
+/* Made by Izheil */
+/* Last updated: 20/03/2018 */
 
 /* DO NOT DELETE THIS LINE */
 @namespace url("http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul");
@@ -10,7 +11,7 @@
 browser[type="content-primary"], tabbrowser tabpanels, #appcontent > #content
 {background-color: #202020 !important}
 
-/* TOOLBAR, TABS AND URL BAR */
+/* TOOLBAR, TABS, URL BAR AND SEARCH BAR */
 
 /* This root class will modify the colors of toolbar background color (by default is transparent white 
 without this change) */
@@ -45,7 +46,7 @@ of the minimize, maximize and close buttons */
 /* The downloads progress bar color */
 .progress-bar {
   -moz-appearance: none !important;
-  background: #3070dd !important}
+  background-color: #3070dd !important}
 
 /* Search bar inside the content area */
 findbar {
@@ -75,21 +76,35 @@ findbar .findbar-find-previous, findbar .findbar-find-next {
   border-left: none !important}
 
 /* Color for most dialogs */
-dialog {
+dialog, dialog caption, dialog select {
   -moz-appearance: none !important;
-  background-color: #444 !important;
+  background-color: #333 !important;
   color: #ccc !important}
 
+dialog #openHandlerBox menulist {
+  -moz-appearance: none !important;
+  border: 1px solid #111 !important;
+  background: linear-gradient(#555,#333) !important;
+  color: #ddd !important}
+
+dialog #openHandlerBox menulist:hover {
+  background: linear-gradient(#333,#555) !important;
+  color: #fff !important}
+
+dialog groupbox {
+  -moz-appearance: none !important; 
+  border: 1px solid #666 !important}
+
+/* Color for most buttons */
 dialog button {
   -moz-appearance: none !important;
-  border: 1px solid #000 !important;
-  border-radius: 2px !important;
-  background: linear-gradient(#555,#333) !important;
+  border-radius: 3px !important;
+  background: #555 !important;
   color: #ddd !important;
   padding: 2px !important}
 
 dialog button:hover {
-  background: linear-gradient(#333,#555) !important;
+  background: #444 !important;
   color: #fff !important}
 
 dialog textbox {
@@ -111,18 +126,18 @@ you aren't using the default dark theme of mozilla, that is) */
 @media (-moz-windows-default-theme) {
   :root {
     --toolbar-non-lwt-bgcolor: #303030 !important;
-    --toolbar-non-lwt-textcolor: #fff !important}
-}
+    --toolbar-non-lwt-textcolor: #fff !important}}
 
 /* The customization page button colors */
 .customizationmode-button {
   -moz-appearance: none !important;
-  border: 1px solid #000 !important;
-  background: linear-gradient(#333,#111) !important;
-  color: #ddd !important}
+  border-radius: 3px !important;
+  background: #555 !important;
+  color: #ddd !important;
+  border: none !important}
 
 .customizationmode-button:hover {
-  background: linear-gradient(#111,#333) !important;
+  background: #444 !important;
   color: #fff !important}
 
 .customization-lwtheme-menu-footeritem {
@@ -138,11 +153,13 @@ you aren't using the default dark theme of mozilla, that is) */
 
 #customization-done-button {
   -moz-appearance: none !important;
-  background: linear-gradient(#2050AA, #203050) !important;
-  border: 1px solid #0050aa !important}
+  border-radius: 3px !important;
+  background: #2050AA !important;
+  color: #fff !important;
+  border: none !important}
 
 #customization-done-button:hover {
-  background: linear-gradient(#203050, #2050AA) !important;
+  background: #1040A0 !important;
   color: #0ff !important}
 
 #customization-lwtheme-menu-footer {border-top: none !important}
@@ -160,8 +177,8 @@ you aren't using the default dark theme of mozilla, that is) */
   --arrowpanel-color: #ccc !important;
   --in-content-box-background: #333 !important;
   --in-content-box-background-hover: #444 !important;
-  --arrowpanel-dimmed: rgba(255, 255, 255, 0.1) !important;  
-  --arrowpanel-dimmed-further: rgba(255, 255, 255, 0.25) !important;  
+  --arrowpanel-dimmed: rgba(255, 255, 255, 0.1) !important;
+  --arrowpanel-dimmed-further: rgba(255, 255, 255, 0.25) !important;
   --arrowpanel-dimmed-even-further: rgba(255, 255, 255, 0.4) !important}
 
 /* Zoom reset button on the main menu */
@@ -171,7 +188,7 @@ you aren't using the default dark theme of mozilla, that is) */
 
 /* This one changes the letters color of all context menus */
 menu, menuitem {
-  color: #aaa !important;
+  color: #ccc !important;
   -moz-appearance: none !important}
 
 /* Padding for all menu items (do NOT change unless you want an spaced or indented upon 
@@ -203,7 +220,7 @@ menuitem[_moz-menuactive="true"][disabled="true"]
 
 /* This changes the text color of the greyed out actions on the context menus */
 menuitem[disabled="true"], popup > menu[disabled="true"],
-menupopup > menu[disabled="true"], menubar > menu[disabled="true"]{color: #222 !important}
+menupopup > menu[disabled="true"], menubar > menu[disabled="true"]{color: #777 !important}
 
 /* This one applies to all context menus (If you want to theme the browser this one is better instead 
 of going one by one) */
@@ -213,7 +230,7 @@ menupopup .scrollbox-innerbox {background-color: #444 !important}
 as well as ignoring the bookmark menu context menu */
 menupopup {
   -moz-appearance: none !important;
-  border: 2px solid #111 !important}
+  border: 1px solid #111 !important}
 
 /* Context menu separator color override */
 menuseparator {
@@ -225,7 +242,7 @@ menuseparator {
   padding: 0 !important}
 
 /* Context menu navigation tools (back, forward, reload) background color */
-#context-navigation {  
+#context-navigation {
   -moz-appearance: none !important;
   background-color: #444 !important;
   padding-bottom: 0px !important}
@@ -259,7 +276,7 @@ if necessary depending on if you are using a custom OS theme (which may mess up 
 /* These change the lists background color */
 #placesView, #placesView .scrollbox-innerbox ,
 #infoPane, #placesList, #placeContent, 
-/* This one changes the urlbar star bookmarking folder tree backgorund color */
+/* This one changes the urlbar star bookmarking folder tree backgrund color */
 #editBMPanel_folderTree {
   -moz-appearance: none !important; 
   background: #555 !important; 
@@ -281,6 +298,14 @@ if necessary depending on if you are using a custom OS theme (which may mess up 
 
 /* This changes the right border on the left list panel */
 #placesView > splitter {border-inline-end: 1px solid #333 !important}
+
+/* These change the even rows of the lists */
+#placeContent treechildren::-moz-tree-row(even) {
+  background-image: linear-gradient(rgba(0,0,0,0.25), rgba(0,0,0,0.25)) !important}
+
+#placeContent treechildren::-moz-tree-cell {border-right: 1px dotted rgba(0,0,0,0.4) !important}
+
+#placeContent > splitter {border: 1px solid red !important}
 
 /* This changes the forward and back buttons opacity when disabled */
 #placesToolbar > toolbarbutton[disabled] > .toolbarbutton-icon {
@@ -320,7 +345,8 @@ if necessary depending on if you are using a custom OS theme (which may mess up 
 /* This changes the text boxes inside the library bottom information box */
 #infoBox textbox, #infoBox listbox, 
 /* This changes the text boxes on the popup when bookmarking a page from the url box */
-#editBMPanel_namePicker, #editBMPanel_tagsField {
+#editBMPanel_namePicker, #editBMPanel_tagsField,
+#editBMPanel_tagsSelector {
   transition: all 0.25s ease-in-out !important;
   -moz-appearance: none !important; 
   border: 1px solid #777 !important;
@@ -335,35 +361,36 @@ if necessary depending on if you are using a custom OS theme (which may mess up 
   background-color: #666 !important;
   color: #fff !important} 
 
-/* This changes the "show more" button color inside the library and when bookmarking
-from the url bar. It also changes the "choose folder" selector on the bookmarking popup */
-#editBMPanel_tagsSelectorExpander, #editBMPanel_folderMenuList, 
-#editBMPanel_foldersExpander, #editBMPanel_newFolderButton {
+/* This changes the buttons inside the bookmarking popup at the url star */
+#editBMPanel_newFolderButton, #editBookmarkPanelDoneButton, 
+#editBookmarkPanelRemoveButton {
+  -moz-appearance: none !important;
+  border-radius: 3px !important;
+  background: #666 !important;
+  color: #ddd !important;
+  padding: 0.3em !important;
+  margin-top: 0.5em !important;
+  margin-bottom: 0.5em !important}
+
+#editBMPanel_newFolderButton:hover,#editBookmarkPanelDoneButton:hover, 
+#editBookmarkPanelRemoveButton:hover { 
+  background: #333 !important;
+  color: #fff !important}
+
+/* These change the expander buttons on the library and bookmarking popup */
+#editBMPanel_folderMenuList, #editBMPanel_tagsSelectorExpander,
+#editBMPanel_foldersExpander, #detailsDeck button {
   -moz-appearance: none !important;
   border: 1px solid #222 !important;
   background: linear-gradient(#555,#333) !important;
   color: #ddd !important}
 
-#editBMPanel_tagsSelectorExpander:hover, #editBMPanel_folderMenuList:hover,
-#editBMPanel_foldersExpander:hover, #editBMPanel_newFolderButton:hover { 
+#editBMPanel_folderMenuList:hover, #editBMPanel_tagsSelectorExpander:hover, 
+#editBMPanel_foldersExpander:hover, #detailsDeck button:hover {
   background: linear-gradient(#333,#555) !important;
   color: #fff !important}
 
-#editBMPanel_newFolderButton {padding: 1px !important}
-
 #editBMPanel_folderMenuList {padding: 1px !important; color: #ddd !important}
-
-/* These change the buttons of the bookmarking popup on the urlbox */
-#editBookmarkPanelDoneButton, #editBookmarkPanelRemoveButton {
-  -moz-appearance: none !important;
-  border: 1px solid #000 !important;
-  background: linear-gradient(#333,#111) !important;
-  color: #ddd !important;
-  padding: 2px !important}
-
-#editBookmarkPanelDoneButton:hover, #editBookmarkPanelRemoveButton:hover {
-  background: linear-gradient(#111,#333) !important;
-  color: #fff !important}
 
 /* PAGE INFORMATION WINDOW */
 
@@ -391,7 +418,7 @@ from the url bar. It also changes the "choose folder" selector on the bookmarkin
 
 #mainDeck textbox, #cookieInfoBox textbox {color: #aaa !important}
 
-#mainDeck groupbox {
+#mainDeck groupbox, #cookieInfoBox {
   -moz-appearance: none !important; 
   border: 1px solid #666 !important}
 
@@ -442,13 +469,13 @@ from the url bar. It also changes the "choose folder" selector on the bookmarkin
 /* This themes the buttons on the main information window */
 #mainDeck button, #certDetails button {
   -moz-appearance: none !important;
-  border: 1px solid #222 !important;
-  background: linear-gradient(#555,#333) !important;
+  border-radius: 3px !important;
+  background: #666 !important;
   color: #ddd !important;
-  padding: 0.25em 0.5em !important}
+  padding: 0.3em !important}
 
 #mainDeck button:hover, #certDetails button:hover { 
-  background: linear-gradient(#333,#555) !important;
+  background: #333 !important;
   color: #fff !important}
 
 /* This themes the permissions list */
@@ -480,13 +507,13 @@ from the url bar. It also changes the "choose folder" selector on the bookmarkin
 /* This themes the buttons on the cookies and passwords window */
 #CookiesDialog button, #SignonViewerDialog button {  
   -moz-appearance: none !important;
-  border: 1px solid #000 !important;
-  background: linear-gradient(#333,#111) !important;
+  border-radius: 3px !important;
+  background: #666 !important;
   color: #ddd !important;
-  padding: 2px !important}
+  padding: 0.3em !important}
 
 #CookiesDialog button:hover, #SignonViewerDialog button:hover {
-  background: linear-gradient(#111,#333) !important;
+  background: #333 !important;
   color: #fff !important}
 
 /* These are the certificates window tabs */
@@ -582,6 +609,8 @@ from the url bar. It also changes the "choose folder" selector on the bookmarkin
   border-right: 2px solid #000 !important;
   -moz-appearance: none !important}
 
+treechildren::-moz-tree-separator {border-color: #000 !important}
+
 /* Highlighted items */
 treechildren {
 
@@ -616,32 +645,33 @@ if you don't see a blue hover color on items on the sidebar, use this method ins
   color: #fff !important}
 
 /* TAB READ/UNREAD COLORS */
-/* You can bold the text of any tab adding "font-weight: bold !important" after their last rule, but before the "}" */
+
+/* You can bold the text of any tab adding "font-weight: bold !important" after their last rule, but before the "}"  */
 
 /* Selected (loaded) */
-.tabbrowser-tab[selected="true"] .tab-label {    
-  color: #eee !important;    
-  font-size: 12px !important;    
-  font-style: normal !important}
+.tabbrowser-tab[selected="true"] .tab-label {
+    color: #eee !important;
+    font-size: 12px !important;
+    font-style: normal !important;}
 
 /* Loaded but unread (not selected) */
-.tabbrowser-tab:not([selected="true"])[unread] .tab-label {    
-  color: #fff !important;    
-  font-size: 12px !important;    
-  font-style: italic !important}
+.tabbrowser-tab:not([selected="true"])[unread] .tab-label {
+    color: #fff !important;
+    font-size: 12px !important;
+    font-style: italic !important;}
 
 /* Not loaded yet (also visited) */
 .tabbrowser-tab:not([selected="true"])[pending] .tab-label,
-.tabbrowser-tab:not([selected="true"])[visited] .tab-label {    
-  color: #ccc !important;    
-  font-size: 12px !important;    
-  font-style: italic !important}
+.tabbrowser-tab:not([selected="true"])[visited] .tab-label {
+    color: #ccc !important;
+    font-size: 12px !important;
+    font-style: italic !important;}
 
 /* loading */
-.tabbrowser-tab[busy] .tab-text.tab-label {    
-  color: var(--tab-line-color) !important;    
-  font-size: 12px !important;    
-  font-style: normal !important}
+.tabbrowser-tab[busy] .tab-text.tab-label {
+    color: var(--tab-line-color) !important;
+    font-size: 12px !important;
+    font-style: normal !important}
 
 /* ADDON POPUPS */
 
@@ -653,8 +683,8 @@ if you don't see a blue hover color on items on the sidebar, use this method ins
   filter: brightness(9%) !important}
 
 #customizationui-widget-panel[viewId="PanelUI-webext-artur_dubovoy_gmail_com-browser-action-view"] .panel-arrow {
-  filter: brightness(50%) !important}
-
+  filter: brightness(50%) !important} 
+*/
 /* ^ COLORING PART ENDS HERE - FEATURES PART STARTS HERE v */
 
 /* SIDEBAR */

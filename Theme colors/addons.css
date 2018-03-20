@@ -1,6 +1,6 @@
 /* You can find an updated version here: https://github.com/Izheil/Firefox-57-full-dark-theme-with-scrollbars */
 /* Made by Izheil */
-/* Last updated: 18/03/2018 */
+/* Last updated: 09/01/2018 */
 
 /*------ HOW TO MAKE THE ADDON THEMES WORK ------*/
 /* To use this part of the code, you will have to find the dynamic ID of your extensions, and replace it where the 
@@ -10,7 +10,7 @@ moz-extension there in here. If you did everything right, next time you start (o
 be themed (Each addon has a different dynamic URL). */
 
 /*------ UBLOCK ORIGIN BLOCKING PAGE ------*/
-@-moz-document url-prefix(moz-extension://1e3752b9-2b9d-4dd5-8c06-64abbbd32538/document-blocked.html){
+@-moz-document url-prefix(moz-extension://00b72a90-6883-4e98-8785-1620d6b75664/document-blocked.html){
 
 html, body {background-color: #222 !important}
 
@@ -45,7 +45,7 @@ button:hover {
 }
 
 /*------ UBLOCK ORIGIN CONTROL PANEL TOP BUTTONS ------*/
-@-moz-document url-prefix(moz-extension://1e3752b9-2b9d-4dd5-8c06-64abbbd32538/dashboard.html) {
+@-moz-document url-prefix(moz-extension://00b72a90-6883-4e98-8785-1620d6b75664/dashboard.html) {
 
 #dashboard-nav-widgets {background: #222 !important; border-bottom: 1px solid black !important}
 
@@ -65,13 +65,13 @@ a.tabButton.selected {
 }
 
 /*------ UBLOCK ORIGIN CONTROL PANEL CONTENT PAGES ------*/
-@-moz-document url(moz-extension://1e3752b9-2b9d-4dd5-8c06-64abbbd32538/settings.html),
-url(moz-extension://1e3752b9-2b9d-4dd5-8c06-64abbbd32538/3p-filters.html),
-url(moz-extension://1e3752b9-2b9d-4dd5-8c06-64abbbd32538/1p-filters.html),
-url(moz-extension://1e3752b9-2b9d-4dd5-8c06-64abbbd32538/dyna-rules.html),
-url(moz-extension://1e3752b9-2b9d-4dd5-8c06-64abbbd32538/whitelist.html),
-url(moz-extension://1e3752b9-2b9d-4dd5-8c06-64abbbd32538/about.html),
-url(moz-extension://1e3752b9-2b9d-4dd5-8c06-64abbbd32538/advanced-settings.html){
+@-moz-document url(moz-extension://00b72a90-6883-4e98-8785-1620d6b75664/settings.html),
+url(moz-extension://00b72a90-6883-4e98-8785-1620d6b75664/3p-filters.html),
+url(moz-extension://00b72a90-6883-4e98-8785-1620d6b75664/1p-filters.html),
+url(moz-extension://00b72a90-6883-4e98-8785-1620d6b75664/dyna-rules.html),
+url(moz-extension://00b72a90-6883-4e98-8785-1620d6b75664/whitelist.html),
+url(moz-extension://00b72a90-6883-4e98-8785-1620d6b75664/about.html),
+url(moz-extension://00b72a90-6883-4e98-8785-1620d6b75664/advanced-settings.html){
 body, html {
 	background: #333 !important;
 	color: #ccc !important;
@@ -130,7 +130,7 @@ input[type=number] {
 }
 
 /*------ UBLOCK ORIGIN MENU POPUP ------*/
-@-moz-document url-prefix(moz-extension://1e3752b9-2b9d-4dd5-8c06-64abbbd32538/popup.html) {
+@-moz-document url-prefix(moz-extension://00b72a90-6883-4e98-8785-1620d6b75664/popup.html) {
 
 #appinfo {background: #111 !important}
 
@@ -174,7 +174,7 @@ span[data-i18n-tip="popupTipRevertRules"], span[data-i18n-tip="popupTipSaveRules
 }
 
 /*------ UBLOCK ORIGIN UI LOGGER ------*/
-@-moz-document url-prefix(moz-extension://1e3752b9-2b9d-4dd5-8c06-64abbbd32538/logger-ui.html) {
+@-moz-document url-prefix(moz-extension://00b72a90-6883-4e98-8785-1620d6b75664/logger-ui.html) {
 .button, select, input, textarea {
 	-moz-appearance: none !important;
 	background: #444 !important;
@@ -218,7 +218,7 @@ select, input, table, .dialog, textarea {color: #ddd !important}
 }
 
 /*------ FLASH VIDEO DOWNLOADER (youtube) ADDON OPTIONS PANEL------*/
-@-moz-document url(moz-extension://d397f165-d1de-4b91-ae13-85becc05dc48/options.html) {
+@-moz-document url(moz-extension://314f997d-c597-4795-a575-c554dad7c5f4/options.html) {
 body {background-color: #222 !important}
 
 .white_area, #showMain.fvd_settings_container, .options {background-color: #444 !important}
@@ -235,7 +235,7 @@ h2 {color: #FFF !important}
 }
 
 /*------ FLASH VIDEO DOWNLOADER (youtube) ADDON POPUP ------*/
-@-moz-document url(moz-extension://d397f165-d1de-4b91-ae13-85becc05dc48/popup.html) {
+@-moz-document url(moz-extension://314f997d-c597-4795-a575-c554dad7c5f4/popup.html) {
 
 body, .multiple_download_header, #filters_block,
 #snifferNotice {background-color: #333 !important}
@@ -277,7 +277,7 @@ header, select {background: #222 !important; color: #fff !important}
 }
 
 /*------ VIDEO DOWNLOAD HELPER ADDON COMMON PART ------*/
-@-moz-document url-prefix(moz-extension://711939e6-6e2a-4563-8944-9f0fa3b01df7/) {
+@-moz-document url-prefix(moz-extension://e77fa7d8-24fa-4cc1-9cb4-bd12345b34eb/) {
 main {background: #333 !important; color: #ccc !important}
 select {background: #222 !important; color: #fff !important}
 
@@ -324,7 +324,7 @@ a[aria-expanded="true"] {background: #444 !important; color: #0ff !important}
 }
 
 /*------ VIDEO DOWNLOAD HELPER ADDON POPUP ------*/
-@-moz-document url-prefix(moz-extension://711939e6-6e2a-4563-8944-9f0fa3b01df7/content/popup.html) {
+@-moz-document url-prefix(moz-extension://e77fa7d8-24fa-4cc1-9cb4-bd12345b34eb/content/popup.html) {
 html, .content-hits, .vdh-fullwidth.hit-descr, 
 .hit-thumbnail, .click.hit-actions, .vdh-container,
 .no-media {background: #333 !important}
@@ -345,7 +345,7 @@ button:hover {background: #444 !important}
 }
 
 /*------ VIDEO DOWNLOAD HELPER ADDON ALERT UPON DOWNLOAD ------*/
-@-moz-document url-prefix(moz-extension://711939e6-6e2a-4563-8944-9f0fa3b01df7/content/alert.html) {
+@-moz-document url-prefix(moz-extension://e77fa7d8-24fa-4cc1-9cb4-bd12345b34eb/content/alert.html) {
 .dialog-in-tab {background: #222 !important}
 	
 .alert-dialog .alert-dialog-content {
@@ -358,7 +358,7 @@ button:hover {background: #444 !important}
 }
 
 /*------ VIDEO DOWNLOAD HELPER ADDON DETAILS PAGE ------*/
-@-moz-document url-prefix(moz-extension://711939e6-6e2a-4563-8944-9f0fa3b01df7/content/details.html) {
+@-moz-document url-prefix(moz-extension://e77fa7d8-24fa-4cc1-9cb4-bd12345b34eb/content/details.html) {
 header, tr:nth-child(even) {background: #222 !important; color: #fff !important}
 main, tr:nth-child(odd) {background: #333 !important; color: #fff !important}
 }
@@ -389,9 +389,13 @@ li.saveOnlyCurrentWindow:hover {color: #000 !important}
 #sessionsArea, .sessionName span {color: #fff !important}
 
 .tag span {color: #000 !important}
+
+.tabTitle a {color: #09f !important}
+.tabTitle a:hover {color: #0ff !important}
+.tabTitle a:active {color: #0050aa !important}
 }
 
-/* UNDO LAST TAB ADDON */
+/*------ UNDO LAST TAB ADDON ------*/
 @-moz-document url-prefix(moz-extension://5579f940-c966-4837-a163-6e75d7d2c44d/data/popup/index.html) {
 body, html {background: #333 !important}
 

@@ -12,17 +12,18 @@ basic css or <a href="https://www.w3schools.com/colors/colors_picker.asp">color 
 <br />
 This problem doesn't happen if you use a code editor such as notepad++, atom, sublime text...</h4>
 
-<h3>Last update: <b>19/03/2018</b></h3>
+<h3>Last update: <b>20/03/2018</b></h3>
+<p>Files updated:</p>
+<ul>
+ <li><b>userChrome.css</b> -> Changed most rounded buttons to flat ones, also darkened the dialogs a bit more. Changed the library even rows to darker for better localization of items. Everything should be themed now.</li>
+ <li><b>userContent.css</b> -> Fixed most <code>about:</code> pages, and changed the rounded buttons to flat ones.</li>
+ <li><b>addons.css</b> -> Fixed some issue on <b>Tab session manager</b> popup links not showing at all.</li>
+</ul>
+<h3>Pre-Last update: <b>19/03/2018</b></h3>
 <p>Files updated:</p>
 <ul>
  <li><b>userChrome.css</b> -> Themed the library, page information, and most dialog windows. Also fixed some problem with the popups on the <code>about:downloads</code> page, and some menu items in the menu bar.</li>
  <li><b>userContent.css</b> -> Fixed some issue with the preferences panels on <code>about:preferences</code>.</li>
-</ul>
-<h3>Pre-Last update: <b>18/03/2018</b></h3>
-<p>Files updated:</p>
-<ul>
- <li><b>userChrome.css</b> -> Themed the navigation tools on the context menu, and fixed the history sidebar text colors. Also changed the color of the bookmarks folders drag & drop indicator, and the bookmarks bar and popup icons color.</li>
- <li><b>addons.css</b> -> Added a theme for <a href="https://addons.mozilla.org/es/firefox/addon/tab-session-manager/">Tab session manager</a> and <a href="https://addons.mozilla.org/es/firefox/addon/undo-closed-tabs-revived/">Undo closed tabs button</a>.</li>
 </ul>
 
 <h2>FAQ:</h2>
