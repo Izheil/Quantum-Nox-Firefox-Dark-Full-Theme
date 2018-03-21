@@ -104,13 +104,13 @@ to use the close, minimize, and resize buttons */
 
 /* MULTI-ROW BOOKMARKS TOOLBAR */
 
-/* Provide room for up to 1 rows at 20px each + 1px margin top and bottom, 
-change the number of px following the formula of 20*(number of rows)+2 for more rows of bookmarks */
+/* Multiply 22px * the number of rows you want, and type that number of px here
+To use multirow bookmarks you have to delete the /* that is under the #personaltoolbar line */
 #PersonalToolbar {max-height: 22px !important} 
 /*
 #PlacesToolbarItems > box {display: inline-block !important}
 
-#PlacesToolbarItems {overflow: visible !important}
+#PersonalToolbar #PlacesToolbarItems {overflow: visible !important}
 
 /* CONTEXT MENU COMMANDS */
 

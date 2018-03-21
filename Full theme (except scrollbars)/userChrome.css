@@ -277,7 +277,7 @@ menuseparator {
 
 /* Color of default icons on bookmark bar and bookmark popup (folder icons and gear icons) */
 .bookmark-item > .toolbarbutton-icon, 
-.menu-iconic-left .menu-iconic-icon {fill: #ffe793 !important}
+.bookmark-item .menu-iconic-icon {fill: #ffe793 !important}
 
 /* Fix for the space above the "save as" option after the navigation buttons have been eliminated. Change 
 if necessary depending on if you are using a custom OS theme (which may mess up the padding of the separators) */
@@ -823,12 +823,13 @@ to use the close, minimize, and resize buttons */
 
 /* MULTI-ROW BOOKMARKS TOOLBAR */
 
-/* Provide room for up to 1 row at 20px each + 1px margin top and bottom */
+/* Multiply 22px * the number of rows you want, and type that number of px here
+To use multirow bookmarks you have to delete the /* that is under the #personaltoolbar line */
 #PersonalToolbar {max-height: 22px !important} 
 /*
 #PlacesToolbarItems > box {display: inline-block !important}
 
-#PlacesToolbarItems {overflow: visible !important}
+#PersonalToolbar #PlacesToolbarItems {overflow: visible !important}
 
 /* CONTEXT MENU COMMANDS */
 

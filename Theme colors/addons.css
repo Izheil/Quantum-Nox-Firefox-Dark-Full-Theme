@@ -5,8 +5,8 @@
 /*------ HOW TO MAKE THE ADDON THEMES WORK ------*/
 /* To use this part of the code, you will have to find the dynamic ID of your extensions, and replace it where the 
 random numbers are (the numbers after moz-extension://) on each of the sections of the extension.
-To find these, just open the advanced settings page from the selected addon, and copy the numbers in the URL after
-moz-extension there in here. If you did everything right, next time you start (or restart) firefox, the addon will 
+To find these, just open about:debugging, and copy the UUID numbers of the extension, and paste them in the URL after
+moz-extension in here. If you did everything right, next time you start (or restart) firefox, the addon will 
 be themed (Each addon has a different dynamic URL). */
 
 /*------ UBLOCK ORIGIN BLOCKING PAGE ------*/
@@ -77,7 +77,8 @@ body, html {
 	color: #ccc !important;
 }
 
-a:link {color: #0084ff !important}
+a:link {color: #09f !important}
+a:visited {color: #0070aa !important}
 a:hover {color: #0ff !important}
 a:active {color: #0050aa !important}
 
@@ -85,26 +86,46 @@ a.fa.info, a.fa.mustread, a.fa.support,
 .fa.status.cache, .fa.status.updating {color: #bbb !important}
 
 button:not(.whatisthis):not(#buttonUpdate) {
-	background: linear-gradient(#333, #111) !important;
-    color: #ccc !important;
-	border: 1px solid #000 !important}
+  -moz-appearance: none !important;
+  border-radius: 3px !important;
+  background: #555 !important;
+  color: #ddd !important;
+  border: none !important}
 
 button:not(.whatisthis):not(#buttonUpdate):hover {
-	background: linear-gradient(#111, #333) !important;
-    color: #fff !important}
+  background: #111 !important;
+  color: #ddd !important}
 
 button.whatisthis {filter: brightness(200%) !important}
 
+button[disabled] {opacity: 0.5 !important}
+
 #buttonUpdate, button.important {
-	background: linear-gradient(#fa0, #a20) !important;
-	background-image: linear-gradient(#fa0, #a20) !important;
-    color: #ddd !important;
-	border: 1px solid #f50 !important}
+  -moz-appearance: none !important;
+  border-radius: 3px !important;
+  background: #ffbb33 !important;
+  color: #000 !important;
+  border: none !important}
 
 #buttonUpdate:hover, button.important:hover {
-	background: linear-gradient(#a20, #fa0) !important;
-	background-image: linear-gradient(#a20, #fa0) !important;
-    color: #fff !important}
+  background: #cc8800 !important;
+  color: #ddd !important}
+
+.cm-search-widget, .CodeMirror-gutters, 
+.CodeMirror-merge-gap {background: #222 !important; border: none !important}
+
+.cm-search-widget {border-bottom: 1px solid #000 !important;}
+
+.CodeMirror, .CodeMirror-merge, .cm-search-widget input {
+	-moz-appearance: none !important;
+	background: #555 !important; 
+	color: #aaa !important; 
+	border: none !important}
+
+.CodeMirror-line 
+
+.cm-comment {color: #aaa !important}
+.cm-staticnetBlock {color: #f62 !important}
 
 a.fa.info.important {color: #fa0 !important}
 
@@ -183,21 +204,29 @@ span[data-src="/"], span[data-src="."] {
 	background: #444 !important;
 	border: 1px solid #000 !important}
 
-td {border: 1px solid #000 !important}
+td {border: 1px solid #000 !important; background: rgba(255,255,255,0.1) !important}
 
 td:hover {background: rgba(255,255,255,0.2)}
 
 select, input, table, .dialog, textarea {color: #ddd !important}
 
-.permatoolbar, .vscrollable, table, html, .dialog code, .dialog select, .dialog textarea {
+.permatoolbar, .vscrollable, table, html, .dialog code, .dialog textarea {
 	background: #222 !important}
+
+.dialog tr {background-color: #555 !important}
+
+.dialog select  {background: #666 !important}
+.dialog select:hover {background: #333 !important}
+
+#netInspector div#popupContainer {
+	background: #333 !important; 
+	border: 1px solid #111 !important}
+
+#popupContainer > div {background: #555 !important}
 
 .toolbar td, .dialog {
 	border: none !important;
 	background: #444 !important}
-
-.dialog tr {
-	background-image: linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.8)) !important}
 
 .headers {border-bottom: 1px solid #000 !important}
 
@@ -206,6 +235,28 @@ select, input, table, .dialog, textarea {color: #ddd !important}
 	color: #ccc !important;
 	border: 1px solid black !important;
 	border-bottom: 1px solid transparent !important}
+
+.dialog .toolbar span#saveRules {	
+	background-color: #555 !important; 
+	border: 1px solid #000 !important;
+	color: #ddd !important}
+
+.dialog .toolbar span#saveRules:hover {	
+	background-color: #333 !important;
+	color: #fff !important}
+
+button.important {
+  -moz-appearance: none !important;
+  border-radius: 3px !important;
+  background: #ffbb33 !important;
+  color: #000 !important;
+  border: none !important}
+
+button.important:hover {
+  background: #cc8800 !important;
+  color: #ddd !important}
+
+.action .noop:hover, .action.noop.own {background: #ddd !important}
 
 .header.dynamic, .header.static {
 	background-color: #333 !important; 
@@ -282,7 +333,7 @@ header, select {background: #222 !important; color: #fff !important}
 /*------ VIDEO DOWNLOAD HELPER ADDON COMMON PART ------*/
 @-moz-document url-prefix(moz-extension://e77fa7d8-24fa-4cc1-9cb4-bd12345b34eb/) {
 main {background: #333 !important; color: #ccc !important}
-select {background: #222 !important; color: #fff !important}
+select {color: #000 !important; filter: invert(90%) hue-rotate(200deg) !important}
 
 .dropdown-toggle {background: #333 !important; border-bottom: 1px solid #fff !important}
 
@@ -293,30 +344,53 @@ a[aria-expanded="true"] {background: #444 !important; color: #0ff !important}
 
 .btn-toolbar {background: #333 !important; color: #ccc !important}
 
-.btn-outline-secondary, .btn-secondary, header {
+header {
 	background: linear-gradient(#333,#111) !important; 
 	color: #ddd !important;
 	border: 1px solid #000 !important}
 
-.btn-outline-secondary:hover, .btn-secondary:hover, .btn-success:hover {color: #fff !important}
-.btn-outline-secondary:active, .btn-secondary:active {background: linear-gradient(#111,#333) !important}
+.btn-outline-secondary, .btn-secondary, 
+.input-group-btn .btn, .list li {
+  -moz-appearance: none !important;
+  background: #555 !important;
+  color: #ddd !important;
+  border: 1px solid #444 !important;
+  outline: none !important;
+  box-shadow: none !important}
 
-.btn-success {
-	background: linear-gradient(#080,#050) !important; 
+.btn-outline-primary {
+  -moz-appearance: none !important;
+  border-radius: 3px !important;
+  background: #05a !important;
+  color: #ddd !important;
+  border: 1px solid #0040aa !important}
+
+.btn-outline-primary:not[disabled]:hover {
+	background: #003080 !important;
+    color: #dff !important}
+
+.btn-outline-secondary:hover, .btn-secondary:hover, .btn-success:hover {
+	background: #111 !important;
+	color: #fff !important}
+
+.btn-success  {
+	-moz-appearance: none !important;
+	background: #00b300 !important; 
 	color: #ddd !important;
 	border: 1px solid #030 !important}
 
-.btn-success:active {background: linear-gradient(#050,#080) !important}
+.btn-success:active {background: #008000 !important}
 
-.form-control {
-	background: #222 !important;
-	border:1px solid #000 !important;
-	color: #fff !important}
+input, .input-license input, textarea {
+	-moz-appearance: none !important;
+	background: #555 !important;
+	color: #fff !important;
+	border: none !important}
 
 .section-header, .dropdown-item:hover {background: #555 !important; color: #fff !important}
 .card-body, .dropdown-menu.show, .dropdown-item {background: #444 !important; color: #ccc !important}
 
-.modal-content {background: #333 !important}
+.modal-content, .list-column, footer, .weh-shf {background: #333 !important}
 .modal-header, .param {background: #222 !important; color: #fff !important; border-bottom: 1px solid #000 !important}
 .modal-body {color: #ddd !important}
 .modal-footer {border-top: 1px solid #888 !important}
@@ -332,7 +406,14 @@ html, .content-hits, .vdh-fullwidth.hit-descr,
 .hit-thumbnail, .click.hit-actions, .vdh-container,
 .no-media {background: #333 !important}
 
-.vdh-fullwidth.hit-descr:hover, .vdh-container:hover,
+.vdh-container {
+	border-bottom: 1px solid #000 !important;
+	border-top: 1px solid #000 !important}
+
+.click.hit, .vdh-fullwidth.hit-descr, .click.hit-actions {border: none !important}
+.click.hit-actions:hover {border-left: 1px solid #000 !important}
+
+.vdh-fullwidth.hit-descr:hover > .vdh-container, .vdh-container:hover,
 .hit-thumbnail:hover, .click.hit-actions:hover {background: #444 !important}
 
 footer, .buttons-opener, button, .buttons-container, .default-check,
@@ -391,6 +472,14 @@ li.saveOnlyCurrentWindow:hover {color: #000 !important}
 
 #sessionsArea, .sessionName span {color: #fff !important}
 
+input:not(#saveButton):not(#saveOptionButton):not(#removeSessions):not(#export):not(#urlImportSave), 
+select, textarea {
+	filter: invert(85%) hue-rotate(185deg) !important}
+
+#saveButton, #saveOptionButton {background: #555 !important}
+
+#saveButton:not(:hover) {color: #ddd !important}
+
 .tag span {color: #000 !important}
 
 .tabTitle a {color: #09f !important}
@@ -414,4 +503,5 @@ li[data-disabled="true"]:hover {background-color: rgba(0,0,0, 0.2) !important}
 
 .separator {
 	border-top: 1px solid #222 !important;
-	box-shadow: inset 1px 1px 0 #000 !important}}
+	box-shadow: inset 1px 1px 0 #000 !important}
+}

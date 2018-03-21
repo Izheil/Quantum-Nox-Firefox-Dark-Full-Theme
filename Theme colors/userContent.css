@@ -14,7 +14,10 @@ from the addons rules every time we update anything here */
 	--in-content-box-background: #444 !important;
 	--in-content-box-background-hover: #555 !important;
 	--in-content-box-background-active: #333 !important;
-	--in-content-box-border-color: #777 !important}
+	--in-content-box-border-color: #777 !important;
+	--in-content-primary-button-background: #05a !important;
+	--in-content-primary-button-background-hover: #003080 !important;
+	--in-content-primary-button-background-active: #002070 !important}
 
 /* This part covers the preferences page update scrollbox (No, I couldn't put it inside the preferences section) */
 #historyItems .scrollbox-innerbox {background-color: #444 !important}

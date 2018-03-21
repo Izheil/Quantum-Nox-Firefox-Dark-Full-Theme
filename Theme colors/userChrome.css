@@ -277,7 +277,7 @@ menuseparator {
 
 /* Color of default icons on bookmark bar and bookmark popup (folder icons and gear icons) */
 .bookmark-item > .toolbarbutton-icon, 
-.menu-iconic-left .menu-iconic-icon {fill: #ffe793 !important}
+.bookmark-item .menu-iconic-icon {fill: #ffe793 !important}
 
 /* Fix for the space above the "save as" option after the navigation buttons have been eliminated. Change 
 if necessary depending on if you are using a custom OS theme (which may mess up the padding of the separators) */
