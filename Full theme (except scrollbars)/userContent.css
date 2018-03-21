@@ -817,17 +817,30 @@ html, .App-content, tr.LanguageTools-table-row:nth-child(even),
 .ExpandableCard .Card-header, span .Paginate-item.disabled.Paginate-previous,
 .Card-header, .Card-footer-text, .Card-footer-link, a.ShowMoreCard-expand-link,
 a.Addon-all-reviews-link, .MetadataCard, .Card-contents ul li, .LandingPage-header,
-.highlight {
+.highlight, .AutoSearchInput-query  {
 	background-color: #303030 !important;
 	color: #ccc !important}
 
+#lang-picker {
+	filter: invert(75%) !important;
+	border: 1px solid #ddd !important;
+	fill: #000 !important}
+
+.HeroSection-content {color: #fff !important}
+
+#AddAddonToCollection-select
+
 .Search .AddonsCard-list .SearchResult {border-bottom: 1px solid #000 !important}
 
-button {
+.PermissionsCard-list .Icon {filter: brightness(700%) !important}
+
+button:not(.pswp__button):not(.pswp__ui):not(.AutoSearchInput-submit-button):not(.Icon-arrow):not(.DropdownMenu-button), 
+.PermissionCard-learn-more, .AddAddonToCollection-select {
 	background-color: #555 !important;
 	color: #FFF !important}
 
-button:hover {
+button:not(.pswp__button):not(.pswp__ui):not(.AutoSearchInput-submit-button):not(.Icon-arrow):not(.DropdownMenu-button):hover, 
+.PermissionCard-learn-more:hover, .AddAddonToCollection-select:hover {
 	background-color: #444 !important;
 	color: #1494FB !important}
 
