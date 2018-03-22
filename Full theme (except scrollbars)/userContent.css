@@ -1,6 +1,6 @@
 /* You can find an updated version here: https://github.com/Izheil/Firefox-57-full-dark-theme-with-scrollbars */
 /* Made by Izheil */
-/* Last updated: 20/03/2018 */
+/* Last updated: 22/03/2018 */
 
 /* This part imports the Addons file if there is one, so that you don't have to edit the dynamic URL
 from the addons rules every time we update anything here */
@@ -81,7 +81,7 @@ only the images */
 
 /* This is a little fix for all pages in case you have a dark windows theme, so that the 
 letters will have a blue neutral color to be seen in either a white or dark background for 
-text-inputting things. Delete the final /* to use -> *//*
+text-inputting things (Feel free to comment it out with if you don't like it) *//*
 @-moz-document url-prefix(http){
 
 form select, input[type=text], input[type=email], input[type=password], input[type=date], 
@@ -168,10 +168,10 @@ body {
 
 .prefs-pane-button button:active {background-color: #050505 !important}
 
-/* This adds a background image of your choice in the main area. 
+/* This adds a background image of your choice in the main area 
 Delete the final /* to use -> *//*
 body {
-  background-image: url("file:///C:/Users/") !important;
+  background-image: url("file:///") !important;
   background-size: cover !important;
   background-position: center !important}
 
@@ -898,7 +898,7 @@ p, a, h4, h2, blockquote, li, .num-results
 #addon-list-options li:not(.selected) a:focus, .pagination li:not(.selected) a:focus 
 {background-color: #151515 !important}
 
-a.SearchResult-link:hover h2, span:hover, a:hover {color: #1494FB !important}
+a.SearchResult-link:hover h2, span:not(.Addon-author):hover, a:hover {color: #1494FB !important}
 
 h2.Home-SubjectShelf-subheading, .CardList h2.Card-header, 
 h1, .Paginate-page-number, .Badge, a.Button.Categories-link, .install a * 

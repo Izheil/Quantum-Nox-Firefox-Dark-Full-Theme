@@ -1,6 +1,6 @@
 /* You can find an updated version here: https://github.com/Izheil/Firefox-57-full-dark-theme-with-scrollbars */
 /* Made by Izheil */
-/* Last updated: 20/03/2018 */
+/* Last updated: 22/03/2018 */
 
 /* DO NOT DELETE THIS LINE */
 @namespace url("http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul");
@@ -105,6 +105,11 @@ dialog #openHandlerBox menulist:hover {
 dialog groupbox {
   -moz-appearance: none !important; 
   border: 1px solid #666 !important}
+
+/* This is aimed for notification popups */
+window:not(#main-window):not(#CookiesDialog):not(#SignonViewerDialog) > * {
+  background-color: #444 !important; 
+  color: #fff !important}
 
 /* Color for most buttons */
 dialog button {

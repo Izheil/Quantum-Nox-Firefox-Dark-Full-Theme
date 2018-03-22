@@ -12,18 +12,19 @@ basic css or <a href="https://www.w3schools.com/colors/colors_picker.asp">color 
 <br />
 This problem doesn't happen if you use a code editor such as notepad++, atom, sublime text...</h4>
 
-<h3>Last update: <b>21/03/2018</b></h3>
+<h3>Last update: <b>22/03/2018</b></h3>
+<p>Files updated:</p>
+<ul>
+ <li><b>userChrome.css</b> -> Now notification popups created by addons should also be themed.</li>
+ <li><b>addons.css</b> -> Added the <a href="https://addons.mozilla.org/es/firefox/addon/s3download-statusbar/">Download manager (S3)</a> addon.</li>
+ <li><b>userContent.css</b> -> Minor fix on the Mozilla addons page.</li>
+</ul>
+
+<h3>Pre-Last update: <b>21/03/2018</b></h3>
 <p>Files updated:</p>
 <ul>
  <li><b>userChrome.css</b> -> Added the option to change tab line from userChrome (even to Windows OS theme color).</li>
  <li><b>userContent.css</b> -> Added the option to add an image as background on the <code>about:home</code> and <code>about:newtab</code> page.</li>
-</ul>
-<h3>Pre-Last update: <b>20/03/2018</b></h3>
-<p>Files updated:</p>
-<ul>
- <li><b>userChrome.css</b> -> Changed most rounded buttons to flat ones, also darkened the dialogs a bit more. Changed the library even rows to darker for better localization of items. Everything should be themed now.</li>
- <li><b>userContent.css</b> -> Fixed most <code>about:</code> pages, and changed the rounded buttons to flat ones.</li>
- <li><b>addons.css</b> -> Fixed some issue on <b>Tab session manager</b> popup links not showing at all.</li>
 </ul>
 
 <h2>FAQ:</h2>
