@@ -81,9 +81,8 @@ only the images */
 
 /* This is a little fix for all pages in case you have a dark windows theme, so that the 
 letters will have a blue neutral color to be seen in either a white or dark background for 
-text-inputting things (Feel free to comment it out with if you don't like it) *//*
+text-inputting things. Delete the last /* to delete -> *//*
 @-moz-document url-prefix(http){
-
 form select, input[type=text], input[type=email], input[type=password], input[type=date], 
 input[type=datetime-local], input[type=time], input[type=week], input[type=month], 
 input[type=number], input[type=search], input[type=tel], input[type=url], textarea 
@@ -823,11 +822,6 @@ a.Addon-all-reviews-link, .MetadataCard, .Card-contents ul li, .LandingPage-head
 .highlight, .AutoSearchInput-query  {
 	background-color: #303030 !important;
 	color: #ccc !important}
-
-#lang-picker {
-	filter: invert(75%) !important;
-	border: 1px solid #ddd !important;
-	fill: #000 !important}
 
 .HeroSection-content {color: #fff !important}
 

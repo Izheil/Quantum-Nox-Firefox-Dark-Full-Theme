@@ -375,7 +375,8 @@ if necessary depending on if you are using a custom OS theme (which may mess up 
 
 /* A fix for bookmark preferences... so that some boxes won't appear brighter than others */
 #bookmarkproperties #editBMPanel_namePicker, 
-#bookmarkproperties #editBMPanel_tagsField {
+#bookmarkproperties #editBMPanel_tagsField,
+#bookmarkproperties #editBMPanel_tagsSelector {
   background-color: #444 !important}
 
 /* This changes the same text boxes on hover */

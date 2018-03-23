@@ -1,6 +1,6 @@
 /* You can find an updated version here: https://github.com/Izheil/Firefox-57-full-dark-theme-with-scrollbars */
 /* Made by Izheil */
-/* Last updated: 20/03/2018 */
+/* Last updated: 23/03/2018 */
 
 /*------ HOW TO MAKE THE ADDON THEMES WORK ------*/
 /* To use this part of the code, you will have to find the dynamic ID of your extensions, and replace it where the 
@@ -20,28 +20,20 @@ p, span {color: #ccc !important}
 
 .fa {color: #fa0 !important}
 
-select {
-	-moz-appearance: none !important;
-	background-color: #333 !important;
-	border: 1px solid black !important;
-	color: #ccc !important}
-
-select:hover {
-	background-color: #444 !important}
-
 a:link {color: #0084ff !important}
 a:hover {color: #0ff !important}
 a:active {color: #0050aa !important}
 
 button {
-	-moz-appearance: none !important;
-	background: linear-gradient(#333, #111) !important;
-    	color: #ccc !important;
-	border: 1px solid #000 !important}
+  -moz-appearance: none !important;
+  border-radius: 3px !important;
+  background: #333 !important;
+  color: #ddd !important;
+  border: none !important}
 
 button:hover {
-	background: linear-gradient(#111, #333) !important;
-    	color: #fff !important}
+  background: #111 !important;
+  color: #ddd !important}
 }
 
 /*------ UBLOCK ORIGIN CONTROL PANEL TOP BUTTONS ------*/
@@ -199,7 +191,7 @@ span[data-src="/"], span[data-src="."] {
 
 /*------ UBLOCK ORIGIN UI LOGGER ------*/
 @-moz-document url-prefix(moz-extension://00b72a90-6883-4e98-8785-1620d6b75664/logger-ui.html) {
-.button, select, input, textarea {
+.button, input, textarea {
 	-moz-appearance: none !important;
 	background: #444 !important;
 	border: 1px solid #000 !important}
@@ -208,15 +200,12 @@ td {border: 1px solid #000 !important; background: rgba(255,255,255,0.1) !import
 
 td:hover {background: rgba(255,255,255,0.2)}
 
-select, input, table, .dialog, textarea {color: #ddd !important}
+input, table, .dialog, textarea {color: #ddd !important}
 
 .permatoolbar, .vscrollable, table, html, .dialog code, .dialog textarea {
 	background: #222 !important}
 
 .dialog tr {background-color: #555 !important}
-
-.dialog select  {background: #666 !important}
-.dialog select:hover {background: #333 !important}
 
 #netInspector div#popupContainer {
 	background: #333 !important; 
@@ -320,7 +309,7 @@ body, .multiple_download_header, #filters_block,
 /*------ VIDEO DOWNLOAD HELPER ADDON OPTIONS PANEL ------*/
 @-moz-document url-prefix(moz-extension://711939e6-6e2a-4563-8944-9f0fa3b01df7/content/settings.html) {
 main, .btn-toolbar {background: #333 !important; color: #ccc !important}
-header, select {background: #222 !important; color: #fff !important}
+header {background: #222 !important; color: #fff !important}
 
 .dropdown-toggle {background: #333 !important; border-bottom: 1px solid #fff !important}
 
@@ -333,7 +322,6 @@ header, select {background: #222 !important; color: #fff !important}
 /*------ VIDEO DOWNLOAD HELPER ADDON COMMON PART ------*/
 @-moz-document url-prefix(moz-extension://e77fa7d8-24fa-4cc1-9cb4-bd12345b34eb/) {
 main {background: #333 !important; color: #ccc !important}
-select {color: #000 !important; filter: invert(90%) hue-rotate(200deg) !important}
 
 .dropdown-toggle {background: #333 !important; border-bottom: 1px solid #fff !important}
 
@@ -473,7 +461,7 @@ li.saveOnlyCurrentWindow:hover {color: #000 !important}
 #sessionsArea, .sessionName span {color: #fff !important}
 
 input:not(#saveButton):not(#saveOptionButton):not(#removeSessions):not(#export):not(#urlImportSave), 
-select, textarea {
+textarea {
 	filter: invert(85%) hue-rotate(185deg) !important}
 
 #saveButton, #saveOptionButton {background: #555 !important}
@@ -504,4 +492,133 @@ li[data-disabled="true"]:hover {background-color: rgba(0,0,0, 0.2) !important}
 .separator {
 	border-top: 1px solid #222 !important;
 	box-shadow: inset 1px 1px 0 #000 !important}
+}
+
+/*------ DOWNLOAD MANAGER (S3) ADDON CONFIGURATION PAGE ------*/
+@-moz-document url-prefix(moz-extension://fa4d3e3d-bb33-4eba-b377-525ac3ee55b4/content/options.html),
+url-prefix(moz-extension://fa4d3e3d-bb33-4eba-b377-525ac3ee55b4/content/create_new_downloads.html) {
+body, html {background: #222 !important; color: #fff !important}
+
+#tabsBox .tabsBox {background: #333 !important; border: 1px solid #555 !important}
+
+#tabs a:not(.selected) {background-color: #383838 !important; color: #aaa !important}
+
+#tabs a.selected, #generalTab, #appearanceTab, #virusScanTab,
+#download_historyTab, .caption span {background-color: #444 !important; color: #ddd !important}
+
+#tabs-generalTab a:not(.selected), #appearanceTab a:not(.selected) 
+{background-color: #505050 !important; color: #aaa !important}
+
+#tabs-generalTab a.selected, #generalTab--features, #generalTab--statusMode, #generalTab--queue,
+#tabs-appearanceTab a.selected, #appearanceTab--style, #appearanceTab--layout 
+{background-color: #555 !important; color: #ddd !important; border: none !important}
+
+.groupbox {border: 1px solid #666 !important; box-shadow: 0 0 10px #000 !important}
+.groupbox:hover:not([disabled]) {border: 1px solid #AF5CCB !important; box-shadow: 0 0 10px #712a89 !important}
+
+.groupbox a:link, .groupbox a {color: #09f !important}
+.groupbox a:visited {color: #0070aa !important}
+.groupbox a:hover {color: #0ff !important}
+.groupbox a:active {color: #0050aa !important}
+
+input:not([type="number"]):not([type="checkbox"]):not([type="button"]):not([type="radio"]), textarea {
+	-moz-appearance: none !important; 
+	background: #323232 !important; 
+	color: #ddd !important;
+	border: 1px solid #666 !important}
+
+#current_locale {border: 1px solid #666 !important}
+	
+.caption > div {
+	border-radius: 6px !important; 
+	background: #666 !important; 
+	border: none !important}
+
+#exclude_links_placeholder > div, 
+#exclude_links_placeholder {border: none !important; background: none !important}
+
+button, input[type="button"] {  
+  -moz-appearance: none !important;
+  border-radius: 3px !important;
+  background-color: #666 !important;
+  color: #ddd !important;
+  border: none !important}
+
+button:hover, input[type="button"]:hover {  
+  background-color: #222 !important;
+  color: #fff !important;
+  box-shadow: none !important}
+
+#save_settings, #copy_settings, #load_settings, 
+#reset_settings {padding: 0.5em !important}
+}
+
+/*------ DOWNLOAD MANAGER (S3) ADDON DOWNLOADS HISTORY PAGE ------*/
+@-moz-document url-prefix(moz-extension://fa4d3e3d-bb33-4eba-b377-525ac3ee55b4/content/download_history.html),
+url-prefix(moz-extension://fa4d3e3d-bb33-4eba-b377-525ac3ee55b4/content/file_checksum.html) {
+body, html {background: #333 !important; color: #fff !important}
+
+#download_action_head {background: linear-gradient(#333, #111) !important}
+
+#s3downbar-ibmbeeacmbeeaebmfjpmnlgkhoejinha .tooltip_box {
+	background: linear-gradient(#333, #666) !important;
+	color: #ddd !important;
+	border: 1px solid #444 !important}
+
+#s3downbar_download_tooltip_data_box > .download_data_tooltip_data > tbody > tr > td > div {
+	color: #fff !important}
+
+#s3downbar_download_tooltip_from {background-color: #333 !important; color: #05f !important}
+
+#download_action_head input[type="button"] {
+  -moz-appearance: none !important;
+  border-radius: 3px !important;
+  background-color: #111 !important;
+  color: #ddd !important;
+  border: none !important}
+
+#download_action_head input[type="button"]:hover {
+  background-color: #555 !important;
+  color: #fff !important}
+
+#s3downbar_searchbox {
+	-moz-appearance: none !important; 
+	background: #323232 !important; 
+	color: #ddd !important;
+	border: 1px solid #666 !important}
+
+#download_list_head {background: linear-gradient(#333, #555) !important}
+
+#download_list_head, #download_list_head div {border-color: #222 !important}
+
+.progress_bar[value] {background-color: #333 !important}
+
+#download_list_box:not([start_draw="true"]) .grid_rows[is_selected="true"] {
+	background-color: rgba(32, 96, 32, 0.3) !important;
+	color: #53c653 !important}
+
+#download_list_box:not([start_draw="true"]) .grid_rows:hover {
+	background-color: rgba(255,255,255, 0.25) !important}
+}
+
+/*------ DOWNLOAD MANAGER (S3) ADDON DOWNLOADS POPUP ------*/
+@-moz-document url-prefix(moz-extension://fa4d3e3d-bb33-4eba-b377-525ac3ee55b4/content/popup.html) {
+#s3downbar-ibmbeeacmbeeaebmfjpmnlgkhoejinha:not(.s3dmBox) {background-color: #333 !important; color: #fff !important}
+#s3downbar_hide_button, #s3downbar_main_menu_button, #s3downbar_clear_button,
+#s3downbar_holder_summary_progress {
+	background-color: #000 !important; 
+	color: #fff !important;
+	border-color: #222 !important}}
+
+/*------ DOWNLOAD MANAGER (S3) ADDON INFORMATION POPUP ------*/
+@-moz-document url-prefix(http) {
+#s3downbar-ibmbeeacmbeeaebmfjpmnlgkhoejinha .tooltip_box {
+	background: linear-gradient(#333, #666) !important;
+	color: #ddd !important;
+	border: 1px solid #444 !important}
+
+#s3downbar_download_tooltip_data_box > .download_data_tooltip_data > tbody > tr > td > div {
+	color: #fff !important}
+
+#s3downbar_download_tooltip_from {background-color: #333 !important; color: #05f !important}
 }

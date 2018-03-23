@@ -12,19 +12,18 @@ basic css or <a href="https://www.w3schools.com/colors/colors_picker.asp">color 
 <br />
 This problem doesn't happen if you use a code editor such as notepad++, atom, sublime text...</h4>
 
-<h3>Last update: <b>22/03/2018</b></h3>
+<h3>Last update: <b>23/03/2018</b></h3>
 <p>Files updated:</p>
+<ul>
+ <li><b>userContent.css</b> -> Deleted some unnecesary lines.</li>
+ <li><b>checkboxes.uc.js</b> -> With this file you can now turn white checkboxes to a dark version (OS's with dark checkboxes, radio buttons, and select buttons must NOT install it).</li>
+ <li><b>addons.css</b> -> Deleted the lines that refered to the selectors that are darked by the <b>checkboxes.uc.js</b> file now.</li>
+</ul>
+<h3>Pre-Last update: <b>22/03/2018</b></h3>
 <ul>
  <li><b>userChrome.css</b> -> Now notification popups created by addons should also be themed.</li>
  <li><b>addons.css</b> -> Added the <a href="https://addons.mozilla.org/es/firefox/addon/s3download-statusbar/">Download manager (S3)</a> addon.</li>
  <li><b>userContent.css</b> -> Minor fix on the Mozilla addons page.</li>
-</ul>
-
-<h3>Pre-Last update: <b>21/03/2018</b></h3>
-<p>Files updated:</p>
-<ul>
- <li><b>userChrome.css</b> -> Added the option to change tab line from userChrome (even to Windows OS theme color).</li>
- <li><b>userContent.css</b> -> Added the option to add an image as background on the <code>about:home</code> and <code>about:newtab</code> page.</li>
 </ul>
 
 <h2>FAQ:</h2>
