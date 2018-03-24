@@ -17,7 +17,7 @@ This problem doesn't happen if you use a code editor such as notepad++, atom, su
 <ul>
  <li><b>userContent.css</b> -> Fixed some issues with Mozilla addons page selectors.</li>
  <li><b>checkboxes.uc.js</b> -> Fixed some issues with Mozilla addons page selectors.</li>
- <li><b>addons.css</b> -> Themed <a href="https://addons.mozilla.org/es/firefox/addon/privacy-badger17/">Privacy badger</a> addon.</li>
+ <li><b>addons.css</b> -> Themed <a href="https://addons.mozilla.org/es/firefox/addon/privacy-badger17/">Privacy badger</a> and <a href="https://addons.mozilla.org/es/firefox/addon/noscript/">Noscript</a> addons. Also fixed some issue with the Download manager (s3) addon theming.</li>
 </ul>
 <h3>Pre-Last update: <b>23/03/2018</b></h3>
 <ul>

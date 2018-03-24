@@ -528,6 +528,11 @@ input:not([type="number"]):not([type="checkbox"]):not([type="button"]):not([type
 	color: #ddd !important;
 	border: 1px solid #666 !important}
 
+#customStyle_form table.table_colors tr {background: none !important}
+
+#customStyle_form .table_colors input:hover,
+#appearanceTab--layout input[type="color"]:hover {border: 1px solid #fff !important}
+
 #current_locale {border: 1px solid #666 !important}
 	
 .caption > div {
@@ -561,16 +566,6 @@ body, html {background: #333 !important; color: #fff !important}
 
 #download_action_head {background: linear-gradient(#333, #111) !important}
 
-#s3downbar-ibmbeeacmbeeaebmfjpmnlgkhoejinha .tooltip_box {
-	background: linear-gradient(#333, #666) !important;
-	color: #ddd !important;
-	border: 1px solid #444 !important}
-
-#s3downbar_download_tooltip_data_box > .download_data_tooltip_data > tbody > tr > td > div {
-	color: #fff !important}
-
-#s3downbar_download_tooltip_from {background-color: #333 !important; color: #05f !important}
-
 #download_action_head input[type="button"] {
   -moz-appearance: none !important;
   border-radius: 3px !important;
@@ -600,6 +595,16 @@ body, html {background: #333 !important; color: #fff !important}
 
 #download_list_box:not([start_draw="true"]) .grid_rows:hover {
 	background-color: rgba(255,255,255, 0.25) !important}
+
+#s3downbar-ibmbeeacmbeeaebmfjpmnlgkhoejinha .contextmenu_box {
+	border: 1px solid #000 !important;
+	background: #444 !important;
+	color: #ddd !important;
+	box-shadow: 0 0 10px #000 !important}
+
+#s3downbar-ibmbeeacmbeeaebmfjpmnlgkhoejinha .contextmenu_box .contextmenu_menu:hover {
+	background-color: #555 !important;
+	color: #fff !important}
 }
 
 /*------ DOWNLOAD MANAGER (S3) ADDON DOWNLOADS POPUP ------*/
@@ -609,10 +614,21 @@ body, html {background: #333 !important; color: #fff !important}
 #s3downbar_holder_summary_progress {
 	background-color: #000 !important; 
 	color: #fff !important;
-	border-color: #222 !important}}
+	border-color: #222 !important}
 
-/*------ DOWNLOAD MANAGER (S3) ADDON INFORMATION POPUP ------*/
-@-moz-document url-prefix(http) {
+#s3downbar-ibmbeeacmbeeaebmfjpmnlgkhoejinha .contextmenu_box {
+	border: 1px solid #000 !important;
+	background: #444 !important;
+	color: #ddd !important;
+	box-shadow: 0 0 10px #000 !important}
+
+#s3downbar-ibmbeeacmbeeaebmfjpmnlgkhoejinha .contextmenu_box .contextmenu_menu:hover {
+	background-color: #555 !important;
+	color: #fff !important}
+}
+
+/*------ DOWNLOAD MANAGER (S3) ADDON INFORMATION BOTTOM BAR ------*/
+@-moz-document url-prefix(http), url-prefix(moz-extension://) {
 #s3downbar-ibmbeeacmbeeaebmfjpmnlgkhoejinha .tooltip_box {
 	background: linear-gradient(#333, #666) !important;
 	color: #ddd !important;
@@ -718,4 +734,75 @@ a:hover {color: #f0a15c !important}
 	background: #333 !important; 
 	color: #ccc !important;
 	border-top: 1px solid #555 !important}
+}
+
+/*------ NOSCRIPT ADDON SETTINGS AND PROMPT PAGE ------*/
+@-moz-document url-prefix(moz-extension://3672f367-b277-4e0d-9a46-650dc4c4534f/ui/options.html),
+url-prefix(moz-extension://3672f367-b277-4e0d-9a46-650dc4c4534f/ui/prompt.html) {
+body, html {background: #222 !important}
+
+#main {background: linear-gradient(#555,#111) !important; color: #fff !important}
+
+#message {color: #fff !important}
+
+h1 {color: #fff !important}
+span {color: #ddd !important}
+
+.flextabs__content, .flextabs__toggle[aria-expanded="true"] {
+	background: #444 !important;
+	color: #ddd !important}
+
+.flextabs__toggle[aria-expanded="false"] {
+	background: #404040 !important;
+	color: #aaa !important}
+
+button:not(.flextabs__toggle) {
+  -moz-appearance: none !important;
+  border-radius: 3px !important;
+  background: #666 !important;
+  color: #ddd !important;
+  border: none !important}
+
+button:not(.flextabs__toggle):hover {
+  background: #333 !important;
+  color: #fff !important}
+
+.buttons button {padding: 5px !important; margin-right: 5px !important}
+
+#button0, #button1 {padding: 5px !important}
+
+.buttons button:hover {background: #444 !important}
+
+.presets, .url, .customizer-controls {color: #000 !important}
+
+#presets {filter: brightness(80%) !important}
+
+.customizer fieldset label {color: #000 !important}
+
+#newsite {
+	-moz-appearance: none !important; 
+	background: #323232 !important; 
+	color: #ddd !important;
+	border: 1px solid #666 !important}
+
+#sites .sites tr {background: #555 !important}
+
+#sites .sites tr:nth-child(even) {background: #666 !important}
+}
+
+/*------ NOSCRIPT ADDON POPUP ------*/
+@-moz-document url-prefix(moz-extension://3672f367-b277-4e0d-9a46-650dc4c4534f/ui/popup.html) {
+body, html, #main {background: #333 !important; color: #ddd !important}
+
+#top {border-bottom: 1px solid #555 !important}
+
+button {background-color: transparent !important}
+
+tr {color: #ddd !important}
+
+#sites .sites tr {background: #333 !important}
+
+span {color: #ddd !important}
+
+#sites .sites tr:nth-child(odd) {background: #404040 !important}
 }
