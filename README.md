@@ -32,7 +32,7 @@ This problem doesn't happen if you use a code editor such as notepad++, atom, su
 <p>Since it's anonymous content of the browser we can't theme it through userChrome or userContent, which is why you will have to apply the scrollbars & tooltips method to be able to use external javascript to modify anonymous content, and then place the <b>Sync-tabs-sidebar.uc.js</b> file inside the <code>Scrollbars & tooltips dark theme/Profile/</code> folder inside this repository inside your chrome folder (The method is the same than for the scrollbars, except you place the sync related file on your chrome folder apart from the other files if you are going to use them as well).</p>
 
 <h3>I only want to use the multirow/(Any other) feature, but not the other ones!</h3>
-<p>You only need to modify the <b>userChrome.css</b>, deleting the lines that you don't want to apply (Every function has a comment above it saying what each ruleset does), or if you think you may want them later, just encase the feature parts that you don't want to apply between /* and */:</p>
+<p>You only need to modify <b>userChrome.css</b>, deleting the lines that you don't want to apply (Every function has a comment above it saying what each ruleset does), or if you think you may want them later, just encase the feature parts that you don't want to apply between /* and */:</p>
 
 <code>/* This is an example of a comment that wouldn't be read on a .css file */</code>
 
