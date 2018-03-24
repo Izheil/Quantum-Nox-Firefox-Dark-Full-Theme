@@ -1,13 +1,21 @@
 (function() {
     var css =`
 /* Fix for OS's (like default windows) that draws checkboxes and radio buttons whiteish */
-select, checkbox .checkbox-check, radio .radio-check {
+dialog select, dialog checkbox .checkbox-check, dialog radio .radio-check {
   filter: invert(81%) hue-rotate(170deg) !important}
 
-@-moz-document url-prefix(http), url-prefix(moz-extension://), url-prefix(about:) {
-select, input[type="checkbox"], input[type="radio"], input[type="number"], .checkbox-check, 
-.radio-check {
-  filter: invert(81%) hue-rotate(170deg) !important}
+@-moz-document url-prefix(moz-extension://), url-prefix(about:) {
+select:not(#excludedDomainsBox), input[type="checkbox"], input[type="radio"], input[type="number"], checkbox .checkbox-check, 
+radio .radio-check {filter: invert(81%) hue-rotate(170deg) !important}}
+
+@-moz-document url-prefix(https://addons.mozilla.org) {
+input[type="checkbox"], input[type="radio"], input[type="number"], checkbox .checkbox-check, 
+radio .radio-check {filter: invert(81%) hue-rotate(170deg) !important}
+
+#lang-picker {
+	filter: invert(75%) !important;
+	border: 1px solid #ddd !important;
+	fill: #000 !important}
 }
 `;
 

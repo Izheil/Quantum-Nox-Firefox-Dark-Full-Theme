@@ -3,6 +3,8 @@
 
 <img src="https://i.imgur.com/0JYmgPo.png" title="Dark firefox overall UI" />
 
+<img src="https://i.imgur.com/m7TGyqz.png" title="Dark addons" />
+
 <h2>Installation</h2>
 
 <p>Most of the job is already done with the userContent.css and userChrome.css files that you have to place in the 

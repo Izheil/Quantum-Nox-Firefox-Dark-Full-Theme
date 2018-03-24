@@ -456,13 +456,14 @@ url-prefix(moz-extension://bed28cc8-2f9a-468a-99f2-40a1b6fbc251/replaced/replace
 li.saveOnlyCurrentWindow {color: #ddd !important}
 li.saveOnlyCurrentWindow:hover {color: #000 !important}
 
+span.checkbox::before, #saveName {background: #303030 !important; border: 1px solid #666 !important}
+span.checkbox:hover::before, #saveName:hover {border: 1px solid #36b2b2 !important}
+
 #setting svg, .removeTagButton svg {fill: #000 !important}
 
 #sessionsArea, .sessionName span {color: #fff !important}
 
-input:not(#saveButton):not(#saveOptionButton):not(#removeSessions):not(#export):not(#urlImportSave), 
-textarea {
-	filter: invert(85%) hue-rotate(185deg) !important}
+textarea, #dateFormat {background: #303030 !important; color: #ddd !important}
 
 #saveButton, #saveOptionButton {background: #555 !important}
 
@@ -621,4 +622,100 @@ body, html {background: #333 !important; color: #fff !important}
 	color: #fff !important}
 
 #s3downbar_download_tooltip_from {background-color: #333 !important; color: #05f !important}
+}
+
+/*------ PRIVACY BADGER ADDON SETTINGS PAGE ------*/
+@-moz-document url-prefix(moz-extension://4b78ab51-2c7e-4a8d-b24c-07f1d616c7b1/skin/options.html) {
+body, html {background: #222 !important; color: #fff !important}
+
+#tabs {background: #444 !important; color: #ccc !important; border: 1px solid #666 !important}
+
+#tabs > ul {background-image: linear-gradient(#333, #222) !important; border: 1px solid #666 !important}
+
+label, p, span.i18n_show_tracking_domains_acknowledgement, .origin.tooltip {color: #ddd !important}
+
+span.i18n_options_webrtc_warning {color: #aaa !important}
+
+span.i18n_import_user_data, span.i18n_export_user_data {color: #fff !important}
+
+#tabs > ul > li {
+	background: #252525 !important; 
+	border: 1px solid #555 !important}
+
+#tabs > ul > li span {color: #ccc !important}
+
+#tabs > ul > li.ui-state-hover {
+	background: #333 !important; 
+	border: 1px solid #606060 !important}
+
+#tabs > ul > li.ui-state-hover span {color: #ddd !important}
+
+#tabs > ul > li.ui-state-active {
+	background: #444 !important; 
+	color: #fff !important; 
+	border: 1px solid #666 !important}
+
+#tabs > ul > li.ui-state-active span {color: #fff !important}
+
+#newWhitelistDomain, #excludedDomainsBox, #trackingDomainSearch {
+	-moz-appearance: none !important;
+	color: #ddd !important;
+	background: #303030 !important;
+	border: 1px solid #666 !important}
+
+#trackingDomainSearch:hover, #newWhitelistDomain:hover {
+	border: 1px solid #db7924 !important}
+
+#blockedResources > .keyContainer > .key {background: none !important}
+
+#blockedResourcesInner > div {
+	background: #444 !important; 
+	color: #ccc !important;
+	border-top: 1px solid #666 !important}
+
+button {
+  -moz-appearance: none !important;
+  border-radius: 3px !important;
+  background: #666 !important;
+  color: #ddd !important;
+  border: none !important}
+
+button:hover {
+	background: #555 !important;
+	color: #fff !important}
+
+a:link, a {color: #0bb !important}
+a:visited, a:active {color: #088 !important}
+a:hover {color: #0dd !important}
+}
+
+/*------ PRIVACY BADGER ADDON POPUP ------*/
+@-moz-document url-prefix(moz-extension://4b78ab51-2c7e-4a8d-b24c-07f1d616c7b1/skin/popup.html) {
+body, html {background: #333 !important; color: #fff !important}
+
+label, span, .origin.tooltip {color: #ddd !important}
+span.i18n_name {color: #fff !important}
+
+button {
+  -moz-appearance: none !important;
+  border-radius: 3px !important;
+  background: #666 !important;
+  color: #ddd !important;
+  border: none !important}
+
+button:hover {
+  background: #444 !important;
+  color: #fff !important}
+
+a:link, a {color: #fc9336 !important}
+a:visited, a:active {color: #a3540f !important}
+a:hover {color: #f0a15c !important}
+
+#instruction {background: #444 !important; color: #ddd !important}
+
+#blockedResources > .keyContainer > .key {background: none !important}
+#blockedResourcesInner > div {
+	background: #333 !important; 
+	color: #ccc !important;
+	border-top: 1px solid #555 !important}
 }

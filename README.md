@@ -12,18 +12,18 @@ basic css or <a href="https://www.w3schools.com/colors/colors_picker.asp">color 
 <br />
 This problem doesn't happen if you use a code editor such as notepad++, atom, sublime text...</h4>
 
-<h3>Last update: <b>23/03/2018</b></h3>
+<h3>Last update: <b>24/03/2018</b></h3>
 <p>Files updated:</p>
+<ul>
+ <li><b>userContent.css</b> -> Fixed some issues with Mozilla addons page selectors.</li>
+ <li><b>checkboxes.uc.js</b> -> Fixed some issues with Mozilla addons page selectors.</li>
+ <li><b>addons.css</b> -> Themed <a href="https://addons.mozilla.org/es/firefox/addon/privacy-badger17/">Privacy badger</a> addon.</li>
+</ul>
+<h3>Pre-Last update: <b>23/03/2018</b></h3>
 <ul>
  <li><b>userContent.css</b> -> Deleted some unnecesary lines.</li>
  <li><b>checkboxes.uc.js</b> -> With this file you can now turn white checkboxes to a dark version (OS's with dark checkboxes, radio buttons, and select buttons must NOT install it).</li>
  <li><b>addons.css</b> -> Deleted the lines that refered to the selectors that are darked by the <b>checkboxes.uc.js</b> file now.</li>
-</ul>
-<h3>Pre-Last update: <b>22/03/2018</b></h3>
-<ul>
- <li><b>userChrome.css</b> -> Now notification popups created by addons should also be themed.</li>
- <li><b>addons.css</b> -> Added the <a href="https://addons.mozilla.org/es/firefox/addon/s3download-statusbar/">Download manager (S3)</a> addon.</li>
- <li><b>userContent.css</b> -> Minor fix on the Mozilla addons page.</li>
 </ul>
 
 <h2>FAQ:</h2>
@@ -59,12 +59,9 @@ This problem doesn't happen if you use a code editor such as notepad++, atom, su
 	  <li>Can change the tab line color to Windows current theme color (You have to change the commented line that is described in line 27 inside userChrome.css).</li>
 	  <li>Can set an image as background for the home page (You have to change the commented line that is described in line 168 inside userContent.css).</li>
 	  <li>Can change the default text color of input boxes for those using a dark OS theme that affects the background of these (You have to change the commented line that is described on line 79 inside usercontent.css to use it)</li>
-	  <li>Change the <a href="https://addons.mozilla.org/es/firefox/addon/ublock-origin/">Ublock Origin</a> blocking/control panel/popup page to a dark version (You need to change the dynamic url of the extension on "addons.css").</li>
-	  <li>Change the <a href="https://addons.mozilla.org/es/firefox/addon/flash-video-downloader/">Flash Video Downloader</a> popup and panel to a dark version (You need to change the dynamic url of the extension on "addons.css").</li>
-	  <li>Change the <a href="https://addons.mozilla.org/es/firefox/addon/video-downloadhelper/">Video Download Helper</a> popup and panel to a dark version (You need to change the dynamic url of the extension on "addons.css").</li>
-	  <li>Change the <a href="https://addons.mozilla.org/es/firefox/addon/tab-session-manager/">Tab session manager</a> popup and panel to a dark version (You need to change the dynamic url of the extension on "addons.css").</li>
-	  <li>Change the <a href="https://addons.mozilla.org/es/firefox/addon/undo-closed-tabs-revived/">Undo closed tabs button</a> popup and panel to a dark version (You need to change the dynamic url of the extension on "addons.css").</li>
+	  <li>Change the theme of either of <a href="https://addons.mozilla.org/es/firefox/addon/ublock-origin/">Ublock Origin</a>, <a href="https://addons.mozilla.org/es/firefox/addon/video-downloadhelper/">Video Download Helper</a>, <a href="https://addons.mozilla.org/es/firefox/addon/flash-video-downloader/">Flash Video Downloader</a>, <a href="https://addons.mozilla.org/es/firefox/addon/tab-session-manager/">Tab session manager</a>, <a href="https://addons.mozilla.org/es/firefox/addon/undo-closed-tabs-revived/">Undo closed tabs button</a>, <a href="https://addons.mozilla.org/es/firefox/addon/s3download-statusbar/">Download Manager (S3)</a> or <a href="https://addons.mozilla.org/es/firefox/addon/privacy-badger17/">Privacy badger</a> extensions to a dark version.</li>
 	</ul>
+<img src="https://i.imgur.com/m7TGyqz.png" title="Dark addons" />
   <li><b>Theme features</b>: In this one you will find a userchrome with ONLY the features part of the theme. These features are the following:
 	<ul>
 	  <li>Multiple row tabs.</li>
