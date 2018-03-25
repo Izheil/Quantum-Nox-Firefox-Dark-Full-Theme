@@ -15,15 +15,14 @@ This problem doesn't happen if you use a code editor such as notepad++, atom, su
 <h3>Last update: <b>24/03/2018</b></h3>
 <p>Files updated:</p>
 <ul>
- <li><b>userContent.css</b> -> Fixed some issues with Mozilla addons page selectors.</li>
- <li><b>checkboxes.uc.js</b> -> Fixed some issues with Mozilla addons page selectors.</li>
- <li><b>addons.css</b> -> Themed <a href="https://addons.mozilla.org/es/firefox/addon/privacy-badger17/">Privacy badger</a> and <a href="https://addons.mozilla.org/es/firefox/addon/noscript/">Noscript</a> addons. Also fixed some issue with the Download manager (s3) addon theming.</li>
+ <li><b>userChrome.css</b> -> Themed the "about this addon" on the <code>about:addons</code> page.</li>
+ <li><b>addons.css</b> -> Themed <a href="https://addons.mozilla.org/es/firefox/addon/s3google-translator/">S3 Translator</a> (This will be the last by now unless someone requests some other).</li>
 </ul>
 <h3>Pre-Last update: <b>23/03/2018</b></h3>
 <ul>
- <li><b>userContent.css</b> -> Deleted some unnecesary lines.</li>
- <li><b>checkboxes.uc.js</b> -> With this file you can now turn white checkboxes to a dark version (OS's with dark checkboxes, radio buttons, and select buttons must NOT install it).</li>
- <li><b>addons.css</b> -> Deleted the lines that refered to the selectors that are darked by the <b>checkboxes.uc.js</b> file now.</li>
+ <li><b>userContent.css</b> -> Fixed some issues with Mozilla addons page selectors.</li>
+ <li><b>checkboxes.uc.js</b> -> Fixed some issues with Mozilla addons page selectors.</li>
+ <li><b>addons.css</b> -> Themed <a href="https://addons.mozilla.org/es/firefox/addon/privacy-badger17/">Privacy badger</a> and <a href="https://addons.mozilla.org/es/firefox/addon/noscript/">Noscript</a> addons. Also fixed some issue with the Download manager (s3) addon theming.</li>
 </ul>
 
 <h2>FAQ:</h2>
@@ -57,7 +56,7 @@ This problem doesn't happen if you use a code editor such as notepad++, atom, su
 	  <li>Can change the tab line color to Windows current theme color (You have to change the commented line that is described in line 27 inside userChrome.css).</li>
 	  <li>Can set an image as background for the home page (You have to change the commented line that is described in line 168 inside userContent.css).</li>
 	  <li>Can change the default text color of input boxes for those using a dark OS theme that affects the background of these (You have to change the commented line that is described on line 79 inside usercontent.css to use it)</li>
-	  <li>Change the theme of either of <a href="https://addons.mozilla.org/es/firefox/addon/ublock-origin/">Ublock Origin</a>, <a href="https://addons.mozilla.org/es/firefox/addon/video-downloadhelper/">Video Download Helper</a>, <a href="https://addons.mozilla.org/es/firefox/addon/flash-video-downloader/">Flash Video Downloader</a>, <a href="https://addons.mozilla.org/es/firefox/addon/tab-session-manager/">Tab session manager</a>, <a href="https://addons.mozilla.org/es/firefox/addon/undo-closed-tabs-revived/">Undo closed tabs button</a>, <a href="https://addons.mozilla.org/es/firefox/addon/s3download-statusbar/">Download Manager (S3)</a> or <a href="https://addons.mozilla.org/es/firefox/addon/privacy-badger17/">Privacy badger</a> extensions to a dark version.</li>
+	  <li>Change the theme of either of <a href="https://addons.mozilla.org/es/firefox/addon/ublock-origin/">Ublock Origin</a>, <a href="https://addons.mozilla.org/es/firefox/addon/video-downloadhelper/">Video Download Helper</a>, <a href="https://addons.mozilla.org/es/firefox/addon/flash-video-downloader/">Flash Video Downloader</a>, <a href="https://addons.mozilla.org/es/firefox/addon/tab-session-manager/">Tab session manager</a>, <a href="https://addons.mozilla.org/es/firefox/addon/undo-closed-tabs-revived/">Undo closed tabs button</a>, <a href="https://addons.mozilla.org/es/firefox/addon/s3download-statusbar/">Download Manager (S3)</a>, <a href="https://addons.mozilla.org/es/firefox/addon/privacy-badger17/">Privacy badger</a>, <a href="https://addons.mozilla.org/es/firefox/addon/noscript/">Noscript</a> or <a href="https://addons.mozilla.org/es/firefox/addon/s3google-translator/">S3 Translator</a> extensions to a dark version.</li>
 	</ul>
 <img src="https://i.imgur.com/m7TGyqz.png" title="Dark addons" />
   <li><b>Theme features</b>: In this one you will find a userchrome with ONLY the features part of the theme. These features are the following:
