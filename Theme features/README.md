@@ -33,10 +33,16 @@
   	  <li>Open link in a private window (line 182).</li>
   	  <li>Take a screenshot and its separator (line 187, since you can already access it through the 3 dots button on the URL bar).</li>
   	  <li>Send tab to device and its separators (line 189).</li>
-  	  <li>Send page to device and its seaparator (line 193).</li>
+  	  <li>Send page to device and its separator (line 193).</li>
   	  <li>Send link to device and its separator (lines 196).</li>
   	</ul></li>
 </ul>
+
+<p>Rounded tabs:</p>
+  <img src="https://i.imgur.com/qoG4Iiy.png">
+  
+<p>Multirow tabs:</p>
+  <img src="https://i.imgur.com/3LbvuMU.png">
 
 <h4>You can turn the features you want on or off changing the commented lines on the CSS file (To change them you just have to open the userchrome.css with notepad or any code editor, and encase between "/*" and "*/" (without the quotation marks) the lines you don't want to take effect). Of course, if you think that you are NEVER going to use certain feature, you can always delete the specific lines you don't want without any other side-effect.</h4>
 
