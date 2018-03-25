@@ -41,7 +41,7 @@ This problem doesn't happen if you use a code editor such as notepad++, atom, su
 <h3>Why use this method instead of using <a href="https://addons.mozilla.org/es/firefox/addon/styl-us/">Stylus</a>?</h3>
 <p>The main reason is that you can't style firefox about: pages nor the scrollbar with just stylus.</p>
 
-<h2>Installation</h2>
+<h2>Description</h2>
 
 <h3>Main browser UI</h3>
 <img src="https://i.imgur.com/0JYmgPo.png" title="Dark firefox overall UI" />
