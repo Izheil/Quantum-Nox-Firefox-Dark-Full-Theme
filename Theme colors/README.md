@@ -15,12 +15,8 @@
 <<<<<<< HEAD
 <img src="https://i.imgur.com/tJfpToG.png">
 <p>If you would also like a dark version of either <a href="https://addons.mozilla.org/es/firefox/addon/ublock-origin/">Ublock Origin</a>, <a href="https://addons.mozilla.org/es/firefox/addon/video-downloadhelper/">Video Download Helper</a>, <a href="https://addons.mozilla.org/es/firefox/addon/flash-video-downloader/">Flash Video Downloader</a>, <a href="https://addons.mozilla.org/es/firefox/addon/tab-session-manager/">Tab session manager</a>, <a href="https://addons.mozilla.org/es/firefox/addon/undo-closed-tabs-revived/">Undo closed tabs button</a>, <a href="https://addons.mozilla.org/es/firefox/addon/s3download-statusbar/">Download Manager (S3)</a>, <a href="https://addons.mozilla.org/es/firefox/addon/privacy-badger17/">Privacy badger</a>, <a href="https://addons.mozilla.org/es/firefox/addon/noscript/">Noscript</a> or <a href="https://addons.mozilla.org/es/firefox/addon/s3google-translator/">S3 Translator</a>, copy the "addons.css" file in your <a href="https://github.com/Izheil/Firefox-57-full-dark-theme-with-scrollbars/tree/master/Theme%20colors#the-chrome-folder">the chrome folder</a> as well.</p>
-=======
-=======
->>>>>>> b3cd114a9a176d9636fb632b6c901772aed33002
 <img src="https://i.imgur.com/IxMK0t5.png">
 <p>If you would also like a dark version of either <a href="https://addons.mozilla.org/es/firefox/addon/ublock-origin/">Ublock Origin</a>, <a href="https://addons.mozilla.org/es/firefox/addon/flash-video-downloader/">Flash Video Downloader</a>, or <a href="https://addons.mozilla.org/es/firefox/addon/video-downloadhelper/">Video Download Helper</a>, copy the "addons.css" file in your <a href="https://github.com/Izheil/Firefox-57-full-dark-theme-with-scrollbars/tree/master/Theme%20colors#the-chrome-folder">the chrome folder</a> as well.</p>
->>>>>>> b3cd114a9a176d9636fb632b6c901772aed33002
 <p>In case that you just want to change the default scrollbars, you can apply just that without the need
 of using the usercontent or userchrome files provided here.</p>
 
