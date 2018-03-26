@@ -12,21 +12,18 @@ basic css or <a href="https://www.w3schools.com/colors/colors_picker.asp">color 
 <br />
 This problem doesn't happen if you use a code editor such as notepad++, atom, sublime text...</h4>
 
-<h3>Last update: <b>24/03/2018</b></h3>
+<h3>Last update: <b>26/03/2018</b></h3>
 <p>Files updated:</p>
+<ul>
+  <li>Created an installation video, which you can check <a href="https://youtu.be/z0o8DatRyjk">here</a>.</li>
+</ul>
+<h3>Pre-Last update: <b>24/03/2018</b></h3>
 <ul>
  <li><b>userChrome.css</b> -> Themed the "about this addon" on the <code>about:addons</code> page.</li>
  <li><b>addons.css</b> -> Themed <a href="https://addons.mozilla.org/es/firefox/addon/s3google-translator/">S3 Translator</a> (This will be the last by now unless someone requests some other).</li>
 </ul>
-<h3>Pre-Last update: <b>23/03/2018</b></h3>
-<ul>
- <li><b>userContent.css</b> -> Fixed some issues with Mozilla addons page selectors.</li>
- <li><b>checkboxes.uc.js</b> -> Fixed some issues with Mozilla addons page selectors.</li>
- <li><b>addons.css</b> -> Themed <a href="https://addons.mozilla.org/es/firefox/addon/privacy-badger17/">Privacy badger</a> and <a href="https://addons.mozilla.org/es/firefox/addon/noscript/">Noscript</a> addons. Also fixed some issue with the Download manager (s3) addon theming.</li>
-</ul>
 
 <h2>FAQ:</h2>
-
 <h3>The synced tabs sidebar isn't themed.</h3>
 <p>Since it's anonymous content of the browser we can't theme it through userChrome or userContent, which is why you will have to apply the scrollbars & tooltips method to be able to use external javascript to modify anonymous content, and then place the <b>Sync-tabs-sidebar.uc.js</b> file inside the <code>Scrollbars & tooltips dark theme/Profile/</code> folder inside this repository inside your chrome folder (The method is the same than for the scrollbars, except you place the sync related file on your chrome folder apart from the other files if you are going to use them as well).</p>
 
