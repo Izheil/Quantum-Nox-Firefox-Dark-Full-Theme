@@ -15,12 +15,12 @@ This problem doesn't happen if you use a code editor such as notepad++, atom, su
 <h3>Last update: <b>26/03/2018</b></h3>
 <p>Files updated:</p>
 <ul>
-  <li>Created an installation video, which you can check <a href="https://youtu.be/z0o8DatRyjk">here</a>.</li>
+  <li><b>addons.css</b>: Fixed some issue with some parts of the VHD addon theme.</li>
+  <li><b>checkboxes.uc.js</b>: Fixed some issues with the VHD addon select boxes appearing as white even on dark OS's.</li>
 </ul>
 <h3>Pre-Last update: <b>24/03/2018</b></h3>
 <ul>
- <li><b>userChrome.css</b> -> Themed the "about this addon" on the <code>about:addons</code> page.</li>
- <li><b>addons.css</b> -> Themed <a href="https://addons.mozilla.org/es/firefox/addon/s3google-translator/">S3 Translator</a> (This will be the last by now unless someone requests some other).</li>
+  <li>Created an installation video, which you can check <a href="https://youtu.be/z0o8DatRyjk">here</a>.</li>
 </ul>
 
 <h2>FAQ:</h2>

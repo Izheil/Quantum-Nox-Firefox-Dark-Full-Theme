@@ -321,7 +321,15 @@ header {background: #222 !important; color: #fff !important}
 
 /*------ VIDEO DOWNLOAD HELPER ADDON COMMON PART ------*/
 @-moz-document url-prefix(moz-extension://e77fa7d8-24fa-4cc1-9cb4-bd12345b34eb/) {
-main {background: #333 !important; color: #ccc !important}
+main, .top-line, .files-list.headercontainer {background: #333 !important; color: #ccc !important}
+
+.tablecontainer, select.form-control {
+	background: #555 !important; 
+	color: #ccc !important; 
+	border: 1px solid #777 !important}
+
+.dir-entry, .file-prompt .tablecontainer td, 
+.file-prompt th {background: none !important; border: none !important}
 
 .dropdown-toggle {background: #333 !important; border-bottom: 1px solid #fff !important}
 
