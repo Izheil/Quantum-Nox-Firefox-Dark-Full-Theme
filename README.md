@@ -12,15 +12,15 @@ basic css or <a href="https://www.w3schools.com/colors/colors_picker.asp">color 
 <br />
 This problem doesn't happen if you use a code editor such as notepad++, atom, sublime text...</h4>
 
-<h3>Last update: <b>26/03/2018</b></h3>
+<h3>Last update: <b>09/04/2018</b></h3>
 <p>Files updated:</p>
 <ul>
-  <li><b>addons.css</b>: Fixed some issue with some parts of the VHD addon theme.</li>
-  <li><b>checkboxes.uc.js</b>: Fixed some issues with the VHD addon select boxes appearing as white even on dark OS's.</li>
+  <li><b>userContent.css</b>: Fixed some issue with disabled items on the <code>about:</code> pages.</li>
 </ul>
 <h3>Pre-Last update: <b>24/03/2018</b></h3>
 <ul>
-  <li>Created an installation video, which you can check <a href="https://youtu.be/z0o8DatRyjk">here</a>.</li>
+  <li><b>addons.css</b>: Fixed some issue with some parts of the VHD addon theme.</li>
+  <li><b>checkboxes.uc.js</b>: Fixed some issues with the VHD addon select boxes appearing as white even on dark OS's.</li>
 </ul>
 
 <h2>FAQ:</h2>

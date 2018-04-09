@@ -1,6 +1,6 @@
 /* You can find an updated version here: https://github.com/Izheil/Firefox-57-full-dark-theme-with-scrollbars */
 /* Made by Izheil */
-/* Last updated: 22/03/2018 */
+/* Last updated: 09/04/2018 */
 
 /* This part imports the Addons file if there is one, so that you don't have to edit the dynamic URL
 from the addons rules every time we update anything here */
@@ -421,7 +421,7 @@ tbody > tr:hover {outline: 1px dotted #777 !important}}
 @-moz-document url-prefix(about:) {
 
 /* This changes the color of the context menus */
-menuitem {
+menuitem, menu {
 	color: #ccc !important;
 	padding-top: 3px;
 	padding-bottom: 2px}
@@ -447,7 +447,11 @@ menuseparator {
 menuitem:hover,
 menu:hover {
 	-moz-appearance: none !important;
-	background-color: #25a !important} 
+	background-color: #25a !important}
+
+/* This changes the text of disabled items */
+menuitem[disabled="true"],
+menu[disabled="true"] {color: #777 !important}
 
 /* This does the same but for disabled ones */
 menuitem:hover[disabled="true"],
