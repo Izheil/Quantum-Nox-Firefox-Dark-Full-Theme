@@ -12,15 +12,15 @@ basic css or <a href="https://www.w3schools.com/colors/colors_picker.asp">color 
 <br />
 This problem doesn't happen if you use a code editor such as notepad++, atom, sublime text...</h4>
 
-<h3>Last update: <b>09/04/2018</b></h3>
+<h3>Last update: <b>13/04/2018</b></h3>
+<p>Files updated:</p>
+<ul>
+  <li><b>userContent.css</b>: Inverted the color of some white images from the sync menus on the <code>about:preferences</code> page.</li>
+</ul>
+<h3>Pre-Last update: <b>09/04/2018</b></h3>
 <p>Files updated:</p>
 <ul>
   <li><b>userContent.css</b>: Fixed some issue with disabled items on the <code>about:</code> pages.</li>
-</ul>
-<h3>Pre-Last update: <b>24/03/2018</b></h3>
-<ul>
-  <li><b>addons.css</b>: Fixed some issue with some parts of the VHD addon theme.</li>
-  <li><b>checkboxes.uc.js</b>: Fixed some issues with the VHD addon select boxes appearing as white even on dark OS's.</li>
 </ul>
 
 <h2>FAQ:</h2>
