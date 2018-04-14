@@ -1,6 +1,6 @@
 /* You can find an updated version here: https://github.com/Izheil/Firefox-57-full-dark-theme-with-scrollbars */
 /* Made by Izheil */
-/* Last updated: 09/04/2018 */
+/* Last updated: 14/04/2018 */
 
 /* This part imports the Addons file if there is one, so that you don't have to edit the dynamic URL
 from the addons rules every time we update anything here */
@@ -167,16 +167,6 @@ body {
 
 .prefs-pane-button button:active {background-color: #050505 !important}
 
-/* This adds a background image of your choice in the main area 
-Delete the final /* to use -> *//*
-body {
-  background-image: url("file:///") !important;
-  background-size: cover !important;
-  background-position: center !important}
-
-.prefs-pane .sidebar, .card-outer, .prefs-pane .prefs-modal-inner-wrapper .options, 
-.sidebar .actions {background: rgba(0,0,0,0.6) !important}
-
 /* The popups part starts here */
 .modal-overlay {background: #000 !important}
 
@@ -331,6 +321,17 @@ input[type=text] {color: #aaa !important}
 #onboarding-skip-tour-button:active {background: #111 !important}
 
 #onboarding-overlay img {filter: invert(90%) hue-rotate(200deg)}
+
+/* This adds a background image of your choice in the main area 
+Delete the final /* to use -> *//*
+body {
+  background-image: url("file:///") !important;
+  background-size: cover !important;
+  background-position: center !important}
+
+.prefs-pane .sidebar, .card-outer, .prefs-pane .prefs-modal-inner-wrapper .options, 
+.sidebar .actions, #snippets-container {background: rgba(0,0,0,0.6) !important}
+*/
 }
 
 /*------ COMMON ATTRIBUTES ON MOST ABOUT PAGES ------*/
