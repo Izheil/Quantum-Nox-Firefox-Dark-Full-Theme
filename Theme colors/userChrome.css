@@ -1,6 +1,6 @@
 /* You can find an updated version here: https://github.com/Izheil/Firefox-57-full-dark-theme-with-scrollbars */
 /* Made by Izheil */
-/* Last updated: 25/03/2018 */
+/* Last updated: 14/04/2018 */
 
 /* DO NOT DELETE THIS LINE */
 @namespace url("http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul");
@@ -294,7 +294,8 @@ menuseparator {
 .menu-accel-container .menu-accel {color: #909090 !important}
 
 /* Bookmark context menu > icon color */
-.bookmark-item .menu-right, menu .menu-right {filter: brightness(300%) !important}
+.bookmark-item .menu-right, menu .menu-right,
+#identity-popup-popup-menulist .menulist-dropmarker {filter: brightness(300%) !important}
 
 /* Drop indicator that appears when moving a bookmark in a bookmark folder color */
 .menupopup-drop-indicator {background-color: #999 !important}
@@ -410,7 +411,8 @@ if necessary depending on if you are using a custom OS theme (which may mess up 
 
 /* This changes the buttons inside the bookmarking popup at the url star */
 #editBMPanel_newFolderButton, #editBookmarkPanelDoneButton, 
-#editBookmarkPanelRemoveButton {
+#editBookmarkPanelRemoveButton, #tracking-action-unblock-private, 
+#identity-popup-popup-menulist, #tracking-action-block, #tracking-action-unblock {
   -moz-appearance: none !important;
   border-radius: 3px !important;
   background: #666 !important;
@@ -420,7 +422,9 @@ if necessary depending on if you are using a custom OS theme (which may mess up 
   margin-bottom: 0.5em !important}
 
 #editBMPanel_newFolderButton:hover,#editBookmarkPanelDoneButton:hover, 
-#editBookmarkPanelRemoveButton:hover { 
+#editBookmarkPanelRemoveButton:hover, #tracking-action-unblock-private:hover, 
+#identity-popup-popup-menulist:hover, #tracking-action-block:hover, 
+#tracking-action-unblock:hover { 
   background: #333 !important;
   color: #fff !important}
 

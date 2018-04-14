@@ -15,7 +15,7 @@ This problem doesn't happen if you use a code editor such as notepad++, atom, su
 <h3>Last update: <b>14/04/2018</b></h3>
 <p>Files updated:</p>
 <ul>
-  <li><b>userChrome.css</b>: Added a little fix (disabled by default) so that if you have some issue with some addon text not being seen in contrast to the dark background, you can change it to white background again.</li>
+  <li><b>userChrome.css</b>: Added a little fix (disabled by default) so that if you have some issue with some addon text not being seen in contrast to the dark background, you can change it to white background again. Also themed the buttons to allow popups on the urlbox.</li>
   <li><b>addons.css</b>: Added <a href="https://addons.mozilla.org/en-US/firefox/addon/window-resize/">Window resize</a> addon theme.</li>
 </ul>
 <h3>Pre-Last update: <b>09/04/2018</b></h3>
