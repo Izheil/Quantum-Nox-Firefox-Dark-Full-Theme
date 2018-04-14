@@ -217,7 +217,7 @@ you aren't using the default dark theme of mozilla, that is) */
 
 /* Little fix in case there is some addon popup text that you don't see because 
 of the background (delete the /* in the end of this line to use ->) *//*
-#customizationui-widget-panel .panel-arrow {filter: brightness(1000%) !important}
+#customizationui-widget-panel .panel-arrow {fill: #fff !important}
 .webextension-popup-browser {background: #fff !important}
 
 /* Zoom reset button on the main menu */
@@ -737,14 +737,15 @@ if you don't see a blue hover color on items on the sidebar, use this method ins
 /* ADDON POPUPS */
 
 /* Fix for the panel arrows for extensions (Only enable if using the addons file) *//*
-#customizationui-widget-panel[viewId="PanelUI-webext-_b9db16a4-6edc-47ec-a1f4-b86292ed211d_-browser-action-view"] .panel-arrow {
-  filter: brightness(20%) !important}
+#customizationui-widget-panel[viewId="PanelUI-webext-_b9db16a4-6edc-47ec-a1f4-b86292ed211d_-browser-action-view"] .panel-arrow,
+#customizationui-widget-panel[viewId="PanelUI-webext-jid1-mnnxcxisbpnsxq_jetpack-browser-action-view"] .panel-arrow {
+  fill: #333 !important}
 
 #customizationui-widget-panel[viewId="PanelUI-webext-ublock0_raymondhill_net-browser-action-view"] .panel-arrow {
-  filter: brightness(9%) !important}
+  fill: #111 !important}
 
 #customizationui-widget-panel[viewId="PanelUI-webext-artur_dubovoy_gmail_com-browser-action-view"] .panel-arrow {
-  filter: brightness(50%) !important} 
+  fill: #222 !important}
 */
 /* ^ COLORING PART ENDS HERE - FEATURES PART STARTS HERE v */
 
