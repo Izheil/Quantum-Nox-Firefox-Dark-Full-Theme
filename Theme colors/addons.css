@@ -1,16 +1,17 @@
 /* You can find an updated version here: https://github.com/Izheil/Firefox-57-full-dark-theme-with-scrollbars */
 /* Made by Izheil */
-/* Last updated: 25/03/2018 */
+/* Last updated: 14/04/2018 */
 
 /*------ HOW TO MAKE THE ADDON THEMES WORK ------*/
-/* To use this part of the code, you will have to find the dynamic ID of your extensions, and replace it where the 
-random numbers are (the numbers after moz-extension://) on each of the sections of the extension.
-To find these, just open about:debugging, and copy the UUID numbers of the extension, and paste them in the URL after
-moz-extension in here. If you did everything right, next time you start (or restart) firefox, the addon will 
-be themed (Each addon has a different dynamic URL). */
+/* To use this part of the code, you will have to find the dynamic UUID of your extensions, and replace it where the 
+it says "TYPE-UUID-OF-(EXTENSION-NAME)-HERE" in here.
+To find the UUID of an extension, just open about:debugging, and the UUID of each extension should appear under each one
+(They look like a bunch of numbers with some -'s in between, like this: 00b72a90-6883-4e98-8785-1620d6b75664).
+If you did everything right, next time you start (or restart) firefox, the addon will be themed 
+(Each addon has a different UUID, and the UUID of an addon can also change if you uninstall and reinstall it). */
 
 /*------ UBLOCK ORIGIN BLOCKING PAGE ------*/
-@-moz-document url-prefix(moz-extension://00b72a90-6883-4e98-8785-1620d6b75664/document-blocked.html){
+@-moz-document url-prefix(moz-extension://TYPE-UUID-OF-UBLOCK-ORIGIN-HERE/document-blocked.html){
 
 html, body {background-color: #222 !important}
 
@@ -37,7 +38,7 @@ button:hover {
 }
 
 /*------ UBLOCK ORIGIN CONTROL PANEL TOP BUTTONS ------*/
-@-moz-document url-prefix(moz-extension://00b72a90-6883-4e98-8785-1620d6b75664/dashboard.html) {
+@-moz-document url-prefix(moz-extension://TYPE-UUID-OF-UBLOCK-ORIGIN-HERE/dashboard.html) {
 
 #dashboard-nav-widgets {background: #222 !important; border-bottom: 1px solid black !important}
 
@@ -57,13 +58,13 @@ a.tabButton.selected {
 }
 
 /*------ UBLOCK ORIGIN CONTROL PANEL CONTENT PAGES ------*/
-@-moz-document url(moz-extension://00b72a90-6883-4e98-8785-1620d6b75664/settings.html),
-url(moz-extension://00b72a90-6883-4e98-8785-1620d6b75664/3p-filters.html),
-url(moz-extension://00b72a90-6883-4e98-8785-1620d6b75664/1p-filters.html),
-url(moz-extension://00b72a90-6883-4e98-8785-1620d6b75664/dyna-rules.html),
-url(moz-extension://00b72a90-6883-4e98-8785-1620d6b75664/whitelist.html),
-url(moz-extension://00b72a90-6883-4e98-8785-1620d6b75664/about.html),
-url(moz-extension://00b72a90-6883-4e98-8785-1620d6b75664/advanced-settings.html){
+@-moz-document url(moz-extension://TYPE-UUID-OF-UBLOCK-ORIGIN-HERE/settings.html),
+url(moz-extension://TYPE-UUID-OF-UBLOCK-ORIGIN-HERE/3p-filters.html),
+url(moz-extension://TYPE-UUID-OF-UBLOCK-ORIGIN-HERE/1p-filters.html),
+url(moz-extension://TYPE-UUID-OF-UBLOCK-ORIGIN-HERE/dyna-rules.html),
+url(moz-extension://TYPE-UUID-OF-UBLOCK-ORIGIN-HERE/whitelist.html),
+url(moz-extension://TYPE-UUID-OF-UBLOCK-ORIGIN-HERE/about.html),
+url(moz-extension://TYPE-UUID-OF-UBLOCK-ORIGIN-HERE/advanced-settings.html){
 body, html {
 	background: #333 !important;
 	color: #ccc !important;
@@ -143,7 +144,7 @@ input[type=number] {
 }
 
 /*------ UBLOCK ORIGIN MENU POPUP ------*/
-@-moz-document url-prefix(moz-extension://00b72a90-6883-4e98-8785-1620d6b75664/popup.html) {
+@-moz-document url-prefix(moz-extension://TYPE-UUID-OF-UBLOCK-ORIGIN-HERE/popup.html) {
 
 #appinfo {background: #111 !important}
 
@@ -190,7 +191,7 @@ span[data-src="/"], span[data-src="."] {
 }
 
 /*------ UBLOCK ORIGIN UI LOGGER ------*/
-@-moz-document url-prefix(moz-extension://00b72a90-6883-4e98-8785-1620d6b75664/logger-ui.html) {
+@-moz-document url-prefix(moz-extension://TYPE-UUID-OF-UBLOCK-ORIGIN-HERE/logger-ui.html) {
 .button, input, textarea {
 	-moz-appearance: none !important;
 	background: #444 !important;
@@ -261,7 +262,7 @@ button.important:hover {
 }
 
 /*------ FLASH VIDEO DOWNLOADER (youtube) ADDON OPTIONS PANEL------*/
-@-moz-document url(moz-extension://314f997d-c597-4795-a575-c554dad7c5f4/options.html) {
+@-moz-document url(moz-extension://TYPE-UUID-OF-FLASH-VIDEO-DOWNLOADER-HERE/options.html) {
 body {background-color: #222 !important}
 
 .white_area, #showMain.fvd_settings_container, .options {background-color: #444 !important}
@@ -278,7 +279,7 @@ h2 {color: #FFF !important}
 }
 
 /*------ FLASH VIDEO DOWNLOADER (youtube) ADDON POPUP ------*/
-@-moz-document url(moz-extension://314f997d-c597-4795-a575-c554dad7c5f4/popup.html) {
+@-moz-document url(moz-extension://TYPE-UUID-OF-FLASH-VIDEO-DOWNLOADER-HERE/popup.html) {
 
 body, .multiple_download_header, #filters_block,
 #snifferNotice {background-color: #333 !important}
@@ -307,7 +308,7 @@ body, .multiple_download_header, #filters_block,
 }
 
 /*------ VIDEO DOWNLOAD HELPER ADDON OPTIONS PANEL ------*/
-@-moz-document url-prefix(moz-extension://711939e6-6e2a-4563-8944-9f0fa3b01df7/content/settings.html) {
+@-moz-document url-prefix(moz-extension://TYPE-UUID-OF-VIDEO-DOWNLOAD-HELPER-HERE/content/settings.html) {
 main, .btn-toolbar {background: #333 !important; color: #ccc !important}
 header {background: #222 !important; color: #fff !important}
 
@@ -320,7 +321,7 @@ header {background: #222 !important; color: #fff !important}
 }
 
 /*------ VIDEO DOWNLOAD HELPER ADDON COMMON PART ------*/
-@-moz-document url-prefix(moz-extension://e77fa7d8-24fa-4cc1-9cb4-bd12345b34eb/) {
+@-moz-document url-prefix(moz-extension://TYPE-UUID-OF-VIDEO-DOWNLOAD-HELPER-HERE/) {
 main, .top-line, .files-list.headercontainer {background: #333 !important; color: #ccc !important}
 
 .tablecontainer, select.form-control {
@@ -397,7 +398,7 @@ input, .input-license input, textarea {
 }
 
 /*------ VIDEO DOWNLOAD HELPER ADDON POPUP ------*/
-@-moz-document url-prefix(moz-extension://e77fa7d8-24fa-4cc1-9cb4-bd12345b34eb/content/popup.html) {
+@-moz-document url-prefix(moz-extension://TYPE-UUID-OF-VIDEO-DOWNLOAD-HELPER-HERE/content/popup.html) {
 html, .content-hits, .vdh-fullwidth.hit-descr, 
 .hit-thumbnail, .click.hit-actions, .vdh-container,
 .no-media {background: #333 !important}
@@ -425,7 +426,7 @@ button:hover {background: #444 !important}
 }
 
 /*------ VIDEO DOWNLOAD HELPER ADDON ALERT UPON DOWNLOAD ------*/
-@-moz-document url-prefix(moz-extension://e77fa7d8-24fa-4cc1-9cb4-bd12345b34eb/content/alert.html) {
+@-moz-document url-prefix(moz-extension://TYPE-UUID-OF-VIDEO-DOWNLOAD-HELPER-HERE/content/alert.html) {
 .dialog-in-tab {background: #222 !important}
 	
 .alert-dialog .alert-dialog-content {
@@ -438,15 +439,15 @@ button:hover {background: #444 !important}
 }
 
 /*------ VIDEO DOWNLOAD HELPER ADDON DETAILS PAGE ------*/
-@-moz-document url-prefix(moz-extension://e77fa7d8-24fa-4cc1-9cb4-bd12345b34eb/content/details.html) {
+@-moz-document url-prefix(moz-extension://TYPE-UUID-OF-VIDEO-DOWNLOAD-HELPER-HERE/content/details.html) {
 header, tr:nth-child(even) {background: #222 !important; color: #fff !important}
 main, tr:nth-child(odd) {background: #333 !important; color: #fff !important}
 }
 
 /*------ TAB SESSION MANAGER ------*/
-@-moz-document url-prefix(moz-extension://bed28cc8-2f9a-468a-99f2-40a1b6fbc251/options/options.html),
-url-prefix(moz-extension://bed28cc8-2f9a-468a-99f2-40a1b6fbc251/popup/popup.html),
-url-prefix(moz-extension://bed28cc8-2f9a-468a-99f2-40a1b6fbc251/replaced/replaced.html?state=open_faild) {
+@-moz-document url-prefix(moz-extension://TYPE-UUID-OF-TAB-SESSION-MANAGER-HERE/options/options.html),
+url-prefix(moz-extension://TYPE-UUID-OF-TAB-SESSION-MANAGER-HERE/popup/popup.html),
+url-prefix(moz-extension://TYPE-UUID-OF-TAB-SESSION-MANAGER-HERE/replaced/replaced.html?state=open_faild) {
 
 :root {
     --main-text: #ddd !important;
@@ -485,7 +486,7 @@ textarea, #dateFormat {background: #303030 !important; color: #ddd !important}
 }
 
 /*------ UNDO LAST TAB ADDON ------*/
-@-moz-document url-prefix(moz-extension://5579f940-c966-4837-a163-6e75d7d2c44d/data/popup/index.html) {
+@-moz-document url-prefix(moz-extension://TYPE-UUID-OF-UNDO-LAST-TAB-HERE/data/popup/index.html) {
 body, html {background: #333 !important}
 
 li {color: #aaa !important}
@@ -504,8 +505,8 @@ li[data-disabled="true"]:hover {background-color: rgba(0,0,0, 0.2) !important}
 }
 
 /*------ DOWNLOAD MANAGER (S3) ADDON CONFIGURATION PAGE ------*/
-@-moz-document url-prefix(moz-extension://fa4d3e3d-bb33-4eba-b377-525ac3ee55b4/content/options.html),
-url-prefix(moz-extension://fa4d3e3d-bb33-4eba-b377-525ac3ee55b4/content/create_new_downloads.html) {
+@-moz-document url-prefix(moz-extension://TYPE-UUID-OF-DOWNLOAD-MANAGER-(S3)-HERE/content/options.html),
+url-prefix(moz-extension://TYPE-UUID-OF-DOWNLOAD-MANAGER-(S3)-HERE/content/create_new_downloads.html) {
 body, html {background: #222 !important; color: #fff !important}
 
 #tabsBox .tabsBox {background: #333 !important; border: 1px solid #555 !important}
@@ -568,8 +569,8 @@ button:hover, input[type="button"]:hover {
 }
 
 /*------ DOWNLOAD MANAGER (S3) ADDON DOWNLOADS HISTORY PAGE ------*/
-@-moz-document url-prefix(moz-extension://fa4d3e3d-bb33-4eba-b377-525ac3ee55b4/content/download_history.html),
-url-prefix(moz-extension://fa4d3e3d-bb33-4eba-b377-525ac3ee55b4/content/file_checksum.html) {
+@-moz-document url-prefix(moz-extension://TYPE-UUID-OF-DOWNLOAD-MANAGER-(S3)-HERE/content/download_history.html),
+url-prefix(moz-extension://TYPE-UUID-OF-DOWNLOAD-MANAGER-(S3)-HERE/content/file_checksum.html) {
 body, html {background: #333 !important; color: #fff !important}
 
 #download_action_head {background: linear-gradient(#333, #111) !important}
@@ -616,7 +617,7 @@ body, html {background: #333 !important; color: #fff !important}
 }
 
 /*------ DOWNLOAD MANAGER (S3) ADDON DOWNLOADS POPUP ------*/
-@-moz-document url-prefix(moz-extension://fa4d3e3d-bb33-4eba-b377-525ac3ee55b4/content/popup.html) {
+@-moz-document url-prefix(moz-extension://TYPE-UUID-OF-DOWNLOAD-MANAGER-(S3)-HERE/content/popup.html) {
 #s3downbar-ibmbeeacmbeeaebmfjpmnlgkhoejinha:not(.s3dmBox) {background-color: #333 !important; color: #fff !important}
 #s3downbar_hide_button, #s3downbar_main_menu_button, #s3downbar_clear_button,
 #s3downbar_holder_summary_progress {
@@ -649,7 +650,7 @@ body, html {background: #333 !important; color: #fff !important}
 }
 
 /*------ PRIVACY BADGER ADDON SETTINGS PAGE ------*/
-@-moz-document url-prefix(moz-extension://4b78ab51-2c7e-4a8d-b24c-07f1d616c7b1/skin/options.html) {
+@-moz-document url-prefix(moz-extension://TYPE-UUID-OF-PRIVACY-BADGER-HERE/skin/options.html) {
 body, html {background: #222 !important; color: #fff !important}
 
 #tabs {background: #444 !important; color: #ccc !important; border: 1px solid #666 !important}
@@ -714,7 +715,7 @@ a:hover {color: #0dd !important}
 }
 
 /*------ PRIVACY BADGER ADDON POPUP ------*/
-@-moz-document url-prefix(moz-extension://4b78ab51-2c7e-4a8d-b24c-07f1d616c7b1/skin/popup.html) {
+@-moz-document url-prefix(moz-extension://TYPE-UUID-OF-PRIVACY-BADGER-HERE/skin/popup.html) {
 body, html {background: #333 !important; color: #fff !important}
 
 label, span, .origin.tooltip {color: #ddd !important}
@@ -745,9 +746,9 @@ a:hover {color: #f0a15c !important}
 }
 
 /*------ NOSCRIPT ADDON SETTINGS AND PROMPT PAGE ------*/
-@-moz-document url-prefix(moz-extension://77acf3bb-8b8d-4c1f-9fc3-f15441840505/ui/options.html),
-url-prefix(moz-extension://77acf3bb-8b8d-4c1f-9fc3-f15441840505/ui/prompt.html),
-url-prefix(moz-extension://77acf3bb-8b8d-4c1f-9fc3-f15441840505/ui/siteInfo.html) {
+@-moz-document url-prefix(moz-extension://TYPE-UUID-OF-NOSCRIPT-HERE/ui/options.html),
+url-prefix(moz-extension://TYPE-UUID-OF-NOSCRIPT-HERE/ui/prompt.html),
+url-prefix(moz-extension://TYPE-UUID-OF-NOSCRIPT-HERE/ui/siteInfo.html) {
 body, html {background: #222 !important}
 
 #main {background: linear-gradient(#555,#111) !important; color: #fff !important}
@@ -804,7 +805,7 @@ a:active {color: #0050aa !important}
 }
 
 /*------ NOSCRIPT ADDON POPUP ------*/
-@-moz-document url-prefix(moz-extension://77acf3bb-8b8d-4c1f-9fc3-f15441840505/ui/popup.html) {
+@-moz-document url-prefix(moz-extension://TYPE-UUID-OF-NOSCRIPT-HERE/ui/popup.html) {
 body, html, #main {background: #333 !important; color: #ddd !important}
 
 #top {border-bottom: 1px solid #555 !important}
@@ -821,7 +822,7 @@ span {color: #ddd !important}
 }
 
 /*------ S3 TRANSLATOR ADDON SETTINGS PAGE ------*/
-@-moz-document url-prefix(moz-extension://0010c056-bb00-4f3f-81bc-6ee2f265b636/content/options.html) {
+@-moz-document url-prefix(moz-extension://TYPE-UUID-OF-S3-TRANSLATOR-HERE/content/options.html) {
 body, html, center {background: #222 !important; color: #ddd !important}
 
 #tabsBox .tabsBox {background: #333 !important; border: 1px solid #555 !important}
@@ -876,8 +877,8 @@ button:hover, input[type="button"]:hover {
 }
 
 /*------ S3 TRANSLATOR ADDON POPUP AND DONATE PAGE ------*/
-@-moz-document url-prefix(moz-extension://0010c056-bb00-4f3f-81bc-6ee2f265b636/content/statistics.html),
-url-prefix(moz-extension://0010c056-bb00-4f3f-81bc-6ee2f265b636/content/popup.html) {
+@-moz-document url-prefix(moz-extension://TYPE-UUID-OF-S3-TRANSLATOR-HERE/content/statistics.html),
+url-prefix(moz-extension://TYPE-UUID-OF-S3-TRANSLATOR-HERE/content/popup.html) {
 body, html {background: #333 !important; color: #ddd !important}
 
 .s3gt_menu_action:not([is_inactive="true"]):hover {background-color: #333 !important}
@@ -888,7 +889,7 @@ h4.header {color: #fff !important}
 }
 
 /*------ WINDOW RESIZE ADDON ------*/
-@-moz-document url-prefix(moz-extension://8103b15f-ec19-423f-9a29-d0cd39156638/popup/choose_size.html) {
+@-moz-document url-prefix(moz-extension://TYPE-UUID-OF-WINDOW-RESIZE-HERE/popup/choose_size.html) {
 a {color: #ddd !important}
 a:hover {
 	background-color: rgba(255,255,255,0.2) !important; 
