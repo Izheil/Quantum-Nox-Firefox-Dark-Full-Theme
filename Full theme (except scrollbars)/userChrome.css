@@ -215,6 +215,11 @@ you aren't using the default dark theme of mozilla, that is) */
   --arrowpanel-dimmed-further: rgba(255, 255, 255, 0.25) !important;
   --arrowpanel-dimmed-even-further: rgba(255, 255, 255, 0.4) !important}
 
+/* Little fix in case there is some addon popup text that you don't see because 
+of the background (delete the /* in the end of this line to use ->) *//*
+#customizationui-widget-panel .panel-arrow {filter: brightness(1000%) !important}
+.webextension-popup-browser {background: #fff !important}
+
 /* Zoom reset button on the main menu */
 #appMenu-zoomReset-button {background-color: #666 !important}
 #appMenu-zoomReset-button:hover {background-color: #333 !important}

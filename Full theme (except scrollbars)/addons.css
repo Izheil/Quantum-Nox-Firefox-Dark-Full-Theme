@@ -886,3 +886,12 @@ body, html {background: #333 !important; color: #ddd !important}
 
 h4.header {color: #fff !important}
 }
+
+/*------ WINDOW RESIZE ADDON ------*/
+@-moz-document url-prefix(moz-extension://8103b15f-ec19-423f-9a29-d0cd39156638/popup/choose_size.html) {
+a {color: #ddd !important}
+a:hover {
+	background-color: rgba(255,255,255,0.2) !important; 
+	color: #fff !important; 
+	border-color: transparent !important}
+}

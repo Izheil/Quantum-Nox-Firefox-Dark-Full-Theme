@@ -12,15 +12,16 @@ basic css or <a href="https://www.w3schools.com/colors/colors_picker.asp">color 
 <br />
 This problem doesn't happen if you use a code editor such as notepad++, atom, sublime text...</h4>
 
-<h3>Last update: <b>13/04/2018</b></h3>
+<h3>Last update: <b>14/04/2018</b></h3>
 <p>Files updated:</p>
 <ul>
-  <li><b>userContent.css</b>: Inverted the color of some white images from the sync menus on the <code>about:preferences</code> page.</li>
+  <li><b>userChrome.css</b>: Added a little fix (disabled by default) so that if you have some issue with some addon text not being seen in contrast to the dark background, you can change it to white background again.</li>
+  <li><b>addons.css</b>: Added <a href="https://addons.mozilla.org/en-US/firefox/addon/window-resize/">Window resize</a> addon theme.</li>
 </ul>
 <h3>Pre-Last update: <b>09/04/2018</b></h3>
 <p>Files updated:</p>
 <ul>
-  <li><b>userContent.css</b>: Fixed some issue with disabled items on the <code>about:</code> pages.</li>
+  <li><b>userContent.css</b>: Inverted the color of some white images from the sync menus on the <code>about:preferences</code> page.</li>
 </ul>
 
 <h2>FAQ:</h2>
@@ -38,6 +39,9 @@ This problem doesn't happen if you use a code editor such as notepad++, atom, su
 <h3>Why use this method instead of using <a href="https://addons.mozilla.org/es/firefox/addon/styl-us/">Stylus</a>?</h3>
 <p>The main reason is that you can't style firefox about: pages nor the scrollbar with just stylus.</p>
 
+<h3>The theme is making the text of some addon popups unreadable, how do I fix this?</h3>
+<p>The theme is made so that it changes most background colors, including the one of the popups that don't have any background color specified by their original creator. Sadly it doesn't change the text of these by default, so you may have to do it manually, or report the addon you want themed here, or just use the fix inside userchrome.css (at around lines 218-221) to turn the addons back to their white background color.</p>
+
 <h2>Description</h2>
 
 <h3>Main browser UI</h3>
@@ -54,7 +58,7 @@ This problem doesn't happen if you use a code editor such as notepad++, atom, su
 	  <li>Can change the default text color of input boxes for those using a dark OS theme that affects the background of these (You have to change the commented line that is described on line 82 inside usercontent.css to use it)</li>
 	  <li>Can set an image as background for the home page (You have to change the commented line that is described in line 170 inside userContent.css).<br />
 <img src="https://i.imgur.com/IxMK0t5.png"></li>
-	  <li>Change the theme of either of <a href="https://addons.mozilla.org/es/firefox/addon/ublock-origin/">Ublock Origin</a>, <a href="https://addons.mozilla.org/es/firefox/addon/video-downloadhelper/">Video Download Helper</a>, <a href="https://addons.mozilla.org/es/firefox/addon/flash-video-downloader/">Flash Video Downloader</a>, <a href="https://addons.mozilla.org/es/firefox/addon/tab-session-manager/">Tab session manager</a>, <a href="https://addons.mozilla.org/es/firefox/addon/undo-closed-tabs-revived/">Undo closed tabs button</a>, <a href="https://addons.mozilla.org/es/firefox/addon/s3download-statusbar/">Download Manager (S3)</a>, <a href="https://addons.mozilla.org/es/firefox/addon/privacy-badger17/">Privacy badger</a>, <a href="https://addons.mozilla.org/es/firefox/addon/noscript/">Noscript</a> or <a href="https://addons.mozilla.org/es/firefox/addon/s3google-translator/">S3 Translator</a> extensions to a dark version. You have to update the UUIDs of the extensions inside "addons.css" for this. <br /><img src="https://i.imgur.com/m7TGyqz.png" title="Dark addons" /></li>
+	  <li>Change the theme of either of <a href="https://addons.mozilla.org/es/firefox/addon/ublock-origin/">Ublock Origin</a>, <a href="https://addons.mozilla.org/es/firefox/addon/video-downloadhelper/">Video Download Helper</a>, <a href="https://addons.mozilla.org/es/firefox/addon/flash-video-downloader/">Flash Video Downloader</a>, <a href="https://addons.mozilla.org/es/firefox/addon/tab-session-manager/">Tab session manager</a>, <a href="https://addons.mozilla.org/es/firefox/addon/undo-closed-tabs-revived/">Undo closed tabs button</a>, <a href="https://addons.mozilla.org/es/firefox/addon/s3download-statusbar/">Download Manager (S3)</a>, <a href="https://addons.mozilla.org/es/firefox/addon/privacy-badger17/">Privacy badger</a>, <a href="https://addons.mozilla.org/es/firefox/addon/noscript/">Noscript</a>, <a href="https://addons.mozilla.org/en-US/firefox/addon/window-resize/">Window resize</a> or <a href="https://addons.mozilla.org/es/firefox/addon/s3google-translator/">S3 Translator</a> extensions to a dark version. You have to update the UUIDs of the extensions inside "addons.css" for this. <br /><img src="https://i.imgur.com/m7TGyqz.png" title="Dark addons" /></li>
 	</ul>
   <li><b>Theme features</b>: In this one you will find a userchrome with ONLY the features part of the theme. These features are the following:
 	<ul>
