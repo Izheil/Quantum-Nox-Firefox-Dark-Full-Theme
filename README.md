@@ -15,14 +15,14 @@ This problem doesn't happen if you use a code editor such as notepad++, atom, su
 <h3>Last update: <b>14/04/2018</b></h3>
 <p>Files updated:</p>
 <ul>
-  <li><b>userChrome.css</b>: Added a little fix (disabled by default) so that if you have some issue with some addon text not being seen in contrast to the dark background, you can change it to white background again. Also themed the buttons to allow popups on the urlbox.</li>
-  <li><b>userContent.css</b>: Fixed the snippets box transparency on <code>about:home</code> page when using a custom background image.</li>
-  <li><b>addons.css</b>: Added <a href="https://addons.mozilla.org/en-US/firefox/addon/window-resize/">Window resize</a> addon theme. Also added a better explanation on how to use this file inside it.</li>
+  <li><b>userChrome.css</b>: Fixed the bookmark propieties tags selector resizing (you'll have to click it twice for it to resize accordingly).</li>
 </ul>
 <h3>Pre-Last update: <b>09/04/2018</b></h3>
 <p>Files updated:</p>
 <ul>
-  <li><b>userContent.css</b>: Inverted the color of some white images from the sync menus on the <code>about:preferences</code> page.</li>
+  <li><b>userChrome.css</b>: Added a little fix (disabled by default) so that if you have some issue with some addon text not being seen in contrast to the dark background, you can change it to white background again. Also themed the buttons to allow popups on the urlbox.</li>
+  <li><b>userContent.css</b>: Fixed the snippets box transparency on <code>about:home</code> page when using a custom background image.</li>
+  <li><b>addons.css</b>: Added <a href="https://addons.mozilla.org/en-US/firefox/addon/window-resize/">Window resize</a> addon theme. Also added a better explanation on how to use this file inside it.</li>
 </ul>
 
 <h2>FAQ:</h2>
