@@ -1,6 +1,6 @@
 /* You can find an updated version here: https://github.com/Izheil/Firefox-57-full-dark-theme-with-scrollbars */
 /* Made by Izheil */
-/* Last updated: 14/04/2018 */
+/* Last updated: 18/04/2018 */
 
 /* This part imports the Addons file if there is one, so that you don't have to edit the dynamic URL
 from the addons rules every time we update anything here */
@@ -390,12 +390,17 @@ td {background: #555 !important;
 	padding-left: 4px !important}}
 
 /*------ BACKGROUND OF MOST ABOUT PAGES  ------*/
-@-moz-document url(about:), url(about:about), url(about:blank), url(https://www.mozilla.org/credits/),
+@-moz-document url(about:), url(about:about), url(https://www.mozilla.org/credits/),
 url-prefix(about:checkerboard), url(about:accounts), url-prefix(about:cache), 
 url-prefix(about:plugins), url-prefix(about:buildconfig), url-prefix(about:memory),
 url-prefix(about:support), url-prefix(about:profiles), url(about:robots), url(about:serviceworkers),
 url(about:webrtc) {
 body, html {background-color: #202020 !important}}
+
+/* Fix for Ublock Origin Element picker */
+@-moz-document url(about:blank) {
+	body {background: #222}
+}
 
 /*------ PAGES WITH PLAIN TEXT OVER BACKGROUND  ------*/
 @-moz-document url(about:about), url-prefix(https://www.mozilla.org/credits/), 
