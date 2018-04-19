@@ -12,15 +12,15 @@ basic css or <a href="https://www.w3schools.com/colors/colors_picker.asp">color 
 <br />
 This problem doesn't happen if you use a code editor such as notepad++, atom, sublime text...</h4>
 
-<h3>Last update: <b>14/04/2018</b></h3>
+<h3>Last update: <b>20/04/2018</b></h3>
+<p>Files updated:</p>
+<ul>
+  <li><b>UserChrome.css</b>: Reorganized userChrome so that now it's easier to change the non-dark colors (all highlight colors should be on top of the file to be edited, as well as tabs and toolbar background colors).</li>
+</ul>
+<h3>Pre-Last update: <b>19/04/2018</b></h3>
 <p>Files updated:</p>
 <ul>
   <li><b>Addons.css</b>: Deleted some unnecesary lines.</li>
-</ul>
-<h3>Pre-Last update: <b>09/04/2018</b></h3>
-<p>Files updated:</p>
-<ul>
-  <li><b>userContent.css</b>: Fixed some issue with Ublock Origin's element picker not showing a transparent background.</li>
 </ul>
 
 <h2>FAQ:</h2>

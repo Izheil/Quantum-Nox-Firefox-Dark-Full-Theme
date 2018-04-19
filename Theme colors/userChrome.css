@@ -1,24 +1,13 @@
 /* You can find an updated version here: https://github.com/Izheil/Firefox-57-full-dark-theme-with-scrollbars */
 /* Made by Izheil */
-/* Last updated: 17/04/2018 */
+/* Last updated: 20/04/2018 */
 
 /* DO NOT DELETE THIS LINE */
 @namespace url("http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul");
 
 /* COLORING PART STARTS HERE */
 
-/* v Fix to make the pre-render loading page dark instead of white v */
-browser[type="content-primary"], tabbrowser tabpanels, #appcontent > #content
-{background-color: #202020 !important}
-
-/* You can also add an image of your choice in the pre-render loading page if you want 
-Delete the final /* to use -> *//*
-browser[type="content-primary"], tabbrowser tabpanels, #appcontent > #content {
-  background-image: url("file:///C:/Users/") !important;
-  background-size: cover !important;
-  background-position: center !important}
-
-/* TOOLBAR, TABS, URL BAR AND SEARCH BAR */
+/* GENERAL COLORS */
 
 /* This root class will modify the colors of toolbar background color (by default is transparent white 
 without this change) */
@@ -34,8 +23,90 @@ without this change) */
   --url-and-searchbar-color: #FFF;
   --urlbar-separator-color: #5F6670}
 
+/* These rules will modify most highlight (background on hover) colors inside Firefox (except sidebar items, which are 
+in the rule below) */
+:root {
+  --Min-max-buttons-hover-bg: #2050AA;
+  --Context-menu-highlight: #25a;
+  --Progress-bar-color: #3070dd;
+  --About-addon-text: #09f;
+  --About-addon-text-hover: #0ff;
+  --About-addon-extension-name: #38f;
+  --Input-field-focus-shadow: #0050ff;
+  --Bookmark-folder-icon: #ffe793;
+  --Feeds-link: #00aaff;
+  --Feeds-link-hover: #0ff;
+  --Feeds-link-active: #0050aa;
+  --Feeds-link-visited: #0050dd;
+  --Url-bar-highlight-bg: #25a;
+  --Search-engine-choices-gradient: linear-gradient(#337, #115);
+  --Searched-item-text-color: #0FF;
+
+  /* These ones are used for the read/unread tabs styling. For italic rules use 
+  either "normal" or "italic" without the quotes for either no italics or using italics, 
+  and for bold, use either "bold" or "normal" in the same way */
+  --Loaded-and-selected-text: #eee;
+  --Loaded-and-selected-italic: normal;
+  --Loaded-and-selected-bold: normal;
+  --Loaded-and-selected-background: transparent;
+
+  --Loaded-but-unread-text: #fff;
+  --Loaded-but-unread-italic: italic;
+  --Loaded-but-unread-bold: normal;
+  --Loaded-but-unread-background: transparent;
+
+  --Not-loaded-text: #ccc;
+  --Not-loaded-italic: italic;
+  --Not-loaded-bold: normal;
+  --Not-loaded-background: transparent;
+
+  --Loading-text: var(--tab-line-color);
+  --Loading-italic: normal;
+  --Loading-bold: normal;
+  --Loading-background: transparent;
+}
+
+/* Sidebar items highlights */
+treechildren {
+/* These change the colors of the borders when selected/hovered */
+  --treechildren-selectedColor: none !important;
+  --treechildren-focusColor: rgb(123,195,255) !important;
+  --treechildren-hoverColor: none !important;
+  --treechildren-selectedFocusColor: rgb(205,232,255) !important;
+
+/* These change the background colors when hovered/selected */
+  --treechildren-selectedImage: linear-gradient(rgb(190,190,190), rgb(190,190,190)) !important; 
+  --treechildren-hoverImage: linear-gradient(rgb(34,85,170), rgb(34,85,170)) !important; 
+  --treechildren-hoverCurrentImage: linear-gradient(rgba(34,85,170,.16), rgba(34,85,170,.16)) !important;
+  --treechildren-hoverSelectedImage: linear-gradient(rgb(205,232,255), rgb(205,232,255)) !important}
+
+/* This is a fix for those using an OS theme (they change the background and text color on hover), 
+if you don't see a blue hover color on items on the sidebar, use this method instead *//*
+#bookmarks-view treechildren::-moz-tree-cell(hover),
+#historyTree treechildren::-moz-tree-cell(hover) {
+  background-image: linear-gradient(rgb(34,85,170), rgb(34,85,170)) !important;
+  color: #fff !important}
+
+#bookmarks-view treechildren::-moz-tree-cell(selected),
+#historyTree treechildren::-moz-tree-cell(selected){
+  background-image: linear-gradient(rgb(40,40,40), rgb(40,40,40)) !important;
+  color: #000 !important}
+
+/* v Fix to make the pre-render loading page dark instead of white v */
+browser[type="content-primary"], tabbrowser tabpanels, #appcontent > #content
+{background-color: #202020 !important}
+
+/* You can also add an image of your choice in the pre-render loading page if you want 
+Delete the final /* to use -> *//*
+browser[type="content-primary"], tabbrowser tabpanels, #appcontent > #content {
+  background-image: url("file:///C:/Users/") !important;
+  background-size: cover !important;
+  background-position: center !important}
+
 /* Tabs border color */
 .tabbrowser-tab {border-right: 1px solid rgba(255,255,255, .15) !important}
+
+/* END OF GENERAL COLORS */
 
 /* Max, min and close buttons */
 
@@ -49,7 +120,7 @@ of the minimize, maximize and close buttons */
 /* This changes the color on hover of the minimize and maximize buttons */
 #titlebar-min:hover, #titlebar-max:hover, 
 #main-window[sizemode="maximized"] #titlebar-max:hover 
-{background-color: #2050AA !important}
+{background-color: var(--Min-max-buttons-hover-bg) !important}
 
 /* This changes the close button hover color */
 #titlebar-close:hover {background-color: #FF0000 !important}
@@ -57,7 +128,7 @@ of the minimize, maximize and close buttons */
 /* The downloads progress bar color */
 .progress-bar {
   -moz-appearance: none !important;
-  background-color: #3070dd !important}
+  background-color: var(--Progress-bar-color) !important}
 
 /* Search bar inside the content area */
 findbar {
@@ -87,7 +158,7 @@ findbar .findbar-find-previous, findbar .findbar-find-next {
   border-left: none !important}
 
 /* Color for most dialogs */
-dialog, dialog caption, dialog select, #clientBox {
+dialog, dialog caption, dialog select, #clientBox  {
   -moz-appearance: none !important;
   background-color: #333 !important;
   color: #ccc !important}
@@ -111,12 +182,12 @@ dialog groupbox {
   background-color: #444 !important}
 
 #clientBox label:not(#extensionName):not(#extensionCreator):not(.contributor):not(#extensionVersion):not(.sectionTitle) {
-  color: #09f !important}
+  color: var(--About-addon-text) !important}
 
 #clientBox label:not(#extensionName):not(#extensionCreator):not(.contributor):not(#extensionVersion):not(.sectionTitle):hover {
-  color: #0ff !important}
+  color: var(--About-addon-text-hover) !important}
 
-#extensionName {color: #38f !important}
+#extensionName {color: var(--About-addon-extension-name) !important}
 
 #groove {border-color: #222 !important}
 
@@ -145,9 +216,9 @@ dialog textbox {
   color: #aaa !important}
 
 dialog textbox[focused="true"] {
-  box-shadow: 0 0 4px #0050ff !important;
+  box-shadow: 0 0 4px var(--Input-field-focus-shadow) !important;
   background-color: #555 !important;
-  color: #fff !important} 
+  color: #fff !important}
 
 /* This is used to fix some issue with the bookmark properties window
 not showing at full height when customizing their dialog */
@@ -195,8 +266,7 @@ you aren't using the default dark theme of mozilla, that is) */
   border: none !important}
 
 #customization-done-button:hover {
-  background: #1040A0 !important;
-  color: #0ff !important}
+  background: #1040A0 !important}
 
 #customization-lwtheme-menu-footer {border-top: none !important}
 
@@ -218,7 +288,7 @@ you aren't using the default dark theme of mozilla, that is) */
   --arrowpanel-dimmed-even-further: rgba(255, 255, 255, 0.4) !important}
 
 /* Little fix in case there is some addon popup text that you don't see because 
-of the background (delete the /* in the end of this line to use ->) *//*
+of the background (delete the /* in the end to use ->) *//*
 #customizationui-widget-panel .panel-arrow {fill: #fff !important}
 .webextension-popup-browser {background: #fff !important}
 
@@ -235,7 +305,7 @@ menu, menuitem {
 /* Padding for all menu items (do NOT change unless you want an spaced or indented upon 
 selection effect). The open in tabs bookmark item is added here since it also needs the 
 padding that we remove in the next rule */ 
-menuitem, .bookmark-item .openintabs-menuitem, 
+menuitem, .bookmark-item .openintabs-menuitem,
 #history-menu menupopup > menu, #view-menu menupopup > menu {
   padding-top: 3px !important;
   padding-bottom: 2px !important}
@@ -250,7 +320,7 @@ menubar > menu[_moz-menuactive="true"],
 menupopup > menu[_moz-menuactive="true"],
 popup > menu[_moz-menuactive="true"],
 menuitem[_moz-menuactive="true"]
-{background-color: #25a !important}
+{background-color: var(--Context-menu-highlight) !important}
 
 /* This does the same but for disabled ones */
 menubar > menu[_moz-menuactive="true"][disabled="true"],
@@ -295,8 +365,8 @@ menuseparator {
 .menu-accel-container .menu-iconic-accel {color: #808080 !important}
 .menu-accel-container .menu-accel {color: #909090 !important}
 
-/* Bookmark context menu > icon color */
-.bookmark-item .menu-right, menu .menu-right,
+/* Bookmark context menu > icon color and popup allow > icon color */
+.bookmark-item .menu-right, menu .menu-right, 
 #identity-popup-popup-menulist .menulist-dropmarker {filter: brightness(300%) !important}
 
 /* Drop indicator that appears when moving a bookmark in a bookmark folder color */
@@ -304,7 +374,7 @@ menuseparator {
 
 /* Color of default icons on bookmark bar and bookmark popup (folder icons and gear icons) */
 .bookmark-item > .toolbarbutton-icon, 
-.bookmark-item .menu-iconic-icon {fill: #ffe793 !important}
+.bookmark-item .menu-iconic-icon {fill: var(--Bookmark-folder-icon) !important}
 
 /* Fix for the space above the "save as" option after the navigation buttons have been eliminated. Change 
 if necessary depending on if you are using a custom OS theme (which may mess up the padding of the separators) */
@@ -316,7 +386,7 @@ if necessary depending on if you are using a custom OS theme (which may mess up 
 #placesToolbar {background-color: #333 !important}
 
 /* These change the lists background color */
-#placesView, #placesView .scrollbox-innerbox ,
+#placesView, #placesView .scrollbox-innerbox,
 #infoPane, #placesList, #placeContent, 
 /* This one changes the urlbar star bookmarking folder tree backgrund color */
 #editBMPanel_folderTree {
@@ -374,7 +444,7 @@ if necessary depending on if you are using a custom OS theme (which may mess up 
 
 /* This themes the search box on hover */
 #searchFilter[focused="true"] {
-  box-shadow: 0 0 4px #0050ff !important;
+  box-shadow: 0 0 4px var(--input-field-focus-shadow) !important;
   background-color: #555 !important;
   color: #fff !important} 
 
@@ -407,7 +477,7 @@ if necessary depending on if you are using a custom OS theme (which may mess up 
 #editBMPanel_namePicker[focused="true"], #editBMPanel_tagsField[focused="true"],
 #bookmarkproperties #editBMPanel_namePicker[focused="true"],
 #bookmarkproperties #editBMPanel_tagsField[focused="true"] {
-  box-shadow: 0 0 4px #0050ff !important;
+  box-shadow: 0 0 4px var(--input-field-focus-shadow) !important;
   background-color: #666 !important;
   color: #fff !important} 
 
@@ -567,7 +637,7 @@ if necessary depending on if you are using a custom OS theme (which may mess up 
 
 /* This themes the search box on hover */
 #CookiesDialog #filter[focused="true"], #SignonViewerDialog #filter[focused="true"] {
-  box-shadow: 0 0 4px #0050ff !important;
+  box-shadow: 0 0 4px var(--input-field-focus-shadow) !important;
   background-color: #666 !important;
   color: #fff !important}
 
@@ -616,7 +686,7 @@ if necessary depending on if you are using a custom OS theme (which may mess up 
 /* Changes the color of the highlighted item (only the selected one) on the url and searchbar */
 .autocomplete-richlistitem[selected="true"], 
 .search-panel-tree > .autocomplete-treebody::-moz-tree-cell(fromhistory, selected)
-{background-color: #25a !important}
+{background-color: var(--Url-bar-highlight-bg) !important}
 
 /* Changes the color of the autocomplete on the URL bar */
 #PopupAutoCompleteRichResult .ac-title-text,
@@ -647,7 +717,7 @@ if necessary depending on if you are using a custom OS theme (which may mess up 
 .addengine-item:hover {background-color: #444 !important}
 
 /* Changes the color of search engines choices */
-.search-panel-one-offs {background: linear-gradient(#337,#115) !important}
+.search-panel-one-offs {background: var(--Search-engine-choices-gradient) !important}
 
 /* Changes the color of search engine options button */
 .search-setting-button {
@@ -657,7 +727,7 @@ if necessary depending on if you are using a custom OS theme (which may mess up 
 .search-setting-button:hover {background: linear-gradient(#111,#333) !important}
 
 /* Changes the color of searched item on the search popup */
-.search-panel-input-value {color: #0FF !important}
+.search-panel-input-value {color: var(--Searched-item-text-color) !important}
 
 /* SIDEBAR */
 
@@ -665,7 +735,8 @@ if necessary depending on if you are using a custom OS theme (which may mess up 
 #sidebar-header {
   color: #fff !important;
   background-color: #303030 !important;
-  -moz-appearance: none !important} 
+  -moz-appearance: none !important;
+  border-bottom: 1px solid #111 !important} 
 
 #sidebar-search-container, #bookmarks-view-children, #historyTree, #sidebar {
   -moz-appearance: none !important;
@@ -678,32 +749,7 @@ if necessary depending on if you are using a custom OS theme (which may mess up 
 
 treechildren::-moz-tree-separator {border-color: #000 !important}
 
-/* Highlighted items */
-treechildren {
-
-/* These change the colors of the borders when selected/hovered */
-  --treechildren-selectedColor: none !important;
-  --treechildren-focusColor: rgb(123,195,255) !important;
-  --treechildren-hoverColor: none !important;
-  --treechildren-selectedFocusColor: rgb(205,232,255) !important;
-
-/* These change the background colors when hovered/selected */
-  --treechildren-selectedImage: linear-gradient(rgb(190,190,190), rgb(190,190,190)) !important; 
-  --treechildren-hoverImage: linear-gradient(rgb(34,85,170), rgb(34,85,170)) !important; 
-  --treechildren-hoverCurrentImage: linear-gradient(rgba(34,85,170,.16), rgba(34,85,170,.16)) !important;
-  --treechildren-hoverSelectedImage: linear-gradient(rgb(205,232,255), rgb(205,232,255)) !important}
-
-/* This is a fix for those using an OS theme (they change the background and text color on hover), 
-if you don't see a blue hover color on items on the sidebar, use this method instead *//*
-#bookmarks-view treechildren::-moz-tree-cell(hover),
-#historyTree treechildren::-moz-tree-cell(hover) {
-  background-image: linear-gradient(rgb(34,85,170), rgb(34,85,170)) !important;
-  color: #fff !important}
-
-#bookmarks-view treechildren::-moz-tree-cell(selected),
-#historyTree treechildren::-moz-tree-cell(selected){
-  background-image: linear-gradient(rgb(40,40,40), rgb(40,40,40)) !important;
-  color: #000 !important}
+/* Items inside the sidebar (treechildren) are located in the general colors section of this file now */
 
 /* This changes the sidebar searchbar */
 #sidebar-search-container #search-box {
@@ -717,28 +763,32 @@ if you don't see a blue hover color on items on the sidebar, use this method ins
 
 /* Selected (loaded) */
 .tabbrowser-tab[selected="true"] .tab-label {
-    color: #eee !important;
-    font-size: 12px !important;
-    font-style: normal !important;}
+  color: var(--Loaded-and-selected-text) !important;
+  font-style: var(--Loaded-and-selected-italic) !important;
+  font-weight: var(--Loaded-and-selected-bold) !important;
+  background-color: var(--Loaded-and-selected-background) !important}
 
 /* Loaded but unread (not selected) */
 .tabbrowser-tab:not([selected="true"])[unread] .tab-label {
-    color: #fff !important;
-    font-size: 12px !important;
-    font-style: italic !important;}
+  color: var(--Loaded-but-unread-text) !important;
+  font-style: var(--Loaded-but-unread-italic) !important;
+  font-weight: var(--Loaded-but-unread-bold) !important;
+  background-color: var(--Loaded-but-unread-background) !important}
 
 /* Not loaded yet (also visited) */
 .tabbrowser-tab:not([selected="true"])[pending] .tab-label,
 .tabbrowser-tab:not([selected="true"])[visited] .tab-label {
-    color: #ccc !important;
-    font-size: 12px !important;
-    font-style: italic !important;}
+  color: var(--Not-loaded-text) !important;
+  font-style: var(--Not-loaded-italic) !important;
+  font-weight: var(--Not-loaded-bold) !important;
+  background-color: var(--Not-loaded-background) !important}
 
 /* loading */
 .tabbrowser-tab[busy] .tab-text.tab-label {
-    color: var(--tab-line-color) !important;
-    font-size: 12px !important;
-    font-style: normal !important}
+  color: var(--Loading-text) !important;
+  font-style: var(--Loading-italic) !important;
+  font-weight: var(--Loading-bold) !important;
+  background-color: var(--Loading-background) !important}
 
 /* ADDON POPUPS */
 
