@@ -15,12 +15,12 @@ This problem doesn't happen if you use a code editor such as notepad++, atom, su
 <h3>Last update: <b>14/04/2018</b></h3>
 <p>Files updated:</p>
 <ul>
-  <li><b>userContent.css</b>: Fixed some issue with Ublock Origin's element picker not showing a transparent background.</li>
+  <li><b>Addons.css</b>: Deleted some unnecesary lines.</li>
 </ul>
 <h3>Pre-Last update: <b>09/04/2018</b></h3>
 <p>Files updated:</p>
 <ul>
-  <li><b>userChrome.css</b>: Fixed the bookmark propieties tags selector resizing (you'll have to click it twice for it to resize accordingly).</li>
+  <li><b>userContent.css</b>: Fixed some issue with Ublock Origin's element picker not showing a transparent background.</li>
 </ul>
 
 <h2>FAQ:</h2>

@@ -1,6 +1,6 @@
 /* You can find an updated version here: https://github.com/Izheil/Firefox-57-full-dark-theme-with-scrollbars */
 /* Made by Izheil */
-/* Last updated: 14/04/2018 */
+/* Last updated: 19/04/2018 */
 
 /*------ HOW TO MAKE THE ADDON THEMES WORK ------*/
 /* To use this part of the code, you will have to find the dynamic UUID of your extensions, and replace it where the 
@@ -305,19 +305,6 @@ body, .multiple_download_header, #filters_block,
 
 .footer .footer-item {color: #fff !important}
 .footer .footer-item:hover {background: #444 !important}
-}
-
-/*------ VIDEO DOWNLOAD HELPER ADDON OPTIONS PANEL ------*/
-@-moz-document url-prefix(moz-extension://TYPE-UUID-OF-VIDEO-DOWNLOAD-HELPER-HERE/content/settings.html) {
-main, .btn-toolbar {background: #333 !important; color: #ccc !important}
-header {background: #222 !important; color: #fff !important}
-
-.dropdown-toggle {background: #333 !important; border-bottom: 1px solid #fff !important}
-
-.section-header, .dropdown-item:hover {background: #555 !important; color: #fff !important}
-.card-body, .dropdown-menu.show, .dropdown-item {background: #444 !important; color: #ccc !important}
-
-.active.nav-link {background: #444 !important; color: #0ff !important}
 }
 
 /*------ VIDEO DOWNLOAD HELPER ADDON COMMON PART ------*/
