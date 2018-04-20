@@ -1,9 +1,16 @@
 <h1>Alternative scrollbar styles</h1>
-<p>You can find other scrollbar styles in here with some screenshots. You should only use 1 at a time, and each time you change the style, you'll have to clear the "startupcache" folder on the local folder inside <code>about:profiles</code>.</p></p>
+<p>You can find other scrollbar styles in here with some screenshots. You should only use 1 at a time, and each time you change the style, you'll have to clear the "startupcache" folder on the local folder inside <code>about:profiles</code> for changes to take effect.</p></p>
+
+<h2>Files outside the colored scrollbar folders</h2>
 
 <h3>Scrollbars-minimal.uc.js</h3>
 <img src="https://i.imgur.com/eWYEmiU.png">
 <p>A semi-transparent slim scrollbar with no background. It widens by 1 px when you click it.</p>
+
+<h3>No-scrollbars.uc.js</h3>
+<p>No scrollbars appear on-screen, but you can still scroll through pages (Just hides the scrollbars).</p>
+
+<h2>Files inside the colored scrollbar folders</h2>
 
 <h3>Scrollbars-rail-bg-flat.uc.js</h3>
 <img src="https://i.imgur.com/EFHFpRk.png">
@@ -35,9 +42,6 @@
 
 <h3>Scrollbars-shrink.uc.js</h3>
 <p>Same design as the default one from this theme, but this one shrinks when active, instead of getting wider.</p>
-
-<h3>No-scrollbars.uc.js</h3>
-<p>No scrollbars appear on-screen, but you can still scroll through pages (Just hides the scrollbars).</p>
 
 <h3>(Any other combination of the above).uc.js</h3>
 <p>Those shouldn't need an explanation.</p>

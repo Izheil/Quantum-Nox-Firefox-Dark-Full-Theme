@@ -6,7 +6,7 @@
 from the addons rules every time we update anything here */
 @import 'addons.css';
 
-/*------ COMMON PART FOR ALL FIREFOX PAGES (MAINLY USED FOR THE 404 PAGE) ------*/
+/*------ COMMON PART FOR ALL FIREFOX PAGES ------*/
 :root {
 
 /* This is a little fix for all pages in case you have a dark OS theme, you can use a neutral color
@@ -18,7 +18,7 @@ text-inputting things. Leave as "none" for default text color. */
 To use, instead of "none;", type: url("URL-OF-THE-IMAGE-GOES-HERE"); <- Don't forget the ending semicolon! */
 	--home-background-image: none;
 
-/* These change some Firefox pages colors */
+/* These change some Firefox pages colors (Mainly used for the 404 error page) */
 	--in-content-page-color: #ccc !important;
 	--in-content-page-background: #222 !important;
 	--in-content-text-color: #ccc !important;

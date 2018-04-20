@@ -18,7 +18,7 @@ scrollbar[orient="vertical"] {
 	-moz-margin-start: 0px !important;
 	max-width: 12px !important;
 	min-width: 12px !important;
-	
+
 	background: linear-gradient(to right, #222, #444) !important;
 	background-size: 12px 12px !important;
 	background-repeat: repeat-y !important;
@@ -30,8 +30,8 @@ scrollbar[orient="horizontal"] {
 	margin-top: 0px !important;
 	max-height: 12px !important;
 	min-height: 12px !important;
-    
-	background: linear-gradient(#222, #444) !important;
+  
+	background: linear-gradient(to right, #222, #444) !important;
 	background-size: 12px 12px !important;
 	background-repeat: repeat-x  !important;
 	background-position: 0% 50% !important;
@@ -43,7 +43,6 @@ scrollbar thumb[orient="vertical"] {
 	width: 12px !important;
 	min-width: 12px !important;
 	max-width: 12px !important;
-	background: linear-gradient(to right, transparent 0, transparent 1px, #999 1px, #333 11px, transparent 11px, transparent 12px) !important;
 }
 
 scrollbar thumb[orient="horizontal"] {
@@ -51,32 +50,22 @@ scrollbar thumb[orient="horizontal"] {
 	height: 12px !important;
 	min-height: 12px !important;
 	max-height: 12px !important;
-	background: linear-gradient(transparent 0, transparent 1px, #999 1px, #333 11px, transparent 11px, transparent 12px) !important;
 }
 
 scrollbar thumb {
-	border-radius: 15px !important;
+	background: transparent !important;
+	box-shadow: 0 0 0 8px #666 inset !important;
 	opacity: 1 !important;
+	transition: 0.5s !important;  
 }
 
-scrollbar:hover thumb[orient="horizontal"],
-scrollbar thumb[orient="horizontal"]:active {
-	background: linear-gradient(transparent 0, transparent 1px, #46b 1px, #1e2d53 11px, transparent 11px, transparent 12px) !important;
+scrollbar:hover thumb {
+	box-shadow: 0 0 0 8px #46b inset !important;
 }
 
-scrollbar:hover thumb[orient="vertical"],
-scrollbar thumb[orient="vertical"]:active {
-	background: linear-gradient(to right, transparent 0, transparent 1px, #46b 1px, #1e2d53 11px, transparent 11px, transparent 12px) !important;
-}
-
-scrollbar thumb[orient="vertical"]:active {
-	background: linear-gradient(to right, #46b, #172342) !important;
-	border-radius: 6px !important;
-}
-
-scrollbar thumb[orient="horizontal"]:active {
-	background: linear-gradient(#46b, #172342) !important;
-	border-radius: 6px !important;
+scrollbar thumb:active {
+	box-shadow: 0 0 0 8px #365196 inset !important;
+	transition: 0s !important; 
 }
 
 scrollcorner {

@@ -980,6 +980,9 @@ part of the same rule */
 /* Send link... */ 
 #context-sendlink,
 
+/* Search X on your default search engine */
+#context-searchselect,
+
 /* Open link in a new tab */
 #context-openlinkintab,
 /* Open link in a new window */

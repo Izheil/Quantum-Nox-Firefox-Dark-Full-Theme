@@ -28,13 +28,14 @@
   	  <li>Send page...(line 168, same as with send image, if you wanted to send something, you'd open your prefered mail yourself).</li>
   	  <li>Bookmark this link (line 171, same as bookmark this page).</li>
   	  <li>Send link... (line 174, same as send page).</li>
-  	  <li>Open link in new tab (178, <b>not deleted by default</b>, but you can the same middle mouse clicking, or holding ctrl while clicking a link).</li>
-  	  <li>Open link in a new window (line 180).</li>
-  	  <li>Open link in a private window (line 182).</li>
-  	  <li>Take a screenshot and its separator (line 187, since you can already access it through the 3 dots button on the URL bar).</li>
-  	  <li>Send tab to device and its separators (line 189).</li>
-  	  <li>Send page to device and its separator (line 193).</li>
-  	  <li>Send link to device and its separator (lines 196).</li>
+      <li>Search highlighted word on your default search engine (line 178, same as send page).</li>
+  	  <li>Open link in new tab (181, <b>not deleted by default</b>, but you can the same middle mouse clicking, or holding ctrl while clicking a link).</li>
+  	  <li>Open link in a new window (line 183).</li>
+  	  <li>Open link in a private window (line 185).</li>
+  	  <li>Take a screenshot and its separator (line 190, since you can already access it through the 3 dots button on the URL bar).</li>
+  	  <li>Send tab to device and its separators (line 193).</li>
+  	  <li>Send page to device and its separator (line 196).</li>
+  	  <li>Send link to device and its separator (lines 199).</li>
   	</ul></li>
 </ul>
 
