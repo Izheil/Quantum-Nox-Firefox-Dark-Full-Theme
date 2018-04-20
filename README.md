@@ -15,7 +15,7 @@ This problem doesn't happen if you use a code editor such as notepad++, atom, su
 <h3>Last update: <b>20/04/2018</b></h3>
 <p>Files updated:</p>
 <ul>
-  <li><b>UserChrome.css</b>: Reorganized userChrome so that now it's easier to change the non-dark colors (all highlight colors should be on top of the file to be edited, as well as tabs and toolbar background colors).</li>
+  <li><b>UserChrome.css</b>: Reorganized userChrome so that now it's easier to change the non-dark colors (all highlight colors should be on top of the file to be edited, as well as tabs and toolbar background colors). You can now also change the background image of your lightweight theme to one of your choice.</li>
 </ul>
 <h3>Pre-Last update: <b>19/04/2018</b></h3>
 <p>Files updated:</p>
@@ -54,6 +54,7 @@ This problem doesn't happen if you use a code editor such as notepad++, atom, su
 	<ul>
 	  <li>Styling for unloaded and unread tab titles.</li>
 	  <li>Can change the tab line color to Windows current theme color (You have to change the commented line that is described in line 19 inside userChrome.css).</li>
+	  <li>Can change the background image of your lightweight theme to one of your choice on userChrome.css (You have to be using a lightweight theme instead of the default dark theme of Firefox).</li>
 	  <li>Can change the default text color of input boxes for those using a dark OS theme that affects the background of these (You have to change the commented line that is described on line 82 inside usercontent.css to use it)</li>
 	  <li>Can set an image as background for the home page (You have to change the commented line that is described in line 170 inside userContent.css).<br />
 <img src="https://i.imgur.com/IxMK0t5.png"></li>
