@@ -12,6 +12,10 @@
 
 <h2>Files inside the colored scrollbar folders</h2>
 
+<h3>Scrollbars-default-(color).uc.js</h3>
+
+<p>These will be the same as the default scrollbar for this theme (the one inside the profile folder in this repository), but in a different color. It won't appear inside the blue scrollbars folder (since that's the default scrollbar that we are making reference to).</p>
+
 <h3>Scrollbars-rail-bg-flat.uc.js</h3>
 <img src="https://i.imgur.com/EFHFpRk.png">
 <p>Grey thumb scrollbar with a semi-transparent white line as background (rail-like). This emulates the <a href="https://gist.github.com/Arty2/fdf19aea2c601032410516f059d58eb1">original design</a> that Arty2 had for the code of these scrollbars.</p>
