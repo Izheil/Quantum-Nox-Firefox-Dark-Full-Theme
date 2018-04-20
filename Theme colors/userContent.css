@@ -11,7 +11,7 @@ from the addons rules every time we update anything here */
 
 /* This is a little fix for all pages in case you have a dark OS theme, you can use a neutral color
 like #ccc (graish) or #2066dd (bluish) so that the letters can be seen in either a white or dark background for 
-text-inputting things. Leave as "none" for default text color. */
+text-inputting things. Leave as "none" for default letter color. */
 	--text-color-for-input-fields: none;
 
 /* You can put the url of an image that you want to be used as background for the about:home page.
@@ -27,8 +27,37 @@ To use, instead of "none;", type: url("URL-OF-THE-IMAGE-GOES-HERE"); <- Don't fo
 	--in-content-box-background-active: #333 !important;
 	--in-content-box-border-color: #777 !important;
 	--in-content-primary-button-background: #05a !important;
-	--in-content-primary-button-background-hover: #003080 !important;
-	--in-content-primary-button-background-active: #002070 !important}
+	--in-content-primary-button-background-hover: #0040aa !important;
+	--in-content-primary-button-background-active: #002070 !important;
+
+	/* Variable to change most pages context menu highlights */
+	--in-content-context-highlight: #25a;
+
+	/* Variable to change the about:addons page extension names color */
+	--addons-addon-name: #38f;
+	--addons-addon-name-active: #0ef;
+
+	/* Variables to change all link colors on most pages */
+	--in-content-link-color: #09f !important;
+  	--in-content-link-color-hover: #0ff !important;
+  	--in-content-link-color-active: #0070aa !important;
+  	--in-content-link-color-visited: #0050aa !important;
+	
+	/* These change the selected categories color on sidebars on about: pages*/
+	--in-content-category-text-selected: #0a84ff !important;
+	--in-content-category-text-selected-active: #0060df !important;
+
+	/* These change some colors on about:home */
+	--home-text: #50AAFF;
+	--home-search-engine-choices: linear-gradient(#559,#115);
+
+	/* This one changes the border of all boxes with a blue border focus effect */
+	--in-content-border-focus: #2066dd !important;
+
+	/* Buttons background colors */
+	--button-background: #05a;
+	--button-background-hover: #0040aa;
+	--button-border: #0040aa}
 
 /* This part covers the preferences page update scrollbox (No, I couldn't put it inside the preferences section) */
 #historyItems .scrollbox-innerbox {background-color: #444 !important}
@@ -131,7 +160,7 @@ html {
 
 body { 
  	background-color: #202020  !important;
-    color: #50AAFF !important;
+    color: var(--home-text) !important;
     overflow: auto !important}
 
 /* Context menus of the web area */
@@ -140,15 +169,16 @@ body {
 	color: #ccc}
 
 .context-menu > ul > li > a:hover, .context-menu > ul > li > a:focus {
-	background-color: #0a50AA !important}
+	background-color: var(--in-content-context-highlight) !important}
 
 /* Context menus of the about information area */
 .info-option {background-color: #444 !important; border: 1px solid #000 !important}
 .info-option::before {filter: invert(73%) !important}
 
-.info-option-manage button {color: #3088FF !important}
+.info-option-manage button {color: var(--in-content-link-color) !important}
 
-.info-option-manage button:hover {color: #00FFFF !important}
+.info-option-manage button:hover {color: var(--in-content-link-color-hover) !important}
+.info-option-manage button::after {fill: var(--in-content-link-color) !important}
 
 /* The sidebar/settings panel part starts here */
 .sidebar, .sidebar .actions {border-left: 2px solid #000 !important} 
@@ -212,7 +242,9 @@ body {
     border: solid 1px #0a50AA !important}
 
 /* Search box style */
-.search-label {fill: #2066dd !important}
+#newtab-search-text[keepfocus="true"] {box-shadow: 0 0 0 1px var(--in-content-border-focus) !important}
+
+.search-label {fill: var(--in-content-border-focus) !important}
 
 .contentSearchSuggestionTable {
     background-color: #444 !important;
@@ -222,7 +254,7 @@ body {
     border-bottom: 1px solid #000 !important;
     color: #ccc !important}
 
-.contentSearchOneOffsTable {background: linear-gradient(#559,#115) !important}
+.contentSearchOneOffsTable {background: var(--home-search-engine-choices) !important}
 
 .contentSearchOneOffItem:not(.last-row) {border-bottom: 1px solid #000 !important}
 
@@ -242,19 +274,19 @@ body {
     background: linear-gradient(#111,#333) !important}
 
 .search-button {
-	fill: #2066dd !important}
+	fill: var(--in-content-border-focus) !important}
 
 /* Firefox news at the bottom of the screen snippets */
 #snippets-container, input {
 	background-color: #151515 !important}
 
 #snippets-container p {
-	color: #50AAFF !important}
+	color: var(--home-text) !important}
 
 .snippet p em {
 	background: transparent !important;
 	font-weight: 900 !important;
-	color: #50AAFF !important}
+	color: var(--home-text) !important}
 
 .monthly-checkbox-label {color: #ccc !important}
 
@@ -357,21 +389,17 @@ p, pre, li, label {color: #AAA !important}
 h1 {color: #1C7BFF !important}
 h2 {color: #ddd !important}
 h3 {color: #ddd !important}
-a:link, a {color: #09f !important}
-a:visited {color: #0070aa !important}
-a:hover {color: #0ff !important}
-a:active {color: #0050aa !important}
 
 button {
   -moz-appearance: none !important;
   border-radius: 3px !important;
-  background: #05a !important;
+  background: var(--button-background) !important;
   color: #ddd !important;
-  border: 1px solid #0040aa !important;
+  border: 1px solid var(--button-border) !important;
   padding: 0.5em !important}
 
 button:hover {
-	background: #003080 !important;
+	background: var(--button-background-hover) !important;
     color: #FFF !important}
 
 textarea {
@@ -460,7 +488,7 @@ menuseparator {
 menuitem:hover,
 menu:hover {
 	-moz-appearance: none !important;
-	background-color: #25a !important} 
+	background-color: var(--in-content-context-highlight) !important} 
 
 /* This changes the text of disabled items */
 menuitem[disabled="true"],
@@ -526,7 +554,7 @@ td {background: #666 !important}
 @-moz-document url-prefix(about:networking), url-prefix(about:telemetry) {
 
 .category {color: #ddd !important; font-weight: bold !important}
-.category[selected="true"], .category.selected {color: #0083ff !important}
+.category[selected="true"], .category.selected {color: var(--in-content-category-text-selected) !important}
 
 select {border: 1px solid #111 !important}
 
@@ -555,19 +583,20 @@ select {border: 1px solid #111 !important}
 
 #categories button:hover {background-color: #252525 !important}
 
-#categories button.selected {color: #0084ff !important}
+#categories button.selected {color: var(--in-content-category-text-selected) !important}
 
 /* This affects the main content part */
 .target-list .addon-target-container {background-color: #303030 !important}
 
 .main-content button {
-	background: linear-gradient(#2050AA, #203050) !important;
-    color: #FFF !important;
-	border: 1px solid #0050aa !important}
+    background: var(--button-background) !important;
+    color: #ddd !important;
+    border: 1px solid var(--button-border) !important}
 
 .main-content button:hover {
-	background: linear-gradient(#203050, #2050AA) !important;
-    color: #0FF !important}
+	background: var(--button-background-hover) !important;
+    color: #FFF !important;
+	text-decoration: none !important}
 
 .addons-tip-icon {filter: invert(100%) !important}
 
@@ -655,7 +684,7 @@ td {background: #555 !important}
 	--in-content-category-text: #fff !important;
 	--in-content-text-color: #fff !important;
 	--in-content-selected-text: #000 !important;
-	--in-content-item-selected: #0a50AA !important;
+	--in-content-item-selected: var(--in-content-category-text-selected) !important;
 	--in-content-item-hover: rgba(0,90,170,0.25) !important;
 	background-color: #303030 !important}
 
@@ -692,12 +721,12 @@ image.searchBarImage {filter: invert(92%) hue-rotate(180deg)}
 .accessory-button, button {
   -moz-appearance: none !important;
   border-radius: 3px !important;
-  background: #05a !important;
+  background: var(--button-background) !important;
   color: #ddd !important;
-  border: 1px solid #0040aa !important}
+  border: 1px solid var(--button-border) !important}
 
 .accessory-button:hover, button:hover {
-	background: #003080 !important;
+	background: var(--button-background-hover) !important;
     color: #FFF !important}
 
 treecol {
@@ -733,17 +762,17 @@ treecol:hover {background-color: #666 !important}
 
 .description-outer-container .button-link {
 	background: transparent !important;
-	color: #09f !important}
+	color: var(--in-content-link-color) !important}
 
-.description-outer-container .button-link:hover {color: #0ff !important}
-.description-outer-container .button-link:active {color: #0050aa !important}
+.description-outer-container .button-link:hover {color: var(--in-content-link-color-hover) !important}
+.description-outer-container .button-link:active {color: var(--in-content-link-color-active) !important}
 
 .addon {color: #aaa !important}
 
 .addon:hover {background-color: #151515 !important}
 
-.content-inner-container .basicinfo-container {color: #38f !important}
-.addon.addon-view[selected="true"] .basicinfo-container {color: #0ef !important}
+.content-inner-container .basicinfo-container {color: var(--addons-addon-name) !important}
+.addon.addon-view[selected="true"] .basicinfo-container {color: var(--addons-addon-name-active) !important}
 
 .addon.addon-view[active="false"] .basicinfo-container, 
 .addon.addon-view[active="false"] .description {color: #888 !important}
