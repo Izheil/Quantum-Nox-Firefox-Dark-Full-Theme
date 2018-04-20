@@ -36,7 +36,7 @@ in the rule below) */
   --About-addon-text: #09f;
   --About-addon-text-hover: #0ff;
   --About-addon-extension-name: #38f;
-  --Input-field-focus-shadow: #0050ff;
+  --Input-field-focus-shadow: 0 0 4px #0050ff;
   --Bookmark-folder-icon: #ffe793;
   --Feeds-link: #00aaff;
   --Feeds-link-hover: #0ff;
@@ -220,7 +220,7 @@ dialog textbox {
   color: #aaa !important}
 
 dialog textbox[focused="true"] {
-  box-shadow: 0 0 4px var(--Input-field-focus-shadow) !important;
+  box-shadow: var(--Input-field-focus-shadow) !important;
   background-color: #555 !important;
   color: #fff !important}
 
@@ -448,7 +448,7 @@ if necessary depending on if you are using a custom OS theme (which may mess up 
 
 /* This themes the search box on hover */
 #searchFilter[focused="true"] {
-  box-shadow: 0 0 4px var(--input-field-focus-shadow) !important;
+  box-shadow: var(--input-field-focus-shadow) !important;
   background-color: #555 !important;
   color: #fff !important} 
 
@@ -481,7 +481,7 @@ if necessary depending on if you are using a custom OS theme (which may mess up 
 #editBMPanel_namePicker[focused="true"], #editBMPanel_tagsField[focused="true"],
 #bookmarkproperties #editBMPanel_namePicker[focused="true"],
 #bookmarkproperties #editBMPanel_tagsField[focused="true"] {
-  box-shadow: 0 0 4px var(--input-field-focus-shadow) !important;
+  box-shadow: var(--input-field-focus-shadow) !important;
   background-color: #666 !important;
   color: #fff !important} 
 
@@ -641,7 +641,7 @@ if necessary depending on if you are using a custom OS theme (which may mess up 
 
 /* This themes the search box on hover */
 #CookiesDialog #filter[focused="true"], #SignonViewerDialog #filter[focused="true"] {
-  box-shadow: 0 0 4px var(--input-field-focus-shadow) !important;
+  box-shadow: var(--input-field-focus-shadow) !important;
   background-color: #666 !important;
   color: #fff !important}
 
