@@ -1,6 +1,6 @@
 /* You can find an updated version here: https://github.com/Izheil/Firefox-57-full-dark-theme-with-scrollbars */
 /* Made by Izheil */
-/* Last updated: 18/04/2018 */
+/* Last updated: 20/04/2018 */
 
 /* This part imports the Addons file if there is one, so that you don't have to edit the dynamic URL
 from the addons rules every time we update anything here */
@@ -8,6 +8,17 @@ from the addons rules every time we update anything here */
 
 /*------ COMMON PART FOR ALL FIREFOX PAGES (MAINLY USED FOR THE 404 PAGE) ------*/
 :root {
+
+/* This is a little fix for all pages in case you have a dark OS theme, you can use a neutral color
+like #ccc (graish) or #2066dd (bluish) so that the letters can be seen in either a white or dark background for 
+text-inputting things. Leave as "none" for default text color. */
+	--text-color-for-input-fields: none;
+
+/* You can put the url of an image that you want to be used as background for the about:home page.
+To use, instead of "none;", type: url("URL-OF-THE-IMAGE-GOES-HERE"); <- Don't forget the ending semicolon! */
+	--home-background-image: none;
+
+/* These change some Firefox pages colors */
 	--in-content-page-color: #ccc !important;
 	--in-content-page-background: #222 !important;
 	--in-content-text-color: #ccc !important;
@@ -79,14 +90,12 @@ only the images */
   background: #333 !important;
   color: #fff !important}
 
-/* This is a little fix for all pages in case you have a dark windows theme, so that the 
-letters will have a blue neutral color to be seen in either a white or dark background for 
-text-inputting things. Delete the last /* to delete -> *//*
+/* This changes the input fields text color (fix for custom OS themes) */
 @-moz-document url-prefix(http){
 form select, input[type=text], input[type=email], input[type=password], input[type=date], 
 input[type=datetime-local], input[type=time], input[type=week], input[type=month], 
 input[type=number], input[type=search], input[type=tel], input[type=url], textarea 
-{color: #2066dd !important}
+{color: var(--text-color-for-input-fields) !important}
 }
 
 /*------ FILE BROWSING PAGES (file://, about:sync-log) ------*/
@@ -323,15 +332,14 @@ input[type=text] {color: #aaa !important}
 #onboarding-overlay img {filter: invert(90%) hue-rotate(200deg)}
 
 /* This adds a background image of your choice in the main area 
-Delete the final /* to use -> *//*
+Delete the final /* to use -> */
 body {
-  background-image: url("file:///") !important;
+  background-image: var(--home-background-image) !important;
   background-size: cover !important;
   background-position: center !important}
 
 .prefs-pane .sidebar, .card-outer, .prefs-pane .prefs-modal-inner-wrapper .options, 
 .sidebar .actions, #snippets-container {background: rgba(0,0,0,0.6) !important}
-*/
 }
 
 /*------ COMMON ATTRIBUTES ON MOST ABOUT PAGES ------*/
@@ -399,8 +407,7 @@ body, html {background-color: #202020 !important}}
 
 /* Fix for Ublock Origin Element picker */
 @-moz-document url(about:blank) {
-	body {background: #222}
-}
+	html, body {background: #222}}
 
 /*------ PAGES WITH PLAIN TEXT OVER BACKGROUND  ------*/
 @-moz-document url(about:about), url-prefix(https://www.mozilla.org/credits/), 
@@ -453,7 +460,7 @@ menuseparator {
 menuitem:hover,
 menu:hover {
 	-moz-appearance: none !important;
-	background-color: #25a !important}
+	background-color: #25a !important} 
 
 /* This changes the text of disabled items */
 menuitem[disabled="true"],

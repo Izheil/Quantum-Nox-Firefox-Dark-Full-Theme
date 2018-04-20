@@ -16,6 +16,7 @@ This problem doesn't happen if you use a code editor such as notepad++, atom, su
 <p>Files updated:</p>
 <ul>
   <li><b>UserChrome.css</b>: Reorganized userChrome so that now it's easier to change the non-dark colors (all highlight colors should be on top of the file to be edited, as well as tabs and toolbar background colors). You can now also change the background image of your lightweight theme to one of your choice.</li>
+  <li><b>UserContent.css</b>: Now the <code>about:home</code> background image and input boxes text color can be changed in the general variables at the start of UserContent.css, making it easier to find.</li>
 </ul>
 <h3>Pre-Last update: <b>19/04/2018</b></h3>
 <p>Files updated:</p>
