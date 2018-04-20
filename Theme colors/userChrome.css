@@ -14,9 +14,13 @@ without this change) */
 :root:-moz-lwtheme {
   --toolbar-bgcolor: rgba(0,0,0,.6) !important;
 
-  /* Tab line color. this makes the line over tab change to the current windows color,
+  /* Tab line color. Using -moz-win-accentcolor as the color value changes it to the current window color (on Windows)
   but is disabled by default in this theme. Delete the final /* to use -> *//*
   --tab-line-color: -moz-win-accentcolor !important;
+  
+  /* You can change the lightweight theme header and footer images with this. Delete the final /* to use -> *//*
+  --lwt-header-image: url("file:///") !important;
+  --lwt-footer-image: url("file:///") !important;
 
   /* Url and search bars */
   --url-and-searchbar-background-color: rgb(71, 71, 73);
