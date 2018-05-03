@@ -60,6 +60,34 @@ To use, instead of "none;", type: url("URL-OF-THE-IMAGE-GOES-HERE"); <- Don't fo
 	--button-background-hover: #0040aa;
 	--button-border: #0040aa}
 
+/*------ FILE BROWSING PAGE ------*/
+/* This was placed here for bug fixing of styles overriding when testing things, for the 
+coloring part, go to the common part for all firefox pages (if you use a global userstyle,
+you don't even need these, so just comment it all out).*/
+@-moz-document url-prefix(file://) {
+:root {background-color: #202020 !important; color: #ccc !important}
+
+/* COMMENT OUT THIS SECTION IF TESTING THINGS ON FIREFOX */
+body:not([style="margin-bottom: 8px !important;"]) {
+	background: #333 !important;
+	border: none !important}
+
+pre {padding: 1em !important}
+
+h1 {color: #fff !important; border-bottom: none !important}
+tbody > tr:hover {outline: 1px dotted #777 !important}
+.ellipsis tr:hover {outline: none !important}
+
+#UI_goUp a.up:link, a.file:link, a.dir:link {color: #09f !important}
+#UI_goUp a.up:visited, .ellipsis a.file:visited, .ellipsis a.dir:visited {color: #0070aa !important}
+#UI_goUp a.up:hover, .ellipsis a.file:hover, .ellipsis a.dir:hover {color: #0ff !important}
+#UI_goUp a.up:active, .ellipsis a.file:active, .ellipsis a.dir:active {color: #0050dd !important}
+
+th {color: #ddd !important}
+td {color: #aaa !important}}
+
+/*------ END OF FILE BROWSING PAGE ------*/
+
 /* This part covers the preferences page update scrollbox (No, I couldn't put it inside the preferences section) */
 #historyItems .scrollbox-innerbox {background-color: #444 !important}
 
@@ -128,9 +156,10 @@ input[type=number], input[type=search], input[type=tel], input[type=url], textar
 {color: var(--text-color-for-input-fields) !important}
 }
 
-/*------ FILE BROWSING PAGES (file://, about:sync-log) ------*/
-@-moz-document url-prefix(about:sync-log), url-prefix(file://) {
-html {background: #202020 !important}
+/*------ LOG BROWSING PAGE (about:sync-log) ------*/
+@-moz-document url-prefix(about:sync-log) {
+html {background-color: #202020 !important}
+
 body {background: #333 !important; border: 1px solid #111 !important}
 
 h1 {color: #fff !important; border-bottom: none !important}
