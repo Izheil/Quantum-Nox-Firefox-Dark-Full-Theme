@@ -50,6 +50,7 @@ To use, instead of "none;", type: url("URL-OF-THE-IMAGE-GOES-HERE"); <- Don't fo
 	/* These change some colors on about:home */
 	--home-text: #50AAFF;
 	--home-search-engine-choices: linear-gradient(#559,#115);
+	--Home-search-item-text-color: #0ff;
 
 	/* This one changes the border of all boxes with a blue border focus effect */
 	--in-content-border-focus: #2066dd !important;
@@ -159,7 +160,7 @@ html {
 @-moz-document url-prefix(about:home), url-prefix(about:newtab) {
 
 body { 
- 	background-color: #202020  !important;
+ 	background-color: #202020 !important;
     color: var(--home-text) !important;
     overflow: auto !important}
 
@@ -199,7 +200,7 @@ body {
 .prefs-pane [type='checkbox']:checked + label::before 
 {background: #111 !important}
 
-.prefs-pane-button button {fill: rgba(255, 255, 255, 0.8) !important;}
+.prefs-pane-button button {fill: rgba(255, 255, 255, 0.8) !important}
 
 .prefs-pane-button button:hover, 
 .prefs-pane .actions {background-color: #151515 !important}
@@ -242,26 +243,34 @@ body {
     border: solid 1px #0a50AA !important}
 
 /* Search box style */
-#newtab-search-text[keepfocus="true"] {box-shadow: 0 0 0 1px var(--in-content-border-focus) !important}
+#newtab-search-text[keepfocus="true"],
+.search-wrapper input:active {box-shadow: 0 0 0 1px var(--in-content-border-focus) !important}
 
 .search-label {fill: var(--in-content-border-focus) !important}
 
-.contentSearchSuggestionTable {
+#searchSuggestionTable {-moz-appearance: none !important}
+
+.contentSearchSuggestionsTable {
     background-color: #444 !important;
     border: 1px solid #000 !important}
 
 .contentSearchSuggestionsList {
+	background-color: #505050 !important;
     border-bottom: 1px solid #000 !important;
     color: #ccc !important}
 
 .contentSearchOneOffsTable {background: var(--home-search-engine-choices) !important}
-
 .contentSearchOneOffItem:not(.last-row) {border-bottom: 1px solid #000 !important}
 
+.contentSearchSuggestionsContainer button:hover {background: rgba(255,255,255, 0.25) !important}
+
 .contentSearchHeader {
- 	background-color: #333 !important;
+ 	background: #333 !important;
  	color: #777 !important;
  	border-bottom: 1px solid #000 !important}
+
+.contentSearchSearchWithHeaderSearchText {
+	color: var(--Home-search-item-text-color) !important}
 
 .contentSearchSettingsButton {
     background: linear-gradient(#333,#111) !important;

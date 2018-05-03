@@ -167,6 +167,8 @@ dialog, dialog caption, dialog select, #clientBox  {
   background-color: #333 !important;
   color: #ccc !important}
 
+#printPageSetupDialog caption {background-color: #444 !important}
+
 dialog #openHandlerBox menulist {
   -moz-appearance: none !important;
   border: 1px solid #111 !important;
@@ -201,12 +203,16 @@ window:not(#main-window):not(#CookiesDialog):not(#SignonViewerDialog) > * {
   color: #fff !important}
 
 /* Color for most buttons */
-dialog button {
+dialog button, dialog menulist {
   -moz-appearance: none !important;
   border-radius: 3px !important;
   background: #555 !important;
   color: #ddd !important;
   padding: 2px !important}
+
+dialog menulist:hover {
+  background: #666 !important; 
+  color: #fff !important}
 
 dialog button:hover {
   background: #444 !important;
@@ -658,7 +664,8 @@ if necessary depending on if you are using a custom OS theme (which may mess up 
   color: #fff !important}
 
 /* These are the certificates window tabs */
-#certDetails tabpanels, #certDetails tab {
+#certDetails tabpanels, #certDetails tab, #printPageSetupDialog tab, 
+#printPageSetupDialog tabpanels {
   -moz-appearance: none !important;
   background: #444 !important;
   color: #ddd !important;
