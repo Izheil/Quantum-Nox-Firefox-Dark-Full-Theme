@@ -18,6 +18,7 @@ This problem doesn't happen if you use a code editor such as notepad++, atom, su
   <li><b>UserChrome.css</b>: Themed the print setup dialog and print preview page.</li>
   <li><b>UserContent.css</b>: Rearranged the file browsing page theming so that it's easier to find for those that are testing their pages and don't want to get their styles overriden. You have to comment out the lines right under the color variables for this.</li>
   <li><b>Checkboxes.uc.js</b>: Added the checkbox of the print preview page.</li>
+  <li><b>Addons.css</b>: Added <a href="https://addons.mozilla.org/es/firefox/addon/lastpass-password-manager/">LastPass password manager</a> addon theme, and fixed the context menu of S3 download bar.</li>
 </ul>
 <h3>Pre-Last update: <b>20/04/2018</b></h3>
 <p>Files updated:</p>
