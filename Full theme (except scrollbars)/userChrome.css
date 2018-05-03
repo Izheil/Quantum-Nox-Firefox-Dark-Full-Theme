@@ -203,29 +203,29 @@ window:not(#main-window):not(#CookiesDialog):not(#SignonViewerDialog) > * {
   color: #fff !important}
 
 /* Color for most buttons */
-dialog button, dialog menulist {
+dialog button, dialog menulist, menulist, toolbar[printpreview="true"] button {
   -moz-appearance: none !important;
   border-radius: 3px !important;
   background: #555 !important;
   color: #ddd !important;
   padding: 2px !important}
 
-dialog menulist:hover {
+dialog menulist:hover, menulist:hover {
   background: #666 !important; 
   color: #fff !important}
 
-dialog button:hover {
+dialog button:hover, toolbar[printpreview="true"] button:hover {
   background: #444 !important;
   color: #fff !important}
 
-dialog textbox {
+dialog textbox, toolbar[printpreview="true"] textbox {
   transition: all 0.25s ease-in-out !important;
   -moz-appearance: none !important; 
   border: 1px solid #666 !important;
   background-color: #444 !important;
   color: #aaa !important}
 
-dialog textbox[focused="true"] {
+dialog textbox[focused="true"], toolbar[printpreview="true"] textbox[focused="true"] {
   box-shadow: var(--Input-field-focus-shadow) !important;
   background-color: #555 !important;
   color: #fff !important}
