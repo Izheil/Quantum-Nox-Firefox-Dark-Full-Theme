@@ -15,7 +15,8 @@ This problem doesn't happen if you use a code editor such as notepad++, atom, su
 <h3>Last update: <b>03/05/2018</b></h3>
 <p>Files updated:</p>
 <ul>
-  <li><b>UserChrome.css</b>: Themed the print setup dialog.</li>
+  <li><b>UserChrome.css</b>: Themed the print setup dialog and print preview page.</li>
+  <li><b>Checkboxes.uc.js</b>: Added the checkbox of the print preview page.</li>
 </ul>
 <h3>Pre-Last update: <b>20/04/2018</b></h3>
 <p>Files updated:</p>
