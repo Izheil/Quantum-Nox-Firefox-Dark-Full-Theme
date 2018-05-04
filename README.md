@@ -12,20 +12,18 @@ basic css or <a href="https://www.w3schools.com/colors/colors_picker.asp">color 
 <br />
 This problem doesn't happen if you use a code editor such as notepad++, atom, sublime text...</h4>
 
-<h3>Last update: <b>03/05/2018</b></h3>
+<h3>Last update: <b>04/05/2018</b></h3>
+<p>Files updated:</p>
+<ul>
+  <li><b>Addons.css</b>: Updated LastPass password manager addon theme.</li>
+</ul>
+<h3>Pre-Last update: <b>03/05/2018</b></h3>
 <p>Files updated:</p>
 <ul>
   <li><b>UserChrome.css</b>: Themed the print setup dialog and print preview page.</li>
   <li><b>UserContent.css</b>: Rearranged the file browsing page theming so that it's easier to find for those that are testing their pages and don't want to get their styles overriden. You have to comment out the lines right under the color variables for this.</li>
   <li><b>Checkboxes.uc.js</b>: Added the checkbox of the print preview page.</li>
   <li><b>Addons.css</b>: Added <a href="https://addons.mozilla.org/es/firefox/addon/lastpass-password-manager/">LastPass password manager</a> addon theme, and fixed the context menu of S3 download bar.</li>
-</ul>
-<h3>Pre-Last update: <b>20/04/2018</b></h3>
-<p>Files updated:</p>
-<ul>
-  <li><b>UserChrome.css</b>: Reorganized userChrome so that now it's easier to change the non-dark colors (all highlight colors should be on top of the file to be edited, as well as tabs and toolbar background colors). You can now also change the background image of your lightweight theme to one of your choice.</li>
-  <li><b>UserContent.css</b>: Reorganized the file using variables so that it's easier to find colors to change (now all colored things for the about: pages can be changed through the variables on top of the file). Now the <code>about:home</code> background image and input boxes text color can be changed in the general variables at the start of UserContent.css, making it easier to find.</li>
-  <li><b>[Color] Scrollbars (folders)</b>: Added color variations for all scrollbar styles in the repository, and deleted some lines that weren't necessary in some. You can find these inside the Alternative scrollbars folder.</li>
 </ul>
 
 <h2>FAQ:</h2>

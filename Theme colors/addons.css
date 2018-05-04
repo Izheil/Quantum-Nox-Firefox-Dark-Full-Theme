@@ -903,17 +903,20 @@ a:hover {
 html, body, .sliderContainer, #backButton, #u_combo, .selectDropdownList li,
 #items li, .footer li, .settingsRow, .dialog, #logincontainer, #loginView .dropdownContainer div, 
 #menucol, #rightside, #adframe, .actionsbox .menu.light, #vault, #vaultContent, #mainScroll, 
-.ui-widget-overlay, .infield-dialog .header, .infield-dialog .footer {
+.ui-widget-overlay, .infield-dialog .header, .infield-dialog .footer, #thetree, #thetree li {
 	background: #444 !important; 
 	color: #ccc !important}
 
 a:link:not(.rbtn), a:not(.rbtn), #lp_docwrite_login_small23a, #lp_docwrite_prefs46, #lp_docwrite_reenter_password3, 
 #lp_docwrite_reenter_password4, #lp_docwrite_reenter_password5, .lptabs.activetab, 
-.tablabel.tabactive, h1, .tabMenuItem.selected {color: #f55 !important}
-a:hover, #lp_docwrite_login_small23a:hover {color: #f88 !important}
+.tablabel.tabactive, h1, .tabMenuItem.selected, #autoChangePassword {color: #f55 !important}
+a:hover, #lp_docwrite_login_small23a:hover, #autoChangePassword:hover {color: #f88 !important}
 a:active {color: #c30 !important}
 
 #expandcollapse a:hover {color: transparent !important}
+
+#cpwdialog .dialog_hdr {background: #333 !important}
+#cpwdialog {border: 2px solid #333 !important}
 
 .modal-body-content, .prefpane.row, .modal-body:not(#menu) .row-inner.light-gray, #vaultLoadingOverlay,
 #lppopup, #tools, #notestype_combo, #group_combo, #navigationMenu, .dialogLeftMenu li:hover {
@@ -922,6 +925,9 @@ a:active {color: #c30 !important}
 .addMenuItem > div {
 	filter: invert(70%) hue-rotate(180deg) contrast(150%) saturate(400%) !important}
 
+.itemIcon > .bigIcon {
+	filter: invert(62%) hue-rotate(180deg) saturate(400%) !important}
+
 .dropdownContainer li, .childView li, .itemIcon, #lp_docwrite_prefs67, .label, .hr, .lptabs:not(.activetab), p,
 div p {
 	background-color: transparent !important; 
@@ -929,7 +935,7 @@ div p {
 
 .dropdownContainer li:hover, .childView li:hover, 
 .ui-dialog-titlebar-close.ui-state-hover, #notestype_combo .item.focus,
-#group_combo .item.focus, #navigationMenu li:hover {background: rgba(255,255,255,0.1) !important}
+#group_combo .item.focus, #navigationMenu li:hover, #items li:hover {background: rgba(255,255,255,0.1) !important}
 
 .childView li {background-image: none !important}
 
@@ -944,7 +950,8 @@ div p {
 	background-image: linear-gradient(#333, #666) !important;
 	border: 1px solid #222 !important}
 
-.ui-state-default[type="button"], #ui-dialog-title-dialog {color: #fff !important}
+.ui-state-default[type="button"], #ui-dialog-title-dialog,
+#lpusername {color: #fff !important}
 
 #tdtabrow #tabrow, .topborder {border-top: none !important}
 
@@ -952,12 +959,12 @@ div p {
 .dialogLeftPane, .settingsRow, #logincontainer, #treepane, .actionsbox li,
 iframe {border: none !important}
 
-#loginView .buttons, .optionButtons, iframe {
+#loginView .buttons, .optionButtons, iframe, .addMenuItem span {
 	background: transparent !important; border: none !important}
 
 .optionButtons {box-shadow: none !important}
 
-#container #searchContainer, #extensionDropdown, #u_combo, .selectDropdownList li, #items li,
+#container #searchContainer, #extensionDropdown, #u_combo, .selectDropdownList li,
 .dialogContent, .buttons, #backButton, .dark-gray, #hotkeystable td {
 	border: 1px solid #666 !important}
 
@@ -967,9 +974,12 @@ iframe {border: none !important}
 #sitebody, #lppopup, #menucol, .toolsMenuItem {
 	border-color: #666 !important}
 
+.itemCheckbox {border-color: #333 !important}
+
 .footer li {border-bottom: none !important}
 
-.modal-body-content .tablerow:not(.tableheader), #hotkeystable tr:nth-child(odd)  {
+.modal-body-content .tablerow:not(.tableheader), #hotkeystable tr:nth-child(odd),
+.itemContents .tile, .itemContents .list  {
 	background-color: #606060 !important; border: none !important}
 
 .toolsMenuItem:hover, .selectDropdownList li, #userMenuItems li {background: #606060 !important}
@@ -977,19 +987,19 @@ iframe {border: none !important}
 #userMenuItems li, #dialogtext, .icon_text.icon.ntooltip,
 #notestype_combo .item:not(.focus), #group_combo .item:not(.focus) {color: #ccc !important}
 
-.rbtn, #advancedView label, #btnClose:hover {color: #fff !important}
+.rbtn, #advancedView label, #btnClose:hover, #thetree span {color: #fff !important}
 
 #backButton:hover, .selectDropdownList li:hover, .footer li:hover, .dialogRightPane,
 .settingsRow:nth-child(even), .dialogLeftMenu li, .modal-body-content .tablerow.hide, 
 #hotkeystable tr:not(.dark-gray):nth-child(even), .selectDropdownList li:hover, 
-#userMenuItems li:hover, #advancedView .row.advanced-background {background-color: #505050 !important}
+#userMenuItems li:hover, #advancedView .row.advanced-background, .formFieldsView {background-color: #505050 !important}
 
 .infield-dialog .gradient-to-right:after, .infield-dialog .gradient-to-right {
 	background: none !important}
 
 .dialogLeftMenu li.selected {background-color: #555 !important; color: #f55 !important}
 
-.dialogLeftMenu li, #container .header {border-bottom: 1px solid #666 !important}
+.dialogLeftMenu li, #container .header, #items li {border-bottom: 1px solid #666 !important}
 
 .dialogInput:not(select), #password, #email, #masterpassword, #confmasterpassword, #passwordreminder, #p, #u,
 .dropdownHint, .radioContainer, .short-input, #hotkeystable input, #pin, #reenterpassword, 
@@ -1012,11 +1022,12 @@ iframe {border: none !important}
 	color: #f55 !important; background-color: rgba(0,0,0,0.1) !important}
 
 #p, #u {box-shadow: inset 3px 4px 5px rgba(255,255,255,.09) !important}
-.actionsbox li:hover, .actionsbox2 li:hover {box-shadow: 0 0 6px rgba(0,0,0,.5) !important}
+.actionsbox li:hover, .actionsbox2 li:hover,
+#thetree li:hover {box-shadow: 0 0 6px rgba(0,0,0,.5) !important}
 
 #keyboardicon, #logoimg {filter: brightness(200%) !important}
-#deleteicon, #u_button, .actionsbox img, 
-#grpsel_button {filter: invert(80%) !important}
+#deleteicon, #u_button, .actionsbox img, #grpsel_button, .folderLabel,
+.toolsimg, .delimg, .shareimg, .editimg {filter: invert(80%) !important}
 
 .checkbox + label, .radio + label, #vaultToggle img {
 	color: #000 !important; 
@@ -1032,11 +1043,9 @@ iframe {border: none !important}
 #main #username {background: transparent !important; border: none !important; color: #c30 !important}
 
 #main .showIcons a, #main .showIcons li, #lpexpandimg, #lpcollapseimg, #advsettings img, #passwordtoggleimg,
-#upgrade-families-icon img, #try-families-icon img, #echo_favorite {filter: invert(70%) hue-rotate(195deg) !important}
+#upgrade-families-icon img, #try-families-icon img, #siteactions img {filter: invert(70%) hue-rotate(195deg) !important}
 
-button:not(#continue):not(.showPassword):not(.dialogHeaderButton):not(.focusCycler):not(.advancedOptionsLabel):not(.launchButton):not(.itemCheckbox):not(#addAttachmentButton):not(.showKeyboard):not(#logInButton):not(.help), 
-a#cancel, a#login, #helptranslate, #f input#ok, input#cancel, #rememberpasswordyes, #rememberpasswordno, #lpfriendemail,
-#collapseAllToggle, #sizeToggle, .wbnc input, a#lpaddattach {
+a#cancel, a#login, #helptranslate, #f input#ok, #rememberpasswordyes, #rememberpasswordno, #lpfriendemail, a#lpaddattach {
   -moz-appearance: none !important;
   border-radius: 3px !important;
   background: #666 !important;
@@ -1044,8 +1053,27 @@ a#cancel, a#login, #helptranslate, #f input#ok, input#cancel, #rememberpasswordy
   border: none !important;
   padding: 0.4em !important}
 
-.itemButton, #dynheader, #sortOrderMenu, .addMenuItem span, #orderOption {background-color: #666 !important; border: none !important}
-.itemButton:hover, .addMenuItem span:hover, #container .header {background-color: #333 !important}
+.optionsDropdown, .optionButton, .toggleButton, .wbtn, .gbtn, .remind-btn, a#bcnd {
+  background-color: #666 !important;
+  color: #ddd !important;
+  border: none !important}
+
+.itemButton, #dynheader, #sortOrderMenu, #orderOption, #actions {background-color: #666 !important; border: none !important}
+.itemButton:hover, #container .header {background-color: #333 !important}
+
+.tile .itemButton, .actionButtonContainer .itemButton, .itemButtons .history, .dialogItemButtons .itemButton:not(.favButtonLabel) {
+	background-color: #ddd !important;
+	filter: invert(80%) brightness(150%) grayscale(100%) !important}
+
+.tile .itemButton:hover, .actionButtonContainer .itemButton:hover, .itemButtons .history:hover, 
+.dialogItemButtons .itemButton:not(.favButtonLabel):hover {
+	background-color: #bbb !important}
+
+.list .itemButton {background-color: #777 !important}
+
+.list .itemButton:hover, .dialogItemButtons .favButtonLabel:hover {background-color: #888 !important}
+
+.dialogInputOverlay {background-color: rgba(0,0,0,0.5) !important}
 
 #helptranslate, #dynbody {background: #888 !important}
 
@@ -1053,27 +1081,31 @@ button#cancel {padding: 0.6em !important; background-color: #777 !important}
 
 button#createaccountbtn, a#login, a#createanaccount, #loginView #logInButton {background: #d32d27 !important; color: #fff !important}
 
-#addAttachmentButton, #sortOrderMenu li, #extensionDropdown .header div:hover {background-color: #666 !important; color: #ddd !important}
-#addAttachmentButton:hover, #sortOrderMenu li:hover, .dialogHeader.dialogHeaderButtonsEnabled.titleEnabled, a#lpaddattach:hover {
+#addAttachmentButton, #sortOrderMenu li, #contextMenu li, #extensionDropdown .header div:hover {background-color: #666 !important; color: #ddd !important}
+#addAttachmentButton:hover, #sortOrderMenu li:hover, .dialogHeader.dialogHeaderButtonsEnabled.titleEnabled, a#lpaddattach:hover,
+#contextMenu li:hover, .optionsDropdown:hover, .optionButton:hover, .toggleButton:hover, a#bcnd:hover {
 	background-color: #333 !important; 
 	color: #fff !important}
 
-button:not(#continue):not(.showPassword):not(.dialogHeaderButton):not(.advancedOptionsLabel):not(.launchButton):not(.itemCheckbox):not(#addAttachmentButton):not(.showKeyboard):not(#logInButton):not(.help):hover, 
 a#cancel:hover, a#login:hover, #helptranslate:hover, #rememberpasswordyes:hover, #rememberpasswordno:hover, #lpfriendemail:hover,
-#collapseAllToggle:hover, #sizeToggle:hover, #orderOption:hover, .dialog_content input[type="submit"]:hover {
+#collapseAllToggle:hover, #sizeToggle:hover, #orderOption:hover, .dialog_content input[type="submit"]:hover, #listButton:hover, #gridButton:hover,
+.optionButton.selected, #actions:hover, .wbtn:hover, .gbtn:hover {
   background-color: #222 !important;
   color: #fff !important;
   box-shadow: none !important}
 
 button#createaccountbtn:hover, a#login:hover, #loginView #logInButton:hover {background-color: #af0806 !important}
 
+a#cpwbtnmini {background: none !important; box-shadow: none !important}
+
 #mainMenu a {color: #000 !important}
 
 .tileTable {background: #333 !important}
+
 }
 
 /*----- LASTPASS FIXES -----*/
-@-moz-document url-prefix(moz-extension://TYPE-UUID-OF-LASTPASS-PASSWORD-MANAGER-HERE/contentScriptPopup.html) {
+@-moz-document url-prefix(moz-extension://906685e8-2c06-4b3b-b5fe-4208aa6d94e0/contentScriptPopup.html) {
 html, body {background: transparent !important}
 .arrow-box.a-top, .arrow-box.a-top::before {filter: invert(74%) !important}
 }
@@ -1104,7 +1136,6 @@ html, #firsttop {background: #444 !important; color: #ccc !important}
 
 a:link, a, .tablabel.tabactive, .emptyarr, #myaccount, #paymenthistory, #emailsubs, #googleauthbarcode2,
 #googleauthbarcode, #googleauthview, #googleauthregenerate {color: #f55 !important}
-a:visited {color: #a82a00 !important}
 a:hover, #myaccount:hover, #paymenthistory:hover, #emailsubs:hover, #googleauthbarcode2:hover,
 #googleauthbarcode:hover, #googleauthview:hover, #googleauthregenerate:hover {color: #f88 !important}
 a:active {color: #c30 !important}
@@ -1170,7 +1201,7 @@ input:not([type="checkbox"]):not([type="radio"]):not([type="submit"]), textarea,
 	color: #ddd !important;
 	border: 1px solid #666 !important}
 
-.nbtn {
+.gbtn {
   -moz-appearance: none !important;
   border-radius: 3px !important;
   background: #666 !important;
@@ -1178,7 +1209,7 @@ input:not([type="checkbox"]):not([type="radio"]):not([type="submit"]), textarea,
   border: none !important;
   padding: 0.4em !important}
 
-.nbtn:hover {
+.gbtn:hover {
   background-color: #222 !important;
   color: #fff !important}
 
@@ -1192,6 +1223,10 @@ p {color: #ccc !important}
 .settable tr:nth-child(even) {background-color: #505050 !important}
 }
 
+@-moz-document url-prefix(https://lastpass.com/ads.php) {
+html, body {background: #444 !important}
+}
+
 @-moz-document url-prefix(https://lastpass.com/formfill_overview.php), url-prefix(https://lastpass.com/share_overview.php),
 url-prefix(https://lastpass.com/enterprise_overview2.php) {
 html, #content, .clearfix, body, br {background: #444 !important}
@@ -1199,5 +1234,4 @@ html, #content, .clearfix, body, br {background: #444 !important}
 p {color: #ccc !important}
 
 img {filter: invert(70%) hue-rotate(190deg)}
-
 }
