@@ -903,9 +903,16 @@ a:hover {
 html, body, .sliderContainer, #backButton, #u_combo, .selectDropdownList li,
 #items li, .footer li, .settingsRow, .dialog, #logincontainer, #loginView .dropdownContainer div, 
 #menucol, #rightside, #adframe, .actionsbox .menu.light, #vault, #vaultContent, #mainScroll, 
-.ui-widget-overlay, .infield-dialog .header, .infield-dialog .footer, #thetree, #thetree li, #main {
+.ui-widget-overlay, .infield-dialog .header, .infield-dialog .footer, #thetree, #thetree li, #main,
+.folderContainer, #mainScroll .tour {
 	background: #444 !important; 
 	color: #ccc !important}
+
+#mainMenu {background-color: #444 !important}
+
+#main .showIcons li:hover, #main .showIcons a:hover {background-color: #ccc !important}
+
+select {filter: invert(81%) hue-rotate(170deg) !important; color: #000 !important}
 
 a:link:not(.rbtn), a:not(.rbtn), #lp_docwrite_login_small23a, #lp_docwrite_prefs46, #lp_docwrite_reenter_password3, 
 #lp_docwrite_reenter_password4, #lp_docwrite_reenter_password5, .lptabs.activetab, 
@@ -979,7 +986,7 @@ iframe {border: none !important}
 .footer li {border-bottom: none !important}
 
 .modal-body-content .tablerow:not(.tableheader), #hotkeystable tr:nth-child(odd),
-.itemContents .tile, .itemContents .list  {
+.itemContents .tile, .list  {
 	background-color: #606060 !important; border: none !important}
 
 .toolsMenuItem:hover, .selectDropdownList li, #userMenuItems li,
@@ -1006,7 +1013,7 @@ iframe {border: none !important}
 .dialogInput:not(select), #password, #email, #masterpassword, #confmasterpassword, #passwordreminder, #p, #u,
 .dropdownHint, .radioContainer, .short-input, #hotkeystable input, #pin, #reenterpassword, 
 #loginView input, #q, #url, #name, #group, #username, #notes, #notestype, #notestype_button
-#extensionDropdown input:not(.clickToggles), #grpinp, #grpsel, #group_button {
+#extensionDropdown input:not(.clickToggles), #grpinp, #grpsel, #group_button, input[type="password"] {
 	-moz-appearance: none !important; 
 	background: #323232 !important; 
 	color: #ddd !important;
@@ -1027,9 +1034,13 @@ iframe {border: none !important}
 .actionsbox li:hover, .actionsbox2 li:hover,
 #thetree li:hover {box-shadow: 0 0 6px rgba(0,0,0,.5) !important}
 
-#keyboardicon, #logoimg {filter: brightness(200%) !important}
+#keyboardicon, #logoimg, .folderContainer .folderLabel {filter: brightness(200%) !important}
 #deleteicon, #u_button, .actionsbox img, #grpsel_button, .folderLabel,
 .toolsimg, .delimg, .shareimg, .editimg {filter: invert(80%) !important}
+
+#main .showIcons li:not(:nth-child(2)), #main .showIcons a {color: #333 !important; filter: invert(80%) !important}
+
+#mainScroll .tour, #mainScroll .tour p, #mainScroll .tour h1 {background-color: #444 !important}
 
 .checkbox + label, .radio + label, #vaultToggle img {
 	color: #000 !important; 
@@ -1044,7 +1055,7 @@ iframe {border: none !important}
 
 #main #username {background: transparent !important; border: none !important; color: #c30 !important}
 
-#main .showIcons a, #main .showIcons li, #lpexpandimg, #lpcollapseimg, #advsettings img, #passwordtoggleimg,
+#lpexpandimg, #lpcollapseimg, #advsettings img, #passwordtoggleimg,
 #upgrade-families-icon img, #try-families-icon img, #siteactions img,
 #formFillView .row .icon {filter: invert(70%) hue-rotate(195deg) !important}
 
@@ -1061,6 +1072,10 @@ a#cancel, a#login, #helptranslate, #f input#ok, #rememberpasswordyes, #rememberp
   background-color: #666 !important;
   color: #ddd !important;
   border: none !important}
+
+.row.advanced-background label {color: #fff !important}
+
+.row.advanced-background, .col-12:not(#headerContainer) {background-color: #505050 !important}
 
 .itemButton, #dynheader, #sortOrderMenu, #orderOption, #actions {background-color: #666 !important; border: none !important}
 .itemButton:hover, #container .header {background-color: #333 !important}
@@ -1146,7 +1161,13 @@ a:active {color: #c30 !important}
 
 .tablabels {border-color: #666 !important}
 
+.row.advanced-background label {color: #fff !important}
+
+.row.advanced-background, .col-12:not(#headerContainer) {background-color: #505050 !important}
+
 .settabdesc, .setbody, .setbottomdiv {border-color: #ddd !important}
+
+select {filter: invert(81%) hue-rotate(170deg) !important; color: #000 !important}
 
 .wbtn, .btn_midi.gray {
   border-radius: 3px !important;
