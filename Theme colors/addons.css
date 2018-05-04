@@ -903,7 +903,7 @@ a:hover {
 html, body, .sliderContainer, #backButton, #u_combo, .selectDropdownList li,
 #items li, .footer li, .settingsRow, .dialog, #logincontainer, #loginView .dropdownContainer div, 
 #menucol, #rightside, #adframe, .actionsbox .menu.light, #vault, #vaultContent, #mainScroll, 
-.ui-widget-overlay, .infield-dialog .header, .infield-dialog .footer, #thetree, #thetree li {
+.ui-widget-overlay, .infield-dialog .header, .infield-dialog .footer, #thetree, #thetree li, #main {
 	background: #444 !important; 
 	color: #ccc !important}
 
@@ -982,10 +982,12 @@ iframe {border: none !important}
 .itemContents .tile, .itemContents .list  {
 	background-color: #606060 !important; border: none !important}
 
-.toolsMenuItem:hover, .selectDropdownList li, #userMenuItems li {background: #606060 !important}
+.toolsMenuItem:hover, .selectDropdownList li, #userMenuItems li,
+#formFillView .row {background: #606060 !important}
 
 #userMenuItems li, #dialogtext, .icon_text.icon.ntooltip,
-#notestype_combo .item:not(.focus), #group_combo .item:not(.focus) {color: #ccc !important}
+#notestype_combo .item:not(.focus), #group_combo .item:not(.focus),
+#formFillView .row {color: #ccc !important}
 
 .rbtn, #advancedView label, #btnClose:hover, #thetree span {color: #fff !important}
 
@@ -997,7 +999,7 @@ iframe {border: none !important}
 .infield-dialog .gradient-to-right:after, .infield-dialog .gradient-to-right {
 	background: none !important}
 
-.dialogLeftMenu li.selected {background-color: #555 !important; color: #f55 !important}
+.dialogLeftMenu li.selected, .tileEdit.hoverFadeIn {background-color: #555 !important; color: #f55 !important}
 
 .dialogLeftMenu li, #container .header, #items li {border-bottom: 1px solid #666 !important}
 
@@ -1043,7 +1045,8 @@ iframe {border: none !important}
 #main #username {background: transparent !important; border: none !important; color: #c30 !important}
 
 #main .showIcons a, #main .showIcons li, #lpexpandimg, #lpcollapseimg, #advsettings img, #passwordtoggleimg,
-#upgrade-families-icon img, #try-families-icon img, #siteactions img {filter: invert(70%) hue-rotate(195deg) !important}
+#upgrade-families-icon img, #try-families-icon img, #siteactions img,
+#formFillView .row .icon {filter: invert(70%) hue-rotate(195deg) !important}
 
 a#cancel, a#login, #helptranslate, #f input#ok, #rememberpasswordyes, #rememberpasswordno, #lpfriendemail, a#lpaddattach {
   -moz-appearance: none !important;
@@ -1053,7 +1056,8 @@ a#cancel, a#login, #helptranslate, #f input#ok, #rememberpasswordyes, #rememberp
   border: none !important;
   padding: 0.4em !important}
 
-.optionsDropdown, .optionButton, .toggleButton, .wbtn, .gbtn, .remind-btn, a#bcnd {
+.optionsDropdown, .optionButton, .toggleButton, .wbtn, .gbtn, .remind-btn, a#bcnd, #moreOptions, #formFillView .row button,
+#hideOptions {
   background-color: #666 !important;
   color: #ddd !important;
   border: none !important}
@@ -1083,7 +1087,7 @@ button#createaccountbtn, a#login, a#createanaccount, #loginView #logInButton {ba
 
 #addAttachmentButton, #sortOrderMenu li, #contextMenu li, #extensionDropdown .header div:hover {background-color: #666 !important; color: #ddd !important}
 #addAttachmentButton:hover, #sortOrderMenu li:hover, .dialogHeader.dialogHeaderButtonsEnabled.titleEnabled, a#lpaddattach:hover,
-#contextMenu li:hover, .optionsDropdown:hover, .optionButton:hover, .toggleButton:hover, a#bcnd:hover {
+#contextMenu li:hover, .optionsDropdown:hover, .optionButton:hover, .toggleButton:hover, a#bcnd:hover, #moreOptions:hover, #hideOptions:hover {
 	background-color: #333 !important; 
 	color: #fff !important}
 
@@ -1100,12 +1104,12 @@ a#cpwbtnmini {background: none !important; box-shadow: none !important}
 
 #mainMenu a {color: #000 !important}
 
-.tileTable {background: #333 !important}
+.tileTable, .siteDialogContent .addSiteFavicon {background: #333 !important}
 
 }
 
 /*----- LASTPASS FIXES -----*/
-@-moz-document url-prefix(moz-extension://906685e8-2c06-4b3b-b5fe-4208aa6d94e0/contentScriptPopup.html) {
+@-moz-document url-prefix(moz-extension://906685e8-2c06-4b3b-b5fe-4208aa6d94e0/contentScript) {
 html, body {background: transparent !important}
 .arrow-box.a-top, .arrow-box.a-top::before {filter: invert(74%) !important}
 }
