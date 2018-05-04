@@ -37,6 +37,9 @@ This problem doesn't happen if you use a code editor such as notepad++, atom, su
 
 <code>/* This is an example of a comment that wouldn't be read on a .css file */</code>
 
+<h3>I'm opening web files locally (as in opening html pages that you have created or downloaded) and the background is not the color it should be.</h3>
+<p>To change the directory browsing page and change how .css or some .txt files appear when opened with Firefox, I had to specify it to affect urls that start with "file:///", meaning that any file opened with Firefox will get overriden with those rules as well. To prevent this, go to userContent.css, and comment out the lines that affect this url (This rule should be exactly under the color variables at the start of the file).</p>
+
 <h3>Multirow tabs draggability isn't working right!</h3>
 <p>There is currently a problem with the multirow-tab code when you have more than 1 row of tabs visible that makes dragging tabs to other rows a bit erratic, so it will only drag the tabs to the previous row for some reason. I'll be trying to find a solution, but meanwhile... yeah, that's all there is.</p>
 
