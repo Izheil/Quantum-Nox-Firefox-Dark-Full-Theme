@@ -816,6 +816,10 @@ treechildren::-moz-tree-separator {border-color: #000 !important}
 */
 /* ^ COLORING PART ENDS HERE - FEATURES PART STARTS HERE v */
 
+/* This deletes the space that comes before the min/max/close button (space where you can place addons), but
+after the tabs section */
+.titlebar-placeholder[type="post-tabs"] {width: 10px !important}
+
 /* SIDEBAR */
 
 /* Allow sidebar to be closed completely using the slider */
@@ -864,12 +868,12 @@ to use the close, minimize, and resize buttons */
 
 /* TAB CLOSE BUTTON ALWAYS VISIBLE */
 #TabsToolbar #tabbrowser-tabs .tabbrowser-tab:not([pinned]) .tab-close-button {
-  	visibility: visible !important;
-  	display: block !important}
+    visibility: visible !important;
+    display: block !important}
 
 #TabsToolbar #tabbrowser-tabs .tabbrowser-tab:not([pinned])[faviconized="true"] .tab-close-button {
-  	visibility: collapse !important;
-  	display: none !important}
+    visibility: collapse !important;
+    display: none !important}
 
 /* MULTIROW TABS */
 .tabbrowser-tab:not([pinned]) {
@@ -950,10 +954,10 @@ part of the same rule */
 #tabContextMenu menuseparator:nth-child(even),
 
 /* Reload all tabs */
-#context_reloadAllTabs, #toolbar-context-reloadAllTabs
+#context_reloadAllTabs, #toolbar-context-reloadAllTabs,
 
 /* Bookmark all tabs */
-#context_bookmarkAllTabs, #toolbar-context-bookmarkAllTabs
+#context_bookmarkAllTabs, #toolbar-context-bookmarkAllTabs,
 
 /* Close all tabs to the right */
 #context_closeTabsToTheEnd,
@@ -1000,7 +1004,7 @@ part of the same rule */
 #context-sep-open,
 
 /* Take a screenshot & it's separator */ 
-#screenshots_mozilla_org_create-screenshot, #_479f0278-2c34-4365-b9f0-1d328d0f0a40__separator,
+/* #_479f0278-2c34-4365-b9f0-1d328d0f0a40__separator, */ #screenshots_mozilla_org_create-screenshot,
 
 /* Send tab to device... (including it's separator) */
 #context_sendTabToDevice, #context_sendTabToDevice_separator,

@@ -11,31 +11,31 @@
   <li>Multirow bookmarks (lines 105-113, <b>disabled by default</b>).</li>
   <li>Delete the following commands from context menus:
   	<ul>
-  	  <li>Reload tab (line 122, <b>not deleted by default</b>).</li>
-  	  <li>Pin tab (line 125, <b>not deleted by default</b>).</li>
-  	  <li>Duplicate tab (line 128, <b>not deleted by default</b>).</li>
-  	  <li>Open tab in new window (line 131, <b>not deleted by default</b>).</li>
-      <li>Separators left by send tab to device on tabs context menu (line 134 and 137, <b>not deleted by default</b>).</li>
-  	  <li>Reload all tabs (line 134, would be terrible if you had many tabs open and misclicked).</li>
-  	  <li>Bookmark all tabs (line 137).</li>
-  	  <li>Close all tabs to the right (line 146, <b>not deleted by default</b>).</li>
-  	  <li>Close all other tabs (line 149).</li>
-  	  <li>Close tab (line 152, you can close them using the close button)</li>
-  	  <li>Navigation buttons (Back, forward and reload buttons) & it's separator (line 156, since you can do the same with the keyboard or other buttons).</li>
-  	  <li>Send image... (line 159, misclicking this when saving an image can happen easily, and waiting for outlook to open to close it gets annoying).</li>
-  	  <li>Set image as desktop background... (line 162).</li>
-  	  <li>Bookmark this page (line 165, you can do the same with the star icon on the URL bar, or creating the bookmark manually with more control of where it's going to be placed).</li>
-  	  <li>Send page...(line 168, same as with send image, if you wanted to send something, you'd open your prefered mail yourself).</li>
-  	  <li>Bookmark this link (line 171, same as bookmark this page).</li>
-  	  <li>Send link... (line 174, same as send page).</li>
-      <li>Search highlighted word on your default search engine (line 178, same as send page).</li>
-  	  <li>Open link in new tab (181, <b>not deleted by default</b>, but you can the same middle mouse clicking, or holding ctrl while clicking a link).</li>
-  	  <li>Open link in a new window (line 183).</li>
-  	  <li>Open link in a private window (line 185).</li>
-  	  <li>Take a screenshot and its separator (line 190, since you can already access it through the 3 dots button on the URL bar).</li>
-  	  <li>Send tab to device and its separators (line 193).</li>
-  	  <li>Send page to device and its separator (line 196).</li>
-  	  <li>Send link to device and its separator (lines 199).</li>
+  	  <li>Reload tab (line 127, <b>not deleted by default</b>).</li>
+  	  <li>Pin tab (line 130, <b>not deleted by default</b>).</li>
+  	  <li>Duplicate tab (line 133, <b>not deleted by default</b>).</li>
+  	  <li>Open tab in new window (line 136, <b>not deleted by default</b>).</li>
+      <li>Separators left by send tab to device on tabs context menu (line 139 and 142, <b>not deleted by default</b>).</li>
+  	  <li>Reload all tabs (line 145, would be terrible if you had many tabs open and misclicked).</li>
+  	  <li>Bookmark all tabs (line 148).</li>
+  	  <li>Close all tabs to the right (line 151, <b>not deleted by default</b>).</li>
+  	  <li>Close all other tabs (line 154).</li>
+  	  <li>Close tab (line 157, not deleted by default)</li>
+  	  <li>Navigation buttons (Back, forward and reload buttons) & it's separator (line 162, since you can do the same with the keyboard or other buttons).</li>
+  	  <li>Send image... (line 165, misclicking this when saving an image can happen easily, and waiting for outlook to open to close it gets annoying).</li>
+  	  <li>Set image as desktop background... (line 168).</li>
+  	  <li>Bookmark this page (line 171, you can do the same with the star icon on the URL bar, or creating the bookmark manually with more control of where it's going to be placed).</li>
+  	  <li>Send page...(line 174, same as with send image, if you wanted to send something, you'd open your prefered mail yourself).</li>
+  	  <li>Bookmark this link (line 177, same as bookmark this page).</li>
+  	  <li>Send link... (line 180, same as send page).</li>
+      <li>Search highlighted word on your default search engine (line 183, same as send page).</li>
+  	  <li>Open link in new tab (186, <b>not deleted by default</b>, but you can the same middle mouse clicking, or holding ctrl while clicking a link).</li>
+  	  <li>Open link in a new window (line 188).</li>
+  	  <li>Open link in a private window (line 190).</li>
+  	  <li>Take a screenshot and its separator (line 195, only deleted the separator by default).</li>
+  	  <li>Send tab to device and its separators (line 198).</li>
+  	  <li>Send page to device and its separator (line 201).</li>
+  	  <li>Send link to device and its separator (lines 204).</li>
   	</ul></li>
 </ul>
 
