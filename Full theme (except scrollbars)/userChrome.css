@@ -950,7 +950,7 @@ part of the same rule */
 /* Separator from send tab to device *//*
 #context_sendTabToDevice_separator,
 
-/* Separator after the previous command *//*
+/* Separator after the previous command */
 #tabContextMenu menuseparator:nth-child(even),
 
 /* Reload all tabs */
