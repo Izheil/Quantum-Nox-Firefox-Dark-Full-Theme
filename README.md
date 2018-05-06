@@ -15,15 +15,12 @@ This problem doesn't happen if you use a code editor such as notepad++, atom, su
 <h3>Last update: <b>05/05/2018</b></h3>
 <p>Files updated:</p>
 <ul>
-  <li><b>UserChrome.css</b>: Added the possibility to resize the space between the min/max/close buttons and the addons that you can place next to them.</li>
+  <li><b>Addons.css</b>: Added the final fixes for LastPass addon (Thanks to DellasBelt).</li>
 </ul>
 <h3>Pre-Last update: <b>03/05/2018</b></h3>
 <p>Files updated:</p>
 <ul>
-  <li><b>UserChrome.css</b>: Themed the print setup dialog and print preview page.</li>
-  <li><b>UserContent.css</b>: Rearranged the file browsing page theming so that it's easier to find for those that are testing their pages and don't want to get their styles overriden. You have to comment out the lines right under the color variables for this.</li>
-  <li><b>Checkboxes.uc.js</b>: Added the checkbox of the print preview page.</li>
-  <li><b>Addons.css</b>: Fixed the context menu of S3 download bar.</li>
+  <li><b>UserChrome.css</b>: Added the possibility to resize the space between the min/max/close buttons and the addons that you can place next to them.</li>
 </ul>
 
 <h2>FAQ:</h2>
