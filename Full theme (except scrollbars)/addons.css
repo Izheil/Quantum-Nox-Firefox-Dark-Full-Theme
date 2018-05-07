@@ -1122,7 +1122,7 @@ a#cpwbtnmini {background: none !important; box-shadow: none !important}
 .tileTable, .siteDialogContent .addSiteFavicon {background: #333 !important}
 }
 
-/*----- OTHER FIXES FOR BETTER LINUX COMPATIBILITY (By DellasBelt) -----*/
+/*----- OTHER FIXES FOR BETTER LINUX COMPATIBILITY (By DallasBelt) -----*/
 .dialogContent.dialogContentFixed {background: #333 !important}
 
 .addItemCardName, {color: #aaa !important}
@@ -1168,7 +1168,7 @@ a#cpwbtnmini {background: none !important; box-shadow: none !important}
 /*fix for dropdown lists on Account Settings (filter on line 1232 not applied, commented)*/
 .newstyle select {background-color: #333 !important}
 
-/*----- MORE POPUP FIXES (By DellasBelt) -----*/
+/*----- MORE POPUP FIXES (By DallasBelt) -----*/
 #searchContainer {background: #333 !important}
 
 .searchInputContainer input {background: #222 !important; color: #ddd !important}
