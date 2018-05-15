@@ -15,12 +15,13 @@ This problem doesn't happen if you use a code editor such as notepad++, atom, su
 <h3>Last update: <b>05/05/2018</b></h3>
 <p>Files updated:</p>
 <ul>
-  <li><b>Addons.css</b>: Added the final fixes for LastPass addon (Thanks to DellasBelt).</li>
+  <li><b>UserChrome.css</b>: Updated the class identifiers for the page pre-render color.</li>
+  <li><b>UserContent.css</b>: Changed the hover over visited sites to transparent black.</li>
 </ul>
 <h3>Pre-Last update: <b>03/05/2018</b></h3>
 <p>Files updated:</p>
 <ul>
-  <li><b>UserChrome.css</b>: Added the possibility to resize the space between the min/max/close buttons and the addons that you can place next to them.</li>
+  <li><b>Addons.css</b>: Added the final fixes for LastPass addon (Thanks to DellasBelt).</li>
 </ul>
 
 <h2>FAQ:</h2>

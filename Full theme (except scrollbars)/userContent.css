@@ -1,6 +1,6 @@
 /* You can find an updated version here: https://github.com/Izheil/Firefox-57-full-dark-theme-with-scrollbars */
 /* Made by Izheil */
-/* Last updated: 03/05/2018 */
+/* Last updated: 15/05/2018 */
 
 /* This part imports the Addons file if there is one, so that you don't have to edit the dynamic URL
 from the addons rules every time we update anything here */
@@ -409,7 +409,11 @@ body {
   background-position: center !important}
 
 .prefs-pane .sidebar, .card-outer, .prefs-pane .prefs-modal-inner-wrapper .options, 
-.sidebar .actions, #snippets-container {background: rgba(0,0,0,0.6) !important}
+.sidebar .actions, #snippets-container, .collapsible-section.top-sites.animation-enabled.active,
+.collapsible-section.section.animation-enabled.active {
+	background: rgba(0,0,0,0.6) !important}
+
+.context-menu-button.icon:hover {fill: #aaa !important}
 }
 
 /*------ COMMON ATTRIBUTES ON MOST ABOUT PAGES ------*/

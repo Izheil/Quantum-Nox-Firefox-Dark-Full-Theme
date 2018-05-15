@@ -97,8 +97,7 @@ if you don't see a blue hover color on items on the sidebar, use this method ins
   color: #000 !important}
 
 /* v Fix to make the pre-render loading page dark instead of white v */
-browser[type="content-primary"], tabbrowser tabpanels, #appcontent > #content
-{background-color: #202020 !important}
+#tabbrowser-tabpanels {background: #202020 !important}
 
 /* You can also add an image of your choice in the pre-render loading page if you want 
 Delete the final /* to use -> *//*
