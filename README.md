@@ -12,13 +12,13 @@ basic css or <a href="https://www.w3schools.com/colors/colors_picker.asp">color 
 <br />
 This problem doesn't happen if you use a code editor such as notepad++, atom, sublime text...</h4>
 
-<h3>Last update: <b>05/05/2018</b></h3>
+<h3>Last update: <b>15/05/2018</b></h3>
 <p>Files updated:</p>
 <ul>
-  <li><b>UserChrome.css</b>: Updated the class identifiers for the page pre-render color.</li>
+  <li><b>UserChrome.css</b>: Updated the class identifiers for the page pre-render color, also added a new variable to change the color of the "favicon placeholder" icon.</li>
   <li><b>UserContent.css</b>: Changed the hover over visited sites to transparent black.</li>
 </ul>
-<h3>Pre-Last update: <b>03/05/2018</b></h3>
+<h3>Pre-Last update: <b>05/05/2018</b></h3>
 <p>Files updated:</p>
 <ul>
   <li><b>Addons.css</b>: Added the final fixes for LastPass addon (Thanks to DellasBelt).</li>

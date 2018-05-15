@@ -1,6 +1,6 @@
 /* You can find an updated version here: https://github.com/Izheil/Firefox-57-full-dark-theme-with-scrollbars */
 /* Made by Izheil */
-/* Last updated: 04/05/2018 */
+/* Last updated: 15/05/2018 */
 
 /* DO NOT DELETE THIS LINE */
 @namespace url("http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul");
@@ -38,6 +38,7 @@ in the rule below) */
   --About-addon-extension-name: #38f;
   --Input-field-focus-shadow: 0 0 4px #0050ff;
   --Bookmark-folder-icon: #ffe793;
+  --Bookmark-favicon-icon: #0af;
   --Feeds-link: #00aaff;
   --Feeds-link-hover: #0ff;
   --Feeds-link-active: #0050aa;
@@ -381,9 +382,12 @@ menuseparator {
 /* Drop indicator that appears when moving a bookmark in a bookmark folder color */
 .menupopup-drop-indicator {background-color: #999 !important}
 
-/* Color of default icons on bookmark bar and bookmark popup (folder icons and gear icons) */
-.bookmark-item > .toolbarbutton-icon, 
-.bookmark-item .menu-iconic-icon {fill: var(--Bookmark-folder-icon) !important}
+/* Color of default icons on bookmark bar and bookmark popup (folder icons mainly) */
+.bookmark-item > .toolbarbutton-icon[type="menu"], 
+.bookmark-item[container="true"] .menu-iconic-icon {fill: var(--Bookmark-folder-icon) !important}
+
+/* Color of default icons on bookmark bar and bookmark popup (world icon, aka not-favicon-found icon) */
+.bookmark-item[scheme="http"], .bookmark-item[scheme="http"] .menu-iconic-icon {fill: var(--Bookmark-favicon-icon) !important}
 
 /* Fix for the space above the "save as" option after the navigation buttons have been eliminated. Change 
 if necessary depending on if you are using a custom OS theme (which may mess up the padding of the separators) */
