@@ -28,6 +28,9 @@ This problem doesn't happen if you use a code editor such as notepad++, atom, su
 <h3>The synced tabs sidebar isn't themed.</h3>
 <p>Since it's anonymous content of the browser we can't theme it through userChrome or userContent, which is why you will have to apply the scrollbars & tooltips method to be able to use external javascript to modify anonymous content, and then place the <b>Sync-tabs-sidebar.uc.js</b> file inside the <code>Scrollbars & tooltips dark theme/Profile/</code> folder inside this repository inside your chrome folder (The method is the same than for the scrollbars, except you place the sync related file on your chrome folder apart from the other files if you are going to use them as well).</p>
 
+<h3>The bookmarks toolbar text/tabs text color is black and I can't see the letters over the dark background.</h3>
+<p>This is caused by your persona (lightweight theme), and while you could change these settings inside userchrome, I thought it was better to just change the settings on the persona directly (since not all personas will look the same). To do so you'd have to open <code>about:config</code>, and search for <b>lightweightThemes.usedThemes</b>. Once there, find the "textcolor" setting and type any color you'd want to use instead of black or the color being used by the theme (use #fff for white). The persona you are currently using should be in the first place in the list. A screenshot of this window can be seen in the first section of this readme.</p>
+
 <h3>I only want to use the multirow/(Any other) feature, but not the other ones!</h3>
 <p>You only need to modify <b>userChrome.css</b>, deleting the lines that you don't want to apply (Every function has a comment above it saying what each ruleset does), or if you think you may want them later, just encase the feature parts that you don't want to apply between /* and */:</p>
 
@@ -43,7 +46,7 @@ This problem doesn't happen if you use a code editor such as notepad++, atom, su
 <p>The main reason is that you can't style firefox about: pages nor the scrollbar with just stylus.</p>
 
 <h3>The theme is making the text of some addon popups unreadable, how do I fix this?</h3>
-<p>The theme is made so that it changes most background colors, including the one of the popups that don't have any background color specified by their original creator. Sadly it doesn't change the text of these by default, so you may have to do it manually, or report the addon you want themed here, or just use the fix inside userchrome.css (at around lines 200-203) to turn the addons back to their white background color.</p>
+<p>The theme is made so that it changes most background colors, including the one of the popups that don't have any background color specified by their original creator. Sadly it doesn't change the text of these by default, so you may have to do it manually, or report the addon you want themed here, or just use the fix inside userchrome.css (at around lines 300-303) to turn the addons back to their white background color.</p>
 
 <h2>Description</h2>
 
