@@ -4,9 +4,6 @@
 (with #222-#444 colors mostly). </p>
 <p><b>Of course... you could as well use these files to color your firefox any way you wanted</b>, the only thing you'd have to do is change the correct values (what each class or id does is commented above each) in the .css files (as far as you know some 
 basic css or <a href="https://www.w3schools.com/colors/colors_picker.asp">color coding</a>, it shouldn't be too hard) using notepad, or some code editing program (such as notepad++ on Windows).</p>
-<p>What this "theme" will not affect will be your persona (aka the lightweight themes you install through firefox addons page), the text color used by it, and the accent color (line above active tab). To change those settings, you can change them manually through the <code>about:config</code> page, searching 
-<b>lightweightThemes.usedThemes</b> there, and changing the textcolor or accentcolor codes of your used persona respectively as seen on the image below:</p>
-<img src="https://i.imgur.com/3lzN95E.png">
 <p>To change these you will have to use the right hex codes. You can find a color picker to hex code in <a href="https://www.w3schools.com/colors/colors_picker.asp">this page</a>.
 <h4>If you want to edit a file and you want to use notepad (windows), you may see that all code is a wall of text without any line break (the files get compressed like that when uploaded, so there isn't much to do there), in which case you can always drag & drop the file you want to modify into any internet browser window (like firefox) to see the actual code with line breaks, and then copy & paste it back to the open file with notepad, making it regain the line breaks on notepad again.<br />
 <br />
@@ -15,13 +12,13 @@ This problem doesn't happen if you use a code editor such as notepad++, atom, su
 <h3>Last update: <b>15/05/2018</b></h3>
 <p>Files updated:</p>
 <ul>
-  <li><b>UserChrome.css</b>: Updated the class identifiers for the page pre-render color, also added a new variable to change the color of the "favicon placeholder" icon.</li>
-  <li><b>UserContent.css</b>: Changed the hover over visited sites to transparent black.</li>
+  <li><b>UserChrome.css</b>: Now you can change the tab line and toolbar text colors (bookmark toolbar, navigation buttons color, etc) directly from userchrome instead of having to go to <code>about:config</code>.</li>
 </ul>
 <h3>Pre-Last update: <b>05/05/2018</b></h3>
 <p>Files updated:</p>
 <ul>
-  <li><b>Addons.css</b>: Added the final fixes for LastPass addon (Thanks to DellasBelt).</li>
+  <li><b>UserChrome.css</b>: Updated the class identifiers for the page pre-render color, also added a new variable to change the color of the "favicon placeholder" icon.</li>
+  <li><b>UserContent.css</b>: Changed the hover over visited sites to transparent black.</li>
 </ul>
 
 <h2>FAQ:</h2>
@@ -46,7 +43,7 @@ This problem doesn't happen if you use a code editor such as notepad++, atom, su
 <p>The main reason is that you can't style firefox about: pages nor the scrollbar with just stylus.</p>
 
 <h3>The theme is making the text of some addon popups unreadable, how do I fix this?</h3>
-<p>The theme is made so that it changes most background colors, including the one of the popups that don't have any background color specified by their original creator. Sadly it doesn't change the text of these by default, so you may have to do it manually, or report the addon you want themed here, or just use the fix inside userchrome.css (at around lines 300-303) to turn the addons back to their white background color.</p>
+<p>The theme is made so that it changes most background colors, including the one of the popups that don't have any background color specified by their original creator. Sadly it doesn't change the text of these by default, so you may have to do it manually, or report the addon you want themed here, or just use the fix inside userchrome.css (at around lines 309-312) to turn the addons back to their white background color.</p>
 
 <h2>Description</h2>
 

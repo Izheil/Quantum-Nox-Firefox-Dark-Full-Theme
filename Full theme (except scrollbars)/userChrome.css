@@ -1,6 +1,6 @@
 /* You can find an updated version here: https://github.com/Izheil/Firefox-57-full-dark-theme-with-scrollbars */
 /* Made by Izheil */
-/* Last updated: 15/05/2018 */
+/* Last updated: 17/05/2018 */
 
 /* DO NOT DELETE THIS LINE */
 @namespace url("http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul");
@@ -15,8 +15,8 @@ without this change) */
   --toolbar-bgcolor: rgba(0,0,0,.6) !important;
 
   /* Tab line color. Using -moz-win-accentcolor as the color value changes it to the current window color (on Windows)
-  but is disabled by default in this theme. Delete the final /* to use -> *//*
-  --tab-line-color: -moz-win-accentcolor !important;
+  but is disabled by default in this theme. Delete the final /* to use -> */
+  --tab-line-color: var(--lwt-accent-color) !important; /* var(--lwt-accent-color) for default color of the used theme */
   
   /* You can change the lightweight theme header and footer images with this. Delete the final /* to use -> *//*
   --lwt-header-image: url("file:///") !important;
@@ -30,6 +30,8 @@ without this change) */
 /* These rules will modify most highlight (background on hover) colors inside Firefox (except sidebar items, which are 
 in the rule below) */
 :root {
+  --bookmark-toolbar-text: var(--lwt-text-color); /* var(--lwt-text-color) for default color of the used theme */
+  --nav-bar-icons-color: var(--chrome-color); /* var(--chrome-color) for default color of the used theme */
   --Min-max-buttons-hover-bg: #2050AA;
   --Context-menu-highlight: #25a;
   --Progress-bar-color: #3070dd;
@@ -133,6 +135,12 @@ of the minimize, maximize and close buttons */
 .progress-bar {
   -moz-appearance: none !important;
   background-color: var(--Progress-bar-color) !important}
+
+/* Bookmark toolbar text color */
+#PersonalToolbar {color: var(--bookmark-toolbar-text) !important}
+
+/* Nav bar button color */
+#nav-bar {color: var(--nav-bar-icons-color) !important}
 
 /* Search bar inside the content area */
 findbar {
