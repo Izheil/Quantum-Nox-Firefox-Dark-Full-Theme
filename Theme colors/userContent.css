@@ -1,6 +1,6 @@
 /* You can find an updated version here: https://github.com/Izheil/Firefox-57-full-dark-theme-with-scrollbars */
 /* Made by Izheil */
-/* Last updated: 15/05/2018 */
+/* Last updated: 19/05/2018 */
 
 /* This part imports the Addons file if there is one, so that you don't have to edit the dynamic URL
 from the addons rules every time we update anything here */
@@ -10,7 +10,7 @@ from the addons rules every time we update anything here */
 :root {
 
 /* This is a little fix for all pages in case you have a dark OS theme, you can use a neutral color
-like #ccc (graish) or #2066dd (bluish) so that the letters can be seen in either a white or dark background for 
+like #7f7f7f (graish) or #2066dd (bluish) so that the letters can be seen in either a white or dark background for 
 text-inputting things. Leave as "none" for default letter color. */
 	--text-color-for-input-fields: none;
 
