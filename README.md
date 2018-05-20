@@ -9,16 +9,16 @@ basic css or <a href="https://www.w3schools.com/colors/colors_picker.asp">color 
 <br />
 This problem doesn't happen if you use a code editor such as notepad++, atom, sublime text...</h4>
 
-<h3>Last update: <b>15/05/2018</b></h3>
+<h3>Last update: <b>20/05/2018</b></h3>
 <p>Files updated:</p>
 <ul>
-  <li><b>UserChrome.css</b>: Now you can change the tab line and toolbar text colors (bookmark toolbar, navigation buttons color, etc) directly from userchrome instead of having to go to <code>about:config</code>.</li>
+  <li><b>UserChrome.css</b>: You can now set semi-transparent backgrounds for context menus changing the opacity in the <code>--context-menu-background</code> variable.</li>
+  <li><b>UserContent.css</b>: You can now set semi-transparent backgrounds for about: pages context menus changing the opacity in the <code>--in-content-context-background</code> variable.</li>
 </ul>
-<h3>Pre-Last update: <b>05/05/2018</b></h3>
+<h3>Pre-Last update: <b>15/05/2018</b></h3>
 <p>Files updated:</p>
 <ul>
-  <li><b>UserChrome.css</b>: Updated the class identifiers for the page pre-render color, also added a new variable to change the color of the "favicon placeholder" icon.</li>
-  <li><b>UserContent.css</b>: Changed the hover over visited sites to transparent black.</li>
+   <li><b>UserChrome.css</b>: Now you can change the tab line and toolbar text colors (bookmark toolbar, navigation buttons color, etc) directly from userchrome instead of having to go to <code>about:config</code>.</li>
 </ul>
 
 <h2>FAQ:</h2>

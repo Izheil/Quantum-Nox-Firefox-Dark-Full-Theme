@@ -34,6 +34,7 @@ in the rule below) */
   --nav-bar-icons-color: var(--chrome-color); /* var(--chrome-color) for default color of the used theme */
   --Min-max-buttons-hover-bg: #2050AA;
   --Context-menu-highlight: #25a;
+  --Context-menu-background: rgba(68,68,68, 1); /* The last number changes the opacity %. Change that 1 for 0.9 for semitransparent backgrounds */
   --Progress-bar-color: #3070dd;
   --About-addon-text: #09f;
   --About-addon-text-hover: #0ff;
@@ -353,7 +354,7 @@ menupopup > menu[disabled="true"], menubar > menu[disabled="true"]{color: #777 !
 
 /* This one applies to all context menus (If you want to theme the browser this one is better instead 
 of going one by one) */
-menupopup .scrollbox-innerbox {background-color: #444 !important}
+menupopup {background-color: var(--Context-menu-background) !important}
 
 /* The following code changes the borders of all the context menus (except the ones above mentioned),
 as well as ignoring the bookmark menu context menu */

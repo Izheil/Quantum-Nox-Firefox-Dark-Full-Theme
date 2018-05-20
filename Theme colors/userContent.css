@@ -1,6 +1,6 @@
 /* You can find an updated version here: https://github.com/Izheil/Firefox-57-full-dark-theme-with-scrollbars */
 /* Made by Izheil */
-/* Last updated: 19/05/2018 */
+/* Last updated: 20/05/2018 */
 
 /* This part imports the Addons file if there is one, so that you don't have to edit the dynamic URL
 from the addons rules every time we update anything here */
@@ -32,6 +32,10 @@ To use, instead of "none;", type: url("URL-OF-THE-IMAGE-GOES-HERE"); <- Don't fo
 
 	/* Variable to change most pages context menu highlights */
 	--in-content-context-highlight: #25a;
+
+	/* This changes context menu background colors. The last number changes the opacity %. 
+	Change that 1 for 0.9 for semitransparent backgrounds */
+	--in-content-context-background: rgba(68,68,68, 1); 
 
 	/* Variable to change the about:addons page extension names color */
 	--addons-addon-name: #38f;
@@ -511,11 +515,9 @@ menuitem, menu {
 
 menupopup {
 	-moz-appearance: none !important;
+	background-color: var(--in-content-context-background) !important
 	border: 2px solid #111 !important;
 	padding-top: 2px}
-
-menupopup .scrollbox-innerbox {
-	background-color: #444 !important}
 
 /* Context menu separator color override */
 menuseparator {
