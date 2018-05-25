@@ -14,6 +14,51 @@
 // ==/UserScript==
     zzzz_MultiRowTabLite();
 function zzzz_MultiRowTabLite() {
+    var css =`
+    /* MULTIROW TABS CSS */
+    .tabbrowser-tab:not([pinned]) {
+        flex-grow:1;
+        min-width:150px}
+
+    .tabbrowser-tab, .tab-background {height:var(--tab-min-height) !important}
+
+    .tab-stack {width: 100%}
+
+    #tabbrowser-tabs .scrollbox-innerbox {
+        display: flex;
+        flex-wrap: wrap;}
+
+    #tabbrowser-tabs .arrowscrollbox-scrollbox {
+        overflow: visible;
+        display: block}
+
+    @media (-moz-os-version: windows-win10) {
+    #titlebar-buttonbox {height:var(--tab-min-height) !important}}
+
+    #titlebar {height:var(--tab-min-height) !important}
+
+    #titlebar {margin-bottom:calc(1px + var(--tab-min-height)*-1) !important}
+
+    #main-window[sizemode="maximized"] #titlebar
+    {margin-bottom: calc(8px + var(--tab-min-height)*-1)!important}
+
+    #main-window[sizemode="maximized"][uidensity=compact] #titlebar
+    {margin-bottom: calc(6px + var(--tab-min-height)*-1)!important}
+
+    .tab-line {height: 2px !important}
+
+    #main-window[sizemode="maximized"] .tab-line {height: 2px !important}
+
+    #titlebar:active {margin-bottom: 0 !important}
+
+    #titlebar:active #titlebar-content {margin-bottom:var(--tab-min-height) !important}
+
+    #tabbrowser-tabs .scrollbutton-up, #tabbrowser-tabs .scrollbutton-down, #alltabs-button, .tabbrowser-tab:not([fadein])
+    {display: none}
+    `;
+    var sss = Cc['@mozilla.org/content/style-sheet-service;1'].getService(Ci.nsIStyleSheetService);
+    var uri = makeURI('data:text/css;charset=UTF=8,' + encodeURIComponent(css));
+    sss.loadAndRegisterSheet(uri, sss.AGENT_SHEET);
     gBrowser.tabContainer._getDropIndex = function(event, isLink) {
         var tabs = this.childNodes;
         var tab = this._getDragTargetTab(event, isLink);

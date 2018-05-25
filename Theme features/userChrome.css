@@ -1,5 +1,5 @@
 /* You can find an updated version here: https://github.com/Izheil/Firefox-57-full-dark-theme-with-scrollbars */
-/* Last updated: 03/03/2018 */
+/* Last updated: 25/05/2018 */
 
 /* DO NOT DELETE THIS LINE */
 @namespace url("http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul");
@@ -62,49 +62,6 @@ to use the close, minimize, and resize buttons */
 #TabsToolbar #tabbrowser-tabs .tabbrowser-tab:not([pinned])[faviconized="true"] .tab-close-button {
   	visibility: collapse !important;
   	display: none !important}
-
-/* MULTIROW TABS */
-.tabbrowser-tab:not([pinned]) {
-    flex-grow:1;
-    min-width:150px}
-
-.tabbrowser-tab,.tab-background {height:var(--tab-min-height)}
-
-.tab-stack {width: 100%}
-
-#tabbrowser-tabs .scrollbox-innerbox {
-    display: flex;
-    flex-wrap: wrap}
-
-#tabbrowser-tabs .arrowscrollbox-scrollbox {
-    overflow: visible;
-    display: block}
-
-#titlebar {height:var(--tab-min-height) !important}
-
-/* A little fix for Win10 so that it won't bigger background for the close/min buttons */
-@media (-moz-os-version: windows-win10) {#titlebar-buttonbox {height:var(--tab-min-height) !important}}
-
-#titlebar {margin-bottom:calc(1px + var(--tab-min-height)*-1) !important}
-
-#main-window[sizemode="maximized"] #titlebar
-{margin-bottom: calc(8px + var(--tab-min-height)*-1)!important}
-
-#main-window[sizemode="maximized"][uidensity=compact] #titlebar
-{margin-bottom: calc(6px + var(--tab-min-height)*-1)!important}
-
-/* Change the tab line size in case you don't see it while on resized mode*/
-.tab-line {height: 2px !important}
-
-/* Change the tab line size in case you don't see it while on maximized mode*/
-#main-window[sizemode="maximized"] .tab-line {height: 2px !important}
-
-#titlebar:active {margin-bottom: 0 !important}
-
-#titlebar:active #titlebar-content {margin-bottom:var(--tab-min-height) !important}
-
-#tabbrowser-tabs .scrollbutton-up,#tabbrowser-tabs .scrollbutton-down,#alltabs-button,.tabbrowser-tab:not([fadein])
-{display: none}
 
 /* MULTI-ROW BOOKMARKS TOOLBAR */
 
@@ -201,6 +158,5 @@ part of the same rule */
 #context-sendpagetodevice, #context-sep-sendpagetodevice,
 
 /* Send link to device... (including it's separator)*/ 
-#contentAreaContextMenu #context-sendlinktodevice, 
-#contentAreaContextMenu #context-sep-sendlinktodevice 
+#contentAreaContextMenu #context-sendlinktodevice, #contentAreaContextMenu #context-sep-sendlinktodevice 
 {display: none !important}

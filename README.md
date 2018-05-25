@@ -13,6 +13,7 @@ This problem doesn't happen if you use a code editor such as notepad++, atom, su
 <p>Files updated:</p>
 <ul>
   <li><b>MultiRowTabLiteforFx.uc.js</b>: Added a fix for multi-row tabs draggability (This file was made by Endor8 and TroudhuK, so all credit goes to them).
+  <li><b>UserChrome.css</b>: Deleted multi-row code from here. Now all multi-row tabs code can be enabled using <li><b>MultiRowTabLiteforFx.uc.js</b> directly.
 </ul>
 <h3>Pre-Last update: <b>20/05/2018</b></h3>
 <p>Files updated:</p>
@@ -36,8 +37,8 @@ This problem doesn't happen if you use a code editor such as notepad++, atom, su
 <h3>I'm opening web files locally (as in opening html pages that you have created or downloaded) and the background is not the color it should be.</h3>
 <p>To change the directory browsing page and change how .css or some .txt files appear when opened with Firefox, I had to specify it to affect urls that start with "file:///", meaning that any file opened with Firefox will get overriden with those rules as well. To prevent this, go to userContent.css, and comment out the lines that affect this url (This rule should be exactly under the color variables at the start of the file).</p>
 
-<h3>Multirow tabs draggability isn't working right!</h3>
-<p>There is currently a problem with the multirow-tab code when you have more than 1 row of tabs visible that makes dragging tabs to other rows a bit erratic, so it will only drag the tabs to the previous row for some reason. You can fix this by using the method described in the "Scrollbars & tooltips dark theme" folder (to be able to use external javascript files), and then placing the file <b>MultiRowTabLiteforFx.uc.js</b> inside your chrome folder.</p>
+<h3>I placed userchrome.css inside my chrome folder and I still don't have multi-row tabs!</h3>
+<p>While we only needed to use CSS to enable multi-row tabs, this broke tabs draggability, making reordering tabs when it was enabled a bit erratic, so to fix this, I decided to put all multi-row tabs code inside the <b>MultiRowTabLiteforFx.uc.js</b> file. This means that now Multi-row tabs can be enabled following the method described in the "Scrollbars & tooltips dark theme" folder (to be able to use external javascript files), and then placing the file <b>MultiRowTabLiteforFx.uc.js</b> inside your chrome folder. If you are updating from an old version of this theme, you should delete the lines about multi-row tabs from your old userchrome as well (that way you can enable multi-row by just placing or deleting the previously mentioned file).</p>
 
 <h3>Why use this method instead of using <a href="https://addons.mozilla.org/es/firefox/addon/styl-us/">Stylus</a>?</h3>
 <p>The main reason is that you can't style firefox about: pages nor the scrollbar with just stylus.</p>
@@ -64,7 +65,7 @@ This problem doesn't happen if you use a code editor such as notepad++, atom, su
 <img src="https://i.imgur.com/IxMK0t5.png"></li>
 	  <li>Change the theme of either of <a href="https://addons.mozilla.org/es/firefox/addon/ublock-origin/">Ublock Origin</a>, <a href="https://addons.mozilla.org/es/firefox/addon/video-downloadhelper/">Video Download Helper</a>, <a href="https://addons.mozilla.org/es/firefox/addon/flash-video-downloader/">Flash Video Downloader</a>, <a href="https://addons.mozilla.org/es/firefox/addon/tab-session-manager/">Tab session manager</a>, <a href="https://addons.mozilla.org/es/firefox/addon/undo-closed-tabs-revived/">Undo closed tabs button</a>, <a href="https://addons.mozilla.org/es/firefox/addon/s3download-statusbar/">Download Manager (S3)</a>, <a href="https://addons.mozilla.org/es/firefox/addon/privacy-badger17/">Privacy badger</a>, <a href="https://addons.mozilla.org/es/firefox/addon/noscript/">Noscript</a>, <a href="https://addons.mozilla.org/en-US/firefox/addon/window-resize/">Window resize</a> or <a href="https://addons.mozilla.org/es/firefox/addon/s3google-translator/">S3 Translator</a> extensions to a dark version. You have to update the UUIDs of the extensions inside "addons.css" for this. <br /><img src="https://i.imgur.com/m7TGyqz.png" title="Dark addons" /></li>
 	</ul>
-  <li><b>Theme features</b>: In this one you will find a userchrome with ONLY the features part of the theme. These features are the following:
+  <li><b>Theme features</b>: In this one you will find a userchrome (with the exception of multiple row tabs, which can be found in the file <b>MultiRowTabLiteforFx.uc.js</b>)with ONLY the features part of the theme. These features are the following:
 	<ul>
 	  <li>Multiple row tabs.</li>
 	  <li>Multiple row bookmarks toolbar (2 usable rows by default, but it is NOT enabled by default. You can add more rows editing userchrome).</li>
