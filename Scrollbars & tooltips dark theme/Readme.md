@@ -2,6 +2,8 @@
 <img src="https://i.imgur.com/qe6tGJW.png" title="Dark blue scrollbar">
 <p>This method should be the same for all OS, and it adds CSS code with agent sheet access level through JavaScript to change the scrollbars (This means that we aren't making JavaScript scrollbars, which can be laggy sometimes. We would be actually styling the default scrollbars through Agent Sheet level CSS, which couldn't be done by default on userchrome.css because of some fix for a bug by Mozilla) as well as all the tooltips.</p>
 
+<p>The other javascript files inside the profile folder here are used to fix other content that can't be themed through userchrome.css or usercontent.css, as well as fixing the tab draggability problem of multi-row tabs (So only copy those that you need to your chrome profile folder).</p>
+
 <p>The only little problem with this method is that <b>you will have to delete the start up cache files for the changes to take effect every time you make a change to any of the <i>*.uc.js</i></b> files (which are the ones where the CSS rules go to change the scrollbar or tooltip colors).</p>
 
 <p>To clear the start up cache you have to type <code>about:profiles</code> on firefox URL bar, go to that page, open the local profile directory through that page, and then delete all files inside the "startupCache" folder.</p>
