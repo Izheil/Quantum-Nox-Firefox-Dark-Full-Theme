@@ -1,6 +1,6 @@
 /* You can find an updated version here: https://github.com/Izheil/Firefox-57-full-dark-theme-with-scrollbars */
 /* Made by Izheil */
-/* Last updated: 20/05/2018 */
+/* Last updated: 25/05/2018 */
 
 /* This part imports the Addons file if there is one, so that you don't have to edit the dynamic URL
 from the addons rules every time we update anything here */
@@ -1018,4 +1018,101 @@ html, body {background-color: #202020 !important}
 form input, .show-password-label {
 	background-color: #444 !important;
 	color: #ccc !important}
+}
+
+/*------ MOZILLA SUPPORT PAGE (https://support.mozilla.org) ------*/
+@-moz-document url-prefix(https://support.mozilla.org/) {
+
+html, body {background-color: #202020 !important}
+
+h1, h2 {color: #fff !important}
+h3 {color: #ddd !important}
+p:not(.main-content) {color: #ccc !important}
+
+a:link {color: var(--in-content-link-color) !important}
+a:visited {color: var(--in-content-link-color) !important}
+a:hover {color: var(--in-content-link-color-hover) !important}
+a:active {color: var(--in-content-link-color-hover) !important}
+
+#announcements {background: transparent !important}
+#announcements .announce-bar {background-color: #555 !important}
+
+body > header {
+	background: #666 !important;
+	border-top: none !important;
+	border-bottom: 1px solid #aaa !important;
+	color: #ccc !important}
+
+.logo, .footer-logo {filter: invert(100%) !important}
+
+#aux-nav li a, .question-meta li, .asked-on, .asked-by,
+.footnote, #selected-product, .inner-wrap .legend li, #tagged,
+div {color: #ccc !important}
+#aux-nav li a:hover {background-color: rgba(0,0,0,0.5) !important}
+
+#main-breadcrumbs {background: #444 !important}
+#main-breadcrumbs li:not(a), .card-grid > li > a,
+.product-list .product a, .sidebar-header {color: #ccc !important}
+
+.answers .notice, .karma-titles li, .warning, #toc, #doc-content .note, 
+.tag-list a, .wiki-doc .vote-wrap {
+	background-color: #333 !important; 
+	color: #ccc !important;
+	border: 1px solid #666 !important}
+
+.main-content, #try-an-article, .grid_6 article, #pw-reset,
+#retrieve-username, .hero-bar, .row .content-box, .highlight-box, .wiki-doc {
+	background-color: #444 !important; 
+	border-radius: 6px !important; 
+	color: #ccc !important}
+
+.main-content::before {filter: brightness(27%) !important}
+
+.sidebar-nav > li > span, .sidebar-nav .sidebar-nav > li > span, 
+.sidebar-nav .sidebar-nav > li > a, .sidebar-nav .sidebox, .sidebar-nav > li > a,
+#email-subscribe-kbox, #showfor-panel,
+#register-form {background-color: #444 !important; color: #ccc !important}
+.sidebar-nav > li > span:hover, .sidebar-nav .sidebar-nav > li > a:hover {color: var(--in-content-link-color) !important}
+
+.button-wrapper .btn, .button-wrapper .btn {color: #fff !important}
+
+.sidebox.condensed {border-color: #373737 !important}
+
+.card-grid > li, .card-grid > li::before, .bullet, .feature-box .inner-wrap, .product-list .product,
+.sidebar-header, .questions > section, #top-contributors .feature-box {background: #444 !important}
+
+.questions > section .thread-meta {background: #555 !important; border: none !important}
+
+.feature-box .inner-wrap {border: none !important}
+
+.sidebar-nav.sidebar-folding > li.selected > span, .feature-box, .sidebar-nav .selected a {border-color: #373737 !important}
+.sidebar-nav.sidebar-folding > li.selected > span::before, .sidebar-nav .selected a::before {filter: brightness(25%) !important}
+
+.sidebar-nav a:hover {background-color: #404040 !important; color: var(--in-content-link-color) !important}
+
+.sidebar-nav > li.selected {border-bottom: #373737 !important}
+
+input[type="text"], input[type="password"], input[type="email"], input[type="url"], input[type="date"], 
+textarea {
+	background: #333 !important; 
+	color: #ccc !important}
+
+#email-subscribe-kbox input[type="submit"], #retrieve-username input[type="submit"], 
+#pw-reset input[type="submit"], .btn, span.button {
+	background: linear-gradient(#2050AA, #203050) !important;
+    color: #FFF !important;
+    padding: 0.5em;
+	border: 1px solid #0050aa !important;
+	box-shadow: none !important}
+
+#email-subscribe-kbox input[type="submit"]:hover, #retrieve-username input[type="submit"]:hover, 
+#pw-reset input[type="submit"]:hover, .btn:hover {
+	background: linear-gradient(#203050, #2050AA) !important;
+    color: #0FF !important}
+
+.questions #owner-tabs a.selected, .questions #owner-tabs a:hover.selected {background: #444 !important}
+
+.questions #filter-section {background: linear-gradient(to bottom, #444,rgba(70,70,70,0.01)) !important}
+
+footer {background: #111 !important}
 }
