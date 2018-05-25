@@ -13,7 +13,7 @@ This problem doesn't happen if you use a code editor such as notepad++, atom, su
 <p>Files updated:</p>
 <ul>
   <li><b>MultiRowTabLiteforFx.uc.js</b>: Added a fix for multi-row tabs draggability (This file was made by Endor8 and TroudhuK, so all credit goes to them).
-  <li><b>UserChrome.css</b>: Deleted multi-row code from here. Now all multi-row tabs code can be enabled using <li><b>MultiRowTabLiteforFx.uc.js</b> directly.
+  <li><b>UserChrome.css</b>: Deleted multi-row code from here. Now all multi-row tabs code can be enabled using <b>MultiRowTabLiteforFx.uc.js</b> directly.
 </ul>
 <h3>Pre-Last update: <b>20/05/2018</b></h3>
 <p>Files updated:</p>
