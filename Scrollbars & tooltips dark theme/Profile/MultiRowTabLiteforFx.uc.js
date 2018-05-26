@@ -79,9 +79,10 @@ function zzzz_MultiRowTabLite() {
         }
         return tabs.length;
     };
+    // This sets when to apply the fix (by default a new row starts after the 23th open tab, unless you changed the min-size of tabs)
+    gBrowser.tabContainer.ondragstart = function(){if(gBrowser.tabContainer.childNodes.length >= 23) {
 
     gBrowser.tabContainer._getDropEffectForTabDrag = function(event){return "";}; // multirow fix: to make the default "dragover" handler does nothing
-
     gBrowser.tabContainer._onDragOver = function(event) {
         event.preventDefault();
         event.stopPropagation();
@@ -155,7 +156,7 @@ function zzzz_MultiRowTabLite() {
         }
     };
     gBrowser.tabContainer.addEventListener("drop", function(event){this.onDrop(event);}, true);
-}
+}}}
 
 // copy of the original and overrided _getDropEffectForTabDrag method
 function orig_getDropEffectForTabDrag(event) {
