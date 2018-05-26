@@ -9,18 +9,17 @@ basic css or <a href="https://www.w3schools.com/colors/colors_picker.asp">color 
 <br />
 This problem doesn't happen if you use a code editor such as notepad++, atom, sublime text...</h4>
 
-<h3>Last update: <b>25/05/2018</b></h3>
+<h3>Last update: <b>26/05/2018</b></h3>
+<p>Files updated:</p>
+<ul>
+  <li><b>MultiRowTabLiteforFx.uc.js</b>: Now the draggability fix should only apply after the 23th open tab (which is when the 2nd row of tabs appear, as well as when the draggability problem used to start to happen), leaving the default reordering animation when having less than 1 line of tabs.</li>
+</ul>
+<h3>Pre-Last update: <b>25/05/2018</b></h3>
 <p>Files updated:</p>
 <ul>
   <li><b>MultiRowTabLiteforFx.uc.js</b>: Added a fix for multi-row tabs draggability (This file was made by Endor8 and TroudhuK, so all credit goes to them).</li>
   <li><b>UserChrome.css</b>: Deleted multi-row code from here. Now all multi-row tabs code can be enabled using <b>MultiRowTabLiteforFx.uc.js</b> directly.</li>
   <li><b>UserContent.css</b>: Themed Mozilla's support page.</li>
-</ul>
-<h3>Pre-Last update: <b>20/05/2018</b></h3>
-<p>Files updated:</p>
-<ul>
-  <li><b>UserChrome.css</b>: You can now set semi-transparent backgrounds for context menus changing the opacity in the <code>--context-menu-background</code> variable.</li>
-  <li><b>UserContent.css</b>: You can now set semi-transparent backgrounds for about: pages context menus changing the opacity in the <code>--in-content-context-background</code> variable.</li>
 </ul>
 
 <h2>FAQ:</h2>
