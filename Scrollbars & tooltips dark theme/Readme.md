@@ -15,8 +15,10 @@
 <p>To install userChrome.js you have to do a few more steps than just copying it to your <a href="https://github.com/Izheil/Firefox-57-full-dark-theme-with-scrollbars/blob/master/Scrollbars%20&%20tooltips%20dark%20theme/Readme.md#the-chrome-folder">the chrome folder</a>. The reason for this is that Firefox doesn't allow userChrome.js by default, so we have to apply certain modifications so that it allows it.</p>
 
 <p>First, copy the contents of the "Root" folder found here to <a href="https://github.com/Izheil/Firefox-57-full-dark-theme-with-scrollbars/blob/master/Scrollbars%20&%20tooltips%20dark%20theme/Readme.md#the-root-folder">Firefox root folder</a>. These contents include the <b>config.js</b>, <b>userChromeJS.js</b> and the <b>config-prefs.js</b> file inside the "defaults/pref" folders (You have to keep this path structure when moving the files to <a href="https://github.com/Izheil/Firefox-57-full-dark-theme-with-scrollbars/blob/master/Scrollbars%20&%20tooltips%20dark%20theme/Readme.md#the-root-folder">Firefox root folder</a>).</p>
-  
-<p>Once you have done this, all you have to do is open the <a href="https://github.com/Izheil/Firefox-57-full-dark-theme-with-scrollbars/blob/master/Scrollbars%20&%20tooltips%20dark%20theme/Readme.md#the-chrome-folder">the chrome folder</a> inside your profile folder (If you don't know where that is you can find an explanation on the section below) and place the contents that are inside the "profile" folder here in there. This is the same folder where you would place userchrome.css and usercontent.css.</p>
+<p><strong>NOTE: When using a mac, the <a href="https://github.com/snwflake/Firefox-57-full-dark-theme-with-scrollbars/blob/master/Scrollbars%20%26%20tooltips%20dark%20theme/Root/userChromeJS.js">userChromeJS.js</a> should be placed inside
+<pre>/Applications/Firefox.app/Contents/MacOS/</pre> (same folder as the binary). Otherwise it won't load on startup.</strong></p>
+
+<p>Once you have done this, all you have to do is open the <a href="https://github.com/Izheil/Firefox-57-full-dark-theme-with-scrollbars/blob/master/Scrollbars%20&%20tooltips%20dark%20theme/Readme.md#the-chrome-folder">chrome folder</a> inside your profile folder (If you don't know where that is you can find an explanation on the section below) and place the contents that are inside the "profile" folder here in there. This is the same folder where you would place userchrome.css and usercontent.css.</p>
 
 <h4>If you have an OS that draws checkboxes and radio buttons dark already, do NOT copy the "checkboxes.uc.js" file into your profile folder, or it will turn them white. Only place this file in your profile folder if your OS draws them whiteish (like windows when you don't use a custom theme).</h4>
 
@@ -59,7 +61,7 @@
 
 <h4>For Mac, you can find the root folder in this path:</h4>
 
-<pre>/Applications/Firefox.app/</pre>
+<pre>/Applications/Firefox.app/Contents/Resources</pre>
 
 <p>To open "Firefox.app", Ctrl-click it and select Show Package Contents. If you simply click it, you will start the application.</p>
 
@@ -93,7 +95,6 @@
 
 <p>The tilde character (~) refers to the current user's Home folder, so ~/Library is the /Macintosh HD/Users/(username)/Library folder. For OS X 10.7 Lion and above, the ~/Library folder is hidden by default.</p>
 
-<p>You can make them visible by typing the following in a terminal window.</p>
-<pre>defaults write com.apple.finder AppleShowAllFiles TRUE
-killall Finder</pre>
-<p>This will also cause any file icons to take on a hazy, 50% alpha look. To restore the old settings (hide the files and make the icons look normal) issue the same commands again, but enter FALSE instead of TRUE.<p>
+<p>You can make them visible by hitting the following key combination inside Finder:</p>
+<pre>CMD + SHIFT + .</pre>
+<p>This will also cause any file icons to take on a hazy, 50% alpha look. To restore the old settings (hide the files and make the icons look normal) hit the same combination again.<p>
