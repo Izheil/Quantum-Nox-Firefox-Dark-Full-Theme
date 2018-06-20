@@ -28,6 +28,8 @@
 
 <blockquote><b>Optional</b>: You may use the <b>tooltips.uc.js</b> file or any of the variants included on the "alternative tooltips" (such as the semi-transparent background ones) if you want dark tooltips (such as the url tooltip, or when you hover over a bookmark).</blockquote>
 
+<blockquote><b>Optional</b>: If you are going to use multi-row tabs, you can choose between the default version or the scrollable ones inside the "Multirow scrollable versions" folder. There are 2 scrollable versions, one will have a fixed height of 2 rows (<b>MultiRowTab-scrollable.uc.js</b>), and the scrollbar will appear when you have more than 1 row of tabs open (you can then open as many rows of tabs as you want and scroll around them), and the other one will have a fixed height of 1,5 rows but will always show the scrollbar. The non-scrollable (the default) one will have the height of 1 row of tabs at first, and will keep growing to adapt to how many rows of tabs you have open (since it won't scroll, the height of the tabs box will keep growing as you open more rows of tabs, and will decrease as you close them). To use the scrollable version, you will have to delete the other multirow file and move the scrollable version to your <a href="https://github.com/Izheil/Firefox-57-full-dark-theme-with-scrollbars/blob/master/Scrollbars%20&%20tooltips%20dark%20theme/Readme.md#the-chrome-folder">chrome folder</a> (only one file of each kind should be used at a time).</blockquote>
+
 <p>If you have done everything right, you should see the custom scrollbars next time you open firefox (or after you restart it)</p>
 
 <h4>Short version:</h4>
@@ -38,6 +40,7 @@
   <li>Open the "startupcache" folder and delete everything there.</li>
   <li><b>Optional</b>: You can try the other scrollbar types inside the "alternative scrollbars" folder.</li>
   <li><b>Optional</b>: Use the <b>tooltips.uc.js</b> file to change the default color of the tooltips to fit the theme (or any of the variants on the "alternative tooltips", such as the semi-transparent background one).</li>
+  <li><b>Optional</b>: If you prefer scrollable multi-rows, change the multirows file (<b>MultiRowTabLiteforFx.uc.js</b>) for any of the scrollable versions (<b>MultiRowTab-scrollable*.uc.js</b>) inside the "Multirow scrollable versions" folder.</li>
 </ul>
 
 <h3>The root folder:</h3>
