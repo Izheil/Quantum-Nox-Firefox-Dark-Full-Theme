@@ -1,6 +1,6 @@
 /* You can find an updated version here: https://github.com/Izheil/Firefox-57-full-dark-theme-with-scrollbars */
 /* Made by Izheil */
-/* Last updated: 25/05/2018 */
+/* Last updated: 30/06/2018 */
 
 /* This part imports the Addons file if there is one, so that you don't have to edit the dynamic URL
 from the addons rules every time we update anything here */
@@ -214,31 +214,10 @@ body {
 .info-option-manage button:hover {color: var(--in-content-link-color-hover) !important}
 .info-option-manage button::after {fill: var(--in-content-link-color) !important}
 
-/* The sidebar/settings panel part starts here */
-.sidebar, .sidebar .actions {border-left: 2px solid #000 !important} 
+/* The preferences button */
+.prefs-button .icon.icon-settings {fill: #ddd !important}
 
-.actions {border-top: 1px solid #222 !important}
-
-.prefs-pane, .info-option p {color: #ccc !important}
-
-.prefs-pane .sidebar, .card-outer {background-color: #303030 !important}
-
-.prefs-pane .prefs-modal-inner-wrapper .options {background-color: #404040 !important}
-
-.prefs-pane hr, .options {border: 1px solid #000 !important}
-
-.prefs-pane .prefs-modal-inner-wrapper .options:hover {background-color: #202020 !important}
-
-.prefs-pane [type='checkbox']:not(:checked) + label::before,
-.prefs-pane [type='checkbox']:checked + label::before 
-{background: #111 !important}
-
-.prefs-pane-button button {fill: rgba(255, 255, 255, 0.8) !important}
-
-.prefs-pane-button button:hover, 
-.prefs-pane .actions {background-color: #151515 !important}
-
-.prefs-pane-button button:active {background-color: #050505 !important}
+.prefs-button button:hover, .prefs-button button:focus {background-color: rgba(255,255,255,0.2) !important}
 
 /* The popups part starts here */
 .modal-overlay {background: #000 !important}
@@ -276,23 +255,34 @@ body {
     border: solid 1px #0a50AA !important}
 
 /* Search box style */
-#newtab-search-text[keepfocus="true"],
-.search-wrapper input:active {box-shadow: 0 0 0 1px var(--in-content-border-focus) !important}
+#newtab-search-text[keepfocus="true"] {
+	box-shadow: 0 0 4px 0 var(--in-content-border-focus) !important;
+	border: 1px solid var(--in-content-border-focus) !important}
+
+#newtab-search-text {
+	color: var(--home-text) !important}
 
 .search-label {fill: var(--in-content-border-focus) !important}
 
 #searchSuggestionTable {-moz-appearance: none !important}
 
 .contentSearchSuggestionsTable {
-    background-color: #444 !important;
-    border: 1px solid #000 !important}
+    background-color: #444 !important}
 
 .contentSearchSuggestionsList {
 	background-color: #505050 !important;
-    border-bottom: 1px solid #000 !important;
     color: #ccc !important}
 
-.contentSearchOneOffsTable {background: var(--home-search-engine-choices) !important}
+.contentSearchOneOffsTable {border-top: 1px solid #000 !important}
+
+.contentSearchSuggestionTable .contentSearchOneOffsTable .contentSearchSuggestionsContainer {
+	background: var(--home-search-engine-choices) !important}
+
+.contentSearchSuggestionsList .contentSearchSuggestionRow:hover,
+.contentSearchSuggestionsList .contentSearchSuggestionRow.formHistory.selected {background: rgba(255,255,255,0.1) !important; color: #fff !important}
+
+.contentSearchSuggestionTable .contentSearchHeader, .contentSearchSuggestionTable .contentSearchSettingsButton {border-color: #000 !important}
+
 .contentSearchOneOffItem:not(.last-row) {border-bottom: 1px solid #000 !important}
 
 .contentSearchSuggestionsContainer button:hover {background: rgba(255,255,255, 0.25) !important}
@@ -377,7 +367,10 @@ input[type=text] {color: #aaa !important}
 .edit-menu button.icon.icon-edit:hover, .edit-menu button.icon.icon-dismiss:hover {
 	background-color: #777 !important}
 
-.section-title span {color: #ccc !important}
+.section-title span, .title span, .card-details p, .form-input-container label span {color: #ccc !important}
+.card-details h4 {color: #ddd}
+
+.actions {border-top: 1px solid #666 !important}
 
 .form-wrapper input:hover {border: 1px solid #0084ff !important}
 
@@ -417,7 +410,7 @@ body {
 .collapsible-section.section.animation-enabled.active {
 	background: rgba(0,0,0,0.6) !important}
 
-.context-menu-button.icon:hover {fill: #aaa !important}
+.context-menu-button.icon {fill: #aaa !important}
 }
 
 /*------ COMMON ATTRIBUTES ON MOST ABOUT PAGES ------*/
@@ -515,10 +508,10 @@ menuitem, menu {
 
 menupopup {
 	-moz-appearance: none !important;
-	background-color: var(--in-content-context-background) !important
-	border: 2px solid #111 !important;
+	background-color: var(--in-content-context-background) !important;
+	border: 1px solid #111 !important;
 	padding-top: 2px}
-
+	
 /* Context menu separator color override */
 menuseparator {
   -moz-appearance: none !important;
@@ -889,7 +882,7 @@ span, .statsBoxSection-header {color: #fff !important}
 @-moz-document url-prefix(https://addons.mozilla.org) {
 
 html, .App-content, tr.LanguageTools-table-row:nth-child(even), 
-#main-wrapper, #search-tools-sidebar, .primary, .secondary, #search-tools-sidebar li a 
+#main-wrapper, #search-tools-sidebar, .primary, .secondary, #search-tools-sidebar li a, body.restyle 
 {background: #202020 !important}
 
 #footer {
@@ -920,6 +913,15 @@ a.Addon-all-reviews-link, .MetadataCard, .Card-contents ul li, .LandingPage-head
 .Search .AddonsCard-list .SearchResult {border-bottom: 1px solid #000 !important}
 
 .PermissionsCard-list .Icon {filter: brightness(700%) !important}
+
+.extra .button.disabled.not-available {background-color: #444 !important; border: 1px solid #555 !important}
+
+#search-facets .facets {background: transparent !important}
+
+#search-facets .facets .facet.active, #search-facets .facets .facet, 
+#sorter > ul > li.extras ul, #sorter > ul > li.extras a:hover {background-color: #444 !important; border: 1px solid #555 !important}
+#search-facets .facets .facet.active, #search-facets .facets .facet:hover,
+#sorter > ul > li.extras > ul > li > a:hover {background-color: #333 !important}
 
 button:not(.pswp__button):not(.pswp__ui):not(.AutoSearchInput-submit-button):not(.Icon-arrow):not(.DropdownMenu-button), 
 .PermissionCard-learn-more, .AddAddonToCollection-select {
@@ -985,7 +987,7 @@ p, a, h4, h2, blockquote, li, .num-results
 a.SearchResult-link:hover h2, span:not(.Addon-author):hover, a:hover {color: #1494FB !important}
 
 h2.Home-SubjectShelf-subheading, .CardList h2.Card-header, 
-h1, .Paginate-page-number, .Badge, a.Button.Categories-link, .install a * 
+h1, .Paginate-page-number, .Badge, a.Button.Categories-link, .install a *, h3
 {color: #FFF !important}
 
 .install a.caution {text-shadow: 1px 1px red !important}

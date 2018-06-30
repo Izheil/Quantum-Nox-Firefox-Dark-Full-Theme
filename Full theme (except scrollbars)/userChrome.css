@@ -1,6 +1,6 @@
 /* You can find an updated version here: https://github.com/Izheil/Firefox-57-full-dark-theme-with-scrollbars */
 /* Made by Izheil */
-/* Last updated: 25/05/2018 */
+/* Last updated: 30/06/2018 */
 
 /* DO NOT DELETE THIS LINE */
 @namespace url("http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul");
@@ -23,9 +23,12 @@ without this change) */
   --lwt-footer-image: url("file:///") !important;
 
   /* Url and search bars */
-  --url-and-searchbar-background-color: rgb(71, 71, 73);
   --url-and-searchbar-color: #FFF;
   --urlbar-separator-color: #5F6670}
+
+#urlbar, .searchbar-textbox {
+  background-color: rgb(71, 71, 73) !important;
+  color: #ccc !important}
 
 /* These rules will modify most highlight (background on hover) colors inside Firefox (except sidebar items, which are 
 in the rule below) */

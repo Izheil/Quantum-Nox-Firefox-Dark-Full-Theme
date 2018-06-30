@@ -9,14 +9,15 @@ basic css or <a href="https://www.w3schools.com/colors/colors_picker.asp">color 
 <br />
 This problem doesn't happen if you use a code editor such as notepad++, atom, sublime text...</h4>
 
-<h3>Last update: <b>20/06/2018</b></h3>
+<h3>Last update: <b>30/06/2018</b></h3>
 <p>Files updated:</p>
 <ul>
-  <li><b>MultiRowTab-scrollable*.uc.js</b>: You can now opt to use scrollable multi-row tabs.</li>
+  <li><b>UserChrome.css</b>: Fixed the new selectors for the url bar and search bar background color.</li>
+  <li><b>UserContent.css</b>: Fixed the about:home and about:newtab selectors for the searchbox and top sites text colors.</li>
 </ul>
-<h3>Pre-Last update: <b>26/05/2018</b></h3>
+<h3>Pre-Last update: <b>20/06/2018</b></h3>
 <ul>
-  <li><b>MultiRowTabLiteforFx.uc.js</b>: Now the draggability fix should only apply after the 23th open tab (which is when the 2nd row of tabs appear, as well as when the draggability problem used to start to happen), leaving the default reordering animation when having less than 1 line of tabs.</li>
+  <li><b>MultiRowTab-scrollable*.uc.js</b>: You can now opt to use scrollable multi-row tabs.</li>
 </ul>
 
 <h2>FAQ:</h2>
