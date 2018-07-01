@@ -6,7 +6,7 @@
 <img src="https://i.imgur.com/m7TGyqz.png" title="Dark addons" />
 
 <h2>Installation</h2>
-
+<p>You can check a video guide <a href="https://youtu.be/z0o8DatRyjk">here</a>.</p>
 <p>Most of the job is already done with the userContent.css and userChrome.css files that you have to place in the 
 <a href="https://github.com/Izheil/Firefox-57-full-dark-theme-with-scrollbars/tree/master/Theme%20colors#the-chrome-folder">the chrome folder</a> of your firefox profile. For this to work as intended, you should be using a persona (aka lightweight theme) or the default dark theme (The persona used on the screenshot is "<a href="https://addons.mozilla.org/en-US/firefox/addon/deep-dark-blue-forest/">Deek Dark Blue forest</a>" by <b>Sondergaard</b>).</p>
 <p>The only remaining part that won't be dark themed will be the synced tabs sidebar, the tooltips, and the scrollbars (since they can't be styled through userChrome nor usercontent). This can be themed using the method described in the <a href="https://github.com/Izheil/Firefox-57-full-dark-theme-with-scrollbars/tree/master/Scrollbars%20%26%20tooltips%20dark%20theme">Scrollbars & tooltips dark theme</a> folder.</p>
