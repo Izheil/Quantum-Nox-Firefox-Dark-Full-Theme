@@ -12,6 +12,7 @@
 <p>You can edit the scrollbars appearance changing the CSS rules inside the <b>scrollbar.uc.js</b> file, just as you would change them with the old method in this repository.</p>
   
 <h2>Installation</h2>
+<p>You can check a video guide <a href="https://youtu.be/z0o8DatRyjk?t=1m59s">here</a>.</p>
 <p>To install userChrome.js you have to do a few more steps than just copying it to your <a href="https://github.com/Izheil/Firefox-57-full-dark-theme-with-scrollbars/blob/master/Scrollbars%20&%20tooltips%20dark%20theme/Readme.md#the-chrome-folder">the chrome folder</a>. The reason for this is that Firefox doesn't allow userChrome.js by default, so we have to apply certain modifications so that it allows it.</p>
 
 <p>First, copy the contents of the "Root" folder found here to <a href="https://github.com/Izheil/Firefox-57-full-dark-theme-with-scrollbars/blob/master/Scrollbars%20&%20tooltips%20dark%20theme/Readme.md#the-root-folder">Firefox root folder</a>. These contents include the <b>config.js</b>, <b>userChromeJS.js</b> and the <b>config-prefs.js</b> file inside the "defaults/pref" folders (You have to keep this path structure when moving the files to <a href="https://github.com/Izheil/Firefox-57-full-dark-theme-with-scrollbars/blob/master/Scrollbars%20&%20tooltips%20dark%20theme/Readme.md#the-root-folder">Firefox root folder</a>).</p>
