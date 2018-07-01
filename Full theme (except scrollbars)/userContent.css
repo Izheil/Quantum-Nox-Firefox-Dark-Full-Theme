@@ -1,6 +1,6 @@
 /* You can find an updated version here: https://github.com/Izheil/Firefox-57-full-dark-theme-with-scrollbars */
 /* Made by Izheil */
-/* Last updated: 30/06/2018 */
+/* Last updated: 01/07/2018 */
 
 /* This part imports the Addons file if there is one, so that you don't have to edit the dynamic URL
 from the addons rules every time we update anything here */
@@ -446,6 +446,8 @@ textarea {
 	background: #333;
 	color: #aaa;
 	border: 1px solid #444}
+
+#action-box {background-color: #333 !important}
 }
 
 /*------ ABOUT: PAGES WITH TABLES  ------*/

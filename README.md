@@ -9,15 +9,15 @@ basic css or <a href="https://www.w3schools.com/colors/colors_picker.asp">color 
 <br />
 This problem doesn't happen if you use a code editor such as notepad++, atom, sublime text...</h4>
 
-<h3>Last update: <b>30/06/2018</b></h3>
+<h3>Last update: <b>01/07/2018</b></h3>
 <p>Files updated:</p>
+<ul>
+  <li><b>UserContent.css</b>: Fixed one about:* box with a new selector on FF61.</li>
+</ul>
+<h3>Pre-Last update: <b>30/06/2018</b></h3>
 <ul>
   <li><b>UserChrome.css</b>: Fixed the new selectors for the url bar and search bar background color.</li>
   <li><b>UserContent.css</b>: Fixed the about:home and about:newtab selectors for the searchbox and top sites text colors.</li>
-</ul>
-<h3>Pre-Last update: <b>20/06/2018</b></h3>
-<ul>
-  <li><b>MultiRowTab-scrollable*.uc.js</b>: You can now opt to use scrollable multi-row tabs.</li>
 </ul>
 
 <h2>FAQ:</h2>
