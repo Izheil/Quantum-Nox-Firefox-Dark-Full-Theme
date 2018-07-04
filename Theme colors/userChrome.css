@@ -1,6 +1,6 @@
 /* You can find an updated version here: https://github.com/Izheil/Firefox-57-full-dark-theme-with-scrollbars */
 /* Made by Izheil */
-/* Last updated: 30/06/2018 */
+/* Last updated: 04/07/2018 */
 
 /* DO NOT DELETE THIS LINE */
 @namespace url("http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul");
@@ -77,31 +77,16 @@ in the rule below) */
   --Loading-background: transparent;
 }
 
-/* Sidebar items highlights */
-treechildren {
-/* These change the colors of the borders when selected/hovered */
-  --treechildren-selectedColor: none !important;
-  --treechildren-focusColor: rgb(123,195,255) !important;
-  --treechildren-hoverColor: none !important;
-  --treechildren-selectedFocusColor: rgb(205,232,255) !important;
+/* This changes the color of the sidebar panel text */
+#bookmarks-view treechildren, #historyTree treechildren {color: #ccc !important}
 
-/* These change the background colors when hovered/selected */
-  --treechildren-selectedImage: linear-gradient(rgb(190,190,190), rgb(190,190,190)) !important; 
-  --treechildren-hoverImage: linear-gradient(rgb(34,85,170), rgb(34,85,170)) !important; 
-  --treechildren-hoverCurrentImage: linear-gradient(rgba(34,85,170,.16), rgba(34,85,170,.16)) !important;
-  --treechildren-hoverSelectedImage: linear-gradient(rgb(205,232,255), rgb(205,232,255)) !important}
-
-/* This is a fix for those using an OS theme (they change the background and text color on hover), 
-if you don't see a blue hover color on items on the sidebar, use this method instead *//*
 #bookmarks-view treechildren::-moz-tree-cell(hover),
 #historyTree treechildren::-moz-tree-cell(hover) {
-  background-image: linear-gradient(rgb(34,85,170), rgb(34,85,170)) !important;
-  color: #fff !important}
+  background-image: linear-gradient(rgb(34,85,170), rgb(34,85,170)) !important}
 
 #bookmarks-view treechildren::-moz-tree-cell(selected),
 #historyTree treechildren::-moz-tree-cell(selected){
-  background-image: linear-gradient(rgb(40,40,40), rgb(40,40,40)) !important;
-  color: #000 !important}
+  background-image: linear-gradient(rgb(120,120,120), rgb(120,120,120)) !important}
 
 /* v Fix to make the pre-render loading page dark instead of white v */
 #tabbrowser-tabpanels {background: #202020 !important}
@@ -441,6 +426,12 @@ if necessary depending on if you are using a custom OS theme (which may mess up 
   background-image: linear-gradient(rgba(0,0,0,0.25), rgba(0,0,0,0.25)) !important}
 
 #placeContent treechildren::-moz-tree-cell {border-right: 1px dotted rgba(0,0,0,0.4) !important}
+
+#placesView treechildren::-moz-tree-row(hover) {
+  background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)) !important}
+  
+#placesView treechildren::-moz-tree-row(selected) {
+  background-image: linear-gradient(rgba(0,0,0,0.25), rgba(0,0,0,0.25)) !important}
 
 #placeContent > splitter {border: 1px solid red !important}
 
