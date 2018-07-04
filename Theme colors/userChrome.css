@@ -71,7 +71,7 @@ in the rule below) */
   --Not-loaded-bold: normal;
   --Not-loaded-background: transparent;
 
-  --Loading-text: var(--tab-line-color);
+  --Loading-text: #0088ff;
   --Loading-italic: normal;
   --Loading-bold: normal;
   --Loading-background: transparent;
