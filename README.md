@@ -9,14 +9,14 @@ basic css or <a href="https://www.w3schools.com/colors/colors_picker.asp">color 
 <br />
 This problem doesn't happen if you use a code editor such as notepad++, atom, sublime text...</h4>
 
-<h3>Last update: <b>04/07/2018</b></h3>
+<h3>Last update: <b>11/07/2018</b></h3>
 <p>Files updated:</p>
 <ul>
-  <li><b>UserChrome.css</b>: Fixed some issues with treechildren in the sidebar and library for FF61 update.</li>
+  <li><b>UserContent.css</b>: Changed the color of text boxes to neutral gray.</li>
 </ul>
-<h3>Pre-Last update: <b>01/07/2018</b></h3>
+<h3>Pre-Last update: <b>04/07/2018</b></h3>
 <ul>
-  <li><b>UserContent.css</b>: Fixed one about:* box with a new selector on FF61.</li>
+  <li><b>UserChrome.css</b>: Fixed some issues with treechildren in the sidebar and library for FF61 update.</li>
 </ul>
 
 <h2>FAQ:</h2>

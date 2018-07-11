@@ -1,6 +1,6 @@
 /* You can find an updated version here: https://github.com/Izheil/Firefox-57-full-dark-theme-with-scrollbars */
 /* Made by Izheil */
-/* Last updated: 01/07/2018 */
+/* Last updated: 11/07/2018 */
 
 /* This part imports the Addons file if there is one, so that you don't have to edit the dynamic URL
 from the addons rules every time we update anything here */
@@ -12,7 +12,7 @@ from the addons rules every time we update anything here */
 /* This is a little fix for all pages in case you have a dark OS theme, you can use a neutral color
 like #7f7f7f (graish) or #2066dd (bluish) so that the letters can be seen in either a white or dark background for 
 text-inputting things. Leave as "none" for default letter color. */
-	--text-color-for-input-fields: none;
+	--text-color-for-input-fields: #777;
 
 /* You can put the url of an image that you want to be used as background for the about:home page.
 To use, instead of "none;", type: url("URL-OF-THE-IMAGE-GOES-HERE"); <- Don't forget the ending semicolon! */
