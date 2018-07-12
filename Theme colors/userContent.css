@@ -1,6 +1,6 @@
 /* You can find an updated version here: https://github.com/Izheil/Firefox-57-full-dark-theme-with-scrollbars */
 /* Made by Izheil */
-/* Last updated: 11/07/2018 */
+/* Last updated: 12/07/2018 */
 
 /* This part imports the Addons file if there is one, so that you don't have to edit the dynamic URL
 from the addons rules every time we update anything here */
@@ -12,7 +12,7 @@ from the addons rules every time we update anything here */
 /* This is a little fix for all pages in case you have a dark OS theme, you can use a neutral color
 like #7f7f7f (graish) or #2066dd (bluish) so that the letters can be seen in either a white or dark background for 
 text-inputting things. Leave as "none" for default letter color. */
-	--text-color-for-input-fields: #777;
+/*	--text-color-for-input-fields: #777;
 
 /* You can put the url of an image that you want to be used as background for the about:home page.
 To use, instead of "none;", type: url("URL-OF-THE-IMAGE-GOES-HERE"); <- Don't forget the ending semicolon! */
@@ -90,7 +90,17 @@ tbody > tr:hover {outline: 1px dotted #777 !important}
 th {color: #ddd !important}
 td {color: #aaa !important}}
 
-/*------ END OF FILE BROWSING PAGE ------*/
+/*------ INPUT BOXES TEXT ------*/
+
+/* This changes the input fields text color (fix for custom OS themes) *//*
+@-moz-document url-prefix(http){
+form select, input[type=text], input[type=email], input[type=password], input[type=date], 
+input[type=datetime-local], input[type=time], input[type=week], input[type=month], 
+input[type=number], input[type=search], input[type=tel], input[type=url], textarea 
+{color: var(--text-color-for-input-fields) !important}
+}
+
+/*------ END OF INPUT BOXES TEXT ------*/
 
 /* This part covers the preferences page update scrollbox (No, I couldn't put it inside the preferences section) */
 #historyItems .scrollbox-innerbox {background-color: #444 !important}
@@ -151,14 +161,6 @@ only the images */
 #startPrivateBrowsing:hover {
   background: #333 !important;
   color: #fff !important}
-
-/* This changes the input fields text color (fix for custom OS themes) */
-@-moz-document url-prefix(http){
-form select, input[type=text], input[type=email], input[type=password], input[type=date], 
-input[type=datetime-local], input[type=time], input[type=week], input[type=month], 
-input[type=number], input[type=search], input[type=tel], input[type=url], textarea 
-{color: var(--text-color-for-input-fields) !important}
-}
 
 /*------ LOG BROWSING PAGE (about:sync-log) ------*/
 @-moz-document url-prefix(about:sync-log) {
