@@ -10,12 +10,6 @@
 @namespace html url("http://www.w3.org/1999/xhtml"); /* namespace for HTML elements */
 
 /* ::::: scrollbar ::::: */
-
-scrollbar {
-	z-index: 2147483647 !important;
-	position: relative !important;
-}
-
 scrollbar,
 scrollbar * {
 	-moz-appearance: none !important;
