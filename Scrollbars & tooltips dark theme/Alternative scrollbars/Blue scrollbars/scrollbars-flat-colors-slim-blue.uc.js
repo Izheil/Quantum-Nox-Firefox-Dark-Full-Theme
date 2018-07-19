@@ -1,10 +1,5 @@
 (function() {
     var css =`
-scrollbar {
-	z-index: 2147483647 !important;
-	position: relative !important; 
-}
-
 scrollbar,
 scrollbar * {
 	-moz-appearance: none !important;
