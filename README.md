@@ -9,14 +9,14 @@ basic css or <a href="https://www.w3schools.com/colors/colors_picker.asp">color 
 <br />
 This problem doesn't happen if you use a code editor such as notepad++, atom, sublime text...</h4>
 
-<h3>Last update: <b>20/07/2018</b></h3>
+<h3>Last update: <b>25/07/2018</b></h3>
 <p>Files updated:</p>
 <ul>
-  <li><b>Scrollbar*.uc.js</b>: Updated the z-index of scrollbars to avoid glitches.</li>
+  <li><b>UserContent.css</b>: Themed the survey notice on firefox addons.</li>
 </ul>
-<h3>Pre-Last update: <b>16/07/2018</b></h3>
+<h3>Pre-Last update: <b>20/07/2018</b></h3>
 <ul>
-  <li><b>UserChrome.css</b>: Hid some missing separator remaining from the search in context menu.</li>
+  <li><b>Scrollbar*.uc.js</b>: Updated the z-index of scrollbars to avoid glitches.</li>
 </ul>
 
 <h2>FAQ:</h2>

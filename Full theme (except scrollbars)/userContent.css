@@ -1,6 +1,6 @@
 /* You can find an updated version here: https://github.com/Izheil/Firefox-57-full-dark-theme-with-scrollbars */
 /* Made by Izheil */
-/* Last updated: 12/07/2018 */
+/* Last updated: 25/07/2018 */
 
 /* This part imports the Addons file if there is one, so that you don't have to edit the dynamic URL
 from the addons rules every time we update anything here */
@@ -1007,6 +1007,8 @@ input#search-q {
 #site-search-suggestions .wrap, ul.other-apps {
     background: #151515 !important;
     border: 1px solid #101010 !important}
+
+.Notice-generic {background-color: #555 !important}
 
 .ShowMoreCard-contents::after 
 {background: linear-gradient(rgba(48, 48, 48, 0.3), #303030) !important}
