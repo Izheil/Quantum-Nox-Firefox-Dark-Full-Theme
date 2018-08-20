@@ -3,8 +3,9 @@
 // @namespace      http://space.geocities.yahoo.co.jp/gl/alice0775
 // @description    Multi-row tabs draggability fix, Experimental CSS version
 // @include        main
-// @compatibility  Firefox 60
-// @author         Alice0775, Endor8, TroudhuK
+// @compatibility  Firefox 61
+// @author         Alice0775, Endor8, TroudhuK, Izheil
+// @version        2018/20/08 03:05 Fixed some issue with min-width
 // @version        2018/11/05 15:05 Firefox 60
 // @version        2016/08/05 00:00 Firefox 48
 // @version        2016/05/01 00:01 hide favicon if busy
@@ -18,7 +19,7 @@ function zzzz_MultiRowTabLite() {
     /* MULTIROW TABS CSS */
     .tabbrowser-tab:not([pinned]) {
         flex-grow:1;
-        min-width:150px}
+        min-width:100px !important}
 
     .tabbrowser-tab, .tab-background {height:var(--tab-min-height) !important}
 
