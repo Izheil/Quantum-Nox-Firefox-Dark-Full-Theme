@@ -1,6 +1,6 @@
 /* You can find an updated version here: https://github.com/Izheil/Firefox-57-full-dark-theme-with-scrollbars */
 /* Made by Izheil */
-/* Last updated: 16/07/2018 */
+/* Last updated: 20/08/2018 */
 
 /* DO NOT DELETE THIS LINE */
 @namespace url("http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul");
@@ -811,7 +811,8 @@ treechildren::-moz-tree-separator {border-color: #000 !important}
 
 /* Fix for the panel arrows for extensions (Only enable if using the addons file) *//*
 #customizationui-widget-panel[viewId="PanelUI-webext-_b9db16a4-6edc-47ec-a1f4-b86292ed211d_-browser-action-view"] .panel-arrow,
-#customizationui-widget-panel[viewId="PanelUI-webext-jid1-mnnxcxisbpnsxq_jetpack-browser-action-view"] .panel-arrow {
+#customizationui-widget-panel[viewId="PanelUI-webext-jid1-mnnxcxisbpnsxq_jetpack-browser-action-view"] .panel-arrow,
+#customizationui-widget-panel[viewId="PanelUI-webext-s3download_statusbar-browser-action-view"] .panel-arrow {
   fill: #333 !important}
 
 #customizationui-widget-panel[viewId="PanelUI-webext-ublock0_raymondhill_net-browser-action-view"] .panel-arrow {
