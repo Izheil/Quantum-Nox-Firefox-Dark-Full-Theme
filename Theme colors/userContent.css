@@ -1,6 +1,6 @@
 /* You can find an updated version here: https://github.com/Izheil/Firefox-57-full-dark-theme-with-scrollbars */
 /* Made by Izheil */
-/* Last updated: 25/07/2018 */
+/* Last updated: 31/08/2018 */
 
 /* This part imports the Addons file if there is one, so that you don't have to edit the dynamic URL
 from the addons rules every time we update anything here */
@@ -886,7 +886,8 @@ span, .statsBoxSection-header {color: #fff !important}
 @-moz-document url-prefix(https://addons.mozilla.org) {
 
 html, .App-content, tr.LanguageTools-table-row:nth-child(even), 
-#main-wrapper, #search-tools-sidebar, .primary, .secondary, #search-tools-sidebar li a, body.restyle 
+#main-wrapper, #search-tools-sidebar, .primary, .secondary, #search-tools-sidebar li a, body.restyle,
+.Card-footer, .Paginate 
 {background: #202020 !important}
 
 #footer {
