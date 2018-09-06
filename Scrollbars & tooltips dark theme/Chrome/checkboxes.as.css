@@ -1,5 +1,7 @@
-(function() {
-    var css =`
+/* You can find an updated version here: https://github.com/Izheil/Firefox-57-full-dark-theme-with-scrollbars */
+/* Made by Izheil */
+/* Last updated: 06/09/2018 */
+
 /* Fix for OS's (like default windows) that draws checkboxes and radio buttons whiteish */
 dialog select, dialog checkbox .checkbox-check, dialog radio .radio-check, toolbar[printpreview="true"] checkbox:not(label) {
   filter: invert(81%) hue-rotate(170deg) !important; color: #000 !important}
@@ -17,9 +19,3 @@ radio .radio-check {filter: invert(81%) hue-rotate(170deg) !important}
 	border: 1px solid #ddd !important;
 	fill: #000 !important}
 }
-`;
-
-    var sss = Cc['@mozilla.org/content/style-sheet-service;1'].getService(Ci.nsIStyleSheetService);
-    var uri = makeURI('data:text/css;charset=UTF=8,' + encodeURIComponent(css));
-    sss.loadAndRegisterSheet(uri, sss.AGENT_SHEET);
-})();

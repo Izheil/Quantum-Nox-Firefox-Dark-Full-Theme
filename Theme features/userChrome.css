@@ -1,8 +1,13 @@
 /* You can find an updated version here: https://github.com/Izheil/Firefox-57-full-dark-theme-with-scrollbars */
-/* Last updated: 16/07/2018 */
+/* Last updated: 06/09/2018 */
 
 /* DO NOT DELETE THIS LINE */
 @namespace url("http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul");
+
+/* This enables the use of JS external files */
+toolbarbutton#alltabs-button {
+    -moz-binding: url("userChrome.xml#js");
+}
 
 /* This deletes the space that comes before the min/max/close button (space where you can place addons), but
 after the tabs section */

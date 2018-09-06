@@ -9,19 +9,21 @@ basic css or <a href="https://www.w3schools.com/colors/colors_picker.asp">color 
 <br />
 This problem doesn't happen if you use a code editor such as notepad++, atom, sublime text...</h4>
 
-<h3>Last update: <b>31/08/2018</b></h3>
+<h3>Last update: <b>06/09/2018</b></h3>
 <p>Files updated:</p>
 <ul>
-  <li><b>Usercontent.css</b>: Fixed the white background pager on mozilla addons page.</li>
+  <li><b>UserChrome.xml</b>: Added a new fix for the scrollbars, since the old one would stop working on FF62.</li>
+  <li><b>UserChrome.css</b>: You can now load the fix for the scrollbars from any of the userchrome.css files.</li>
+  <li><b>*.as.css</b>: Now all the old AGENT_SHEET level CSS code that was injected as JS has been replaced as their CSS counterparts.</li>
 </ul>
-<h3>Pre-Last update: <b>20/08/2018</b></h3>
+<h3>Pre-Last update: <b>31/08/2018</b></h3>
 <ul>
-  <li><b>MultiRowTabLiteforFx.uc.js</b>: Fixed some issue with tabs min-width rule not getting registered.</li>
+  <li><b>Usercontent.css</b>: Fixed the white background pager on mozilla addons page.</li>
 </ul>
 
 <h2>FAQ:</h2>
 <h3>The synced tabs sidebar isn't themed.</h3>
-<p>Since it's anonymous content of the browser we can't theme it through userChrome or userContent, which is why you will have to apply the scrollbars & tooltips method to be able to use external javascript to modify anonymous content, and then place the <b>Sync-tabs-sidebar.uc.js</b> file inside the <code>Scrollbars & tooltips dark theme/Profile/</code> folder inside this repository inside your chrome folder (The method is the same than for the scrollbars, except you place the sync related file on your chrome folder apart from the other files if you are going to use them as well).</p>
+<p>Since it's anonymous content of the browser we can't theme it through userChrome or userContent, which is why you will have to apply the scrollbars & tooltips method to be able to use external javascript to modify anonymous content, and then place the <b>Sync-tabs-sidebar.as.css</b> file inside the <code>Scrollbars & tooltips dark theme/Profile/</code> folder inside this repository inside your chrome folder (The method is the same than for the scrollbars, except you place the sync related file on your chrome folder apart from the other files if you are going to use them as well).</p>
 
 <h3>The bookmarks toolbar text/tabs text color is black and I can't see the letters over the dark background.</h3>
 <p>This is caused by your persona (lightweight theme), and while you could change these settings inside userchrome, I thought it was better to just change the settings on the persona directly (since not all personas will look the same). To do so you'd have to open <code>about:config</code>, and search for <b>lightweightThemes.usedThemes</b>. Once there, find the "textcolor" setting and type any color you'd want to use instead of black or the color being used by the theme (use #fff for white). The persona you are currently using should be in the first place in the list. A screenshot of this window can be seen in the first section of this readme.</p>
@@ -41,7 +43,7 @@ This problem doesn't happen if you use a code editor such as notepad++, atom, su
 <p>The main reason is that you can't style firefox about: pages nor the scrollbar with just stylus.</p>
 
 <h3>The theme is making the text of some addon popups unreadable, how do I fix this?</h3>
-<p>The theme is made so that it changes most background colors, including the one of the popups that don't have any background color specified by their original creator. Sadly it doesn't change the text of these by default, so you may have to do it manually, or report the addon you want themed here, or just use the fix inside userchrome.css (at around lines 309-312) to turn the addons back to their white background color.</p>
+<p>The theme is made so that it changes most background colors, including the one of the popups that don't have any background color specified by their original creator. Sadly it doesn't change the text of these by default, so you may have to do it manually, or report the addon you want themed here, or just use the fix inside userchrome.css (at around lines 302-305) to turn the addons back to their white background color.</p>
 
 <h2>Description</h2>
 
@@ -55,14 +57,14 @@ This problem doesn't happen if you use a code editor such as notepad++, atom, su
   If you only want to use a dark theme but you aren't interested on using multirow tabs, or want to keep all the context menu options when right clicking on tabs/the web area (such as "Send image..." or "Send tab to device"), use this one. Apart from the basic Firefox UI theming, you can also theme a few other optional things (they require some editing of userchrome.css, or copying addons.css into the chrome folder):
 	<ul>
 	  <li>Styling for unloaded and unread tab titles.</li>
-	  <li>Can change the tab line color to Windows current theme color (You have to change the commented line that is described in line 19 inside userChrome.css).</li>
-	  <li>Can change the background image of your lightweight theme to one of your choice on userChrome.css (You have to be using a lightweight theme instead of the default dark theme of Firefox).</li>
-	  <li>Can change the default text color of input boxes for those using a dark OS theme that affects the background of these (You have to change the commented line that is described on line 15 inside usercontent.css to use it)</li>
-	  <li>Can set an image as background for the home page (You have to change the commented line that is described in line 19 inside userContent.css).<br />
+	  <li>Can change the tab line color to Windows current theme color (You have to change the commented line that is described in line 19 inside <code>userChrome.css</code>).</li>
+	  <li>Can change the background image of your lightweight theme to one of your choice on <code>userChrome.css</code> (You have to be using a lightweight theme instead of the default dark theme of Firefox).</li>
+	  <li>Can change the default text color of input boxes for those using a dark OS theme that affects the background of these (You have to change the commented line that is described on line 15 inside <code>usercontent.css</code> to use it)</li>
+	  <li>Can set an image as background for the home page (You have to change the commented line that is described in line 19 inside <code>userContent.css</code>).<br />
 <img src="https://i.imgur.com/IxMK0t5.png"></li>
 	  <li>Change the theme of either of <a href="https://addons.mozilla.org/es/firefox/addon/ublock-origin/">Ublock Origin</a>, <a href="https://addons.mozilla.org/es/firefox/addon/video-downloadhelper/">Video Download Helper</a>, <a href="https://addons.mozilla.org/es/firefox/addon/flash-video-downloader/">Flash Video Downloader</a>, <a href="https://addons.mozilla.org/es/firefox/addon/tab-session-manager/">Tab session manager</a>, <a href="https://addons.mozilla.org/es/firefox/addon/undo-closed-tabs-revived/">Undo closed tabs button</a>, <a href="https://addons.mozilla.org/es/firefox/addon/s3download-statusbar/">Download Manager (S3)</a>, <a href="https://addons.mozilla.org/es/firefox/addon/privacy-badger17/">Privacy badger</a>, <a href="https://addons.mozilla.org/es/firefox/addon/noscript/">Noscript</a>, <a href="https://addons.mozilla.org/en-US/firefox/addon/window-resize/">Window resize</a> or <a href="https://addons.mozilla.org/es/firefox/addon/s3google-translator/">S3 Translator</a> extensions to a dark version. You have to update the UUIDs of the extensions inside "addons.css" for this. <br /><img src="https://i.imgur.com/m7TGyqz.png" title="Dark addons" /></li>
 	</ul>
-  <li><b>Theme features</b>: In this one you will find a userchrome (with the exception of multiple row tabs, which can be found in the file <b>MultiRowTabLiteforFx.uc.js</b>)with ONLY the features part of the theme. These features are the following:
+  <li><b>Theme features</b>: In this one you will find a userchrome (with the exception of multiple row tabs, which can be found in the file <b><code>MultiRowTabLiteforFx.uc.js</code></b>)with ONLY the features part of the theme. These features are the following:
 	<ul>
 	  <li>Multiple row tabs.</li>
 	  <li>Multiple row bookmarks toolbar (2 usable rows by default, but it is NOT enabled by default. You can add more rows editing userchrome).</li>
@@ -80,13 +82,13 @@ This problem doesn't happen if you use a code editor such as notepad++, atom, su
 <h3>The scrollbars</h3>
 <img src="https://i.imgur.com/qe6tGJW.png" title="Dark blue scrollbar" />
 
-<p>To install the custom scrollbars to match the dark theme, you will have to use one of the 2 methods found on the "Scrollbars & tooltips dark theme" or "Scrollbars patchers(Old method)" folders inside this repository. You should be using the "Scrollbars & tooltips dark theme" folder method, since it's the most permanent, but if you find some bug or if the scrollbars lag for you, you could try using the old method one instead. The problem with the old method is that you will have to re-patch the scrollbars with each firefox update, so I'm only keeping it in case the other new method stops working in the future.</b>
+<p>To install the custom scrollbars to match the dark theme, you will have to use one of the 2 methods found on the "Scrollbars & tooltips dark theme" or "Scrollbars patchers(Old method)" folders inside this repository. You should be using the "Scrollbars & tooltips dark theme" folder method, since it's the most permanent, but if you find some bug, you could try using the old method one instead. The problem with the old method is that you will have to re-patch the scrollbars with each firefox update, so I'm only keeping it in case the other new method stops working in the future.</b>
 
 <h2>Credits</h2>
 <p>The original code for the custom scrollbars which we modified here belongs to <b>Arty2</b>, and you can find it <a href="https://gist.github.com/Arty2/fdf19aea2c601032410516f059d58eb1">here</a>.
 <p>The original code for the multirow tabs (the CSS part) was written by <b>Andreicristianpetcu</b>, and you can find it <a href="https://discourse.mozilla.org/t/tabs-in-two-or-more-rows-like-tabmixpro-in-quantum/21657/2">here</a>, or for just the code, <a href="https://github.com/andreicristianpetcu/UserChrome-Tweaks/blob/09fa38a304af88b685f4086bc8ea9997dd7db0fd/tabs/multi_row_tabs_firefox_v57.css">here</a>. The fix of multi-row tabs draggability was made by <b>TroudhuK</b>, and you can find the original one <a href="https://github.com/TroudhuK/userChrome.js/blob/patch-1/Firefox-57/Mehrzeilige-Tableiste/MultiRowTabLiteforFx.uc.js">here</a>.</p>
 <p>The original code for the multirow bookmarks toolbar belongs to the original creator mentioned in <a href="https://www.reddit.com/r/firefox/comments/75wya9/multiple_row_bookmark_toolbar_for_firefox_5758/">this reddit thread</a>, whose code was fixed by <b>jscher2000</b> to use in our current firefox version.</p>
-<p>The code to be able to edit anonymous content (in our case the scrollbars and tooltips) was created thanks to the efforts of <a href="http://mozilla.zeniko.ch/userchrome.js.html">Zeniko</a>, <a href="https://github.com/Endor8/userChrome.js">Endor8</a>, and <b>RAZR_96</b> <a href="https://www.reddit.com/r/firefox/comments/7dtcpm/restyle_an_userstyle_manager_that_can_edit/">in this reddit comment</a>.
+<p>The code to be able to edit anonymous content (in our case the scrollbars and tooltips) was created thanks to the efforts of <a href="http://mozilla.zeniko.ch/userchrome.js.html">Zeniko</a>, <a href="https://github.com/nuchi/firefox-quantum-userchromejs">Nichu</a>, and <a href="https://github.com/Sporif/firefox-quantum-userchromejs">Sporif</a>.
 <p>Special thanks to <b>Messna</b> for noting the class turning into an ID on FF58, and <b>Snwflake</b> for fixing Firefox root folder location on MacOS.</p>
 <p>Also thanks to <b>BelladonnavGF</b>, <b>Demir-delic</b>, <b>DallasBelt</b>, <b>Hakerdefo</b>, <b>Tkhquang</b> and <b>YiannisNi</b> for noting some issues with the theme, and <b>BelladonnavGF</b> for the addition of the url font and and tabs below url bar suggestions.</p>
 

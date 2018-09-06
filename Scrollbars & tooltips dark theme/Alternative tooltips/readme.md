@@ -9,6 +9,9 @@ which makes them have more compact.</p>
 <h3>tooltips-gray.uc.js</h3>
 <p>This design will make the tooltips background color grayish.</p>
 
+<h3>tooltips-dark.uc.js</h3>
+<p>This design will make the tooltips background color almost black with a gray border.</p>
+
 <h3>tooltips-translucid.uc.js</h3>
 <p>This file will make the tooltips background be semi-transparent (at 80% opacity), so you can see through the tooltips a 
 bit.</p>

@@ -1,5 +1,7 @@
-(function() {
-    var css =`
+/* You can find an updated version here: https://github.com/Izheil/Firefox-57-full-dark-theme-with-scrollbars */
+/* Made by Izheil */
+/* Last updated: 06/09/2018 */
+
 scrollbar,
 scrollbar * {
 	-moz-appearance: none !important;
@@ -76,9 +78,4 @@ scrollbar scrollbarbutton{
 	max-width: 16px !important;
 	height: 0px !important;
 	width: 0px !important;
-}`;
-
-    var sss = Cc['@mozilla.org/content/style-sheet-service;1'].getService(Ci.nsIStyleSheetService);
-    var uri = makeURI('data:text/css;charset=UTF=8,' + encodeURIComponent(css));
-    sss.loadAndRegisterSheet(uri, sss.AGENT_SHEET);
-})();
+}
