@@ -920,7 +920,7 @@ part of the same rule */
 #context_sendTabToDevice_separator,
 
 /* Separator after the previous command */
-#tabContextMenu menuseparator:nth-child(even),
+#tabContextMenu menuseparator:nth-child(12),
 
 /* Reload all tabs */
 #context_reloadAllTabs, #toolbar-context-reloadAllTabs,
@@ -972,8 +972,8 @@ part of the same rule */
 /* Open link commands separator (should only disable if you don't use any of the "open link..." commands) */
 #context-sep-open,
 
-/* Take a screenshot & it's separator */ 
-/* #_479f0278-2c34-4365-b9f0-1d328d0f0a40__separator, */ #screenshots_mozilla_org_create-screenshot,
+/* Take a screenshot & it's separator *//*
+#screenshots_mozilla_org-menuitem-_create-screenshot,*/ #_context-media-eme-separator,
 
 /* Send tab to device... (including it's separator) */
 #context_sendTabToDevice, #context_sendTabToDevice_separator,
