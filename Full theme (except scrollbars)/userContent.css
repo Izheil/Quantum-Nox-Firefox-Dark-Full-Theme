@@ -71,7 +71,7 @@ you don't even need these, so just comment it all out).*/
 @-moz-document url-prefix(file://) {
 :root {background-color: #202020 !important; color: #ccc !important}
 
-/* COMMENT OUT THIS SECTION IF TESTING THINGS ON FIREFOX */
+/* COMMENT OUT THIS SECTION IF BROWSING LOCAL HTML PAGES */
 body:not([style="margin-bottom: 8px !important;"]) {
 	background: #333 !important;
 	border: none !important}
