@@ -1,6 +1,6 @@
 /* You can find an updated version here: https://github.com/Izheil/Firefox-57-full-dark-theme-with-scrollbars */
 /* Made by Izheil */
-/* Last updated: 06/05/2018 */
+/* Last updated: 07/09/2018 */
 
 /*------ HOW TO MAKE THE ADDON THEMES WORK ------*/
 /* To use this part of the code, you will have to find the dynamic UUID of your extensions, and replace it where the 
@@ -507,7 +507,7 @@ body, html {background: #222 !important; color: #fff !important}
 {background-color: #505050 !important; color: #aaa !important}
 
 #tabs-generalTab a.selected, #generalTab--features, #generalTab--statusMode, #generalTab--queue,
-#tabs-appearanceTab a.selected, #appearanceTab--style, #appearanceTab--layout 
+#tabs-appearanceTab a.selected, #appearanceTab--style, #appearanceTab--layout, #generalTab--contextMenu 
 {background-color: #555 !important; color: #ddd !important; border: none !important}
 
 .groupbox {border: 1px solid #666 !important; box-shadow: 0 0 10px #000 !important}

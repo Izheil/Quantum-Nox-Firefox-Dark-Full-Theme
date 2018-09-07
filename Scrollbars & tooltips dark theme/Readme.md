@@ -20,6 +20,15 @@
 <h2>Installation</h2>
 <p>First you need to enable the use of javascript files from your profile folder. All you need to do is to copy <code>userChrome.css</code> and <code>userChrome.xml</code> to your <a href="https://github.com/Izheil/Firefox-57-full-dark-theme-with-scrollbars/blob/master/Scrollbars%20&%20tooltips%20dark%20theme/Readme.md#the-chrome-folder">chrome folder</a>.This is the same folder where you would place <code>userchrome.css</code> and <code>usercontent.css</code>.</p>
 
+<blockquote><b>For those that are only interested on the scrollbars or multirow tabs, or want to use their own <code>userChrome.css</code>, you will have to add the following rule to your <code>userChrome.css</code> file (which you have to place in the <a href="https://github.com/Izheil/Firefox-57-full-dark-theme-with-scrollbars/blob/master/Scrollbars%20&%20tooltips%20dark%20theme/Readme.md#the-chrome-folder">chrome folder</a>, like you would even if you used the files from this repository):</b>
+<pre>/* This enables the use of JS external files */
+toolbarbutton#alltabs-button {
+    -moz-binding: url("userChrome.xml#js")}</pre>
+If you are creating a new <code>userChrome.css</code> file only for this, make sure to also add these lines on top of the file:
+<pre>/* DO NOT DELETE THIS LINE */
+@namespace url("http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul");</pre>
+</blockquote>
+
 <h4>If you have an OS that draws checkboxes and radio buttons dark already, do NOT copy the <code>checkboxes.as.css</code> file into the chrome folder, or it will turn them white. Only place this file in your profile folder if your OS draws them whiteish (like windows when you don't use a custom theme).</h4>
 
 <p>After that, type <code>about:profiles</code> on the URL bar of firefox, and open the local profile folder through that page. In here you will have enter the "startupcache" folder and delete all files here so that the scrollbars show properly next time you reset firefox (You will have to delete the cache every time you make a change to the <code>scrollbars.as.css</code> file for it to take effect). You may have to close firefox to be able to delete all the files in the "startupcache" folder.</p>
