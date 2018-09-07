@@ -20,11 +20,11 @@
 <h2>Installation</h2>
 <p>First you need to enable the use of javascript files from your profile folder. All you need to do is to copy <code>userChrome.css</code> and <code>userChrome.xml</code> to your <a href="https://github.com/Izheil/Firefox-57-full-dark-theme-with-scrollbars/blob/master/Scrollbars%20&%20tooltips%20dark%20theme/Readme.md#the-chrome-folder">chrome folder</a>.This is the same folder where you would place <code>userchrome.css</code> and <code>usercontent.css</code>.</p>
 
-<blockquote><b>For those that are only interested on the scrollbars or multirow tabs but not the dark background, or want to use their own <code>userChrome.css</code>, this is the only rule you need to add to your <code>userChrome.css</code> file (which you have to place in the <a href="https://github.com/Izheil/Firefox-57-full-dark-theme-with-scrollbars/blob/master/Scrollbars%20&%20tooltips%20dark%20theme/Readme.md#the-chrome-folder">chrome folder</a>, like you would even if you used the userchrome from this repository):</b>
+<blockquote><b>For those that are only interested on the scrollbars or multirow tabs but not the dark background, or want to use their own <code>userChrome.css</code>, this is the only rule you need to add to it (which you have to place in the <a href="https://github.com/Izheil/Firefox-57-full-dark-theme-with-scrollbars/blob/master/Scrollbars%20&%20tooltips%20dark%20theme/Readme.md#the-chrome-folder">chrome folder</a>, like you would even if you used the userchrome from this repository):</b>
 <pre>/* This enables the use of JS external files */
 toolbarbutton#alltabs-button {
     -moz-binding: url("userChrome.xml#js")}</pre>
-If you are creating a new <code>userChrome.css</code> file only for this, make sure to also add these lines on top of the file:
+If you are <a href="http://kb.mozillazine.org/index.php?title=UserChrome.css&printable=yes">creating a new <code>userChrome.css</code></a> file only for this, make sure to also add these lines on top of the file:
 <pre>/* DO NOT DELETE THIS LINE */
 @namespace url("http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul");</pre>
 In either case, remember to also place <code>userchrome.xml</code> into your <a href="https://github.com/Izheil/Firefox-57-full-dark-theme-with-scrollbars/blob/master/Scrollbars%20&%20tooltips%20dark%20theme/Readme.md#the-chrome-folder">chrome folder</a> as well.
