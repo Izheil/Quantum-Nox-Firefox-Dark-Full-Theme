@@ -23,7 +23,7 @@ This problem doesn't happen if you use a code editor such as notepad++, atom, su
 
 <h2>FAQ:</h2>
 <h3>The synced tabs sidebar isn't themed.</h3>
-<p>Since it's anonymous content of the browser we can't theme it through userChrome or userContent, which is why you will have to apply the scrollbars & tooltips method to be able to use external javascript to modify anonymous content, and then place the <b>Sync-tabs-sidebar.as.css</b> file inside the <code>Scrollbars & tooltips dark theme/Profile/</code> folder inside this repository inside your chrome folder (The method is the same than for the scrollbars, except you place the sync related file on your chrome folder apart from the other files if you are going to use them as well).</p>
+<p>Since it's anonymous content of the browser we can't theme it through userChrome or userContent, which is why you will have to apply the scrollbars & tooltips method to be able to use external javascript to modify anonymous content, and then place the <b>Sync-tabs-sidebar.as.css</b> file inside the <code>Scrollbars & tooltips dark theme/Chrome/</code> folder inside this repository inside your chrome folder (The method is the same than for the scrollbars, except you place the sync related file on your chrome folder apart from the other files if you are going to use them as well).</p>
 
 <h3>The bookmarks toolbar text/tabs text color is black and I can't see the letters over the dark background.</h3>
 <p>This is caused by your persona (lightweight theme), and while you could change these settings inside userchrome, I thought it was better to just change the settings on the persona directly (since not all personas will look the same). To do so you'd have to open <code>about:config</code>, and search for <b>lightweightThemes.usedThemes</b>. Once there, find the "textcolor" setting and type any color you'd want to use instead of black or the color being used by the theme (use #fff for white). The persona you are currently using should be in the first place in the list. A screenshot of this window can be seen in the first section of this readme.</p>
@@ -78,6 +78,8 @@ This problem doesn't happen if you use a code editor such as notepad++, atom, su
 </ul>
 
 <h4>You can turn the features you want on or off changing the commented lines on the CSS file (To change them you just have to open the userchrome.css with notepad or any code editor, and encase between "/*" and "*/" (without the quotation marks) the lines you don't want to take effect). Of course, if you think that you are NEVER going to use certain feature, you can always delete the specific lines you don't want without any other side-effect.</h4>
+
+<p>You can find a video tutorial on how to install the theme <a href="https://youtu.be/FHV1-LbX_Vo">here</a>.</p>
 
 <h3>The scrollbars</h3>
 <img src="https://i.imgur.com/qe6tGJW.png" title="Dark blue scrollbar" />
