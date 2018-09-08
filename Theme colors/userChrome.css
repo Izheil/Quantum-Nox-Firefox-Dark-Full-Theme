@@ -227,7 +227,8 @@ dialog textbox, toolbar[printpreview="true"] textbox {
   background-color: #444 !important;
   color: #aaa !important}
 
-dialog textbox[focused="true"], toolbar[printpreview="true"] textbox[focused="true"] {
+dialog textbox[focused="true"], toolbar[printpreview="true"] textbox[focused="true"],
+#bookmarkproperties #editBMPanel_namePicker[focused="true"], #bookmarkproperties #editBMPanel_tagsField[focused="true"] {
   box-shadow: var(--Input-field-focus-shadow) !important;
   background-color: #555 !important;
   color: #fff !important}
@@ -490,11 +491,11 @@ if necessary depending on if you are using a custom OS theme (which may mess up 
 #infoBox textbox[focused="true"], #infoBox listbox[focused="true"],
 /* This changes the same url bookmarking popup text boxes on hover */
 #editBMPanel_namePicker[focused="true"], #editBMPanel_tagsField[focused="true"],
-#bookmarkproperties #editBMPanel_namePicker[focused="true"],
-#bookmarkproperties #editBMPanel_tagsField[focused="true"] {
-  box-shadow: var(--input-field-focus-shadow) !important;
+#infoBox #bookmarkproperties #editBMPanel_namePicker[focused="true"],
+#infoBox #bookmarkproperties #editBMPanel_tagsField[focused="true"] {
+  box-shadow: var(--Input-field-focus-shadow) !important;
   background-color: #666 !important;
-  color: #fff !important} 
+  color: #fff !important}
 
 /* This changes the buttons inside the bookmarking popup at the url star */
 #editBMPanel_newFolderButton, #editBookmarkPanelDoneButton, 
