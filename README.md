@@ -9,16 +9,16 @@ basic css or <a href="https://www.w3schools.com/colors/colors_picker.asp">color 
 <br />
 This problem doesn't happen if you use a code editor such as notepad++, atom, sublime text...</h4>
 
-<h3>Last update: <b>06/09/2018</b></h3>
+<h3>Last update: <b>08/09/2018</b></h3>
 <p>Files updated:</p>
+<ul>
+  <li><b>Tooltips*.as.css</b>: Fixed the selector for the url tooltip at the bottom of the web area.</li>
+</ul>
+<h3>Pre-Last update: <b>06/09/2018</b></h3>
 <ul>
   <li><b>UserChrome.xml</b>: Added a new fix for the scrollbars, since the old one would stop working on FF62.</li>
   <li><b>UserChrome.css</b>: You can now load the fix for the scrollbars from any of the userchrome.css files.</li>
   <li><b>*.as.css</b>: Now all the old AGENT_SHEET level CSS code that was injected as JS has been replaced as their CSS counterparts.</li>
-</ul>
-<h3>Pre-Last update: <b>31/08/2018</b></h3>
-<ul>
-  <li><b>Usercontent.css</b>: Fixed the white background pager on mozilla addons page.</li>
 </ul>
 
 <h2>FAQ:</h2>
