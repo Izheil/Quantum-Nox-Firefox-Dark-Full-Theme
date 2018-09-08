@@ -12,6 +12,7 @@ This problem doesn't happen if you use a code editor such as notepad++, atom, su
 <h3>Last update: <b>08/09/2018</b></h3>
 <p>Files updated:</p>
 <ul>
+  <li><b>UserChrome.css</b>: Deleted a fix for the bookmarking dialog that was unnecesary after FF62.</li>
   <li><b>Tooltips*.as.css</b>: Fixed the selector for the url tooltip at the bottom of the web area.</li>
 </ul>
 <h3>Pre-Last update: <b>06/09/2018</b></h3>

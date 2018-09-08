@@ -1,6 +1,6 @@
 /* You can find an updated version here: https://github.com/Izheil/Firefox-57-full-dark-theme-with-scrollbars */
 /* Made by Izheil */
-/* Last updated: 20/08/2018 */
+/* Last updated: 08/09/2018 */
 
 /* DO NOT DELETE THIS LINE */
 @namespace url("http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul");
@@ -231,12 +231,6 @@ dialog textbox[focused="true"], toolbar[printpreview="true"] textbox[focused="tr
   box-shadow: var(--Input-field-focus-shadow) !important;
   background-color: #555 !important;
   color: #fff !important}
-
-/* This is used to fix some issue with the bookmark properties window
-not showing at full height when customizing their dialog */
-#bookmarkproperties, #editBookmarkPanelContent {
-  min-height: 15em !important;
-  max-height: 35em !important}
 
 /* CUSTOMIZATION PAGE */
 
