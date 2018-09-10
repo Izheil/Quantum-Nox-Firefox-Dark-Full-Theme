@@ -1,5 +1,5 @@
 /* You can find an updated version here: https://github.com/Izheil/Firefox-57-full-dark-theme-with-scrollbars */
-/* Last updated: 07/09/2018 */
+/* Last updated: 10/09/2018 */
 
 /* DO NOT DELETE THIS LINE */
 @namespace url("http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul");
@@ -117,6 +117,18 @@ part of the same rule */
 
 /* Close tab *//*
 #context_closeTab,
+
+/* Bookmark items context menu */
+
+/* Open bookmark in new window *//*
+#placesContext_open\:newwindow,
+
+/* Open bookmark in new private window *//*
+#placesContext_open\:newprivatewindow,
+
+/* Open all tabs in a bookmark folder & it's separator */
+#placesContext_openContainer\:tabs, 
+#placesContext_open\:newprivatewindow[disabled="true"] + #placesContext_openSeparator,
 
 /* Webarea context menu */
 

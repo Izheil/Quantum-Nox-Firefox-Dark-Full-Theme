@@ -1,6 +1,6 @@
 /* You can find an updated version here: https://github.com/Izheil/Firefox-57-full-dark-theme-with-scrollbars */
 /* Made by Izheil */
-/* Last updated: 08/09/2018 */
+/* Last updated: 10/09/2018 */
 
 /* DO NOT DELETE THIS LINE */
 @namespace url("http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul");
@@ -820,4 +820,7 @@ treechildren::-moz-tree-separator {border-color: #000 !important}
 
 #customizationui-widget-panel[viewId="PanelUI-webext-artur_dubovoy_gmail_com-browser-action-view"] .panel-arrow {
   fill: #222 !important}
+
+#customizationui-widget-panel[viewId="PanelUI-webext-tab-session-manager_sienori-browser-action-view"] .panel-arrow {
+  fill: #36b2b2 !important}
 */
