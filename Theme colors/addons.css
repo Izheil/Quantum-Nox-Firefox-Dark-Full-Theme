@@ -1,6 +1,6 @@
 /* You can find an updated version here: https://github.com/Izheil/Firefox-57-full-dark-theme-with-scrollbars */
 /* Made by Izheil */
-/* Last updated: 07/09/2018 */
+/* Last updated: 20/09/2018 */
 
 /*------ HOW TO MAKE THE ADDON THEMES WORK ------*/
 /* To use this part of the code, you will have to find the dynamic UUID of your extensions, and replace it where the 
@@ -432,9 +432,9 @@ main, tr:nth-child(odd) {background: #333 !important; color: #fff !important}
 }
 
 /*------ TAB SESSION MANAGER ------*/
-@-moz-document url-prefix(moz-extension://TYPE-UUID-OF-TAB-SESSION-MANAGER-HERE/options/options.html),
-url-prefix(moz-extension://TYPE-UUID-OF-TAB-SESSION-MANAGER-HERE/popup/popup.html),
-url-prefix(moz-extension://TYPE-UUID-OF-TAB-SESSION-MANAGER-HERE/replaced/replaced.html?state=open_faild) {
+@-moz-document url-prefix(moz-extension://TYPE-UUID-OF-TAB-SESSION-MANAGER-HERE/options/index.html),
+url-prefix(moz-extension://TYPE-UUID-OF-TAB-SESSION-MANAGER-HERE/popup/index.html),
+url-prefix(moz-extension://TYPE-UUID-OF-TAB-SESSION-MANAGER-HERE/replaced/index.html) {
 
 :root {
     --main-text: #ddd !important;
