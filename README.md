@@ -13,6 +13,7 @@ This problem doesn't happen if you use a code editor such as notepad++, atom, su
 <p>Files updated:</p>
 <ul>
   <li><b>usercontent.css</b>: Fixed the 1px aligning issue when hovering over context menu items on about: pages.</li>
+  <li><b>addons.css</b>: Updated some LastPass menu issues.</li>
 </ul>
 <h3>Pre-Last update: <b>20/09/2018</b></h3>
 <ul>

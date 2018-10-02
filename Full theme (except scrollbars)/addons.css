@@ -1,6 +1,6 @@
 /* You can find an updated version here: https://github.com/Izheil/Firefox-57-full-dark-theme-with-scrollbars */
 /* Made by Izheil */
-/* Last updated: 20/09/2018 */
+/* Last updated: 02/10/2018 */
 
 /*------ HOW TO MAKE THE ADDON THEMES WORK ------*/
 /* To use this part of the code, you will have to find the dynamic UUID of your extensions, and replace it where the 
@@ -899,20 +899,24 @@ a:hover {
 }
 
 /*------ LASTPASS PASSWORD MANAGER ADDON ------*/
-@-moz-document url-prefix(moz-extension://TYPE-UUID-OF-LASTPASS-PASSWORD-MANAGER-HERE/) {
+@-moz-document url-prefix(moz-extension://TYPE-UUID-OF-WINDOW-RESIZE-HERE/) {
 html, body, .sliderContainer, #backButton, #u_combo, .selectDropdownList li,
 #items li, .footer li, .settingsRow, .dialog, #logincontainer, #loginView .dropdownContainer div, 
 #menucol, #rightside, #adframe, .actionsbox .menu.light, #vault, #vaultContent, #mainScroll, 
 .ui-widget-overlay, .infield-dialog .header, .infield-dialog .footer, #thetree, #thetree li, #main,
 .folderContainer, #mainScroll .tour {
-	background: #444 !important; 
+	background-color: #444 !important; 
 	color: #ccc !important}
 
 #mainMenu {background-color: #444 !important}
 
-#main .showIcons li:hover, #main .showIcons a:hover {background-color: #ccc !important}
+.extensionCreateAccount .dialog-title {background-color: #333 !important; color: #ccc !important}
 
 /* select {filter: invert(81%) hue-rotate(170deg) !important; color: #000 !important} */
+
+#loginheader {color: #fff !important}
+
+#rememberpasswordquestion {color: #ccc !important}
 
 a:link:not(.rbtn), a:not(.rbtn), #lp_docwrite_login_small23a, #lp_docwrite_prefs46, #lp_docwrite_reenter_password3, 
 #lp_docwrite_reenter_password4, #lp_docwrite_reenter_password5, .lptabs.activetab, 
@@ -1037,8 +1041,6 @@ iframe {border: none !important}
 #keyboardicon, #logoimg, .folderContainer .folderLabel {filter: brightness(200%) !important}
 #deleteicon, #u_button, .actionsbox img, #grpsel_button, .folderLabel,
 .toolsimg, .delimg, .shareimg, .editimg {filter: invert(80%) !important}
-
-#main .showIcons li:not(:nth-child(2)), #main .showIcons a {color: #333 !important; filter: invert(80%) !important}
 
 #mainScroll .tour, #mainScroll .tour p, #mainScroll .tour h1 {background-color: #444 !important}
 
@@ -1173,9 +1175,9 @@ a#cpwbtnmini {background: none !important; box-shadow: none !important}
 
 .searchInputContainer input {background: #222 !important; color: #ddd !important}
 
-#mainMenu li, #mainMenu li a, .childView {background: #444 !important; color: #ddd !important; border: none !important}
+#mainMenu li, #mainMenu li a, .childView {background-color: #666 !important; color: #ddd !important; border: none !important}
 
-#mainMenu li:hover, #mainMenu li a:hover {background: #555 !important}
+#mainMenu li:hover, #mainMenu li a:hover {background-color: #707070 !important}
 
 .omarSpacer {
     display: none !important}
@@ -1187,7 +1189,7 @@ a#cpwbtnmini {background: none !important; box-shadow: none !important}
 .contextOptionsDropdownElement:hover {background-color: #333 !important}
 
 /*----- LASTPASS FIXES -----*/
-@-moz-document url-prefix(moz-extension://TYPE-UUID-OF-LASTPASS-PASSWORD-MANAGER-HERE/contentScript) {
+@-moz-document url-prefix(moz-extension://TYPE-UUID-OF-WINDOW-RESIZE-HERE/contentScript) {
 html, body {background: transparent !important}
 .arrow-box.a-top, .arrow-box.a-top::before {filter: invert(74%) !important}
 }
