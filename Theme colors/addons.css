@@ -899,7 +899,7 @@ a:hover {
 }
 
 /*------ LASTPASS PASSWORD MANAGER ADDON ------*/
-@-moz-document url-prefix(moz-extension://TYPE-UUID-OF-WINDOW-RESIZE-HERE/) {
+@-moz-document url-prefix(moz-extension://TYPE-UUID-OF-LASTPASS-HERE/) {
 html, body, .sliderContainer, #backButton, #u_combo, .selectDropdownList li,
 #items li, .footer li, .settingsRow, .dialog, #logincontainer, #loginView .dropdownContainer div, 
 #menucol, #rightside, #adframe, .actionsbox .menu.light, #vault, #vaultContent, #mainScroll, 
@@ -1189,7 +1189,7 @@ a#cpwbtnmini {background: none !important; box-shadow: none !important}
 .contextOptionsDropdownElement:hover {background-color: #333 !important}
 
 /*----- LASTPASS FIXES -----*/
-@-moz-document url-prefix(moz-extension://TYPE-UUID-OF-WINDOW-RESIZE-HERE/contentScript) {
+@-moz-document url-prefix(moz-extension://TYPE-UUID-OF-LASTPASS-HERE/contentScript) {
 html, body {background: transparent !important}
 .arrow-box.a-top, .arrow-box.a-top::before {filter: invert(74%) !important}
 }
