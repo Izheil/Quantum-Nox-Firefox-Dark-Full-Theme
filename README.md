@@ -9,14 +9,14 @@ basic css or <a href="https://www.w3schools.com/colors/colors_picker.asp">color 
 <br />
 This problem doesn't happen if you use a code editor such as notepad++, atom, sublime text...</h4>
 
-<h3>Last update: <b>20/09/2018</b></h3>
+<h3>Last update: <b>02/10/2018</b></h3>
 <p>Files updated:</p>
 <ul>
-  <li><b>addons.css</b>: Updated the pages for the Tab session manager extension.</li>
+  <li><b>usercontent.css</b>: Fixed the 1px aligning issue when hovering over context menu items on about: pages.</li>
 </ul>
-<h3>Pre-Last update: <b>10/09/2018</b></h3>
+<h3>Pre-Last update: <b>20/09/2018</b></h3>
 <ul>
-  <li><b>UserChrome.css</b>: Added some selectors of the bookmark context menu options like "open all bookmarks".</li>
+  <li><b>addons.css</b>: Updated the pages for the Tab session manager extension.</li>
 </ul>
 
 <h2>FAQ:</h2>

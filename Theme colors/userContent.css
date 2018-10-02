@@ -1,6 +1,6 @@
 /* You can find an updated version here: https://github.com/Izheil/Firefox-57-full-dark-theme-with-scrollbars */
 /* Made by Izheil */
-/* Last updated: 07/09/2018 */
+/* Last updated: 02/10/2018 */
 
 /* This part imports the Addons file if there is one, so that you don't have to edit the dynamic URL
 from the addons rules every time we update anything here */
@@ -508,7 +508,7 @@ tbody > tr:hover {outline: 1px dotted #777 !important}}
 menuitem, menu {
 	color: #ccc !important;
 	padding-top: 3px;
-	padding-bottom: 2px}
+	padding-bottom: 3px}
 
 menupopup {
 	-moz-appearance: none !important;
