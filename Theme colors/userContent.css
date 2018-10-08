@@ -1,6 +1,6 @@
 /* You can find an updated version here: https://github.com/Izheil/Firefox-57-full-dark-theme-with-scrollbars */
 /* Made by Izheil */
-/* Last updated: 02/10/2018 */
+/* Last updated: 08/10/2018 */
 
 /* This part imports the Addons file if there is one, so that you don't have to edit the dynamic URL
 from the addons rules every time we update anything here */
@@ -507,15 +507,30 @@ tbody > tr:hover {outline: 1px dotted #777 !important}}
 /* This changes the color of the context menus */
 menuitem, menu {
 	color: #ccc !important;
-	padding-top: 3px;
-	padding-bottom: 3px}
+	padding-top: 3px !important;
+	padding-bottom: 3px !important}
 
 menupopup {
 	-moz-appearance: none !important;
 	background-color: var(--in-content-context-background) !important;
-	border: 1px solid #111 !important;
-	padding-top: 2px}
+	border: 1px solid #111 !important}
+
+/* This changes the text of disabled items */
+menuitem[disabled="true"],
+menu[disabled="true"] {color: #777 !important}
 	
+/* This changes the color on hover of the context-menu items */
+menuitem:hover,
+menu:hover {
+	-moz-appearance: none !important;
+	background-color: var(--in-content-context-highlight) !important}
+
+/* This does the same but for disabled ones */
+menuitem:hover[disabled="true"],
+menu:hover[disabled="true"] {
+	-moz-appearance: none !important;
+	background-color: #333 !important}
+
 /* Context menu separator color override */
 menuseparator {
   -moz-appearance: none !important;
@@ -523,25 +538,7 @@ menuseparator {
   height: 1px !important;
   border: none !important;
   background: #222 !important;
-  padding: 0 !important}
-
-/* This changes the color on hover of the context-menu items */
-menuitem:hover,
-menu:hover {
-	-moz-appearance: none !important;
-	background-color: var(--in-content-context-highlight) !important} 
-
-/* This changes the text of disabled items */
-menuitem[disabled="true"],
-menu[disabled="true"] {color: #777 !important}
-
-/* This does the same but for disabled ones */
-menuitem:hover[disabled="true"],
-menu:hover[disabled="true"] {
-	-moz-appearance: none !important;
-	padding-top: 3px;
-	padding-bottom: 2px;
-	background-color: #333 !important}}
+  padding: 0 !important}}
 
 /*------ ABOUT: PAGE (about:) ------*/
 @-moz-document url(about:), url(https://www.mozilla.org/credits/) {
