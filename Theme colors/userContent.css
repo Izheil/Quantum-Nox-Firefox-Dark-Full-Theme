@@ -1,6 +1,6 @@
 /* You can find an updated version here: https://github.com/Izheil/Firefox-57-full-dark-theme-with-scrollbars */
 /* Made by Izheil */
-/* Last updated: 08/10/2018 */
+/* Last updated: 13/10/2018 */
 
 /* This part imports the Addons file if there is one, so that you don't have to edit the dynamic URL
 from the addons rules every time we update anything here */
@@ -995,6 +995,9 @@ h1, .Paginate-page-number, .Badge, a.Button.Categories-link, .install a *, h3
 .install a.caution {text-shadow: 1px 1px red !important}
 
 .install strong {color: #FA0 !important}
+
+.AMInstallButton-button--uninstall {background-color: #882626 !important}
+.AMInstallButton-button--uninstall:hover {background-color: #aa3333 !important; color: #fff !important}
 
 input.SearchForm-query, select#SearchFilters-Sort, select#SearchFilters-AddonType, 
 select#SearchFilters-AddonType, select#SearchFilters-OperatingSystem, select#language,
