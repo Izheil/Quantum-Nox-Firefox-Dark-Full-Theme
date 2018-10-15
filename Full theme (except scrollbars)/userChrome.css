@@ -89,13 +89,15 @@ in the rule below) */
 /* This changes the color of the sidebar panel text */
 #bookmarks-view treechildren, #historyTree treechildren {color: #ccc !important}
 
-#bookmarks-view treechildren::-moz-tree-row(hover),
-#historyTree treechildren::-moz-tree-row(hover) {
+/* This is a fix for treechildren that might look whiteish in linux */
+treechildren::-moz-tree-row {background: transparent !important}
+
+/* This changes all treechildren elements highlights (list-like elements) */
+treechildren::-moz-tree-row(hover) {
   background: var(--Lists-treechildren-hover-bg) !important;
   border: var(--Lists-treechildren-hover-border) !important}
 
-#bookmarks-view treechildren::-moz-tree-row(selected),
-#historyTree treechildren::-moz-tree-row(selected){
+treechildren::-moz-tree-row(selected){
   background: var(--Lists-treechildren-selected-bg) !important;
   border: var(--Lists-treechildren-selected-border) !important}
 
@@ -429,15 +431,6 @@ if necessary depending on if you are using a custom OS theme (which may mess up 
 
 /* These change the even rows of the lists */
 #placeContent tree {background-color: var(--in-content-box-background) !important}
-#placeContent treechildren::-moz-tree-row {background: transparent !important}
-
-#placeContent treechildren::-moz-tree-row(hover), #placesView treechildren::-moz-tree-row(hover) {
-  background: var(--Lists-treechildren-hover-bg)!important;
-  border: var(--Lists-treechildren-hover-border) !important}
-
-#placeContent treechildren::-moz-tree-row(selected), #placesView treechildren::-moz-tree-row(selected) {
-  background: var(--Lists-treechildren-selected-bg) !important;
-  border: var(--Lists-treechildren-selected-border) !important}
 
 #placeContent treechildren::-moz-tree-row(even) {
   background-image: linear-gradient(rgba(0,0,0,0.25), rgba(0,0,0,0.25)) !important}
