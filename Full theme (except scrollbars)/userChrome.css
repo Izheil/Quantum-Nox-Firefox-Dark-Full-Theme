@@ -1,6 +1,6 @@
 /* You can find an updated version here: https://github.com/Izheil/Firefox-57-full-dark-theme-with-scrollbars */
 /* Made by Izheil */
-/* Last updated: 10/09/2018 */
+/* Last updated: 16/09/2018 */
 
 /* DO NOT DELETE THIS LINE */
 @namespace url("http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul");
@@ -57,6 +57,10 @@ in the rule below) */
   --Url-bar-highlight-bg: #25a;
   --Search-engine-choices-gradient: linear-gradient(#337, #115);
   --Searched-item-text-color: #0FF;
+  --Lists-treechildren-hover-bg: rgba(0,149,221,0.25);
+  --Lists-treechildren-hover-border: 1px solid rgb(0,149,221);
+  --Lists-treechildren-selected-bg: rgba(0,120,255,0.5);
+  --Lists-treechildren-selected-border: 1px solid #0a84ff;
 
   /* These ones are used for the read/unread tabs styling. For italic rules use 
   either "normal" or "italic" without the quotes for either no italics or using italics, 
@@ -85,13 +89,15 @@ in the rule below) */
 /* This changes the color of the sidebar panel text */
 #bookmarks-view treechildren, #historyTree treechildren {color: #ccc !important}
 
-#bookmarks-view treechildren::-moz-tree-cell(hover),
-#historyTree treechildren::-moz-tree-cell(hover) {
-  background-image: linear-gradient(rgb(34,85,170), rgb(34,85,170)) !important}
+#bookmarks-view treechildren::-moz-tree-row(hover),
+#historyTree treechildren::-moz-tree-row(hover) {
+  background: var(--Lists-treechildren-hover-bg) !important;
+  border: var(--Lists-treechildren-hover-border) !important}
 
-#bookmarks-view treechildren::-moz-tree-cell(selected),
-#historyTree treechildren::-moz-tree-cell(selected){
-  background-image: linear-gradient(rgb(120,120,120), rgb(120,120,120)) !important}
+#bookmarks-view treechildren::-moz-tree-row(selected),
+#historyTree treechildren::-moz-tree-row(selected){
+  background: var(--Lists-treechildren-selected-bg) !important;
+  border: var(--Lists-treechildren-selected-border) !important}
 
 /* v Fix to make the pre-render loading page dark instead of white v */
 #tabbrowser-tabpanels {background: #202020 !important}
@@ -422,16 +428,21 @@ if necessary depending on if you are using a custom OS theme (which may mess up 
 #placesView > splitter {border-inline-end: 1px solid #333 !important}
 
 /* These change the even rows of the lists */
+#placeContent tree {background-color: var(--in-content-box-background) !important}
+#placeContent treechildren::-moz-tree-row {background: transparent !important}
+
+#placeContent treechildren::-moz-tree-row(hover), #placesView treechildren::-moz-tree-row(hover) {
+  background: var(--Lists-treechildren-hover-bg)!important;
+  border: var(--Lists-treechildren-hover-border) !important}
+
+#placeContent treechildren::-moz-tree-row(selected), #placesView treechildren::-moz-tree-row(selected) {
+  background: var(--Lists-treechildren-selected-bg) !important;
+  border: var(--Lists-treechildren-selected-border) !important}
+
 #placeContent treechildren::-moz-tree-row(even) {
   background-image: linear-gradient(rgba(0,0,0,0.25), rgba(0,0,0,0.25)) !important}
 
 #placeContent treechildren::-moz-tree-cell {border-right: 1px dotted rgba(0,0,0,0.4) !important}
-
-#placesView treechildren::-moz-tree-row(hover) {
-  background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)) !important}
-  
-#placesView treechildren::-moz-tree-row(selected) {
-  background-image: linear-gradient(rgba(0,0,0,0.25), rgba(0,0,0,0.25)) !important}
 
 #placeContent > splitter {border: 1px solid red !important}
 
