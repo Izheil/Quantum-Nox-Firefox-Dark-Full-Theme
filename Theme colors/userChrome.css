@@ -588,12 +588,22 @@ if necessary depending on if you are using a custom OS theme (which may mess up 
 
 /* This changes the lists with a header on all windows related to the page info one */
 #mainDeck tree, #imagecontainerbox, #brokenimagecontainer,
-#mainDeck richlistbox, #cookiesList, #certDetails tree,
+#mainDeck richlistbox, #certDetails tree, #removalList,
 #certPrettyPrint textbox, #signonsTree {
   -moz-appearance: none !important;
   background: #555 !important;
   color: #ddd !important;
   border: 1px solid #222 !important}
+
+#removalList > listitem {color: #fff !important}
+
+#removalList > listitem:hover {
+  background: var(--Lists-treechildren-hover-bg) !important;
+  border: var(--Lists-treechildren-hover-border) !important}
+
+#removalList > listitem[selected="true"], #removalList > listitem[focused="true"] {
+  background: var(--Lists-treechildren-selected-bg) !important;
+  border: var(--Lists-treechildren-selected-border) !important}
 
 #mainDeck treechildren::-moz-tree-row(odd), #cookiesList treechildren::-moz-tree-row(odd),
 #certDetails treechildren::-moz-tree-row(odd), #signonsTree treechildren::-moz-tree-row(odd) {

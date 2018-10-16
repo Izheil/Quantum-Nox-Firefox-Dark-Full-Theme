@@ -12,7 +12,7 @@ This problem doesn't happen if you use a code editor such as notepad++, atom, su
 <h3>Last update: <b>16/10/2018</b></h3>
 <p>Files updated:</p>
 <ul>
-  <li><b>userchrome.css</b>: Now you can change the highlights on the sidebar items and library window.</li>
+  <li><b>userchrome.css</b>: Now you can change the highlights on the sidebar items and library window, also fixed some issue with the site data clearing dialog.</li>
   <li><b>usercontent.css</b>: Fixed an issue with the lists on about:config.</li>
 </ul>
 <h3>Pre-Last update: <b>02/10/2018</b></h3>
