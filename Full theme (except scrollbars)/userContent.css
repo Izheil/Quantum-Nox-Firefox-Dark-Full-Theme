@@ -1,6 +1,6 @@
 /* You can find an updated version here: https://github.com/Izheil/Firefox-57-full-dark-theme-with-scrollbars */
 /* Made by Izheil */
-/* Last updated: 13/10/2018 */
+/* Last updated: 17/10/2018 */
 
 /* This part imports the Addons file if there is one, so that you don't have to edit the dynamic URL
 from the addons rules every time we update anything here */
@@ -450,6 +450,14 @@ textarea {
 	border: 1px solid #444}
 
 #action-box {background-color: #333 !important}
+}
+
+@-moz-document url-prefix(about:) {
+tree {background-color: var(--in-content-box-background) !important}
+treechildren::-moz-tree-row {background-color: transparent !important}
+treechildren::-moz-tree-image {fill: var(--in-content-box-background) !important}
+treechildren::-moz-tree-row(hover) {background-color: rgba(0,149,221,0.25) !important}
+treechildren::-moz-tree-row(selected) {background-color: #0a84ff !important}
 }
 
 /*------ ABOUT: PAGES WITH TABLES  ------*/
@@ -926,7 +934,7 @@ a.Addon-all-reviews-link, .MetadataCard, .Card-contents ul li, .LandingPage-head
 #sorter > ul > li.extras > ul > li > a:hover {background-color: #333 !important}
 
 button:not(.pswp__button):not(.pswp__ui):not(.AutoSearchInput-submit-button):not(.Icon-arrow):not(.DropdownMenu-button), 
-.PermissionCard-learn-more, .AddAddonToCollection-select {
+.PermissionCard-learn-more, .AddAddonToCollection-select, #CollectionSort-select {
 	background-color: #555 !important;
 	color: #FFF !important}
 
