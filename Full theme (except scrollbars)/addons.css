@@ -1,6 +1,6 @@
 /* You can find an updated version here: https://github.com/Izheil/Firefox-57-full-dark-theme-with-scrollbars */
 /* Made by Izheil */
-/* Last updated: 02/10/2018 */
+/* Last updated: 17/10/2018 */
 
 /*------ HOW TO MAKE THE ADDON THEMES WORK ------*/
 /* To use this part of the code, you will have to find the dynamic UUID of your extensions, and replace it where the 
@@ -1324,4 +1324,92 @@ html, #content, .clearfix, body, br {background: #444 !important}
 p {color: #ccc !important}
 
 img {filter: invert(70%) hue-rotate(190deg)}
+}
+
+/*------ MULTI-ACCOUNTS CONTAINER ADDON ------*/
+@-moz-document url-prefix(moz-extension://TYPE-THE-UUID-OF-MULTI-ACCOUNTS-CONTAINER-ADDON-HERE/) {
+html, body {background: #222 !important}
+
+h3, legend {color: #fff !important}
+span:not(#current-container), #container-info-movetabs,
+.container-info-tab-title, .truncate-text {color: #ccc !important}
+
+#sort-containers-link, .userContext-wrapper, .show-tabs:not(.pop-button-image-small), 
+#edit-containers-link, #container-add-link, #edit-container-cancel-link, .panel-back-arrow,
+.container-panel-row {
+	background-color: #333 !important;
+	color: #ccc !important}
+
+#sort-containers-link:hover, .userContext-wrapper:hover, .show-tabs:hover, 
+#edit-containers-link:hover, #container-add-link:hover, #edit-container-cancel-link:hover,
+.panel-back-arrow:hover, .clickable:hover, .pop-button:hover {
+	background-color: #444 !important;
+	color: #fff !important}
+
+.pop-button-image-small {fill: #fff !important}
+
+#container-page-assigned {filter: invert(80%)}
+
+#sort-containers-link, .container-panel-row {border-color: #666 !important}
+#edit-containers-link {border: 1px solid #666 !important}
+
+#container-add-link {
+	border-top: 1px solid #666 !important;
+	border-right: 1px solid #666 !important;
+	border-bottom: 1px solid #666 !important}
+
+.edit-containers-text {border-inline-end: transparent !important}
+.scrollable {border-block-start: 1px solid #666 !important}
+.panel-footer {border-block-end: transparent !important}
+
+#redirect-url {background-color: #333 !important}
+}
+
+@-moz-document url-prefix(http){
+.container-notification {
+	background-color: rgba(50,50,50,0.7) !important;
+	color: #0c0 !important}
+}
+
+/*------ TEMPORARY CONTAINERS ADDON ------*/
+@-moz-document url-prefix(moz-extension://TYPE-THE-UUID-OF-TEMPORARY-CONTAINERS-HERE/) {
+html, body, .dropdown.selection, .menu .item, .ui.menu {background: #222 !important}
+
+input[type="text"]{
+	background-color: #444 !important; 
+	border: 1px solid #666 !important;
+	color: #fff !important}
+
+input[type="text"]:focus{border: 1px solid #0a84ff !important}
+
+.ui.segment, .pusher  {
+	background: #303030 !important;
+	color: #ccc !important}
+
+.ui.segment.active, .item.active {background: #353535 !important}
+.item, label, h4, h3 {color: #ccc !important}
+.item.active, .dropdown.selection, .text, .label {color: #fff !important}
+
+.item:not(.active):hover{background: #282828 !important}
+
+.ui.selection.dropdown .menu > .item, .ui.tabular.menu, .ui.menu,
+.item.active, .ui.popup, .ui.segment {border-color: #666 !important}
+
+.ui.negative.message {
+	background-color: #533 !important;
+	color: #f33 !important}
+
+.ui.notice.message{
+	background-color: #555 !important;
+	color: #fff !important;
+	border-color: #ccc !important}
+
+.ui.notice.message a:link, .ui.notice.message a {color: #09f !important}
+.ui.notice.message a:visited {color: #0070aa !important}
+.ui.notice.message a:hover {color: #0ff !important}
+.ui.notice.message a:active {color: #0050aa !important}
+
+#tmpButton svg {filter: invert(90%) !important}
+
+label::before, .ui.popup {filter: invert(75%)}
 }

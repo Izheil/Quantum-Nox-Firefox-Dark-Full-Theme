@@ -1083,6 +1083,8 @@ div {color: #ccc !important}
 	border-radius: 6px !important; 
 	color: #ccc !important}
 
+#doc-content tr:nth-child(2n+1) {background: #333 !important}
+
 .main-content::before {filter: brightness(27%) !important}
 
 .sidebar-nav > li > span, .sidebar-nav .sidebar-nav > li > span, 

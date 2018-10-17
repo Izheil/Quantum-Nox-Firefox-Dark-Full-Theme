@@ -9,15 +9,16 @@ basic css or <a href="https://www.w3schools.com/colors/colors_picker.asp">color 
 <br />
 This problem doesn't happen if you use a code editor such as notepad++, atom, sublime text...</h4>
 
-<h3>Last update: <b>16/10/2018</b></h3>
+<h3>Last update: <b>17/10/2018</b></h3>
 <p>Files updated:</p>
+<ul>
+  <li><b>addons.css</b>: Added <a href="https://addons.mozilla.org/es/firefox/addon/multi-account-containers/">Multi-accounts containers</a> and <a href="https://addons.mozilla.org/es/firefox/addon/temporary-containers/">Temporary containers</a> to the themed addons.</li>
+  <li><b>usercontent.css</b>: Fixed an issue with table even rows on mozilla support pages.</li>
+</ul>
+<h3>Pre-Last update: <b>16/10/2018</b></h3>
 <ul>
   <li><b>userchrome.css</b>: Now you can change the highlights on the sidebar items and library window, also fixed some issue with the site data clearing dialog.</li>
   <li><b>usercontent.css</b>: Fixed an issue with the lists on about:config.</li>
-</ul>
-<h3>Pre-Last update: <b>02/10/2018</b></h3>
-<ul>
-   <li><b>usercontent.css</b>: Changed the color of the uninstall extension button on mozilla addons page.</li>
 </ul>
 
 <h2>FAQ:</h2>
@@ -61,7 +62,7 @@ This problem doesn't happen if you use a code editor such as notepad++, atom, su
 	  <li>Can change the default text color of input boxes for those using a dark OS theme that affects the background of these (You have to change the commented line that is described on line 15 inside <code>usercontent.css</code> to use it)</li>
 	  <li>Can set an image as background for the home page (You have to change the commented line that is described in line 19 inside <code>userContent.css</code>).<br />
 <img src="https://i.imgur.com/IxMK0t5.png"></li>
-	  <li>Change the theme of either of <a href="https://addons.mozilla.org/es/firefox/addon/ublock-origin/">Ublock Origin</a>, <a href="https://addons.mozilla.org/es/firefox/addon/video-downloadhelper/">Video Download Helper</a>, <a href="https://addons.mozilla.org/es/firefox/addon/flash-video-downloader/">Flash Video Downloader</a>, <a href="https://addons.mozilla.org/es/firefox/addon/tab-session-manager/">Tab session manager</a>, <a href="https://addons.mozilla.org/es/firefox/addon/undo-closed-tabs-revived/">Undo closed tabs button</a>, <a href="https://addons.mozilla.org/es/firefox/addon/s3download-statusbar/">Download Manager (S3)</a>, <a href="https://addons.mozilla.org/es/firefox/addon/privacy-badger17/">Privacy badger</a>, <a href="https://addons.mozilla.org/es/firefox/addon/noscript/">Noscript</a>, <a href="https://addons.mozilla.org/en-US/firefox/addon/window-resize/">Window resize</a> or <a href="https://addons.mozilla.org/es/firefox/addon/s3google-translator/">S3 Translator</a> extensions to a dark version. You have to update the UUIDs of the extensions inside "addons.css" for this. <br /><img src="https://i.imgur.com/m7TGyqz.png" title="Dark addons" /></li>
+	  <li>Change the theme of either of <a href="https://addons.mozilla.org/es/firefox/addon/ublock-origin/">Ublock Origin</a>, <a href="https://addons.mozilla.org/es/firefox/addon/video-downloadhelper/">Video Download Helper</a>, <a href="https://addons.mozilla.org/es/firefox/addon/flash-video-downloader/">Flash Video Downloader</a>, <a href="https://addons.mozilla.org/es/firefox/addon/tab-session-manager/">Tab session manager</a>, <a href="https://addons.mozilla.org/es/firefox/addon/undo-closed-tabs-revived/">Undo closed tabs button</a>, <a href="https://addons.mozilla.org/es/firefox/addon/s3download-statusbar/">Download Manager (S3)</a>, <a href="https://addons.mozilla.org/es/firefox/addon/privacy-badger17/">Privacy badger</a>, <a href="https://addons.mozilla.org/es/firefox/addon/noscript/">Noscript</a>, <a href="https://addons.mozilla.org/en-US/firefox/addon/window-resize/">Window resize</a>, <a href="https://addons.mozilla.org/es/firefox/addon/s3google-translator/">S3 Translator</a>, <a href="https://addons.mozilla.org/es/firefox/addon/multi-account-containers/">Multi-accounts containers</a> or <a href="https://addons.mozilla.org/es/firefox/addon/temporary-containers/">Temporary containers</a> extensions to a dark version. You have to update the UUIDs of the extensions inside "addons.css" for this. <br /><img src="https://i.imgur.com/m7TGyqz.png" title="Dark addons" /></li>
 	</ul>
   <li><b>Theme features</b>: In this one you will find a userchrome (with the exception of multiple row tabs, which can be found in the file <b><code>MultiRowTabLiteforFx.uc.js</code></b>)with ONLY the features part of the theme. These features are the following:
 	<ul>
