@@ -9,15 +9,14 @@ basic css or <a href="https://www.w3schools.com/colors/colors_picker.asp">color 
 <br />
 This problem doesn't happen if you use a code editor such as notepad++, atom, sublime text...</h4>
 
-<h3>Last update: <b>17/10/2018</b></h3>
+<h3>Last update: <b>20/10/2018</b></h3>
 <p>Files updated:</p>
 <ul>
-  <li><b>MultiRowTab-scrollable*.uc.css</b>: Now when opening a new tab or restoring an old session, it will scroll to the last active tab.</li>
+  <li><b>userchrome.css</b>: Themed the missing sanitizer window (clear all history/cookies/cache/etc).</li>
 </ul>
 <h3>Pre-Last update: <b>17/10/2018</b></h3>
 <ul>
-  <li><b>addons.css</b>: Added <a href="https://addons.mozilla.org/es/firefox/addon/multi-account-containers/">Multi-accounts containers</a> and <a href="https://addons.mozilla.org/es/firefox/addon/temporary-containers/">Temporary containers</a> to the themed addons.</li>
-  <li><b>usercontent.css</b>: Fixed an issue with table even rows on mozilla support pages.</li>
+  <li><b>MultiRowTab-scrollable*.uc.css</b>: Now when opening a new tab or restoring an old session, it will scroll to the last active tab.</li>
 </ul>
 
 <h2>FAQ:</h2>

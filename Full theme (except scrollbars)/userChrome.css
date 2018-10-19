@@ -1,6 +1,6 @@
 /* You can find an updated version here: https://github.com/Izheil/Firefox-57-full-dark-theme-with-scrollbars */
 /* Made by Izheil */
-/* Last updated: 16/09/2018 */
+/* Last updated: 20/09/2018 */
 
 /* DO NOT DELETE THIS LINE */
 @namespace url("http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul");
@@ -702,6 +702,17 @@ if necessary depending on if you are using a custom OS theme (which may mess up 
   -moz-appearance: none !important; 
   background: #555 !important;
   border: 1px solid #666 !important}
+
+/* Sanitizer window */
+#itemList, #sanitizeEverythingWarningBox {
+  -moz-appearance:none !important;
+  background-color: #333 !important;
+  border-color: transparent !important}
+
+#itemList listitem {color: #ccc !important}
+#itemList listitem[selected="true"] {
+  background: #555 !important;
+  border-color: transparent !important}
 
 /* AUTOCOMPLETE COLORS */
 
