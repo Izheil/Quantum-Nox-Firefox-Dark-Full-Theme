@@ -5,6 +5,7 @@
 // @include        main
 // @compatibility  Firefox 60
 // @author         Alice0775, Endor8, TroudhuK
+// @version        2018/19/10 07:34 Firefox 62
 // @version        2018/11/05 15:05 Firefox 60
 // @version        2016/08/05 00:00 Firefox 48
 // @version        2016/05/01 00:01 hide favicon if busy
@@ -32,8 +33,8 @@ function zzzz_MultiRowTabLite() {
         overflow-x: visible;
         overflow-y: auto;
         display: block;
-        height: calc(var(--tab-min-height)*2)}
-
+    	height: calc(var(--tab-min-height)*2)}
+	
     #main-window[tabsintitlebar] #tabbrowser-tabs {
         -moz-window-dragging: no-drag}
 
@@ -61,6 +62,8 @@ function zzzz_MultiRowTabLite() {
     #tabbrowser-tabs .scrollbutton-up, #tabbrowser-tabs .scrollbutton-down, #alltabs-button, .tabbrowser-tab:not([fadein])
     {display: none}
 
+
+
     `;
     var sss = Cc['@mozilla.org/content/style-sheet-service;1'].getService(Ci.nsIStyleSheetService);
     var uri = makeURI('data:text/css;charset=UTF=8,' + encodeURIComponent(css));
@@ -85,6 +88,15 @@ function zzzz_MultiRowTabLite() {
         }
         return tabs.length;
     };
+
+// This scrolls down to the current tab when you open a new one, or restore a session.
+function scrollToView() {
+	document.querySelectorAll(".tabbrowser-tab[selected='true']")[0].scrollIntoView();
+}
+
+gBrowser.tabContainer.addEventListener('TabOpen', scrollToView, false);
+gBrowser.addEventListener("select", scrollToView, false);
+document.addEventListener("SSTabRestoring", scrollToView, false);
 
 // This sets when to apply the fix (by default a new row starts after the 23th open tab, unless you changed the min-size of tabs)
 gBrowser.tabContainer.ondragstart = function(){if(gBrowser.tabContainer.childNodes.length >= (window.innerWidth - 200) / 75) {

@@ -12,13 +12,12 @@ This problem doesn't happen if you use a code editor such as notepad++, atom, su
 <h3>Last update: <b>17/10/2018</b></h3>
 <p>Files updated:</p>
 <ul>
+  <li><b>MultiRowTab-scrollable*.uc.css</b>: Now when opening a new tab or restoring an old session, it will scroll to the last active tab.</li>
+</ul>
+<h3>Pre-Last update: <b>17/10/2018</b></h3>
+<ul>
   <li><b>addons.css</b>: Added <a href="https://addons.mozilla.org/es/firefox/addon/multi-account-containers/">Multi-accounts containers</a> and <a href="https://addons.mozilla.org/es/firefox/addon/temporary-containers/">Temporary containers</a> to the themed addons.</li>
   <li><b>usercontent.css</b>: Fixed an issue with table even rows on mozilla support pages.</li>
-</ul>
-<h3>Pre-Last update: <b>16/10/2018</b></h3>
-<ul>
-  <li><b>userchrome.css</b>: Now you can change the highlights on the sidebar items and library window, also fixed some issue with the site data clearing dialog.</li>
-  <li><b>usercontent.css</b>: Fixed an issue with the lists on about:config.</li>
 </ul>
 
 <h2>FAQ:</h2>
