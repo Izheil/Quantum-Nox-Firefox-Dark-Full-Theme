@@ -213,16 +213,12 @@ window:not(#main-window):not(#CookiesDialog):not(#SignonViewerDialog) > * {
   color: #fff !important}
 
 /* Color for most buttons */
-dialog button, dialog menulist, menulist, toolbar[printpreview="true"] button {
+dialog button, toolbar[printpreview="true"] button {
   -moz-appearance: none !important;
   border-radius: 3px !important;
   background: #555 !important;
   color: #ddd !important;
   padding: 2px !important}
-
-dialog menulist:hover, menulist:hover {
-  background: #666 !important; 
-  color: #fff !important}
 
 dialog button:hover, toolbar[printpreview="true"] button:hover {
   background: #444 !important;
