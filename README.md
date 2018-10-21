@@ -1,5 +1,7 @@
 <h1>Firefox 57+ full dark theme with dark scrollbars and multirow tabs/bookmarks</h1>
 
+<h3><a href="https://form.responster.com/RO6Qi4">If you want to give me feedback about this theme, please, do so answering a few questions here.</a></h3>
+
 <p>This repository includes the files requires to fully dark theme firefox quantum to dark-gray colors 
 (with #222-#444 colors mostly). </p>
 <p><b>Of course... you could as well use these files to color your firefox any way you wanted</b>, the only thing you'd have to do is change the correct values (what each class or id does is commented above each) in the .css files (as far as you know some 
