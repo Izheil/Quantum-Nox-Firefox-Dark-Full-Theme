@@ -4,7 +4,7 @@
 - If you want to give me feedback about this theme, please, take the survey below:
 ```
 
-<h3><a href="https://form.responster.com/RO6Qi4">You can answer a survey to give me some feedback here</a> (It's only 1-3 questions depending on your answers).</h3>
+<h3><a href="https://form.responster.com/RO6Qi4">You can answer a survey to give me some feedback here</a> (It's only 1-3 questions depending on your answers, and it's completely anonymous).</h3>
 
 <p>This repository includes the files requires to fully dark theme firefox quantum to dark-gray colors 
 (with #222-#444 colors mostly). </p>
