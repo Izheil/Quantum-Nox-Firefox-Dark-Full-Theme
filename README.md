@@ -15,14 +15,15 @@ basic css or <a href="https://www.w3schools.com/colors/colors_picker.asp">color 
 <br />
 This problem doesn't happen if you use a code editor such as notepad++, atom, sublime text...</h4>
 
-<h3>Last update: <b>20/10/2018</b></h3>
+<h3>Last update: <b>23/10/2018</b></h3>
 <p>Files updated:</p>
 <ul>
-  <li><b>userchrome.css</b>: Themed the missing sanitizer window (clear all history/cookies/cache/etc).</li>
+  <li><b>userchrome.css</b>: Fixed some issue with the customization page not getting a dark background upon startup.</li>
+  <li><b>userchrome.xml</b>: Fixed an issue with the bound element not letting the menu of the list all tabs button appear.</li>
 </ul>
-<h3>Pre-Last update: <b>17/10/2018</b></h3>
+<h3>Pre-Last update: <b>20/10/2018</b></h3>
 <ul>
-  <li><b>MultiRowTab-scrollable*.uc.css</b>: Now when opening a new tab or restoring an old session, it will scroll to the last active tab.</li>
+  <li><b>userchrome.css</b>: Themed the missing sanitizer window (clear all history/cookies/cache/etc).</li>
 </ul>
 
 <h2>FAQ:</h2>

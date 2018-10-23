@@ -241,10 +241,10 @@ dialog textbox[focused="true"], toolbar[printpreview="true"] textbox[focused="tr
 
 /* The windows default theme colors will mainly affect the customizing page (when
 you aren't using the default dark theme of mozilla, that is) */
-@media (-moz-windows-default-theme) {
-  :root {
-    --toolbar-non-lwt-bgcolor: #303030 !important;
-    --toolbar-non-lwt-textcolor: #fff !important}}
+:root {
+  --toolbar-bgcolor: #303030 !important;
+  --toolbar-non-lwt-bgcolor: #303030 !important;
+  --toolbar-non-lwt-textcolor: #fff !important}
 
 /* The customization page button colors */
 .customizationmode-button {
