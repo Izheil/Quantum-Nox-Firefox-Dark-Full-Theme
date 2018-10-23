@@ -1,6 +1,6 @@
 /* You can find an updated version here: https://github.com/Izheil/Firefox-57-full-dark-theme-with-scrollbars */
 /* Made by Izheil */
-/* Last updated: 17/10/2018 */
+/* Last updated: 23/10/2018 */
 
 /*------ HOW TO MAKE THE ADDON THEMES WORK ------*/
 /* To use this part of the code, you will have to find the dynamic UUID of your extensions, and replace it where the 
@@ -1372,7 +1372,7 @@ span:not(#current-container), #container-info-movetabs,
 }
 
 /*------ TEMPORARY CONTAINERS ADDON ------*/
-@-moz-document url-prefix(moz-extension://TYPE-THE-UUID-OF-TEMPORARY-CONTAINERS-HERE/) {
+@-moz-document url-prefix(moz-extension://TYPE-THE-UUID-OF-TEMPORARY-CONTAINERS-ADDON-HERE/) {
 html, body, .dropdown.selection, .menu .item, .ui.menu {background: #222 !important}
 
 input[type="text"]{
@@ -1412,4 +1412,69 @@ input[type="text"]:focus{border: 1px solid #0a84ff !important}
 #tmpButton svg {filter: invert(90%) !important}
 
 label::before, .ui.popup {filter: invert(75%)}
+}
+
+/*------ HTTPS EVERYWHERE ADDON ------*/
+@-moz-document url-prefix(moz-extension://TYPE-THE-UUID-OF-HTTPS-EVERYWHERE-ADDON-HERE/) {
+html, body {background: #303030 !important; color: #ccc !important}
+
+h1, h2, h3 {color: #fff !important}
+
+label {color: #ccc !important}
+
+button, input[type="button"] {  
+  -moz-appearance: none !important;
+  border-radius: 3px !important;
+  background-color: #555 !important;
+  color: #ddd !important;
+  border: none !important;
+  padding: 5px !important;
+  margin: 3px !important}
+
+button:hover, input[type="button"]:hover {  
+  background-color: #222 !important;
+  color: #fff !important;
+  box-shadow: none !important}
+
+a:link, a {color: #09f !important}
+a:visited {color: #0070aa !important}
+a:hover {color: #0ff !important}
+a:active {color: #0050aa !important}
+
+input[type="text"]{
+	-moz-appearance: none !important;
+	background-color: #444 !important; 
+	border: 1px solid #666 !important;
+	color: #fff !important;
+	margin: 3px !important}
+
+input[type="text"]:focus{border: 1px solid #0a84ff !important}
+
+input[type="text"][disabled] {color: #aaa !important}
+}
+
+/*------ ONETAB ADDON ------*/
+@-moz-document url-prefix(moz-extension://TYPE-THE-UUID-OF-ONETAB-ADDON-HERE/),
+url-prefix(https://www.one-tab.com/page/) {
+html, body {background: #303030 !important}
+
+#settingsDiv {background: #444 !important; border: 1px solid #666 !important}
+
+div {color: #ccc !important}
+
+#contentAreaDiv > div {border-color: #666 !important}
+
+a:link, a, a:visited, .clickable {color: #09f !important}
+a:hover, .clickable:hover {color: #0ff !important}
+a:active, .clickable:active {color: #0050aa !important}
+
+img[src="images/cross.png"] {filter: brightness(200%)}
+
+textarea {
+	-moz-appearance: none !important; 
+	background-color: #222 !important; 
+	color: #aaa !important;
+	border: 1px solid #555 !important}
+
+label::before {filter: invert(81%) hue-rotate(170deg)}
 }

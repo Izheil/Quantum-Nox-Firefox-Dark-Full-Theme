@@ -20,6 +20,7 @@ This problem doesn't happen if you use a code editor such as notepad++, atom, su
 <ul>
   <li><b>userchrome.css</b>: Fixed some issue with the customization page not getting a dark background upon startup.</li>
   <li><b>userchrome.xml</b>: Fixed an issue with the bound element not letting the menu of the list all tabs button appear.</li>
+  <li><b>addons.css</b>: Added dark theme support for <a href="https://addons.mozilla.org/es/firefox/addon/https-everywhere/">HTTPS Everywhere</a> and <a href="https://addons.mozilla.org/es/firefox/addon/onetab/">OneTab</a> addons.</li>
 </ul>
 <h3>Pre-Last update: <b>20/10/2018</b></h3>
 <ul>
@@ -67,7 +68,24 @@ This problem doesn't happen if you use a code editor such as notepad++, atom, su
 	  <li>Can change the default text color of input boxes for those using a dark OS theme that affects the background of these (You have to change the commented line that is described on line 15 inside <code>usercontent.css</code> to use it)</li>
 	  <li>Can set an image as background for the home page (You have to change the commented line that is described in line 19 inside <code>userContent.css</code>).<br />
 <img src="https://i.imgur.com/IxMK0t5.png"></li>
-	  <li>Change the theme of either of <a href="https://addons.mozilla.org/es/firefox/addon/ublock-origin/">Ublock Origin</a>, <a href="https://addons.mozilla.org/es/firefox/addon/video-downloadhelper/">Video Download Helper</a>, <a href="https://addons.mozilla.org/es/firefox/addon/flash-video-downloader/">Flash Video Downloader</a>, <a href="https://addons.mozilla.org/es/firefox/addon/tab-session-manager/">Tab session manager</a>, <a href="https://addons.mozilla.org/es/firefox/addon/undo-closed-tabs-revived/">Undo closed tabs button</a>, <a href="https://addons.mozilla.org/es/firefox/addon/s3download-statusbar/">Download Manager (S3)</a>, <a href="https://addons.mozilla.org/es/firefox/addon/privacy-badger17/">Privacy badger</a>, <a href="https://addons.mozilla.org/es/firefox/addon/noscript/">Noscript</a>, <a href="https://addons.mozilla.org/en-US/firefox/addon/window-resize/">Window resize</a>, <a href="https://addons.mozilla.org/es/firefox/addon/s3google-translator/">S3 Translator</a>, <a href="https://addons.mozilla.org/es/firefox/addon/multi-account-containers/">Multi-accounts containers</a> or <a href="https://addons.mozilla.org/es/firefox/addon/temporary-containers/">Temporary containers</a> extensions to a dark version. You have to update the UUIDs of the extensions inside "addons.css" for this. <br /><img src="https://i.imgur.com/m7TGyqz.png" title="Dark addons" /></li>
+	  <li>Change the theme of either of the following addons to a dark version (You have to update the UUIDs of the extensions inside "addons.css" for this): 
+	  	<ul>
+	  		<li><a href="https://addons.mozilla.org/es/firefox/addon/ublock-origin/">Ublock Origin</a></li>
+	  		<li><a href="https://addons.mozilla.org/es/firefox/addon/video-downloadhelper/">Video Download Helper</a></li> 
+	  		<li><a href="https://addons.mozilla.org/es/firefox/addon/flash-video-downloader/">Flash Video Downloader</a></li>
+	  		<li><a href="https://addons.mozilla.org/es/firefox/addon/tab-session-manager/">Tab session manager</a></li>
+	  		<li><a href="https://addons.mozilla.org/es/firefox/addon/undo-closed-tabs-revived/">Undo closed tabs button</a></li>
+	  		<li><a href="https://addons.mozilla.org/es/firefox/addon/s3download-statusbar/">Download Manager (S3)</a></li>
+	  		<li><a href="https://addons.mozilla.org/es/firefox/addon/privacy-badger17/">Privacy badger</a></li>
+	  		<li><a href="https://addons.mozilla.org/es/firefox/addon/noscript/">Noscript</a></li>
+	  		<li><a href="https://addons.mozilla.org/en-US/firefox/addon/window-resize/">Window resize</a></li>
+	  		<li><a href="https://addons.mozilla.org/es/firefox/addon/s3google-translator/">S3 Translator</a></li>
+	  		<li><a href="https://addons.mozilla.org/es/firefox/addon/multi-account-containers/">Multi-accounts containers</a></li>
+	  		<li><a href="https://addons.mozilla.org/es/firefox/addon/temporary-containers/">Temporary containers</a></li>
+	  		<li><a href="https://addons.mozilla.org/es/firefox/addon/https-everywhere/">HTTPS Everywhere</a></li>
+	  		<li><a href="https://addons.mozilla.org/es/firefox/addon/onetab/">OneTab</a></li>
+	  	</ul>
+	  	<img src="https://i.imgur.com/m7TGyqz.png" title="Dark addons" /></li>
 	</ul>
   <li><b>Theme features</b>: In this one you will find a userchrome (with the exception of multiple row tabs, which can be found in the file <b><code>MultiRowTabLiteforFx.uc.js</code></b>)with ONLY the features part of the theme. These features are the following:
 	<ul>
