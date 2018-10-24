@@ -18,13 +18,13 @@ This problem doesn't happen if you use a code editor such as notepad++, atom, su
 <h3>Last update: <b>23/10/2018</b></h3>
 <p>Files updated:</p>
 <ul>
+  <li><b>userchrome.css</b>: Fixed some issue with the <code>about:</code> pages popup menus.</li>
+</ul>
+<h3>Pre-Last update: <b>23/10/2018</b></h3>
+<ul>
   <li><b>userchrome.css</b>: Fixed some issue with the customization page not getting a dark background upon startup.</li>
   <li><b>userchrome.xml</b>: Fixed an issue with the bound element not letting the menu of the list all tabs button appear.</li>
   <li><b>addons.css</b>: Added dark theme support for <a href="https://addons.mozilla.org/es/firefox/addon/https-everywhere/">HTTPS Everywhere</a> and <a href="https://addons.mozilla.org/es/firefox/addon/onetab/">OneTab</a> addons.</li>
-</ul>
-<h3>Pre-Last update: <b>20/10/2018</b></h3>
-<ul>
-  <li><b>userchrome.css</b>: Themed the missing sanitizer window (clear all history/cookies/cache/etc).</li>
 </ul>
 
 <h2>FAQ:</h2>

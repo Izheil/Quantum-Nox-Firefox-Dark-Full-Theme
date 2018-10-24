@@ -514,6 +514,8 @@ tbody > tr:hover {outline: 1px dotted #777 !important}}
 
 /* This changes the color of the context menus */
 menuitem, menu {
+	-moz-appearance: none !important;
+	background-color: var(--in-content-context-background) !important;
 	color: #ccc !important;
 	padding-top: 3px !important;
 	padding-bottom: 3px !important}

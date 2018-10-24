@@ -1,6 +1,6 @@
 /* You can find an updated version here: https://github.com/Izheil/Firefox-57-full-dark-theme-with-scrollbars */
 /* Made by Izheil */
-/* Last updated: 17/10/2018 */
+/* Last updated: 24/10/2018 */
 
 /* This part imports the Addons file if there is one, so that you don't have to edit the dynamic URL
 from the addons rules every time we update anything here */
@@ -514,6 +514,8 @@ tbody > tr:hover {outline: 1px dotted #777 !important}}
 
 /* This changes the color of the context menus */
 menuitem, menu {
+	-moz-appearance: none !important;
+	background-color: var(--in-content-context-background) !important;
 	color: #ccc !important;
 	padding-top: 3px !important;
 	padding-bottom: 3px !important}
