@@ -19,6 +19,7 @@ This problem doesn't happen if you use a code editor such as notepad++, atom, su
 <p>Files updated:</p>
 <ul>
   <li><b>userchrome.css</b>: Fixed some issue with the <code>about:</code> pages popup menus.</li>
+  <li><b>addons.css</b>: Added dark theme support for <a href="https://addons.mozilla.org/en-US/firefox/addon/gmail-notifier-restartless/">Notifier for Gmail (restartless)</a> addon.</li>
 </ul>
 <h3>Pre-Last update: <b>23/10/2018</b></h3>
 <ul>
@@ -84,6 +85,7 @@ This problem doesn't happen if you use a code editor such as notepad++, atom, su
 	  		<li><a href="https://addons.mozilla.org/es/firefox/addon/temporary-containers/">Temporary containers</a></li>
 	  		<li><a href="https://addons.mozilla.org/es/firefox/addon/https-everywhere/">HTTPS Everywhere</a></li>
 	  		<li><a href="https://addons.mozilla.org/es/firefox/addon/onetab/">OneTab</a></li>
+	  		<li><a href="https://addons.mozilla.org/en-US/firefox/addon/gmail-notifier-restartless/">Notifier for Gmail (restartless)</a></li>
 	  	</ul>
 	  	<img src="https://i.imgur.com/m7TGyqz.png" title="Dark addons" /></li>
 	</ul>

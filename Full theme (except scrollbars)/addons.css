@@ -1,6 +1,6 @@
 /* You can find an updated version here: https://github.com/Izheil/Firefox-57-full-dark-theme-with-scrollbars */
 /* Made by Izheil */
-/* Last updated: 23/10/2018 */
+/* Last updated: 24/10/2018 */
 
 /*------ HOW TO MAKE THE ADDON THEMES WORK ------*/
 /* To use this part of the code, you will have to find the dynamic UUID of your extensions, and replace it where the 
@@ -1477,4 +1477,52 @@ textarea {
 	border: 1px solid #555 !important}
 
 label::before {filter: invert(81%) hue-rotate(170deg)}
+}
+
+
+/*------ NOTIFIER FOR GMAIL (RESTARTLESS) ADDON ------*/
+@-moz-document url-prefix(moz-extension://TYPE-THE-UUID-OF-NOTIFIER-FOR-GMAIL-ADDON-HERE/) {
+html, #content {background: #303030 !important; color: #ccc !important}
+
+* {border-color: #555 !important}
+
+.ellipsis {color: #ccc !important}
+
+div[name="info"] a, #title {color: #fff !important}
+
+header, footer, #header, #labels .label {
+	background-color: #222 !important; 
+	color: #fff !important}
+
+#accounts .ellipsis {
+	background-color: #fff !important;
+	color: #000 !important;
+	filter: invert(90%);}
+
+header div[name="email-container"] {
+	background-color: transparent !important;
+	color: #000 !important;
+	filter: invert(81%);}
+
+body[data-star="false"] #content div[name="title"] #star {filter: invert(81%)}
+
+.btn, input[type="button"] {  
+  background-color: #666 !important;
+  color: #ddd !important;
+  border: none !important}
+
+.btn:hover, input[type="button"]:hover {  
+  background-color: #777 !important;
+  color: #fff !important}
+
+iframe {background: transparent !important}
+
+input[type="text"], input[type="color"]{
+	background-color: #444 !important;
+	color: #fff !important}
+
+/* Delete this if you are using the checkboxes.ac.css file to invert the color of dropdown menus */
+select, input[type="number"] {
+	background: #222 !important;
+	outline-color: #555 !important}
 }
