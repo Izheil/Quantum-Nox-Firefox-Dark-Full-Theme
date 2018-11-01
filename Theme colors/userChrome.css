@@ -776,7 +776,7 @@ if necessary depending on if you are using a custom OS theme (which may mess up 
   -moz-appearance: none !important;
   border-bottom: 1px solid #111 !important} 
 
-#sidebar-search-container, #bookmarks-view-children, #historyTree, #sidebar {
+#sidebar-search-container, #sidebar, .sidebar-placesTree {
   -moz-appearance: none !important;
   background-color: #404040 !important;
   color: #ccc !important}
