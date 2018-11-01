@@ -51,7 +51,7 @@
 <h4>You can turn the features you want on or off changing the commented lines on the CSS file (To change them you just have to open the userchrome.css with notepad or any code editor, and encase between "/*" and "*/" (without the quotation marks) the lines you don't want to take effect). Of course, if you think that you are NEVER going to use certain feature, you can always delete the specific lines you don't want without any other side-effect.</h4>
 
 <h2>Installation</h2>
-<p>You can check a video guide <a href="https://youtu.be/z0o8DatRyjk">here</a>.</p>
+<p>You can check a video guide <a href="https://youtu.be/FHV1-LbX_Vo">here</a>.</p>
 <p>Most of the job is already done with the userContent.css and userChrome.css files that you have to place in the 
 <a href="https://github.com/Izheil/Firefox-57-full-dark-theme-with-scrollbars/tree/master/Full%20theme%20(except%20scrollbars)#the-chrome-folder">the chrome folder</a> of your firefox profile. For this to work as intended, you should be using a persona (aka lightweight theme) or the default dark theme (The persona used on the screenshot is "<a href="https://addons.mozilla.org/en-US/firefox/addon/deep-dark-blue-forest/">Deek Dark Blue forest</a>" by <b>Sondergaard</b>).</p>
 <p>The only remaining part that won't be dark themed will be the synced tabs sidebar, the tooltips, and the scrollbars (since they can't be styled through userChrome nor usercontent). This can be themed using the method described in the <a href="https://github.com/Izheil/Firefox-57-full-dark-theme-with-scrollbars/tree/master/Scrollbars%20%26%20tooltips%20dark%20theme">Scrollbars & tooltips dark theme</a> folder.</p>
