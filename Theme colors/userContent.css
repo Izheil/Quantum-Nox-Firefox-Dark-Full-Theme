@@ -1,6 +1,6 @@
 /* You can find an updated version here: https://github.com/Izheil/Firefox-57-full-dark-theme-with-scrollbars */
 /* Made by Izheil */
-/* Last updated: 24/10/2018 */
+/* Last updated: 01/11/2018 */
 
 /* This part imports the Addons file if there is one, so that you don't have to edit the dynamic URL
 from the addons rules every time we update anything here */
@@ -784,6 +784,10 @@ treecol {
 treecol:hover {background-color: #666 !important}
 
 .fxaSyncIllustration, #fxaNoLoginStatus .fxaProfileImage {filter: invert(98%) hue-rotate(200deg)}
+
+.extension-controlled > description {
+	color: #000 !important;
+	filter: invert(81%) !important}
 }
 
 /*------ EXTENSIONS PAGE (about:addons) ------*/
