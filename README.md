@@ -1,4 +1,4 @@
-<img src="https://i.imgur.com/F7qziom.png" title="Quantum Nox" /></img>
+<img src="https://i.imgur.com/F7qziom.png" title="Quantum Nox"/>
 
 <code>
 
