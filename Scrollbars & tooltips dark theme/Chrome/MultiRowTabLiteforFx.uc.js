@@ -3,9 +3,9 @@
 // @namespace      http://space.geocities.yahoo.co.jp/gl/alice0775
 // @description    Multi-row tabs draggability fix, Experimental CSS version
 // @include        main
-// @compatibility  Firefox 61
+// @compatibility  Firefox 65
 // @author         Alice0775, Endor8, TroudhuK, Izheil
-// @version        2018/20/08 03:05 Fixed some issue with min-width
+// @version        2018/23/11 00:41 Firefox 65
 // @version        2018/11/05 15:05 Firefox 60
 // @version        2016/08/05 00:00 Firefox 48
 // @version        2016/05/01 00:01 hide favicon if busy
@@ -19,7 +19,7 @@ function zzzz_MultiRowTabLite() {
     /* MULTIROW TABS CSS */
     .tabbrowser-tab:not([pinned]) {
         flex-grow:1;
-        min-width:100px !important}
+        min-width:100px}
 
     .tabbrowser-tab, .tab-background {height:var(--tab-min-height) !important}
 
@@ -34,16 +34,16 @@ function zzzz_MultiRowTabLite() {
         display: block}
 
     @media (-moz-os-version: windows-win10) {
-    #titlebar-buttonbox {height:var(--tab-min-height) !important}}
+    .titlebar-buttonbox, #titlebar-buttonbox {display: block !important; height:var(--tab-min-height) !important}}
 
-    #titlebar {height:var(--tab-min-height) !important}
+    #titlebar[inactive="true"] {height:var(--tab-min-height) !important}
 
-    #titlebar {margin-bottom:calc(1px + var(--tab-min-height)*-1) !important}
+    #titlebar[inactive="true"] {margin-bottom:calc(1px + var(--tab-min-height)*-1) !important}
 
-    #main-window[sizemode="maximized"] #titlebar
+    #main-window[sizemode="maximized"] #titlebar[inactive="true"]
     {margin-bottom: calc(8px + var(--tab-min-height)*-1)!important}
 
-    #main-window[sizemode="maximized"][uidensity=compact] #titlebar
+    #main-window[sizemode="maximized"][uidensity=compact] #titlebar[inactive="true"]
     {margin-bottom: calc(6px + var(--tab-min-height)*-1)!important}
 
     .tab-line {height: 2px !important}
@@ -56,6 +56,7 @@ function zzzz_MultiRowTabLite() {
 
     #tabbrowser-tabs .scrollbutton-up, #tabbrowser-tabs .scrollbutton-down, #alltabs-button, .tabbrowser-tab:not([fadein])
     {display: none}
+
     `;
     var sss = Cc['@mozilla.org/content/style-sheet-service;1'].getService(Ci.nsIStyleSheetService);
     var uri = makeURI('data:text/css;charset=UTF=8,' + encodeURIComponent(css));
@@ -80,8 +81,9 @@ function zzzz_MultiRowTabLite() {
         }
         return tabs.length;
     };
-    // This sets when to apply the fix (by default a new row starts after the 23th open tab, unless you changed the min-size of tabs)
-    gBrowser.tabContainer.ondragstart = function(){if(gBrowser.tabContainer.childNodes.length >= (window.innerWidth - 200) / 75) {
+
+// This sets when to apply the fix (by default a new row starts after the 23th open tab, unless you changed the min-size of tabs)
+gBrowser.tabContainer.ondragstart = function(){if(gBrowser.tabContainer.childNodes.length >= (window.innerWidth - 200) / 75) {
 
     gBrowser.tabContainer._getDropEffectForTabDrag = function(event){return "";}; // multirow fix: to make the default "dragover" handler does nothing
     gBrowser.tabContainer._onDragOver = function(event) {

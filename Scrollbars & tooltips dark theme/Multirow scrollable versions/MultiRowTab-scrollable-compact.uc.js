@@ -4,7 +4,8 @@
 // @description    Multi-row tabs draggability fix, Experimental CSS version
 // @include        main
 // @compatibility  Firefox 60
-// @author         Alice0775, Endor8, TroudhuK
+// @author         Alice0775, Endor8, TroudhuK, Izheil
+// @version        2018/23/11 00:41 Firefox 65
 // @version        2018/19/10 07:34 Firefox 62
 // @version        2018/11/05 15:05 Firefox 60
 // @version        2016/08/05 00:00 Firefox 48
@@ -39,16 +40,16 @@ function zzzz_MultiRowTabLite() {
         -moz-window-dragging: no-drag}
 
     @media (-moz-os-version: windows-win10) {
-    #titlebar-buttonbox {height:var(--tab-min-height) !important}}
+    .titlebar-buttonbox, #titlebar-buttonbox {display: block !important; height:var(--tab-min-height) !important}}
 
-    #titlebar {height:var(--tab-min-height) !important}
+    #titlebar[inactive="true"] {height:var(--tab-min-height) !important}
 
-    #titlebar {margin-bottom:calc(1px + var(--tab-min-height)*-1) !important}
+    #titlebar[inactive="true"] {margin-bottom:calc(1px + var(--tab-min-height)*-1) !important}
 
-    #main-window[sizemode="maximized"] #titlebar
+    #main-window[sizemode="maximized"] #titlebar[inactive="true"]
     {margin-bottom: calc(8px + var(--tab-min-height)*-1)!important}
 
-    #main-window[sizemode="maximized"][uidensity=compact] #titlebar
+    #main-window[sizemode="maximized"][uidensity=compact] #titlebar[inactive="true"]
     {margin-bottom: calc(6px + var(--tab-min-height)*-1)!important}
 
     .tab-line {height: 2px !important}
