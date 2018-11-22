@@ -19,15 +19,14 @@ basic css or <a href="https://www.w3schools.com/colors/colors_picker.asp">color 
 <br />
 This problem doesn't happen if you use a code editor such as notepad++, atom, sublime text...</h4>
 
-<h3>Last update: <b>01/11/2018</b></h3>
+<h3>Last update: <b>23/11/2018</b></h3>
 <p>Files updated:</p>
 <ul>
-  <li><b>usercontent.css</b>: Minor fixes on <code>about:preferences</code>.</li>
+  <li><b>MultiRowTabLiteforFx*.uc.js</b>: Fixed multirow tabs so that now it will work with future firefox versions (and with nightly).</li>
 </ul>
 <h3>Pre-Last update: <b>24/10/2018</b></h3>
 <ul>
-  <li><b>userchrome.css</b>: Fixed some issue with the <code>about:</code> pages popup menus.</li>
-  <li><b>addons.css</b>: Added dark theme support for <a href="https://addons.mozilla.org/en-US/firefox/addon/gmail-notifier-restartless/">Notifier for Gmail (restartless)</a> addon.</li>
+  <li><b>usercontent.css</b>: Minor fixes on <code>about:preferences</code>.</li>
 </ul>
 
 <h2>FAQ:</h2>
