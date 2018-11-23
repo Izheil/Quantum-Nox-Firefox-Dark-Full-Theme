@@ -82,9 +82,9 @@
 It will, although, not turn dark the extension popups you may have. <p>
 <img src="https://i.imgur.com/wWjBcqz.png" title="Dark search menu (spanish)" />
 <img src="https://i.imgur.com/7zj3SSq.png" title="Dark context menu (spanish)" />
-<p>It will also turn dark the autocomplete popups (mostly a side-effect)</p>
+<p>It will also turn dark the autocomplete popups.</p>
 <br />
-<p>Userchrome.css is also where the added functions (such as multirow tabs) is contained, so if you are looking to delete some function you don't want or reenable one context menu command deleted by default here, you have to edit this file.</p>
+<p>Userchrome.css is also where some of the added functions are contained, so if you are looking to delete some function you don't want or reenable one context menu command deleted by default here, you have to edit this file.</p>
 
 <h2>The userContent.css file</h2>
 
