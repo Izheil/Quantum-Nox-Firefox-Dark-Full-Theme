@@ -62,7 +62,7 @@
   <li><b>Optional</b>: Edit userchrome.css to delete (or comment out) any function you aren't going to use or don't want.</li>
 </ul>
 
-<h3>The chrome folder</h3>
+<h2>The chrome folder</h2>
 
 <p>The fastest way to find it is to just type <code>about:support</code> on the URL bar of your firefox, and then click the <b>open folder</b> button inside the "profile folder" section. After this, your profile folder will be open.</p>
 

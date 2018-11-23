@@ -76,7 +76,25 @@
 <p>If you would also like a dark version of either <a href="https://addons.mozilla.org/es/firefox/addon/ublock-origin/">Ublock Origin</a>, <a href="https://addons.mozilla.org/es/firefox/addon/video-downloadhelper/">Video Download Helper</a>, <a href="https://addons.mozilla.org/es/firefox/addon/flash-video-downloader/">Flash Video Downloader</a>, <a href="https://addons.mozilla.org/es/firefox/addon/tab-session-manager/">Tab session manager</a>, <a href="https://addons.mozilla.org/es/firefox/addon/undo-closed-tabs-revived/">Undo closed tabs button</a>, <a href="https://addons.mozilla.org/es/firefox/addon/s3download-statusbar/">Download Manager (S3)</a>, <a href="https://addons.mozilla.org/es/firefox/addon/privacy-badger17/">Privacy badger</a>, <a href="https://addons.mozilla.org/es/firefox/addon/noscript/">Noscript</a>, <a href="https://addons.mozilla.org/es/firefox/addon/lastpass-password-manager/">LastPass password manager</a>, <a href="https://addons.mozilla.org/en-US/firefox/addon/window-resize/">Windows resize</a> or <a href="https://addons.mozilla.org/es/firefox/addon/s3google-translator/">S3 Translator</a> extensions, copy the "addons.css" file in your <a href="https://github.com/Izheil/Firefox-57-full-dark-theme-with-scrollbars/tree/master/Full%20theme%20(except%20scrollbars)#the-chrome-folder">the chrome folder</a> as well, and make sure to delete the comment start slash (/*) at the end of the coloring part inside userchrome.css to change the color of the popup arrows on those extensions that may need it.</p>
 <p>In case that you just want to change the default scrollbars, you can apply just that without the need of using the usercontent or userchrome files provided here.</p>
 
-<h3>The chrome folder</h3>
+<h2>The userChrome.css file</h2>
+
+<p>The userchrome file turns dark all context menus, bookmarks, the url bar, the search bar, the main menu, and the toolbar. 
+It will, although, not turn dark the extension popups you may have. <p>
+<img src="https://i.imgur.com/wWjBcqz.png" title="Dark search menu (spanish)" />
+<img src="https://i.imgur.com/7zj3SSq.png" title="Dark context menu (spanish)" />
+<p>It will also turn dark the autocomplete popups (mostly a side-effect)</p>
+<br />
+<p>Userchrome.css is also where the added functions (such as multirow tabs) is contained, so if you are looking to delete some function you don't want or reenable one context menu command deleted by default here, you have to edit this file.</p>
+
+<h2>The userContent.css file</h2>
+
+<p>The usercontent file will turn dark all the <code>about:about</code> pages.</p>
+<img src="https://i.imgur.com/a41WkP8.png" title="Dark preferences page" />
+<img src="https://i.imgur.com/WbhhkKa.png" title="Dark addons page" />
+
+<p>It will also turn dark the <a href="https://addons.mozilla.org">Mozilla addons page</a>, both the old and the new, the file explorer inside firefox, and the "view source of page" page.</p>
+
+<h2>The chrome folder</h2>
 
 <p>The fastest way to find it is to just type <code>about:support</code> on the URL bar of your firefox, and then click the <b>open folder</b> button inside the "profile folder" section. After this, your profile folder will be open.</p>
 
@@ -131,20 +149,3 @@
 killall Finder</pre>
 <br /><p>This will also cause any file icons to take on a hazy, 50% alpha look. To restore the old settings (hide the files and make the icons look normal) issue the same commands again, but enter FALSE instead of TRUE.<p>
 
-<h2>The userChrome.css file</h2>
-
-<p>The userchrome file turns dark all context menus, bookmarks, the url bar, the search bar, the main menu, and the toolbar. 
-It will, although, not turn dark the extension popups you may have. <p>
-<img src="https://i.imgur.com/wWjBcqz.png" title="Dark search menu (spanish)" />
-<img src="https://i.imgur.com/7zj3SSq.png" title="Dark context menu (spanish)" />
-<p>It will also turn dark the autocomplete popups (mostly a side-effect)</p>
-<br />
-<p>Userchrome.css is also where the added functions (such as multirow tabs) is contained, so if you are looking to delete some function you don't want or reenable one context menu command deleted by default here, you have to edit this file.</p>
-
-<h2>The userContent.css file</h2>
-
-<p>The usercontent file will turn dark all the <code>about:about</code> pages.</p>
-<img src="https://i.imgur.com/a41WkP8.png" title="Dark preferences page" />
-<img src="https://i.imgur.com/WbhhkKa.png" title="Dark addons page" />
-
-<p>It will also turn dark the <a href="https://addons.mozilla.org">Mozilla addons page</a>, both the old and the new, the file explorer inside firefox, and the "view source of page" page.</p>
