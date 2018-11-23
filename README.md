@@ -23,6 +23,7 @@ This problem doesn't happen if you use a code editor such as notepad++, atom, su
 <p>Files updated:</p>
 <ul>
   <li><b>MultiRowTabLiteforFx*.uc.js</b>: Added notes on multirow tabs so that people using firefox nightly can know how to fix the displaced tabs issue.</li>
+  <li><b>addons.css</b>: Updated the <a href="https://addons.mozilla.org/es/firefox/addon/tab-session-manager/">Tab session manager</a></ addon buttons color.</li>
 </ul>
 <h3>Pre-Last update: <b>24/10/2018</b></h3>
 <ul>
