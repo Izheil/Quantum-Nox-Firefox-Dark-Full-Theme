@@ -22,7 +22,7 @@ This problem doesn't happen if you use a code editor such as notepad++, atom, su
 <h3>Last update: <b>23/11/2018</b></h3>
 <p>Files updated:</p>
 <ul>
-  <li><b>MultiRowTabLiteforFx*.uc.js</b>: Fixed multirow tabs so that now it will work with future firefox versions (and with nightly).</li>
+  <li><b>MultiRowTabLiteforFx*.uc.js</b>: Added notes on multirow tabs so that people using firefox nightly can know how to fix the displaced tabs issue.</li>
 </ul>
 <h3>Pre-Last update: <b>24/10/2018</b></h3>
 <ul>
@@ -98,6 +98,9 @@ This problem doesn't happen if you use a code editor such as notepad++, atom, su
 <p>To install the custom scrollbars to match the dark theme, you will have to use one of the 2 methods found on the "Scrollbars & tooltips dark theme" or "Scrollbars patchers(Old method)" folders inside this repository. You should be using the "Scrollbars & tooltips dark theme" folder method, since it's the most permanent, but if you find some bug, you could try using the old method one instead. The problem with the old method is that you will have to re-patch the scrollbars with each firefox update, so I'm only keeping it in case the other new method stops working in the future.</b>
 
 <h2>FAQ:</h2>
+<h3>The tabs bar is messed up on firefox nightly (FF65).</h3>
+<p>They changed the selectors on the lastest firefox nightly builds, so you will have to delete a few lines in the <code>MultiRowTabLiteforFx*.uc.js</code> file you are using (it's detailed in CAPS what to delete) for the tabs bar to be right again. Once FF65 hits stable, the files here will be updated to those lines deleted by default.</p>
+
 <h3>The synced tabs sidebar isn't themed.</h3>
 <p>Since it's anonymous content of the browser we can't theme it through userChrome or userContent, which is why you will have to apply the scrollbars & tooltips method to be able to use external javascript to modify anonymous content, and then place the <b>Sync-tabs-sidebar.as.css</b> file inside the <code>Scrollbars & tooltips dark theme/Chrome/</code> folder inside this repository inside your chrome folder (The method is the same than for the scrollbars, except you place the sync related file on your chrome folder apart from the other files if you are going to use them as well).</p>
 

@@ -3,9 +3,8 @@
 // @namespace      http://space.geocities.yahoo.co.jp/gl/alice0775
 // @description    Multi-row tabs draggability fix, Experimental CSS version
 // @include        main
-// @compatibility  Firefox 65
-// @author         Alice0775, Endor8, TroudhuK, Izheil
-// @version        2018/23/11 00:41 Firefox 65
+// @compatibility  Firefox 60
+// @author         Alice0775, Endor8, TroudhuK
 // @version        2018/11/05 15:05 Firefox 60
 // @version        2016/08/05 00:00 Firefox 48
 // @version        2016/05/01 00:01 hide favicon if busy
@@ -36,15 +35,19 @@ function zzzz_MultiRowTabLite() {
     @media (-moz-os-version: windows-win10) {
     .titlebar-buttonbox, #titlebar-buttonbox {display: block !important; height:var(--tab-min-height) !important}}
 
-    #titlebar[inactive="true"] {height:var(--tab-min-height) !important}
+    /* YOU SHOULD DELETE THESE TITLEBAR RULES IF YOU ARE USING NIGHTLY OR FF65 */
+    
+    #titlebar {height:var(--tab-min-height) !important}
 
-    #titlebar[inactive="true"] {margin-bottom:calc(1px + var(--tab-min-height)*-1) !important}
+    #titlebar {margin-bottom:calc(1px + var(--tab-min-height)*-1) !important}
 
-    #main-window[sizemode="maximized"] #titlebar[inactive="true"]
+    #main-window[sizemode="maximized"] #titlebar
     {margin-bottom: calc(8px + var(--tab-min-height)*-1)!important}
 
-    #main-window[sizemode="maximized"][uidensity=compact] #titlebar[inactive="true"]
+    #main-window[sizemode="maximized"][uidensity=compact] #titlebar
     {margin-bottom: calc(6px + var(--tab-min-height)*-1)!important}
+
+    /* END OF TITLEBAR RULES TO DELETE FOR NIGHTLY COMPATIBILITY */
 
     .tab-line {height: 2px !important}
 
@@ -56,7 +59,6 @@ function zzzz_MultiRowTabLite() {
 
     #tabbrowser-tabs .scrollbutton-up, #tabbrowser-tabs .scrollbutton-down, #alltabs-button, .tabbrowser-tab:not([fadein])
     {display: none}
-
     `;
     var sss = Cc['@mozilla.org/content/style-sheet-service;1'].getService(Ci.nsIStyleSheetService);
     var uri = makeURI('data:text/css;charset=UTF=8,' + encodeURIComponent(css));
