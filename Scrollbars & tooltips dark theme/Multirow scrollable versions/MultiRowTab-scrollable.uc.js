@@ -30,6 +30,7 @@ function zzzz_MultiRowTabLite() {
         display: flex;
         flex-wrap: wrap;}
 
+    /* YOU CAN SET THE DEFAULT NUMBER OF ROWS YOU WANT CHANGING THE MULTIPLIER OF HEIGHT ON THE RULE BELOW */
     #tabbrowser-tabs .arrowscrollbox-scrollbox {
         overflow-x: visible;
         overflow-y: auto;
