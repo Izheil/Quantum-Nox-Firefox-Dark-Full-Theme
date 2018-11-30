@@ -10,7 +10,7 @@
 </br>
 <h3>A note on people looking to replace some Tab Mix Plus features</h3>
 <p>As for using this theme to replace some functions of <b>Tab Mix Plus</b>, I'll keep the functions that can be done through CSS here until TMP gets back on track on webextensions (since these fixes are a bit more annoying to toggle for people that don't know CSS), but as of right now, it covers multi-row tabs, keep the close button on tabs always visible, and color-coding tabs when they are loaded, unloaded, etc...</p>
-<p>Most other functions of Tab Mix Plus can already be "simulated" changing some <code>about:config</code> settings:
+<p>Most other functions of Tab Mix Plus can already be "simulated" changing some <code>about:config</code> settings:</p>
  <ul>
  	<li>To keep FF open even after closing the last tab -> <code>browser.tabs.closeWindowWithLastTab</code> to <i>false</i>.</li>
  	<li>To open a search result typed on the URL bar on a new tab -> <code>browser.urlbar.openintab</code> to <i>true</i>.</li>
@@ -19,7 +19,7 @@
  	<li>To force popups on new tabs instead of windows -> <code>browser.link.open_newwindow.restriction</code> to <i>0</i> (should be 2 by default).</li>
  	<li>Open related tabs (the ones you open) as the last tab in the tab bar -> <code>browser.tabs.insertRelatedAfterCurrent</code> to <i>false</i>.</li>
 </ul>
-<p>...or through extensions (not a comprehensive list, only the ones themed here are mentioned), like <a href="https://addons.mozilla.org/es/firefox/addon/tab-session-manager/">Tab session manager</a>, <a href="https://addons.mozilla.org/es/firefox/addon/undo-closed-tabs-revived/">Undo closed tabs button</a>.
+<p>through extensions (not a comprehensive list, only the ones themed here are mentioned), like <a href="https://addons.mozilla.org/es/firefox/addon/tab-session-manager/">Tab session manager</a>, <a href="https://addons.mozilla.org/es/firefox/addon/undo-closed-tabs-revived/">Undo closed tabs button</a>.</p>
 </code></br>
 
 <h3>Previously known as "Firefox 57+ full dark theme with scrollbars and multirow tabs", I decided to give it an actual name instead of leaving it as just a description.</h3>
