@@ -1,12 +1,25 @@
 <img src="https://i.imgur.com/F7qziom.png" title="Quantum Nox"/>
 
 <code>
-
-```diff
-- If you want to give me feedback about this theme, please, take the survey below:
-```
-
-<h3><a href="https://form.responster.com/RO6Qi4">You can answer a survey to give me some feedback here</a> (It's only 1-3 questions depending on your answers, and it's completely anonymous).</h3>
+<h3>Thank you to everyone who took some of their time to answer the survey questions about the theme!</h3> 
+<p>Looks like what most people like about the theme is the look, that it covers a bit more than other themes, and the scrollbars (since the default ones are too low-contrast on windows). Multirow (by itself alone) was also voted (which I guess is no surprise), as well as the complete set of theme+features.</p>
+<p>I'm glad to know that the theme is at least useful to a few. I started it back when FF57 rolled out, since I hated the default scrollbar contrast that Firefox had on Windows, as well as <b>Tab Mix Plus</b> getting deprecated because of webextensions, meaning no more multi-row, or color coded tabs (which might just be an aesthetic thing, but I got used to it).</p>
+<p>There was also the issue of Firefox being white by default on the <code>about:</code> pages, without any means of changing it through normal means nor any extension (since the full themes had also been deprecated with FF57), and the "dark" firefox theme being... a bit lacking at most.</p>
+<p>I then decided to start my own theme, since there were no other around back then, to fix all these little issues that had piled up with the release of FF57, and release it to the public just in case other people like me had the same problems.</p>
+<p>I'm happy to know that people is using it as a solution to these problems, so <b>thanks to everyone using this theme</b>!</p>
+</br>
+<h3>A note on people looking to replace some Tab Mix Plus features</h3>
+<p>As for using this theme to replace some functions of <b>Tab Mix Plus</b>, I'll keep the functions that can be done through CSS here until TMP gets back on track on webextensions (since these fixes are a bit more annoying to toggle for people that don't know CSS), but as of right now, it covers multi-row tabs, keep the close button on tabs always visible, and color-coding tabs when they are loaded, unloaded, etc...</p>
+<p>Most other functions of Tab Mix Plus can already be "simulated" changing some <code>about:config</code> settings:
+ <ul>
+ 	<li>To keep FF open even after closing the last tab -> <code>browser.tabs.closeWindowWithLastTab</code> to <i>false</i>.</li>
+ 	<li>To open a search result typed on the URL bar on a new tab -> <code>browser.urlbar.openintab</code> to <i>true</i>.</li>
+ 	<li>To open a search result typed on the search bar on a new tab -> <code>browser.search.openintab</code> to <i>true</i>.</li>
+ 	<li>To open bookmarks on a new tab instead of the current tab -> <code>browser.tabs.loadBookmarksInTabs</code> to <i>true</i>.</li>
+ 	<li>To force popups on new tabs instead of windows -> <code>browser.link.open_newwindow.restriction</code> to <i>0</i> (should be 2 by default).</li>
+ 	<li>Open related tabs (the ones you open) as the last tab in the tab bar -> <code>browser.tabs.insertRelatedAfterCurrent</code> to <i>false</i>.</li>
+</ul>
+<p>...or through extensions (not a comprehensive list, only the ones themed here are mentioned), like <a href="https://addons.mozilla.org/es/firefox/addon/tab-session-manager/">Tab session manager</a>, <a href="https://addons.mozilla.org/es/firefox/addon/undo-closed-tabs-revived/">Undo closed tabs button</a>.
 </code></br>
 
 <h3>Previously known as "Firefox 57+ full dark theme with scrollbars and multirow tabs", I decided to give it an actual name instead of leaving it as just a description.</h3>
