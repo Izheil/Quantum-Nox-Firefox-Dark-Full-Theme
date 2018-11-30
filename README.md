@@ -19,7 +19,7 @@
  	<li>To force popups on new tabs instead of windows -> <code>browser.link.open_newwindow.restriction</code> to <i>0</i> (should be 2 by default).</li>
  	<li>Open related tabs (the ones you open) as the last tab in the tab bar -> <code>browser.tabs.insertRelatedAfterCurrent</code> to <i>false</i>.</li>
 </ul>
-<p>through extensions (not a comprehensive list, only the ones themed here are mentioned), like <a href="https://addons.mozilla.org/es/firefox/addon/tab-session-manager/">Tab session manager</a>, <a href="https://addons.mozilla.org/es/firefox/addon/undo-closed-tabs-revived/">Undo closed tabs button</a>.</p>
+<p>... or through extensions (not a comprehensive list, only the ones themed here are mentioned), like <a href="https://addons.mozilla.org/es/firefox/addon/tab-session-manager/">Tab session manager</a>, <a href="https://addons.mozilla.org/es/firefox/addon/undo-closed-tabs-revived/">Undo closed tabs button</a>.</p>
 </code></br>
 
 <h3>Previously known as "Firefox 57+ full dark theme with scrollbars and multirow tabs", I decided to give it an actual name instead of leaving it as just a description.</h3>
