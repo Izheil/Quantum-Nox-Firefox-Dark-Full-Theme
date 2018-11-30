@@ -5,6 +5,7 @@
 // @include        main
 // @compatibility  Firefox 60
 // @author         Alice0775, Endor8, TroudhuK, Izheil
+// @version        2018/30/11 06:12 Now only the necesary rows appear, not static number of rows
 // @version        2018/23/11 00:41 Firefox 65
 // @version        2018/19/10 07:34 Firefox 62
 // @version        2018/11/05 15:05 Firefox 60
@@ -18,9 +19,15 @@
 function zzzz_MultiRowTabLite() {
     var css =`
     /* MULTIROW TABS CSS */
+    /* You can set the max number of rows before the scrollbar appears here */
+    :root {
+        --max-tab-rows: 3;}
+
     .tabbrowser-tab:not([pinned]) {
         flex-grow:1;
         min-width:150px}
+
+    .tabbrowser-tab::after {border: none !important}
 
     .tabbrowser-tab, .tab-background {height:var(--tab-min-height) !important}
 
@@ -28,15 +35,16 @@ function zzzz_MultiRowTabLite() {
 
     #tabbrowser-tabs .scrollbox-innerbox {
         display: flex;
-        flex-wrap: wrap;}
+        flex-wrap: wrap; 
+        overflow-x: hidden;
+        overflow-y: auto;     
+        min-height: var(--tab-min-height);
+        max-height: calc(var(--tab-min-height)*var(--max-tab-rows))}
 
-    /* YOU CAN SET THE DEFAULT NUMBER OF ROWS YOU WANT CHANGING THE MULTIPLIER OF HEIGHT ON THE RULE BELOW */
     #tabbrowser-tabs .arrowscrollbox-scrollbox {
-        overflow-x: visible;
-        overflow-y: auto;
-        display: block;
-        height: calc(var(--tab-min-height)*2)}
-	
+        overflow: visible;
+        display: block;}
+
     #main-window[tabsintitlebar] #tabbrowser-tabs {
         -moz-window-dragging: no-drag}
 
@@ -94,7 +102,7 @@ function zzzz_MultiRowTabLite() {
 
 // This scrolls down to the current tab when you open a new one, or restore a session.
 function scrollToView() {
-	document.querySelectorAll(".tabbrowser-tab[selected='true']")[0].scrollIntoView();
+    document.querySelectorAll(".tabbrowser-tab[selected='true']")[0].scrollIntoView();
 }
 
 gBrowser.tabContainer.addEventListener('TabOpen', scrollToView, false);

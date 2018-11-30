@@ -35,6 +35,7 @@ This problem doesn't happen if you use a code editor such as notepad++, atom, su
 <h3>Last update: <b>23/11/2018</b></h3>
 <p>Files updated:</p>
 <ul>
+  <li><b>MultiRowTab-scrollable.uc.js</b>: Now the scrollable multi-row will only show the necessary rows up to a max of the set ones inside it (3 by default), instead of a static number of rows.</li>
   <li><b>addons.css</b>: Added a dark theme for <a href="https://addons.mozilla.org/en-US/firefox/addon/popup-blocker-ultimate/">Popup Blocker Ultimate</a> addon.</li>
 </ul>
 <h3>Pre-Last update: <b>24/10/2018</b></h3>
