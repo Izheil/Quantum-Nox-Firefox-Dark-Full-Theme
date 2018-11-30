@@ -927,6 +927,11 @@ to use the close, minimize, and resize buttons */
     overflow: auto;
     max-height: calc(23px*(var(--bookmark-max-rows))) !important}
 
+/* AUTO-HIDE BOOKMARKS TOOLBAR */
+/*
+#PersonalToolbar {visibility: collapse !important;}
+#navigator-toolbox:hover > #PersonalToolbar {visibility: visible !important}
+
 /* CONTEXT MENU COMMANDS */
 
 /* All of these commands are divided so that they can be explained, but they are all
