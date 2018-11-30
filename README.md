@@ -35,6 +35,7 @@ This problem doesn't happen if you use a code editor such as notepad++, atom, su
 <h3>Last update: <b>23/11/2018</b></h3>
 <p>Files updated:</p>
 <ul>
+  <li><b>UserChrome.css</b>: Now you can use scrollable bookmarks multirow (you might have to update the scrollbar file or check the changes there to hide the scrollbars on bookmarks bar).</li>
   <li><b>MultiRowTab-scrollable.uc.js</b>: Now the scrollable multi-row will only show the necessary rows up to a max of the set ones inside it (3 by default), instead of a static number of rows.</li>
   <li><b>addons.css</b>: Added a dark theme for <a href="https://addons.mozilla.org/en-US/firefox/addon/popup-blocker-ultimate/">Popup Blocker Ultimate</a> addon.</li>
 </ul>
@@ -122,6 +123,14 @@ This problem doesn't happen if you use a code editor such as notepad++, atom, su
 
 <h3>The bookmarks toolbar text/tabs text color is black and I can't see the letters over the dark background.</h3>
 <p>This is caused by your persona (lightweight theme), and while you could change these settings inside userchrome, I thought it was better to just change the settings on the persona directly (since not all personas will look the same). To do so you'd have to open <code>about:config</code>, and search for <b>lightweightThemes.usedThemes</b>. Once there, find the "textcolor" setting and type any color you'd want to use instead of black or the color being used by the theme (use #fff for white). The persona you are currently using should be in the first place in the list. A screenshot of this window can be seen in the first section of this readme.</p>
+
+<h3>The bookmarks multirow shows an empty scrollbar when enabled.</h3>
+<p>If you are using an old version of the scrollbars, or you are just plain not using the scrollbars here, you will have to add some code to delete the empty scrollbars that show on the bookmark toolbars. You have to use this code on a "*.ac.css" file (so you would need to have firefox patched with the method explained on the <b>Scrollbars & tooltips dark theme</b> folder), since otherwise it won't work:
+
+<code>
+/* This deletes the scrollbar from bookmarks toolbar when using multirow bookmarks */
+#PlacesToolbarItems scrollbar {display: none !important}
+</code>
 
 <h3>I only want to use the multirow/(Any other) feature, but not the other ones!</h3>
 <p>You only need to modify <b>userChrome.css</b>, deleting the lines that you don't want to apply (Every function has a comment above it saying what each ruleset does), or if you think you may want them later, just encase the feature parts that you don't want to apply between /* and */:</p>

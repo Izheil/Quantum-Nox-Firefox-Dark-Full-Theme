@@ -1,5 +1,5 @@
 /* You can find an updated version here: https://github.com/Izheil/Firefox-57-full-dark-theme-with-scrollbars */
-/* Last updated: 10/09/2018 */
+/* Last updated: 30/11/2018 */
 
 /* DO NOT DELETE THIS LINE */
 @namespace url("http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul");
@@ -70,13 +70,17 @@ to use the close, minimize, and resize buttons */
 
 /* MULTI-ROW BOOKMARKS TOOLBAR */
 
-/* Multiply 22px * the number of rows you want, and type that number of px here
-To use multirow bookmarks you have to delete the /* that is under the #personaltoolbar line */
-#PersonalToolbar {max-height: 22px !important} 
-/*
-#PlacesToolbarItems > box {display: inline-block !important}
+/* This makes the bookmark toolbar slightly thinner */
+#PlacesToolbarItems {max-height: 21px !important}
 
-#PersonalToolbar #PlacesToolbarItems {overflow: visible !important}
+/* Multiply 21px * the number of rows you want, and type that number of px on the height.
+To use the scrolling multirow bookmarks you have to delete the /* under this line */
+/*
+#PlacesToolbarItems > .scrollbox-innerbox {
+    display: flex;
+    flex-wrap: wrap; 
+    overflow: auto;
+    height: 21px !important} /* If you change this value, change the #placesToolbarItems one as well */
 
 /* CONTEXT MENU COMMANDS */
 

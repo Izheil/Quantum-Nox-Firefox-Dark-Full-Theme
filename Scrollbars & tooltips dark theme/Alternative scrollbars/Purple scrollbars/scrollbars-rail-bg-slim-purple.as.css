@@ -1,4 +1,4 @@
-/* You can find an updated version here: https://github.com/Izheil/Firefox-57-full-dark-theme-with-scrollbars */
+/* You can find an updated version here: https://github.com/Izheil/Quantum-Nox-Firefox-Dark-Full-Theme */
 /* Last updated: 06/09/2018 */
 
 scrollbar,
@@ -85,3 +85,6 @@ scrollbar scrollbarbutton{
 	height: 0px !important;
 	width: 0px !important;
 }
+
+/* This deletes the scrollbar from bookmarks toolbar when using multirow bookmarks */
+#PlacesToolbarItems scrollbar {display: none !important}

@@ -1,6 +1,6 @@
-/* You can find an updated version here: https://github.com/Izheil/Firefox-57-full-dark-theme-with-scrollbars */
+/* You can find an updated version here: https://github.com/Izheil/Quantum-Nox-Firefox-Dark-Full-Theme */
 /* Made by Izheil */
-/* Last updated: 20/09/2018 */
+/* Last updated: 30/11/2018 */
 
 /* DO NOT DELETE THIS LINE */
 @namespace url("http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul");
@@ -84,6 +84,9 @@ in the rule below) */
   --Loading-italic: normal;
   --Loading-bold: normal;
   --Loading-background: transparent;
+
+  /* Number of max rows for MULTIROW BOOKMARKS */
+  --bookmark-max-rows: 1;
 }
 
 /* This changes the color of the sidebar panel text */
@@ -908,13 +911,16 @@ to use the close, minimize, and resize buttons */
 
 /* MULTI-ROW BOOKMARKS TOOLBAR */
 
-/* Multiply 22px * the number of rows you want, and type that number of px here
-To use multirow bookmarks you have to delete the /* that is under the #personaltoolbar line */
-#PersonalToolbar {max-height: 22px !important} 
-/*
-#PlacesToolbarItems > box {display: inline-block !important}
+/* This makes the bookmark toolbar slightly thinner */
+#PlacesToolbarItems {height: calc(21px*(var(--bookmark-max-rows))) !important}
 
-#PersonalToolbar #PlacesToolbarItems {overflow: visible !important}
+/* To use the scrolling multirow bookmarks you have to delete the /* under this line */
+/*
+#PlacesToolbarItems > .scrollbox-innerbox {
+    display: flex;
+    flex-wrap: wrap; 
+    overflow: auto;
+    height: calc(21px*(var(--bookmark-max-rows))) !important}
 
 /* CONTEXT MENU COMMANDS */
 
