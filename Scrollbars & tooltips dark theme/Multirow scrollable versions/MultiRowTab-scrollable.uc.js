@@ -35,7 +35,7 @@ function zzzz_MultiRowTabLite() {
         overflow-x: visible;
         overflow-y: auto;
         display: block;
-    	height: calc(var(--tab-min-height)*2)}
+        height: calc(var(--tab-min-height)*2)}
 	
     #main-window[tabsintitlebar] #tabbrowser-tabs {
         -moz-window-dragging: no-drag}
@@ -67,9 +67,6 @@ function zzzz_MultiRowTabLite() {
 
     #tabbrowser-tabs .scrollbutton-up, #tabbrowser-tabs .scrollbutton-down, #alltabs-button, .tabbrowser-tab:not([fadein])
     {display: none}
-
-
-
     `;
     var sss = Cc['@mozilla.org/content/style-sheet-service;1'].getService(Ci.nsIStyleSheetService);
     var uri = makeURI('data:text/css;charset=UTF=8,' + encodeURIComponent(css));

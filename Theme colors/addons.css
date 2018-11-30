@@ -1,6 +1,6 @@
 /* You can find an updated version here: https://github.com/Izheil/Firefox-57-full-dark-theme-with-scrollbars */
 /* Made by Izheil */
-/* Last updated: 23/11/2018 */
+/* Last updated: 30/11/2018 */
 
 /*------ HOW TO MAKE THE ADDON THEMES WORK ------*/
 /* To use this part of the code, you will have to find the dynamic UUID of your extensions, and replace it where the 
@@ -1525,4 +1525,15 @@ input[type="text"], input[type="color"]{
 select, input[type="number"] {
 	background: #222 !important;
 	outline-color: #555 !important}
+}
+
+/*------ POPUP BLOCKER ULTIMATE ADDON ------*/
+@-moz-document url-prefix(moz-extension://TYPE-THE-UUID-OF-POPUP-BLOCKER-ULTIMATE-ADDON-HERE/) {
+body {background-color: #333 !important}
+
+table td {color: #ccc !important}
+
+td[data-type="status"] {filter: invert(80%) hue-rotate(144deg) contrast(1.10) brightness(1.205) saturate(0.9);}
+
+table td:not([data-type="status"]):hover {background-color: #444 !important}
 }
