@@ -127,10 +127,10 @@ This problem doesn't happen if you use a code editor such as notepad++, atom, su
 <h3>The bookmarks multirow shows an empty scrollbar when enabled.</h3>
 <p>If you are using an old version of the scrollbars, or you are just plain not using the scrollbars here, you will have to add some code to delete the empty scrollbars that show on the bookmark toolbars. You have to use this code on a "*.ac.css" file (so you would need to have firefox patched with the method explained on the <b>Scrollbars & tooltips dark theme</b> folder), since otherwise it won't work:
 
-<code>
+<pre>
 /* This deletes the scrollbar from bookmarks toolbar when using multirow bookmarks */
 #PlacesToolbarItems scrollbar {display: none !important}
-</code>
+</pre>
 
 <h3>I only want to use the multirow/(Any other) feature, but not the other ones!</h3>
 <p>You only need to modify <b>userChrome.css</b>, deleting the lines that you don't want to apply (Every function has a comment above it saying what each ruleset does), or if you think you may want them later, just encase the feature parts that you don't want to apply between /* and */:</p>
