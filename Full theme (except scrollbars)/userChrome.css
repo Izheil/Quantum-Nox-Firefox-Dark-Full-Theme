@@ -911,16 +911,21 @@ to use the close, minimize, and resize buttons */
 
 /* MULTI-ROW BOOKMARKS TOOLBAR */
 
-/* This makes the bookmark toolbar slightly thinner */
-#PlacesToolbarItems {height: calc(21px*(var(--bookmark-max-rows))) !important}
-
 /* To use the scrolling multirow bookmarks you have to delete the /* under this line */
 /*
+#PersonalToolbar {
+  min-height: 21px !important;
+  max-height: calc(23px*(var(--bookmark-max-rows))) !important}
+
+#PlacesToolbar, #PlacesToolbarItems {
+  overflow: visible;
+  display: block}
+
 #PlacesToolbarItems > .scrollbox-innerbox {
     display: flex;
     flex-wrap: wrap; 
     overflow: auto;
-    height: calc(21px*(var(--bookmark-max-rows))) !important}
+    max-height: calc(23px*(var(--bookmark-max-rows))) !important}
 
 /* CONTEXT MENU COMMANDS */
 
