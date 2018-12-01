@@ -1,6 +1,6 @@
 /* You can find an updated version here: https://github.com/Izheil/Quantum-Nox-Firefox-Dark-Full-Theme */
 /* Made by Izheil */
-/* Last updated: 01/11/2018 */
+/* Last updated: 02/12/2018 */
 
 /* This part imports the Addons file if there is one, so that you don't have to edit the dynamic URL
 from the addons rules every time we update anything here */
@@ -413,6 +413,8 @@ body {
 	background: rgba(0,0,0,0.6) !important}
 
 .context-menu-button.icon {fill: #aaa !important}
+
+.top-site-outer .top-site-icon {background-color: transparent !important}
 }
 
 /*------ COMMON ATTRIBUTES ON MOST ABOUT PAGES ------*/
