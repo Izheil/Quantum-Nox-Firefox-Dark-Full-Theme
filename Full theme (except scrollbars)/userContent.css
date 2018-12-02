@@ -414,7 +414,8 @@ body {
 
 .context-menu-button.icon {fill: #aaa !important}
 
-.top-site-outer .top-site-icon {background-color: transparent !important}
+.top-site-outer .top-site-icon.rich-icon, 
+.top-site-outer .screenshot {background-color: transparent !important}
 }
 
 /*------ COMMON ATTRIBUTES ON MOST ABOUT PAGES ------*/
