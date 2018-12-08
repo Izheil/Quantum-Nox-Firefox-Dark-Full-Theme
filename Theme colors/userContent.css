@@ -1,6 +1,6 @@
 /* You can find an updated version here: https://github.com/Izheil/Quantum-Nox-Firefox-Dark-Full-Theme */
 /* Made by Izheil */
-/* Last updated: 02/12/2018 */
+/* Last updated: 08/12/2018 */
 
 /* This part imports the Addons file if there is one, so that you don't have to edit the dynamic URL
 from the addons rules every time we update anything here */
@@ -923,7 +923,7 @@ html, .App-content, tr.LanguageTools-table-row:nth-child(even),
 .ExpandableCard .Card-header, span .Paginate-item.disabled.Paginate-previous,
 .Card-header, .Card-footer-text, .Card-footer-link, a.ShowMoreCard-expand-link,
 a.Addon-all-reviews-link, .MetadataCard, .Card-contents ul li, .LandingPage-header,
-.highlight, .AutoSearchInput-query  {
+.highlight, .AutoSearchInput-query, .Search .SearchResults-message  {
 	background-color: #303030 !important;
 	color: #ccc !important}
 
