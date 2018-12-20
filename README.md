@@ -13,7 +13,7 @@ This problem doesn't happen if you use a code editor such as notepad++, atom, su
 <h3>Last update: <b>20/12/2018</b></h3>
 <p>Files updated:</p>
 <ul>
-  <li><b>Usercontent.css</b>: After FF64, you can the colors of the default scrollbar without the need to use JS (although you won't be able to style the scrollbar to be round, nor add gradients, nor any effect when clicking the thumb).</li>
+  <li><b>Usercontent.css</b>: After FF64, you can the colors of the default scrollbar without the need to use JS (although you won't be able to style the scrollbar to be round, nor add gradients, nor any effect when clicking the thumb). Also fixed some changes on <code>about:addons</code> and <code>about:debugging</code>.</li>
   <li><b>No-scrollbars.as.css</b>: Deleted the no-scrollbars file, since it's not longer needed with the changes on usercontent. Added some notes on how to manage the same effect without it on the scrollbars section of this readme.</li>
 </ul>
 <h3>Pre-Last update: <b>08/12/2018</b></h3>

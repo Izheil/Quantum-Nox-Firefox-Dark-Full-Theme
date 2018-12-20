@@ -649,7 +649,9 @@ select {border: 1px solid #111 !important}
 #categories button.selected {color: var(--in-content-category-text-selected) !important}
 
 /* This affects the main content part */
-.target-list .addon-target-container {background-color: #303030 !important}
+.target-list .addon-target-container {
+	background-color: #444 !important; 
+	box-shadow: none !important}
 
 .main-content button {
     background: var(--button-background) !important;
@@ -827,36 +829,46 @@ treecol:hover {background-color: #666 !important}
 	background: #333 !important;
     color: #FFF !important}
 
-.description-outer-container .button-link {
-	background: transparent !important;
-	color: var(--in-content-link-color) !important}
+/* These change the addons background colors */
+.card {
+	max-width: 800px !important}
 
-.description-outer-container .button-link:hover {color: var(--in-content-link-color-hover) !important}
-.description-outer-container .button-link:active {color: var(--in-content-link-color-active) !important}
+.addon .description {color: #aaa !important}
 
-.addon {color: #aaa !important}
+.addon:hover {
+	background-color: #383838 !important;
+	box-shadow: none !important}
 
-.addon:hover {background-color: #151515 !important}
+.addon:hover .description {color: #ccc !important}
 
 .content-inner-container .basicinfo-container {color: var(--addons-addon-name) !important}
 .addon.addon-view[selected="true"] .basicinfo-container {color: var(--addons-addon-name-active) !important}
 
+.addon.addon-view[active="false"] {opacity: 0.7}
 .addon.addon-view[active="false"] .basicinfo-container, 
 .addon.addon-view[active="false"] .description {color: #888 !important}
 
-.addon.addon-view[selected="true"] {color: #FFF !important}
+.addon.addon-view[selected="true"] .description {color: #FFF !important}
 
 /* This changes the background highlight color of uninstalled extensions */
 .addon-view[pending="disable"], .addon-view[pending="uninstall"] {
-    --view-highlight-color: #000 !important}
+    --view-highlight-color: #111 !important}
+
+/* These change the selectors on the plugins page */
+.addon-control.state.no-auto-hide {background-color: #383838 !important}
+.addon-control.state.no-auto-hide:hover {background-color: #444 !important}
+.addon-control.state.no-auto-hide[open="true"] {background-color: #303030 !important}
+
+.menulist-label-box {background: transparent !important}
 
 /* Should be self explanatory... but this is the alert message that goes over the addons list */
-.alert {
-	background-color: rgba(255,255,255,0.10) !important ;
+.alert, .message-bar {
+	border: 1px solid #444 !important;
+	background-color: rgba(255,255,255,0.10) !important;
 	color: #Fff !important}
 
 /* Description of the addons/themes */
-.detail-view-container {color: #aaa !important}
+.detail-view-container {color: #ccc !important}
 
 #detail-contributions {
 	background-color: rgba(0,0,0,0.15) !important; 
@@ -867,12 +879,6 @@ treecol:hover {background-color: #666 !important}
 #detail-rows .detail-row-label {color: #fff !important}
 
 #detail-contrib-description {color: #aaa !important}
-
-#addon-options {
-	border: 1px solid #aaa !important;
-	border-radius: 15px !important;
-	background-color: #555 !important;
-	color: #ddd !important}
 }
 
 /* This is still in the addons page, it's the "discover" page thing */
@@ -884,7 +890,12 @@ treecol:hover {background-color: #666 !important}
 
 #react-view {background-color: #202020 !important}
 
-.addon.theme, .addon.extension, .addon.theme {background-color: #303030 !important}
+.addon.theme, .addon.extension, .addon.theme {background-color: #444 !important}
+
+.heading a {color: #09f !important}
+.heading a:visited {color: #0070aa !important}
+.heading a:hover {color: #0ff !important}
+.heading a:active {color: #0050dd !important}
 }
 
 /*------ HEALTHREPORT PAGE (about:healthreport) ------*/
