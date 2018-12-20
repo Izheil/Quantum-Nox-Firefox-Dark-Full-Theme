@@ -7,7 +7,6 @@
   <li>Tabs bar below bookmarks or URL box (<b>disabled by default</b>).</li>
   <li>Give tabs a rounded corners appearance (<b>disabled by default</b>). </li>
   <li>Tab close button always visible.</li>
-  <li>Multirow bookmarks (<b>disabled by default</b>).</li>
   <li>Bookmark toolbar auto-hide (<b>disabled by default</b>).</li>
   <li>Delete the following commands from context menus:
   	<ul>
@@ -44,9 +43,6 @@
 
 <p>Rounded tabs:</p>
   <img src="https://i.imgur.com/qoG4Iiy.png">
-  
-<p>Multirow tabs:</p>
-  <img src="https://i.imgur.com/3LbvuMU.png">
 
 <h4>You can turn the features you want on or off changing the commented lines on the CSS file (To change them you just have to open the userchrome.css with notepad or any code editor, and encase between "/*" and "*/" (without the quotation marks) the lines you don't want to take effect). Of course, if you think that you are NEVER going to use certain feature, you can always delete the specific lines you don't want without any other side-effect.</h4>
 

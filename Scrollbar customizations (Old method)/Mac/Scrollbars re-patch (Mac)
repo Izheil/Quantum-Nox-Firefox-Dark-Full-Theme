@@ -1,0 +1,2 @@
+#!/bin/sh
+sudo sh -c 'echo "override chrome://global/skin/scrollbars.css scrollbars.css" > /Applications/Firefox.app/content/resources/chrome.manifest'

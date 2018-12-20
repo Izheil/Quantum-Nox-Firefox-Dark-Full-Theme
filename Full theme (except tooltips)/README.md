@@ -12,8 +12,6 @@
   <li>Tabs bar below bookmarks or URL box (<b>Disabled by default</b>).</li>
   <li>Give tabs a rounded corners appearance (<b>Disabled by default</b>). </li>
   <li>Tab close button always visible .</li>
-  <li>Multirow tabs. There is currently a problem with tab draggability when having more than 1 row of tabs open, so you won't be able to reorder them.</li>
-  <li>Multirow bookmarks (<b>Disabled by default</b>).</li>
   <li>Delete the following commands from context menus:
   	<ul>
   	  <li>Reload tab (<b>Not deleted by default</b>).</li>
@@ -45,9 +43,6 @@
 <p>Rounded tabs:</p>
   <img src="https://i.imgur.com/qoG4Iiy.png">
 
-<p>Multirow tabs:</p>
-  <img src="https://i.imgur.com/3LbvuMU.png">
-
 <h4>You can turn the features you want on or off changing the commented lines on the CSS file (To change them you just have to open the userchrome.css with notepad or any code editor, and encase between "/*" and "*/" (without the quotation marks) the lines you don't want to take effect). Of course, if you think that you are NEVER going to use certain feature, you can always delete the specific lines you don't want without any other side-effect.</h4>
 
 <h2>Installation</h2>
@@ -56,10 +51,10 @@
 <h4>Step by step:</h4>
 <ul>
   <li>Type <code>about:support</code> in your URL bar, then go to that page.</li>
-  <li>Click the "open folder" button inside the "profile folder" section.</li>
+  <li>Click the "open folder" button inside the "root folder" section.</li>
   <li>Create a folder named "chrome" in your profile folder if it doesn't exist yet.</li>
   <li>Place "usercontent.css" and "userchrome.css" inside the "chrome" folder.</li>
-  <li><b>Optional</b>: Follow the method described to change the scrollbars to change the tooltip using the "tooltip.uc.js" file inside the "Scrollbars & tooltips dark theme/profile/" folder in this repository.</li>
+  <li><b>Optional</b>: Follow the method described to change the scrollbars to change the tooltip using the "tooltip.uc.js" file inside the "Tooltips & Scrollbar customizations/chrome/" folder in this repository.</li>
   <li><b>Optional</b>: Edit userchrome.css to change any style you aren't fully convinced with (or to give a different style to the unread tabs, etc...).</li>
   <li><b>Optional</b>: Edit userchrome.css to delete (or comment out) any function you aren't going to use or don't want.</li>
   <li><b>Optional</b>: If you want a dark version of either of <a href="https://addons.mozilla.org/es/firefox/addon/ublock-origin/">Ublock Origin</a>, <a href="https://addons.mozilla.org/es/firefox/addon/video-downloadhelper/">Video Download Helper</a>, <a href="https://addons.mozilla.org/es/firefox/addon/flash-video-downloader/">Flash Video Downloader</a>, <a href="https://addons.mozilla.org/es/firefox/addon/tab-session-manager/">Tab session manager</a>, <a href="https://addons.mozilla.org/es/firefox/addon/undo-closed-tabs-revived/">Undo closed tabs button</a>, <a href="https://addons.mozilla.org/es/firefox/addon/s3download-statusbar/">Download Manager (S3)</a>, <a href="https://addons.mozilla.org/es/firefox/addon/privacy-badger17/">Privacy badger</a>, <a href="https://addons.mozilla.org/es/firefox/addon/noscript/">Noscript</a>, <a href="https://addons.mozilla.org/es/firefox/addon/lastpass-password-manager/">LastPass password manager</a>, <a href="https://addons.mozilla.org/en-US/firefox/addon/window-resize/">Windows resize</a> or <a href="https://addons.mozilla.org/es/firefox/addon/s3google-translator/">S3 Translator</a> extensions, copy "addons.css" to your chrome folder, and edit the UUIDs of the extensions there.</li>
@@ -92,7 +87,7 @@ It will, although, not turn dark the extension popups you may have. <p>
 <img src="https://i.imgur.com/a41WkP8.png" title="Dark preferences page" />
 <img src="https://i.imgur.com/WbhhkKa.png" title="Dark addons page" />
 
-<p>It will also turn dark the <a href="https://addons.mozilla.org">Mozilla addons page</a>, both the old and the new, the file explorer inside firefox, and the "view source of page" page.</p>
+<p>It will also turn dark the <a href="https://addons.mozilla.org">Mozilla addons page</a>, both the old and the new, the file explorer inside firefox, and the "view source of page" page, as well as the default firefox scrollbars.</p>
 
 <h2>The chrome folder</h2>
 

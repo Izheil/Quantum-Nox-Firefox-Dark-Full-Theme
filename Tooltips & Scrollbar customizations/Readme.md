@@ -18,7 +18,7 @@
 <p>You can edit the scrollbars appearance changing the CSS rules inside the <b>scrollbar.as.css</b> file.</p>
   
 <h2>Installation</h2>
-<p>You can find a video tutorial <a href="https://youtu.be/FHV1-LbX_Vo">here</a>.</p>
+<p>You can find a video tutorial <a href="https://youtu.be/FHV1-LbX_Vo">here</a>. The folder names will be a bit different, but it should be understable.</p>
 
 <p>First you need to enable the use of javascript files from your profile folder. All you need to do is to copy <code>userChrome.css</code> and <code>userChrome.xml</code> to your <a href="https://github.com/Izheil/Firefox-57-full-dark-theme-with-scrollbars/blob/master/Scrollbars%20&%20tooltips%20dark%20theme/Readme.md#the-chrome-folder">chrome folder</a>.This is the same folder where you would place <code>userchrome.css</code> and <code>usercontent.css</code>.</p>
 
