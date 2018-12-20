@@ -111,7 +111,7 @@ This problem doesn't happen if you use a code editor such as notepad++, atom, su
 <p>If instead you just <b>don't want scrollbars to show at all but keep scrollability</b>, you can do this through <code>usercontent.css</code> setting the variable <code>--scrollbars-width</code> to none (should be the first rule on the <code>:root</code> section (almost at the start)).</p>
 <p>If you aren't using the usercontent provided here for some reason, you can always just add this code to your self-created <code>usercontent.css</code>:</p>
 <code>*|* {scrollbar-width: none !important}</code>
-
+<br />
 <p>The old method folder shouldn't be used, since it requires you to re-patch the scrollbars with each firefox update, so I'm only keeping it in case the other new method stops working in the future.</b>
 
 <h2>FAQ:</h2>

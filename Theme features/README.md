@@ -48,7 +48,7 @@
 
 <h2>Installation</h2>
 
-<p>All you need to do is place the userChrome.css file inside <a href="https://github.com/Izheil/Firefox-57-full-dark-theme-with-scrollbars/tree/master/Theme%20features#the-chrome-folder">the chrome folder</a> of your firefox profile.</p>
+<p>All you need to do is place the userChrome.css file inside <a href="https://github.com/Izheil/Quantum-Nox-Firefox-Dark-Full-Theme/tree/master/Theme%20features#the-chrome-folder">the chrome folder</a> of your firefox profile.</p>
 
 <h4>Step by step:</h4>
 <ul>
