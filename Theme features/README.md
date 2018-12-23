@@ -11,12 +11,20 @@
   <li>Delete the following commands from context menus:
   	<ul>
   	  <li>Reload tab (<b>not deleted by default</b>).</li>
+      <li>Mute tab (<b>not deleted by default</b>).</li>
+      <li>Mute selected tabs (<b>not deleted by default</b>).</li>
+      <li>Select all tabs (only the active tab context menu, not the title context menu one).</li>
   	  <li>Pin tab (<b>not deleted by default</b>).</li>
+      <li>Pin selected tabs (<b>not deleted by default</b>).</li>
   	  <li>Duplicate tab (<b>not deleted by default</b>).</li>
-  	  <li>Open tab in new window (<b>not deleted by default</b>).</li>
+  	  <li>Open tab in new window.</li>
+      <li>Send tab to device (<b>not deleted by default</b>).</li>
       <li>Separators left by send tab to device on tabs context menu (<b>not deleted by default</b>).</li>
-  	  <li>Reload all tabs (would be terrible if you had many tabs open and misclicked).</li>
-  	  <li>Bookmark all tabs.</li>
+  	  <li>Reload selected tabs (only the active tab context menu, not the title context menu one).</li>
+      <li>Bookmark tab.</li>
+  	  <li>Bookmark selected tabs.</li>
+      <li>Reopen tab in container (<b>not deleted by default</b>).</li>
+      <li>Move tab.</li>
   	  <li>Close all tabs to the right.</li>
   	  <li>Close all other tabs.</li>
   	  <li>Close tab (not deleted by default)</li>

@@ -13,31 +13,44 @@
   <li>Give tabs a rounded corners appearance (<b>Disabled by default</b>). </li>
   <li>Tab close button always visible .</li>
   <li>Delete the following commands from context menus:
-  	<ul>
-  	  <li>Reload tab (<b>Not deleted by default</b>).</li>
-  	  <li>Pin tab (<b>Not deleted by default</b>).</li>
-  	  <li>Duplicate tab (<b>Not deleted by default</b>).</li>
-  	  <li>Open tab in new window (<b>Not deleted by default</b>).</li>
-  	  <li>Reload all tabs (Would be terrible if you had many tabs open and misclicked).</li>
-  	  <li>Bookmark all tabs.</li>
-  	  <li>Close all tabs to the right (<b>Not deleted by default</b>).</li>
-  	  <li>Close all other tabs.</li>
-  	  <li>Close tab (You can close them using the close button)</li>
-  	  <li>Navigation buttons (Back, forward and reload buttons) & it's separator (Since you can do the same with the keyboard or other buttons).</li>
-  	  <li>Send image... (Misclicking this when saving an image can happen easily, and waiting for outlook to open to close it gets annoying).</li>
-  	  <li>Set image as desktop background...</li>
-  	  <li>Bookmark this page (You can do the same with the star icon on the URL bar, or creating the bookmark manually with more control of where it's going to be placed).</li>
-  	  <li>Send page...(Same as with send image, if you wanted to send something, you'd open your prefered mail yourself).</li>
-  	  <li>Bookmark this link (Same as bookmark this page).</li>
-  	  <li>Send link... (Same as send page).</li>
-  	  <li>Open link in new tab (<b>Not deleted by default</b>, but you can the same middle mouse clicking, or holding ctrl while clicking a link).</li>
-  	  <li>Open link in a new window.</li>
-  	  <li>Open link in a private window.</li>
-  	  <li>Take a screenshot and its separator (Since you can already access it through the 3 dots button on the URL bar).</li>
-  	  <li>Send tab to device and its separators.</li>
-  	  <li>Send page to device and its seaparator.</li>
-  	  <li>Send link to device and its separator.</li>
-  	</ul></li>
+    <ul>
+      <li>Reload tab (<b>not deleted by default</b>).</li>
+      <li>Mute tab (<b>not deleted by default</b>).</li>
+      <li>Mute selected tabs (<b>not deleted by default</b>).</li>
+      <li>Select all tabs (only the active tab context menu, not the title context menu one).</li>
+      <li>Pin tab (<b>not deleted by default</b>).</li>
+      <li>Pin selected tabs (<b>not deleted by default</b>).</li>
+      <li>Duplicate tab (<b>not deleted by default</b>).</li>
+      <li>Open tab in new window.</li>
+      <li>Send tab to device (<b>not deleted by default</b>).</li>
+      <li>Separators left by send tab to device on tabs context menu (<b>not deleted by default</b>).</li>
+      <li>Reload selected tabs (only the active tab context menu, not the title context menu one).</li>
+      <li>Bookmark tab.</li>
+      <li>Bookmark selected tabs.</li>
+      <li>Reopen tab in container (<b>not deleted by default</b>).</li>
+      <li>Move tab.</li>
+      <li>Close all tabs to the right.</li>
+      <li>Close all other tabs.</li>
+      <li>Close tab (not deleted by default)</li>
+      <li>Open bookmarked page in a new window (not deleted by default).</li>
+      <li>Open bookmarked page in a new private window (not deleted by default).</li>
+      <li>Open all bookmarked pages in the bookmark folder (<b>deleted by default</b>).</li>
+      <li>Navigation buttons (Back, forward and reload buttons) & it's separator (since you can do the same with the keyboard or other buttons).</li>
+      <li>Send image... (misclicking this when saving an image can happen easily, and waiting for outlook to open to close it gets annoying).</li>
+      <li>Set image as desktop background...</li>
+      <li>Bookmark this page (you can do the same with the star icon on the URL bar, or creating the bookmark manually with more control of where it's going to be placed).</li>
+      <li>Send page...(same as with send image, if you wanted to send something, you'd open your prefered mail yourself).</li>
+      <li>Bookmark this link (same as bookmark this page).</li>
+      <li>Send link... (same as send image).</li>
+      <li>Search highlighted word on your default search engine (same as send image).</li>
+      <li>Open link in new tab (not deleted by default, but you can the same middle mouse clicking, or holding ctrl while clicking a link).</li>
+      <li>Open link in a new window.</li>
+      <li>Open link in a private window.</li>
+      <li>Take a screenshot and its separator (only deleted the separator by default).</li>
+      <li>Send tab to device and its separators.</li>
+      <li>Send page to device and its separator.</li>
+      <li>Send link to device and its separator.</li>
+    </ul></li>
 </ul>
 
 <p>Rounded tabs:</p>

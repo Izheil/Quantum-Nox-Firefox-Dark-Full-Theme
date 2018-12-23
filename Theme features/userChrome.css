@@ -1,5 +1,5 @@
 /* You can find an updated version here: https://github.com/Izheil/Firefox-57-full-dark-theme-with-scrollbars */
-/* Last updated: 30/11/2018 */
+/* Last updated: 23/12/2018 */
 
 /* DO NOT DELETE THIS LINE */
 @namespace url("http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul");
@@ -101,26 +101,57 @@ part of the same rule */
 /* Reload tab *//*
 #context_reloadTab,
 
+/* Mute tab *//*
+#context_toggleMuteTab,
+
+/* Mute selected tabs *//*
+#context_toggleMuteSelectedTabs,
+
+/* Select all tabs */
+#context_selectAllTabs,
+
+/* Select all tabs (title bar context menu) *//*
+#toolbar-context-selectAllTabs
+
 /* Pin tab *//*
 #context_pinTab,
+
+/* Pin selected tabs *//*
+#context_pinSelectedTabs,
 
 /* Duplicate tab *//*
 #context_duplicateTab,
 
-/* Open tab in new window *//*
+/* Open tab in new window */
 #context_openTabInWindow,
 
 /* Separator from send tab to device *//*
 #context_sendTabToDevice_separator,
 
-/* Separator after the previous command */
-#tabContextMenu menuseparator:nth-child(12),
+/* Separator after the previous command *//*
+#tabContextMenu menuseparator:nth-child(17),
 
-/* Reload all tabs */
-#context_reloadAllTabs, #toolbar-context-reloadAllTabs,
+/* Reload selected tabs */
+#context_reloadSelectedTabs, 
 
-/* Bookmark all tabs */
-#context_bookmarkAllTabs, #toolbar-context-bookmarkAllTabs,
+/* Reload selected tabs (title bar context menu) *//*
+#toolbar-context-reloadSelectedTabs,*/
+#toolbar-context-reloadSelectedTab,
+
+/* Bookmark tab */
+#context_bookmarkTab,
+
+/* Bookmark selected tabs */
+#context_bookmarkSelectedTabs, 
+
+/* Bookmark selected tabs (title bar context menu) */
+#toolbar-context-bookmarkSelectedTab,
+
+/* Reopen in container *//*
+#context_reopenInContainer,
+
+/* Move tab */
+#context_moveTabOptions,
 
 /* Close all tabs to the right */
 #context_closeTabsToTheEnd,
