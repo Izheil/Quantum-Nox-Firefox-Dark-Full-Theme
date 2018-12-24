@@ -1,6 +1,6 @@
 /* You can find an updated version here: https://github.com/Izheil/Quantum-Nox-Firefox-Dark-Full-Theme */
 /* Made by Izheil */
-/* Last updated: 20/12/2018 */
+/* Last updated: 24/12/2018 */
 
 /* This part imports the Addons file if there is one, so that you don't have to edit the dynamic URL
 from the addons rules every time we update anything here */
@@ -767,6 +767,9 @@ it's updated and if its the default browser) */
 /* Search Panel, Dialog boxes and inputs in general */
 #engineList, .dialogBox > .groupbox-title, #browserHomePage,
 #searchInput {background-color: #303030 !important}
+
+.dialogTitleBar {background: #444 !important; border-bottom: 1px solid #555 !important}
+.dialogTitleBar label {color: #fff !important}
 }
 
 /*------ SETTINGS PAGE (about:preferences) ------*/
