@@ -20,6 +20,17 @@
 <h2>Installation</h2>
 <p>You can find a video tutorial <a href="https://youtu.be/FHV1-LbX_Vo">here</a>. The folder names will be a bit different, but it should be understable.</p>
 
+<h4>Short version:</h4>
+<ul>
+  <li>Copy the contents of the "Chrome" folder found in this repository to the <a href="https://github.com/Izheil/Quantum-Nox-Firefox-Dark-Full-Theme/tree/master/Tooltips%20%26%20Scrollbar%20customizations#the-chrome-folder">the chrome folder</a> inside your profile folder (except the <code>checkboxes.as.css</code> file if you have an OS that already colors checkboxes dark).</li>
+  <li>Open the <code>about:profiles</code> URL with firefox, and open the local profile folder there.</li>
+  <li>Open the "startupcache" folder and delete everything there.</li>
+  <li><b>Optional</b>: You can try the other scrollbar types inside the "alternative scrollbars" folder.</li>
+  <li><b>Optional</b>: Use the <code>tooltips.as.css</code> file to change the default color of the tooltips to fit the theme (or any of the variants on the "alternative tooltips", such as the semi-transparent background one).</li>
+  <li><b>Optional</b>: If you prefer scrollable multi-rows, change the multirows file (<b>MultiRowTabLiteforFx.uc.js</b>) for the scrollable version (<b><code>MultiRowTab-scrollable.uc.js</code></b>) inside the "Multirow scrollable versions" folder.</li>
+</ul>
+
+<h4>Detailed explanation</h4>
 <p>First you need to enable the use of javascript files from your profile folder. All you need to do is to copy <code>userChrome.css</code> and <code>userChrome.xml</code> to your <a href="https://github.com/Izheil/Quantum-Nox-Firefox-Dark-Full-Theme/tree/master/Tooltips%20%26%20Scrollbar%20customizations#the-chrome-folder">chrome folder</a>.This is the same folder where you would place <code>userchrome.css</code> and <code>usercontent.css</code>.</p>
 
 <blockquote><b>For those that are only interested on the scrollbars or multirow tabs but not the dark background, or want to use their own <code>userChrome.css</code>, this is the only rule you need to add to it (which you have to place in the <a href="https://github.com/Izheil/Quantum-Nox-Firefox-Dark-Full-Theme/tree/master/Tooltips%20%26%20Scrollbar%20customizations#the-chrome-folder">chrome folder</a>, like you would even if you used the userchrome from this repository):</b>
@@ -43,16 +54,6 @@ In either case, remember to also place <code>userchrome.xml</code> into your <a 
 <blockquote><b>Optional</b>: If you are going to use multi-row tabs, you can choose the scrollable version inside the "Multirow scrollable versions" folder. The non-scrollable (the default) one will have the height of 1 row of tabs at first, and will keep growing to adapt to how many rows of tabs you have open (since it won't scroll, the height of the tabs box will keep growing as you open more rows of tabs, and will decrease as you close them), while the scrollable one will grow up to a max of the set number of rows (3 by default), and then will show a scrollbar to scroll around them. To use the scrollable version, you will have to delete the other multirow file and move the scrollable version to your <a href="https://github.com/Izheil/Quantum-Nox-Firefox-Dark-Full-Theme/tree/master/Tooltips%20%26%20Scrollbar%20customizations#the-chrome-folder">chrome folder</a> (only one file of each kind should be used at a time).</blockquote>
 
 <p>If you have done everything right, you should see the custom scrollbars next time you open firefox (or after you restart it)</p>
-
-<h4>Short version:</h4>
-<ul>
-  <li>Copy the contents of the "Chrome" folder found in this repository to the <a href="https://github.com/Izheil/Quantum-Nox-Firefox-Dark-Full-Theme/tree/master/Tooltips%20%26%20Scrollbar%20customizations#the-chrome-folder">the chrome folder</a> inside your profile folder (except the <code>checkboxes.as.css</code> file if you have an OS that already colors checkboxes dark).</li>
-  <li>Open the <code>about:profiles</code> URL with firefox, and open the local profile folder there.</li>
-  <li>Open the "startupcache" folder and delete everything there.</li>
-  <li><b>Optional</b>: You can try the other scrollbar types inside the "alternative scrollbars" folder.</li>
-  <li><b>Optional</b>: Use the <code>tooltips.as.css</code> file to change the default color of the tooltips to fit the theme (or any of the variants on the "alternative tooltips", such as the semi-transparent background one).</li>
-  <li><b>Optional</b>: If you prefer scrollable multi-rows, change the multirows file (<b>MultiRowTabLiteforFx.uc.js</b>) for the scrollable version (<b><code>MultiRowTab-scrollable.uc.js</code></b>) inside the "Multirow scrollable versions" folder.</li>
-</ul>
 
 <h3>The chrome folder</h3>
 
