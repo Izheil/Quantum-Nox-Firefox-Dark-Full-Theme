@@ -1,6 +1,6 @@
 /* You can find an updated version here: https://github.com/Izheil/Quantum-Nox-Firefox-Dark-Full-Theme */
 /* Made by Izheil */
-/* Last updated: 30/11/2018 */
+/* Last updated: 25/12/2018 */
 
 /*------ HOW TO MAKE THE ADDON THEMES WORK ------*/
 /* To use this part of the code, you will have to find the dynamic UUID of your extensions, and replace it where the 
@@ -64,7 +64,8 @@ url(moz-extension://TYPE-UUID-OF-UBLOCK-ORIGIN-HERE/1p-filters.html),
 url(moz-extension://TYPE-UUID-OF-UBLOCK-ORIGIN-HERE/dyna-rules.html),
 url(moz-extension://TYPE-UUID-OF-UBLOCK-ORIGIN-HERE/whitelist.html),
 url(moz-extension://TYPE-UUID-OF-UBLOCK-ORIGIN-HERE/about.html),
-url(moz-extension://TYPE-UUID-OF-UBLOCK-ORIGIN-HERE/advanced-settings.html){
+url(moz-extension://TYPE-UUID-OF-UBLOCK-ORIGIN-HERE/advanced-settings.html),
+url(moz-extension://TYPE-UUID-OF-UBLOCK-ORIGIN-HERE/shortcuts.html){
 body, html {
 	background: #333 !important;
 	color: #ccc !important;
@@ -145,6 +146,7 @@ input[type=number] {
 
 /*------ UBLOCK ORIGIN MENU POPUP ------*/
 @-moz-document url-prefix(moz-extension://TYPE-UUID-OF-UBLOCK-ORIGIN-HERE/popup.html) {
+body {background: #222 !important}
 
 #appinfo {background: #111 !important}
 
