@@ -1,5 +1,5 @@
 // ==UserScript==
-// @name           Bookmark-toggle.uc.js
+// @name           Bookmarks-toggle.uc.js
 // @namespace      http://https://github.com/Izheil/Quantum-Nox-Firefox-Dark-Full-Theme
 // @description    Bookmarks toolbar toggle on keydown
 // @include        main
