@@ -29,10 +29,10 @@ without this change) */
 
   /* Url and search bars */
   --url-and-searchbar-color: #FFF;
-  --urlbar-separator-color: #5F6670}
+  --urlbar-separator-color: #5F6670;
+  --lwt-toolbar-field-background-color: rgb(71,71,73) !important}
 
 #urlbar, .searchbar-textbox {
-  background-color: rgb(71, 71, 73) !important;
   color: #ccc !important}
 
 /* These rules will modify most highlight (background on hover) colors inside Firefox (except sidebar items, which are 
