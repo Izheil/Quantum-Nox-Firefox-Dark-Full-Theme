@@ -10,15 +10,14 @@ basic css or <a href="https://www.w3schools.com/colors/colors_picker.asp">color 
 <br />
 This problem doesn't happen if you use a code editor such as notepad++, atom, sublime text...</h4>
 
-<h3>Last update: <b>24/12/2018</b></h3>
+<h3>Last update: <b>27/12/2018</b></h3>
 <p>Files updated:</p>
 <ul>
-  <li><b>addons.css</b>: Fixed some missing elements and tabs on Ublock origin theme.</li>
+  <li><b>Userchrome.css</b>: Now you can add a glow effect under icons on tabs/bookmark items (only the ones under tabs enabled by default) for better visibility of dark icons.</li>
 </ul>
-<h3>Pre-Last update: <b>20/12/2018</b></h3>
+<h3>Pre-Last update: <b>24/12/2018</b></h3>
 <ul>
-  <li><b>Usercontent.css</b>: Themed some missing title bar on dialog boxes.</li>
-  <li><b>Userchrome.css</b>: Updated the context menu commands that you can delete.</li>
+  <li><b>addons.css</b>: Fixed some missing elements and tabs on Ublock origin theme.</li>
 </ul>
 
 <code>

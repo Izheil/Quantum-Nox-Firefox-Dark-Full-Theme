@@ -1,6 +1,6 @@
 /* You can find an updated version here: https://github.com/Izheil/Firefox-57-full-dark-theme-with-scrollbars */
 /* Made by Izheil */
-/* Last updated: 20/09/2018 */
+/* Last updated: 27/12/2018 */
 
 /* DO NOT DELETE THIS LINE */
 @namespace url("http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul");
@@ -113,6 +113,15 @@ browser[type="content-primary"], tabbrowser tabpanels, #appcontent > #content {
 
 /* Tabs border color */
 .tabbrowser-tab {border-right: 1px solid rgba(255,255,255, .15) !important}
+
+/* Glow effect over the tabs site icon (for dark icons visibility) */
+/* You can add the selectors .bookmark-item:not([container=true]) .menu-iconic-icon for 
+icons inside the dropdown menus as well, and toolbarbutton.bookmark-item:not([container=true]) .toolbarbutton-icon
+for icons on the bookmarks bar under the url bar. Just make sure to put commas after each selector */
+.tab-icon-image {
+  background-color: rgba(255,255,255,0.3) !important; 
+  box-shadow: 0 0 8px 0 #aaa !important;
+  border-radius: 8px}
 
 /* END OF GENERAL COLORS */
 
