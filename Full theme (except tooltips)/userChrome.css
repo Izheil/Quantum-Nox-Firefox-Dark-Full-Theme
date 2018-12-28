@@ -122,9 +122,7 @@ browser[type="content-primary"], tabbrowser tabpanels, #appcontent > #content {
 icons inside the dropdown menus as well, and toolbarbutton.bookmark-item:not([container=true]) .toolbarbutton-icon
 for icons on the bookmarks bar under the url bar. Just make sure to put commas after each selector. */
 .tab-icon-image {
-  background-color: rgba(255,255,255,0.3) !important; 
-  box-shadow: 0 0 8px 0 #aaa !important;
-  border-radius: 8px}
+  filter: drop-shadow(0 0 3px #fff)}
 
 /* END OF GENERAL COLORS */
 
