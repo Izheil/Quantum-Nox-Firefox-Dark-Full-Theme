@@ -14,6 +14,7 @@ This problem doesn't happen if you use a code editor such as notepad++, atom, su
 <p>Files updated:</p>
 <ul>
   <li><b>Userchrome.css</b>: Now you can add a glow effect under icons on tabs/bookmark items (only the ones under tabs enabled by default) for better visibility of dark icons.</li>
+  <li><b>Usercontent.css</b>: Fixed some missing elements on mozilla support page.</li>
   <li><b>Bookmarks-toggle.uc.js</b>: Experimental feature that lets you toggle the bookmarks toolbar with your own designated keypress (or combination of them). Included inside <code>Tooltips & Scrollbar customizations/Other experimental features</code> folder.</li>
 </ul>
 <h3>Pre-Last update: <b>24/12/2018</b></h3>

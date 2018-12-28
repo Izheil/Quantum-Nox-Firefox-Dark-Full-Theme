@@ -1,6 +1,6 @@
 /* You can find an updated version here: https://github.com/Izheil/Quantum-Nox-Firefox-Dark-Full-Theme */
 /* Made by Izheil */
-/* Last updated: 24/12/2018 */
+/* Last updated: 28/12/2018 */
 
 /* This part imports the Addons file if there is one, so that you don't have to edit the dynamic URL
 from the addons rules every time we update anything here */
@@ -1075,6 +1075,7 @@ form input, .show-password-label {
 /*------ MOZILLA SUPPORT PAGE (https://support.mozilla.org) ------*/
 @-moz-document url-prefix(https://support.mozilla.org/) {
 
+
 html, body {background-color: #202020 !important}
 
 h1, h2 {color: #fff !important}
@@ -1095,7 +1096,10 @@ body > header {
 	border-bottom: 1px solid #aaa !important;
 	color: #ccc !important}
 
-.logo, .footer-logo {filter: invert(100%) !important}
+a.btn, a.volunteer-button {color: #fff !important}
+
+.logo {filter: invert(100%) !important}
+.footer-logo {fill: #ddd !important}
 
 #aux-nav li a, .question-meta li, .asked-on, .asked-by,
 .footnote, #selected-product, .inner-wrap .legend li, #tagged,
@@ -1125,10 +1129,21 @@ div {color: #ccc !important}
 .sidebar-nav > li > span, .sidebar-nav .sidebar-nav > li > span, 
 .sidebar-nav .sidebar-nav > li > a, .sidebar-nav .sidebox, .sidebar-nav > li > a,
 #email-subscribe-kbox, #showfor-panel,
-#register-form {background-color: #444 !important; color: #ccc !important}
+#register-form, .subtopics > li > a {background-color: #444 !important; color: #ccc !important}
 .sidebar-nav > li > span:hover, .sidebar-nav .sidebar-nav > li > a:hover {color: var(--in-content-link-color) !important}
 
 .button-wrapper .btn, .button-wrapper .btn {color: #fff !important}
+
+.sidebar-nav a {border-color: #666 !important}
+
+.cf::before, #document-list > ul > li > a::before, .submit-button {filter: invert(50%)}
+
+.topic-list, #search-results-list .content-box {
+	background-color: #444 !important;
+	border: 1px dotted #666 !important;
+	padding: 10px !important}
+
+.result a, .result a:hover
 
 .sidebox.condensed {border-color: #373737 !important}
 
@@ -1139,7 +1154,7 @@ div {color: #ccc !important}
 
 .feature-box .inner-wrap {border: none !important}
 
-.sidebar-nav.sidebar-folding > li.selected > span, .feature-box, .sidebar-nav .selected a {border-color: #373737 !important}
+.sidebar-nav.sidebar-folding > li.selected > span, .feature-box, .sidebar-nav .selected:not(.subtopic) a {border-color: #822 !important}
 .sidebar-nav.sidebar-folding > li.selected > span::before, .sidebar-nav .selected a::before {filter: brightness(25%) !important}
 
 .sidebar-nav a:hover {background-color: #404040 !important; color: var(--in-content-link-color) !important}
@@ -1151,8 +1166,15 @@ textarea {
 	background: #333 !important; 
 	color: #ccc !important}
 
+#search-q {border: 2px solid #333 !important}
+
+.simple-search-form .searchbox {
+	background: #444 !important}
+
+.simple-search-form input {color: #ccc !important}
+
 #email-subscribe-kbox input[type="submit"], #retrieve-username input[type="submit"], 
-#pw-reset input[type="submit"], .btn, span.button {
+#pw-reset input[type="submit"], .btn, span.button, .volunteer-button {
 	background: linear-gradient(#2050AA, #203050) !important;
     color: #FFF !important;
     padding: 0.5em;
@@ -1160,7 +1182,7 @@ textarea {
 	box-shadow: none !important}
 
 #email-subscribe-kbox input[type="submit"]:hover, #retrieve-username input[type="submit"]:hover, 
-#pw-reset input[type="submit"]:hover, .btn:hover {
+#pw-reset input[type="submit"]:hover, .btn:hover, .volunteer-button:hover {
 	background: linear-gradient(#203050, #2050AA) !important;
     color: #0FF !important}
 
