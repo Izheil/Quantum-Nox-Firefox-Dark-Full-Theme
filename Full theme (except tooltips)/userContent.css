@@ -1,6 +1,6 @@
 /* You can find an updated version here: https://github.com/Izheil/Quantum-Nox-Firefox-Dark-Full-Theme */
 /* Made by Izheil */
-/* Last updated: 28/12/2018 */
+/* Last updated: 06/01/2019 */
 
 /* This part imports the Addons file if there is one, so that you don't have to edit the dynamic URL
 from the addons rules every time we update anything here */
@@ -381,10 +381,14 @@ input[type=text] {color: #aaa !important}
 .edit-menu button.icon.icon-edit:hover, .edit-menu button.icon.icon-dismiss:hover {
 	background-color: #777 !important}
 
-.section-title span, .title span, .card-details p, .form-input-container label span {color: #ccc !important}
+.section-title span, .title span, .card-details p, .form-input-container label span,
+.modal-message span, .modal-message p {color: #ccc !important}
+
+.modal-message .icon {fill: #fff !important}
+
 .card-details h4 {color: #ddd}
 
-.actions {border-top: 1px solid #666 !important}
+.actions {border-top: none !important}
 
 .form-wrapper input:hover {border: 1px solid #0084ff !important}
 
