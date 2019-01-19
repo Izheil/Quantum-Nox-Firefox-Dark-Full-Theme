@@ -1,7 +1,7 @@
 <h1>Theme colors + added functions</h1>
 <p>Following the method described here, you will be able to give dark colors to firefox as shown in the following image:</p>
 
-<img src="https://i.imgur.com/0JYmgPo.png" title="Dark firefox overall UI" />
+<img src="https://i.imgur.com/zNKhEV6.png" title="Dark firefox UI with custom background" />
 
 <img src="https://i.imgur.com/m7TGyqz.png" title="Dark addons" />
 
@@ -97,8 +97,8 @@ It will, although, not turn dark the extension popups you may have. <p>
 <h2>The userContent.css file</h2>
 
 <p>The usercontent file will turn dark all the <code>about:about</code> pages.</p>
-<img src="https://i.imgur.com/a41WkP8.png" title="Dark preferences page" />
-<img src="https://i.imgur.com/WbhhkKa.png" title="Dark addons page" />
+<img src="https://i.imgur.com/mKWPUSk.png" title="Dark firefox about: pages" />
+<img src="https://i.imgur.com/97ebC1x.png" title="Dark addons page" />
 
 <p>It will also turn dark the <a href="https://addons.mozilla.org">Mozilla addons page</a>, both the old and the new, the file explorer inside firefox, and the "view source of page" page, as well as the default firefox scrollbars.</p>
 

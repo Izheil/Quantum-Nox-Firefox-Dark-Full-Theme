@@ -1,7 +1,7 @@
 <h1>Only the dark theme for firefox</h1>
 <p>Following the method described here, you will be able to give dark colors to firefox as shown in the following picture:</p>
 
-<img src="https://i.imgur.com/0JYmgPo.png" title="Dark firefox overall UI" />
+<img src="https://i.imgur.com/zNKhEV6.png" title="Dark firefox UI with custom background" />
 
 <img src="https://i.imgur.com/m7TGyqz.png" title="Dark addons" />
 
@@ -27,7 +27,7 @@
 <p>You can also change the tab line color to Windows current theme color (You have to change the commented line that is described in line 19 inside userChrome.css), and the background image of your lightweight theme to one of your choice.</p>
 <p>On line 15 inside usercontent.css you can change the default text color of input boxes for those using a dark OS theme that affects the background of these.</p>
 <p>You can also change the background of the <code>about:home</code> and <code>about:newtab</code> pages editting line 19 on userContent.css, and deleting the final "/*", and specifying the route of the image you want to use as background (if it's a link, place it where the "file:///" part is, otherwise, place the path of the file after the "file:///".</p>
-<img src="https://i.imgur.com/IxMK0t5.png">
+<img src="https://i.imgur.com/OhKiBCI.png"></li>
 <p>If you would also like a dark version of either <a href="https://addons.mozilla.org/es/firefox/addon/ublock-origin/">Ublock Origin</a>, <a href="https://addons.mozilla.org/es/firefox/addon/video-downloadhelper/">Video Download Helper</a>, <a href="https://addons.mozilla.org/es/firefox/addon/flash-video-downloader/">Flash Video Downloader</a>, <a href="https://addons.mozilla.org/es/firefox/addon/tab-session-manager/">Tab session manager</a>, <a href="https://addons.mozilla.org/es/firefox/addon/undo-closed-tabs-revived/">Undo closed tabs button</a>, <a href="https://addons.mozilla.org/es/firefox/addon/s3download-statusbar/">Download Manager (S3)</a>, <a href="https://addons.mozilla.org/es/firefox/addon/privacy-badger17/">Privacy badger</a>, <a href="https://addons.mozilla.org/es/firefox/addon/noscript/">Noscript</a>, <a href="https://addons.mozilla.org/es/firefox/addon/lastpass-password-manager/">LastPass password manager</a>, <a href="https://addons.mozilla.org/en-US/firefox/addon/window-resize/">Windows resize</a> or <a href="https://addons.mozilla.org/es/firefox/addon/s3google-translator/">S3 Translator</a>, copy the "addons.css" file in your <a href="https://github.com/Izheil/Quantum-Nox-Firefox-Dark-Full-Theme/tree/master/Theme%20colors#the-chrome-folder">the chrome folder</a> as well. You will also need to edit the "addons.css" file to update the dynamic URLs of the addons you want to theme (further explanations inside the "addons.css" file). Also make sure to delete the comment start slash (/*) from the ending rules (the rules under the line that says ADDON POPUPS) in userchrome.css to change the color of the popup arrows on those extensions that may need it.</p>
 <p>In case that you just want to change the default scrollbars, you can apply just that without the need
 of using the usercontent or userchrome files provided here.</p>
@@ -43,8 +43,8 @@ It will, although, not turn dark the extension popups you may have. <p>
 <h2>The userContent.css file</h2>
 
 <p>The usercontent file will turn dark all the <code>about:about</code> pages.</p>
-<img src="https://i.imgur.com/a41WkP8.png" title="Dark preferences page" />
-<img src="https://i.imgur.com/WbhhkKa.png" title="Dark addons page" />
+<img src="https://i.imgur.com/mKWPUSk.png" title="Dark firefox about: pages" />
+<img src="https://i.imgur.com/97ebC1x.png" title="Dark addons page" />
 
 <h2>The chrome folder</h2>
 <p>The fastest way to find it is to just type <code>about:support</code> on the URL bar of your firefox, and then click the <b>open folder</b> button inside the "profile folder" section. After this, your profile folder will be open.</p>

@@ -40,7 +40,6 @@ This problem doesn't happen if you use a code editor such as notepad++, atom, su
 
 <h3>Main browser UI</h3>
 <img src="https://i.imgur.com/zNKhEV6.png" title="Dark firefox UI with custom background" />
-<img src="https://i.imgur.com/mKWPUSk.png" title="Dark firefox about: pages" />
 
 <p>Depending on if you only want to color dark your Firefox, or want to add some more functionability (like deleting some useless context menu commands, or adding multirow tab support), you will have to use the method described inside one of the 3 main folders of this repository (+ the scrollbars method if you want more customizable scrollbars, the tooltips themed, or multirow tabs):</p>
 
