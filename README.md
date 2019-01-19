@@ -10,17 +10,15 @@ basic css or <a href="https://www.w3schools.com/colors/colors_picker.asp">color 
 <br />
 This problem doesn't happen if you use a code editor such as notepad++, atom, sublime text...</h4>
 
-<h3>Last update: <b>06/01/2019</b></h3>
+<h3>Last update: <b>19/01/2019</b></h3>
 <p>Files updated:</p>
+<ul>
+  <li><b>Userchrome.css</b>: Added more context menu options to delete by default (send video items).</li>
+</ul>
+<h3>Pre-Last update: <b>06/01/2019</b></h3>
 <ul>
   <li><b>Checkboxes.as.css</b>: Fixed some issues on about: pages for checkboxes and select boxes.</li>
   <li><b>Usercontent.css</b>: Fixed some text on the "delete pinned site" popup dialog on about:home/newtab.</li>
-</ul>
-<h3>Pre-Last update: <b>27/12/2018</b></h3>
-<ul>
-  <li><b>Userchrome.css</b>: Now you can add a glow effect under icons on tabs/bookmark items (only the ones under tabs enabled by default) for better visibility of dark icons.</li>
-  <li><b>Usercontent.css</b>: Fixed some missing elements on mozilla support page.</li>
-  <li><b>Bookmarks-toggle.uc.js</b>: Experimental feature that lets you toggle the bookmarks toolbar with your own designated keypress (or combination of them). Included inside <code>Tooltips & Scrollbar customizations/Other experimental features</code> folder.</li>
 </ul>
 
 <code>

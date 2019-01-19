@@ -36,6 +36,9 @@
   	  <li>Set image as desktop background...</li>
   	  <li>Bookmark this page (you can do the same with the star icon on the URL bar, or creating the bookmark manually with more control of where it's going to be placed).</li>
   	  <li>Send page...(same as with send image, if you wanted to send something, you'd open your prefered mail yourself).</li>
+      <li>Send video... (same as with send page).</li>
+      <li>Save video capture (not deleted by default).</li>
+      <li>Frame selector separator (Deleted to avoid double separators).</li>
   	  <li>Bookmark this link (same as bookmark this page).</li>
   	  <li>Send link... (same as send image).</li>
       <li>Search highlighted word on your default search engine (same as send image).</li>

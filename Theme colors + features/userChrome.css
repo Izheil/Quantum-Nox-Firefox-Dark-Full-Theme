@@ -1039,6 +1039,15 @@ part of the same rule */
 /* Send page... */ 
 #context-sendpage,
 
+/* Send video... */
+#context-sendvideo,
+
+/* Save video screenshot *//*
+#context-video-saveimage,
+
+/* Frame selector separator */
+#frame-sep,
+
 /* Bookmark this link */ 
 #context-bookmarklink,
 
