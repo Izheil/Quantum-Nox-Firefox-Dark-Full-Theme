@@ -39,7 +39,8 @@ This problem doesn't happen if you use a code editor such as notepad++, atom, su
 <h2>Installation</h2>
 
 <h3>Main browser UI</h3>
-<img src="https://i.imgur.com/0JYmgPo.png" title="Dark firefox overall UI" />
+<img src="https://i.imgur.com/zNKhEV6.png" title="Dark firefox UI with custom background" />
+<img src="https://i.imgur.com/mKWPUSk.png" title="Dark firefox about: pages" />
 
 <p>Depending on if you only want to color dark your Firefox, or want to add some more functionability (like deleting some useless context menu commands, or adding multirow tab support), you will have to use the method described inside one of the 3 main folders of this repository (+ the scrollbars method if you want more customizable scrollbars, the tooltips themed, or multirow tabs):</p>
 
@@ -61,7 +62,7 @@ This problem doesn't happen if you use a code editor such as notepad++, atom, su
 	  <li>Can change the background image of your lightweight theme to one of your choice on <code>userChrome.css</code> (You have to be using a lightweight theme instead of the default dark theme of Firefox).</li>
 	  <li>Can change the default text color of input boxes for those using a dark OS theme that affects the background of these (You have to change the commented line that is described on line 15 inside <code>usercontent.css</code> to use it)</li>
 	  <li>Can set an image as background for the home page (You have to change the commented line that is described in line 19 inside <code>userContent.css</code>).<br />
-<img src="https://i.imgur.com/IxMK0t5.png"></li>
+<img src="https://i.imgur.com/OhKiBCI.png"></li>
 	  <li>Change the theme of either of the following addons to a dark version (You have to update the UUIDs of the extensions inside "addons.css" for this): 
 	  	<ul>
 	  		<li><a href="https://addons.mozilla.org/es/firefox/addon/ublock-origin/">Ublock Origin</a></li>
