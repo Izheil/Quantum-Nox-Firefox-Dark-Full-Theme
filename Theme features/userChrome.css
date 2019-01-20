@@ -1,5 +1,5 @@
 /* You can find an updated version here: https://github.com/Izheil/Firefox-57-full-dark-theme-with-scrollbars */
-/* Last updated: 19/01/2019 */
+/* Last updated: 20/01/2019 */
 
 /* DO NOT DELETE THIS LINE */
 @namespace url("http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul");
@@ -206,8 +206,8 @@ part of the same rule */
 /* Send link... */ 
 #context-sendlink,
 
-/* Search X on your default search engine and a missing separator */
-#context-searchselect, #frame-sep,
+/* Search X on your default search engine */
+#context-searchselect,
 
 /* Open link in a new tab */
 #context-openlinkintab,

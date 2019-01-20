@@ -1,6 +1,6 @@
 /* You can find an updated version here: https://github.com/Izheil/Quantum-Nox-Firefox-Dark-Full-Theme */
 /* Made by Izheil */
-/* Last updated: 27/12/2018 */
+/* Last updated: 20/01/2019 */
 
 /* DO NOT DELETE THIS LINE */
 @namespace url("http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul");
@@ -1054,8 +1054,8 @@ part of the same rule */
 /* Send link... */ 
 #context-sendlink,
 
-/* Search X on your default search engine and a missing separator*/
-#context-searchselect, #frame-sep,
+/* Search X on your default search engine */
+#context-searchselect, 
 
 /* Open link in a new tab */
 #context-openlinkintab,

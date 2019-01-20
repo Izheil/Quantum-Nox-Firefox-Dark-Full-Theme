@@ -10,15 +10,15 @@ basic css or <a href="https://www.w3schools.com/colors/colors_picker.asp">color 
 <br />
 This problem doesn't happen if you use a code editor such as notepad++, atom, sublime text...</h4>
 
-<h3>Last update: <b>19/01/2019</b></h3>
+<h3>Last update: <b>20/01/2019</b></h3>
+<p>Files updated:</p>
+<ul>
+  <li><b>Userchrome.css</b>: Deleted some duplicated code on the "features" userchrome.</li>
+</ul>
+<h3>Pre-Last update: <b>06/01/2019</b></h3>
 <p>Files updated:</p>
 <ul>
   <li><b>Userchrome.css</b>: Added more context menu options to delete by default (send video items).</li>
-</ul>
-<h3>Pre-Last update: <b>06/01/2019</b></h3>
-<ul>
-  <li><b>Checkboxes.as.css</b>: Fixed some issues on about: pages for checkboxes and select boxes.</li>
-  <li><b>Usercontent.css</b>: Fixed some text on the "delete pinned site" popup dialog on about:home/newtab.</li>
 </ul>
 
 <code>
