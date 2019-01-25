@@ -14,6 +14,7 @@ This problem doesn't happen if you use a code editor such as notepad++, atom, su
 <p>Files updated:</p>
 <ul>
   <li><b>Addons.css</b>: Updated the dark theme for Ublock Origin (the ui-logger).</li>
+  <li><b>Usercontent.css</b>: Updated the dark theme for Ublock Origin (the element picker window).</li>
 </ul>
 <h3>Pre-Last update: <b>20/01/2019</b></h3>
 <p>Files updated:</p>

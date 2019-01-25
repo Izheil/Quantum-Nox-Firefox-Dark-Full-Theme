@@ -114,6 +114,45 @@ input[type=number], input[type=search], input[type=tel], input[type=url], textar
 *|* {scrollbar-width: var(--scrollbars-width) !important}
 /*------ END OF SCROLLBAR COLORS ------*/
 
+/* Ublock Origin element picker window */
+#ublock0-epicker aside {
+	background: #333 !important;
+	color: #ccc !important;
+	border: 1px solid #666 !important}
+
+#ublock0-epicker #resultsetCount {background-color: #666 !important; color: #ddd !important}
+
+#ublock0-epicker section > div:first-child > textarea {
+	background: #555 !important; 
+	color: #ddd !important;
+	border: 1px solid #666 !important}
+
+#ublock0-epicker section > div:first-child {border: 1px solid #666 !important}
+
+#ublock0-epicker aside #cosmeticFilters li:hover {background: rgba(255,255,255,0.2) !important}
+
+#ublock0-epicker aside button:not(#create) {
+    -moz-appearance: none !important;
+    border-radius: 3px !important;
+    background: #555 !important;
+    color: #ddd !important;
+    border: none !important}
+
+#ublock0-epicker aside button:not(#create):hover {
+    background: #111 !important;
+    color: #ddd !important}
+
+#ublock0-epicker aside #create {
+	-moz-appearance: none !important;
+    border-radius: 3px !important;
+    background: #ffbb33 !important;
+    color: #000 !important;
+    border: none !important}
+
+#ublock0-epicker aside #create:hover {
+    background: #cc8800 !important;
+    color: #ddd !important}
+
 /* This part covers the preferences page update scrollbox (No, I couldn't put it inside the preferences section) */
 #historyItems .scrollbox-innerbox {background-color: #444 !important}
 
