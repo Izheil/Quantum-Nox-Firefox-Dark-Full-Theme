@@ -1,4 +1,7 @@
 <h1>Theme colors + added functions</h1>
+
+<h3>Warning: This file will hide some context menu commands by default, so if you want to keep them, or some of them, comment out or delete the things that come after <code>/* CONTEXT MENU COMMANDS */</code> inside userchrome.css</h3>
+
 <p>Following the method described here, you will be able to give dark colors to firefox as shown in the following image:</p>
 
 <img src="https://i.imgur.com/zNKhEV6.png" title="Dark firefox UI with custom background" />

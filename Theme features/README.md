@@ -1,5 +1,7 @@
 <h1>Only functionability CSS tweaks</h1>
 
+<h3>Warning: This file will hide some context menu commands by default, so if you want to keep them, or some of them, comment out or delete the things that come after <code>/* CONTEXT MENU COMMANDS */</code> inside userchrome.css</h3>
+
 <p>The userChrome.css file in this folder contains a series of CSS tweaks that can change your firefox in the following ways:</p>
 <ul>
   <li>Allow the sidebar be completelly closed by just resizing it.</li>

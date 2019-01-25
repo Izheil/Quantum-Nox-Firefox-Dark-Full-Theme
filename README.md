@@ -121,6 +121,18 @@ This problem doesn't happen if you use a code editor such as notepad++, atom, su
 <h3>The synced tabs sidebar isn't themed.</h3>
 <p>Since it's anonymous content of the browser we can't theme it through userChrome or userContent, which is why you will have to apply the "Tooltips, Scrollbars & Multirow tabs" method to be able to use external javascript to modify it, and then place the <b>Sync-tabs-sidebar.as.css</b> file inside the <code>Tooltips, Scrollbars & Multirow tabs/Chrome/</code> folder inside this repository inside your chrome folder (The method is the same than for the scrollbars, except you place the sync related file on your chrome folder apart from the other files if you are going to use them as well).</p>
 
+<h3>Some context menu commands dissapear after installing userchrome.</h3>
+<p>If you only want the dark theme, install the files inside "theme colors", which won't make the context menu commands dissapear. In case you want to use the features part of the theme, just delete everything after the line that says <code>/* CONTEXT MENU COMMANDS */</code> (you can find it using the search option on notepad, or the code editor you are using).</p>
+<p>In case you still want to delete some commands but not all, just comment out the ones that you want to appear, and leave as active the ones that you want to dissapear.</p>
+<p>For example, this is active, so the command is hidden:</p>
+<pre>/* Send image... */
+#context-sendimage,</pre>
+<p>...But this is commented out, so the command will show on the context menu:</p>
+<pre>/* Send image... *//*
+#context-sendimage,*/</pre>
+<p>You will see that the ones that I have commented out by default only have the starting "/*" of the comment after the description of what they are, since the closing "*/" would come from the next description comment below them.</p>
+
+
 <h3>The bookmarks toolbar text/tabs text color is black and I can't see the letters over the dark background.</h3>
 <p>This is caused by your persona (lightweight theme), and while you could change these settings inside userchrome, I thought it was better to just change the settings on the persona directly (since not all personas will look the same). To do so you'd have to open <code>about:config</code>, and search for <b>lightweightThemes.usedThemes</b>. Once there, find the "textcolor" setting and type any color you'd want to use instead of black or the color being used by the theme (use #fff for white). The persona you are currently using should be in the first place in the list. A screenshot of this window can be seen in the first section of this readme.</p>
 
