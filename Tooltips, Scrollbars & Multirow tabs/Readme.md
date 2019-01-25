@@ -8,6 +8,13 @@
 	<li><code>*.as.css</code> for AGENT_SHEET level CSS files.</li>
 </ul>
 
+<p>The only little problem with this method is that <b>you will have to delete the start up cache files for the changes to take effect every time you make a change to any of the <i>*.uc.js</i></b> files (which are the ones where the CSS rules go to change the scrollbar or tooltip colors).</p>
+
+<p>To clear the start up cache you have to type <code>about:profiles</code> on firefox URL bar, go to that page, open the local profile directory through that page, and then delete all files inside the "startupCache" folder.</p>
+
+<p>This is <b>NOT</b> the same profile directory where you have to place the "chrome" folder. You access that one through <code>about:support</code>, and then clicking the "open folder" button on the "profile folder" section.</p>
+<p>You can edit the scrollbars appearance changing the CSS rules inside the <b>scrollbar.as.css</b> file.</p>
+
 <h3>If you only want multirow, scrollbars, or the tooltips, you DON'T need any of the files from the theme folders.</h3>
 <p>All you need is to create your own empty userchrome.css, with only this content:</p>
 
@@ -19,13 +26,6 @@
 toolbarbutton#alltabs-button {
     -moz-binding: url("userChrome.xml#js")}
 </pre>
-
-<p>The only little problem with this method is that <b>you will have to delete the start up cache files for the changes to take effect every time you make a change to any of the <i>*.uc.js</i></b> files (which are the ones where the CSS rules go to change the scrollbar or tooltip colors).</p>
-
-<p>To clear the start up cache you have to type <code>about:profiles</code> on firefox URL bar, go to that page, open the local profile directory through that page, and then delete all files inside the "startupCache" folder.</p>
-
-<p>This is <b>NOT</b> the same profile directory where you have to place the "chrome" folder. You access that one through <code>about:support</code>, and then clicking the "open folder" button on the "profile folder" section.</p>
-<p>You can edit the scrollbars appearance changing the CSS rules inside the <b>scrollbar.as.css</b> file.</p>
   
 <h2>Installation</h2>
 <p>You can find a video tutorial <a href="https://youtu.be/FHV1-LbX_Vo">here</a>. The folder names will be a bit different, but it should be understable.</p>
