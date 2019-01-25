@@ -8,7 +8,17 @@
 	<li><code>*.as.css</code> for AGENT_SHEET level CSS files.</li>
 </ul>
 
-<p>You don't need this to load regular CSS code, since you can do that through <code>userchrome.css</code> for browser DOM elements, or <code>usercontent.css</code> for web pages content.</p>
+<h3>If you only want multirow, scrollbars, or the tooltips, you DON'T need any of the files from the theme folders.</h3>
+<p>All you need is to create your own empty userchrome.css, with only this content:</p>
+
+<pre>
+/* DO NOT DELETE THIS LINE */
+@namespace url("http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul");
+
+/* This enables the use of JS external files */
+toolbarbutton#alltabs-button {
+    -moz-binding: url("userChrome.xml#js")}
+</pre>
 
 <p>The only little problem with this method is that <b>you will have to delete the start up cache files for the changes to take effect every time you make a change to any of the <i>*.uc.js</i></b> files (which are the ones where the CSS rules go to change the scrollbar or tooltip colors).</p>
 
