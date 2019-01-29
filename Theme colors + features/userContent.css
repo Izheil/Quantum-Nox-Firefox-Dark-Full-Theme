@@ -1,6 +1,6 @@
 /* You can find an updated version here: https://github.com/Izheil/Quantum-Nox-Firefox-Dark-Full-Theme */
 /* Made by Izheil */
-/* Last updated: 25/01/2019 */
+/* Last updated: 29/01/2019 */
 
 /* This part imports the Addons file if there is one, so that you don't have to edit the dynamic URL
 from the addons rules every time we update anything here */
@@ -362,10 +362,13 @@ body {
 	fill: var(--in-content-border-focus) !important}
 
 /* Firefox news at the bottom of the screen snippets */
-#snippets-container, input {
+input {
 	background-color: #151515 !important}
 
-#snippets-container p {
+.SnippetBaseContainer, .SnippetBaseContainer .footer {background: rgba(0,0,0,0.5) !important}
+
+.SnippetBaseContainer p, .SnippetBaseContainer h3, 
+.SnippetBaseContainer .footer-content {
 	color: var(--home-text) !important}
 
 .snippet p em {
@@ -378,20 +381,25 @@ body {
 .block-snippet-button {
 	filter: invert(50%) !important}
 
-.button-link {
+.button-link, .SnippetBaseContainer button.primary {
 	background-color: #0aAA50 !important;
 	color: #FFF !important;
 	border: 1px solid #090 !important}
 
-.button-link:hover {
-	background-color: #0bbb60 !important;
-	color: #FFF !important;
-	border: 1px solid #090 !important}
+.button-link:hover, .SnippetBaseContainer button.primary:hover {background-color: #0bbb60 !important}
 
-.button-link:active {
-	background-color: #099940 !important;
+.button-link:active, .SnippetBaseContainer button.primary:active {background-color: #099940 !important}
+
+.SnippetBaseContainer button.secondary {
+	background-color: #3070f0 !important;
 	color: #FFF !important;
-	border: 1px solid #090 !important}
+	border: 1px solid #139 !important}
+
+.SnippetBaseContainer button.secondary:hover {
+	background-color: #1040A0 !important}
+
+.SnippetBaseContainer button.secondary:active {
+	background-color: #083099 !important}
 
 .button.donation-amount.donation-amount-first, .button.donation-amount.donation-amount-second,
 .button.donation-amount.donation-amount-third, .button.donation-amount.donation-amount-fourth {
