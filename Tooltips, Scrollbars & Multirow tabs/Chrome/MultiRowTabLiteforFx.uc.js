@@ -35,20 +35,6 @@ function zzzz_MultiRowTabLite() {
     @media (-moz-os-version: windows-win10) {
     .titlebar-buttonbox, #titlebar-buttonbox {display: block !important; height:var(--tab-min-height) !important}}
 
-    /* YOU SHOULD DELETE THESE TITLEBAR RULES IF YOU ARE USING NIGHTLY OR FF65 */
-    
-    #titlebar {height:var(--tab-min-height) !important}
-
-    #titlebar {margin-bottom:calc(1px + var(--tab-min-height)*-1) !important}
-
-    #main-window[sizemode="maximized"] #titlebar
-    {margin-bottom: calc(8px + var(--tab-min-height)*-1)!important}
-
-    #main-window[sizemode="maximized"][uidensity=compact] #titlebar
-    {margin-bottom: calc(6px + var(--tab-min-height)*-1)!important}
-
-    /* END OF TITLEBAR RULES TO DELETE FOR NIGHTLY COMPATIBILITY */
-
     .tab-line {height: 2px !important}
 
     #main-window[sizemode="maximized"] .tab-line {height: 2px !important}
