@@ -1,5 +1,5 @@
 /* You can find an updated version here: https://github.com/Izheil/Firefox-57-full-dark-theme-with-scrollbars */
-/* Last updated: 20/01/2019 */
+/* Last updated: 29/01/2019 */
 
 /* DO NOT DELETE THIS LINE */
 @namespace url("http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul");
@@ -36,17 +36,18 @@ differentiable font (Thanks to BelladonnavGF for the tip) */
 
 /* Tab bar below (You can set the order of each bar here. 1 for top, and 3 bottom) */
 
-/* For best results, you should enable the "Title bar" when using this (or you won't be able
-to use the close, minimize, and resize buttons */
-
 /* #nav-bar is the ID for the URL bar, #PersonalToolbar the ID for the bookmarks bar, and
 #TabsToolbar should be self-explanatory (The tabs on bottom are already set by default here) */
 
+/* Don't change the #navigator-toolbox margin unless you want more margin on top */
+
 /* v Delete the "/*" after this comment to use it */ 
-  /*
-#nav-bar {-moz-box-ordinal-group: 1 !important}
-#PersonalToolbar {-moz-box-ordinal-group: 2 !important}
-#TabsToolbar {-moz-box-ordinal-group: 3 !important}
+/*
+#nav-bar {-moz-box-ordinal-group: 2 !important}
+#PersonalToolbar {-moz-box-ordinal-group: 1 !important}
+#titlebar {-moz-box-ordinal-group: 3 !important}
+
+#navigator-toolbox {margin-top: 10px !important}
 
 /* ROUNDED TABS */ 
 /* v Delete the "/*" after this comment to use it */ 

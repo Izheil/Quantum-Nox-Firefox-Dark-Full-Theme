@@ -362,10 +362,12 @@ body {
 	fill: var(--in-content-border-focus) !important}
 
 /* Firefox news at the bottom of the screen snippets */
-#snippets-container, input {
+input {
 	background-color: #151515 !important}
 
-#snippets-container p {
+.SnippetBaseContainer {background: rgba(0,0,0,0.5) !important}
+
+.SnippetBaseContainer p, .SnippetBaseContainer h3 {
 	color: var(--home-text) !important}
 
 .snippet p em {
