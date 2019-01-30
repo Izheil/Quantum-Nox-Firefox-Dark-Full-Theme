@@ -18,10 +18,6 @@ toolbarbutton#alltabs-button {
 without this change) */
 :root:-moz-lwtheme {
   --toolbar-bgcolor: rgba(0,0,0,.6) !important;
-
-  /* Tab line color. Using -moz-win-accentcolor as the color value changes it to the current window color (on Windows)
-  but is disabled by default in this theme. Delete the final /* to use -> */
-  --toolbar-color: var(--lwt-accent-color) !important; /* var(--lwt-accent-color) for default color of the used theme */
   
   /* You can change the lightweight theme header and footer images with this. Delete the final /* to use -> *//*
   --lwt-header-image: url("file:///") !important;
@@ -32,13 +28,16 @@ without this change) */
   --urlbar-separator-color: #5F6670;
   --lwt-toolbar-field-background-color: rgb(71,71,73) !important}
 
+/* Tab line color. Using -moz-win-accentcolor as the color value changes it to the current window color (on Windows)
+but is disabled by default in this theme. */
+#tabbrowser-tabs {
+  --tab-line-color: var(--lwt-accent-color) !important}
+
+/* Text color of the url bar */
 #urlbar, .searchbar-textbox {
   color: #ccc !important}
 
-/* This changes the close tab button color to prevent it from inheriting the color of the tab line specified before */
-.tab-close-button {fill: #ddd !important}
-
-/* This gives a more notizable color background on hover of the close button */
+/* This gives a more notizable color background on hover of the close tab button */
 .tab-close-button:hover {background: rgba(255,255,255,0.15) !important}
 
 /* These rules will modify most highlight (background on hover) colors inside Firefox (except sidebar items, which are 
