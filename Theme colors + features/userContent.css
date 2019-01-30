@@ -844,14 +844,14 @@ menulist[sizetopopup="pref"] .menulist-label-box {background: transparent !impor
 image.searchBarImage {filter: invert(92%) hue-rotate(180deg)}
 
 /* This changes some of the buttons color */
-.accessory-button, button {
+.accessory-button, button:not(#strictArrow) {
   -moz-appearance: none !important;
   border-radius: 3px !important;
   background: var(--button-background) !important;
   color: #ddd !important;
   border: 1px solid var(--button-border) !important}
 
-.accessory-button:hover, button:hover {
+.accessory-button:hover, button:not(#strictArrow):hover {
 	background: var(--button-background-hover) !important;
     color: #FFF !important}
 
