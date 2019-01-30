@@ -13,7 +13,7 @@ This problem doesn't happen if you use a code editor such as notepad++, atom, su
 <h3>Last update: <b>30/01/2019</b></h3>
 <p>Files updated:</p>
 <ul>
-  <li><b>Userchrome.css</b>: You can now place the menu bar on top when using tabs below tweak.</li>
+  <li><b>Userchrome.css</b>: You can now place the menu bar on top when using tabs below tweak. Also fixed the selector for the space that comes before the min/max/close buttons.</li>
 </ul>
 <h3>Pre-Last update: <b>29/01/2019</b></h3>
 <p>Files updated:</p>

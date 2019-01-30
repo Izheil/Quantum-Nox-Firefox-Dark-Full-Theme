@@ -11,7 +11,7 @@ toolbarbutton#alltabs-button {
 
 /* This deletes the space that comes before the min/max/close button (space where you can place addons), but
 after the tabs section */
-.titlebar-placeholder[type="post-tabs"] {width: 10px !important}
+.titlebar-spacer {width: 10px !important}
 
 /* SIDEBAR */
 
