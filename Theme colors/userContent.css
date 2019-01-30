@@ -822,6 +822,12 @@ it's updated and if its the default browser) */
 
 .dialogTitleBar {background: #444 !important; border-bottom: 1px solid #555 !important}
 .dialogTitleBar label {color: #fff !important}
+
+menulist[sizetopopup="pref"] .menulist-label-box {background: transparent !important}
+
+.learnMore {color: var(--in-content-link-color) !important}
+.learnMore:hover {color: var(--in-content-link-color-hover) !important}
+.learnMore:active {color: var(--in-content-link-color-active) !important}
 }
 
 /*------ SETTINGS PAGE (about:preferences) ------*/
@@ -860,6 +866,15 @@ treecol:hover {background-color: #666 !important}
 .extension-controlled > description {
 	color: #000 !important;
 	filter: invert(81%) !important}
+
+description, description *, #contentBlockingOptionStrict label, 
+.checkbox-label-box {color: #ccc !important}
+
+menulist[sizetopopup="pref"] {background: rgba(255,255,255,0.2) !important; color: #ddd !important}
+menulist[sizetopopup="pref"]:hover {background: rgba(255,255,255,0.3) !important; color: #fff !important}
+
+#homeContentsGroup menulist {background: #444 !important; color: #ddd !important}
+#homeContentsGroup menulist:hover {background: #555 !important; color: #fff !important}
 }
 
 /*------ EXTENSIONS PAGE (about:addons) ------*/
@@ -910,7 +925,7 @@ treecol:hover {background-color: #666 !important}
     --view-highlight-color: #111 !important}
 
 /* These change the selectors on the plugins page */
-.addon-control.state.no-auto-hide {background-color: #383838 !important}
+.addon-control.state.no-auto-hide {background-color: #555 !important}
 .addon-control.state.no-auto-hide:hover {background-color: #444 !important}
 .addon-control.state.no-auto-hide[open="true"] {background-color: #303030 !important}
 
@@ -944,6 +959,22 @@ treecol:hover {background-color: #666 !important}
 .disco-content p, .content p, .content blockquote {color: #AAA !important}
 
 #react-view {background-color: #202020 !important}
+
+.AMInstallButton-button{
+	background: #3070f0 !important;
+	color: #ddd !important}
+
+.AMInstallButton-button:hover{
+	background: #1040A0 !important;
+	color: #fff !important}
+
+.AMInstallButton-button--uninstall {
+	background: #aa2020 !important;
+	color: #ddd !important}
+
+.AMInstallButton-button--uninstall:hover {
+	background: #802020 !important;
+	color: #fff !important}
 
 .addon.theme, .addon.extension, .addon.theme {background-color: #444 !important}
 
