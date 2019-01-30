@@ -13,7 +13,7 @@ This problem doesn't happen if you use a code editor such as notepad++, atom, su
 <h3>Last update: <b>29/01/2019</b></h3>
 <p>Files updated:</p>
 <ul>
-  <li><b>MultiRowTabLiteforFx.uc.js</b>: Multirow files updated to work with FF65+.</li>
+  <li><b>MultiRowTab*.uc.js</b>: Multirow files updated to work with FF65+ (fixed small issue with a pixel being left above tabs as well).</li>
   <li><b>Userchrome.css</b>: Fixed tabs below tweak to work with FF65+.</li>
   <li><b>Usercontent.css</b>: Themed the new snippet area on <code>about:home</code> and <code>about:newtab</code> on FF65. Also fixed some issues with labels and dropdown boxes on <code>about:preferences<code>.</li>
 </ul>

@@ -3,8 +3,9 @@
 // @namespace      http://space.geocities.yahoo.co.jp/gl/alice0775
 // @description    Multi-row tabs draggability fix, Experimental CSS version
 // @include        main
-// @compatibility  Firefox 60
+// @compatibility  Firefox 65
 // @author         Alice0775, Endor8, TroudhuK, Izheil
+// @version        2019/30/01 02:05 Fixed issue with a pixel being above the tab bar
 // @version        2018/30/11 06:12 Now only the necesary rows appear, not static number of rows
 // @version        2018/23/11 00:41 Firefox 65
 // @version        2018/19/10 07:34 Firefox 62
@@ -29,7 +30,15 @@ function zzzz_MultiRowTabLite() {
 
     .tabbrowser-tab::after {border: none !important}
 
-    .tabbrowser-tab, .tab-background {height:var(--tab-min-height) !important}
+    #main-window[sizemode="normal"] .tabbrowser-tab {
+        height: var(--tab-min-height) !important; 
+        margin-top: 1px !important}
+
+    #main-window[sizemode="maximized"] .tabbrowser-tab {
+        height: calc(var(--tab-min-height) + 1px) !important; 
+        margin-top: 0px !important} 
+
+    .tab-background {height: var(--tab-min-height) !important}
 
     .tab-stack {width: 100%}
 
@@ -50,14 +59,6 @@ function zzzz_MultiRowTabLite() {
 
     @media (-moz-os-version: windows-win10) {
     .titlebar-buttonbox, #titlebar-buttonbox {display: block !important; height:var(--tab-min-height) !important}}
-
-    .tab-line {height: 2px !important}
-
-    #main-window[sizemode="maximized"] .tab-line {height: 2px !important}
-
-    #titlebar:active {margin-bottom: 0 !important}
-
-    #titlebar:active #titlebar-content {margin-bottom:var(--tab-min-height) !important}
 
     #tabbrowser-tabs .scrollbutton-up, #tabbrowser-tabs .scrollbutton-down, #alltabs-button, .tabbrowser-tab:not([fadein])
     {display: none}

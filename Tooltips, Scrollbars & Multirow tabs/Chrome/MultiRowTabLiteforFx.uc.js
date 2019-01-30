@@ -4,7 +4,9 @@
 // @description    Multi-row tabs draggability fix, Experimental CSS version
 // @include        main
 // @compatibility  Firefox 60
-// @author         Alice0775, Endor8, TroudhuK
+// @author         Alice0775, Endor8, TroudhuK, Izheil
+// @version        2019/30/01 02:05 Fixed issue with a pixel being above the tab bar
+// @version        2018/23/11 00:41 Firefox 65
 // @version        2018/11/05 15:05 Firefox 60
 // @version        2016/08/05 00:00 Firefox 48
 // @version        2016/05/01 00:01 hide favicon if busy
@@ -19,8 +21,18 @@ function zzzz_MultiRowTabLite() {
     .tabbrowser-tab:not([pinned]) {
         flex-grow:1;
         min-width:100px}
+    
+    #main-window[sizemode="normal"] .tabbrowser-tab {
+        height: var(--tab-min-height) !important; 
+        margin-top: 1px !important}
 
-    .tabbrowser-tab, .tab-background {height:var(--tab-min-height) !important}
+    #main-window[sizemode="maximized"] .tabbrowser-tab {
+        height: calc(var(--tab-min-height) + 1px) !important; 
+        margin-top: 0px !important} 
+
+    .tab-background {height: var(--tab-min-height) !important}
+
+    #tabbrowser-tabs {margin-top: 0px !important}
 
     .tab-stack {width: 100%}
 
@@ -34,14 +46,6 @@ function zzzz_MultiRowTabLite() {
 
     @media (-moz-os-version: windows-win10) {
     .titlebar-buttonbox, #titlebar-buttonbox {display: block !important; height:var(--tab-min-height) !important}}
-
-    .tab-line {height: 2px !important}
-
-    #main-window[sizemode="maximized"] .tab-line {height: 2px !important}
-
-    #titlebar:active {margin-bottom: 0 !important}
-
-    #titlebar:active #titlebar-content {margin-bottom:var(--tab-min-height) !important}
 
     #tabbrowser-tabs .scrollbutton-up, #tabbrowser-tabs .scrollbutton-down, #alltabs-button, .tabbrowser-tab:not([fadein])
     {display: none}
