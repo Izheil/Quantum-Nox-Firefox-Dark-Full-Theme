@@ -28,8 +28,12 @@ without this change) */
   --urlbar-separator-color: #5F6670;
   --lwt-toolbar-field-background-color: rgb(71,71,73) !important}
 
+/* This changes the background color of the browser toolbar for those using the default dark theme to a static dark color. 
+You may need to change the --toolbar-bgcolor in the rules above for the tab contrast color to be less dark if using this */
+#main-window {background-color: #282829 !important}
+
 /* Tab line color. Using -moz-win-accentcolor as the color value changes it to the current window color (on Windows)
-but is disabled by default in this theme. */
+but is disabled by default in this theme (Disable for the default tab line color). *//*
 #tabbrowser-tabs {
   --tab-line-color: var(--lwt-accent-color) !important}
 
