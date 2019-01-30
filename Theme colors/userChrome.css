@@ -1,6 +1,6 @@
 /* You can find an updated version here: https://github.com/Izheil/Firefox-57-full-dark-theme-with-scrollbars */
 /* Made by Izheil */
-/* Last updated: 27/12/2018 */
+/* Last updated: 29/01/2019 */
 
 /* DO NOT DELETE THIS LINE */
 @namespace url("http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul");
@@ -21,7 +21,7 @@ without this change) */
 
   /* Tab line color. Using -moz-win-accentcolor as the color value changes it to the current window color (on Windows)
   but is disabled by default in this theme. Delete the final /* to use -> */
-  --tab-line-color: var(--lwt-accent-color) !important; /* var(--lwt-accent-color) for default color of the used theme */
+  --toolbar-color: var(--lwt-accent-color) !important; /* var(--lwt-accent-color) for default color of the used theme */
   
   /* You can change the lightweight theme header and footer images with this. Delete the final /* to use -> *//*
   --lwt-header-image: url("file:///") !important;
@@ -35,12 +35,18 @@ without this change) */
 #urlbar, .searchbar-textbox {
   color: #ccc !important}
 
+/* This changes the close tab button color to prevent it from inheriting the color of the tab line specified before */
+.tab-close-button {fill: #ddd !important}
+
+/* This gives a more notizable color background on hover of the close button */
+.tab-close-button:hover {background: rgba(255,255,255,0.15) !important}
+
 /* These rules will modify most highlight (background on hover) colors inside Firefox (except sidebar items, which are 
 in the rule below) */
 :root {
   --bookmark-toolbar-text: var(--lwt-text-color); /* var(--lwt-text-color) for default color of the used theme */
   --nav-bar-icons-color: var(--chrome-color); /* var(--chrome-color) for default color of the used theme */
-  --Min-max-buttons-hover-bg: #2050AA;
+  --Min-max-buttons-hover-bg: rgba(255,255,255,0.2);
   --Context-menu-highlight: #25a;
   --Context-menu-background: rgba(68,68,68, 1); /* The last number changes the opacity %. Change that 1 for 0.9 for semitransparent backgrounds */
   --Progress-bar-color: #3070dd;
@@ -127,18 +133,18 @@ for icons on the bookmarks bar under the url bar. Just make sure to put commas a
 
 /* This prevents any custom windows theme to change the background color
 of the minimize, maximize and close buttons */
-#titlebar-min:not(:hover), #titlebar-max:not(:hover), 
-#main-window[sizemode="maximized"] #titlebar-max:not(:hover),
-#titlebar-close:not(:hover) 
+#TabsToolbar .titlebar-min:not(:hover), #TabsToolbar .titlebar-max:not(:hover), 
+#main-window[sizemode="maximized"] #TabsToolbar .titlebar-max:not(:hover),
+#TabsToolbar .titlebar-close:not(:hover) 
 {background-color: transparent !important}
 
 /* This changes the color on hover of the minimize and maximize buttons */
-#titlebar-min:hover, #titlebar-max:hover, 
-#main-window[sizemode="maximized"] #titlebar-max:hover 
+#TabsToolbar .titlebar-min:hover, #TabsToolbar .titlebar-max:hover, 
+#main-window[sizemode="maximized"] #TabsToolbar .titlebar-max:hover 
 {background-color: var(--Min-max-buttons-hover-bg) !important}
 
 /* This changes the close button hover color */
-#titlebar-close:hover {background-color: #FF0000 !important}
+#TabsToolbar .titlebar-close:hover {background-color: #d00 !important}
 
 /* The downloads progress bar color */
 .progress-bar {
