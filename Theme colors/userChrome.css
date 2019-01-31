@@ -162,7 +162,7 @@ of the minimize, maximize and close buttons */
 
 /* Search bar inside the content area */
 findbar {
-  background-color: #333 !important; 
+  background: #333 !important; 
   color: #ddd !important;
   border-top: 1px solid #000 !important;}
 
@@ -181,11 +181,14 @@ findbar .findbar-textbox[focused="true"], findbar .findbar-textbox:hover {
   color: black !important}
 
 findbar .findbar-find-previous, findbar .findbar-find-next {
-  background-color: linear-gradient(#555,#333) !important;
+  background: linear-gradient(#555,#333) !important;
   border-top: 1px solid #000 !important;
   border-right: 1px solid #000 !important;
   border-bottom: 1px solid #000 !important;
   border-left: none !important}
+
+findbar .findbar-find-previous:active, findbar .findbar-find-next:active {
+  background: linear-gradient(#333,#555) !important}
 
 /* Color for most dialogs */
 dialog, dialog caption, dialog select, #clientBox  {

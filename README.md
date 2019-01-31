@@ -13,7 +13,7 @@ This problem doesn't happen if you use a code editor such as notepad++, atom, su
 <h3>Last update: <b>31/01/2019</b></h3>
 <p>Files updated:</p>
 <ul>
-  <li><b>Userchrome.css</b>: Fixed the problem with fullscreen making the menu bar and the bookmarks bar not appearing on FF65 (on the "features" version only).</li>
+  <li><b>Userchrome.css</b>: Fixed the problem with fullscreen making the menu bar and the bookmarks bar not appearing on FF65 (on the "features" version only). Also fixed the color of the search box inside the web content area.</li>
   <li><b>MultirowTab*.uc.js</b>: Fixed tabs to be displayed correctly in full screen mode.</li>
 </ul>
 <h3>Pre-Last update: <b>30/01/2019</b></h3>
