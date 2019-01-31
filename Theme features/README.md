@@ -10,6 +10,7 @@
   <li>Give tabs a rounded corners appearance (<b>disabled by default</b>). </li>
   <li>Tab close button always visible.</li>
   <li>Bookmark toolbar auto-hide (<b>disabled by default</b>).</li>
+  <li>Fix for an issue with fullscreen not showing bookmark bar nor menu bar.</li>
   <li>Delete the following commands from context menus:
   	<ul>
   	  <li>Reload tab (<b>not deleted by default</b>).</li>
