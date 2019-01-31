@@ -10,17 +10,16 @@ basic css or <a href="https://www.w3schools.com/colors/colors_picker.asp">color 
 <br />
 This problem doesn't happen if you use a code editor such as notepad++, atom, sublime text...</h4>
 
-<h3>Last update: <b>30/01/2019</b></h3>
+<h3>Last update: <b>31/01/2019</b></h3>
+<p>Files updated:</p>
+<ul>
+  <li><b>Userchrome.css</b>: Fixed the problem with fullscreen making the menu bar and the bookmarks bar not appearing on FF65 (on the "features" version only).</li>
+  <li><b>MultirowTab*.uc.js</b>: Fixed tabs to be displayed correctly in full screen mode.</li>
+</ul>
+<h3>Pre-Last update: <b>30/01/2019</b></h3>
 <p>Files updated:</p>
 <ul>
   <li><b>Userchrome.css</b>: You can now place the menu bar on top when using tabs below tweak. Also fixed the selector for the space that comes before the min/max/close buttons.</li>
-</ul>
-<h3>Pre-Last update: <b>29/01/2019</b></h3>
-<p>Files updated:</p>
-<ul>
-  <li><b>MultiRowTab*.uc.js</b>: Multirow files updated to work with FF65+ (fixed small issue with a pixel being left above tabs as well).</li>
-  <li><b>Userchrome.css</b>: Fixed tabs below tweak to work with FF65+. Also fixed the selectors for the min/max/close buttons, and the tab-line variable that changes it's color.</li>
-  <li><b>Usercontent.css</b>: Themed the new snippet area on <code>about:home</code> and <code>about:newtab</code> on FF65. Also fixed some issues with labels and dropdown boxes on <code>about:preferences<code>.</li>
 </ul>
 
 <code>

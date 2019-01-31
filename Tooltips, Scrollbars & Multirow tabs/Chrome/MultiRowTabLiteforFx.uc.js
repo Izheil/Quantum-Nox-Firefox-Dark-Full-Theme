@@ -5,6 +5,7 @@
 // @include        main
 // @compatibility  Firefox 60
 // @author         Alice0775, Endor8, TroudhuK, Izheil
+// @version        2019/31/01 10:32 Fixed issue with fullscreen
 // @version        2019/30/01 02:05 Fixed issue with a pixel being above the tab bar
 // @version        2018/23/11 00:41 Firefox 65
 // @version        2018/11/05 15:05 Firefox 60
@@ -26,7 +27,7 @@ function zzzz_MultiRowTabLite() {
         height: var(--tab-min-height) !important; 
         margin-top: 1px !important}
 
-    #main-window[sizemode="maximized"] .tabbrowser-tab {
+    #main-window[sizemode="maximized"] .tabbrowser-tab, #main-window[sizemode="fullscreen"] .tabbrowser-tab {
         height: calc(var(--tab-min-height) + 1px) !important; 
         margin-top: 0px !important} 
 

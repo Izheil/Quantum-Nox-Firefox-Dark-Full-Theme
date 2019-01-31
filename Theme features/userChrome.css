@@ -1,5 +1,5 @@
 /* You can find an updated version here: https://github.com/Izheil/Firefox-57-full-dark-theme-with-scrollbars */
-/* Last updated: 30/01/2019 */
+/* Last updated: 31/01/2019 */
 
 /* DO NOT DELETE THIS LINE */
 @namespace url("http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul");
@@ -61,6 +61,11 @@ differentiable font (Thanks to BelladonnavGF for the tip) */
   float: right !important}
 
 #navigator-toolbox {margin-top: 10px !important}
+
+/* FULLSCREEN FIX */
+/* This will enable the menu bar and bookmarks bar to appear on fullscreen */
+#navigator-toolbox[inFullscreen="true"] #toolbar-menubar,
+#navigator-toolbox[inFullscreen="true"] #PersonalToolbar[collapsed="false"] {visibility: visible !important}
 
 /* ROUNDED TABS */ 
 /* v Delete the "/*" after this comment to use it */ 
