@@ -13,14 +13,14 @@
 
 <p>To clear the start up cache you have to type <code>about:profiles</code> on firefox URL bar, go to that page, open the local profile directory through that page, and then delete all files inside the "startupCache" folder.</p>
 
-<p>This is <b>NOT</b> the same profile directory where you have to place the "chrome" folder. You access that one through <code>about:support</code>, and then clicking the "open folder" button on the "profile folder" section.</p>
-<p>You can edit the scrollbars appearance changing the CSS rules inside the <b>scrollbar.as.css</b> file.</p>
+<p>This is <b>NOT</b> the same profile directory where you have to place the files from any of these folders. You access that one through <code>about:support</code>, and then clicking the "open folder" button on the "profile folder" section.</p>
 
 <h2>Contents of each folder:</h2>
 <ul>
 	<li><b>Additional theming</b>: Anything related to recoloring elements, such as the scrollbars, or give a dark look to tooltips and checkboxes.</li>
 	<li><b>Multirow tabs</b>: Files to enable multiple rows of tabs instead of mono-row. You can chose between infinite rows and scrollable rows version.</li>
 	<li><b>Other experimental features</b>: Any additional function that I come up with to fix some issue someone might have. Currently only bookmarks toggler (you can toggle the bookmarks bar with a key press) and navigator toolbox autohide (the navigator toolbox autohides like on fullscreen even on normal windows).</li>
+</ul>
 
 <h3>Installation</h3>
 <p>To install any of the files, just copy the file(s) you are interested on inside any of the folders along with <code>userchrome.xml</code>, and copy them to your chrome folder</p>

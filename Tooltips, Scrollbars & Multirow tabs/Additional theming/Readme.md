@@ -16,7 +16,7 @@ toolbarbutton#alltabs-button {
   
 <h2>Installation</h2>
 <ul>
-  <li>Copy <code>checkboxes.as.css</code>, <code>scrollbars.as.css</code>, <code>Sync-tabs-sidebar.as.css</code>, <code>tooltips.as.css</code>, and <code>userChrome.xml</code> inside here to the chrome folder on your firefox profile folder (Don't copy <code>checkboxes.as.css</code> to your chrome folder if you have an OS that colors checkboxes dark, since it will invert their color) if you want the dark themed scrollbars and tooltips.</li>
+  <li>Copy <code>checkboxes.as.css</code>, <code>scrollbars.as.css</code>, <code>Sync-tabs-sidebar.as.css</code>, <code>tooltips.as.css</code>, and <code>userChrome.xml</code> inside here to <a href="https://github.com/Izheil/Quantum-Nox-Firefox-Dark-Full-Theme/tree/master/Tooltips%2C%20Scrollbars%20%26%20Multirow%20tabs#the-chrome-folder">the chrome folder</a> on your firefox profile folder (Don't copy <code>checkboxes.as.css</code> to your chrome folder if you have an OS that colors checkboxes dark, since it will invert their color) if you want the dark themed scrollbars and tooltips.</li>
   <li><b>Optional</b>: You can try the other scrollbar types inside the "alternative scrollbars" folder.</li>
   <li><b>Optional</b>: You can try the other tooltip types inside the "alternative tooltips" folder, such as the semi-transparent background one.</li>
 </ul>
