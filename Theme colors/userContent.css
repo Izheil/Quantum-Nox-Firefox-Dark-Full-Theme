@@ -863,6 +863,10 @@ treecol:hover {background-color: #666 !important}
 
 .fxaSyncIllustration, #fxaNoLoginStatus .fxaProfileImage {filter: invert(98%) hue-rotate(200deg)}
 
+.extension-controlled {
+	background-color: #333 !important;
+	border-color: #666 !important}
+
 .extension-controlled > description {
 	color: #000 !important;
 	filter: invert(81%) !important}
