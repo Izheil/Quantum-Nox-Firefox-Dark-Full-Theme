@@ -1,11 +1,11 @@
 // ==UserScript==
 // @name           Navigator-toolbox-autohide.uc.js
 // @namespace      http://https://github.com/Izheil/Quantum-Nox-Firefox-Dark-Full-Theme
-// @description    Multi-row tabs draggability fix, Experimental CSS version
+// @description    Makes the navigation toolbar autohide even when not on fullscreen.
 // @include        main
 // @compatibility  Firefox 65
 // @author         Izheil
-// @version        2019/31/01 10:32 First version
+// @version        01/31/2019 10:32 First version
 // ==/UserScript==
 document.getElementById("fullscr-toggler").onmouseover = function() {
     var css =`

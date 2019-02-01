@@ -5,17 +5,18 @@
 // @include        main
 // @compatibility  Firefox 65
 // @author         Alice0775, Endor8, TroudhuK, Izheil
-// @version        2019/31/01 10:32 Fixed issue with fullscreen
-// @version        2019/30/01 02:05 Fixed issue with a pixel being above the tab bar
-// @version        2018/30/11 06:12 Now only the necesary rows appear, not static number of rows
-// @version        2018/23/11 00:41 Firefox 65
-// @version        2018/19/10 07:34 Firefox 62
-// @version        2018/11/05 15:05 Firefox 60
-// @version        2016/08/05 00:00 Firefox 48
-// @version        2016/05/01 00:01 hide favicon if busy
-// @version        2016/03/09 00:01 Bug 1222490 - Actually remove panorama for Fx45+
-// @version        2016/02/09 00:01 workaround css for lwt
-// @version        2016/02/09 00:00
+// @version        01/02/2019 10:32 Fixed issue window dragging while keeping scrollbar dragging
+// @version        31/01/2019 10:32 Fixed issue with fullscreen
+// @version        30/01/2019 02:05 Fixed issue with a pixel being above the tab bar
+// @version        30/11/2018 06:12 Now only the necesary rows appear, not static number of rows
+// @version        23/11/2018 00:41 Firefox 65
+// @version        19/10/2018 07:34 Firefox 62
+// @version        11/05/2018 15:05 Firefox 60
+// @version        08/05/2017 00:00 Firefox 48
+// @version        05/01/2017 00:01 hide favicon if busy
+// @version        02/09/2016 00:01 Bug 1222490 - Actually remove panorama for Fx45+
+// @version        02/09/2016 00:01 workaround css for lwt
+// @version        02/09/2016 00:00
 // ==/UserScript==
     zzzz_MultiRowTabLite();
 function zzzz_MultiRowTabLite() {
@@ -55,7 +56,7 @@ function zzzz_MultiRowTabLite() {
         overflow: visible;
         display: block;}
 
-    #main-window[tabsintitlebar] #tabbrowser-tabs {
+    #main-window[tabsintitlebar] #tabbrowser-tabs scrollbar {
         -moz-window-dragging: no-drag}
 
     @media (-moz-os-version: windows-win10) {
