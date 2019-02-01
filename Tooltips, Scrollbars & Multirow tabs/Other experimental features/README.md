@@ -5,3 +5,6 @@
 <h3>Bookmarks-toggle.uc.js</h3>
 <p>Toggles visibility of the bookmarks toolbar when pressing F2 (you can change which keys in the file). You'll need to add this rule to your userchrome:</p>
 <pre>#PersonalToolbar {visibility: collapse !important}</pre>
+
+<h3>Navigator-toolbox-autohide.uc.js</h3>
+<p>Toggles visibility of the whole navigation toolbox as if you were on fullscreen, so that it's only visible when you have the mouse over it, or when hovering the mouse to the top of the screen when it's hidden.</p>
