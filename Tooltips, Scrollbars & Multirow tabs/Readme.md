@@ -16,8 +16,8 @@
 
 <h2>Contents of each folder:</h2>
 <ul>
-	<li><b>Additional theming</b>: Anything related to recoloring elements, such as the scrollbars, or give a dark look to tooltips and checkboxes. <img src="https://i.imgur.com/qe6tGJW.png" title="Dark blue scrollbar"></li>
-	<li><b>Multirow tabs</b>: Files to enable multiple rows of tabs instead of mono-row. You can chose between infinite rows and scrollable rows version. <img src="https://i.imgur.com/qqQn4Ky.png"></li>
+	<li><b>Additional theming</b>: Anything related to recoloring elements, such as the scrollbars, or give a dark look to tooltips and checkboxes. <ul><li><img src="https://i.imgur.com/qe6tGJW.png" title="Dark blue scrollbar"></li></ul></li>
+	<li><b>Multirow tabs</b>: Files to enable multiple rows of tabs instead of mono-row. You can chose between infinite rows and scrollable rows version. <ul><li><img src="https://i.imgur.com/qqQn4Ky.png"></li></ul></li>
 	<li><b>Other experimental features</b>: Any additional function that I come up with to fix some issue someone might have. Currently only bookmarks toggler (you can toggle the bookmarks bar with a key press) and navigator toolbox autohide (the navigator toolbox autohides like on fullscreen even on normal windows).</li>
 </ul>
 
