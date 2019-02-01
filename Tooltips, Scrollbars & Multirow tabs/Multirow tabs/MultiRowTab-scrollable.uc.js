@@ -5,6 +5,7 @@
 // @include        main
 // @compatibility  Firefox 65
 // @author         Alice0775, Endor8, TroudhuK, Izheil
+// @version        02/02/2019 00:17 Fixed transparent line under tabs and touch density tabs issue
 // @version        01/02/2019 10:32 Fixed issue window dragging while keeping scrollbar dragging
 // @version        31/01/2019 10:32 Fixed issue with fullscreen
 // @version        30/01/2019 02:05 Fixed issue with a pixel being above the tab bar
@@ -40,9 +41,19 @@ function zzzz_MultiRowTabLite() {
         height: calc(var(--tab-min-height) + 1px) !important; 
         margin-top: 0px !important} 
 
-    .tab-background {height: var(--tab-min-height) !important}
+    #main-window[sizemode="normal"] .tab-background {height: var(--tab-min-height) !important}
+    #main-window[sizemode="maximized"] .tab-background, #main-window[sizemode="fullscreen"] .tab-background {
+        height: calc(var(--tab-min-height) + 1px) !important}
+    
+    :root[uidensity="touch"] .tabbrowser-tab,
+    :root[uidensity="touch"] .tab-background {
+        min-height: calc(var(--tab-min-height) + 3px) !important}
 
     .tab-stack {width: 100%}
+
+    :root[uidensity="touch"] #tabbrowser-tabs .scrollbox-innerbox {    
+        min-height: calc(var(--tab-min-height) + 3px);
+        max-height: calc((var(--tab-min-height) + 3px)*var(--max-tab-rows))}
 
     #tabbrowser-tabs .scrollbox-innerbox {
         display: flex;
@@ -95,7 +106,7 @@ function scrollToView() {
 }
 
 gBrowser.tabContainer.addEventListener('TabOpen', scrollToView, false);
-gBrowser.addEventListener("select", scrollToView, false);
+gBrowser.tabContainer.addEventListener("TabSelect", scrollToView, false);
 document.addEventListener("SSTabRestoring", scrollToView, false);
 
 // This sets when to apply the fix (by default a new row starts after the 23th open tab, unless you changed the min-size of tabs)

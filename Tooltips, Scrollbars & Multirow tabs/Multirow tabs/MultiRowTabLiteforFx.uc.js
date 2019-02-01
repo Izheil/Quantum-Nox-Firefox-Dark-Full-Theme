@@ -5,6 +5,7 @@
 // @include        main
 // @compatibility  Firefox 65
 // @author         Alice0775, Endor8, TroudhuK, Izheil
+// @version        01/02/2019 23:48 Fixed empty pixel line below tabs
 // @version        31/01/2019 10:32 Fixed issue with fullscreen
 // @version        30/01/2019 02:05 Fixed issue with a pixel being above the tab bar
 // @version        23/11/2018 00:41 Firefox 65
@@ -30,9 +31,11 @@ function zzzz_MultiRowTabLite() {
 
     #main-window[sizemode="maximized"] .tabbrowser-tab, #main-window[sizemode="fullscreen"] .tabbrowser-tab {
         height: calc(var(--tab-min-height) + 1px) !important; 
-        margin-top: 0px !important} 
+        margin-bottom: 0px !important} 
 
-    .tab-background {height: var(--tab-min-height) !important}
+    #main-window[sizemode="normal"] .tab-background {height: var(--tab-min-height) !important}
+    #main-window[sizemode="maximized"] .tab-background, #main-window[sizemode="fullscreen"] .tab-background {
+        height: calc(var(--tab-min-height) + 1px) !important}
 
     #tabbrowser-tabs {margin-top: 0px !important}
 

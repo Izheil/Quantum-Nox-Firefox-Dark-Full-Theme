@@ -10,16 +10,17 @@ basic css or <a href="https://www.w3schools.com/colors/colors_picker.asp">color 
 <br />
 This problem doesn't happen if you use a code editor such as notepad++, atom, sublime text...</h4>
 
-<h3>Last update: <b>31/01/2019</b></h3>
+<h3>Last update: <b>02/02/2019</b></h3>
+<p>Files updated:</p>
+<ul>
+  <li><b>MultirowTab*.uc.js</b>: Fixed the transparent line below tabs. Also fixed the issue with touch density tabs on scrollable multirow.</li>
+  <li><b>Navigator-toolbox-autohide.uc.js</b>: You can use this file to autohide the navigator toolbox automatically as if you were always on fullscreen.</li>
+</ul>
+<h3>Pre-Last update: <b>31/01/2019</b></h3>
 <p>Files updated:</p>
 <ul>
   <li><b>Userchrome.css</b>: Fixed the problem with fullscreen making the menu bar and the bookmarks bar not appearing on FF65 (on the "features" version only). Also fixed the color of the search box inside the web content area.</li>
   <li><b>MultirowTab*.uc.js</b>: Fixed tabs to be displayed correctly in full screen mode.</li>
-</ul>
-<h3>Pre-Last update: <b>30/01/2019</b></h3>
-<p>Files updated:</p>
-<ul>
-  <li><b>Userchrome.css</b>: You can now place the menu bar on top when using tabs below tweak. Also fixed the selector for the space that comes before the min/max/close buttons.</li>
 </ul>
 
 <code>
