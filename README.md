@@ -15,7 +15,7 @@ This problem doesn't happen if you use a code editor such as notepad++, atom, su
 <ul>
   <li><b>MultirowTab*.uc.js</b>: Fixed the transparent line below tabs. Also fixed the issue with touch density tabs on scrollable multirow.</li>
   <li><b>Navigator-toolbox-autohide.uc.js</b>: You can use this file to autohide the navigator toolbox automatically as if you were always on fullscreen.</li>
-  <li><b>userchrome.css</b>: Fixed some issue with the resize/close buttons appearing next to the tabs when having the menu bar locked on fullscreen.</li>
+  <li><b>userchrome.css</b>: Fixed some issue with the resize/close buttons appearing next to the tabs when having the menu bar locked on fullscreen. Also fixed an issue with tabs below not letting fullscreen autohide apply.</li>
 </ul>
 <h3>Pre-Last update: <b>31/01/2019</b></h3>
 <p>Files updated:</p>

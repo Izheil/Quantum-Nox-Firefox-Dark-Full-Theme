@@ -73,11 +73,10 @@ differentiable font (Thanks to BelladonnavGF for the tip) */
 #toolbar-menubar .titlebar-buttonbox-container {
   float: right !important}
 
-#window-controls {
-  position: fixed !important;
-  top: 0 !important; 
-  right: 0 !important}
-
+#main-window[sizemode="fullscreen"] #toolbar-menubar {display: none !important}
+#main-window:not([sizemode="fullscreen"]) #toolbar-menubar {display: block !important}
+/* ^ There seems to be an issue with the "top: 0" rule inside #toolbar-menubar that would not allow fullscreen
+to autohide, so it's safest to just hide it on fullscreen */
 
 /* FULLSCREEN FIX */
 /* This will enable the menu bar and bookmarks bar to appear on fullscreen */
