@@ -1,0 +1,22 @@
+/* You can find an updated version here: https://github.com/Izheil/Quantum-Nox-Firefox-Dark-Full-Theme */
+/* Made by Izheil */
+/* Last updated: 05/01/2019 */
+
+/* Fix for OS's (like default windows) that draws checkboxes and radio buttons whiteish */
+dialog checkbox .checkbox-check, dialog radio .radio-check, toolbar[printpreview="true"] checkbox:not(label),
+/* Same for select (dropdown) elements */
+dialog menulist, listitem[type="checkbox"], dialog select {
+  filter: invert(81%) hue-rotate(170deg) !important; color: #000 !important}
+
+@-moz-document url-prefix(moz-extension://), url-prefix(about:) {
+select:not(#excludedDomainsBox), input[type="checkbox"], input[type="radio"], input[type="number"] {filter: invert(81%) hue-rotate(170deg) !important}}
+
+@-moz-document url-prefix(https://addons.mozilla.org) {
+input[type="checkbox"], input[type="radio"], input[type="number"], checkbox .checkbox-check, 
+radio .radio-check {filter: invert(81%) hue-rotate(170deg) !important}
+
+#lang-picker {
+	filter: invert(75%) !important;
+	border: 1px solid #ddd !important;
+	fill: #000 !important}
+}

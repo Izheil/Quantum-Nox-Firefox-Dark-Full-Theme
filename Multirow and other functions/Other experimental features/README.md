@@ -1,7 +1,7 @@
 <h2>Other experimental features</h2>
 <p>Here go any other experimental features that aren't the main focus of the theme and their description. You shouldn't really need to install these unless you want some very specific function.</p>
 
-<p>You need to place <b>userchrome.xml</b> (If you already have one from this repository, you don't need to change it) on your <a href="https://github.com/Izheil/Quantum-Nox-Firefox-Dark-Full-Theme/tree/master/Tooltips%2C%20Scrollbars%20%26%20Multirow%20tabs#the-chrome-folder">chrome folder</a> along with any of these files for them to work, along with it's binding rule on <b>userchrome.css</b>, which is already added in any of the userchrome versions of this repository. If you don't want to use any of the userchrome.css files from this repository, all you need to do is create your own with this code:</p>
+<p>You need to place <b>userchrome.xml</b> (If you already have one from this repository, you don't need to change it) on your <a href="https://github.com/Izheil/Quantum-Nox-Firefox-Dark-Full-Theme/tree/master/Multirow%20and%20other%20functions#the-chrome-folder">chrome folder</a> along with any of these files for them to work, along with it's binding rule on <code>userchrome.css</code>, which is already added in any of the userchrome versions of this repository. If you don't want to use any of the <code>userchrome.css</code> files from this repository, all you need to do is create your own with this code:</p>
 
 <pre>
 /* DO NOT DELETE THIS LINE */

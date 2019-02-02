@@ -1,0 +1,872 @@
+/* You can find an updated version here: https://github.com/Izheil/Firefox-57-full-dark-theme-with-scrollbars */
+/* Made by Izheil */
+/* Last updated: 02/02/2019 */
+
+/* DO NOT DELETE THIS LINE */
+@namespace url("http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul");
+
+/* This enables the use of JS external files */
+toolbarbutton#alltabs-button {
+    -moz-binding: url("userChrome.xml#js");
+}
+
+/* COLORING PART STARTS HERE */
+
+/* GENERAL COLORS */
+
+/* This root class will modify the colors of toolbar background color (by default is transparent white 
+without this change) */
+:root:-moz-lwtheme {
+  --toolbar-bgcolor: rgba(0,0,0,.6) !important;
+  
+  /* You can change the lightweight theme header and footer images with this. 
+  To use this, enable the "lightweight themes fix" below. Delete the final /* to use -> *//*
+  --lwt-header-image: url("file:///") !important;
+  --lwt-footer-image: url("file:///") !important;
+
+  /* Url and search bars */
+  --url-and-searchbar-color: #FFF;
+  --urlbar-separator-color: #5F6670;
+  --lwt-toolbar-field-background-color: rgb(71,71,73) !important}
+
+/* Fix for some lightweight themes not working properly when set manually here (appearing with a lot of padding to the left) *//*
+:root:-moz-lwtheme[lwtheme-image], #tabbrowser-tabs:not([movingtab]) > .tabbrowser-tab > 
+.tab-stack > .tab-background[selected="true"]:-moz-lwtheme {
+  background-position: left top !important}
+
+/* This changes the background color of the browser toolbar for those using the default dark theme to a static dark color. 
+You may need to change the --toolbar-bgcolor in the rules above for the tab contrast color to be less dark if using this */
+#main-window {background-color: #282829 !important}
+
+/* Tab line color. Using -moz-win-accentcolor as the color value changes it to the current window color (on Windows)
+but is disabled by default in this theme (Disable for the default tab line color). *//*
+#tabbrowser-tabs {
+  --tab-line-color: var(--lwt-accent-color) !important}
+
+/* Text color of the url bar */
+#urlbar, .searchbar-textbox {
+  color: #ccc !important}
+
+/* This gives a more notizable color background on hover of the close tab button */
+.tab-close-button:hover {background: rgba(255,255,255,0.15) !important}
+
+/* These rules will modify most highlight (background on hover) colors inside Firefox (except sidebar items, which are 
+in the rule below) */
+:root {
+  --bookmark-toolbar-text: var(--lwt-text-color); /* var(--lwt-text-color) for default color of the used theme */
+  --nav-bar-icons-color: var(--chrome-color); /* var(--chrome-color) for default color of the used theme */
+  --Min-max-buttons-hover-bg: rgba(255,255,255,0.2);
+  --Context-menu-highlight: #25a;
+  --Context-menu-background: rgba(68,68,68, 1); /* The last number changes the opacity %. Change that 1 for 0.9 for semitransparent backgrounds */
+  --Progress-bar-color: #3070dd;
+  --About-addon-text: #09f;
+  --About-addon-text-hover: #0ff;
+  --About-addon-extension-name: #38f;
+  --Input-field-focus-shadow: 0 0 4px #0050ff;
+  --Bookmark-folder-icon: #ffe793;
+  --Bookmark-favicon-icon: #ddd;
+  --Feeds-link: #00aaff;
+  --Feeds-link-hover: #0ff;
+  --Feeds-link-active: #0050aa;
+  --Feeds-link-visited: #0050dd;
+  --Url-bar-highlight-bg: #25a;
+  --Search-engine-choices-gradient: linear-gradient(#337, #115);
+  --Searched-item-text-color: #0FF;
+  --Lists-treechildren-hover-bg: rgba(0,149,221,0.25);
+  --Lists-treechildren-hover-border: 1px solid rgb(0,149,221);
+  --Lists-treechildren-selected-bg: rgba(0,120,255,0.5);
+  --Lists-treechildren-selected-border: 1px solid #0a84ff;
+
+  /* These ones are used for the read/unread tabs styling. For italic rules use 
+  either "normal" or "italic" without the quotes for either no italics or using italics, 
+  and for bold, use either "bold" or "normal" in the same way */
+  --Loaded-and-selected-text: #eee;
+  --Loaded-and-selected-italic: normal;
+  --Loaded-and-selected-bold: normal;
+  --Loaded-and-selected-background: transparent;
+
+  --Loaded-but-unread-text: #fff;
+  --Loaded-but-unread-italic: italic;
+  --Loaded-but-unread-bold: normal;
+  --Loaded-but-unread-background: transparent;
+
+  --Not-loaded-text: #ccc;
+  --Not-loaded-italic: italic;
+  --Not-loaded-bold: normal;
+  --Not-loaded-background: transparent;
+
+  --Loading-text: #0088ff;
+  --Loading-italic: normal;
+  --Loading-bold: normal;
+  --Loading-background: transparent;
+}
+
+/* This changes the color of the sidebar panel text */
+#bookmarks-view treechildren, #historyTree treechildren {color: #ccc !important}
+
+/* This is a fix for treechildren that might look whiteish in linux */
+treechildren::-moz-tree-row {background: transparent !important}
+
+/* This changes all treechildren elements highlights (list-like elements) */
+treechildren::-moz-tree-row(hover) {
+  background: var(--Lists-treechildren-hover-bg) !important;
+  border: var(--Lists-treechildren-hover-border) !important}
+
+treechildren::-moz-tree-row(selected){
+  background: var(--Lists-treechildren-selected-bg) !important;
+  border: var(--Lists-treechildren-selected-border) !important}
+
+/* v Fix to make the pre-render loading page dark instead of white v */
+#tabbrowser-tabpanels {background: #202020 !important}
+
+/* You can also add an image of your choice in the pre-render loading page if you want 
+Delete the final /* to use -> *//*
+browser[type="content-primary"], tabbrowser tabpanels, #appcontent > #content {
+  background-image: url("file:///C:/Users/") !important;
+  background-size: cover !important;
+  background-position: center !important}
+
+/* Tabs border color */
+.tabbrowser-tab {border-right: 1px solid rgba(255,255,255, .15) !important}
+
+/* Glow effect over the tabs site icon (for dark icons visibility) */
+/* You can add the selectors .bookmark-item:not([container=true]) .menu-iconic-icon for 
+icons inside the dropdown menus as well, and toolbarbutton.bookmark-item:not([container=true]) .toolbarbutton-icon
+for icons on the bookmarks bar under the url bar. Just make sure to put commas after each selector */
+.tab-icon-image {
+  filter: drop-shadow(0 0 3px #fff)}
+
+/* END OF GENERAL COLORS */
+
+/* Max, min and close buttons */
+
+/* This prevents any custom windows theme to change the background color
+of the minimize, maximize and close buttons */
+#TabsToolbar .titlebar-min:not(:hover), #TabsToolbar .titlebar-max:not(:hover), 
+#main-window[sizemode="maximized"] #TabsToolbar .titlebar-max:not(:hover),
+#TabsToolbar .titlebar-close:not(:hover) 
+{background-color: transparent !important}
+
+/* This changes the color on hover of the minimize and maximize buttons */
+#TabsToolbar .titlebar-min:hover, #TabsToolbar .titlebar-max:hover, 
+#main-window[sizemode="maximized"] #TabsToolbar .titlebar-max:hover 
+{background-color: var(--Min-max-buttons-hover-bg) !important}
+
+/* This changes the close button hover color */
+#TabsToolbar .titlebar-close:hover {background-color: #d00 !important}
+
+/* The downloads progress bar color */
+.progress-bar {
+  -moz-appearance: none !important;
+  background-color: var(--Progress-bar-color) !important}
+
+/* Bookmark toolbar text color */
+#PersonalToolbar {color: var(--bookmark-toolbar-text) !important}
+
+/* Nav bar button color */
+#nav-bar {color: var(--nav-bar-icons-color) !important}
+
+/* Search bar inside the content area */
+findbar {
+  background: #333 !important; 
+  color: #ddd !important;
+  border-top: 1px solid #000 !important;}
+
+findbar .findbar-textbox {
+  background: #666 !important;
+  color: #fff !important;
+  border: 1px solid #000 !important}
+
+findbar .findbar-textbox[focused="true"], findbar .findbar-textbox:hover {
+  border-color: Highlight !important}
+
+.findbar-textbox[status="notfound"] {background: #f66 !important}
+
+.findbar-textbox[flash="true"] {
+  background-color: yellow !important;
+  color: black !important}
+
+findbar .findbar-find-previous, findbar .findbar-find-next {
+  background: linear-gradient(#555,#333) !important;
+  border-top: 1px solid #000 !important;
+  border-right: 1px solid #000 !important;
+  border-bottom: 1px solid #000 !important;
+  border-left: none !important}
+
+findbar .findbar-find-previous:active, findbar .findbar-find-next:active {
+  background: linear-gradient(#333,#555) !important}
+
+/* Color for most dialogs */
+dialog, dialog caption, dialog select, #clientBox  {
+  -moz-appearance: none !important;
+  background-color: #333 !important;
+  color: #ccc !important}
+
+#printPageSetupDialog caption {background-color: #444 !important}
+
+dialog #openHandlerBox menulist {
+  -moz-appearance: none !important;
+  border: 1px solid #111 !important;
+  background: linear-gradient(#555,#333) !important;
+  color: #ddd !important}
+
+dialog #openHandlerBox menulist:hover {
+  background: linear-gradient(#333,#555) !important;
+  color: #fff !important}
+
+dialog groupbox {
+  -moz-appearance: none !important; 
+  border: 1px solid #666 !important}
+
+/* This is the "about this addon..." dialog */
+#clientBox {
+  background-color: #444 !important}
+
+#clientBox label:not(#extensionName):not(#extensionCreator):not(.contributor):not(#extensionVersion):not(.sectionTitle) {
+  color: var(--About-addon-text) !important}
+
+#clientBox label:not(#extensionName):not(#extensionCreator):not(.contributor):not(#extensionVersion):not(.sectionTitle):hover {
+  color: var(--About-addon-text-hover) !important}
+
+#extensionName {color: var(--About-addon-extension-name) !important}
+
+#groove {border-color: #222 !important}
+
+/* This is aimed for notification popups */
+window:not(#main-window):not(#CookiesDialog):not(#SignonViewerDialog) > * {
+  background-color: #444 !important; 
+  color: #fff !important}
+
+/* Color for most buttons */
+dialog button, toolbar[printpreview="true"] button {
+  -moz-appearance: none !important;
+  border-radius: 3px !important;
+  background: #555 !important;
+  color: #ddd !important;
+  padding: 2px !important}
+
+dialog button:hover, toolbar[printpreview="true"] button:hover {
+  background: #444 !important;
+  color: #fff !important}
+
+dialog textbox, toolbar[printpreview="true"] textbox {
+  transition: all 0.25s ease-in-out !important;
+  -moz-appearance: none !important; 
+  border: 1px solid #666 !important;
+  background-color: #444 !important;
+  color: #aaa !important}
+
+dialog textbox[focused="true"], toolbar[printpreview="true"] textbox[focused="true"],
+#bookmarkproperties #editBMPanel_namePicker[focused="true"], #bookmarkproperties #editBMPanel_tagsField[focused="true"] {
+  box-shadow: var(--Input-field-focus-shadow) !important;
+  background-color: #555 !important;
+  color: #fff !important}
+
+/* CUSTOMIZATION PAGE */
+
+/* The windows default theme colors will mainly affect the customizing page (when
+you aren't using the default dark theme of mozilla, that is) */
+:root {
+  --toolbar-bgcolor: #303030 !important;
+  --toolbar-non-lwt-bgcolor: #303030 !important;
+  --toolbar-non-lwt-textcolor: #fff !important}
+
+/* The customization page button colors */
+.customizationmode-button {
+  -moz-appearance: none !important;
+  border-radius: 3px !important;
+  background: #555 !important;
+  color: #ddd !important;
+  border: none !important}
+
+.customizationmode-button:hover {
+  background: #444 !important;
+  color: #fff !important}
+
+.customization-lwtheme-menu-footeritem {
+  border-right: 1px solid #222 !important;
+  background: linear-gradient(#555,#333) !important;
+  color: #ddd !important}
+
+.customization-lwtheme-menu-footeritem:hover {
+  background: linear-gradient(#333,#555) !important;
+  color: #fff !important}
+
+.button-menu-dropmarker .dropmarker-icon {filter: invert(75%) !important}
+
+#customization-done-button {
+  -moz-appearance: none !important;
+  border-radius: 3px !important;
+  background: #2050AA !important;
+  color: #fff !important;
+  border: none !important}
+
+#customization-done-button:hover {
+  background: #1040A0 !important}
+
+#customization-lwtheme-menu-footer {border-top: none !important}
+
+/* This is a fix for systems with a custom OS theme */
+.customizationmode-button {padding: 0.5em !important}
+#customization-done-button {padding: 0.5em 3em 0.5em 3em !important}
+
+/* CONTEXT MENUS */
+
+/* Main menu colors */
+:root {
+  --panel-separator-color: rgba(0,0,0, .5) !important;
+  --arrowpanel-background: #444 !important;
+  --arrowpanel-color: #ccc !important;
+  --in-content-box-background: #333 !important;
+  --in-content-box-background-hover: #444 !important;
+  --arrowpanel-dimmed: rgba(255, 255, 255, 0.1) !important;
+  --arrowpanel-dimmed-further: rgba(255, 255, 255, 0.25) !important;
+  --arrowpanel-dimmed-even-further: rgba(255, 255, 255, 0.4) !important}
+
+/* Little fix in case there is some addon popup text that you don't see because 
+of the background (delete the /* in the end to use ->) *//*
+#customizationui-widget-panel .panel-arrow {fill: #fff !important}
+.webextension-popup-browser {background: #fff !important}
+
+/* Zoom reset button on the main menu */
+#appMenu-zoomReset-button {background-color: #666 !important}
+#appMenu-zoomReset-button:hover {background-color: #333 !important}
+#appMenu-zoomReset-button:active {background-color: #222 !important}
+
+/* This one changes the letters color of all context menus */
+menu, menuitem {
+  color: #ccc !important;
+  -moz-appearance: none !important}
+
+/* Padding for all menu items (do NOT change unless you want an spaced or indented upon 
+selection effect). The open in tabs bookmark item is added here since it also needs the 
+padding that we remove in the next rule */ 
+menuitem, .bookmark-item .openintabs-menuitem,
+#history-menu menupopup > menu, #view-menu menupopup > menu {
+  padding-top: 3px !important;
+  padding-bottom: 2px !important}
+
+/* This removes the unnecesary padding from the bookmark items */
+.bookmark-item menuitem {
+  padding-top: 0px !important;
+  padding-bottom: 0px !important}
+
+/* This changes the color on hover of the context-menu items */
+menubar > menu[_moz-menuactive="true"],
+menupopup > menu[_moz-menuactive="true"],
+popup > menu[_moz-menuactive="true"],
+menuitem[_moz-menuactive="true"]
+{background-color: var(--Context-menu-highlight) !important}
+
+/* This does the same but for disabled ones */
+menubar > menu[_moz-menuactive="true"][disabled="true"],
+menupopup > menu[_moz-menuactive="true"][disabled="true"],
+popup > menu[_moz-menuactive="true"][disabled="true"],
+menuitem[_moz-menuactive="true"][disabled="true"] 
+{background-color: #333 !important} 
+
+/* This changes the text color of the greyed out actions on the context menus */
+menuitem[disabled="true"], popup > menu[disabled="true"],
+menupopup > menu[disabled="true"], menubar > menu[disabled="true"]{color: #777 !important}
+
+/* This one applies to all context menus (If you want to theme the browser this one is better instead 
+of going one by one) */
+menupopup {background-color: var(--Context-menu-background) !important}
+
+/* The following code changes the borders of all the context menus (except the ones above mentioned),
+as well as ignoring the bookmark menu context menu */
+menupopup {
+  -moz-appearance: none !important;
+  border: 1px solid #111 !important}
+
+/* Context menu separator color override */
+menuseparator {
+  -moz-appearance: none !important;
+  margin: 1px 0 1px 2.3em !important;
+  height: 1px !important;
+  border: none !important;
+  background: #222 !important;
+  padding: 0 !important}
+
+/* Context menu navigation tools (back, forward, reload) background color */
+#context-navigation {
+  -moz-appearance: none !important;
+  background-color: #444 !important;
+  padding-bottom: 0px !important}
+
+/* This removes the borders for the bookmark menu button next to the url bar */
+#BMB_bookmarksPopup, #BMB_bookmarksPopup menupopup {border: none !important}
+
+/* This changes the text color of the hint text on the bookmarks popup menu */
+.menu-accel-container .menu-iconic-accel {color: #808080 !important}
+.menu-accel-container .menu-accel {color: #909090 !important}
+
+/* Bookmark context menu > icon color and popup allow > icon color */
+.bookmark-item .menu-right, menu .menu-right, 
+#identity-popup-popup-menulist .menulist-dropmarker {filter: brightness(300%) !important}
+
+/* Drop indicator that appears when moving a bookmark in a bookmark folder color */
+.menupopup-drop-indicator {background-color: #999 !important}
+
+/* Color of default icons on bookmark bar and bookmark popup (folder icons mainly) */
+.bookmark-item > .toolbarbutton-icon[type="menu"], 
+.bookmark-item[container="true"] .menu-iconic-icon {fill: var(--Bookmark-folder-icon) !important}
+
+/* Color of default icons on bookmark bar and bookmark popup (world icon, aka not-favicon-found icon) */
+.bookmark-item[scheme="http"], .bookmark-item[scheme="http"] .menu-iconic-icon {fill: var(--Bookmark-favicon-icon) !important}
+
+/* Fix for the space above the "save as" option after the navigation buttons have been eliminated. Change 
+if necessary depending on if you are using a custom OS theme (which may mess up the padding of the separators) */
+#context-savepage {padding-top: 3px !important}
+
+/* LIBRARY MENU */
+
+/* These change top bar background color */
+#placesToolbar {background-color: #333 !important}
+
+/* These change the lists background color */
+#placesView, #placesView .scrollbox-innerbox,
+#infoPane, #placesList, #placeContent, 
+/* This one changes the urlbar star bookmarking folder tree backgrund color */
+#editBMPanel_folderTree {
+  -moz-appearance: none !important; 
+  background: #555 !important; 
+  color: #ddd !important}
+
+/* These change the list header background and text colors */
+#placeContent treecol {
+  -moz-appearance: none !important; 
+  background: #444 !important;
+  padding: 3px !important;
+  color: #ddd !important;
+  border-left: 1px solid #333 !important;
+  border-bottom: 1px solid #333 !important}
+
+#placeContent treecol:hover {
+  -moz-appearance: none !important; 
+  background: rgba(255,255,255, 0.15) !important;
+  color: #fff !important}
+
+/* This changes the right border on the left list panel */
+#placesView > splitter {border-inline-end: 1px solid #333 !important}
+
+/* These change the even rows of the lists */
+#placeContent tree {background-color: var(--in-content-box-background) !important}
+
+#placeContent treechildren::-moz-tree-row(even) {
+  background-image: linear-gradient(rgba(0,0,0,0.25), rgba(0,0,0,0.25)) !important}
+
+#placeContent treechildren::-moz-tree-cell {border-right: 1px dotted rgba(0,0,0,0.4) !important}
+
+#placeContent > splitter {border: 1px solid red !important}
+
+/* This changes the forward and back buttons opacity when disabled */
+#placesToolbar > toolbarbutton[disabled] > .toolbarbutton-icon {
+  opacity: .25 !important}
+
+/* This changes the forward and back buttons color */
+#back-button > .toolbarbutton-icon,
+#forward-button > .toolbarbutton-icon {fill: #aaa !important; opacity: 1 !important}
+
+/* This deletes the leftover border when clicking one of the top buttons */
+#placesMenu > menu {border: none !important}
+
+/* This changes the text color of the "clear downloads" button */
+#clearDownloadsButton {color: #aaa !important}
+#clearDownloadsButton[disabled] {color: #555 !important}
+
+/* This themes the search box */
+#searchFilter {
+  transition: all 0.25s ease-in-out !important;
+  -moz-appearance: none !important; 
+  border: 1px solid #666 !important;
+  background-color: #444 !important;
+  color: #aaa !important}
+
+/* This themes the search box on hover */
+#searchFilter[focused="true"] {
+  box-shadow: var(--input-field-focus-shadow) !important;
+  background-color: #555 !important;
+  color: #fff !important} 
+
+/* This themes the information box on the lower part of the library menu */
+#detailsDeck {
+  background-color: #444 !important; 
+  color: #aaa !important;
+  border-top: 1px solid #222 !important}
+
+/* This changes the text boxes inside the library bottom information box */
+#infoBox textbox, #infoBox listbox, 
+/* This changes the text boxes on the popup when bookmarking a page from the url box */
+#editBMPanel_namePicker, #editBMPanel_tagsField,
+#editBMPanel_tagsSelector {
+  transition: all 0.25s ease-in-out !important;
+  -moz-appearance: none !important; 
+  border: 1px solid #777 !important;
+  background-color: #555 !important;
+  color: #ddd !important}
+
+/* A fix for bookmark preferences... so that some boxes won't appear brighter than others */
+#bookmarkproperties #editBMPanel_namePicker, 
+#bookmarkproperties #editBMPanel_tagsField,
+#bookmarkproperties #editBMPanel_tagsSelector {
+  background-color: #444 !important}
+
+/* This changes the same text boxes on hover */
+#infoBox textbox[focused="true"], #infoBox listbox[focused="true"],
+/* This changes the same url bookmarking popup text boxes on hover */
+#editBMPanel_namePicker[focused="true"], #editBMPanel_tagsField[focused="true"],
+#infoBox #bookmarkproperties #editBMPanel_namePicker[focused="true"],
+#infoBox #bookmarkproperties #editBMPanel_tagsField[focused="true"] {
+  box-shadow: var(--Input-field-focus-shadow) !important;
+  background-color: #666 !important;
+  color: #fff !important}
+
+/* This changes the buttons inside the bookmarking popup at the url star */
+#editBMPanel_newFolderButton, #editBookmarkPanelDoneButton, 
+#editBookmarkPanelRemoveButton, #tracking-action-unblock-private, 
+#identity-popup-popup-menulist, #tracking-action-block, #tracking-action-unblock {
+  -moz-appearance: none !important;
+  border-radius: 3px !important;
+  background: #666 !important;
+  color: #ddd !important;
+  padding: 0.3em !important;
+  margin-top: 0.5em !important;
+  margin-bottom: 0.5em !important}
+
+#editBMPanel_newFolderButton:hover,#editBookmarkPanelDoneButton:hover, 
+#editBookmarkPanelRemoveButton:hover, #tracking-action-unblock-private:hover, 
+#identity-popup-popup-menulist:hover, #tracking-action-block:hover, 
+#tracking-action-unblock:hover { 
+  background: #333 !important;
+  color: #fff !important}
+
+/* These change the expander buttons on the library and bookmarking popup */
+#editBMPanel_folderMenuList, #editBMPanel_tagsSelectorExpander,
+#editBMPanel_foldersExpander, #detailsDeck button {
+  -moz-appearance: none !important;
+  border: 1px solid #222 !important;
+  background: linear-gradient(#555,#333) !important;
+  color: #ddd !important}
+
+#editBMPanel_folderMenuList:hover, #editBMPanel_tagsSelectorExpander:hover, 
+#editBMPanel_foldersExpander:hover, #detailsDeck button:hover {
+  background: linear-gradient(#333,#555) !important;
+  color: #fff !important}
+
+#editBMPanel_folderMenuList {padding: 1px !important; color: #ddd !important}
+
+/* PAGE INFORMATION WINDOW */
+
+/* This themes the top bar and it's buttons */
+#topBar, #certDetails {
+  background: #333 !important; 
+  color: #ddd !important;
+  border-bottom: 1px solid #222 !important}
+
+#viewGroup > radio:hover {
+  -moz-appearance: none !important;
+  background-color: rgba(255,255,255,0.15) !important; 
+  color: #eee !important}
+
+#viewGroup > radio[selected="true"] {
+  background-color: rgba(255,255,255,0.25) !important; 
+  color: #fff !important}
+
+/* This themes the base of the windows for all page information dialogs */
+#mainDeck, #mainDeck caption, #CookiesDialog,
+#SignonViewerDialog {
+  -moz-appearance: none !important;
+  background: #444 !important; 
+  color: #ddd !important}
+
+#mainDeck textbox, #cookieInfoBox textbox {color: #aaa !important}
+
+#mainDeck groupbox, #cookieInfoBox {
+  -moz-appearance: none !important; 
+  border: 1px solid #666 !important}
+
+/* This changes the feeds items links */
+#mainDeck richlistitem .text-link {-moz-appearance: none !important; color: #00aaff !important}
+#mainDeck richlistitem .text-link:hover {-moz-appearance: none !important; color: #0ff !important}
+#mainDeck richlistitem .text-link:active {-moz-appearance: none !important; color: #0050aa !important}
+#mainDeck richlistitem .text-link:visited {-moz-appearance: none !important; color: #0050dd !important}
+
+/* This changes the feeds items background color */
+#mainDeck richlistitem {
+  background: #555 !important;
+  color: #bbb !important;
+  border-bottom: 1px solid rgba(0,0,0,0.15) !important}
+
+#mainDeck richlistitem:hover {
+  background: rgba(255,255,255,0.15) !important}
+
+/* A fix for certificates textboxes */
+#certDetails textbox {
+  border: none !important;
+  box-shadow: none !important;
+  background: #444 !important}
+
+/* This changes the lists with a header on all windows related to the page info one */
+#mainDeck tree, #imagecontainerbox, #brokenimagecontainer,
+#mainDeck richlistbox, #certDetails tree, #removalList,
+#certPrettyPrint textbox, #signonsTree {
+  -moz-appearance: none !important;
+  background: #555 !important;
+  color: #ddd !important;
+  border: 1px solid #222 !important}
+
+#removalList > listitem {color: #fff !important}
+
+#removalList > listitem:hover {
+  background: var(--Lists-treechildren-hover-bg) !important;
+  border: var(--Lists-treechildren-hover-border) !important}
+
+#removalList > listitem[selected="true"], #removalList > listitem[focused="true"] {
+  background: var(--Lists-treechildren-selected-bg) !important;
+  border: var(--Lists-treechildren-selected-border) !important}
+
+#mainDeck treechildren::-moz-tree-row(odd), #cookiesList treechildren::-moz-tree-row(odd),
+#certDetails treechildren::-moz-tree-row(odd), #signonsTree treechildren::-moz-tree-row(odd) {
+  background-image: linear-gradient(rgba(0,0,0,0.25), rgba(0,0,0,0.25)) !important}
+
+#nameCol, #certDetails {border: none !important}
+
+/* These theme the header of the lists on all windows related to the page info one */
+#mainDeck treecol, #cookiesList treecol, #signonsTree treecol {
+  -moz-appearance: none !important; 
+  background: #333 !important;
+  padding: 3px !important;
+  color: #ddd !important;
+  border-right: 1px solid #222 !important;
+  border-bottom: 1px solid #222 !important}
+
+#mainDeck treecol:hover, #cookiesList treecol:hover, 
+#signonsTree treecol:hover {
+  -moz-appearance: none !important; 
+  background: rgba(255,255,255, 0.15) !important;
+  color: #fff !important}
+
+#mediaPanel treecols *, #signonsTree treecols * {-moz-appearance: none !important}
+#mediaPanel treecols, #signonsTree treecols {background: #333 !important}
+
+/* This themes the buttons on the main information window */
+#mainDeck button, #certDetails button {
+  -moz-appearance: none !important;
+  border-radius: 3px !important;
+  background: #666 !important;
+  color: #ddd !important;
+  padding: 0.3em !important}
+
+#mainDeck button:hover {
+  background: #333 !important;
+  color: #fff !important}
+
+#certDetails button:hover {
+  background: #555 !important;
+  color: #fff !important}
+
+/* This themes the permissions list */
+#permList {
+  -moz-appearance: none !important; 
+  border: 1px solid #222 !important;
+  background: #505050 !important;
+  color: #ddd !important}
+
+#permList vbox:hover {
+  -moz-appearance: none !important;
+  background: rgba(0,0,0, 0.15) !important;
+  color: #fff !important}
+
+/* This themes the cookies and the passwords window search box */
+#CookiesDialog #filter, #SignonViewerDialog #filter {
+  transition: all 0.25s ease-in-out !important;
+  -moz-appearance: none !important; 
+  border: 1px solid #666 !important;
+  background-color: #555 !important;
+  color: #aaa !important}
+
+/* This themes the search box on hover */
+#CookiesDialog #filter[focused="true"], #SignonViewerDialog #filter[focused="true"] {
+  box-shadow: var(--input-field-focus-shadow) !important;
+  background-color: #666 !important;
+  color: #fff !important}
+
+/* This themes the buttons on the cookies and passwords window */
+#CookiesDialog button, #SignonViewerDialog button {  
+  -moz-appearance: none !important;
+  border-radius: 3px !important;
+  background: #666 !important;
+  color: #ddd !important;
+  padding: 0.3em !important}
+
+#CookiesDialog button:hover, #SignonViewerDialog button:hover {
+  background: #333 !important;
+  color: #fff !important}
+
+/* These are the certificates window tabs */
+#certDetails tabpanels, #certDetails tab, #printPageSetupDialog tab, 
+#printPageSetupDialog tabpanels {
+  -moz-appearance: none !important;
+  background: #444 !important;
+  color: #ddd !important;
+  border-left: 1px solid #555 !important;
+  border-right: 1px solid #555 !important}
+
+#certDetails tab {border-top: 1px solid #555 !important}
+#certDetails tabpanels {border-bottom: 1px solid #555 !important}
+
+/* The certificate window text boxes*/
+#certDetails tabpanels textbox {color: #aaa !important}
+
+#verify_info_box textbox {
+  -moz-appearance: none !important; 
+  background: #555 !important;
+  border: 1px solid #666 !important}
+
+/* Sanitizer window */
+#itemList, #sanitizeEverythingWarningBox {
+  -moz-appearance:none !important;
+  background-color: #333 !important;
+  border-color: transparent !important}
+
+#itemList listitem {color: #ccc !important}
+#itemList listitem[selected="true"] {
+  background: #555 !important;
+  border-color: transparent !important}
+  
+/* AUTOCOMPLETE COLORS */
+
+/* This changes the autocomplete popup borders */
+#PopupAutoCompleteRichResult, #PopupSearchAutoComplete, #PopupAutoComplete
+{border: 1px solid #000 !important}
+
+/* This changes the autocomplete background color of the URL bar */
+.autocomplete-richlistbox,
+/* Changes the color of searchbox  old searches (Continues from above) */
+.search-panel-tree {background-color: #444 !important}
+
+/* Changes the color of the highlighted item (only the selected one) on the url and searchbar */
+.autocomplete-richlistitem[selected="true"], 
+.search-panel-tree > .autocomplete-treebody::-moz-tree-cell(fromhistory, selected)
+{background-color: var(--Url-bar-highlight-bg) !important}
+
+/* Changes the color of the autocomplete on the URL bar */
+#PopupAutoCompleteRichResult .ac-title-text,
+#PopupAutoCompleteRichResult .ac-tags-text,
+#PopupAutoCompleteRichResult .ac-action-text,
+
+/* Changes the color of the autocomplete on web area inputs (Continues from above) */
+.autocomplete-richlistbox .ac-action-text, 
+.autocomplete-richlistbox .ac-tags-text,
+.autocomplete-richlistbox .ac-title-text,
+
+/* Changes the color of search old searches (Continues from above) */
+.search-panel-tree 
+{color: #ccc !important}
+
+/* The search autocomplete "-" lines */
+.ac-separator {color: #222 !important}
+
+/* Changes the color of the autocomplete links on the URL bar */
+#PopupAutoCompleteRichResult .ac-url-text {color: rgb(0,160,200) !important}
+
+/* Changes the color of header of the search option */
+.search-panel-header, .addengine-item {
+  background-color: #333 !important;
+  color: #ccc !important}
+
+/* Changes the color of the "Add x new search engine" hover effect */
+.addengine-item:hover {background-color: #444 !important}
+
+/* Changes the color of search engines choices */
+.search-panel-one-offs {background: var(--Search-engine-choices-gradient) !important}
+
+/* Changes the color of search engine options button */
+.search-setting-button {
+    background: linear-gradient(#333,#111) !important;
+    color: #777 !important}
+
+.search-setting-button:hover {background: linear-gradient(#111,#333) !important}
+
+/* Changes the color of searched item on the search popup */
+.search-panel-input-value {color: var(--Searched-item-text-color) !important}
+
+/* SIDEBAR */
+
+/* These change the color of the sidebar */
+#sidebar-header {
+  color: #fff !important;
+  background-color: #303030 !important;
+  -moz-appearance: none !important;
+  border-bottom: 1px solid #111 !important} 
+
+#sidebar-search-container, #sidebar, .sidebar-placesTree {
+  -moz-appearance: none !important;
+  background-color: #404040 !important;
+  color: #ccc !important}
+
+.sidebar-splitter {
+  border-right: 2px solid #000 !important;
+  -moz-appearance: none !important}
+
+treechildren::-moz-tree-separator {border-color: #000 !important}
+
+/* Items inside the sidebar (treechildren) are located in the general colors section of this file now */
+
+/* This changes the sidebar searchbar */
+#sidebar-search-container #search-box {
+  -moz-appearance: none !important;
+  background-color: #222 !important;
+  color: #fff !important}
+
+/* TAB READ/UNREAD COLORS */
+
+/* You can bold the text of any tab adding "font-weight: bold !important" after their last rule, but before the "}"  */
+
+/* Selected (loaded) */
+.tabbrowser-tab[selected="true"] .tab-label {
+  color: var(--Loaded-and-selected-text) !important;
+  font-style: var(--Loaded-and-selected-italic) !important;
+  font-weight: var(--Loaded-and-selected-bold) !important;
+  background-color: var(--Loaded-and-selected-background) !important}
+
+/* Loaded but unread (not selected) */
+.tabbrowser-tab:not([selected="true"])[unread] .tab-label {
+  color: var(--Loaded-but-unread-text) !important;
+  font-style: var(--Loaded-but-unread-italic) !important;
+  font-weight: var(--Loaded-but-unread-bold) !important;
+  background-color: var(--Loaded-but-unread-background) !important}
+
+/* Not loaded yet (also visited) */
+.tabbrowser-tab:not([selected="true"])[pending] .tab-label,
+.tabbrowser-tab:not([selected="true"])[visited] .tab-label {
+  color: var(--Not-loaded-text) !important;
+  font-style: var(--Not-loaded-italic) !important;
+  font-weight: var(--Not-loaded-bold) !important;
+  background-color: var(--Not-loaded-background) !important}
+
+/* loading */
+.tabbrowser-tab[busy] .tab-text.tab-label {
+  color: var(--Loading-text) !important;
+  font-style: var(--Loading-italic) !important;
+  font-weight: var(--Loading-bold) !important;
+  background-color: var(--Loading-background) !important}
+
+/* ADDON POPUPS */
+
+/* Fix for the panel arrows for extensions (Only enable if using the addons file) *//*
+#customizationui-widget-panel[viewId="PanelUI-webext-_b9db16a4-6edc-47ec-a1f4-b86292ed211d_-browser-action-view"] .panel-arrow,
+#customizationui-widget-panel[viewId="PanelUI-webext-jid1-mnnxcxisbpnsxq_jetpack-browser-action-view"] .panel-arrow,
+#customizationui-widget-panel[viewId="PanelUI-webext-s3download_statusbar-browser-action-view"] .panel-arrow {
+  fill: #333 !important}
+
+#customizationui-widget-panel[viewId="PanelUI-webext-ublock0_raymondhill_net-browser-action-view"] .panel-arrow {
+  fill: #111 !important}
+
+#customizationui-widget-panel[viewId="PanelUI-webext-artur_dubovoy_gmail_com-browser-action-view"] .panel-arrow {
+  fill: #222 !important}
+
+#customizationui-widget-panel[viewId="PanelUI-webext-tab-session-manager_sienori-browser-action-view"] .panel-arrow {
+  fill: #36b2b2 !important}
+*/
