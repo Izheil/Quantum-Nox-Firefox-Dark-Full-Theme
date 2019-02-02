@@ -45,7 +45,9 @@ This problem doesn't happen if you use a code editor such as notepad++, atom, su
 <h3>Main browser UI</h3>
 <img src="https://i.imgur.com/zNKhEV6.png" title="Dark firefox UI with custom background" />
 
-<p>Depending on if you only want to color dark your Firefox, or want to add some more functionability (like deleting some useless context menu commands, or adding multirow tab support), you will have to use the methods described inside the 3 main folders of this repository :</p>
+<p>If you are on windows and only want the theme or multirow, you can use the batch file installers inside the "installers" folder.</p> 
+
+<p>If you are using Linux or Mac, or want to add some more functionability (like deleting some useless context menu commands), you will have to use the methods described inside the 3 main folders of this repository:</p>
 
 <h4>Short version</h4>
 <ul>
@@ -99,7 +101,7 @@ This problem doesn't happen if you use a code editor such as notepad++, atom, su
 
 <h4>You can turn the features you want on or off changing the commented lines on <code>userchrome.css</code> (To change them you just have to open it with notepad or any code editor, and encase between "/*" and "*/" (without the quotation marks) the lines you don't want to take effect). Of course, if you think that you are NEVER going to use certain feature, you can always delete the specific lines you don't want without any other side-effect.</h4>
 
-<p>You can find a video tutorial on how to install the theme <a href="https://youtu.be/vZnirB1ZEqc">here</a>.</p>
+<p>You can find a video tutorial on how to install the theme without installers <a href="https://youtu.be/kNHe6XDgUN4">here</a>.</p>
 
 <h3>The scrollbars</h3>
 
