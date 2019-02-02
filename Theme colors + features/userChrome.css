@@ -19,7 +19,8 @@ without this change) */
 :root:-moz-lwtheme {
   --toolbar-bgcolor: rgba(0,0,0,.6) !important;
   
-  /* You can change the lightweight theme header and footer images with this. Delete the final /* to use -> *//*
+  /* You can change the lightweight theme header and footer images with this. 
+  To use this, enable the "lightweight themes fix" below. Delete the final /* to use -> *//*
   --lwt-header-image: url("file:///") !important;
   --lwt-footer-image: url("file:///") !important;
 
@@ -27,6 +28,11 @@ without this change) */
   --url-and-searchbar-color: #FFF;
   --urlbar-separator-color: #5F6670;
   --lwt-toolbar-field-background-color: rgb(71,71,73) !important}
+
+/* Fix for some lightweight themes not working properly when set manually here (appearing with a lot of padding to the left) *//*
+:root:-moz-lwtheme[lwtheme-image], #tabbrowser-tabs:not([movingtab]) > .tabbrowser-tab > 
+.tab-stack > .tab-background[selected="true"]:-moz-lwtheme {
+  background-position: left top !important}
 
 /* This changes the background color of the browser toolbar for those using the default dark theme to a static dark color. 
 You may need to change the --toolbar-bgcolor in the rules above for the tab contrast color to be less dark if using this */
