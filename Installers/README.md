@@ -1,7 +1,7 @@
 <h1>Theme and multirow installers</h1>
 <p>If you don't want to copy the files manually to install the theme or multirow, you can do it with these batch files instead.</p>
 <p>These batch files install either the full dark theme (without any CSS tweak), or multirow tabs (if you have your own userchrome.css you will still have to edit it to make it compatible)</p>
-<p>Currently there are only windows installers for it, so Linux and Mac users will still have to install it manually with the explanations of the repository.</p>
+<p>Currently there are only windows installers for it, so Linux and Mac users will still have to <a href="https://github.com/Izheil/Quantum-Nox-Firefox-Dark-Full-Theme/tree/master/Full%20dark%20theme#installation">install it manually with the explanations of the repository</a>.</p>
 
 <h2>The batch files</h2>
 <h3>For dark OS themes versions</h3>
