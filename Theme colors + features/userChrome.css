@@ -1,6 +1,6 @@
 /* You can find an updated version here: https://github.com/Izheil/Quantum-Nox-Firefox-Dark-Full-Theme */
 /* Made by Izheil */
-/* Last updated: 31/01/2019 */
+/* Last updated: 02/02/2019 */
 
 /* DO NOT DELETE THIS LINE */
 @namespace url("http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul");
@@ -919,6 +919,11 @@ differentiable font (Thanks to BelladonnavGF for the tip) */
 
 #toolbar-menubar .titlebar-buttonbox-container {
   float: right !important}
+
+#window-controls {
+  position: fixed !important;
+  top: 0 !important; 
+  right: 0 !important}
 
 /* FULLSCREEN FIX */
 /* This will enable the menu bar and bookmarks bar to appear on fullscreen */

@@ -21,3 +21,6 @@ toolbarbutton#alltabs-button {
 
 <h3>Navigator-toolbox-autohide.uc.js</h3>
 <p>Toggles visibility of the whole navigation toolbox as if you were on fullscreen, so that it's only visible when you have the mouse over it, or when hovering the mouse to the top of the screen when it's hidden.</p>
+
+<h3>Navigator-toolbox-autohide-tabs-below.uc.js</h3>
+<p>Same as navigator toolbox autohide, except that it shows the tabs below (you have to disable the tweak on userchrome.css if you had it enabled).</p>

@@ -62,7 +62,7 @@
 <h4>You can turn the features you want on or off changing the commented lines on the CSS file (To change them you just have to open the userchrome.css with notepad or any code editor, and encase between "/*" and "*/" (without the quotation marks) the lines you don't want to take effect). Of course, if you think that you are NEVER going to use certain feature, you can always delete the specific lines you don't want without any other side-effect.</h4>
 
 <h2>Installation</h2>
-<p>You can check a video guide <a href="https://youtu.be/FHV1-LbX_Vo">here</a>.</p>
+<p>You can check a video guide <a href="https://youtu.be/vZnirB1ZEqc">here</a>.</p>
 
 <h4>Step by step:</h4>
 <ul>

@@ -6,7 +6,7 @@
 <img src="https://i.imgur.com/m7TGyqz.png" title="Dark addons" />
 
 <h2>Installation</h2>
-<p>You can check a video guide <a href="https://youtu.be/z0o8DatRyjk">here</a>.</p>
+<p>You can check a video guide <a href="https://youtu.be/vZnirB1ZEqc">here</a>.</p>
 
 <h4>Step by step:</h4>
 <ul>
