@@ -5,7 +5,7 @@
 // @include        main
 // @compatibility  Firefox 65
 // @author         Alice0775, Endor8, TroudhuK, Izheil
-// @version        02/02/2019 14:22 Fixed issue with scrolling happening even when tab is visible
+// @version        03/02/2019 04:22 Fixed issue with scrolling when selecting non-visible tab
 // @version        02/02/2019 00:17 Fixed transparent line under tabs and touch density tabs issue
 // @version        01/02/2019 10:32 Fixed issue window dragging while keeping scrollbar dragging
 // @version        31/01/2019 10:32 Fixed issue with fullscreen
