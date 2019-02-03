@@ -14,6 +14,7 @@ This problem doesn't happen if you use a code editor such as notepad++, atom, su
 <p>Files updated:</p>
 <ul>
   <li><b>MultirowTab*FF67.uc.js</b>: Added compatibility versions for Firefox 66 and Firefox 67.</li>
+  <li><b>Usercontent.css</b>: Added a few fixes on <code>about:home</code> and <code>about:config</code> for Firefox nightly.</li>
 </ul>
 <h3>Pre-Last update: <b>02/02/2019</b></h3>
 <p>Files updated:</p>
