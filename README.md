@@ -14,7 +14,7 @@ This problem doesn't happen if you use a code editor such as notepad++, atom, su
 <p>Files updated:</p>
 <ul>
   <li><b>* - Windows Installer.bat/ * - Windows uninstaller.bat</b>: You can now install the theme automatically using the batch files inside the installers folder if you are using windows.</li>
-  <li><b>MultirowTab*.uc.js</b>: Fixed the transparent line below tabs. Also fixed the issue with touch density tabs on scrollable multirow. Scrollable multirow won't scroll now when the tab is already visible.</li>
+  <li><b>MultirowTab*.uc.js</b>: Fixed the transparent line below tabs. Also fixed the issue with touch density tabs on scrollable multirow. Scrollable multirow won't scroll now when the tab is already visible. Added a smooth scrolling effect, and now tabs will trigger scrolling to the nearest edge when selected and not fully visible.</li>
   <li><b>Navigator-toolbox-autohide.uc.js</b>: You can use this file to autohide the navigator toolbox automatically as if you were always on fullscreen.</li>
   <li><b>userchrome.css</b>: Fixed some issue with the resize/close buttons appearing next to the tabs when having the menu bar locked on fullscreen. Also fixed an issue with tabs below not letting fullscreen autohide apply.</li>
 </ul>

@@ -103,32 +103,9 @@ function zzzz_MultiRowTabLite() {
 
 // This scrolls down to the current tab when you open a new one, or restore a session.
 function scrollToView() {
-  function isElementVisible(el) {
-    var rect     = el.getBoundingClientRect(),
-        vWidth   = window.innerWidth || doc.documentElement.clientWidth,
-        vHeight  = window.innerHeight || doc.documentElement.clientHeight,
-        efp      = function (x, y) { return document.elementFromPoint(x, y) };     
-
-    // Return false if it's not in the viewport
-    if (rect.right < 0 || rect.bottom < 0 
-            || rect.left > vWidth || rect.top > vHeight)
-        return false;
-
-    // Return true if any of its four corners are visible
-    return (
-          el.contains(efp(rect.left,  rect.top))
-      ||  el.contains(efp(rect.right, rect.top))
-      ||  el.contains(efp(rect.right, rect.bottom))
-      ||  el.contains(efp(rect.left,  rect.bottom))
-    );
-  }
-
-var selTab = document.querySelectorAll(".tabbrowser-tab[selected='true']")[0];
-
-if (isElementVisible(selTab) == false) {selTab.scrollIntoView()}
-
+	var selTab = document.querySelectorAll(".tabbrowser-tab[selected='true']")[0];
+	selTab.scrollIntoView({behavior: "smooth", block: "nearest", inline: "nearest"});
 }
-
 
 gBrowser.tabContainer.addEventListener('TabOpen', scrollToView, false);
 gBrowser.tabContainer.addEventListener("TabSelect", scrollToView, false);
