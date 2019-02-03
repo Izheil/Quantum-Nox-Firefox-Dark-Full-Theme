@@ -10,19 +10,18 @@ basic css or <a href="https://www.w3schools.com/colors/colors_picker.asp">color 
 <br />
 This problem doesn't happen if you use a code editor such as notepad++, atom, sublime text...</h4>
 
-<h3>Last update: <b>02/02/2019</b></h3>
+<h3>Last update: <b>03/02/2019</b></h3>
+<p>Files updated:</p>
+<ul>
+  <li><b>MultirowTab*FF67.uc.js</b>: Added compatibility versions for Firefox 66 and Firefox 67.</li>
+</ul>
+<h3>Pre-Last update: <b>02/02/2019</b></h3>
 <p>Files updated:</p>
 <ul>
   <li><b>* - Windows Installer.bat/ * - Windows uninstaller.bat</b>: You can now install the theme automatically using the batch files inside the installers folder if you are using windows.</li>
   <li><b>MultirowTab*.uc.js</b>: Fixed the transparent line below tabs. Also fixed the issue with touch density tabs on scrollable multirow. Scrollable multirow won't scroll now when the tab is already visible. Added a smooth scrolling effect, and now tabs will trigger scrolling to the nearest edge when selected and not fully visible.</li>
   <li><b>Navigator-toolbox-autohide.uc.js</b>: You can use this file to autohide the navigator toolbox automatically as if you were always on fullscreen.</li>
   <li><b>userchrome.css</b>: Fixed some issue with the resize/close buttons appearing next to the tabs when having the menu bar locked on fullscreen. Also fixed an issue with tabs below not letting fullscreen autohide apply.</li>
-</ul>
-<h3>Pre-Last update: <b>31/01/2019</b></h3>
-<p>Files updated:</p>
-<ul>
-  <li><b>Userchrome.css</b>: Fixed the problem with fullscreen making the menu bar and the bookmarks bar not appearing on FF65 (on the "features" version only). Also fixed the color of the search box inside the web content area.</li>
-  <li><b>MultirowTab*.uc.js</b>: Fixed tabs to be displayed correctly in full screen mode.</li>
 </ul>
 
 <code>

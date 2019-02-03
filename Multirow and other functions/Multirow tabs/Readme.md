@@ -15,8 +15,12 @@ toolbarbutton#alltabs-button {
 <p>... or just the <b>toolbarbutton</b> rule if you had an existing userchrome that didn't come from this repository.</p>
 
 <h3>MultiRowTabLiteforFx.uc.js</h3>
-<p>Shows all tabs you currently have open splitting them on rows, without any limit to the amount of rows to show. Choose this option if you want to always see all the tabs you have open without limits to the number of rows.</p>
+<p>Works with Firefox 65. Shows all tabs you currently have open splitting them on rows, without any limit to the amount of rows to show. Choose this option if you want to always see all the tabs you have open without limits to the number of rows.</p>
 <img src="https://i.imgur.com/GWSgqD9.png">
+
 <h3>MultiRowTab-scrollable.uc.js</h3>
-<p>Shows all tabs you currently have open splitting them on rows up to a max of 3 rows by default (can be changed using the variable inside the file). After the max number of rows has been reached, a scrollbar will be shown to be able to scroll around the extra tabs.</p>
+<p>Works with Firefox 65. Shows all tabs you currently have open splitting them on rows up to a max of 3 rows by default (can be changed using the variable inside the file). After the max number of rows has been reached, a scrollbar will be shown to be able to scroll around the extra tabs.</p>
 <img src="https://i.imgur.com/qqQn4Ky.png">
+
+<h3>MultiRowTab*FF67.uc.js</h3>
+<p>Compatibilty fix versions for Firefox 66 and Firefox 67.</p>
