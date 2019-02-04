@@ -5,6 +5,7 @@
 // @include        main
 // @compatibility  Firefox 65
 // @author         Izheil
+// @version        04/02/2019 19:40 Fixed some issue with ghost elements of the navigator box appearing when hidden
 // @version        03/02/2019 19:35 Rewrote the code to use more javascript instead of pure CSS
 // @version        02/02/2019 03:34 Included a fix for tabs-below to be compatible with autohide
 // @version        02/02/2019 22:48 Gave a bigger toggler space for autohide on resized window
@@ -13,9 +14,6 @@
 // ==/UserScript==
 // We define all variables first
 var navBox = document.getElementById("navigator-toolbox"),
-  bkmBox = document.getElementById("PersonalToolbar"),
-  titleBox = document.getElementById("toolbar-menubar"),
-  winState = window.windowState,
   fsToggler = document.getElementById("fullscr-toggler");
 
 var css =`
@@ -48,16 +46,14 @@ sss.loadAndRegisterSheet(uri, sss.AGENT_SHEET);
 // This shows the navigation bar when hovering over the fullscr-toggler element (div on top of screen)
 fsToggler.onmouseover = function() {
   navBox.style.visibility = "visible";
-  bkmBox.style.opacity = "1";
-  titleBox.style.opacity = "1";
+  navBox.style.opacity = "1";
   fsToggler.style.display = "none";
 }
 
 // This hides the navigation bar when hovering over the web area
 document.getElementById("browser").onmouseover = function() {
     navBox.style.visibility = "collapse";
-    bkmBox.style.opacity = "0";
-    titleBox.style.opacity = "0";
+    navBox.style.opacity = "0";
     fsToggler.style.display = "block";
     fsToggler.style.height = "20px";
 }
