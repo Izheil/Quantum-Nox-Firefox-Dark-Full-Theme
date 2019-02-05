@@ -10,19 +10,16 @@ basic css or <a href="https://www.w3schools.com/colors/colors_picker.asp">color 
 <br />
 This problem doesn't happen if you use a code editor such as notepad++, atom, sublime text...</h4>
 
-<h3>Last update: <b>03/02/2019</b></h3>
+<h3>Last update: <b>04/02/2019</b></h3>
+<p>Files updated:</p>
+<ul>
+  <li><b>addons.css</b>: Added a dark theme for <a href="https://addons.mozilla.org/es/firefox/addon/viewhance/">Viewhance addon</a>.</li>
+</ul>
+<h3>Pre-Last update: <b>03/02/2019</b></h3>
 <p>Files updated:</p>
 <ul>
   <li><b>MultirowTab*FF67.uc.js</b>: Added compatibility versions for Firefox 66 and Firefox 67.</li>
   <li><b>Usercontent.css</b>: Added a few fixes on <code>about:home</code> and <code>about:config</code> for Firefox nightly.</li>
-</ul>
-<h3>Pre-Last update: <b>02/02/2019</b></h3>
-<p>Files updated:</p>
-<ul>
-  <li><b>* - Windows Installer.bat/ * - Windows uninstaller.bat</b>: You can now install the theme automatically using the batch files inside the installers folder if you are using windows.</li>
-  <li><b>MultirowTab*.uc.js</b>: Fixed the transparent line below tabs. Also fixed the issue with touch density tabs on scrollable multirow. Scrollable multirow won't scroll now when the tab is already visible. Added a smooth scrolling effect, and now tabs will trigger scrolling to the nearest edge when selected and not fully visible.</li>
-  <li><b>Navigator-toolbox-autohide.uc.js</b>: You can use this file to autohide the navigator toolbox automatically as if you were always on fullscreen.</li>
-  <li><b>userchrome.css</b>: Fixed some issue with the resize/close buttons appearing next to the tabs when having the menu bar locked on fullscreen. Also fixed an issue with tabs below not letting fullscreen autohide apply.</li>
 </ul>
 
 <code>
@@ -75,33 +72,37 @@ This problem doesn't happen if you use a code editor such as notepad++, atom, su
 	  <li>Can change the tab line color to Windows current theme color (You have to change the commented line that is described in line 19 inside <code>userChrome.css</code>).</li>
 	  <li>Can change the background image of your lightweight theme to one of your choice on <code>userChrome.css</code> (You have to be using a lightweight theme instead of the default dark theme of Firefox).</li>
 	  <li>Can change the default text color of input boxes for those using a dark OS theme that affects the background of these (You have to change the commented line that is described on line 15 inside <code>usercontent.css</code> to use it)</li>
-	  <li>Can set an image as background for the home page (You have to change the commented line that is described in line 19 inside <code>userContent.css</code>).<br />
-<img src="https://i.imgur.com/OhKiBCI.png"></li>
-	  <li>Change the theme of either of the following addons to a dark version (You have to update the UUIDs of the extensions inside "addons.css" for this): 
-	  	<ul>
-	  		<li><a href="https://addons.mozilla.org/es/firefox/addon/ublock-origin/">Ublock Origin</a></li>
-	  		<li><a href="https://addons.mozilla.org/es/firefox/addon/video-downloadhelper/">Video Download Helper</a></li> 
-	  		<li><a href="https://addons.mozilla.org/es/firefox/addon/flash-video-downloader/">Flash Video Downloader</a></li>
-	  		<li><a href="https://addons.mozilla.org/es/firefox/addon/tab-session-manager/">Tab session manager</a></li>
-	  		<li><a href="https://addons.mozilla.org/es/firefox/addon/undo-closed-tabs-revived/">Undo closed tabs button</a></li>
-	  		<li><a href="https://addons.mozilla.org/es/firefox/addon/s3download-statusbar/">Download Manager (S3)</a></li>
-	  		<li><a href="https://addons.mozilla.org/es/firefox/addon/privacy-badger17/">Privacy badger</a></li>
-	  		<li><a href="https://addons.mozilla.org/es/firefox/addon/noscript/">Noscript</a></li>
-	  		<li><a href="https://addons.mozilla.org/en-US/firefox/addon/window-resize/">Window resize</a></li>
-	  		<li><a href="https://addons.mozilla.org/es/firefox/addon/s3google-translator/">S3 Translator</a></li>
-	  		<li><a href="https://addons.mozilla.org/es/firefox/addon/multi-account-containers/">Multi-accounts containers</a></li>
-	  		<li><a href="https://addons.mozilla.org/es/firefox/addon/temporary-containers/">Temporary containers</a></li>
-	  		<li><a href="https://addons.mozilla.org/es/firefox/addon/https-everywhere/">HTTPS Everywhere</a></li>
-	  		<li><a href="https://addons.mozilla.org/es/firefox/addon/onetab/">OneTab</a></li>
-	  		<li><a href="https://addons.mozilla.org/en-US/firefox/addon/gmail-notifier-restartless/">Notifier for Gmail (restartless)</a></li>
-	  		<li><a href="https://addons.mozilla.org/en-US/firefox/addon/popup-blocker-ultimate/">Popup Blocker Ultimate</a></li>
-	  	</ul>
-	  	<img src="https://i.imgur.com/m7TGyqz.png" title="Dark addons" /></li>
+	  <li>Change the theme of any of the addons listed in the addons section below (You have to update the UUIDs of the extensions inside "addons.css" for this).</li>
+	  <li>Can set an image as background for the home page (You have to change the commented line that is described in line 19 inside <code>userContent.css</code>).<br /></li>
 	</ul>
+<img src="https://i.imgur.com/OhKiBCI.png">
 
 <h4>You can turn the features you want on or off changing the commented lines on <code>userchrome.css</code> (To change them you just have to open it with notepad or any code editor, and encase between "/*" and "*/" (without the quotation marks) the lines you don't want to take effect). Of course, if you think that you are NEVER going to use certain feature, you can always delete the specific lines you don't want without any other side-effect.</h4>
 
 <p>You can find a video tutorial on how to install the theme without installers <a href="https://youtu.be/kNHe6XDgUN4">here</a>.</p>
+
+<h2>Addon dark themes</h2>
+<p>You can apply a dark theme to certain addons changing the UUID's of them inside the <code>addons.css</code> file inside the "Full dark theme" folder (more instructions on how to do that inside the addons file).</p>
+<img src="https://i.imgur.com/m7TGyqz.png" title="Dark addons" />
+<ul>
+	<li><a href="https://addons.mozilla.org/es/firefox/addon/ublock-origin/">Ublock Origin</a></li>
+	<li><a href="https://addons.mozilla.org/es/firefox/addon/video-downloadhelper/">Video Download Helper</a></li> 
+	<li><a href="https://addons.mozilla.org/es/firefox/addon/flash-video-downloader/">Flash Video Downloader</a></li>
+	<li><a href="https://addons.mozilla.org/es/firefox/addon/tab-session-manager/">Tab session manager</a></li>
+	<li><a href="https://addons.mozilla.org/es/firefox/addon/undo-closed-tabs-revived/">Undo closed tabs button</a></li>
+	<li><a href="https://addons.mozilla.org/es/firefox/addon/s3download-statusbar/">Download Manager (S3)</a></li>
+	<li><a href="https://addons.mozilla.org/es/firefox/addon/privacy-badger17/">Privacy badger</a></li>
+	<li><a href="https://addons.mozilla.org/es/firefox/addon/noscript/">Noscript</a></li>
+	<li><a href="https://addons.mozilla.org/en-US/firefox/addon/window-resize/">Window resize</a></li>
+	<li><a href="https://addons.mozilla.org/es/firefox/addon/s3google-translator/">S3 Translator</a></li>
+	<li><a href="https://addons.mozilla.org/es/firefox/addon/multi-account-containers/">Multi-accounts containers</a></li>
+	<li><a href="https://addons.mozilla.org/es/firefox/addon/temporary-containers/">Temporary containers</a></li>
+	<li><a href="https://addons.mozilla.org/es/firefox/addon/https-everywhere/">HTTPS Everywhere</a></li>
+	<li><a href="https://addons.mozilla.org/es/firefox/addon/onetab/">OneTab</a></li>
+	<li><a href="https://addons.mozilla.org/en-US/firefox/addon/gmail-notifier-restartless/">Notifier for Gmail (restartless)</a></li>
+	<li><a href="https://addons.mozilla.org/en-US/firefox/addon/popup-blocker-ultimate/">Popup Blocker Ultimate</a></li>
+	<li><a href="https://addons.mozilla.org/es/firefox/addon/viewhance/">Viewhance</a></li>
+</ul>
 
 <h3>The scrollbars</h3>
 
