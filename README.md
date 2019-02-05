@@ -5,7 +5,7 @@
 <p>You can use it to fully change the colors of most of firefox UI to dark-gray colors (with #222-#444 colors mostly), including scrollbars, tooltips, sidebar, as well as some other things, such as removing some context menu options, enabling multirow tabs, changing the font of the url bar...</p>
 <p><b>Of course... you could as well use these files to color your firefox any way you wanted</b>, the only thing you'd have to do is change the correct values (what each class or id does is commented above each) in the .css files (as far as you know some 
 basic css or <a href="https://www.w3schools.com/colors/colors_picker.asp">color coding</a>, it shouldn't be too hard) using notepad, or some code editing program (such as notepad++ on Windows).</p>
-<p>To change these you will have to use the right hex codes. You can find a color picker to hex code in <a href="https://www.w3schools.com/colors/colors_picker.asp">this page</a>.
+<p>To change these you will have to use the right hex codes. You can find a color picker to hex code in <a href="https://www.w3schools.com/colors/colors_picker.asp">this page</a>.</p>
 <h4>If you want to edit a file and you want to use notepad (windows), you may see that all code is a wall of text without any line break (the files get compressed like that when uploaded, so there isn't much to do there), in which case you can always drag & drop the file you want to modify into any internet browser window (like firefox) to see the actual code with line breaks, and then copy & paste it back to the open file with notepad, making it regain the line breaks on notepad again.<br />
 <br />
 This problem doesn't happen if you use a code editor such as notepad++, atom, sublime text...</h4>
@@ -74,7 +74,8 @@ This problem doesn't happen if you use a code editor such as notepad++, atom, su
 	  <li>Can change the default text color of input boxes for those using a dark OS theme that affects the background of these (You have to change the commented line that is described on line 15 inside <code>usercontent.css</code> to use it)</li>
 	  <li>Change the theme of any of the addons listed in the addons section below (You have to update the UUIDs of the extensions inside "addons.css" for this).</li>
 	  <li>Can set an image as background for the home page (You have to change the commented line that is described in line 19 inside <code>userContent.css</code>).<br /></li>
-	</ul>
+	</ul><br /></li>
+</ul>
 <img src="https://i.imgur.com/OhKiBCI.png">
 
 <h4>You can turn the features you want on or off changing the commented lines on <code>userchrome.css</code> (To change them you just have to open it with notepad or any code editor, and encase between "/*" and "*/" (without the quotation marks) the lines you don't want to take effect). Of course, if you think that you are NEVER going to use certain feature, you can always delete the specific lines you don't want without any other side-effect.</h4>
@@ -84,6 +85,7 @@ This problem doesn't happen if you use a code editor such as notepad++, atom, su
 <h2>Addon dark themes</h2>
 <p>You can apply a dark theme to certain addons changing the UUID's of them inside the <code>addons.css</code> file inside the "Full dark theme" folder (more instructions on how to do that inside the addons file).</p>
 <img src="https://i.imgur.com/m7TGyqz.png" title="Dark addons" />
+<p>Here is a list of the themed addons:</p>
 <ul>
 	<li><a href="https://addons.mozilla.org/es/firefox/addon/ublock-origin/">Ublock Origin</a></li>
 	<li><a href="https://addons.mozilla.org/es/firefox/addon/video-downloadhelper/">Video Download Helper</a></li> 
