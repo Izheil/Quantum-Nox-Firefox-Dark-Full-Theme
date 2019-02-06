@@ -23,8 +23,7 @@ function zzzz_MultiRowTabLite() {
     var css =`
     /* MULTIROW TABS CSS */
     .tabbrowser-tab:not([pinned]) {
-        flex-grow:1;
-        min-width:100px}
+        flex-grow:1;}
     
     #main-window[sizemode="normal"] .tabbrowser-tab {
         height: var(--tab-min-height) !important; 

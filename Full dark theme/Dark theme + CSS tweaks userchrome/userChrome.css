@@ -1,14 +1,13 @@
 /* You can find an updated version here: https://github.com/Izheil/Quantum-Nox-Firefox-Dark-Full-Theme */
 /* Made by Izheil */
-/* Last updated: 02/02/2019 */
+/* Last updated: 06/02/2019 */
 
 /* DO NOT DELETE THIS LINE */
 @namespace url("http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul");
 
 /* This enables the use of JS external files */
 toolbarbutton#alltabs-button {
-    -moz-binding: url("userChrome.xml#js");
-}
+    -moz-binding: url("userChrome.xml#js")}
 
 /* COLORING PART STARTS HERE */
 
@@ -22,11 +21,11 @@ without this change) */
   /* You can change the lightweight theme header and footer images with this. 
   To use this, enable the "lightweight themes fix" below. Delete the final /* to use -> *//*
   --lwt-header-image: url("file:///") !important;
-  --lwt-footer-image: url("file:///") !important;
 
   /* Url and search bars */
-  --url-and-searchbar-color: #FFF;
+  --url-and-searchbar-color: #ccc;
   --urlbar-separator-color: #5F6670;
+  --toolbar-field-focus-border-color: #444 !important;
   --lwt-toolbar-field-background-color: rgb(71,71,73) !important}
 
 /* Fix for some lightweight themes not working properly when set manually here (appearing with a lot of padding to the left) *//*
@@ -42,10 +41,6 @@ You may need to change the --toolbar-bgcolor in the rules above for the tab cont
 but is disabled by default in this theme (Disable for the default tab line color). *//*
 #tabbrowser-tabs {
   --tab-line-color: var(--lwt-accent-color) !important}
-
-/* Text color of the url bar */
-#urlbar, .searchbar-textbox {
-  color: #ccc !important}
 
 /* This gives a more notizable color background on hover of the close tab button */
 .tab-close-button:hover {background: rgba(255,255,255,0.15) !important}
@@ -104,6 +99,17 @@ in the rule below) */
   --bookmark-max-rows: 1;
 }
 
+/* Highlight color on browser windows (url bar, library, search box, bookmarks properties...) */
+#urlbar *|*::selection, .searchbar-textbox *|*::selection, #infoBox *|*::selection, 
+#editBMPanel_namePicker *|*::selection, #editBMPanel_tagsField *|*::selection,
+#editBMPanel_tagsSelector *|*::selection, #placesToolbar *|*::selection,
+#mainDeck *|*::selection, dialog *|*::selection, #certDetails *|*::selection,
+#SignonViewerDialog *|*::selection, #CookiesDialog *|*::selection {
+  /* This is the background color */
+  background: #0565af !important;
+  /* This is the text color */
+  color: #fff !important}
+
 /* This changes the color of the sidebar panel text */
 #bookmarks-view treechildren, #historyTree treechildren {color: #ccc !important}
 
@@ -140,6 +146,12 @@ for icons on the bookmarks bar under the url bar. Just make sure to put commas a
   filter: drop-shadow(0 0 3px #fff)}
 
 /* END OF GENERAL COLORS */
+
+/* URL bar */
+
+/* Text color of the url bar and search box */
+#urlbar, .searchbar-textbox {
+  color: var(--url-and-searchbar-color) !important}
 
 /* Max, min and close buttons */
 

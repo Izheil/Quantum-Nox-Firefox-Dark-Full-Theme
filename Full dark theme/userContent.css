@@ -1,6 +1,6 @@
 /* You can find an updated version here: https://github.com/Izheil/Quantum-Nox-Firefox-Dark-Full-Theme */
 /* Made by Izheil */
-/* Last updated: 03/02/2019 */
+/* Last updated: 06/02/2019 */
 
 /* This part imports the Addons file if there is one, so that you don't have to edit the dynamic URL
 from the addons rules every time we update anything here */
@@ -64,6 +64,10 @@ To use, instead of "none;", type: url("URL-OF-THE-IMAGE-GOES-HERE"); <- Don't fo
 
 	/* This one changes the border of all boxes with a blue border focus effect */
 	--in-content-border-focus: #2066dd !important;
+
+	/* This changes the highlight background color on selection text */
+	--highlight-on-selection-bg: #0565af;
+	--highlight-on-selection-text: #fff;
 
 	/* Buttons background colors */
 	--button-background: #05a;
@@ -581,7 +585,7 @@ url-prefix(about:crashes), url(about:rights), url(about:serviceworkers) {
 
 tbody > tr:hover {outline: 1px dotted #777 !important}}
 
-/*------ CONTEXT MENUS FOR ALL ABOUT: PAGES ------*/
+/*------ CONTEXT MENUS AND HIGHLIGHT COLORS FOR ALL ABOUT: PAGES ------*/
 @-moz-document url-prefix(about:) {
 
 /* This changes the color of the context menus */
@@ -620,7 +624,12 @@ menuseparator {
   height: 1px !important;
   border: none !important;
   background: #222 !important;
-  padding: 0 !important}}
+  padding: 0 !important}
+
+*|*::selection {
+	background: var(--highlight-on-selection-bg) !important;
+	color: var(--highlight-on-selection-text) !important}
+}
 
 /*------ ABOUT: PAGE (about:) ------*/
 @-moz-document url(about:), url(https://www.mozilla.org/credits/) {
@@ -897,6 +906,8 @@ menulist[sizetopopup="pref"]:hover {background: rgba(255,255,255,0.3) !important
 
 #homeContentsGroup menulist {background: #444 !important; color: #ddd !important}
 #homeContentsGroup menulist:hover {background: #555 !important; color: #fff !important}
+
+.no-results-image {filter: invert(85%)}
 }
 
 /*------ EXTENSIONS PAGE (about:addons) ------*/
