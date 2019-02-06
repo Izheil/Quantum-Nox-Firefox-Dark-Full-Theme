@@ -16,8 +16,7 @@ toolbarbutton#alltabs-button {
 <p>There are probably better alternatives out there, so you should only use these if you really couldn't find it anywhere else (since, as mentioned, these are experimental)</p>
 
 <h3>Bookmarks-toggle.uc.js</h3>
-<p>Toggles visibility of the bookmarks toolbar when pressing F2 (you can change which keys in the file). You'll need to add this rule to your userchrome:</p>
-<pre>#PersonalToolbar {visibility: collapse !important}</pre>
+<p>Toggles visibility of the bookmarks toolbar when pressing F2 (you can change which keys in the file). You need to have the "fullscreen fix" disabled on userchrome.css if using any of the "CSS tweaks" versions from this repository.</p>
 
 <h3>Navigator-toolbox-autohide.uc.js</h3>
 <p>Toggles visibility of the whole navigation toolbox as if you were on fullscreen, so that it's only visible when you have the mouse over it, or when hovering the mouse to the top of the screen when it's hidden. You can also maker bigger the hitbox to trigger the visibility of the toolbox changing the height of <code>fsToggler.style.height</code>at the bottom of the script from 10px to anything you want (just note that the bigger you make it, the more web area content will be unclickable on top).</p>

@@ -3,8 +3,9 @@
 // @namespace      http://https://github.com/Izheil/Quantum-Nox-Firefox-Dark-Full-Theme
 // @description    Bookmarks toolbar toggle on keydown
 // @include        main
-// @compatibility  Firefox 64
+// @compatibility  Firefox 65
 // @author         Izheil
+// @version        27/12/2018 15:05 Simplified the code
 // @version        27/12/2018 15:05 Firefox 64
 // ==/UserScript==
 window.addEventListener("keydown", bookmarkToggle, false);
@@ -13,11 +14,7 @@ window.addEventListener("keydown", bookmarkToggle, false);
 // If you want them to be toggled by default, change this to true instead.
 var toggled = false;
 
-var css =`
-	  #PersonalToolbar {visibility: collapse !important}`;
-var sss = Cc['@mozilla.org/content/style-sheet-service;1'].getService(Ci.nsIStyleSheetService);
-var uri = makeURI('data:text/css;charset=UTF=8,' + encodeURIComponent(css));
-sss.loadAndRegisterSheet(uri, sss.AGENT_SHEET);
+document.getElementById("PersonalToolbar").style.visibility = "collapse";
 
 // If you want to use a combination of keys instead than one, include evt.key == "your key here" with
 // a && inclusion (for example evt.key == "F2" && evt.key =="a" would trigger the toggling when both
@@ -25,17 +22,12 @@ sss.loadAndRegisterSheet(uri, sss.AGENT_SHEET);
 function bookmarkToggle(evt) {
 	// Input the key you want to use here
     if (evt.key == "F2" && toggled == true) {
-     var css =`
-	  #PersonalToolbar {visibility: collapse !important}`;
-	  toggled = false}
+	 document.getElementById("PersonalToolbar").style.visibility = "collapse";
+	 toggled = false}
 	// Input the key you want to use here
 	else if (evt.key == "F2" && toggled == false) {
-     var css =`
-      #PersonalToolbar {visibility: visible !important}`;
-	  toggled = true}
-var sss = Cc['@mozilla.org/content/style-sheet-service;1'].getService(Ci.nsIStyleSheetService);
-var uri = makeURI('data:text/css;charset=UTF=8,' + encodeURIComponent(css));
-sss.loadAndRegisterSheet(uri, sss.AGENT_SHEET);
+     document.getElementById("PersonalToolbar").style.visibility = "visible";
+	 toggled = true}
 }
 
 

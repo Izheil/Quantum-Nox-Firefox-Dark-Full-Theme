@@ -66,7 +66,7 @@ differentiable font (Thanks to BelladonnavGF for the tip) */
 to autohide, so it's safest to just hide it on fullscreen */
 
 /* FULLSCREEN FIX */
-/* This will enable the menu bar and bookmarks bar to appear on fullscreen */
+/* This will enable the menu bar and bookmarks bar to appear on fullscreen. Do not enable if using bookmarks-toggle.uc.js *//*
 #navigator-toolbox[inFullscreen="true"] #toolbar-menubar,
 #navigator-toolbox[inFullscreen="true"] #PersonalToolbar[collapsed="false"] {visibility: visible !important}
 
