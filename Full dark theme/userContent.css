@@ -987,6 +987,9 @@ menulist[sizetopopup="pref"]:hover {background: rgba(255,255,255,0.3) !important
 #detail-rows .detail-row-label {color: #fff !important}
 
 #detail-contrib-description {color: #aaa !important}
+
+/* Change this to #fff for addon settings on about:addons if you can't read their text */
+#addon-options {background-color: #444 !important}
 }
 
 /* This is still in the addons page, it's the "discover" page thing */

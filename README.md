@@ -13,7 +13,7 @@ This problem doesn't happen if you use a code editor such as notepad++, atom, su
 <h3>Last update: <b>07/02/2019</b></h3>
 <p>Files updated:</p>
 <ul>
-  <li><b>Usercontent.css</b>: Fixed some issue with ebay input boxes turning dark because of it using <code>about:blank</code> pages instead of input boxes for some crazy reason.</li>
+  <li><b>Usercontent.css</b>: Fixed some issue with ebay input boxes turning dark because of it using <code>about:blank</code> pages instead of input boxes for some crazy reason. You can also change the addon settings section on <code>about:addon</code> to white background on the relevant section of this file.</li>
 </ul>
 <h3>Pre-Last update: <b>06/02/2019</b></h3>
 <p>Files updated:</p>
