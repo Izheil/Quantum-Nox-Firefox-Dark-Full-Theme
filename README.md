@@ -13,7 +13,7 @@ This problem doesn't happen if you use a code editor such as notepad++, atom, su
 <h3>Last update: <b>06/02/2019</b></h3>
 <p>Files updated:</p>
 <ul>
-  <li><b>Userchrome.css</b>: You can now change the highlight color of selected text on Firefox dialog windows and the urlbar.</li>
+  <li><b>Userchrome.css</b>: You can now change the highlight color of selected text on Firefox dialog windows and the urlbar. Minor fix for protonmail messages background issue.</li>
   <li><b>Usercontent.css</b>: Themed some missing image on about:preferences. Also added the option to change highlight color of selected text on <code>about:</code> pages.</li>
 </ul>
 <h3>Pre-Last update: <b>04/02/2019</b></h3>

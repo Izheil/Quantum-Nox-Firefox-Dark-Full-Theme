@@ -335,11 +335,6 @@ you aren't using the default dark theme of mozilla, that is) */
   --arrowpanel-dimmed-further: rgba(255, 255, 255, 0.25) !important;
   --arrowpanel-dimmed-even-further: rgba(255, 255, 255, 0.4) !important}
 
-/* Little fix in case there is some addon popup text that you don't see because 
-of the background (delete the /* in the end to use ->) *//*
-#customizationui-widget-panel .panel-arrow {fill: #fff !important}
-.webextension-popup-browser {background: #fff !important}
-
 /* Zoom reset button on the main menu */
 #appMenu-zoomReset-button {background-color: #666 !important}
 #appMenu-zoomReset-button:hover {background-color: #333 !important}
@@ -866,6 +861,10 @@ treechildren::-moz-tree-separator {border-color: #000 !important}
   background-color: var(--Loading-background) !important}
 
 /* ADDON POPUPS */
+/* This resets the color of addon popups before applying any other color (for better text readibility).
+Enable this if you are having issues with some addon popup texts and you are not using addons.css file *//*
+#customizationui-widget-panel .panel-arrow {fill: #fff !important}
+.webextension-popup-browser {background: #fff !important}
 
 /* Fix for the panel arrows for extensions (Only enable if using the addons file) *//*
 #customizationui-widget-panel[viewId="PanelUI-webext-_b9db16a4-6edc-47ec-a1f4-b86292ed211d_-browser-action-view"] .panel-arrow,

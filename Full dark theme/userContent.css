@@ -98,7 +98,10 @@ tbody > tr:hover {outline: 1px dotted #777 !important}
 #UI_goUp a.up:active, .ellipsis a.file:active, .ellipsis a.dir:active {color: #0050dd !important}
 
 th {color: #ddd !important}
-td {color: #aaa !important}}
+td {color: #aaa !important}
+
+/* v Don't delete this unless you delete this whole section */
+}
 
 /*------ INPUT BOXES TEXT ------*/
 
@@ -561,7 +564,7 @@ body, html {background-color: #202020 !important}}
 
 /* Fix for Ublock Origin Element picker and DOM inspector (while keeping about:blank dark) */
 @-moz-document url(about:blank) {
-  body:not(#ublock0-epicker) {background: #222}
+  html:not(#ublock0-epicker):not(.angular-squire-iframe) {background: #222}
 }
 
 /*------ PAGES WITH PLAIN TEXT OVER BACKGROUND  ------*/

@@ -29,8 +29,7 @@ function zzzz_MultiRowTabLite() {
         --max-tab-rows: 3;}
 
     .tabbrowser-tab:not([pinned]) {
-        flex-grow:1;
-        min-width:150px}
+        flex-grow:1;}
 
     .tabbrowser-tab::after {border: none !important}
 
