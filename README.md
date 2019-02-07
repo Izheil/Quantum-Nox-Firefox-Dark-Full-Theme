@@ -13,7 +13,7 @@ This problem doesn't happen if you use a code editor such as notepad++, atom, su
 <h3>Last update: <b>07/02/2019</b></h3>
 <p>Files updated:</p>
 <ul>
-  <li><b>Usercontent.css</b>: <code>about:blank</code> won't be themed by default to avoid some sites problem. Unless you use it as your newtab page or home page, you don't need to re-enable it.</li>
+  <li><b>Usercontent.css</b>: Fixed some issue with ebay input boxes turning dark because of it using <code>about:blank</code> pages instead of input boxes for some crazy reason.</li>
 </ul>
 <h3>Pre-Last update: <b>06/02/2019</b></h3>
 <p>Files updated:</p>

@@ -1,6 +1,6 @@
 /* You can find an updated version here: https://github.com/Izheil/Quantum-Nox-Firefox-Dark-Full-Theme */
 /* Made by Izheil */
-/* Last updated: 06/02/2019 */
+/* Last updated: 07/02/2019 */
 
 /* This part imports the Addons file if there is one, so that you don't have to edit the dynamic URL
 from the addons rules every time we update anything here */
@@ -562,9 +562,11 @@ url-prefix(about:support), url-prefix(about:profiles), url(about:robots), url(ab
 url(about:webrtc) {
 body, html {background-color: #202020 !important}}
 
-/* Fix for Ublock Origin Element picker and DOM inspector (while keeping about:blank dark) *//*
+/* Fix for Ublock Origin Element picker and DOM inspector (while keeping about:blank dark) */
 @-moz-document url(about:blank) {
   html:not(#ublock0-epicker):not(.angular-squire-iframe) {background: #222}
+  /* Fix for Ebay page when not using userstyles */
+  body[style="font-family: Arial; font-size: 14pt;"] {background: #fff}
 }
 
 /*------ PAGES WITH PLAIN TEXT OVER BACKGROUND  ------*/

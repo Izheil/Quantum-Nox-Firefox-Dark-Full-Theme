@@ -125,13 +125,6 @@ treechildren::-moz-tree-row(selected){
 /* v Fix to make the pre-render loading page dark instead of white v */
 #tabbrowser-tabpanels {background: #202020 !important}
 
-/* You can also add an image of your choice in the pre-render loading page if you want 
-Delete the final /* to use -> *//*
-browser[type="content-primary"], tabbrowser tabpanels, #appcontent > #content {
-  background-image: url("file:///C:/Users/") !important;
-  background-size: cover !important;
-  background-position: center !important}
-
 /* Tabs border color */
 .tabbrowser-tab {border-right: 1px solid rgba(255,255,255, .15) !important}
 
