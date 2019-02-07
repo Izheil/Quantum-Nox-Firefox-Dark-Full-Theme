@@ -10,16 +10,16 @@ basic css or <a href="https://www.w3schools.com/colors/colors_picker.asp">color 
 <br />
 This problem doesn't happen if you use a code editor such as notepad++, atom, sublime text...</h4>
 
-<h3>Last update: <b>06/02/2019</b></h3>
+<h3>Last update: <b>07/02/2019</b></h3>
 <p>Files updated:</p>
 <ul>
-  <li><b>Userchrome.css</b>: You can now change the highlight color of selected text on Firefox dialog windows and the urlbar. Minor fix for protonmail messages background issue.</li>
-  <li><b>Usercontent.css</b>: Themed some missing image on about:preferences. Also added the option to change highlight color of selected text on <code>about:</code> pages.</li>
+  <li><b>Usercontent.css</b>: <code>about:blank</code> won't be themed by default to avoid some sites problem. Unless you use it as your newtab page or home page, you don't need to re-enable it.</li>
 </ul>
-<h3>Pre-Last update: <b>04/02/2019</b></h3>
+<h3>Pre-Last update: <b>06/02/2019</b></h3>
 <p>Files updated:</p>
 <ul>
-  <li><b>addons.css</b>: Added a dark theme for <a href="https://addons.mozilla.org/es/firefox/addon/viewhance/">Viewhance addon</a>.</li>
+  <li><b>Userchrome.css</b>: You can now change the highlight color of selected text on Firefox dialog windows and the urlbar.</li>
+  <li><b>Usercontent.css</b>: Themed some missing image on about:preferences. Also added the option to change highlight color of selected text on <code>about:</code> pages. Minor fix for protonmail messages background issue.</li>
 </ul>
 
 <code>

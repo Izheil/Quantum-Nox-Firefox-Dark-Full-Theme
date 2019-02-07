@@ -562,7 +562,7 @@ url-prefix(about:support), url-prefix(about:profiles), url(about:robots), url(ab
 url(about:webrtc) {
 body, html {background-color: #202020 !important}}
 
-/* Fix for Ublock Origin Element picker and DOM inspector (while keeping about:blank dark) */
+/* Fix for Ublock Origin Element picker and DOM inspector (while keeping about:blank dark) *//*
 @-moz-document url(about:blank) {
   html:not(#ublock0-epicker):not(.angular-squire-iframe) {background: #222}
 }
