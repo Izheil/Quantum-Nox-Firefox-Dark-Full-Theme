@@ -13,7 +13,7 @@ This problem doesn't happen if you use a code editor such as notepad++, atom, su
 <h3>Last update: <b>07/02/2019</b></h3>
 <p>Files updated:</p>
 <ul>
-  <li><b>Usercontent.css</b>: Fixed some issue with ebay input boxes turning dark because of it using <code>about:blank</code> pages instead of input boxes for some crazy reason. You can also change the addon settings section on <code>about:addon</code> to white background on the relevant section of this file.</li>
+  <li><b>Usercontent.css</b>: Commented out the theming code for <code>about:blank</code> page to avoid issues with certain pages. Unless you use that page as newtab, you shouldn't need it themed. Either way you can change it's color on <b>Firefox settings > General > "Colors..." button > Background</b>, which will change the pre-loading screen color to the one you set up. You can also change the addon settings section on <code>about:addon</code> to white background on the relevant section of this file.</li>
 </ul>
 <h3>Pre-Last update: <b>06/02/2019</b></h3>
 <p>Files updated:</p>
@@ -119,6 +119,9 @@ This problem doesn't happen if you use a code editor such as notepad++, atom, su
 <br /><br />
 
 <h2>FAQ:</h2>
+<h3>The pre-loading screen of websites is still white, how can I change this?</h3>
+<p>The fastest way to solve the "blinking" white screen is to change the default web background color on Firefox settings > General > "Colors..." button > Background, which will make the blinking dissapear and be changed to the color you set up. This, although, can cause some issues on some very few and specific pages like BBC, where they don't set a background color to override the one set here (the number of sites with this problem is very small, most sites override the background color set by this setting).</p>
+
 <h3>The synced tabs sidebar isn't themed.</h3>
 <p>Since it's anonymous content of the browser we can't theme it through userChrome or userContent, which is why you will have to apply the fix inside <code>Sync-tabs-sidebar.as.css</code>. It requires the use of external CSS files loading, which is enabled thorugh <code>userchrome.css</code> and <code>userchrome.xml</code>.</p>
 
