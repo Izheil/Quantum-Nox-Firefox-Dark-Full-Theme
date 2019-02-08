@@ -176,6 +176,6 @@ This problem doesn't happen if you use a code editor such as notepad++, atom, su
 <p>If you have anything to ask or tell me about the theme that isn't a bug or an issue (such as a suggestion, or some clarification I may have missed on the documentation), you can contact me through <a href="https://www.reddit.com/message/compose/">reddit</a> (You will need an account for that), directing the message to <b>Izheil</b>.</p>
 
 <h2>Donations</h2>
-<p>If you want to support this project, you can donate any amount through payal to motivate me to keep this repository up and updated.</p>
+<p>If you want to support this project, consider donating any amount through paypal to motivate me keep this repository up and updated.</p>
 ​
-<img alt="donate" href="https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=BMUFYBSRA7ENL&source=url" border="0" src="https://www.paypalobjects.com/en_US/ES/i/btn/btn_donateCC_LG.gif" />
+<a href="https://www.paypal.com/es/webapps/mpp/paypal-popup" title="Paypal donations button" onclick="javascript:window.open('https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=BMUFYBSRA7ENL&source=url','WIPaypal','toolbar=no, location=no, directories=no, status=no, menubar=no, scrollbars=yes, resizable=yes, width=1060, height=700'); return false;"><img src="https://www.paypalobjects.com/webstatic/mktg/logo/pp_cc_mark_74x46.jpg" border="0" alt="PayPal Logo" /></a>
