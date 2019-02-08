@@ -1,6 +1,6 @@
 /* You can find an updated version here: https://github.com/Izheil/Firefox-57-full-dark-theme-with-scrollbars */
 /* Made by Izheil */
-/* Last updated: 06/02/2019 */
+/* Last updated: 08/02/2019 */
 
 /* DO NOT DELETE THIS LINE */
 @namespace url("http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul");
@@ -327,6 +327,11 @@ you aren't using the default dark theme of mozilla, that is) */
   --arrowpanel-dimmed: rgba(255, 255, 255, 0.1) !important;
   --arrowpanel-dimmed-further: rgba(255, 255, 255, 0.25) !important;
   --arrowpanel-dimmed-even-further: rgba(255, 255, 255, 0.4) !important}
+
+/* Shortcut comments on main menu text color */
+.subviewbutton[shortcut]::after, .subviewbutton[shortcut]::after, 
+.PanelUI-subView .subviewbutton-nav::after, 
+#appMenu-tp-category {color: #888 !important}
 
 /* Zoom reset button on the main menu */
 #appMenu-zoomReset-button {background-color: #666 !important}
