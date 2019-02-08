@@ -1,6 +1,6 @@
 /* You can find an updated version here: https://github.com/Izheil/Quantum-Nox-Firefox-Dark-Full-Theme */
 /* Made by Izheil */
-/* Last updated: 05/02/2019 */
+/* Last updated: 08/02/2019 */
 
 /*------ HOW TO MAKE THE ADDON THEMES WORK ------*/
 /* To use this part of the code, you will have to find the dynamic UUID of your extensions, and replace it where the 
@@ -1439,7 +1439,7 @@ label::before, .ui.popup {filter: invert(75%)}
 
 /*------ HTTPS EVERYWHERE ADDON ------*/
 @-moz-document url-prefix(moz-extension://TYPE-THE-UUID-OF-HTTPS-EVERYWHERE-ADDON-HERE/) {
-html, body {background: #303030 !important; color: #ccc !important}
+html, body {background: #444 !important; color: #ccc !important}
 
 h1, h2, h3 {color: #fff !important}
 
@@ -1448,14 +1448,14 @@ label {color: #ccc !important}
 button, input[type="button"] {  
   -moz-appearance: none !important;
   border-radius: 3px !important;
-  background-color: #555 !important;
+  background-color: #666 !important;
   color: #ddd !important;
   border: none !important;
   padding: 5px !important;
   margin: 3px !important}
 
 button:hover, input[type="button"]:hover {  
-  background-color: #222 !important;
+  background-color: #333 !important;
   color: #fff !important;
   box-shadow: none !important}
 
@@ -1466,14 +1466,26 @@ a:active {color: #0050aa !important}
 
 input[type="text"]{
 	-moz-appearance: none !important;
-	background-color: #444 !important; 
-	border: 1px solid #666 !important;
+	background-color: #555 !important; 
+	border: 1px solid #777 !important;
 	color: #fff !important;
 	margin: 3px !important}
 
 input[type="text"]:focus{border: 1px solid #0a84ff !important}
 
 input[type="text"][disabled] {color: #aaa !important}
+
+.section-header-span.active {
+	background: #0050af !important; 
+	color: #fff !important;
+	cursor: default !important}
+
+.section-header-span.inactive {
+	background: #888 !important; 
+	color: #fff !important;
+	cursor: pointer !important}
+
+#update-channels-warning {background: #533 !important}
 }
 
 /*------ ONETAB ADDON ------*/
