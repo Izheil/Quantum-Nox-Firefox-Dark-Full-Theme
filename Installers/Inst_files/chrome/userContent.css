@@ -1,6 +1,6 @@
 /* You can find an updated version here: https://github.com/Izheil/Quantum-Nox-Firefox-Dark-Full-Theme */
 /* Made by Izheil */
-/* Last updated: 07/02/2019 */
+/* Last updated: 08/02/2019 */
 
 /* This part imports the Addons file if there is one, so that you don't have to edit the dynamic URL
 from the addons rules every time we update anything here */
@@ -35,6 +35,10 @@ To use, instead of "none;", type: url("URL-OF-THE-IMAGE-GOES-HERE"); <- Don't fo
 	--in-content-primary-button-background: #05a !important;
 	--in-content-primary-button-background-hover: #0040aa !important;
 	--in-content-primary-button-background-active: #002070 !important;
+
+	/* These change the border highlight of some search boxes on about: pages */
+	--blue-50: #06d !important;
+	--blue-50-a30: rgba(0,100,200,0.4) !important;
 
 	/* Variable to change most pages context menu highlights */
 	--in-content-context-highlight: #25a;
@@ -168,12 +172,31 @@ input[type=number], input[type=search], input[type=tel], input[type=url], textar
 
 .tab-middle, .treecol-text {color: #FFF !important}
 
-/* This part covers all the dialog boxes backgrounds */
+/* This part covers all the dialog boxes backgrounds and buttons */
 dialog, window, .prefpane, 
 .prefwindow, .windowDialog {
  	background-color: #202020 !important;
  	color: #ccc !important}
+
+dialog button, #ContainersDialog button {
+    background: #555 !important;
+    color: #ddd !important;
+    border: 1px solid #555 !important}
+
+dialog button:hover, #ContainersDialog button {
+	background: #666 !important;
+    color: #FFF !important;
+	text-decoration: none !important}
  	
+dialog menulist[sizetopopup="pref"] .menulist-label-box {background: transparent !important}
+dialog menulist[sizetopopup="pref"] {
+	background: rgba(255,255,255,0.2) !important; 
+	color: #ddd !important}
+
+dialog menulist[sizetopopup="pref"]:hover {
+	background: rgba(255,255,255,0.3) !important; 
+	color: #fff !important}
+
 /* This changes the "add certificate exception" dialog background color */
 #badCertAdvancedPanel {background-color: #303030 !important}
 
@@ -843,9 +866,8 @@ td {background: #555 !important}
 
 .groupbox-title, 
 
-/* These last two apply to some general panel labels in the preferences page (if 
-it's updated and if its the default browser) */
-#isDefaultLabel, #updateBox {color: #FFF !important}
+/* These change the heading text colors to white */
+#isDefaultLabel, #updateBox, #heading-name, #legacy-extensions-heading {color: #FFF !important}
 
 /* Search Panel, Dialog boxes and inputs in general */
 #engineList, .dialogBox > .groupbox-title, #browserHomePage,
@@ -859,6 +881,9 @@ menulist[sizetopopup="pref"] .menulist-label-box {background: transparent !impor
 .learnMore {color: var(--in-content-link-color) !important}
 .learnMore:hover {color: var(--in-content-link-color-hover) !important}
 .learnMore:active {color: var(--in-content-link-color-active) !important}
+
+.close-icon {fill: #ddd !important}
+.close-icon:hover {fill-opacity: 0.2 !important; fill: #fff !important}
 }
 
 /*------ SETTINGS PAGE (about:preferences) ------*/
@@ -993,10 +1018,10 @@ menulist[sizetopopup="pref"]:hover {background: rgba(255,255,255,0.3) !important
 
 /* This is still in the addons page, it's the "discover" page thing */
 @-moz-document url-prefix(https://addons-discovery.cdn.mozilla.net), url-prefix(https://discovery.addons.mozilla.org) {
+.disco-content h1, .content h2, .DiscoPane-header-intro h1 {color: #FFF !important}
 
-.disco-content h1, .content h2 {color: #FFF !important}
-
-.disco-content p, .content p, .content blockquote {color: #AAA !important}
+.disco-content p, .content p, .content blockquote, .addon .heading span:not(a),
+.DiscoPane-header-intro p {color: #AAA !important}
 
 #react-view {background-color: #202020 !important}
 
@@ -1018,9 +1043,9 @@ menulist[sizetopopup="pref"]:hover {background: rgba(255,255,255,0.3) !important
 
 .addon.theme, .addon.extension, .addon.theme {background-color: #444 !important}
 
-.heading a {color: #09f !important}
+.heading a, .Footer a {color: #09f !important}
 .heading a:visited {color: #0070aa !important}
-.heading a:hover {color: #0ff !important}
+.heading a:hover, .Footer a:hover {color: #0ff !important}
 .heading a:active {color: #0050dd !important}
 }
 

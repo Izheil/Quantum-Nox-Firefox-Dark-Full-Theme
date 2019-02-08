@@ -10,16 +10,15 @@ basic css or <a href="https://www.w3schools.com/colors/colors_picker.asp">color 
 <br />
 This problem doesn't happen if you use a code editor such as notepad++, atom, sublime text...</h4>
 
-<h3>Last update: <b>07/02/2019</b></h3>
+<h3>Last update: <b>08/02/2019</b></h3>
+<p>Files updated:</p>
+<ul>
+  <li><b>Usercontent.css</b>: Fixed some buttons on <code>about:preferences</code> dialogs. Now you can change the search boxes borders on these pages as well. Also fixed some text colors on <code>about:addons</code>.</li>
+</ul>
+<h3>Pre-Last update: <b>07/02/2019</b></h3>
 <p>Files updated:</p>
 <ul>
   <li><b>Usercontent.css</b>: Commented out the theming code for <code>about:blank</code> page to avoid issues with certain pages. Unless you use that page as newtab, you shouldn't need it themed. Either way you can change it's color on <b>Firefox settings > General > "Colors..." button > Background</b>, which will change the pre-loading screen color to the one you set up. You can also change the addon settings section on <code>about:addon</code> to white background on the relevant section of this file.</li>
-</ul>
-<h3>Pre-Last update: <b>06/02/2019</b></h3>
-<p>Files updated:</p>
-<ul>
-  <li><b>Userchrome.css</b>: You can now change the highlight color of selected text on Firefox dialog windows and the urlbar.</li>
-  <li><b>Usercontent.css</b>: Themed some missing image on about:preferences. Also added the option to change highlight color of selected text on <code>about:</code> pages. Minor fix for protonmail messages background issue.</li>
 </ul>
 
 <code>
