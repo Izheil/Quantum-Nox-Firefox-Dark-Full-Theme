@@ -173,4 +173,9 @@ This problem doesn't happen if you use a code editor such as notepad++, atom, su
 <p>Also thanks to <b>BelladonnavGF</b>, <b>Demir-delic</b>, <b>DallasBelt</b>, <b>Gitut2007</b>, <b>Hakerdefo</b>, <b>Tkhquang</b> and <b>YiannisNi</b> for noting some issues with the theme, and the requests for new features that extended this project.</p>
 
 <h2>Contact</h2>
-<p>If you have anything to ask or tell me about the theme that isn't a bug or an issue (such as a suggestion, or some clarification I may have missed on the documentation), you can contact me through <a href="https://www.reddit.com/message/compose/">reddit</a> (You will need an account for that), directing the message to <b>Izheil</b>. 
+<p>If you have anything to ask or tell me about the theme that isn't a bug or an issue (such as a suggestion, or some clarification I may have missed on the documentation), you can contact me through <a href="https://www.reddit.com/message/compose/">reddit</a> (You will need an account for that), directing the message to <b>Izheil</b>.</p>
+
+<h2>Donations</h2>
+<p>If you want to support this project, you can donate any amount through payal to motivate me to keep this repository up and updated.</p>
+​
+<img alt="donate" href="https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=BMUFYBSRA7ENL&source=url" border="0" src="https://www.paypalobjects.com/en_US/ES/i/btn/btn_donateCC_LG.gif" />
