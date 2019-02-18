@@ -1,10 +1,11 @@
 // ==UserScript==
-// @name           zzzz-MultiRowTabLiteforFx.uc.js
+// @name           MultiRowTab-scrollable.uc.js
 // @namespace      http://space.geocities.yahoo.co.jp/gl/alice0775
 // @description    Multi-row tabs draggability fix, Experimental CSS version
 // @include        main
 // @compatibility  Firefox 65
 // @author         Alice0775, Endor8, TroudhuK, Izheil
+// @version        18/02/2019 00:58 Fixed issue with scrolling when selecting non-visible tab
 // @version        03/02/2019 04:22 Fixed issue with scrolling when selecting non-visible tab
 // @version        02/02/2019 00:17 Fixed transparent line under tabs and touch density tabs issue
 // @version        01/02/2019 10:32 Fixed issue window dragging while keeping scrollbar dragging
@@ -12,13 +13,6 @@
 // @version        30/01/2019 02:05 Fixed issue with a pixel being above the tab bar
 // @version        30/11/2018 06:12 Now only the necesary rows appear, not static number of rows
 // @version        23/11/2018 00:41 Firefox 65
-// @version        19/10/2018 07:34 Firefox 62
-// @version        11/05/2018 15:05 Firefox 60
-// @version        08/05/2017 00:00 Firefox 48
-// @version        05/01/2017 00:01 hide favicon if busy
-// @version        02/09/2016 00:01 Bug 1222490 - Actually remove panorama for Fx45+
-// @version        02/09/2016 00:01 workaround css for lwt
-// @version        02/09/2016 00:00
 // ==/UserScript==
     zzzz_MultiRowTabLite();
 function zzzz_MultiRowTabLite() {
@@ -111,7 +105,7 @@ gBrowser.tabContainer.addEventListener("TabSelect", scrollToView, false);
 document.addEventListener("SSTabRestoring", scrollToView, false);
 
 // This sets when to apply the fix (by default a new row starts after the 23th open tab, unless you changed the min-size of tabs)
-gBrowser.tabContainer.ondragstart = function(){if(gBrowser.tabContainer.childNodes.length >= (window.innerWidth - 200) / 75) {
+gBrowser.tabContainer.ondragstart = function(){if(gBrowser.tabContainer.clientHeight > document.getElementsByClassName("tabbrowser-tab")[0].clientHeight) {
 
     gBrowser.tabContainer._getDropEffectForTabDrag = function(event){return "";}; // multirow fix: to make the default "dragover" handler does nothing
     gBrowser.tabContainer._onDragOver = function(event) {
