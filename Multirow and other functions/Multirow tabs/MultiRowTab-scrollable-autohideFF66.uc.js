@@ -1,5 +1,5 @@
 // ==UserScript==
-// @name           MultiRowTab-scrollableFF66.uc.js
+// @name           MultiRowTab-scrollable-autohideFF66.uc.js
 // @namespace      http://space.geocities.yahoo.co.jp/gl/alice0775
 // @description    Multi-row tabs draggability fix, Experimental CSS version
 // @include        main
@@ -62,6 +62,8 @@ function zzzz_MultiRowTabLite() {
     #main-window[tabsintitlebar] #tabbrowser-tabs scrollbar {
         -moz-window-dragging: no-drag}
 
+    #tabbrowser-tabs .arrowscrollbox-scrollbox scrollbar {visibility: collapse}
+
     @media (-moz-os-version: windows-win10) {
     .titlebar-buttonbox, #titlebar-buttonbox {display: block !important; height:var(--tab-min-height) !important}}
 
@@ -102,6 +104,28 @@ function scrollToView() {
 gBrowser.tabContainer.addEventListener('TabOpen', scrollToView, false);
 gBrowser.tabContainer.addEventListener("TabSelect", scrollToView, false);
 document.addEventListener("SSTabRestoring", scrollToView, false);
+
+// This autohides the scrollbar
+var scrollToggled;
+document.getElementById("tabbrowser-tabs").onmouseover = function(){
+    if (scrollToggled != true) {
+        scrollToggled = true;
+        var css =`
+        #tabbrowser-tabs .arrowscrollbox-scrollbox scrollbar {visibility: visible}
+
+        `;
+        var sss = Cc['@mozilla.org/content/style-sheet-service;1'].getService(Ci.nsIStyleSheetService);
+        var uri = makeURI('data:text/css;charset=UTF=8,' + encodeURIComponent(css));
+        sss.loadAndRegisterSheet(uri, sss.AGENT_SHEET);}}
+
+document.getElementById("tabbrowser-tabs").onmouseout = function(){
+    scrollToggled = false;
+    var css =`
+    #tabbrowser-tabs .arrowscrollbox-scrollbox scrollbar {visibility: collapse}
+    `;
+    var sss = Cc['@mozilla.org/content/style-sheet-service;1'].getService(Ci.nsIStyleSheetService);
+    var uri = makeURI('data:text/css;charset=UTF=8,' + encodeURIComponent(css));
+    sss.loadAndRegisterSheet(uri, sss.AGENT_SHEET);}
 
 // This sets when to apply the fix (by default a new row starts after the 23th open tab, unless you changed the min-size of tabs)
 gBrowser.tabContainer.ondragstart = function(){if(gBrowser.tabContainer.clientHeight > document.getElementsByClassName("tabbrowser-tab")[0].clientHeight) {

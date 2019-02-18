@@ -13,13 +13,12 @@ This problem doesn't happen if you use a code editor such as notepad++, atom, su
 <h3>Last update: <b>14/02/2019</b></h3>
 <p>Files updated:</p>
 <ul>
-  <li><b>Usercontent.css</b>: Themed missing buttons on the privacy section of <code>about:preferences</code>.</li>
+  <li><b>MultiRowTab-scrollable-autohide.uc.js</b>: Added an alternative version of multi-row for those having some minor issues with scrollbars on pages after restoring sessions.</li>
 </ul>
 <h3>Pre-Last update: <b>08/02/2019</b></h3>
 <p>Files updated:</p>
 <ul>
-  <li><b>Addons.css</b>: Fixed the theme for HTTPS everywhere settings section inside <code>about:addons</code>.</li>
-  <li><b>Userchrome.css</b>: Made the text color of the main menu key shortcuts more notizable.</li>
+  <li><b>Usercontent.css</b>: Themed missing buttons on the privacy section of <code>about:preferences</code>.</li>
 </ul>
 
 <code>

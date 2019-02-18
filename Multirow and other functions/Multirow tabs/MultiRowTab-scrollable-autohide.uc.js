@@ -1,12 +1,11 @@
 // ==UserScript==
-// @name           MultiRowTab-scrollableFF66.uc.js
+// @name           MultiRowTab-scrollable-autohide.uc.js
 // @namespace      http://space.geocities.yahoo.co.jp/gl/alice0775
 // @description    Multi-row tabs draggability fix, Experimental CSS version
 // @include        main
-// @compatibility  Firefox 67
+// @compatibility  Firefox 65
 // @author         Alice0775, Endor8, TroudhuK, Izheil
 // @version        18/02/2019 20:46 Tab line not being fully shown on maximized or fullscreen
-// @version        03/02/2019 15:15 Firefox 67
 // @version        03/02/2019 04:22 Fixed issue with scrolling when selecting non-visible tab
 // @version        02/02/2019 00:17 Fixed transparent line under tabs and touch density tabs issue
 // @version        01/02/2019 10:32 Fixed issue window dragging while keeping scrollbar dragging
@@ -24,7 +23,7 @@ function zzzz_MultiRowTabLite() {
         --max-tab-rows: 3;}
 
     .tabbrowser-tab:not([pinned]) {
-        flex-grow:1}
+        flex-grow:1;}
 
     .tabbrowser-tab::after {border: none !important}
 
@@ -44,23 +43,21 @@ function zzzz_MultiRowTabLite() {
         min-height: calc(var(--tab-min-height) + 3px);
         max-height: calc((var(--tab-min-height) + 3px)*var(--max-tab-rows))}
 
-    #tabbrowser-tabs .arrowscrollbox-scrollbox {
+    #tabbrowser-tabs .scrollbox-innerbox {
         display: flex;
         flex-wrap: wrap; 
-        overflow-x: hidden;
-        overflow-y: auto;     
+        overflow-y: auto;
         min-height: var(--tab-min-height);
         max-height: calc(var(--tab-min-height)*var(--max-tab-rows))}
 
-    #tabbrowser-tabs .tabbrowser-arrowscrollbox {
+    #tabbrowser-tabs .arrowscrollbox-scrollbox {
         overflow: visible;
         display: block;}
 
-    .arrowscrollbox-overflow-start-indicator,
-    .arrowscrollbox-overflow-end-indicator {position: fixed !important}
-
     #main-window[tabsintitlebar] #tabbrowser-tabs scrollbar {
         -moz-window-dragging: no-drag}
+
+    #tabbrowser-tabs .scrollbox-innerbox scrollbar {visibility: collapse}
 
     @media (-moz-os-version: windows-win10) {
     .titlebar-buttonbox, #titlebar-buttonbox {display: block !important; height:var(--tab-min-height) !important}}
@@ -92,9 +89,9 @@ function zzzz_MultiRowTabLite() {
         return tabs.length;
     };
 
+
 // This scrolls down to the current tab when you open a new one, or restore a session.
 function scrollToView() {
-	var selTab = document.querySelectorAll(".tabbrowser-tab[selected='true']")[0];
     var selTab = document.querySelectorAll(".tabbrowser-tab[selected='true']")[0];
 	selTab.scrollIntoView({behavior: "smooth", block: "nearest", inline: "nearest"});
 }
@@ -102,6 +99,28 @@ function scrollToView() {
 gBrowser.tabContainer.addEventListener('TabOpen', scrollToView, false);
 gBrowser.tabContainer.addEventListener("TabSelect", scrollToView, false);
 document.addEventListener("SSTabRestoring", scrollToView, false);
+
+// This autohides the scrollbar
+var scrollToggled;
+document.getElementById("tabbrowser-tabs").onmouseover = function(){
+    if (scrollToggled != true) {
+        scrollToggled = true;
+        var css =`
+        #tabbrowser-tabs .scrollbox-innerbox scrollbar {visibility: visible}
+
+        `;
+        var sss = Cc['@mozilla.org/content/style-sheet-service;1'].getService(Ci.nsIStyleSheetService);
+        var uri = makeURI('data:text/css;charset=UTF=8,' + encodeURIComponent(css));
+        sss.loadAndRegisterSheet(uri, sss.AGENT_SHEET);}}
+
+document.getElementById("tabbrowser-tabs").onmouseout = function(){
+    scrollToggled = false;
+    var css =`
+    #tabbrowser-tabs .scrollbox-innerbox scrollbar {visibility: collapse}
+    `;
+    var sss = Cc['@mozilla.org/content/style-sheet-service;1'].getService(Ci.nsIStyleSheetService);
+    var uri = makeURI('data:text/css;charset=UTF=8,' + encodeURIComponent(css));
+    sss.loadAndRegisterSheet(uri, sss.AGENT_SHEET);}
 
 // This sets when to apply the fix (by default a new row starts after the 23th open tab, unless you changed the min-size of tabs)
 gBrowser.tabContainer.ondragstart = function(){if(gBrowser.tabContainer.clientHeight > document.getElementsByClassName("tabbrowser-tab")[0].clientHeight) {

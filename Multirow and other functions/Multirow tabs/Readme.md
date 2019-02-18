@@ -22,5 +22,8 @@ toolbarbutton#alltabs-button {
 <p>Works with Firefox 65. Shows all tabs you currently have open splitting them on rows up to a max of 3 rows by default (can be changed using the variable inside the file). After the max number of rows has been reached, a scrollbar will be shown to be able to scroll around the extra tabs.</p>
 <img src="https://i.imgur.com/qqQn4Ky.png">
 
+<h3>MultiRowTab-scrollable-autohide.uc.js</h3>
+<p>Works with Firefox 65. This version is the same as scrollable multirow, except the scrollbars are only shown when you hover over the tabs area. It fixes some very specific issue when loading a session restore and loading a page in a session-restored blank page.</p>
+
 <h3>MultiRowTab*FF66.uc.js</h3>
 <p>Compatibilty fix versions for Firefox 66 and Firefox 67. Only use if using either firefox beta (version 66) or nightly (version 67). If you are using Firefox stable (version 65), do NOT use these, since it will display tabs wrong.</p>
