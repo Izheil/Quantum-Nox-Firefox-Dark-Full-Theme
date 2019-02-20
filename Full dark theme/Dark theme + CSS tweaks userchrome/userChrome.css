@@ -1,6 +1,6 @@
 /* You can find an updated version here: https://github.com/Izheil/Quantum-Nox-Firefox-Dark-Full-Theme */
 /* Made by Izheil */
-/* Last updated: 18/02/2019 */
+/* Last updated: 21/02/2019 */
 
 /* DO NOT DELETE THIS LINE */
 @namespace url("http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul");
@@ -212,13 +212,14 @@ dialog, dialog caption, dialog select, #clientBox  {
 
 #printPageSetupDialog caption {background-color: #444 !important}
 
-dialog #openHandlerBox menulist {
+dialog menulist, tabmodalprompt button {
   -moz-appearance: none !important;
   border: 1px solid #111 !important;
   background: linear-gradient(#555,#333) !important;
-  color: #ddd !important}
+  color: #ddd !important;
+  padding: 2px !important}
 
-dialog #openHandlerBox menulist:hover {
+dialog menulist:hover, tabmodalprompt button:hover {
   background: linear-gradient(#333,#555) !important;
   color: #fff !important}
 
