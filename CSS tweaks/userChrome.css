@@ -1,5 +1,5 @@
 /* You can find an updated version here: https://github.com/Izheil/Firefox-57-full-dark-theme-with-scrollbars */
-/* Last updated: 18/02/2019 */
+/* Last updated: 22/02/2019 */
 
 /* DO NOT DELETE THIS LINE */
 @namespace url("http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul");
@@ -47,7 +47,7 @@ differentiable font (Thanks to BelladonnavGF for the tip) */
 #PersonalToolbar {-moz-box-ordinal-group: 1 !important}
 #titlebar {-moz-box-ordinal-group: 3 !important}
 
-#main-window([sizemode="fullscreen"]) #navigator-toolbox {margin-top: 7px !important}
+#main-window:not([sizemode="fullscreen"]) #navigator-toolbox {margin-top: 7px !important}
 /* ^ Change the margin to 40px if you want to use the menu bar on top ^ */
 /* This changes the menu bar on top of the screen intead of over the tab bar */
 /*
