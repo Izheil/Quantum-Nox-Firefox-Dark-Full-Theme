@@ -1,6 +1,6 @@
 /* You can find an updated version here: https://github.com/Izheil/Quantum-Nox-Firefox-Dark-Full-Theme */
 /* Made by Izheil */
-/* Last updated: 14/02/2019 */
+/* Last updated: 23/02/2019 */
 
 /* This part imports the Addons file if there is one, so that you don't have to edit the dynamic URL
 from the addons rules every time we update anything here */
@@ -76,7 +76,13 @@ To use, instead of "none;", type: url("URL-OF-THE-IMAGE-GOES-HERE"); <- Don't fo
 	/* Buttons background colors */
 	--button-background: #05a;
 	--button-background-hover: #0040aa;
-	--button-border: #0040aa}
+	--button-border: #0040aa;
+
+	/* These change the Library hover or selected items colors */
+	--Lists-treechildren-hover-bg: rgba(0,149,221,0.25);
+	--Lists-treechildren-hover-border: 1px solid rgb(0,149,221);
+	--Lists-treechildren-selected-bg: rgba(0,120,255,0.5);
+	--Lists-treechildren-selected-border: 1px solid #0a84ff}
 
 /*------ FILE BROWSING PAGE ------*/
 /* This was placed here for bug fixing of styles overriding when testing things, for the 
@@ -616,7 +622,7 @@ tbody > tr:hover {outline: 1px dotted #777 !important}}
 @-moz-document url-prefix(about:) {
 
 /* This changes the color of the context menus */
-menuitem, menu {
+menuitem, menu:not(.menu-iconic) {
 	-moz-appearance: none !important;
 	background-color: var(--in-content-context-background) !important;
 	color: #ccc !important;
@@ -634,7 +640,7 @@ menu[disabled="true"] {color: #777 !important}
 	
 /* This changes the color on hover of the context-menu items */
 menuitem:hover,
-menu:hover {
+menu:hover, #placesMenu > menu[open="true"] {
 	-moz-appearance: none !important;
 	background-color: var(--in-content-context-highlight) !important}
 
@@ -652,6 +658,8 @@ menuseparator {
   border: none !important;
   background: #222 !important;
   padding: 0 !important}
+
+#placesMenu .menu-right {filter: invert(80%)}
 
 *|*::selection {
 	background: var(--highlight-on-selection-bg) !important;
@@ -727,6 +735,158 @@ select {border: 1px solid #111 !important}
 .rights-header {filter: invert(98%) hue-rotate(200deg) }
 .rights-header div {filter: invert(98%) hue-rotate(-200deg)}
 }
+
+/*------ LIBRARY PAGE (In case you open it from a bookmark) ------*/
+@-moz-document url-prefix(chrome://browser/content/places/places.xul) {
+/* This is a fix for treechildren that might look whiteish in linux */
+treechildren::-moz-tree-row {background: transparent !important}
+
+/* This changes all treechildren elements highlights (list-like elements) */
+treechildren::-moz-tree-row(hover) {
+  background: var(--Lists-treechildren-hover-bg) !important;
+  border: var(--Lists-treechildren-hover-border) !important}
+
+treechildren::-moz-tree-row(selected){
+  background: var(--Lists-treechildren-selected-bg) !important;
+  border: var(--Lists-treechildren-selected-border) !important}
+
+/* These change top bar background color */
+#placesToolbar {background-color: #333 !important}
+
+/* These change the lists background color */
+#placesView, #placesView .scrollbox-innerbox,
+#infoPane, #placesList, #placeContent, 
+/* This one changes the urlbar star bookmarking folder tree backgrund color */
+#editBMPanel_folderTree {
+  -moz-appearance: none !important; 
+  background: #555 !important; 
+  color: #ddd !important}
+
+/* These change the list header background and text colors */
+#placeContent treecol {
+  -moz-appearance: none !important; 
+  background: #444 !important;
+  padding: 3px !important;
+  color: #ddd !important;
+  border-left: 1px solid #333 !important;
+  border-bottom: 1px solid #333 !important}
+
+#placeContent treecol:hover {
+  -moz-appearance: none !important; 
+  background: rgba(255,255,255, 0.15) !important}
+
+/* This changes the right border on the left list panel */
+#placesView > splitter {border-inline-end: 1px solid #333 !important}
+
+/* These change the even rows of the lists */
+#placeContent tree {background-color: var(--in-content-box-background) !important}
+
+#placeContent treechildren::-moz-tree-row(even) {
+  background-image: linear-gradient(rgba(0,0,0,0.25), rgba(0,0,0,0.25)) !important}
+
+#placeContent treechildren::-moz-tree-cell {border-right: 1px dotted rgba(0,0,0,0.4) !important}
+
+#placeContent > splitter {border: 1px solid red !important}
+
+/* This changes the forward and back buttons opacity when disabled */
+#placesToolbar > toolbarbutton[disabled] > .toolbarbutton-icon {
+  opacity: .25 !important}
+
+/* This changes the forward and back buttons color */
+#back-button > .toolbarbutton-icon,
+#forward-button > .toolbarbutton-icon {fill: #aaa !important; opacity: 1 !important}
+
+/* This deletes the leftover border when clicking one of the top buttons */
+#placesMenu > menu {border: none !important}
+
+/* This changes the text color of the "clear downloads" button */
+#clearDownloadsButton {color: #aaa !important}
+#clearDownloadsButton[disabled] {color: #555 !important}
+
+/* This themes the search box */
+#searchFilter {
+  transition: all 0.25s ease-in-out !important;
+  -moz-appearance: none !important; 
+  border: 1px solid #666 !important;
+  background-color: #444 !important;
+  color: #aaa !important}
+
+/* This themes the search box on hover */
+#searchFilter[focused="true"] {
+  box-shadow: var(--Input-field-focus-shadow) !important;
+  background-color: #555 !important;
+  color: #fff !important} 
+
+/* This themes the information box on the lower part of the library menu */
+#detailsDeck {
+  background-color: #444 !important; 
+  color: #aaa !important;
+  border-top: 1px solid #222 !important}
+
+/* This changes the text boxes inside the library bottom information box */
+#infoBox textbox, #infoBox listbox, 
+/* This changes the text boxes on the popup when bookmarking a page from the url box */
+#editBMPanel_namePicker, #editBMPanel_tagsField,
+#editBMPanel_tagsSelector {
+  transition: all 0.25s ease-in-out !important;
+  -moz-appearance: none !important; 
+  border: 1px solid #777 !important;
+  background-color: #555 !important;
+  color: #ddd !important}
+
+/* A fix for bookmark preferences... so that some boxes won't appear brighter than others */
+#bookmarkproperties #editBMPanel_namePicker, 
+#bookmarkproperties #editBMPanel_tagsField,
+#bookmarkproperties #editBMPanel_tagsSelector {
+  background-color: #444 !important}
+
+/* This changes the same text boxes on hover */
+#infoBox textbox[focused="true"], #infoBox listbox[focused="true"],
+/* This changes the same url bookmarking popup text boxes on hover */
+#editBMPanel_namePicker[focused="true"], #editBMPanel_tagsField[focused="true"],
+#infoBox #bookmarkproperties #editBMPanel_namePicker[focused="true"],
+#infoBox #bookmarkproperties #editBMPanel_tagsField[focused="true"] {
+  box-shadow: var(--Input-field-focus-shadow) !important;
+  background-color: #666 !important;
+  color: #fff !important}
+
+/* This changes the buttons inside the bookmarking popup at the url star */
+#editBMPanel_newFolderButton, #editBookmarkPanelDoneButton, 
+#editBookmarkPanelRemoveButton, #tracking-action-unblock-private, 
+#identity-popup-popup-menulist, #tracking-action-block, #tracking-action-unblock {
+  -moz-appearance: none !important;
+  border-radius: 3px !important;
+  background: #666 !important;
+  color: #ddd !important;
+  padding: 0.3em !important;
+  margin-top: 0.5em !important;
+  margin-bottom: 0.5em !important}
+
+#editBMPanel_newFolderButton:hover,#editBookmarkPanelDoneButton:hover, 
+#editBookmarkPanelRemoveButton:hover, #tracking-action-unblock-private:hover, 
+#identity-popup-popup-menulist:hover, #tracking-action-block:hover, 
+#tracking-action-unblock:hover { 
+  background: #333 !important;
+  color: #fff !important}
+
+/* These change the expander buttons on the library and bookmarking popup */
+#editBMPanel_folderMenuList, #editBMPanel_tagsSelectorExpander,
+#editBMPanel_foldersExpander, #detailsDeck button {
+  -moz-appearance: none !important;
+  border: 1px solid #222 !important;
+  background: linear-gradient(#555,#333) !important;
+  color: #ddd !important}
+
+#editBMPanel_folderMenuList:hover, #editBMPanel_tagsSelectorExpander:hover, 
+#editBMPanel_foldersExpander:hover, #detailsDeck button:hover {
+  background: linear-gradient(#333,#555) !important;
+  color: #fff !important}
+
+#editBMPanel_folderMenuList {padding: 1px !important; color: #ddd !important}
+
+#placesMenu > menu {color: #ccc !important}
+}
+
 /*------ DEBUGGING PAGE (about:debugging) ------*/
 @-moz-document url-prefix(about:debugging) {
 
