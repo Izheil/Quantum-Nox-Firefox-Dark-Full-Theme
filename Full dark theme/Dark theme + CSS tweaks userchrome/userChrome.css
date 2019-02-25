@@ -1,6 +1,6 @@
 /* You can find an updated version here: https://github.com/Izheil/Quantum-Nox-Firefox-Dark-Full-Theme */
 /* Made by Izheil */
-/* Last updated: 22/02/2019 */
+/* Last updated: 25/02/2019 */
 
 /* DO NOT DELETE THIS LINE */
 @namespace url("http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul");
@@ -242,7 +242,7 @@ dialog groupbox {
 #groove {border-color: #222 !important}
 
 /* This is aimed for notification popups */
-window:not(#main-window):not(#CookiesDialog):not(#SignonViewerDialog) > * {
+window:not(#main-window):not(#CookiesDialog):not(#SignonViewerDialog):not(.theme-dark) > * {
   background-color: #444 !important; 
   color: #fff !important}
 
@@ -380,11 +380,11 @@ menupopup > menu[disabled="true"], menubar > menu[disabled="true"]{color: #777 !
 
 /* This one applies to all context menus (If you want to theme the browser this one is better instead 
 of going one by one) */
-menupopup {background-color: var(--Context-menu-background) !important}
+menupopup:not(.PanelUI-subView) {background-color: var(--Context-menu-background) !important}
 
 /* The following code changes the borders of all the context menus (except the ones above mentioned),
 as well as ignoring the bookmark menu context menu */
-menupopup {
+menupopup:not(.PanelUI-subView) {
   -moz-appearance: none !important;
   border: 1px solid #111 !important}
 
