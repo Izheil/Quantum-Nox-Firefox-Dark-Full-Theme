@@ -13,12 +13,13 @@ This problem doesn't happen if you use a code editor such as notepad++, atom, su
 <h3>Last update: <b>23/02/2019</b></h3>
 <p>Files updated:</p>
 <ul>
-  <li><b>Usercontent.css</b>: Added a fix to theme the <a href="chrome://browser/content/places/places.xul">library page</a> when opening it from a link or a bookmark.</li>
+  <li><b>Usercontent.css</b>: Themed missing buttons, brightened some dark icons on <code>about:preferences</code>.</li>
+  <li><b>Userchrome.css</b>: Brightened the alert icon on most common dialogs (like when closing a session with more than 2 tabs open).</li>
 </ul>
-<h3>Pre-Last update: <b>22/02/2019</b></h3>
+<h3>Pre-Last update: <b>23/02/2019</b></h3>
 <p>Files updated:</p>
 <ul>
-  <li><b>Userchrome.css</b>: Fixed a missing ":not" on the rules for tabs below navbar that would not leave enough padding on top of the screen except on fullscreen.</li>
+  <li><b>Usercontent.css</b>: Added a fix to theme the <a href="chrome://browser/content/places/places.xul">library page</a> when opening it from a link or a bookmark.</li>
 </ul>
 
 <code>
