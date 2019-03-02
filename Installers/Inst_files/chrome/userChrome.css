@@ -1,6 +1,6 @@
 /* You can find an updated version here: https://github.com/Izheil/Firefox-57-full-dark-theme-with-scrollbars */
 /* Made by Izheil */
-/* Last updated: 25/02/2019 */
+/* Last updated: 02/03/2019 */
 
 /* DO NOT DELETE THIS LINE */
 @namespace url("http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul");
@@ -223,6 +223,8 @@ dialog menulist:hover, tabmodalprompt button:hover {
 dialog groupbox {
   -moz-appearance: none !important; 
   border: 1px solid #666 !important}
+
+#infoIcon {filter: invert(80%)}
 
 /* This is the "about this addon..." dialog */
 #clientBox {
