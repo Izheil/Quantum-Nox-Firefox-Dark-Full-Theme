@@ -1,6 +1,6 @@
 /* You can find an updated version here: https://github.com/Izheil/Quantum-Nox-Firefox-Dark-Full-Theme */
 /* Made by Izheil */
-/* Last updated: 08/02/2019 */
+/* Last updated: 05/03/2019 */
 
 /*------ HOW TO MAKE THE ADDON THEMES WORK ------*/
 /* To use this part of the code, you will have to find the dynamic UUID of your extensions, and replace it where the 
@@ -332,7 +332,7 @@ body, .multiple_download_header, #filters_block,
 
 /*------ VIDEO DOWNLOAD HELPER ADDON COMMON PART ------*/
 @-moz-document url-prefix(moz-extension://TYPE-UUID-OF-VIDEO-DOWNLOAD-HELPER-HERE/) {
-main, .top-line, .files-list.headercontainer {background: #333 !important; color: #ccc !important}
+main, .top-line, .files-list.headercontainer, .current-directory {background: #333 !important; color: #ccc !important}
 
 .tablecontainer, select.form-control {
 	background: #555 !important; 
