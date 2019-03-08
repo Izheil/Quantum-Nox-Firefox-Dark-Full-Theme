@@ -67,6 +67,9 @@ function zzzz_MultiRowTabLite() {
 
     @media (-moz-os-version: windows-win10) {
     .titlebar-buttonbox, #titlebar-buttonbox {display: block !important; height:var(--tab-min-height) !important}}
+
+    #tabbrowser-tabs .scrollbutton-up, #tabbrowser-tabs .scrollbutton-down
+    {display: none}
     `;
     var sss = Cc['@mozilla.org/content/style-sheet-service;1'].getService(Ci.nsIStyleSheetService);
     var uri = makeURI('data:text/css;charset=UTF=8,' + encodeURIComponent(css));
