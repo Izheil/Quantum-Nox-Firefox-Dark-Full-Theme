@@ -5,6 +5,7 @@
 // @include        main
 // @compatibility  Firefox 67
 // @author         Alice0775, Endor8, TroudhuK, Izheil
+// @version        08/03/2019 02:41 Fixed compatibility issue with Tab Session Manager addon
 // @version        18/02/2019 20:46 Tab line not being fully shown on maximized or fullscreen
 // @version        03/02/2019 15:15 Firefox 67
 // @version        01/02/2019 23:48 Fixed empty pixel line below tabs
@@ -49,9 +50,6 @@ function zzzz_MultiRowTabLite() {
 
     @media (-moz-os-version: windows-win10) {
     .titlebar-buttonbox, #titlebar-buttonbox {display: block !important; height:var(--tab-min-height) !important}}
-
-    #tabbrowser-tabs .scrollbutton-up, #tabbrowser-tabs .scrollbutton-down, #alltabs-button, .tabbrowser-tab:not([fadein])
-    {display: none}
     `;
     var sss = Cc['@mozilla.org/content/style-sheet-service;1'].getService(Ci.nsIStyleSheetService);
     var uri = makeURI('data:text/css;charset=UTF=8,' + encodeURIComponent(css));
