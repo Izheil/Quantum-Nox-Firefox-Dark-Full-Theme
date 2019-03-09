@@ -23,7 +23,8 @@ function zzzz_MultiRowTabLite() {
     var css =`
     /* MULTIROW TABS CSS */
     .tabbrowser-tab:not([pinned]) {
-        flex-grow:1}
+        flex-grow: 1;
+        min-width: 100px !important}
 
     #tabbrowser-tabs .tab-background, #tabbrowser-tabs .tabbrowser-tab {
         height: calc(var(--tab-min-height) + 1px) !important}
@@ -46,7 +47,7 @@ function zzzz_MultiRowTabLite() {
     @media (-moz-os-version: windows-win10) {
     .titlebar-buttonbox, #titlebar-buttonbox {display: block !important; height:var(--tab-min-height) !important}}
 
-    #tabbrowser-tabs .scrollbutton-up, #tabbrowser-tabs .scrollbutton-down
+    #tabbrowser-tabs .scrollbutton-up, #tabbrowser-tabs .scrollbutton-down, #alltabs-button
     {display: none}
     `;
     var sss = Cc['@mozilla.org/content/style-sheet-service;1'].getService(Ci.nsIStyleSheetService);

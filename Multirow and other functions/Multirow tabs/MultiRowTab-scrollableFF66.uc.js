@@ -24,7 +24,8 @@ function zzzz_MultiRowTabLite() {
         --max-tab-rows: 3;}
 
     .tabbrowser-tab:not([pinned]) {
-        flex-grow:1}
+        flex-grow:1;
+        min-width: 100px !important}
 
     .tabbrowser-tab::after {border: none !important}
 
@@ -65,7 +66,7 @@ function zzzz_MultiRowTabLite() {
     @media (-moz-os-version: windows-win10) {
     .titlebar-buttonbox, #titlebar-buttonbox {display: block !important; height:var(--tab-min-height) !important}}
 
-    #tabbrowser-tabs .scrollbutton-up, #tabbrowser-tabs .scrollbutton-down
+    #tabbrowser-tabs .scrollbutton-up, #tabbrowser-tabs .scrollbutton-down, #alltabs-button
     {display: none}
     `;
     var sss = Cc['@mozilla.org/content/style-sheet-service;1'].getService(Ci.nsIStyleSheetService);
