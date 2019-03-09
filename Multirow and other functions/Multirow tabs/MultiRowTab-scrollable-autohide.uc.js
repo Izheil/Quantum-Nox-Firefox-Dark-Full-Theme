@@ -5,7 +5,7 @@
 // @include        main
 // @compatibility  Firefox 65
 // @author         Alice0775, Endor8, TroudhuK, Izheil
-// @version        08/03/2019 02:41 Fixed compatibility issue with Tab Session Manager addon
+// @version        09/03/2019 15:38 Fixed compatibility issue with Tab Session Manager addon
 // @version        18/02/2019 20:46 Tab line not being fully shown on maximized or fullscreen
 // @version        03/02/2019 04:22 Fixed issue with scrolling when selecting non-visible tab
 // @version        02/02/2019 00:17 Fixed transparent line under tabs and touch density tabs issue
@@ -32,6 +32,7 @@ function zzzz_MultiRowTabLite() {
     #tabbrowser-tabs .tab-background, #tabbrowser-tabs .tabbrowser-tab {
         height: calc(var(--tab-min-height) + 1px) !important}
 
+    #main-window[sizemode="normal"] .tabbrowser-tab .tab-line,
     #main-window[sizemode="maximized"] .tabbrowser-tab .tab-line, 
     #main-window[sizemode="fullscreen"] .tabbrowser-tab .tab-line {transform: translate(0,1px) !important}
     
@@ -64,7 +65,7 @@ function zzzz_MultiRowTabLite() {
     @media (-moz-os-version: windows-win10) {
     .titlebar-buttonbox, #titlebar-buttonbox {display: block !important; height:var(--tab-min-height) !important}}
 
-    #tabbrowser-tabs .scrollbutton-up, #tabbrowser-tabs .scrollbutton-down, #alltabs-button
+    #tabbrowser-tabs .scrollbutton-up, #tabbrowser-tabs .scrollbutton-down, #alltabs-button, .tabbrowser-tab[collapsed]
     {display: none}
     `;
     var sss = Cc['@mozilla.org/content/style-sheet-service;1'].getService(Ci.nsIStyleSheetService);
