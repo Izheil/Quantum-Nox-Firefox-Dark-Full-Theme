@@ -10,15 +10,15 @@ basic css or <a href="https://www.w3schools.com/colors/colors_picker.asp">color 
 <br />
 This problem doesn't happen if you use a code editor such as notepad++, atom, sublime text...</h4>
 
-<h3>Last update: <b>13/03/2019</b></h3>
+<h3>Last update: <b>15/03/2019</b></h3>
+<p>Files updated:</p>
+<ul>
+  <li><b>UserContent.css</b>: Fixed some issue with odd rows on <code>about:config</code>.</li>
+</ul>
+<h3>Pre-Last update: <b>13/03/2019</b></h3>
 <p>Files updated:</p>
 <ul>
   <li><b>UserContent.css</b>: Themed some missing buttons on the certificate bypass page.</li>
-</ul>
-<h3>Pre-Last update: <b>07/03/2019</b></h3>
-<p>Files updated:</p>
-<ul>
-  <li><b>MultiRowTab*.css</b>: Fixed some issue with Tab Session Manager addon.</li>
 </ul>
 
 <code>
