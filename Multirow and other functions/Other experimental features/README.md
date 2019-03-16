@@ -15,6 +15,9 @@ toolbarbutton#alltabs-button {
 
 <p>There are probably better alternatives out there, so you should only use these if you really couldn't find it anywhere else (since, as mentioned, these are experimental)</p>
 
+<h3>Mac-fullscreen-fix-toolbox-autohide.uc.js</h3>
+<p>Forces autohide of the toolbar in fullscreen mode to fix a common issue on Mac devices where the toolbar won't do this even with the setting enabled. Windows and Linux users shouldn't need this (since it already autohides if you have it toggled in the context menu of the toolbar in fullscreen mode).</p>
+
 <h3>Bookmarks-toggle.uc.js</h3>
 <p>Toggles visibility of the bookmarks toolbar when pressing F2 (you can change which keys in the file). You need to have the "fullscreen fix" disabled on userchrome.css if using any of the "CSS tweaks" versions from this repository.</p>
 
