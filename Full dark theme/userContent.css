@@ -1,6 +1,6 @@
 /* You can find an updated version here: https://github.com/Izheil/Quantum-Nox-Firefox-Dark-Full-Theme */
 /* Made by Izheil */
-/* Last updated: 15/03/2019 */
+/* Last updated: 18/03/2019 */
 
 /* This part imports the Addons file if there is one, so that you don't have to edit the dynamic URL
 from the addons rules every time we update anything here */
@@ -65,6 +65,10 @@ To use, instead of "none;", type: url("URL-OF-THE-IMAGE-GOES-HERE"); <- Don't fo
 	--home-text: #50AAFF;
 	--home-search-engine-choices: linear-gradient(#559,#115);
 	--Home-search-item-text-color: #0ff;
+
+	/* These change the link colors of the snippets on about:home and about:newtab */
+	--home-snippets-link-color: #3f55c8;
+  	--home-snippets-link-color-hover: #3f55c8;
 
 	/* This one changes the border of all boxes with a blue border focus effect */
 	--in-content-border-focus: #2066dd !important;
@@ -355,6 +359,8 @@ body {
 	box-shadow: 0 0 6px 0 var(--in-content-border-focus) !important;
 	border: 1px solid var(--in-content-border-focus) !important}
 
+.fixed-search #newtab-search-text {border: 1px solid var(--in-content-border-focus) !important}
+
 #newtab-search-text {
 	color: var(--home-text) !important}
 
@@ -408,7 +414,10 @@ body {
 input {
 	background-color: #151515 !important}
 
-.SnippetBaseContainer, .SnippetBaseContainer .footer {background: rgba(0,0,0,0.5) !important}
+.SnippetBaseContainer, .SnippetBaseContainer .footer, 
+.fixed-search .search-wrapper {
+	background: rgba(0,0,0,0.7) !important; 
+	border: none !important}
 
 .SnippetBaseContainer p, .SnippetBaseContainer h3, 
 .SnippetBaseContainer .footer-content {
@@ -418,6 +427,9 @@ input {
 	background: transparent !important;
 	font-weight: 900 !important;
 	color: var(--home-text) !important}
+
+.SnippetBaseContainer a {color: var(--home-snippets-link-color) !important}
+.SnippetBaseContainer a:hover {color: var(--home-snippets-link-color-hover) !important}
 
 .monthly-checkbox-label {color: #ccc !important}
 
@@ -1284,12 +1296,12 @@ a.Addon-all-reviews-link, .MetadataCard, .Card-contents ul li, .LandingPage-head
 #search-facets .facets .facet.active, #search-facets .facets .facet:hover,
 #sorter > ul > li.extras > ul > li > a:hover {background-color: #333 !important}
 
-button:not(.pswp__button):not(.pswp__ui):not(.AutoSearchInput-submit-button):not(.Icon-arrow):not(.DropdownMenu-button), 
+button:not(.pswp__button):not(.pswp__ui):not(.AutoSearchInput-submit-button):not(.Icon-arrow):not(.DropdownMenu-button):not(.AddonReviewCard-control), 
 .PermissionCard-learn-more, .AddAddonToCollection-select, #CollectionSort-select {
 	background-color: #555 !important;
 	color: #FFF !important}
 
-button:not(.pswp__button):not(.pswp__ui):not(.AutoSearchInput-submit-button):not(.Icon-arrow):not(.DropdownMenu-button):hover, 
+button:not(.pswp__button):not(.pswp__ui):not(.AutoSearchInput-submit-button):not(.Icon-arrow):not(.DropdownMenu-button):not(.AddonReviewCard-control):hover, 
 .PermissionCard-learn-more:hover, .AddAddonToCollection-select:hover {
 	background-color: #444 !important;
 	color: #1494FB !important}
@@ -1302,8 +1314,7 @@ button:not(.pswp__button):not(.pswp__ui):not(.AutoSearchInput-submit-button):not
     border-left: 1px dotted #000 !important;
 }
 
-button.DropdownMenu-button, button.TooltipMenu-opener, 
-button.SearchForm-submit-button, ul.LanguageTools-addon-list li,
+button.DropdownMenu-button, button.SearchForm-submit-button, ul.LanguageTools-addon-list li,
 #aux-nav > ul > li {background: transparent !important}
 
 ul.DropdownMenu-items, ul.TooltipMenu-list, .TooltipMenu-arrow, 
@@ -1363,6 +1374,12 @@ select#SearchFilters-AddonType, select#SearchFilters-OperatingSystem, select#lan
 input#search-q {
 	background-color: #222 !important;
 	color: #FFF !important}
+
+select.Select {
+	background: #444 url("data:image/svg+xml;charset=utf-8,%3Csvg width='11' height='7' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M434.574 488L430.5 492.147 426.428 488 425 489.399 430.5 494.999 436 489.399z' transform='translate(-425 -488)' fill='%23cccccc' fill-rule='evenodd'/%3E%3C/svg%3E") no-repeat calc(100% - 10px) 50% !important;
+	color: #ccc !important}
+	
+select.Select:hover {background-color: #222 !important}
 
 #site-search-suggestions .wrap, ul.other-apps {
     background: #151515 !important;
