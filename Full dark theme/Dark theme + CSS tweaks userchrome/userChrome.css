@@ -1,6 +1,6 @@
 /* You can find an updated version here: https://github.com/Izheil/Quantum-Nox-Firefox-Dark-Full-Theme */
 /* Made by Izheil */
-/* Last updated: 02/03/2019 */
+/* Last updated: 18/03/2019 */
 
 /* DO NOT DELETE THIS LINE */
 @namespace url("http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul");
@@ -94,9 +94,6 @@ in the rule below) */
   --Loading-italic: normal;
   --Loading-bold: normal;
   --Loading-background: transparent;
-
-  /* Number of max rows for MULTIROW BOOKMARKS */
-  --bookmark-max-rows: 1;
 }
 
 /* Highlight color on browser windows (url bar, library, search box, bookmarks properties...) */
@@ -131,10 +128,10 @@ treechildren::-moz-tree-row(selected){
 /* Tabs border color */
 .tabbrowser-tab {border-right: 1px solid rgba(255,255,255, .15) !important}
 
-/* GLOW EFFECT ON TAB ICON (for dark icons visibility) */
+/* Glow effect over the tabs site icon (for dark icons visibility) */
 /* You can add the selectors .bookmark-item:not([container=true]) .menu-iconic-icon for 
 icons inside the dropdown menus as well, and toolbarbutton.bookmark-item:not([container=true]) .toolbarbutton-icon
-for icons on the bookmarks bar under the url bar. Just make sure to put commas after each selector. */
+for icons on the bookmarks bar under the url bar. Just make sure to put commas after each selector */
 .tab-icon-image {
   filter: drop-shadow(0 0 3px #fff)}
 
@@ -531,7 +528,7 @@ if necessary depending on if you are using a custom OS theme (which may mess up 
 #infoBox #bookmarkproperties #editBMPanel_tagsField[focused="true"] {
   box-shadow: var(--Input-field-focus-shadow) !important;
   background-color: #666 !important;
-  color: #fff !important} 
+  color: #fff !important}
 
 /* This changes the buttons inside the bookmarking popup at the url star */
 #editBMPanel_newFolderButton, #editBookmarkPanelDoneButton, 
@@ -745,7 +742,7 @@ if necessary depending on if you are using a custom OS theme (which may mess up 
 #itemList listitem[selected="true"] {
   background: #555 !important;
   border-color: transparent !important}
-
+  
 /* AUTOCOMPLETE COLORS */
 
 /* This changes the autocomplete popup borders */
