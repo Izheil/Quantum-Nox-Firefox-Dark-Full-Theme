@@ -3,10 +3,12 @@
 // @namespace      http://space.geocities.yahoo.co.jp/gl/alice0775
 // @description    Multi-row tabs draggability fix, Experimental CSS version
 // @include        main
-// @compatibility  Firefox 65
+// @compatibility  Firefox 67
 // @author         Alice0775, Endor8, TroudhuK, Izheil
 // @version        09/03/2019 15:38 Fixed compatibility issue with Tab Session Manager addon
 // @version        18/02/2019 20:46 Tab line not being fully shown on maximized or fullscreen
+// @version        03/02/2019 15:15 Firefox 67
+// @version        01/02/2019 23:48 Fixed empty pixel line below tabs
 // @version        31/01/2019 10:32 Fixed issue with fullscreen
 // @version        30/01/2019 02:05 Fixed issue with a pixel being above the tab bar
 // @version        23/11/2018 00:41 Firefox 65
@@ -23,9 +25,9 @@ function zzzz_MultiRowTabLite() {
     var css =`
     /* MULTIROW TABS CSS */
     .tabbrowser-tab:not([pinned]) {
-        flex-grow: 1;
+        flex-grow:1;
         min-width: 100px !important}
-
+    
     #tabbrowser-tabs .tab-background, #tabbrowser-tabs .tabbrowser-tab {
         height: calc(var(--tab-min-height) + 1px) !important}
 
@@ -37,13 +39,16 @@ function zzzz_MultiRowTabLite() {
 
     .tab-stack {width: 100%}
 
-    #tabbrowser-tabs .scrollbox-innerbox {
+    #tabbrowser-tabs .arrowscrollbox-scrollbox {
         display: flex;
         flex-wrap: wrap;}
 
-    #tabbrowser-tabs .arrowscrollbox-scrollbox {
+    #tabbrowser-tabs .tabbrowser-arrowscrollbox {
         overflow: visible;
         display: block}
+
+    .arrowscrollbox-overflow-start-indicator,
+    .arrowscrollbox-overflow-end-indicator {position: fixed !important}
 
     @media (-moz-os-version: windows-win10) {
     .titlebar-buttonbox, #titlebar-buttonbox {display: block !important; height:var(--tab-min-height) !important}}

@@ -15,16 +15,16 @@ toolbarbutton#alltabs-button {
 <p>... or just the <b>toolbarbutton</b> rule if you had an existing userchrome that didn't come from this repository.</p>
 
 <h3>MultiRowTabLiteforFx.uc.js</h3>
-<p>Works with Firefox 65. Shows all tabs you currently have open splitting them on rows, without any limit to the amount of rows to show. Choose this option if you want to always see all the tabs you have open without limits to the number of rows.</p>
+<p>Works with Firefox 66+. Shows all tabs you currently have open splitting them on rows, without any limit to the amount of rows to show. Choose this option if you want to always see all the tabs you have open without limits to the number of rows.</p>
 <img src="https://i.imgur.com/GWSgqD9.png">
 
 <h3>MultiRowTab-scrollable.uc.js</h3>
-<p>Works with Firefox 65. Shows all tabs you currently have open splitting them on rows up to a max of 3 rows by default (can be changed using the variable inside the file). After the max number of rows has been reached, a scrollbar will be shown to be able to scroll around the extra tabs.</p>
+<p>Works with Firefox 66+. Shows all tabs you currently have open splitting them on rows up to a max of 3 rows by default (can be changed using the variable inside the file). After the max number of rows has been reached, a scrollbar will be shown to be able to scroll around the extra tabs.</p>
 <img src="https://i.imgur.com/qqQn4Ky.png">
 
 <h3>MultiRowTab-scrollable-autohide.uc.js</h3>
-<p>Works with Firefox 65. This version is the same as scrollable multirow, except the scrollbars are only shown when you hover over the tabs area. It fixes some very specific issue when loading a session restore and loading a page in a session-restored blank page.</p>
+<p>Works with Firefox 66+. This version is the same as scrollable multirow, except the scrollbars are only shown when you hover over the tabs area. It fixes some very specific issue when loading a session restore and loading a page in a session-restored blank page.</p>
 
-<h3>MultiRowTab*FF66.uc.js</h3>
-<p>Compatibilty fix versions for Firefox 66 and Firefox 67. Only use if using either firefox beta (version 66) or nightly (version 67).</p> 
-<h3>If you are using Firefox stable (version 65), do NOT use the FF66 version, since it will display tabs wrong.</h3>
+<h3>MultiRowTab*Fx65.uc.js</h3>
+<p>The old Firefox 65 versions. Only use if you still havent updated to Firefox 66+.</p> 
+<h3>If you are using Firefox stable (version 66), do NOT use the Fx65 version, since it will display tabs wrong.</h3>

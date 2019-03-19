@@ -1,54 +1,66 @@
 // ==UserScript==
-// @name           MultiRowTabLiteforFx.uc.js
+// @name           MultiRowTab-scrollable-autohideFx65.uc.js
 // @namespace      http://space.geocities.yahoo.co.jp/gl/alice0775
 // @description    Multi-row tabs draggability fix, Experimental CSS version
 // @include        main
-// @compatibility  Firefox 67
+// @compatibility  Firefox 65
 // @author         Alice0775, Endor8, TroudhuK, Izheil
 // @version        09/03/2019 15:38 Fixed compatibility issue with Tab Session Manager addon
 // @version        18/02/2019 20:46 Tab line not being fully shown on maximized or fullscreen
-// @version        03/02/2019 15:15 Firefox 67
-// @version        01/02/2019 23:48 Fixed empty pixel line below tabs
+// @version        03/02/2019 04:22 Fixed issue with scrolling when selecting non-visible tab
+// @version        02/02/2019 00:17 Fixed transparent line under tabs and touch density tabs issue
+// @version        01/02/2019 10:32 Fixed issue window dragging while keeping scrollbar dragging
 // @version        31/01/2019 10:32 Fixed issue with fullscreen
 // @version        30/01/2019 02:05 Fixed issue with a pixel being above the tab bar
+// @version        30/11/2018 06:12 Now only the necesary rows appear, not static number of rows
 // @version        23/11/2018 00:41 Firefox 65
-// @version        19/10/2018 07:34 Firefox 62
-// @version        11/05/2018 15:05 Firefox 60
-// @version        08/05/2017 00:00 Firefox 48
-// @version        05/01/2017 00:01 hide favicon if busy
-// @version        02/09/2016 00:01 Bug 1222490 - Actually remove panorama for Fx45+
-// @version        02/09/2016 00:01 workaround css for lwt
-// @version        02/09/2016 00:00
 // ==/UserScript==
     zzzz_MultiRowTabLite();
 function zzzz_MultiRowTabLite() {
     var css =`
     /* MULTIROW TABS CSS */
+    /* You can set the max number of rows before the scrollbar appears here */
+    :root {
+        --max-tab-rows: 3;}
+
     .tabbrowser-tab:not([pinned]) {
         flex-grow:1;
         min-width: 100px !important}
-    
+
+    .tabbrowser-tab::after {border: none !important}
+
     #tabbrowser-tabs .tab-background, #tabbrowser-tabs .tabbrowser-tab {
         height: calc(var(--tab-min-height) + 1px) !important}
 
     #main-window[sizemode="normal"] .tabbrowser-tab .tab-line,
     #main-window[sizemode="maximized"] .tabbrowser-tab .tab-line, 
     #main-window[sizemode="fullscreen"] .tabbrowser-tab .tab-line {transform: translate(0,1px) !important}
-
-    #tabbrowser-tabs {margin-top: 0px !important}
+    
+    :root[uidensity="touch"] .tabbrowser-tab,
+    :root[uidensity="touch"] .tab-background {
+        min-height: calc(var(--tab-min-height) + 3px) !important}
 
     .tab-stack {width: 100%}
 
-    #tabbrowser-tabs .arrowscrollbox-scrollbox {
+    :root[uidensity="touch"] #tabbrowser-tabs .scrollbox-innerbox {    
+        min-height: calc(var(--tab-min-height) + 3px);
+        max-height: calc((var(--tab-min-height) + 3px)*var(--max-tab-rows))}
+
+    #tabbrowser-tabs .scrollbox-innerbox {
         display: flex;
-        flex-wrap: wrap;}
+        flex-wrap: wrap; 
+        overflow-y: auto;
+        min-height: var(--tab-min-height);
+        max-height: calc(var(--tab-min-height)*var(--max-tab-rows))}
 
-    #tabbrowser-tabs .tabbrowser-arrowscrollbox {
+    #tabbrowser-tabs .arrowscrollbox-scrollbox {
         overflow: visible;
-        display: block}
+        display: block;}
 
-    .arrowscrollbox-overflow-start-indicator,
-    .arrowscrollbox-overflow-end-indicator {position: fixed !important}
+    #main-window[tabsintitlebar] #tabbrowser-tabs scrollbar {
+        -moz-window-dragging: no-drag}
+
+    #tabbrowser-tabs .scrollbox-innerbox scrollbar {visibility: collapse}
 
     @media (-moz-os-version: windows-win10) {
     .titlebar-buttonbox, #titlebar-buttonbox {display: block !important; height:var(--tab-min-height) !important}}
@@ -79,6 +91,39 @@ function zzzz_MultiRowTabLite() {
         }
         return tabs.length;
     };
+
+
+// This scrolls down to the current tab when you open a new one, or restore a session.
+function scrollToView() {
+    var selTab = document.querySelectorAll(".tabbrowser-tab[selected='true']")[0];
+	selTab.scrollIntoView({behavior: "smooth", block: "nearest", inline: "nearest"});
+}
+
+gBrowser.tabContainer.addEventListener('TabOpen', scrollToView, false);
+gBrowser.tabContainer.addEventListener("TabSelect", scrollToView, false);
+document.addEventListener("SSTabRestoring", scrollToView, false);
+
+// This autohides the scrollbar
+var scrollToggled;
+document.getElementById("tabbrowser-tabs").onmouseover = function(){
+    if (scrollToggled != true) {
+        scrollToggled = true;
+        var css =`
+        #tabbrowser-tabs .scrollbox-innerbox scrollbar {visibility: visible}
+
+        `;
+        var sss = Cc['@mozilla.org/content/style-sheet-service;1'].getService(Ci.nsIStyleSheetService);
+        var uri = makeURI('data:text/css;charset=UTF=8,' + encodeURIComponent(css));
+        sss.loadAndRegisterSheet(uri, sss.AGENT_SHEET);}}
+
+document.getElementById("tabbrowser-tabs").onmouseout = function(){
+    scrollToggled = false;
+    var css =`
+    #tabbrowser-tabs .scrollbox-innerbox scrollbar {visibility: collapse}
+    `;
+    var sss = Cc['@mozilla.org/content/style-sheet-service;1'].getService(Ci.nsIStyleSheetService);
+    var uri = makeURI('data:text/css;charset=UTF=8,' + encodeURIComponent(css));
+    sss.loadAndRegisterSheet(uri, sss.AGENT_SHEET);}
 
 // This sets when to apply the fix (by default a new row starts after the 23th open tab, unless you changed the min-size of tabs)
 gBrowser.tabContainer.ondragstart = function(){if(gBrowser.tabContainer.clientHeight > document.getElementsByClassName("tabbrowser-tab")[0].clientHeight) {

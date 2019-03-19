@@ -3,10 +3,11 @@
 // @namespace      http://space.geocities.yahoo.co.jp/gl/alice0775
 // @description    Multi-row tabs draggability fix, Experimental CSS version
 // @include        main
-// @compatibility  Firefox 65
+// @compatibility  Firefox 67
 // @author         Alice0775, Endor8, TroudhuK, Izheil
 // @version        09/03/2019 15:38 Fixed compatibility issue with Tab Session Manager addon
 // @version        18/02/2019 20:46 Tab line not being fully shown on maximized or fullscreen
+// @version        03/02/2019 15:15 Firefox 67
 // @version        03/02/2019 04:22 Fixed issue with scrolling when selecting non-visible tab
 // @version        02/02/2019 00:17 Fixed transparent line under tabs and touch density tabs issue
 // @version        01/02/2019 10:32 Fixed issue window dragging while keeping scrollbar dragging
@@ -46,7 +47,7 @@ function zzzz_MultiRowTabLite() {
         min-height: calc(var(--tab-min-height) + 3px);
         max-height: calc((var(--tab-min-height) + 3px)*var(--max-tab-rows))}
 
-    #tabbrowser-tabs .scrollbox-innerbox {
+    #tabbrowser-tabs .arrowscrollbox-scrollbox {
         display: flex;
         flex-wrap: wrap; 
         overflow-x: hidden;
@@ -54,9 +55,12 @@ function zzzz_MultiRowTabLite() {
         min-height: var(--tab-min-height);
         max-height: calc(var(--tab-min-height)*var(--max-tab-rows))}
 
-    #tabbrowser-tabs .arrowscrollbox-scrollbox {
+    #tabbrowser-tabs .tabbrowser-arrowscrollbox {
         overflow: visible;
         display: block;}
+
+    .arrowscrollbox-overflow-start-indicator,
+    .arrowscrollbox-overflow-end-indicator {position: fixed !important}
 
     #main-window[tabsintitlebar] #tabbrowser-tabs scrollbar {
         -moz-window-dragging: no-drag}
@@ -94,6 +98,7 @@ function zzzz_MultiRowTabLite() {
 // This scrolls down to the current tab when you open a new one, or restore a session.
 function scrollToView() {
 	var selTab = document.querySelectorAll(".tabbrowser-tab[selected='true']")[0];
+    var selTab = document.querySelectorAll(".tabbrowser-tab[selected='true']")[0];
 	selTab.scrollIntoView({behavior: "smooth", block: "nearest", inline: "nearest"});
 }
 
