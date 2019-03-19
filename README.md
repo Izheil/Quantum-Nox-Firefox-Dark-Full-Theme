@@ -13,12 +13,13 @@ This problem doesn't happen if you use a code editor such as notepad++, atom, su
 <h3>Last update: <b>17/03/2019</b></h3>
 <p>Files updated:</p>
 <ul>
-  <li><b>Mac-fullscreen-fix-toolbox-autohide.uc.js</b>: A small fix that forces toolbar autohide on fullscreen even on Mac OS.</li>
+  <li><b>MultiRowTab*.uc.js</b>: Renamed the files to reflect the lastest update of Firefox.</li>
+  <li><b>Usercontent.css</b>: Fixed the colored dotted border on <code>about:config</code>.</li>
 </ul>
 <h3>Pre-Last update: <b>15/03/2019</b></h3>
 <p>Files updated:</p>
 <ul>
-  <li><b>UserContent.css</b>: Fixed some issue with odd rows on <code>about:config</code>.</li>
+  <li><b>Mac-fullscreen-fix-toolbox-autohide.uc.js</b>: A small fix that forces toolbar autohide on fullscreen even on Mac OS.</li>
 </ul>
 
 <code>

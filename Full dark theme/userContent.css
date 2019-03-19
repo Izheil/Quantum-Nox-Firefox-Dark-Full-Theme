@@ -1,6 +1,6 @@
 /* You can find an updated version here: https://github.com/Izheil/Quantum-Nox-Firefox-Dark-Full-Theme */
 /* Made by Izheil */
-/* Last updated: 18/03/2019 */
+/* Last updated: 19/03/2019 */
 
 /* This part imports the Addons file if there is one, so that you don't have to edit the dynamic URL
 from the addons rules every time we update anything here */
@@ -954,6 +954,8 @@ span.target-status {background-color: #151515 !important}
 	--in-content-box-background: #333 !important;
 	--in-content-box-background-odd: rgba(0,0,0,0.20) !important;
 	--in-content-item-hover: rgba(255,255,255,0.07) !important}
+
+#configTree {border: 1px solid #555 !important}
 
 #configTreeBody::-moz-tree-row(odd) {
 	background-color: rgba(0,0,0,0.20) !important}
