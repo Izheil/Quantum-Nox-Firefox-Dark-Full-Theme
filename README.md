@@ -13,13 +13,13 @@ This problem doesn't happen if you use a code editor such as notepad++, atom, su
 <h3>Last update: <b>17/03/2019</b></h3>
 <p>Files updated:</p>
 <ul>
-  <li><b>MultiRowTab*.uc.js</b>: Renamed the files to reflect the lastest update of Firefox.</li>
-  <li><b>Usercontent.css</b>: Fixed the colored dotted border on <code>about:config</code>.</li>
+  <li><b>Global dark userstyle</b>: You can now install a global dark style to use with general sites (you still should use specific per-site userstyles with sites you visit often with stylus).</li>
 </ul>
 <h3>Pre-Last update: <b>15/03/2019</b></h3>
 <p>Files updated:</p>
 <ul>
-  <li><b>Mac-fullscreen-fix-toolbox-autohide.uc.js</b>: A small fix that forces toolbar autohide on fullscreen even on Mac OS.</li>
+  <li><b>MultiRowTab*.uc.js</b>: Renamed the files to reflect the lastest update of Firefox.</li>
+  <li><b>Usercontent.css</b>: Fixed the colored dotted border on <code>about:config</code>.</li>
 </ul>
 
 <code>
@@ -81,6 +81,11 @@ This problem doesn't happen if you use a code editor such as notepad++, atom, su
 <h4>You can turn the features you want on or off changing the commented lines on <code>userchrome.css</code> (To change them you just have to open it with notepad or any code editor, and encase between "/*" and "*/" (without the quotation marks) the lines you don't want to take effect). Of course, if you think that you are NEVER going to use certain feature, you can always delete the specific lines you don't want without any other side-effect.</h4>
 
 <p>You can find a video tutorial on how to install the theme without installers <a href="https://youtu.be/kNHe6XDgUN4">here</a>.</p>
+
+<h2>General sites dark theme</h2>
+<p>You can add the global dark userstyle found inside the <b>Global dark userstyle</b> folder to theme general sites with an all-around CSS stylesheet.</p>
+<p>While it's not perfect (meaning that you should still use per-site styles for the sites you visit often), it can help to darken most sites when browsing around general sites that you don't visit often, and thus don't want/can't find a specific userstyle for them.</p>
+<img src="https://i.imgur.com/S34ylDn.png">
 
 <h2>Addon dark themes</h2>
 <p>You can apply a dark theme to certain addons changing the UUID's of them inside the <code>addons.css</code> file inside the "Full dark theme" folder (more instructions on how to do that inside the addons file).</p>
