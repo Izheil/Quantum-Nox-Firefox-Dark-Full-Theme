@@ -16,6 +16,6 @@
 
 <p>Once you have the Stylus extension, all you need is to install the file contained here as a userCSS.</p>
 
-[![Install directly with Stylus](https://img.shields.io/badge/Install%20directly%20with-Stylus-00adad.svg)](MY.USER.CSS)
+[![Install directly with Stylus](https://img.shields.io/badge/Install%20directly%20with-Stylus-00adad.svg)](https://github.com/Izheil/Quantum-Nox-Firefox-Dark-Full-Theme/blob/master/Global%20dark%20userstyle/Quantum%20Nox%20-%20Global%20dark%20style.user.css)
 
 
