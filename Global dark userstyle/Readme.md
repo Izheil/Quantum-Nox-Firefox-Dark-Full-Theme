@@ -16,7 +16,7 @@
 
 <p>Once you have the Stylus extension, all you need is to install the file contained here as a userCSS.</p>
 
-[![Install directly with Stylus](https://img.shields.io/badge/Install%20directly%20with-Stylus-00adad.svg)](https://github.com/Izheil/Quantum-Nox-Firefox-Dark-Full-Theme/blob/master/Global%20dark%20userstyle/Quantum%20Nox%20-%20Global%20dark%20style.user.css)
+[![Install directly with Stylus](https://img.shields.io/badge/Install%20directly%20with-Stylus-00adad.svg)](https://raw.githubusercontent.com/Izheil/Quantum-Nox-Firefox-Dark-Full-Theme/master/Global%20dark%20userstyle/Quantum%20Nox%20-%20Global%20dark%20style.user.css)
 
 <p>This global userstyle won't apply on certain sites (you can also specify your own) that already have a dark mode by default (although you can enable it for those if you want changing the regexp as specified on the section below this one).</p>
 
