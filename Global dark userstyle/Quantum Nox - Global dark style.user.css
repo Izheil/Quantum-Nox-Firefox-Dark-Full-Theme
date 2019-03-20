@@ -27,7 +27,7 @@
 }
 
 ==/UserStyle== */
-@-moz-document regexp("https?://(?!(www.tvtime.com|www.t411.al|www.nespresso.com|www.wechoosethemoon.org|www.nasa.gov|www.google.es|www.google.com|(\\w+.)?google.com|duckduckgo.com|www.youtube.com|www.reddit.com|twitter.com|gfycat.com)).*") {
+@-moz-document regexp("https?://(?!(www.tvtime.com|www.t411.al|www.nespresso.com|www.wechoosethemoon.org|www.nasa.gov|((?!w+)([^\.]+)\.)?([^\.]+)\.google.(com|es|de)|duckduckgo.com|www.youtube.com|www.reddit.com|twitter.com|gfycat.com)).*") {
 /* Add any other site you don't want to apply inside the regexp encased between |'s ^ */
 
 if invMethod == "customSet"  {
