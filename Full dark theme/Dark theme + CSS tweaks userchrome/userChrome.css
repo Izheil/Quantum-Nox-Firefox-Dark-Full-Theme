@@ -202,12 +202,14 @@ findbar .findbar-find-previous:active, findbar .findbar-find-next:active {
   background: linear-gradient(#333,#555) !important}
 
 /* Color for most dialogs */
-dialog, dialog caption, dialog select, tabmodalprompt .mainContainer {
+dialog, dialog caption, dialog select, .tabmodalprompt-buttonContainer  {
   -moz-appearance: none !important;
   background-color: #333 !important;
   color: #ccc !important}
 
-#printPageSetupDialog caption, tabmodalprompt .buttonContainer {background-color: #444 !important}
+#printPageSetupDialog caption, .tabmodalprompt-mainContainer {background-color: #444 !important}
+
+.tabmodalprompt-mainContainer {color: #ccc !important}
 
 dialog menulist, tabmodalprompt button {
   -moz-appearance: none !important;
