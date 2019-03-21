@@ -15,6 +15,7 @@ This problem doesn't happen if you use a code editor such as notepad++, atom, su
 <ul>
   <li><b>Global dark userstyle</b>: You can now install a global dark style to use with general sites (you still should use specific per-site userstyles with sites you visit often with stylus).</li>
   <li><b>UserChrome.css</b>: Fixed the Firefox version dialog, and deleted some obsolete code.</li>
+  <li><b>UserContent.css</b>: Made the colors on Firefox addons page more in-tone with the rest of the theme. Added small fixes on Firefox Support page.</li>
 </ul>
 <h3>Pre-Last update: <b>17/03/2019</b></h3>
 <p>Files updated:</p>

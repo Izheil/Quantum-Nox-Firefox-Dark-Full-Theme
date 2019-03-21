@@ -2,7 +2,7 @@
 @name         Quantum nox - Global dark style
 @description  Fork from the global dark style that Stormi wrote to use alongside Quantum nox - Firefox dark theme.
 @namespace    https://github.com/Izheil/Quantum-Nox-Firefox-Dark-Full-Theme
-@version      1.0.0
+@version      1.0.1
 @author       Stormi, Izheil
 @homepageURL  https://github.com/Izheil/Quantum-Nox-Firefox-Dark-Full-Theme/tree/master/Global%20dark%20userstyle
 @updateURL	  https://raw.githubusercontent.com/Izheil/Quantum-Nox-Firefox-Dark-Full-Theme/master/Global%20dark%20userstyle/Quantum%20Nox%20-%20Global%20dark%20style.user.css
@@ -226,7 +226,7 @@ if invMethod == "customSet"  {
         
     /*----- IMAGE CHANGES -----*/
     if imgTransp {
-        img, div[style*="background-image:"] {
+        img, div[style*="background-image:"]:not(.download_data_box) {
             opacity: 0.8 !important;
             transition: opacity .2s
             }

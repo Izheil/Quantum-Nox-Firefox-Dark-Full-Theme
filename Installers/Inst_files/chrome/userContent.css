@@ -1,6 +1,6 @@
 /* You can find an updated version here: https://github.com/Izheil/Quantum-Nox-Firefox-Dark-Full-Theme */
 /* Made by Izheil */
-/* Last updated: 19/03/2019 */
+/* Last updated: 21/03/2019 */
 
 /* This part imports the Addons file if there is one, so that you don't have to edit the dynamic URL
 from the addons rules every time we update anything here */
@@ -1252,145 +1252,121 @@ span, .statsBoxSection-header {color: #fff !important}
 .tipBox-content {background: #555 !important}
 }
 
-/*------ MOZILLA ADDONS PAGE (Includes both the new and the old) ------*/
+/*------ MOZILLA ADDONS PAGE ------*/
 @-moz-document url-prefix(https://addons.mozilla.org) {
-
 html, .App-content, tr.LanguageTools-table-row:nth-child(even), 
-#main-wrapper, #search-tools-sidebar, .primary, .secondary, #search-tools-sidebar li a, body.restyle,
-.Card-footer, .Paginate 
+.Card-footer, .Paginate, section.scheme-light, section.scheme-default
 {background: #202020 !important}
 
-#footer {
-    background-color: #202020 !important;
-    background-image: linear-gradient(to bottom,#202020 0,#202020 123px,
-    	#000 123px,#000 200px,#101010 200px,rgba(90,90,90,0) 400px) !important}
+.scheme-medium {background-color: #1d3770 !important}
 
-.listing-header, .listing .item, .object-lead, .listing-footer {
-	background: linear-gradient(#202020, #333) !important;
-	border-bottom: 1px solid #000 !important}	
+.App-amo, .Header, footer.Footer, footer.show-on-desktop {background: #151517 !important}
 
-#search-tools-sidebar {border-radius: 0px !important}
+footer h4 {color: #ddd !important}
 
-#react-autowhatever-1 * {background-color: #444 !important}
+tr.LanguageTools-table-row:nth-child(odd) {background-color: #252525 !important}
 
-.Hero .Card-contents, .Home-SubjectShelf .Card-contents, 
+#react-autowhatever-1 * {background-color: #303030 !important}
+
+.Hero, .Card-contents, .Home-SubjectShelf .Card-contents,
 .CardList .Card-header, .CardList .Card-contents, a.SearchResult-link, 
-.Card-contents, .Card-Header, ul.AddonsCard-list li.SearchResult, ul.AddonsCard-list,
-.ExpandableCard .Card-header, span .Paginate-item.disabled.Paginate-previous,
-.Card-header, .Card-footer-text, .Card-footer-link, a.ShowMoreCard-expand-link,
+.Card-contents, .Card-header, ul.AddonsCard-list li.SearchResult, ul.AddonsCard-list,
+.ExpandableCard .Card-header, span .Paginate-item.disabled.Paginate-previous, 
+.Card-footer-text, .Card-footer-link, a.ShowMoreCard-expand-link,
 a.Addon-all-reviews-link, .MetadataCard, .Card-contents ul li, .LandingPage-header,
-.highlight, .AutoSearchInput-query, .Search .SearchResults-message  {
+.highlight, .AutoSearchInput-query, .Search .SearchResults-message, .DevHub-callout-box {
 	background-color: #303030 !important;
 	color: #ccc !important}
 
+.DevHub-callout-box {border: 8px solid #963 !important}
+
+.AddonMoreInfo .Card-content {color: #aaa !important}
+
+.ShowMoreCard-contents::after 
+{background: linear-gradient(rgba(48, 48, 48, 0.3), #303030) !important}
+
+.Notice-warning {background-color: #963 !important}
+
 .HeroSection-content {color: #fff !important}
 
-.Search .AddonsCard-list .SearchResult {border-bottom: 1px solid #000 !important}
+.Search .AddonsCard-list .SearchResult, .Hero-name-HomeHeroGuides {border-bottom: 1px solid #000 !important}
 
 .PermissionsCard-list .Icon {filter: brightness(700%) !important}
 
-.extra .button.disabled.not-available {background-color: #444 !important; border: 1px solid #555 !important}
-
-#search-facets .facets {background: transparent !important}
-
-#search-facets .facets .facet.active, #search-facets .facets .facet, 
-#sorter > ul > li.extras ul, #sorter > ul > li.extras a:hover {background-color: #444 !important; border: 1px solid #555 !important}
-#search-facets .facets .facet.active, #search-facets .facets .facet:hover,
-#sorter > ul > li.extras > ul > li > a:hover {background-color: #333 !important}
-
 button:not(.pswp__button):not(.pswp__ui):not(.AutoSearchInput-submit-button):not(.Icon-arrow):not(.DropdownMenu-button):not(.AddonReviewCard-control), 
-.PermissionCard-learn-more, .AddAddonToCollection-select, #CollectionSort-select {
-	background-color: #555 !important;
+.PermissionCard-learn-more, #CollectionSort-select, .AMInstallButton-loader, select.SearchFilters-select {
+	background-color: #404040 !important;
 	color: #FFF !important}
 
-button:not(.pswp__button):not(.pswp__ui):not(.AutoSearchInput-submit-button):not(.Icon-arrow):not(.DropdownMenu-button):not(.AddonReviewCard-control):hover, 
-.PermissionCard-learn-more:hover, .AddAddonToCollection-select:hover {
-	background-color: #444 !important;
+button:not(.pswp__button):not(.pswp__ui):not(.AutoSearchInput-submit-button):not(.Icon-arrow):not(.DropdownMenu-button):not(.AddonReviewCard-control):not(.Paginate-item):hover, 
+.PermissionCard-learn-more:hover, #CollectionSort-select:hover {
+	background-color: #252525 !important;
 	color: #1494FB !important}
 
-.other-categories .divider {border-top: 1px dotted #000 !important}
+button.Button--action, a.Button:not(.Categories-link) {background-color: #004db3 !important; color: #fff !important}
+button.Button--action:hover, a.Button:not(.Categories-link):hover {background-color: #002c66 !important}
 
-.listing-footer {border-top: 1px solid #000 !important}
+a.Categories-link {filter: saturate(50%) !important}
 
-.item .item-info {
-    border-left: 1px dotted #000 !important;
-}
+button.DropdownMenu-button, ul.LanguageTools-addon-list li {background-color: transparent !important}
 
-button.DropdownMenu-button, button.SearchForm-submit-button, ul.LanguageTools-addon-list li,
-#aux-nav > ul > li {background: transparent !important}
+.Guides-header .Guides-header-icon {background-color: transparent !important; border: none !important}
 
-ul.DropdownMenu-items, ul.TooltipMenu-list, .TooltipMenu-arrow, 
-ul.TooltipMenu-list li.ListItem, tr.LanguageTools-table-row:nth-child(odd) {
-	background-color: #151515 !important;
-	color: #ccc !important}
+ul.DropdownMenu-items, ul.TooltipMenu-list, ul.TooltipMenu-list li.ListItem, 
+.DropdownMenu-items[aria-hidden="false"]::after {
+	background-color: #202020 !important}
 
 ul.TooltipMenu-list li.ListItem, ul.LanguageTools-addon-list li, .highlight 
 {border: none !important}
 
 th.LanguageTools-header-cell {background-color: #101010 !important}
 
-.Home-SubjectShelf-link:active, .Home-SubjectShelf-link:focus, 
-.Home-SubjectShelf-link:hover, a.Button.Categories-link:hover 
+.Home-SubjectShelf-link:hover span, 
+.HomeHeroGuides-section:hover .HomeHeroGuides-section-title
 {color: #0d96ff !important}
 
 .Home-SubjectShelf-link:link, .Home-SubjectShelf-link:visited 
 {color: #343a40 !important}
 
-a.SearchResult-link h2, span, label *, 
-p, a, h4, h2, blockquote, li, .num-results 
+a.SearchResult-link h2, span, label *, p, a, h4, h2, blockquote, 
+li, .Guides-section-explore-more, .HomeHeroGuides-header-subtitle,
+#lang_form label
 {color: #ccc !important}
 
-.header-bg {
-    background-color: #000 !important;
-    background-image: linear-gradient(to bottom,transparent 0,transparent 100px),
-    linear-gradient(to bottom,rgba(90,90,90,0) 0,#555 500px,#fff 0),
-    repeating-linear-gradient(118deg,rgba(12,153,213,0) 0,#444 550px,rgba(90,90,90,0) 550px,#444 800px,
-    rgba(90,90,90,0) 800px,#444 950px) !important}
+a.SectionLinks-dropdownlink:not(:hover), 
+a.SectionLinks-clientApp-android:not(:hover) {color: #aaa !important}
 
 .Paginate .Paginate-item, li.p-popular {background-color: #303030 !important}
+.Paginate a.Paginate-item:hover {background-color: #151515 !important}
 
-.Paginate .Paginate-item:disabled, .Paginate .Paginate-item.disabled, 
-.Paginate .Paginate-item:hover, li.p-popular:hover, #search-tools-sidebar li a:hover,
-.other-apps li a:hover, #site-search-suggestions a.sel, #site-search-suggestions a:hover, 
-#site-search-suggestions.sel a.sel:hover, #site-search-suggestions li p a:hover, 
-#other-apps ul.other-apps, #addon-list-options li:not(.selected) a:hover, 
-.pagination li:not(.selected) a:hover, #aux-nav > ul > li:not(:first-child)::before, 
-#addon-list-options li:not(.selected) a:focus, .pagination li:not(.selected) a:focus 
-{background-color: #151515 !important}
+.Paginate .Paginate-item {margin-left: 3px !important; margin-right: 3px !important}
 
-a.SearchResult-link:hover h2, span:not(.Addon-author):hover, a:hover {color: #1494FB !important}
+a.SearchResult-link:hover h2, a:hover {color: #1494FB !important}
 
 h2.Home-SubjectShelf-subheading, .CardList h2.Card-header, 
-h1, .Paginate-page-number, .Badge, a.Button.Categories-link, .install a *, h3
+h1, .Paginate-page-number, .Badge, a.Button.Categories-link,
+h3, .Guides-section-title, ul.DropdownMenu-items .SectionLinks-subheader, 
+.Card-contents dt, .CardList header.Card-header, .HomeHeroGuides-header-title,
+.Card-contents a.Categories-link
 {color: #FFF !important}
 
-.install a.caution {text-shadow: 1px 1px red !important}
+.AddonTitle-author a {text-shadow: 0 0 2px #1494FB !important}
 
 .install strong {color: #FA0 !important}
 
 .AMInstallButton-button--uninstall {background-color: #882626 !important}
 .AMInstallButton-button--uninstall:hover {background-color: #aa3333 !important; color: #fff !important}
 
-input.SearchForm-query, select#SearchFilters-Sort, select#SearchFilters-AddonType, 
-select#SearchFilters-AddonType, select#SearchFilters-OperatingSystem, select#language,
+input.SearchForm-query, select.SearchFilters-select:hover, select#language,
 input#search-q {
-	background-color: #222 !important;
+	background-color: #202020 !important;
 	color: #FFF !important}
 
-select.Select {
-	background: #444 url("data:image/svg+xml;charset=utf-8,%3Csvg width='11' height='7' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M434.574 488L430.5 492.147 426.428 488 425 489.399 430.5 494.999 436 489.399z' transform='translate(-425 -488)' fill='%23cccccc' fill-rule='evenodd'/%3E%3C/svg%3E") no-repeat calc(100% - 10px) 50% !important;
+select.Select, select#lang-picker {
+	background: #404040 url("data:image/svg+xml;charset=utf-8,%3Csvg width='11' height='7' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M434.574 488L430.5 492.147 426.428 488 425 489.399 430.5 494.999 436 489.399z' transform='translate(-425 -488)' fill='%23cccccc' fill-rule='evenodd'/%3E%3C/svg%3E") no-repeat calc(100% - 10px) 50% !important;
 	color: #ccc !important}
 	
-select.Select:hover {background-color: #222 !important}
-
-#site-search-suggestions .wrap, ul.other-apps {
-    background: #151515 !important;
-    border: 1px solid #101010 !important}
-
-.Notice-generic {background-color: #555 !important}
-
-.ShowMoreCard-contents::after 
-{background: linear-gradient(rgba(48, 48, 48, 0.3), #303030) !important}
+select.Select:hover {background-color: #252525 !important}
 }
 
 /*------ MOZILLA LOGIN PAGE (The login page inside https://addons.mozilla.org) ------*/
@@ -1402,6 +1378,14 @@ html, body {background-color: #202020 !important}
 	background-color: #303030 !important;
 	color: #ccc !important}
 
+h1, h2 {color: #fff !important}
+
+p, label {color: #ccc !important}
+
+a{color: #0d96ff !important}
+
+a:hover{color: #0080dd !important}
+
 form input, .show-password-label {
 	background-color: #444 !important;
 	color: #ccc !important}
@@ -1409,7 +1393,6 @@ form input, .show-password-label {
 
 /*------ MOZILLA SUPPORT PAGE (https://support.mozilla.org) ------*/
 @-moz-document url-prefix(https://support.mozilla.org/) {
-
 
 html, body {background-color: #202020 !important}
 
@@ -1422,18 +1405,16 @@ a:visited {color: var(--in-content-link-color) !important}
 a:hover {color: var(--in-content-link-color-hover) !important}
 a:active {color: var(--in-content-link-color-hover) !important}
 
-#announcements {background: transparent !important}
+#announcements, #product-cards .icon {background: transparent !important}
 #announcements .announce-bar {background-color: #555 !important}
 
 body > header {
-	background: #666 !important;
+	background: #101010 !important;
 	border-top: none !important;
-	border-bottom: 1px solid #aaa !important;
+	border-bottom: none !important;
 	color: #ccc !important}
 
 a.btn, a.volunteer-button {color: #fff !important}
-
-.logo {filter: invert(100%) !important}
 .footer-logo {fill: #ddd !important}
 
 #aux-nav li a, .question-meta li, .asked-on, .asked-by,
@@ -1469,7 +1450,9 @@ div {color: #ccc !important}
 
 .button-wrapper .btn, .button-wrapper .btn {color: #fff !important}
 
-.sidebar-nav a {border-color: #666 !important}
+.sidebar-nav a, #products-and-services li {border-color: #666 !important}
+
+#products-and-services li {box-shadow: inset 0 -2px 0 0 #666 !important} 
 
 .cf::before, #document-list > ul > li > a::before, .submit-button {filter: invert(50%)}
 
@@ -1477,8 +1460,6 @@ div {color: #ccc !important}
 	background-color: #444 !important;
 	border: 1px dotted #666 !important;
 	padding: 10px !important}
-
-.result a, .result a:hover
 
 .sidebox.condensed {border-color: #373737 !important}
 
@@ -1499,7 +1480,11 @@ div {color: #ccc !important}
 input[type="text"], input[type="password"], input[type="email"], input[type="url"], input[type="date"], 
 textarea {
 	background: #333 !important; 
-	color: #ccc !important}
+	color: #ccc !important; 
+	box-shadow: 0 0 0 1px #333 !important;
+	border-color: #555 !important}
+
+input[type="text"]:focus, input[type="password"]:focus {border-color: #1494FB !important}
 
 #search-q {border: 2px solid #333 !important}
 
@@ -1509,17 +1494,16 @@ textarea {
 .simple-search-form input {color: #ccc !important}
 
 #email-subscribe-kbox input[type="submit"], #retrieve-username input[type="submit"], 
-#pw-reset input[type="submit"], .btn, span.button, .volunteer-button {
-	background: linear-gradient(#2050AA, #203050) !important;
+#pw-reset input[type="submit"], .btn, span.button, .volunteer-button, button.btn {
+	background: #2050AA !important;
     color: #FFF !important;
     padding: 0.5em;
-	border: 1px solid #0050aa !important;
+	border: none !important;
 	box-shadow: none !important}
 
 #email-subscribe-kbox input[type="submit"]:hover, #retrieve-username input[type="submit"]:hover, 
-#pw-reset input[type="submit"]:hover, .btn:hover, .volunteer-button:hover {
-	background: linear-gradient(#203050, #2050AA) !important;
-    color: #0FF !important}
+#pw-reset input[type="submit"]:hover, .btn:hover, .volunteer-button:hover, button.btn:hover {
+	background: #203050 !important}
 
 .questions #owner-tabs a.selected, .questions #owner-tabs a:hover.selected {background: #444 !important}
 
