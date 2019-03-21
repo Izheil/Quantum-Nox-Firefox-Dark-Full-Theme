@@ -1,6 +1,6 @@
 /* You can find an updated version here: https://github.com/Izheil/Firefox-57-full-dark-theme-with-scrollbars */
 /* Made by Izheil */
-/* Last updated: 02/03/2019 */
+/* Last updated: 21/03/2019 */
 
 /* DO NOT DELETE THIS LINE */
 @namespace url("http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul");
@@ -202,12 +202,12 @@ findbar .findbar-find-previous:active, findbar .findbar-find-next:active {
   background: linear-gradient(#333,#555) !important}
 
 /* Color for most dialogs */
-dialog, dialog caption, dialog select, #clientBox  {
+dialog, dialog caption, dialog select, tabmodalprompt .mainContainer {
   -moz-appearance: none !important;
   background-color: #333 !important;
   color: #ccc !important}
 
-#printPageSetupDialog caption {background-color: #444 !important}
+#printPageSetupDialog caption, tabmodalprompt .buttonContainer {background-color: #444 !important}
 
 dialog menulist, tabmodalprompt button {
   -moz-appearance: none !important;
@@ -226,22 +226,12 @@ dialog groupbox {
 
 #infoIcon {filter: invert(80%)}
 
-/* This is the "about this addon..." dialog */
-#clientBox {
-  background-color: #444 !important}
-
-#clientBox label:not(#extensionName):not(#extensionCreator):not(.contributor):not(#extensionVersion):not(.sectionTitle) {
-  color: var(--About-addon-text) !important}
-
-#clientBox label:not(#extensionName):not(#extensionCreator):not(.contributor):not(#extensionVersion):not(.sectionTitle):hover {
-  color: var(--About-addon-text-hover) !important}
-
-#extensionName {color: var(--About-addon-extension-name) !important}
-
-#groove {border-color: #222 !important}
+/* Release version dialog */
+#aboutDialog {
+  background-color: rgb(23,25,50) !important}
 
 /* This is aimed for notification popups */
-window:not(#main-window):not(#CookiesDialog):not(#SignonViewerDialog):not(.theme-dark) > * {
+window:not(#main-window):not(#CookiesDialog):not(#SignonViewerDialog):not(.theme-dark):not(#aboutDialog) > * {
   background-color: #444 !important; 
   color: #fff !important}
 

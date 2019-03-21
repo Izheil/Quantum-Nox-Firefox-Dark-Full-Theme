@@ -10,12 +10,13 @@ basic css or <a href="https://www.w3schools.com/colors/colors_picker.asp">color 
 <br />
 This problem doesn't happen if you use a code editor such as notepad++, atom, sublime text...</h4>
 
-<h3>Last update: <b>17/03/2019</b></h3>
+<h3>Last update: <b>21/03/2019</b></h3>
 <p>Files updated:</p>
 <ul>
   <li><b>Global dark userstyle</b>: You can now install a global dark style to use with general sites (you still should use specific per-site userstyles with sites you visit often with stylus).</li>
+  <li><b>UserChrome.css</b>: Fixed the Firefox version dialog, and deleted some obsolete code.</li>
 </ul>
-<h3>Pre-Last update: <b>15/03/2019</b></h3>
+<h3>Pre-Last update: <b>17/03/2019</b></h3>
 <p>Files updated:</p>
 <ul>
   <li><b>MultiRowTab*.uc.js</b>: Renamed the files to reflect the lastest update of Firefox.</li>
