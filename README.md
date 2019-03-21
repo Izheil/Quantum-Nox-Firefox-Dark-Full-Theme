@@ -180,9 +180,6 @@ This problem doesn't happen if you use a code editor such as notepad++, atom, su
 <p>Special thanks to <b>Messna</b> for noting the class turning into an ID on FF58, and <b>Snwflake</b> for fixing Firefox root folder location on MacOS.</p>
 <p>Also thanks to <b>BelladonnavGF</b>, <b>Demir-delic</b>, <b>DallasBelt</b>, <b>Gitut2007</b>, <b>Hakerdefo</b>, <b>Tkhquang</b> and <b>YiannisNi</b> for noting some issues with the theme, and the requests for new features that extended this project.</p>
 
-<h2>Contact</h2>
-<p>If you have anything to ask or tell me about the theme that isn't a bug or an issue (such as a suggestion, or some clarification I may have missed on the documentation), you can contact me through <a href="https://www.reddit.com/message/compose/">reddit</a> (You will need an account for that), directing the message to <b>Izheil</b>.</p>
-
 <h2>Donations</h2>
 <p>If you want to support this project, consider donating any amount through paypal to motivate me keep this repository up and updated.</p>
 ​
