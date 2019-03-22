@@ -1,6 +1,6 @@
 /* You can find an updated version here: https://github.com/Izheil/Firefox-57-full-dark-theme-with-scrollbars */
 /* Made by Izheil */
-/* Last updated: 21/03/2019 */
+/* Last updated: 22/03/2019 */
 
 /* DO NOT DELETE THIS LINE */
 @namespace url("http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul");
@@ -211,14 +211,14 @@ dialog, dialog caption, dialog select, .tabmodalprompt-buttonContainer  {
 
 .tabmodalprompt-mainContainer {color: #ccc !important}
 
-dialog menulist, tabmodalprompt button {
+.tabmodalprompt-mainContainer button {
   -moz-appearance: none !important;
   border: 1px solid #111 !important;
   background: linear-gradient(#555,#333) !important;
   color: #ddd !important;
   padding: 2px !important}
 
-dialog menulist:hover, tabmodalprompt button:hover {
+.tabmodalprompt-mainContainer button:hover {
   background: linear-gradient(#333,#555) !important;
   color: #fff !important}
 
@@ -227,6 +227,60 @@ dialog groupbox {
   border: 1px solid #666 !important}
 
 #infoIcon {filter: invert(80%)}
+
+/* Checkbox coloring */
+checkbox .checkbox-check {
+  -moz-appearance: none !important;
+  border: 1px solid #666 !important;
+  background-color: #444 !important;
+  transition: color 0.3s;
+  min-width: 12px;
+  min-height: 12px;}
+
+checkbox:not([disabled]):hover .checkbox-check {
+  box-shadow: 0 0 4px #0084ff !important;
+  border-color: #0084ff !important}
+
+checkbox[checked] .checkbox-check {
+  background: #444 url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="15px" height="15px" viewBox="0 0 16 16" ><path fill="rgb(200,200,200)" d="M 13.09,2.87 C 13.09,2.87 6.00,11.00 6.00,11.00 6.00,11.00 2.00,9.00 2.00,9.00 4.25,12.81 7.00,14.00 7.00,14.00 9.24,10.42 12.04,7.39 13.09,2.87 Z" /></svg>') no-repeat center center !important}
+
+.menu-iconic-left[checked="true"] {
+  -moz-appearance: none !important;
+  background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="15px" height="15px" viewBox="0 0 16 16" ><path fill="rgb(200,200,200)" d="M 13.09,2.87 C 13.09,2.87 6.00,11.00 6.00,11.00 6.00,11.00 2.00,9.00 2.00,9.00 4.25,12.81 7.00,14.00 7.00,14.00 9.24,10.42 12.04,7.39 13.09,2.87 Z" /></svg>') no-repeat center center !important;
+  height: 16px !important;
+  width: 2.5em !important}
+
+/* Radio button coloring */
+radio .radio-check {
+  -moz-appearance: none !important;
+  border: 1px solid #666 !important;
+  border-radius: 10em;
+  background-color: #444 !important;
+  transition: color 0.3s;
+  min-width: 12px;
+  min-height: 12px;}
+
+radio:not([disabled]):hover .radio-check {
+  box-shadow: 0 0 4px #0084ff !important;
+  border-color: #0084ff !important}
+
+radio[selected] .radio-check {
+  background: #444 url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="10px" height="10px" viewBox="0 0 16 16" ><path fill="rgb(200,200,200)" d="M 6.17,3.01 C -0.84,6.78 4.35,15.22 9.89,13.22 15.68,11.20 13.99,1.10 6.17,3.01 Z" /></svg>') no-repeat center center !important}
+
+radio[disabled], checkbox[disabled] {opacity: 0.8}
+
+/* Select boxes coloring */
+dialog menulist {
+  -moz-appearance: none !important;
+  background: #444 url("data:image/svg+xml;charset=utf-8,%3Csvg width='11' height='7' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M434.574 488L430.5 492.147 426.428 488 425 489.399 430.5 494.999 436 489.399z' transform='translate(-425 -488)' fill='%23cccccc' fill-rule='evenodd'/%3E%3C/svg%3E") no-repeat calc(100% - 5px) 50% !important;
+  padding: 3px;
+  color: #ccc !important}
+
+dialog menulist:hover {
+  background: #252525 url("data:image/svg+xml;charset=utf-8,%3Csvg width='11' height='7' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M434.574 488L430.5 492.147 426.428 488 425 489.399 430.5 494.999 436 489.399z' transform='translate(-425 -488)' fill='%23cccccc' fill-rule='evenodd'/%3E%3C/svg%3E") no-repeat calc(100% - 5px) 50% !important;
+  color: #fff !important}
+
+dialog menulist .menulist-dropmarker {display: none}
 
 /* Release version dialog */
 #aboutDialog {

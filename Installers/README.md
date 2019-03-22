@@ -4,14 +4,11 @@
 <p>Currently there are only windows installers for it, so Linux and Mac users will still have to <a href="https://github.com/Izheil/Quantum-Nox-Firefox-Dark-Full-Theme/tree/master/Full%20dark%20theme#installation">install it manually with the explanations of the repository</a>.</p>
 
 <h2>The batch files</h2>
-<h3>For dark OS themes versions</h3>
-<p>These will install the dark theme without inverting the colors of checkboxes, so if you have an OS that turns them dark by default, use this version (by default windows paints them white, so use the white OS theme version if you aren't using a custom dark windows theme)</p>
+<h3>Dark theme ONLY</h3>
+<p>This one will only install the colors of the theme. No added functionability nor multirow. If you don't want to miss some context menu items (like "send image...", or the navigation arrows), choose this one.</p>
 
-<h3>For white OS themes versions</h3>
-<p>These will install the dark theme inverting the colors of checkboxes and select boxes so that they are shown darkish (which are white by default on white OS themes like windows).</p>
-
-<h3>Multirows ONLY</h3>
-<p>These will install multirow as well as an empty <code>userchrome.css</code> that enables the use of <code>userchrome.xml</code>, so if you have a custom <code>userchrome.css</code> already, make a backup, or exit the batch file when it tells you that it's going to copy that file.</p>
+<h3>Scrollable/non-scrollable multirow tabs ONLY</h3>
+<p>These will install multirows as well as an empty <code>userchrome.css</code> that enables the use of <code>userchrome.xml</code>, so if you have a custom <code>userchrome.css</code> already, make a backup, or exit the batch file when it tells you that it's going to copy that file.</p>
 <p>If you are going to use your own custom <code>userchrome.css</code>, make sure to add the following rule to it:</p>
 <pre>
 /* This enables the use of JS external files */

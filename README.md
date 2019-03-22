@@ -10,18 +10,19 @@ basic css or <a href="https://www.w3schools.com/colors/colors_picker.asp">color 
 <br />
 This problem doesn't happen if you use a code editor such as notepad++, atom, sublime text...</h4>
 
-<h3>Last update: <b>21/03/2019</b></h3>
+<h3>Last update: <b>22/03/2019</b></h3>
+<p>Files updated:</p>
+<ul>
+  <li><b>UserChrome.css</b>: Checkboxes, radios, and select boxes should now be dark on both white and dark OS themes without the need of <code>checkboxes.as.css</code> anymore.</li>
+  <li><b>UserContent.css</b>: Applied the checkboxes, radios, and select boxes fixes on <code>about:</code> pages and firefox addon and support pages.</li>
+  <li><b>Checkboxes.as.css</b>: Removed due to not being necesary anymore.</li>
+</ul>
+<h3>Pre-Last update: <b>21/03/2019</b></h3>
 <p>Files updated:</p>
 <ul>
   <li><b>Global dark userstyle</b>: You can now install a global dark style to use with general sites (you still should use specific per-site userstyles with sites you visit often with stylus).</li>
   <li><b>UserChrome.css</b>: Fixed the Firefox version dialog, and deleted some obsolete code.</li>
   <li><b>UserContent.css</b>: Made the colors on Firefox addons page more in-tone with the rest of the theme. Added small fixes on Firefox Support page.</li>
-</ul>
-<h3>Pre-Last update: <b>17/03/2019</b></h3>
-<p>Files updated:</p>
-<ul>
-  <li><b>MultiRowTab*.uc.js</b>: Renamed the files to reflect the lastest update of Firefox.</li>
-  <li><b>Usercontent.css</b>: Fixed the colored dotted border on <code>about:config</code>.</li>
 </ul>
 
 <code>

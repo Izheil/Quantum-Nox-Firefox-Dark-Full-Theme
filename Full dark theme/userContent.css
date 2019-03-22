@@ -1,6 +1,6 @@
 /* You can find an updated version here: https://github.com/Izheil/Quantum-Nox-Firefox-Dark-Full-Theme */
 /* Made by Izheil */
-/* Last updated: 21/03/2019 */
+/* Last updated: 22/03/2019 */
 
 /* This part imports the Addons file if there is one, so that you don't have to edit the dynamic URL
 from the addons rules every time we update anything here */
@@ -200,12 +200,12 @@ dialog button:hover, window[subdialog="true"] button:hover,
     color: #FFF !important;
 	text-decoration: none !important}
  	
-dialog menulist[sizetopopup="pref"] .menulist-label-box {background: transparent !important}
-dialog menulist[sizetopopup="pref"] {
+dialog menulist .menulist-label-box {background: transparent !important}
+dialog menulist {
 	background: rgba(255,255,255,0.2) !important; 
 	color: #ddd !important}
 
-dialog menulist[sizetopopup="pref"]:hover {
+dialog menulist:hover {
 	background: rgba(255,255,255,0.3) !important; 
 	color: #fff !important}
 
@@ -335,6 +335,8 @@ body {
 .top-sites-list .top-site-outer.active .tile, .card-outer:-moz-any(:hover, :focus, 
 .active):not(.placeholder) 
 {box-shadow: inset 0 0 0 1px rgba(0, 0, 0, 0.1), 0 0 0 5px #555 !important}
+
+.top-site-icon.rich-icon, .top-site-outer .tile {box-shadow: none !important}
 
 /* No need to say this goes for the buttons */
 .actions button {
@@ -571,6 +573,55 @@ textarea {
 	border: 1px solid #444}
 
 #action-box {background-color: #333 !important}
+
+/* Checkbox coloring */
+input[type="checkbox"] {
+  -moz-appearance: none !important;
+  border: 1px solid #666 !important;
+  background-color: #444 !important;
+  transition: color 0.3s;
+  min-width: 12px;
+  min-height: 12px;}
+
+input[type="checkbox"]:not([disabled]):hover {
+  box-shadow: 0 0 4px #0084ff !important;
+  border-color: #0084ff !important}
+
+input[type="checkbox"]:checked {
+  background: #444 url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="15px" height="15px" viewBox="0 0 16 16" ><path fill="rgb(200,200,200)" d="M 13.09,2.87 C 13.09,2.87 6.00,11.00 6.00,11.00 6.00,11.00 2.00,9.00 2.00,9.00 4.25,12.81 7.00,14.00 7.00,14.00 9.24,10.42 12.04,7.39 13.09,2.87 Z" /></svg>') no-repeat center center !important}
+
+/* Radio button coloring */
+input[type="radio"] {
+  -moz-appearance: none !important;
+  border: 1px solid #666 !important;
+  border-radius: 10em;
+  background-color: #444 !important;
+  transition: color 0.3s;
+  min-width: 12px;
+  min-height: 12px;}
+
+input[type="radio"]:not([disabled]):hover {
+  box-shadow: 0 0 4px #0084ff !important;
+  border-color: #0084ff !important}
+
+input[type="radio"]:checked {
+  background: #444 url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="10px" height="10px" viewBox="0 0 16 16" ><path fill="rgb(200,200,200)" d="M 6.17,3.01 C -0.84,6.78 4.35,15.22 9.89,13.22 15.68,11.20 13.99,1.10 6.17,3.01 Z" /></svg>') no-repeat center center !important}
+
+input[type="radio"]:disabled + label, input[type="checkbox"]:disabled + label {opacity: 70% !important}
+
+/* Select boxes coloring */
+select {
+  -moz-appearance: none !important;
+  background: #555 url("data:image/svg+xml;charset=utf-8,%3Csvg width='11' height='7' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M434.574 488L430.5 492.147 426.428 488 425 489.399 430.5 494.999 436 489.399z' transform='translate(-425 -488)' fill='%23cccccc' fill-rule='evenodd'/%3E%3C/svg%3E") no-repeat calc(100% - 5px) 50% !important;
+  border: none !important;
+  padding: 3px;
+  color: #ccc !important}
+
+select:hover {
+  background: #333 url("data:image/svg+xml;charset=utf-8,%3Csvg width='11' height='7' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M434.574 488L430.5 492.147 426.428 488 425 489.399 430.5 494.999 436 489.399z' transform='translate(-425 -488)' fill='%23cccccc' fill-rule='evenodd'/%3E%3C/svg%3E") no-repeat calc(100% - 5px) 50% !important;
+  color: #fff !important}
+
+select .menulist-dropmarker {display: none}
 }
 
 @-moz-document url-prefix(about:) {
@@ -609,7 +660,7 @@ body, html {background-color: #202020 !important}}
 @-moz-document url(about:blank) {
   html:not(#ublock0-epicker):not(.angular-squire-iframe) {background: #222}
   body[style="font-family: Arial; font-size: 14pt;"] {background: #fff}
-}
+} 
 
 /*------ PAGES WITH PLAIN TEXT OVER BACKGROUND  ------*/
 @-moz-document url(about:about), url-prefix(https://www.mozilla.org/credits/), 
@@ -633,7 +684,7 @@ url-prefix(about:crashes), url(about:rights), url(about:serviceworkers) {
 tbody > tr:hover {outline: 1px dotted #777 !important}}
 
 /*------ CONTEXT MENUS AND HIGHLIGHT COLORS FOR ALL ABOUT: PAGES ------*/
-@-moz-document url-prefix(about:) {
+@-moz-document url-prefix(about:), url-prefix(chrome://browser/content/places/places.xul) {
 
 /* This changes the color of the context menus */
 menuitem, menu:not(.menu-iconic) {
@@ -905,7 +956,10 @@ treechildren::-moz-tree-row(selected){
 @-moz-document url-prefix(about:debugging) {
 
 /* This affects the categories part */
-#categories {background-color: #303030 !important}
+#categories {
+	background-color: #303030 !important;
+	margin: 0 !important;
+	padding-top: 70px}
 
 #categories button {
 	background-color: #303030 !important;
@@ -980,8 +1034,9 @@ button:not(.primary){
 button:not(.primary):hover {
 	background: #666 !important;
     color: #FFF !important;
-	text-decoration: none !important}}
-
+	text-decoration: none !important}
+}
+ 
 /*------ PLUGINS PAGE (about:plugins) ------*/
 @-moz-document url-prefix(about:plugins), url-prefix(about:buildconfig) {
 .notice {
@@ -1082,14 +1137,14 @@ menulist[sizetopopup="pref"] .menulist-label-box {background: transparent !impor
 image.searchBarImage {filter: invert(92%) hue-rotate(180deg)}
 
 /* This changes some of the buttons color */
-.accessory-button, button:not(#strictArrow) {
+.accessory-button, button:not(#strictArrow):not(.dialogClose) {
   -moz-appearance: none !important;
   border-radius: 3px !important;
   background: var(--button-background) !important;
   color: #ddd !important;
   border: 1px solid var(--button-border) !important}
 
-.accessory-button:hover, button:not(#strictArrow):hover {
+.accessory-button:hover, button:not(#strictArrow):not(.dialogClose):hover {
 	background: var(--button-background-hover) !important;
     color: #FFF !important}
 
@@ -1101,22 +1156,19 @@ treecol:hover {background-color: #666 !important}
 
 .fxaSyncIllustration, #fxaNoLoginStatus .fxaProfileImage {filter: invert(98%) hue-rotate(200deg)}
 
-.extension-controlled {
+.extension-controlled, #updateSettingsContainer {
 	background-color: #333 !important;
 	border-color: #666 !important}
 
-.extension-controlled > description {
+.extension-controlled > description, #updateSettingCrossUserWarning {
 	color: #000 !important;
 	filter: invert(81%) !important}
 
 description, description *, #contentBlockingOptionStrict label, 
 .checkbox-label-box {color: #ccc !important}
 
-menulist[sizetopopup="pref"] {background: rgba(255,255,255,0.2) !important; color: #ddd !important}
-menulist[sizetopopup="pref"]:hover {background: rgba(255,255,255,0.3) !important; color: #fff !important}
-
-#homeContentsGroup menulist {background: #444 !important; color: #ddd !important}
-#homeContentsGroup menulist:hover {background: #555 !important; color: #fff !important}
+menulist {background: rgba(255,255,255,0.2) !important; color: #ddd !important}
+menulist:hover {background: rgba(255,255,255,0.3) !important; color: #fff !important}
 
 .no-results-image, .checkbox-icon {filter: invert(85%)}
 }
@@ -1140,7 +1192,7 @@ menulist[sizetopopup="pref"]:hover {background: rgba(255,255,255,0.3) !important
 
 .accessory-button:hover, button:hover, 
 #header-utils-btn:hover {
-	background: #333 !important;
+	background: #303030 !important;
     color: #FFF !important}
 
 /* These change the addons background colors */
@@ -1357,16 +1409,42 @@ h3, .Guides-section-title, ul.DropdownMenu-items .SectionLinks-subheader,
 .AMInstallButton-button--uninstall {background-color: #882626 !important}
 .AMInstallButton-button--uninstall:hover {background-color: #aa3333 !important; color: #fff !important}
 
-input.SearchForm-query, select.SearchFilters-select:hover, select#language,
+input.SearchForm-query, 
 input#search-q {
 	background-color: #202020 !important;
 	color: #FFF !important}
 
-select.Select, select#lang-picker {
-	background: #404040 url("data:image/svg+xml;charset=utf-8,%3Csvg width='11' height='7' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M434.574 488L430.5 492.147 426.428 488 425 489.399 430.5 494.999 436 489.399z' transform='translate(-425 -488)' fill='%23cccccc' fill-rule='evenodd'/%3E%3C/svg%3E") no-repeat calc(100% - 10px) 50% !important;
-	color: #ccc !important}
-	
-select.Select:hover {background-color: #252525 !important}
+.SearchFilters-label {color: #ddd !important}
+
+/* Checkbox coloring */
+input[type="checkbox"] {
+  -moz-appearance: none !important;
+  border: 1px solid #666 !important;
+  background-color: #444 !important;
+  transition: color 0.3s;
+  min-width: 12px;
+  min-height: 12px;}
+
+input[type="checkbox"]:not([disabled]):hover {
+  box-shadow: 0 0 4px #0084ff !important;
+  border-color: #0084ff !important}
+
+input[type="checkbox"]:checked {
+  background: #444 url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="15px" height="15px" viewBox="0 0 16 16" ><path fill="rgb(200,200,200)" d="M 13.09,2.87 C 13.09,2.87 6.00,11.00 6.00,11.00 6.00,11.00 2.00,9.00 2.00,9.00 4.25,12.81 7.00,14.00 7.00,14.00 9.24,10.42 12.04,7.39 13.09,2.87 Z" /></svg>') no-repeat center center !important}
+
+/* Select boxes coloring */
+select {
+  -moz-appearance: none !important;
+  background: #444 url("data:image/svg+xml;charset=utf-8,%3Csvg width='11' height='7' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M434.574 488L430.5 492.147 426.428 488 425 489.399 430.5 494.999 436 489.399z' transform='translate(-425 -488)' fill='%23cccccc' fill-rule='evenodd'/%3E%3C/svg%3E") no-repeat calc(100% - 5px) 50% !important;
+  border: none !important;
+  padding: 3px;
+  color: #ccc !important}
+
+select:hover {
+  background: #222 url("data:image/svg+xml;charset=utf-8,%3Csvg width='11' height='7' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M434.574 488L430.5 492.147 426.428 488 425 489.399 430.5 494.999 436 489.399z' transform='translate(-425 -488)' fill='%23cccccc' fill-rule='evenodd'/%3E%3C/svg%3E") no-repeat calc(100% - 5px) 50% !important;
+  color: #fff !important}
+
+select .menulist-dropmarker {display: none}
 }
 
 /*------ MOZILLA LOGIN PAGE (The login page inside https://addons.mozilla.org) ------*/
@@ -1432,6 +1510,10 @@ div {color: #ccc !important}
 	color: #ccc !important;
 	border: 1px solid #666 !important}
 
+.search-filter, .search-filter li, .questions-sidebar .sidebar-header {background-color: transparent !important}
+
+.search-filter img, .result::before, .questions-sidebar .collapse, .topic-icon {filter: invert(100%)}
+
 .main-content, #try-an-article, .grid_6 article, #pw-reset,
 #retrieve-username, .hero-bar, .row .content-box, .highlight-box, .wiki-doc {
 	background-color: #444 !important; 
@@ -1448,11 +1530,12 @@ div {color: #ccc !important}
 #register-form, .subtopics > li > a {background-color: #444 !important; color: #ccc !important}
 .sidebar-nav > li > span:hover, .sidebar-nav .sidebar-nav > li > a:hover {color: var(--in-content-link-color) !important}
 
-.button-wrapper .btn, .button-wrapper .btn {color: #fff !important}
+.button-wrapper .btn, .button-wrapper .btn, .help-title-prefix, .help-title,
+.help-link.cf {color: #fff !important}
 
-.sidebar-nav a, #products-and-services li {border-color: #666 !important}
+.sidebar-nav a, #products-and-services li, .card-grid li {border-color: #666 !important}
 
-#products-and-services li {box-shadow: inset 0 -2px 0 0 #666 !important} 
+#products-and-services li, .card-grid li {box-shadow: inset 0 -2px 0 0 #666 !important} 
 
 .cf::before, #document-list > ul > li > a::before, .submit-button {filter: invert(50%)}
 
@@ -1460,6 +1543,13 @@ div {color: #ccc !important}
 	background-color: #444 !important;
 	border: 1px dotted #666 !important;
 	padding: 10px !important}
+
+#doc-content .key, #doc-content .button {
+	background: linear-gradient(to bottom,#333,#222) !important;
+	border-color: #555 !important;
+	color: #ccc !important}
+
+span.menu {background-color: #222 !important; color: #ddd !important}
 
 .sidebox.condensed {border-color: #373737 !important}
 
@@ -1510,4 +1600,36 @@ input[type="text"]:focus, input[type="password"]:focus {border-color: #1494FB !i
 .questions #filter-section {background: linear-gradient(to bottom, #444,rgba(70,70,70,0.01)) !important}
 
 footer {background: #111 !important}
+
+/* Select boxes coloring */
+select {
+  -moz-appearance: none !important;
+  background: #444 url("data:image/svg+xml;charset=utf-8,%3Csvg width='11' height='7' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M434.574 488L430.5 492.147 426.428 488 425 489.399 430.5 494.999 436 489.399z' transform='translate(-425 -488)' fill='%23cccccc' fill-rule='evenodd'/%3E%3C/svg%3E") no-repeat calc(100% - 5px) 50% !important;
+  border: none !important;
+  padding: 3px;
+  color: #ccc !important
+  margin-top: 6px !important}
+
+select:hover {
+  background: #353535 url("data:image/svg+xml;charset=utf-8,%3Csvg width='11' height='7' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M434.574 488L430.5 492.147 426.428 488 425 489.399 430.5 494.999 436 489.399z' transform='translate(-425 -488)' fill='%23cccccc' fill-rule='evenodd'/%3E%3C/svg%3E") no-repeat calc(100% - 5px) 50% !important;
+  color: #fff !important}
+
+select .menulist-dropmarker {display: none}
+
+/* Checkbox coloring */
+input[type="checkbox"] {
+  -moz-appearance: none !important;
+  border: 1px solid #666 !important;
+  background-color: #444 !important;
+  transition: color 0.3s;
+  min-width: 12px;
+  min-height: 12px;
+  margin-top: 6px !important}
+
+input[type="checkbox"]:not([disabled]):hover {
+  box-shadow: 0 0 4px #0084ff !important;
+  border-color: #0084ff !important}
+
+input[type="checkbox"]:checked {
+  background: #444 url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="15px" height="15px" viewBox="0 0 16 16" ><path fill="rgb(200,200,200)" d="M 13.09,2.87 C 13.09,2.87 6.00,11.00 6.00,11.00 6.00,11.00 2.00,9.00 2.00,9.00 4.25,12.81 7.00,14.00 7.00,14.00 9.24,10.42 12.04,7.39 13.09,2.87 Z" /></svg>') no-repeat center center !important}
 }
