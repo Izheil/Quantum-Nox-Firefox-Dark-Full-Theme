@@ -538,6 +538,24 @@ body {
 .top-site-outer .screenshot {background-color: transparent !important}
 }
 
+/*------ PRIVATE WINDOW HOME PAGE ------*/
+@-moz-document url-prefix(about:privatebrowsing) {
+#fake-editable, .search-handoff-button, .search-handoff-button:active, 
+.search-handoff-button:enabled:hover:active {
+	background-color: #333 !important; 
+	border-color: #444 !important}
+
+.search-handoff-button * {color: var(--Home-search-item-text-color) !important}
+
+.search-handoff-button.focused {
+	border-color: var(--in-content-border-focus) !important;
+	box-shadow: 0 0 6px 0 var(--in-content-border-focus) !important}
+
+.fake-textbox {color: var(--Home-search-item-text-color) !important}
+
+a.button {color: #fff !important}
+}
+
 /*------ COMMON ATTRIBUTES ON MOST ABOUT PAGES ------*/
 @-moz-document url(about:about), url(about:), 
 url(https://www.mozilla.org/credits/), url-prefix(about:cache),
