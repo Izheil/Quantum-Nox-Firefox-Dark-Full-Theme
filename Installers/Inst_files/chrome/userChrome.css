@@ -244,11 +244,14 @@ checkbox:not([disabled]):hover .checkbox-check {
 checkbox[checked] .checkbox-check {
   background: #444 url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="15px" height="15px" viewBox="0 0 16 16" ><path fill="rgb(200,200,200)" d="M 13.09,2.87 C 13.09,2.87 6.00,11.00 6.00,11.00 6.00,11.00 2.00,9.00 2.00,9.00 4.25,12.81 7.00,14.00 7.00,14.00 9.24,10.42 12.04,7.39 13.09,2.87 Z" /></svg>') no-repeat center center !important}
 
-.menu-iconic-left[checked="true"] {
-  -moz-appearance: none !important;
+#main-menubar .menu-iconic-left, #toolbar-context-menu .menu-iconic-left {
+  -moz-appearance: none !important; 
+  width: 28px !important;
+  height: 16px !important}
+
+#main-menubar .menu-iconic-left[checked="true"], #toolbar-context-menu .menu-iconic-left[checked="true"] {
   background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="15px" height="15px" viewBox="0 0 16 16" ><path fill="rgb(200,200,200)" d="M 13.09,2.87 C 13.09,2.87 6.00,11.00 6.00,11.00 6.00,11.00 2.00,9.00 2.00,9.00 4.25,12.81 7.00,14.00 7.00,14.00 9.24,10.42 12.04,7.39 13.09,2.87 Z" /></svg>') no-repeat center center !important;
-  height: 16px !important;
-  width: 2.5em !important}
+}
 
 /* Radio button coloring */
 radio .radio-check {
