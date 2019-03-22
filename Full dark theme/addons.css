@@ -1,6 +1,6 @@
 /* You can find an updated version here: https://github.com/Izheil/Quantum-Nox-Firefox-Dark-Full-Theme */
 /* Made by Izheil */
-/* Last updated: 05/03/2019 */
+/* Last updated: 22/03/2019 */
 
 /*------ HOW TO MAKE THE ADDON THEMES WORK ------*/
 /* To use this part of the code, you will have to find the dynamic UUID of your extensions, and replace it where the 
@@ -9,6 +9,59 @@ To find the UUID of an extension, just open about:debugging, and the UUID of eac
 (They look like a bunch of numbers with some -'s in between, like this: 00b72a90-6883-4e98-8785-1620d6b75664).
 If you did everything right, next time you start (or restart) firefox, the addon will be themed 
 (Each addon has a different UUID, and the UUID of an addon can also change if you uninstall and reinstall it). */
+
+/*------ COMMON PART TO ALL EXTENSIONS (you don't need to change anything here) ------*/
+@-moz-document url-prefix(moz-extension://) {
+
+/* Checkbox coloring */
+body:not([id*="stylus"]) input[type="checkbox"] {
+  -moz-appearance: none !important;
+  border: 1px solid #666 !important;
+  background-color: #444 !important;
+  transition: color 0.3s;
+  min-width: 12px;
+  min-height: 12px;}
+
+body:not([id*="stylus"]) input[type="checkbox"]:not([disabled]):hover {
+  box-shadow: 0 0 4px #0084ff !important;
+  border-color: #0084ff !important}
+
+body:not([id*="stylus"]) input[type="checkbox"]:checked {
+  background: #444 url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="15px" height="15px" viewBox="0 0 16 16" ><path fill="rgb(200,200,200)" d="M 13.09,2.87 C 13.09,2.87 6.00,11.00 6.00,11.00 6.00,11.00 2.00,9.00 2.00,9.00 4.25,12.81 7.00,14.00 7.00,14.00 9.24,10.42 12.04,7.39 13.09,2.87 Z" /></svg>') no-repeat center center !important}
+
+/* Radio button coloring */
+body:not([id*="stylus"]) input[type="radio"] {
+  -moz-appearance: none !important;
+  border: 1px solid #666 !important;
+  border-radius: 10em;
+  background-color: #444 !important;
+  transition: color 0.3s;
+  min-width: 12px;
+  min-height: 12px;}
+
+body:not([id*="stylus"]) input[type="radio"]:not([disabled]):hover {
+  box-shadow: 0 0 4px #0084ff !important;
+  border-color: #0084ff !important}
+
+body:not([id*="stylus"]) input[type="radio"]:checked {
+  background: #444 url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="10px" height="10px" viewBox="0 0 16 16" ><path fill="rgb(200,200,200)" d="M 6.17,3.01 C -0.84,6.78 4.35,15.22 9.89,13.22 15.68,11.20 13.99,1.10 6.17,3.01 Z" /></svg>') no-repeat center center !important}
+
+body:not([id*="stylus"]) input[type="radio"]:disabled + label, input[type="checkbox"]:disabled + label {opacity: 70% !important}
+
+/* Select boxes coloring */
+body:not([id*="stylus"]) select {
+  -moz-appearance: none !important;
+  background: #555 url("data:image/svg+xml;charset=utf-8,%3Csvg width='11' height='7' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M434.574 488L430.5 492.147 426.428 488 425 489.399 430.5 494.999 436 489.399z' transform='translate(-425 -488)' fill='%23cccccc' fill-rule='evenodd'/%3E%3C/svg%3E") no-repeat calc(100% - 5px) 50% !important;
+  border: none !important;
+  padding: 3px;
+  color: #ccc !important}
+
+body:not([id*="stylus"]) select:hover {
+  background: #333 url("data:image/svg+xml;charset=utf-8,%3Csvg width='11' height='7' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M434.574 488L430.5 492.147 426.428 488 425 489.399 430.5 494.999 436 489.399z' transform='translate(-425 -488)' fill='%23cccccc' fill-rule='evenodd'/%3E%3C/svg%3E") no-repeat calc(100% - 5px) 50% !important;
+  color: #fff !important}
+
+body:not([id*="stylus"]) select .menulist-dropmarker {display: none}
+}
 
 /*------ UBLOCK ORIGIN BLOCKING PAGE ------*/
 @-moz-document url-prefix(moz-extension://TYPE-UUID-OF-UBLOCK-ORIGIN-HERE/document-blocked.html){
@@ -105,11 +158,15 @@ button[disabled] {opacity: 0.5 !important}
 
 .CodeMirror, .CodeMirror-merge, .cm-search-widget input {
 	-moz-appearance: none !important;
-	background: #555 !important; 
+	background: #444 !important; 
 	color: #aaa !important; 
 	border: none !important}
 
-.CodeMirror-line 
+.CodeMirror-activeline-background {background: #033 !important}
+
+.cm-staticext {color: #0aa !important}
+
+.CodeMirror-line  *|*::selection {background: #055 !important}
 
 .cm-comment {color: #aaa !important}
 .cm-staticnetBlock {color: #f62 !important}
@@ -124,13 +181,12 @@ textarea, .whatisthis-expanded {
 	color: #aaa !important;
 	border: 2px solid #000 !important}
 
-
 code {background-color: #222 !important}
 
 .rulesContainer li:nth-child(odd) {background-color: #222 !important}
 .rulesContainer li:nth-child(even) {background-color: #444 !important}
 
-input[type=number] {
+input[type=number], input[type="text"] {
 	-moz-appearance: none !important;
 	background: #222 !important;
 	border: 1px solid #000 !important;
@@ -320,7 +376,11 @@ body, .multiple_download_header, #filters_block,
 	border: 1px solid #000 !important}
 #help_link_folder:hover {background: linear-gradient(#111, #333) !important}
 
-.downloader_filter_title, .downloader_check_text {color: #CCC !important}
+h2, .group_download_title {color: #fff !important}
+
+.downloader_check_block {filter: invert(80%)}
+
+.downloader_filter_title, .downloader_check_text, .textEmptyNotice {color: #CCC !important}
 
 #footer_container, #header_container {background-color: #222 !important}
 
@@ -482,11 +542,13 @@ span.checkbox:hover::before, #saveName:hover {border: 1px solid #36b2b2 !importa
 
 #sessionsArea, .sessionName span {color: #fff !important}
 
-textarea, #dateFormat {background: #303030 !important; color: #ddd !important}
+textarea, input[type="number"], input[type="text"] {background: #303030 !important; color: #ddd !important}
 
 #saveButton, #saveOptionButton {background: #555 !important}
 
 #saveButton:not(:hover) {color: #ddd !important}
+
+.settingsButton svg, .heartButton:not(:hover) svg {fill: #333 !important; transition: color 3s}
 
 .tag span {color: #000 !important}
 
@@ -683,9 +745,13 @@ body, html {background: #222 !important; color: #fff !important}
 
 label, p, span.i18n_show_tracking_domains_acknowledgement, .origin.tooltip {color: #ddd !important}
 
-span.i18n_options_webrtc_warning {color: #aaa !important}
+.i18n_options_webrtc_warning, .i18n_options_incognito_warning {color: #aaa !important}
 
-span.i18n_import_user_data, span.i18n_export_user_data {color: #fff !important}
+span.i18n_import_user_data, span.i18n_export_user_data, h3, h3 span {color: #fff !important}
+
+input[type="checkbox"] {max-height: 12px !important; transform: translate(0, 2px) !important}
+
+input[type="checkbox"]:disabled + span, input[type="checkbox"]:disabled {opacity: 0.5 !important}
 
 #tabs > ul > li {
 	background: #252525 !important; 
@@ -770,9 +836,9 @@ a:hover {color: #f0a15c !important}
 }
 
 /*------ NOSCRIPT ADDON SETTINGS AND PROMPT PAGE ------*/
-@-moz-document url-prefix(moz-extension://TYPE-UUID-OF-NOSCRIPT-HERE/ui/options.html),
-url-prefix(moz-extension://TYPE-UUID-OF-NOSCRIPT-HERE/ui/prompt.html),
-url-prefix(moz-extension://TYPE-UUID-OF-NOSCRIPT-HERE/ui/siteInfo.html) {
+@-moz-document url-prefix(moz-extension://TYPE-UUID-OF-NOSCRIPT-ADDON-HERE/ui/options.html),
+url-prefix(moz-extension://TYPE-UUID-OF-NOSCRIPT-ADDON-HERE/ui/prompt.html),
+url-prefix(moz-extension://TYPE-UUID-OF-NOSCRIPT-ADDON-HERE/ui/siteInfo.html) {
 body, html {background: #222 !important}
 
 #main {background: linear-gradient(#555,#111) !important; color: #fff !important}

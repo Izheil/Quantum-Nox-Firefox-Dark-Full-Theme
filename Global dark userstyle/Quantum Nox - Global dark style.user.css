@@ -2,7 +2,7 @@
 @name         Quantum nox - Global dark style
 @description  Fork from the global dark style that Stormi wrote to use alongside Quantum nox - Firefox dark theme.
 @namespace    https://github.com/Izheil/Quantum-Nox-Firefox-Dark-Full-Theme
-@version      1.0.2
+@version      1.0.3
 @author       Stormi, Izheil
 @homepageURL  https://github.com/Izheil/Quantum-Nox-Firefox-Dark-Full-Theme/tree/master/Global%20dark%20userstyle
 @updateURL	  https://raw.githubusercontent.com/Izheil/Quantum-Nox-Firefox-Dark-Full-Theme/master/Global%20dark%20userstyle/Quantum%20Nox%20-%20Global%20dark%20style.user.css
@@ -101,7 +101,7 @@ if invMethod == "customSet"  {
     table > tbody > tr:nth-child(even), table > tbody > tr > td:nth-child(even) {
         background-color: rgba(0,0,0,.2) !important}
 
-    iframe, embed, nav, label [onclick], nav ul, div[style*="position:"][style*="left:"][style*="visible"], div[style*="z-index:"][style*="left:"][style*="visible"], div[style*="-moz-user-select"], div[role="menu"], div[role="dialog"], span[class*="script"] div, [id*="menu"], [id*="Menu"], [class*="dropdown"], [class*="popup"], [class="title"], ul[style*="display:"], ul[style*="visibility:"] ul, [id*="nav"] ul, [class*="nav"] ul, ul[class*="menu"], a[onclick][style*="display"], a[id*="ghosteryfirefox"], #ghostery-purple-bubble, #translator-popup, .menu, .tooltip, .hovercard, .vbmenu_popup {
+    iframe, embed, nav, label [onclick], nav ul, div[style*="position:"][style*="left:"][style*="visible"], div[style*="z-index:"][style*="left:"][style*="visible"], div[style*="-moz-user-select"], div[role="menu"], div[role="dialog"], span[class*="script"] div, [id*="Menu"], [class*="dropdown"], [class*="popup"], [class="title"], ul[style*="display:"], ul[style*="visibility:"] ul, [id*="nav"] ul, [class*="nav"] ul, ul[class*="menu"], a[onclick][style*="display"], a[id*="ghosteryfirefox"], #ghostery-purple-bubble, #translator-popup, .menu, .tooltip, .hovercard, .vbmenu_popup {
         background-color: rgba(5,5,5,.9) !important;
         border-radius: 5px;
         box-shadow: 1px 1px 5px #000 !important}
@@ -152,7 +152,7 @@ if invMethod == "customSet"  {
         border-left-color: #555 !important;
         border-right-color: #555 !important}
 
-    input:focus, select:focus {
+    input:not([type="checkbox"]):not([type="radio"]):focus, select:focus {
         box-shadow: 0 0 5px linkColor !important}
     input *:hover * {
         color: #F0F0F0 !important;
@@ -161,12 +161,13 @@ if invMethod == "customSet"  {
         opacity: 0.5 !important;
         border-color: #333 !important}
 
-    input[type="checkbox"] {border-radius: 1px !important}
+    input[type="checkbox"] {border-radius: 1px !important; margin-bottom: 0 !important}
     input[type="radio"], input[type="radio"]:focus {border-radius: 100% !important}
     input[type="checkbox"], input[type="radio"] {min-width: 12px; min-height: 12px}
     input[type="checkbox"]:checked, input[type="radio"]:checked {
         border-color: linkColor !important;
-        box-shadow: 0 0 5px linkColor !important}
+        box-shadow: inset 0 0 2px #000 !important;
+        background: linkColor !important}
 
     select {
         padding-right: 15px !important;

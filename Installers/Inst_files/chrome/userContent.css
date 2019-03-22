@@ -581,7 +581,8 @@ input[type="checkbox"] {
   background-color: #444 !important;
   transition: color 0.3s;
   min-width: 12px;
-  min-height: 12px;}
+  min-height: 12px;
+  margin-bottom: 0 !important}
 
 input[type="checkbox"]:not([disabled]):hover {
   box-shadow: 0 0 4px #0084ff !important;
@@ -1355,8 +1356,10 @@ button:not(.pswp__button):not(.pswp__ui):not(.AutoSearchInput-submit-button):not
 	background-color: #252525 !important;
 	color: #1494FB !important}
 
-button.Button--action, a.Button:not(.Categories-link) {background-color: #004db3 !important; color: #fff !important}
-button.Button--action:hover, a.Button:not(.Categories-link):hover {background-color: #002c66 !important}
+button.Button--action {
+	background-color: #004db3 !important; color: #fff !important}
+button.Button--action:hover {
+	background-color: #002c66 !important}
 
 a.Categories-link {filter: saturate(50%) !important}
 
@@ -1423,7 +1426,8 @@ input[type="checkbox"] {
   background-color: #444 !important;
   transition: color 0.3s;
   min-width: 12px;
-  min-height: 12px;}
+  min-height: 12px;
+  margin-bottom: 0 !important}
 
 input[type="checkbox"]:not([disabled]):hover {
   box-shadow: 0 0 4px #0084ff !important;
@@ -1624,7 +1628,8 @@ input[type="checkbox"] {
   transition: color 0.3s;
   min-width: 12px;
   min-height: 12px;
-  margin-top: 6px !important}
+  margin-top: 6px !important;
+  margin-bottom: 0 !important}
 
 input[type="checkbox"]:not([disabled]):hover {
   box-shadow: 0 0 4px #0084ff !important;

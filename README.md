@@ -13,8 +13,10 @@ This problem doesn't happen if you use a code editor such as notepad++, atom, su
 <h3>Last update: <b>22/03/2019</b></h3>
 <p>Files updated:</p>
 <ul>
+  <li><b>Quantum Nox - Global dark style.user.css</b>: Minor fixes to fill checkbox images and align them with their label</li>
   <li><b>UserChrome.css</b>: Checkboxes, radios, and select boxes should now be dark on both white and dark OS themes without the need of <code>checkboxes.as.css</code> anymore.</li>
   <li><b>UserContent.css</b>: Applied the checkboxes, radios, and select boxes fixes on <code>about:</code> pages and firefox addon and support pages.</li>
+  <li><b>Addons.css</b>: Themed the checkboxes on all addons, and minor fixes on the dark themes of Ublock, Privacy badger, Tab Session Manager and Flash video downloader.</li>
   <li><b>Checkboxes.as.css</b>: Removed due to not being necesary anymore.</li>
 </ul>
 <h3>Pre-Last update: <b>21/03/2019</b></h3>
