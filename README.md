@@ -14,7 +14,7 @@ This problem doesn't happen if you use a code editor such as notepad++, atom, su
 <p>Files updated:</p>
 <ul>
   <li><b>Addons.css</b>: Themed <a href="https://addons.mozilla.org/es/firefox/addon/history-autodelete/">History autodelete</a> and <a href="https://addons.mozilla.org/es/firefox/addon/cookie-autodelete/">Cookie autodelete</a> addons</li>
-  <li><b>MultirowTab*.uc.js</b>: Deleted FF65 versions. Now you can set the min-width from the variables on top of the file. You can also change if you want the tabs to grow, or if not (in which case they will have the min-width you set in the file).</li>
+  <li><b>MultirowTab*.uc.js</b>: Deleted FF65 versions. Added a comment on how to change the tab min width inside <code>about:config</code>.</li>
 </ul>
 <h3>Pre-Last update: <b>21/03/2019</b></h3>
 <p>Files updated:</p>

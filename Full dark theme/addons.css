@@ -10,59 +10,6 @@ To find the UUID of an extension, just open about:debugging, and the UUID of eac
 If you did everything right, next time you start (or restart) firefox, the addon will be themed 
 (Each addon has a different UUID, and the UUID of an addon can also change if you uninstall and reinstall it). */
 
-/*------ COMMON PART TO ALL EXTENSIONS (you don't need to change anything here) ------*/
-@-moz-document url-prefix(moz-extension://) {
-
-/* Checkbox coloring */
-body:not([id*="stylus"]) input[type="checkbox"] {
-  -moz-appearance: none !important;
-  border: 1px solid #666 !important;
-  background-color: #444 !important;
-  transition: color 0.3s;
-  min-width: 12px;
-  min-height: 12px;}
-
-body:not([id*="stylus"]) input[type="checkbox"]:not([disabled]):hover {
-  box-shadow: 0 0 4px #0084ff !important;
-  border-color: #0084ff !important}
-
-body:not([id*="stylus"]) input[type="checkbox"]:checked {
-  background: #444 url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="15px" height="15px" viewBox="0 0 16 16" ><path fill="rgb(200,200,200)" d="M 13.09,2.87 C 13.09,2.87 6.00,11.00 6.00,11.00 6.00,11.00 2.00,9.00 2.00,9.00 4.25,12.81 7.00,14.00 7.00,14.00 9.24,10.42 12.04,7.39 13.09,2.87 Z" /></svg>') no-repeat center center !important}
-
-/* Radio button coloring */
-body:not([id*="stylus"]) input[type="radio"] {
-  -moz-appearance: none !important;
-  border: 1px solid #666 !important;
-  border-radius: 10em;
-  background-color: #444 !important;
-  transition: color 0.3s;
-  min-width: 12px;
-  min-height: 12px;}
-
-body:not([id*="stylus"]) input[type="radio"]:not([disabled]):hover {
-  box-shadow: 0 0 4px #0084ff !important;
-  border-color: #0084ff !important}
-
-body:not([id*="stylus"]) input[type="radio"]:checked {
-  background: #444 url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="10px" height="10px" viewBox="0 0 16 16" ><path fill="rgb(200,200,200)" d="M 6.17,3.01 C -0.84,6.78 4.35,15.22 9.89,13.22 15.68,11.20 13.99,1.10 6.17,3.01 Z" /></svg>') no-repeat center center !important}
-
-body:not([id*="stylus"]) input[type="radio"]:disabled + label, input[type="checkbox"]:disabled + label {opacity: 70% !important}
-
-/* Select boxes coloring */
-body:not([id*="stylus"]) select {
-  -moz-appearance: none !important;
-  background: #555 url("data:image/svg+xml;charset=utf-8,%3Csvg width='11' height='7' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M434.574 488L430.5 492.147 426.428 488 425 489.399 430.5 494.999 436 489.399z' transform='translate(-425 -488)' fill='%23cccccc' fill-rule='evenodd'/%3E%3C/svg%3E") no-repeat calc(100% - 5px) 50% !important;
-  border: none !important;
-  padding: 3px;
-  color: #ccc !important}
-
-body:not([id*="stylus"]) select:hover {
-  background: #333 url("data:image/svg+xml;charset=utf-8,%3Csvg width='11' height='7' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M434.574 488L430.5 492.147 426.428 488 425 489.399 430.5 494.999 436 489.399z' transform='translate(-425 -488)' fill='%23cccccc' fill-rule='evenodd'/%3E%3C/svg%3E") no-repeat calc(100% - 5px) 50% !important;
-  color: #fff !important}
-
-body:not([id*="stylus"]) select .menulist-dropmarker {display: none}
-}
-
 /*------ UBLOCK ORIGIN BLOCKING PAGE ------*/
 @-moz-document url-prefix(moz-extension://TYPE-UUID-OF-UBLOCK-ORIGIN-HERE/document-blocked.html){
 
@@ -191,11 +138,41 @@ input[type=number], input[type="text"] {
 	background: #222 !important;
 	border: 1px solid #000 !important;
 	color: #ccc !important}
+
+/* Checkbox coloring */
+input[type="checkbox"] {
+  -moz-appearance: none !important;
+  border: 1px solid #666 !important;
+  background-color: #444 !important;
+  transition: color 0.3s;
+  min-width: 16px;
+  min-height: 16px;
+  margin-bottom: 0 !important}
+
+input[type="checkbox"]:not([disabled]):hover {
+  box-shadow: 0 0 4px #0084ff !important;
+  border-color: #0084ff !important}
+
+input[type="checkbox"]:checked {
+  background: #444 url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="15px" height="15px" viewBox="0 0 16 16" ><path fill="rgb(200,200,200)" d="M 13.09,2.87 C 13.09,2.87 6.00,11.00 6.00,11.00 6.00,11.00 2.00,9.00 2.00,9.00 4.25,12.81 7.00,14.00 7.00,14.00 9.24,10.42 12.04,7.39 13.09,2.87 Z" /></svg>') no-repeat center center !important}
+
+/* Select boxes coloring */
+select {
+  -moz-appearance: none !important;
+  background: #555 url("data:image/svg+xml;charset=utf-8,%3Csvg width='11' height='7' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M434.574 488L430.5 492.147 426.428 488 425 489.399 430.5 494.999 436 489.399z' transform='translate(-425 -488)' fill='%23cccccc' fill-rule='evenodd'/%3E%3C/svg%3E") no-repeat calc(100% - 5px) 50% !important;
+  border: none !important;
+  padding: 3px;
+  color: #ccc !important}
+
+select:hover {
+  background: #333 url("data:image/svg+xml;charset=utf-8,%3Csvg width='11' height='7' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M434.574 488L430.5 492.147 426.428 488 425 489.399 430.5 494.999 436 489.399z' transform='translate(-425 -488)' fill='%23cccccc' fill-rule='evenodd'/%3E%3C/svg%3E") no-repeat calc(100% - 5px) 50% !important;
+  color: #fff !important}
+
+select .menulist-dropmarker {display: none}
 }
 
 /*------ UBLOCK ORIGIN MENU POPUP ------*/
 @-moz-document url-prefix(moz-extension://TYPE-UUID-OF-UBLOCK-ORIGIN-HERE/popup.html) {
-body {background: #222 !important}
 
 #appinfo {background: #111 !important}
 
@@ -355,6 +332,23 @@ body {background-color: #222 !important}
 #donateDownloadNative span {color: #fff !important}
 
 h2 {color: #FFF !important}
+
+/* Checkbox coloring */
+input[type="checkbox"] {
+  -moz-appearance: none !important;
+  border: 1px solid #666 !important;
+  background-color: #444 !important;
+  transition: color 0.3s;
+  min-width: 16px;
+  min-height: 16px;
+  margin-bottom: 0 !important}
+
+input[type="checkbox"]:not([disabled]):hover {
+  box-shadow: 0 0 4px #0084ff !important;
+  border-color: #0084ff !important}
+
+input[type="checkbox"]:checked {
+  background: #444 url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="15px" height="15px" viewBox="0 0 16 16" ><path fill="rgb(200,200,200)" d="M 13.09,2.87 C 13.09,2.87 6.00,11.00 6.00,11.00 6.00,11.00 2.00,9.00 2.00,9.00 4.25,12.81 7.00,14.00 7.00,14.00 9.24,10.42 12.04,7.39 13.09,2.87 Z" /></svg>') no-repeat center center !important}
 }
 
 /*------ FLASH VIDEO DOWNLOADER (youtube) ADDON POPUP ------*/
@@ -465,6 +459,25 @@ input, .input-license input, textarea {
 
 .active.nav-link {background: #444 !important; color: #0ff !important}
 .nav-link {cursor: pointer !important}
+
+/* Checkbox coloring */
+input[type="checkbox"] {
+  -moz-appearance: none !important;
+  display: inline-block !important;
+  border: 1px solid #666 !important;
+  background-color: #444 !important;
+  transition: color 0.3s;
+  min-width: 16px;
+  max-width: 16px !important;
+  min-height: 16px;
+  margin-bottom: 0 !important}
+
+input[type="checkbox"]:not([disabled]):hover {
+  box-shadow: 0 0 4px #0084ff !important;
+  border-color: #0084ff !important}
+
+input[type="checkbox"]:checked {
+  background: #444 url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="15px" height="15px" viewBox="0 0 16 16" ><path fill="rgb(200,200,200)" d="M 13.09,2.87 C 13.09,2.87 6.00,11.00 6.00,11.00 6.00,11.00 2.00,9.00 2.00,9.00 4.25,12.81 7.00,14.00 7.00,14.00 9.24,10.42 12.04,7.39 13.09,2.87 Z" /></svg>') no-repeat center center !important}
 }
 
 /*------ VIDEO DOWNLOAD HELPER ADDON POPUP ------*/
@@ -529,6 +542,8 @@ url-prefix(moz-extension://TYPE-UUID-OF-TAB-SESSION-MANAGER-HERE/replaced/index.
     --new: #ff4f4f !important;
 	--confirm: #ff4f4f !important}
 
+html {background: #333 !important}
+
 .button, input[type="button"] {background: #444 !important}
 .button:hover, input[type="button"]:hover {background: #222 !important}
 
@@ -557,7 +572,7 @@ textarea, input[type="number"], input[type="text"] {background: #303030 !importa
 .tabTitle a:active {color: #0050aa !important}
 }
 
-/*------ UNDO LAST TAB ADDON ------*/
+/*------ UNDO LAST TAB BUTTON (REVIVED) ADDON ------*/
 @-moz-document url-prefix(moz-extension://TYPE-UUID-OF-UNDO-LAST-TAB-HERE/data/popup/index.html) {
 body, html {background: #333 !important}
 
@@ -592,7 +607,7 @@ body, html {background: #222 !important; color: #fff !important}
 {background-color: #505050 !important; color: #aaa !important}
 
 #tabs-generalTab a.selected, #generalTab--features, #generalTab--statusMode, #generalTab--queue,
-#tabs-appearanceTab a.selected, #appearanceTab--style, #appearanceTab--layout, #generalTab--contextMenu 
+#tabs-appearanceTab a.selected, #appearanceTab--style, #appearanceTab--layout, #generalTab--contextMenu
 {background-color: #555 !important; color: #ddd !important; border: none !important}
 
 .groupbox {border: 1px solid #666 !important; box-shadow: 0 0 10px #000 !important}
@@ -638,6 +653,37 @@ button:hover, input[type="button"]:hover {
 
 #save_settings, #copy_settings, #load_settings, 
 #reset_settings {padding: 0.5em !important}
+
+/* Checkbox coloring */
+input[type="checkbox"] {
+  -moz-appearance: none !important;
+  border: 1px solid #666 !important;
+  background-color: #444 !important;
+  transition: color 0.3s;
+  min-width: 16px;
+  min-height: 16px;
+  margin-bottom: 0 !important}
+
+input[type="checkbox"]:not([disabled]):hover {
+  box-shadow: 0 0 4px #0084ff !important;
+  border-color: #0084ff !important}
+
+input[type="checkbox"]:checked {
+  background: #444 url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="15px" height="15px" viewBox="0 0 16 16" ><path fill="rgb(200,200,200)" d="M 13.09,2.87 C 13.09,2.87 6.00,11.00 6.00,11.00 6.00,11.00 2.00,9.00 2.00,9.00 4.25,12.81 7.00,14.00 7.00,14.00 9.24,10.42 12.04,7.39 13.09,2.87 Z" /></svg>') no-repeat center center !important}
+
+/* Select boxes coloring */
+select {
+  -moz-appearance: none !important;
+  background: #555 url("data:image/svg+xml;charset=utf-8,%3Csvg width='11' height='7' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M434.574 488L430.5 492.147 426.428 488 425 489.399 430.5 494.999 436 489.399z' transform='translate(-425 -488)' fill='%23cccccc' fill-rule='evenodd'/%3E%3C/svg%3E") no-repeat calc(100% - 5px) 50% !important;
+  border: none !important;
+  padding: 3px 10px 3px 3px;
+  color: #ccc !important}
+
+select:hover {
+  background: #333 url("data:image/svg+xml;charset=utf-8,%3Csvg width='11' height='7' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M434.574 488L430.5 492.147 426.428 488 425 489.399 430.5 494.999 436 489.399z' transform='translate(-425 -488)' fill='%23cccccc' fill-rule='evenodd'/%3E%3C/svg%3E") no-repeat calc(100% - 5px) 50% !important;
+  color: #fff !important}
+
+select .menulist-dropmarker {display: none}
 }
 
 /*------ DOWNLOAD MANAGER (S3) ADDON DOWNLOADS HISTORY PAGE ------*/
@@ -686,6 +732,23 @@ body, html {background: #333 !important; color: #fff !important}
 #s3downbar-ibmbeeacmbeeaebmfjpmnlgkhoejinha .contextmenu_box .contextmenu_menu:hover {
 	background-color: #555 !important;
 	color: #fff !important}
+
+/* Checkbox coloring */
+input[type="checkbox"] {
+  -moz-appearance: none !important;
+  border: 1px solid #666 !important;
+  background-color: #444 !important;
+  transition: color 0.3s;
+  min-width: 16px;
+  min-height: 16px;
+  margin-bottom: 0 !important}
+
+input[type="checkbox"]:not([disabled]):hover {
+  box-shadow: 0 0 4px #0084ff !important;
+  border-color: #0084ff !important}
+
+input[type="checkbox"]:checked {
+  background: #444 url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="15px" height="15px" viewBox="0 0 16 16" ><path fill="rgb(200,200,200)" d="M 13.09,2.87 C 13.09,2.87 6.00,11.00 6.00,11.00 6.00,11.00 2.00,9.00 2.00,9.00 4.25,12.81 7.00,14.00 7.00,14.00 9.24,10.42 12.04,7.39 13.09,2.87 Z" /></svg>') no-repeat center center !important}
 }
 
 /*------ DOWNLOAD MANAGER (S3) ADDON DOWNLOADS POPUP ------*/
@@ -749,10 +812,6 @@ label, p, span.i18n_show_tracking_domains_acknowledgement, .origin.tooltip {colo
 
 span.i18n_import_user_data, span.i18n_export_user_data, h3, h3 span {color: #fff !important}
 
-input[type="checkbox"] {max-height: 12px !important; transform: translate(0, 2px) !important}
-
-input[type="checkbox"]:disabled + span, input[type="checkbox"]:disabled {opacity: 0.5 !important}
-
 #tabs > ul > li {
 	background: #252525 !important; 
 	border: 1px solid #555 !important}
@@ -802,6 +861,40 @@ button:hover {
 a:link, a {color: #0bb !important}
 a:visited, a:active {color: #088 !important}
 a:hover {color: #0dd !important}
+
+/* Checkbox coloring */
+input[type="checkbox"] {
+  -moz-appearance: none !important;
+  border: 1px solid #666 !important;
+  background-color: #444 !important;
+  transition: color 0.3s;
+  min-width: 16px;
+  min-height: 16px;
+  max-height: 16px !important;
+  margin-bottom: 0 !important}
+
+input[type="checkbox"]:not([disabled]):hover {
+  box-shadow: 0 0 4px #0084ff !important;
+  border-color: #0084ff !important}
+
+input[type="checkbox"]:checked {
+  background: #444 url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="15px" height="15px" viewBox="0 0 16 16" ><path fill="rgb(200,200,200)" d="M 13.09,2.87 C 13.09,2.87 6.00,11.00 6.00,11.00 6.00,11.00 2.00,9.00 2.00,9.00 4.25,12.81 7.00,14.00 7.00,14.00 9.24,10.42 12.04,7.39 13.09,2.87 Z" /></svg>') no-repeat center center !important}
+
+input[type="checkbox"]:disabled + span, input[type="checkbox"]:disabled {opacity: 0.5 !important}
+
+/* Select boxes coloring */
+select {
+  -moz-appearance: none !important;
+  background: #555 url("data:image/svg+xml;charset=utf-8,%3Csvg width='11' height='7' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M434.574 488L430.5 492.147 426.428 488 425 489.399 430.5 494.999 436 489.399z' transform='translate(-425 -488)' fill='%23cccccc' fill-rule='evenodd'/%3E%3C/svg%3E") no-repeat calc(100% - 5px) 50% !important;
+  border: none !important;
+  padding: 3px;
+  color: #ccc !important}
+
+select:hover {
+  background: #333 url("data:image/svg+xml;charset=utf-8,%3Csvg width='11' height='7' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M434.574 488L430.5 492.147 426.428 488 425 489.399 430.5 494.999 436 489.399z' transform='translate(-425 -488)' fill='%23cccccc' fill-rule='evenodd'/%3E%3C/svg%3E") no-repeat calc(100% - 5px) 50% !important;
+  color: #fff !important}
+
+select .menulist-dropmarker {display: none}
 }
 
 /*------ PRIVACY BADGER ADDON POPUP ------*/
@@ -892,6 +985,40 @@ a:active {color: #0050aa !important}
 #sites .sites tr {background: #555 !important}
 
 #sites .sites tr:nth-child(even) {background: #666 !important}
+
+/* Checkbox coloring */
+input[type="checkbox"] {
+  -moz-appearance: none !important;
+  border: 1px solid #666 !important;
+  background-color: #444 !important;
+  transition: color 0.3s;
+  min-width: 16px;
+  min-height: 16px;
+  max-height: 16px !important;
+  margin-bottom: 0 !important}
+
+input[type="checkbox"]:not([disabled]):hover {
+  box-shadow: 0 0 4px #0084ff !important;
+  border-color: #0084ff !important}
+
+input[type="checkbox"]:checked {
+  background: #444 url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="15px" height="15px" viewBox="0 0 16 16" ><path fill="rgb(200,200,200)" d="M 13.09,2.87 C 13.09,2.87 6.00,11.00 6.00,11.00 6.00,11.00 2.00,9.00 2.00,9.00 4.25,12.81 7.00,14.00 7.00,14.00 9.24,10.42 12.04,7.39 13.09,2.87 Z" /></svg>') no-repeat center center !important}
+
+input[type="checkbox"]:disabled + span, input[type="checkbox"]:disabled {opacity: 0.5 !important}
+
+/* Select boxes coloring */
+select {
+  -moz-appearance: none !important;
+  background: #555 url("data:image/svg+xml;charset=utf-8,%3Csvg width='11' height='7' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M434.574 488L430.5 492.147 426.428 488 425 489.399 430.5 494.999 436 489.399z' transform='translate(-425 -488)' fill='%23cccccc' fill-rule='evenodd'/%3E%3C/svg%3E") no-repeat calc(100% - 5px) 50% !important;
+  border: none !important;
+  padding: 3px;
+  color: #ccc !important}
+
+select:hover {
+  background: #333 url("data:image/svg+xml;charset=utf-8,%3Csvg width='11' height='7' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M434.574 488L430.5 492.147 426.428 488 425 489.399 430.5 494.999 436 489.399z' transform='translate(-425 -488)' fill='%23cccccc' fill-rule='evenodd'/%3E%3C/svg%3E") no-repeat calc(100% - 5px) 50% !important;
+  color: #fff !important}
+
+select .menulist-dropmarker {display: none}
 }
 
 /*------ NOSCRIPT ADDON POPUP ------*/
@@ -909,73 +1036,26 @@ tr {color: #ddd !important}
 span {color: #ddd !important}
 
 #sites .sites tr:nth-child(odd) {background: #404040 !important}
-}
 
-/*------ S3 TRANSLATOR ADDON SETTINGS PAGE ------*/
-@-moz-document url-prefix(moz-extension://TYPE-UUID-OF-S3-TRANSLATOR-HERE/content/options.html) {
-body, html, center {background: #222 !important; color: #ddd !important}
-
-#tabsBox .tabsBox {background: #333 !important; border: 1px solid #555 !important}
-
-#tabs a:not(.selected) {background-color: #383838 !important; color: #aaa !important}
-
-#tabs a.selected, #translateTab, #translatePageTab, #translateTextTab,
-#translateLearningTab, #translateContextMenuTab, #translateClipboardTab, #translateOthersTab, 
-.caption span {background-color: #444 !important; color: #ddd !important}
-
-#translateTextTab a.selected, #translateTextTab--basicFunctions, #translateTextTab--selectedText, 
-#translateTextTab--singleWord {
-	background-color: #555 !important; color: #ddd !important; border: none !important}
-
-#translateTextTab a:not(.selected)
-{background-color: #505050 !important; color: #aaa !important}
-
-.groupbox {border: 1px solid #666 !important; box-shadow: 0 0 10px #000 !important}
-.groupbox:hover:not([disabled]) {border: 1px solid #AF5CCB !important; box-shadow: 0 0 10px #712a89 !important}
-
-.groupbox a:link, .groupbox a {color: #09f !important}
-.groupbox a:visited {color: #0070aa !important}
-.groupbox a:hover {color: #0ff !important}
-.groupbox a:active {color: #0050aa !important}
-
-input:not([type="number"]):not([type="checkbox"]):not([type="button"]):not([type="radio"]), textarea {
-	-moz-appearance: none !important; 
-	background: #323232 !important; 
-	color: #ddd !important;
-	border: 1px solid #666 !important}
-
-button, input[type="button"] {  
+/* Checkbox coloring */
+input[type="checkbox"] {
   -moz-appearance: none !important;
-  border-radius: 3px !important;
-  background-color: #666 !important;
-  color: #ddd !important;
-  border: none !important}
+  border: 1px solid #666 !important;
+  background-color: #444 !important;
+  transition: color 0.3s;
+  min-width: 16px;
+  min-height: 16px;
+  max-height: 16px !important;
+  margin-bottom: 0 !important}
 
-button:hover, input[type="button"]:hover {  
-  background-color: #222 !important;
-  color: #fff !important;
-  box-shadow: none !important}
+input[type="checkbox"]:not([disabled]):hover {
+  box-shadow: 0 0 4px #0084ff !important;
+  border-color: #0084ff !important}
 
-#translateLearningTab input[type="color"]:hover {border: 1px solid #fff !important}
+input[type="checkbox"]:checked {
+  background: #444 url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="15px" height="15px" viewBox="0 0 16 16" ><path fill="rgb(200,200,200)" d="M 13.09,2.87 C 13.09,2.87 6.00,11.00 6.00,11.00 6.00,11.00 2.00,9.00 2.00,9.00 4.25,12.81 7.00,14.00 7.00,14.00 9.24,10.42 12.04,7.39 13.09,2.87 Z" /></svg>') no-repeat center center !important}
 
-.caption > div:not(#hotkey_button_plus) {background-color: #444 !important; border-radius: 5px !important}
-
-#current_locale {border: 1px solid #666 !important}
-
-#save_settings, #copy_settings, #load_settings, 
-#reset_settings {padding: 0.5em !important}
-}
-
-/*------ S3 TRANSLATOR ADDON POPUP AND DONATE PAGE ------*/
-@-moz-document url-prefix(moz-extension://TYPE-UUID-OF-S3-TRANSLATOR-HERE/content/statistics.html),
-url-prefix(moz-extension://TYPE-UUID-OF-S3-TRANSLATOR-HERE/content/popup.html) {
-body, html {background: #333 !important; color: #ddd !important}
-
-.s3gt_menu_action:not([is_inactive="true"]):hover {background-color: #333 !important}
-
-#statistics_accept {background-color: #ddd !important}
-
-h4.header {color: #fff !important}
+input[type="checkbox"]:disabled + span, input[type="checkbox"]:disabled {opacity: 0.5 !important}
 }
 
 /*------ WINDOW RESIZE ADDON ------*/
@@ -985,434 +1065,6 @@ a:hover {
 	background-color: rgba(255,255,255,0.2) !important; 
 	color: #fff !important; 
 	border-color: transparent !important}
-}
-
-/*------ LASTPASS PASSWORD MANAGER ADDON ------*/
-@-moz-document url-prefix(moz-extension://TYPE-UUID-OF-LASTPASS-HERE/) {
-html, body, .sliderContainer, #backButton, #u_combo, .selectDropdownList li,
-#items li, .footer li, .settingsRow, .dialog, #logincontainer, #loginView .dropdownContainer div, 
-#menucol, #rightside, #adframe, .actionsbox .menu.light, #vault, #vaultContent, #mainScroll, 
-.ui-widget-overlay, .infield-dialog .header, .infield-dialog .footer, #thetree, #thetree li, #main,
-.folderContainer, #mainScroll .tour {
-	background-color: #444 !important; 
-	color: #ccc !important}
-
-#mainMenu {background-color: #444 !important}
-
-.extensionCreateAccount .dialog-title {background-color: #333 !important; color: #ccc !important}
-
-/* select {filter: invert(81%) hue-rotate(170deg) !important; color: #000 !important} */
-
-#loginheader {color: #fff !important}
-
-#rememberpasswordquestion {color: #ccc !important}
-
-a:link:not(.rbtn), a:not(.rbtn), #lp_docwrite_login_small23a, #lp_docwrite_prefs46, #lp_docwrite_reenter_password3, 
-#lp_docwrite_reenter_password4, #lp_docwrite_reenter_password5, .lptabs.activetab, 
-.tablabel.tabactive, h1, .tabMenuItem.selected, #autoChangePassword {color: #f55 !important}
-a:hover, #lp_docwrite_login_small23a:hover, #autoChangePassword:hover {color: #f88 !important}
-a:active {color: #c30 !important}
-
-#expandcollapse a:hover {color: transparent !important}
-
-#cpwdialog .dialog_hdr {background: #333 !important}
-#cpwdialog {border: 2px solid #333 !important}
-
-.modal-body-content, .prefpane.row, .modal-body:not(#menu) .row-inner.light-gray, #vaultLoadingOverlay,
-#lppopup, #tools, #notestype_combo, #group_combo, #navigationMenu, .dialogLeftMenu li:hover {
-	background-color: #484848 !important}
-
-.addMenuItem > div {
-	filter: invert(70%) hue-rotate(180deg) contrast(150%) saturate(400%) !important}
-
-.itemIcon > .bigIcon {
-	filter: invert(62%) hue-rotate(180deg) saturate(400%) !important}
-
-.dropdownContainer li, .childView li, .itemIcon, #lp_docwrite_prefs67, .label, .hr, .lptabs:not(.activetab), p,
-div p {
-	background-color: transparent !important; 
-	color: #ccc !important}
-
-.dropdownContainer li:hover, .childView li:hover, 
-.ui-dialog-titlebar-close.ui-state-hover, #notestype_combo .item.focus,
-#group_combo .item.focus, #navigationMenu li:hover, #items li:hover {background: rgba(255,255,255,0.1) !important}
-
-.childView li {background-image: none !important}
-
-.content, .dialogContent, .buttons, #sitebody, #searchform .topbar, #tdtabrow #tabrow, #headerli, 
-#vaultLoadingOverlay, .ui-dialog, .ui-dialog-buttonpane, .ui-widget-content {
-	background: #505050 !important;
-	border: 1px solid #222 !important}
-
-.ui-state-default {background-image: linear-gradient(#666, #333) !important}
-
-.ui-dialog-titlebar, .ui-state-hover[type="button"] {
-	background-image: linear-gradient(#333, #666) !important;
-	border: 1px solid #222 !important}
-
-.ui-state-default[type="button"], #ui-dialog-title-dialog,
-#lpusername {color: #fff !important}
-
-#tdtabrow #tabrow, .topborder {border-top: none !important}
-
-.footer, .header, #childViews, #container, .dialogRightPane, 
-.dialogLeftPane, .settingsRow, #logincontainer, #treepane, .actionsbox li,
-iframe {border: none !important}
-
-#loginView .buttons, .optionButtons, iframe, .addMenuItem span {
-	background: transparent !important; border: none !important}
-
-.optionButtons {box-shadow: none !important}
-
-#container #searchContainer, #extensionDropdown, #u_combo, .selectDropdownList li,
-.dialogContent, .buttons, #backButton, .dark-gray, #hotkeystable td {
-	border: 1px solid #666 !important}
-
-.footer li {border-top: 1px solid #666 !important}
-
-.extensionMenuItem.group, .extensionMenuItem.item, .extensionMenuItem.addCustomItem, #siteheader,
-#sitebody, #lppopup, #menucol, .toolsMenuItem {
-	border-color: #666 !important}
-
-.itemCheckbox {border-color: #333 !important}
-
-.footer li {border-bottom: none !important}
-
-.modal-body-content .tablerow:not(.tableheader), #hotkeystable tr:nth-child(odd),
-.itemContents .tile, .list  {
-	background-color: #606060 !important; border: none !important}
-
-.toolsMenuItem:hover, .selectDropdownList li, #userMenuItems li,
-#formFillView .row {background: #606060 !important}
-
-#userMenuItems li, #dialogtext, .icon_text.icon.ntooltip,
-#notestype_combo .item:not(.focus), #group_combo .item:not(.focus),
-#formFillView .row {color: #ccc !important}
-
-.rbtn, #advancedView label, #btnClose:hover, #thetree span {color: #fff !important}
-
-#backButton:hover, .selectDropdownList li:hover, .footer li:hover, .dialogRightPane,
-.settingsRow:nth-child(even), .dialogLeftMenu li, .modal-body-content .tablerow.hide, 
-#hotkeystable tr:not(.dark-gray):nth-child(even), .selectDropdownList li:hover, 
-#userMenuItems li:hover, #advancedView .row.advanced-background, .formFieldsView {background-color: #505050 !important}
-
-.infield-dialog .gradient-to-right:after, .infield-dialog .gradient-to-right {
-	background: none !important}
-
-.dialogLeftMenu li.selected, .tileEdit.hoverFadeIn {background-color: #555 !important; color: #f55 !important}
-
-.dialogLeftMenu li, #container .header, #items li {border-bottom: 1px solid #666 !important}
-
-.dialogInput:not(select), #password, #email, #masterpassword, #confmasterpassword, #passwordreminder, #p, #u,
-.dropdownHint, .radioContainer, .short-input, #hotkeystable input, #pin, #reenterpassword, 
-#loginView input, #q, #url, #name, #group, #username, #notes, #notestype, #notestype_button
-#extensionDropdown input:not(.clickToggles), #grpinp, #grpsel, #group_button, input[type="password"] {
-	-moz-appearance: none !important; 
-	background: #323232 !important; 
-	color: #ddd !important;
-	border: 1px solid #666 !important}
-
-#container #searchContainer input {background: #222 !important; color: #ddd !important}
-
-.dialogInput.clickToggles, #extensionDropdown .dropdownContainer input {
-	background-color: #fff !important; 
-	color: #000 !important;
-	border: 1px solid #aaa !important;
-	filter: invert(80%) hue-rotate(195deg) !important}
-
-.item.focus, .actionsbox li:hover, .actionsbox2 li:hover {
-	color: #f55 !important; background-color: rgba(0,0,0,0.1) !important}
-
-#p, #u {box-shadow: inset 3px 4px 5px rgba(255,255,255,.09) !important}
-.actionsbox li:hover, .actionsbox2 li:hover,
-#thetree li:hover {box-shadow: 0 0 6px rgba(0,0,0,.5) !important}
-
-#keyboardicon, #logoimg, .folderContainer .folderLabel {filter: brightness(200%) !important}
-#deleteicon, #u_button, .actionsbox img, #grpsel_button, .folderLabel,
-.toolsimg, .delimg, .shareimg, .editimg {filter: invert(80%) !important}
-
-#mainScroll .tour, #mainScroll .tour p, #mainScroll .tour h1 {background-color: #444 !important}
-
-.checkbox + label, .radio + label, #vaultToggle img {
-	color: #000 !important; 
-	filter: invert(80%) hue-rotate(185deg) saturate(250%) !important}
-
-#page_passwordmeterback {filter: brightness(60%) !important} 
-
-.dialogInput:not(select):active, #password:active {
-	border: 1px solid #0050ff !important}
-
-.glow {box-shadow: 0 0 4px #0050ff !important; outline: 1px solid #0050ff !important}
-
-#main #username {background: transparent !important; border: none !important; color: #c30 !important}
-
-#lpexpandimg, #lpcollapseimg, #advsettings img, #passwordtoggleimg,
-#upgrade-families-icon img, #try-families-icon img, #siteactions img,
-#formFillView .row .icon {filter: invert(70%) hue-rotate(195deg) !important}
-
-a#cancel, a#login, #helptranslate, #f input#ok, #rememberpasswordyes, #rememberpasswordno, #lpfriendemail, a#lpaddattach {
-  -moz-appearance: none !important;
-  border-radius: 3px !important;
-  background: #666 !important;
-  color: #ddd !important;
-  border: none !important;
-  padding: 0.4em !important}
-
-.optionsDropdown, .optionButton, .toggleButton, .wbtn, .gbtn, .remind-btn, a#bcnd, #moreOptions, #formFillView .row button,
-#hideOptions {
-  background-color: #666 !important;
-  color: #ddd !important;
-  border: none !important}
-
-.row.advanced-background label {color: #fff !important}
-
-.row.advanced-background, .col-12:not(#headerContainer) {background-color: #505050 !important}
-
-.itemButton, #dynheader, #sortOrderMenu, #orderOption, #actions {background-color: #666 !important; border: none !important}
-.itemButton:hover, #container .header {background-color: #333 !important}
-
-.tile .itemButton, .actionButtonContainer .itemButton, .itemButtons .history, .dialogItemButtons .itemButton:not(.favButtonLabel) {
-	background-color: #ddd !important;
-	filter: invert(80%) brightness(150%) grayscale(100%) !important}
-
-.tile .itemButton:hover, .actionButtonContainer .itemButton:hover, .itemButtons .history:hover, 
-.dialogItemButtons .itemButton:not(.favButtonLabel):hover {
-	background-color: #bbb !important}
-
-.list .itemButton {background-color: #777 !important}
-
-.list .itemButton:hover, .dialogItemButtons .favButtonLabel:hover {background-color: #888 !important}
-
-.dialogInputOverlay {background-color: rgba(0,0,0,0.5) !important}
-
-#helptranslate, #dynbody {background: #888 !important}
-
-button#cancel {padding: 0.6em !important; background-color: #777 !important}
-
-button#createaccountbtn, a#login, a#createanaccount, #loginView #logInButton {background: #d32d27 !important; color: #fff !important}
-
-#addAttachmentButton, #sortOrderMenu li, #contextMenu li, #extensionDropdown .header div:hover {background-color: #666 !important; color: #ddd !important}
-#addAttachmentButton:hover, #sortOrderMenu li:hover, .dialogHeader.dialogHeaderButtonsEnabled.titleEnabled, a#lpaddattach:hover,
-#contextMenu li:hover, .optionsDropdown:hover, .optionButton:hover, .toggleButton:hover, a#bcnd:hover, #moreOptions:hover, #hideOptions:hover {
-	background-color: #333 !important; 
-	color: #fff !important}
-
-a#cancel:hover, a#login:hover, #helptranslate:hover, #rememberpasswordyes:hover, #rememberpasswordno:hover, #lpfriendemail:hover,
-#collapseAllToggle:hover, #sizeToggle:hover, #orderOption:hover, .dialog_content input[type="submit"]:hover, #listButton:hover, #gridButton:hover,
-.optionButton.selected, #actions:hover, .wbtn:hover, .gbtn:hover {
-  background-color: #222 !important;
-  color: #fff !important;
-  box-shadow: none !important}
-
-button#createaccountbtn:hover, a#login:hover, #loginView #logInButton:hover {background-color: #af0806 !important}
-
-a#cpwbtnmini {background: none !important; box-shadow: none !important}
-
-#mainMenu a {color: #000 !important}
-
-.tileTable, .siteDialogContent .addSiteFavicon {background: #333 !important}
-}
-
-/*----- OTHER FIXES FOR BETTER LINUX COMPATIBILITY (By DallasBelt) -----*/
-.dialogContent.dialogContentFixed {background: #333 !important}
-
-.addItemCardName, {color: #aaa !important}
-
-.addItemCard:hover {
-  box-shadow: none !important;
-  background-color: #444 !important}
-
-.addItemCard:hover .addItemCardName {color: #fff !important}
-
-#addItemCustomOptionsLabel {color: rgb(209, 47, 46, .6) !important}
-
-#addItemCustomOptionsLabel:hover {color: rgb(209, 47, 46, 1) !important}
-
-.emptyVaultWrapper {background: #444 !important}
-
-#displayGenerateContainer, .extension-dialog, .history-background {background-color: #505050 !important}
-
-.historyTable > thead > tr > th, .historyTable > tbody > tr > td {
-    background-color: #444 !important; 
-    color: #aaa !important;
-    border-bottom: 1px solid #333 !important;}
-
-.history-background {border-top: 1px solid #333 !important}
-
-#showHistory, #clearHistory {color: rgb(255, 255, 255, 0.6) !important}
-
-#showHistory:hover, #clearHistory:hover {color: rgb(255, 255, 255, 1) !important}
-
-.extension-dialog .content .first-col {border-right-color: #333 !important}
-
-.extension-dialog .content #lengthInput {border-bottom: 1px solid #333 !important}
-
-.extension-dialog #generatePasswordDialogDropdownAdvancedOptions input[type=range]::-moz-range-track {background: #333 !important}
-
-.meter{border-color: #333 !important}
-
-#password, #lengthInput {text-align: center !important}
-
-/*fix for dropdown lists on Account Settings (filter on line 915 not applied, commented)*/
-.dialogInput {background-color: #333 !important; color: #ddd !important}
-
-/*fix for dropdown lists on Account Settings (filter on line 1232 not applied, commented)*/
-.newstyle select {background-color: #333 !important}
-
-/*----- MORE POPUP FIXES (By DallasBelt) -----*/
-#searchContainer {background: #333 !important}
-
-.searchInputContainer input {background: #222 !important; color: #ddd !important}
-
-#mainMenu li, #mainMenu li a, .childView {background-color: #666 !important; color: #ddd !important; border: none !important}
-
-#mainMenu li:hover, #mainMenu li a:hover {background-color: #707070 !important}
-
-.omarSpacer {
-    display: none !important}
-
-.feature-omaria .extensionMenuItem.divider, .feature-omaria .extensionMenuItem.hover{border: none !important}
-
-.contextOptionsDropdownElement {background-color: #222 !important; color: #ccc !important}
-
-.contextOptionsDropdownElement:hover {background-color: #333 !important}
-
-/*----- LASTPASS FIXES -----*/
-@-moz-document url-prefix(moz-extension://TYPE-UUID-OF-LASTPASS-HERE/contentScript) {
-html, body {background: transparent !important}
-.arrow-box.a-top, .arrow-box.a-top::before {filter: invert(74%) !important}
-}
-
-/*----- LASTPASS IFRAMES -----*/
-@-moz-document url-prefix(https://lastpass.com/sites_overview.php) {
-html, #firsttop {background: #444 !important; color: #ccc !important}
-
-#custombord {background: #555 !important}
-
-#tilesinner img {filter: invert(70%) saturate(0) !important}
-
-#tilesinner img:hover {filter: invert(70%) hue-rotate(190deg) !important}
-
-.heading, .redtxt {color: #f55 !important}
-
-#step1, #step2 {color: #777 !important}
-
-#step1.selected, #step2.selected {color: #bbb !important}
-
-#custompage2 {color: #ccc !important}
-}
-
-@-moz-document url-prefix(https://lastpass.com/acctsiframe.php) {
-.tablabels, .settabdesc, .setbody, .setbottomdiv, .dialog_content {
-	background: #555 !important; 
-	color: #ccc !important}
-
-a:link, a, .tablabel.tabactive, .emptyarr, #myaccount, #paymenthistory, #emailsubs, #googleauthbarcode2,
-#googleauthbarcode, #googleauthview, #googleauthregenerate {color: #f55 !important}
-a:hover, #myaccount:hover, #paymenthistory:hover, #emailsubs:hover, #googleauthbarcode2:hover,
-#googleauthbarcode:hover, #googleauthview:hover, #googleauthregenerate:hover {color: #f88 !important}
-a:active {color: #c30 !important}
-
-.tablabels {border-color: #666 !important}
-
-.row.advanced-background label {color: #fff !important}
-
-.row.advanced-background, .col-12:not(#headerContainer) {background-color: #505050 !important}
-
-.settabdesc, .setbody, .setbottomdiv {border-color: #ddd !important}
-
-/* select {filter: invert(81%) hue-rotate(170deg) !important; color: #000 !important} */
-
-.wbtn, .btn_midi.gray {
-  border-radius: 3px !important;
-  background-color: #666 !important;
-  color: #ddd !important;
-  border: none !important}
-
-.nbtn {color: #fff !important}
-
-button {border: none !important}
-
-.wbtn:hover, .btn_midi.gray:hover {background-color: #222 !important; color: #fff !important}
-
-.x-panel-tl, .x-panel-tr, .x-panel-tc, .x-panel-header {
-	background: #444 !important; 
-	color: #fff !important;
-	border: none !important}
-
-.x-panel-nofooter, .x-toolbar, .x-panel-ml, .x-panel-mr, .x-panel-mc,
-.x-panel-bl, .x-panel-br, .x-panel-bc, #ext-gen45, .x-layer.x-menu, .x-date-bottom,
-.x-date-inner th, .x-date-mp-btns {background: #666 !important; border: none !important}
-.x-grid3-scroller, .x-panel-body, .x-grid3-viewport, .x-grid3,
-.x-grid3-header, .x-date-inner, .x-date-mp {background: #555 !important; border: none !important}
-
-.x-grid3-hd-row td, .x-grid3-hd-row, .x-menu-sep, .x-grid3-header-offset,
-.x-date-inner span, .x-date-inner a {border: none !important}
-
-.x-grid3-hd.x-grid3-cell, .x-grid3-header-inner,
-.x-btn-with-menu, .x-btn-wrap.x-btn  {background-image: linear-gradient(#666,#333) !important; color: #ccc !important}
-.x-grid3-hd.x-grid3-cell:hover {color: #222 !important}
-
-.x-grid3-row, .x-date-inner td {border: none !important}
-.x-grid3-row:nth-child(even) {background: rgba(0,0,0,0.1) !important}
-.x-grid3-row-over, .x-date-inner a:hover, .x-date-mp-year a:hover,
-.x-date-mp-month a:hover {background: rgba(255,255,255,0.1) !important}
-.x-grid3-row-selected, .x-date-selected a, .x-date-mp-year.x-date-mp-sel a,
-.x-date-mp-month.x-date-mp-sel a {background: rgba(255,255,255,0.2) !important; border: none !important}
-
-.x-menu-list-item  img {filter: invert(100%) hue-rotate(195deg) !important}
-
-.x-menu-list-item a, .x-btn-text, .x-date-inner th, .x-date-inner a, .x-date-mp a {color: #ccc !important}
-.x-menu-list-item a:hover, .x-menu-item-active,
-.x-grid3-hd.x-grid3-cell.x-grid3-td-0.sort-asc, .x-grid3-hd.x-grid3-cell.x-grid3-td-0.sort-desc,
-.x-grid3-hd.x-grid3-cell.x-grid3-td-1.sort-asc, .x-grid3-hd.x-grid3-cell.x-grid3-td-1.sort-desc,
-.x-grid3-hd.x-grid3-cell.x-grid3-td-2.sort-asc, .x-grid3-hd.x-grid3-cell.x-grid3-td-0.sort-desc,
-.x-grid3-hd.x-grid3-cell.x-grid3-td-3.sort-asc, .x-grid3-hd.x-grid3-cell.x-grid3-td-3.sort-desc,
-.x-grid3-hd.x-grid3-cell.x-grid3-td-4.sort-asc, .x-grid3-hd.x-grid3-cell.x-grid3-td-4.sort-desc,
-.x-grid3-hd.x-grid3-cell.x-grid3-td-5.sort-asc, .x-grid3-hd.x-grid3-cell.x-grid3-td-5.sort-desc {color: #222 !important}
-
-.x-paging-info {background: transparent !important; color: #fff !important}
-
-input:not([type="checkbox"]):not([type="radio"]):not([type="submit"]), textarea, #sharedfoldername, #startinput,
-#endinput {
-	-moz-appearance: none !important; 
-	background: #323232 !important; 
-	color: #ddd !important;
-	border: 1px solid #666 !important}
-
-.gbtn {
-  -moz-appearance: none !important;
-  border-radius: 3px !important;
-  background: #666 !important;
-  color: #ddd !important;
-  border: none !important;
-  padding: 0.4em !important}
-
-.gbtn:hover {
-  background-color: #222 !important;
-  color: #fff !important}
-
-p {color: #ccc !important}
-
-.settable {color: #ccc !important; border-color: #666 !important}
-
-.settable tr:nth-child(odd):not(th) {
-	background-color: #606060 !important}
-
-.settable tr:nth-child(even) {background-color: #505050 !important}
-}
-
-@-moz-document url-prefix(https://lastpass.com/ads.php) {
-html, body {background: #444 !important}
-}
-
-@-moz-document url-prefix(https://lastpass.com/formfill_overview.php), url-prefix(https://lastpass.com/share_overview.php),
-url-prefix(https://lastpass.com/enterprise_overview2.php) {
-html, #content, .clearfix, body, br {background: #444 !important}
-
-p {color: #ccc !important}
-
-img {filter: invert(70%) hue-rotate(190deg)}
 }
 
 /*------ MULTI-ACCOUNTS CONTAINER ADDON ------*/
@@ -1552,6 +1204,23 @@ input[type="text"][disabled] {color: #aaa !important}
 	cursor: pointer !important}
 
 #update-channels-warning {background: #533 !important}
+
+/* Checkbox coloring */
+input[type="checkbox"] {
+  -moz-appearance: none !important;
+  border: 1px solid #666 !important;
+  background-color: #444 !important;
+  transition: color 0.3s;
+  min-width: 16px;
+  min-height: 16px;
+  margin-bottom: 0 !important}
+
+input[type="checkbox"]:not([disabled]):hover {
+  box-shadow: 0 0 4px #0084ff !important;
+  border-color: #0084ff !important}
+
+input[type="checkbox"]:checked {
+  background: #444 url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="15px" height="15px" viewBox="0 0 16 16" ><path fill="rgb(200,200,200)" d="M 13.09,2.87 C 13.09,2.87 6.00,11.00 6.00,11.00 6.00,11.00 2.00,9.00 2.00,9.00 4.25,12.81 7.00,14.00 7.00,14.00 9.24,10.42 12.04,7.39 13.09,2.87 Z" /></svg>') no-repeat center center !important}
 }
 
 /*------ ONETAB ADDON ------*/
@@ -1578,6 +1247,23 @@ textarea {
 	border: 1px solid #555 !important}
 
 label::before {filter: invert(81%) hue-rotate(170deg)}
+
+/* Checkbox coloring */
+input[type="checkbox"] {
+  -moz-appearance: none !important;
+  border: 1px solid #666 !important;
+  background-color: #444 !important;
+  transition: color 0.3s;
+  min-width: 16px;
+  min-height: 16px;
+  margin-bottom: 0 !important}
+
+input[type="checkbox"]:not([disabled]):hover {
+  box-shadow: 0 0 4px #0084ff !important;
+  border-color: #0084ff !important}
+
+input[type="checkbox"]:checked {
+  background: #444 url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="15px" height="15px" viewBox="0 0 16 16" ><path fill="rgb(200,200,200)" d="M 13.09,2.87 C 13.09,2.87 6.00,11.00 6.00,11.00 6.00,11.00 2.00,9.00 2.00,9.00 4.25,12.81 7.00,14.00 7.00,14.00 9.24,10.42 12.04,7.39 13.09,2.87 Z" /></svg>') no-repeat center center !important}
 }
 
 
@@ -1622,10 +1308,23 @@ input[type="text"], input[type="color"]{
 	background-color: #444 !important;
 	color: #fff !important}
 
-/* Delete this if you are using the checkboxes.ac.css file to invert the color of dropdown menus */
-select, input[type="number"] {
+input[type="number"] {
 	background: #222 !important;
 	outline-color: #555 !important}
+
+/* Select boxes coloring */
+select {
+  -moz-appearance: none !important;
+  background: #555 url("data:image/svg+xml;charset=utf-8,%3Csvg width='11' height='7' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M434.574 488L430.5 492.147 426.428 488 425 489.399 430.5 494.999 436 489.399z' transform='translate(-425 -488)' fill='%23cccccc' fill-rule='evenodd'/%3E%3C/svg%3E") no-repeat calc(100% - 5px) 50% !important;
+  border: none !important;
+  padding: 3px 10px 3px 3px;
+  color: #ccc !important}
+
+select:hover {
+  background: #333 url("data:image/svg+xml;charset=utf-8,%3Csvg width='11' height='7' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M434.574 488L430.5 492.147 426.428 488 425 489.399 430.5 494.999 436 489.399z' transform='translate(-425 -488)' fill='%23cccccc' fill-rule='evenodd'/%3E%3C/svg%3E") no-repeat calc(100% - 5px) 50% !important;
+  color: #fff !important}
+
+select .menulist-dropmarker {display: none}
 }
 
 /*------ POPUP BLOCKER ULTIMATE ADDON ------*/
