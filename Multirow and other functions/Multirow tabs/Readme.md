@@ -24,7 +24,3 @@ toolbarbutton#alltabs-button {
 
 <h3>MultiRowTab-scrollable-autohide.uc.js</h3>
 <p>Works with Firefox 66+. This version is the same as scrollable multirow, except the scrollbars are only shown when you hover over the tabs area. It fixes some very specific issue when loading a session restore and loading a page in a session-restored blank page.</p>
-
-<h3>MultiRowTab*Fx65.uc.js</h3>
-<p>The old Firefox 65 versions. Only use if you still havent updated to Firefox 66+.</p> 
-<h3>If you are using Firefox stable (version 66), do NOT use the Fx65 version, since it will display tabs wrong.</h3>

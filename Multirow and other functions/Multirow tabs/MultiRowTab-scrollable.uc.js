@@ -5,6 +5,7 @@
 // @include        main
 // @compatibility  Firefox 67
 // @author         Alice0775, Endor8, TroudhuK, Izheil
+// @version        23/03/2019 08:30 Variables to set min-width of tabs
 // @version        09/03/2019 15:38 Fixed compatibility issue with Tab Session Manager addon
 // @version        18/02/2019 20:46 Tab line not being fully shown on maximized or fullscreen
 // @version        03/02/2019 15:15 Firefox 67
@@ -20,13 +21,18 @@
 function zzzz_MultiRowTabLite() {
     var css =`
     /* MULTIROW TABS CSS */
-    /* You can set the max number of rows before the scrollbar appears here */
+    /* You can set the max number of rows before the scrollbar appears here
+       For tab growth v 
+        Value of 1 -> Tab grows. Fixed max width of 226px.
+        Value of 0 -> Tab doesn't grow. Uses min tab width as fixed width. */
     :root {
-        --max-tab-rows: 3;}
+        --max-tab-rows: 3;
+        --min-tab-width: 100px;
+        --tab-growth: 1}
 
     .tabbrowser-tab:not([pinned]) {
-        flex-grow: 1;
-        min-width: 100px !important}
+        flex-grow: var(--tab-growth);
+        min-width: var(--min-tab-width) !important}
 
     .tabbrowser-tab::after {border: none !important}
 
