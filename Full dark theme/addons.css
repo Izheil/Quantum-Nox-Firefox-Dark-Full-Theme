@@ -1,6 +1,6 @@
 /* You can find an updated version here: https://github.com/Izheil/Quantum-Nox-Firefox-Dark-Full-Theme */
 /* Made by Izheil */
-/* Last updated: 22/03/2019 */
+/* Last updated: 23/03/2019 */
 
 /*------ HOW TO MAKE THE ADDON THEMES WORK ------*/
 /* To use this part of the code, you will have to find the dynamic UUID of your extensions, and replace it where the 
@@ -1681,4 +1681,36 @@ input[type="checkbox"]:checked + .checkbox {
 
 input[type="checkbox"] + .checkbox:hover {
 	border-color: #888 !important}
+}
+
+/*------ HISTORY AND COOKIE AUTODELETE ADDONS ------*/
+@-moz-document url-prefix(moz-extension://HISTORY-AUTODELETE-ADDON-UUID-GOES-HERE/),
+url-prefix(moz-extension://COOKIE-AUTODELETE-ADDON-UUID-GOES-HERE/) {
+#layout, body {background: #15181d !important; color: #ccc !important}
+
+h2, h1 {color: #fff !important}
+
+label::before {filter: invert(90%)}
+
+.btn.btn-light, .nav-link.active, .alert.alert-primary {
+	background: #2b323b !important; 
+	border-color: #20252c !important;
+	color: #fff !important}
+
+.btn.btn-light path {fill: #ddd !important}
+.btn.btn-light:hover {background: #20252c !important}
+
+.row.nav.nav-tabs {border-color: #20252c !important}
+
+.form-control, #formText {background: #26292e !important; color: #ccc !important}
+.form-control:not(focus), #formText:not(focus) {border-color: #37403f !important}
+
+.table-striped > tbody > tr:nth-of-type(2n+1) {background: #222 !important}
+.table-striped > tbody > tr:hover {background: #26292e !important}
+
+.table-bordered, .table-bordered > tbody > tr > td, .table-bordered > tbody > tr > th, 
+.table-bordered > tfoot > tr > td, .table-bordered > tfoot > tr > th, .table-bordered > thead > tr > td, 
+.table-bordered > thead > tr > th {border-color: #37403f !important}
+
+label:hover {background: rgba(255,255,255,0.1) !important}
 }

@@ -10,7 +10,12 @@ basic css or <a href="https://www.w3schools.com/colors/colors_picker.asp">color 
 <br />
 This problem doesn't happen if you use a code editor such as notepad++, atom, sublime text...</h4>
 
-<h3>Last update: <b>22/03/2019</b></h3>
+<h3>Last update: <b>23/03/2019</b></h3>
+<p>Files updated:</p>
+<ul>
+  <li><b>Addons.css</b>: Themed <a href="https://addons.mozilla.org/es/firefox/addon/history-autodelete/">History autodelete</a> and <a href="https://addons.mozilla.org/es/firefox/addon/cookie-autodelete/">Cookie autodelete</a> addons</li>
+</ul>
+<h3>Pre-Last update: <b>21/03/2019</b></h3>
 <p>Files updated:</p>
 <ul>
   <li><b>Quantum Nox - Global dark style.user.css</b>: Minor fixes to fill checkbox images and align them with their label</li>
@@ -18,13 +23,6 @@ This problem doesn't happen if you use a code editor such as notepad++, atom, su
   <li><b>UserContent.css</b>: Applied the checkboxes, radios, and select boxes fixes on <code>about:</code> pages and firefox addon and support pages.</li>
   <li><b>Addons.css</b>: Themed the checkboxes on all addons, and minor fixes on the dark themes of Ublock, Privacy badger, Tab Session Manager and Flash video downloader.</li>
   <li><b>Checkboxes.as.css</b>: Removed due to not being necesary anymore.</li>
-</ul>
-<h3>Pre-Last update: <b>21/03/2019</b></h3>
-<p>Files updated:</p>
-<ul>
-  <li><b>Global dark userstyle</b>: You can now install a global dark style to use with general sites (you still should use specific per-site userstyles with sites you visit often with stylus).</li>
-  <li><b>UserChrome.css</b>: Fixed the Firefox version dialog, and deleted some obsolete code.</li>
-  <li><b>UserContent.css</b>: Made the colors on Firefox addons page more in-tone with the rest of the theme. Added small fixes on Firefox Support page.</li>
 </ul>
 
 <code>
@@ -114,6 +112,8 @@ This problem doesn't happen if you use a code editor such as notepad++, atom, su
 	<li><a href="https://addons.mozilla.org/en-US/firefox/addon/gmail-notifier-restartless/">Notifier for Gmail (restartless)</a></li>
 	<li><a href="https://addons.mozilla.org/en-US/firefox/addon/popup-blocker-ultimate/">Popup Blocker Ultimate</a></li>
 	<li><a href="https://addons.mozilla.org/es/firefox/addon/viewhance/">Viewhance</a></li>
+	<li><a href="https://addons.mozilla.org/es/firefox/addon/history-autodelete/">History autodelete</a></li>
+	<li><a href="https://addons.mozilla.org/es/firefox/addon/cookie-autodelete/">Cookie autodelete</a></li>
 </ul>
 
 <h3>The scrollbars</h3>
