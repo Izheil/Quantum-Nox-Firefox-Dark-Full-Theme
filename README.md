@@ -13,7 +13,7 @@ This problem doesn't happen if you use a code editor such as notepad++, atom, su
 <h3>Last update: <b>23/03/2019</b></h3>
 <p>Files updated:</p>
 <ul>
-  <li><b>Addons.css</b>: Themed <a href="https://addons.mozilla.org/es/firefox/addon/history-autodelete/">History autodelete</a> and <a href="https://addons.mozilla.org/es/firefox/addon/cookie-autodelete/">Cookie autodelete</a> addons</li>
+  <li><b>Addons.css</b>: Themed <a href="https://addons.mozilla.org/es/firefox/addon/history-autodelete/">History autodelete</a> and <a href="https://addons.mozilla.org/es/firefox/addon/cookie-autodelete/">Cookie autodelete</a> addons. Also reordered addons alphabetically inside the file.</li>
   <li><b>MultirowTab*.uc.js</b>: Deleted FF65 versions. Added a comment on how to change the tab min width inside <code>about:config</code>.</li>
 </ul>
 <h3>Pre-Last update: <b>21/03/2019</b></h3>
@@ -96,25 +96,23 @@ This problem doesn't happen if you use a code editor such as notepad++, atom, su
 <img src="https://i.imgur.com/m7TGyqz.png" title="Dark addons" />
 <p>Here is a list of the themed addons:</p>
 <ul>
-	<li><a href="https://addons.mozilla.org/es/firefox/addon/ublock-origin/">Ublock Origin</a></li>
-	<li><a href="https://addons.mozilla.org/es/firefox/addon/video-downloadhelper/">Video Download Helper</a></li> 
-	<li><a href="https://addons.mozilla.org/es/firefox/addon/flash-video-downloader/">Flash Video Downloader</a></li>
-	<li><a href="https://addons.mozilla.org/es/firefox/addon/tab-session-manager/">Tab session manager</a></li>
-	<li><a href="https://addons.mozilla.org/es/firefox/addon/undo-closed-tabs-revived/">Undo closed tabs button</a></li>
-	<li><a href="https://addons.mozilla.org/es/firefox/addon/s3download-statusbar/">Download Manager (S3)</a></li>
-	<li><a href="https://addons.mozilla.org/es/firefox/addon/privacy-badger17/">Privacy badger</a></li>
-	<li><a href="https://addons.mozilla.org/es/firefox/addon/noscript/">Noscript</a></li>
-	<li><a href="https://addons.mozilla.org/en-US/firefox/addon/window-resize/">Window resize</a></li>
-	<li><a href="https://addons.mozilla.org/es/firefox/addon/s3google-translator/">S3 Translator</a></li>
-	<li><a href="https://addons.mozilla.org/es/firefox/addon/multi-account-containers/">Multi-accounts containers</a></li>
-	<li><a href="https://addons.mozilla.org/es/firefox/addon/temporary-containers/">Temporary containers</a></li>
-	<li><a href="https://addons.mozilla.org/es/firefox/addon/https-everywhere/">HTTPS Everywhere</a></li>
-	<li><a href="https://addons.mozilla.org/es/firefox/addon/onetab/">OneTab</a></li>
-	<li><a href="https://addons.mozilla.org/en-US/firefox/addon/gmail-notifier-restartless/">Notifier for Gmail (restartless)</a></li>
-	<li><a href="https://addons.mozilla.org/en-US/firefox/addon/popup-blocker-ultimate/">Popup Blocker Ultimate</a></li>
-	<li><a href="https://addons.mozilla.org/es/firefox/addon/viewhance/">Viewhance</a></li>
-	<li><a href="https://addons.mozilla.org/es/firefox/addon/history-autodelete/">History autodelete</a></li>
 	<li><a href="https://addons.mozilla.org/es/firefox/addon/cookie-autodelete/">Cookie autodelete</a></li>
+	<li><a href="https://addons.mozilla.org/es/firefox/addon/s3download-statusbar/">Download Manager (S3)</a></li>
+	<li><a href="https://addons.mozilla.org/es/firefox/addon/flash-video-downloader/">Flash Video Downloader</a></li>
+	<li><a href="https://addons.mozilla.org/es/firefox/addon/history-autodelete/">History autodelete</a></li>
+	<li><a href="https://addons.mozilla.org/es/firefox/addon/https-everywhere/">HTTPS Everywhere</a></li>
+	<li><a href="https://addons.mozilla.org/es/firefox/addon/noscript/">Noscript</a></li>
+	<li><a href="https://addons.mozilla.org/en-US/firefox/addon/gmail-notifier-restartless/">Notifier for Gmail (restartless)</a></li>
+	<li><a href="https://addons.mozilla.org/es/firefox/addon/multi-account-containers/">Multi-accounts containers</a></li>
+	<li><a href="https://addons.mozilla.org/es/firefox/addon/onetab/">OneTab</a></li>
+	<li><a href="https://addons.mozilla.org/en-US/firefox/addon/popup-blocker-ultimate/">Popup Blocker Ultimate</a></li>
+	<li><a href="https://addons.mozilla.org/es/firefox/addon/privacy-badger17/">Privacy badger</a></li>
+	<li><a href="https://addons.mozilla.org/es/firefox/addon/tab-session-manager/">Tab session manager</a></li>
+	<li><a href="https://addons.mozilla.org/es/firefox/addon/temporary-containers/">Temporary containers</a></li>
+	<li><a href="https://addons.mozilla.org/es/firefox/addon/ublock-origin/">Ublock Origin</a></li>
+	<li><a href="https://addons.mozilla.org/es/firefox/addon/undo-closed-tabs-revived/">Undo closed tabs button</a></li>
+	<li><a href="https://addons.mozilla.org/es/firefox/addon/video-downloadhelper/">Video Download Helper</a></li> 
+	<li><a href="https://addons.mozilla.org/es/firefox/addon/viewhance/">Viewhance</a></li>
 </ul>
 
 <h3>The scrollbars</h3>

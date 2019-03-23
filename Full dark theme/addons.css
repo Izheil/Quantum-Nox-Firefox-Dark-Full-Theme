@@ -10,6 +10,887 @@ To find the UUID of an extension, just open about:debugging, and the UUID of eac
 If you did everything right, next time you start (or restart) firefox, the addon will be themed 
 (Each addon has a different UUID, and the UUID of an addon can also change if you uninstall and reinstall it). */
 
+/*------ COOKIE AND HISTORY AUTODELETE ADDONS ------*/
+@-moz-document url-prefix(moz-extension://HISTORY-AUTODELETE-ADDON-UUID-GOES-HERE/),
+url-prefix(moz-extension://COOKIE-AUTODELETE-ADDON-UUID-GOES-HERE/) {
+#layout, body {background: #15181d !important; color: #ccc !important}
+
+h2, h1 {color: #fff !important}
+
+label::before {filter: invert(90%)}
+
+.btn.btn-light, .nav-link.active, .alert.alert-primary {
+	background: #2b323b !important; 
+	border-color: #20252c !important;
+	color: #fff !important}
+
+.btn.btn-light path {fill: #ddd !important}
+.btn.btn-light:hover {background: #20252c !important}
+
+.row.nav.nav-tabs {border-color: #20252c !important}
+
+.form-control, #formText {background: #26292e !important; color: #ccc !important}
+.form-control:not(focus), #formText:not(focus) {border-color: #37403f !important}
+
+.table-striped > tbody > tr:nth-of-type(2n+1) {background: #222 !important}
+.table-striped > tbody > tr:hover {background: #26292e !important}
+
+.table-bordered, .table-bordered > tbody > tr > td, .table-bordered > tbody > tr > th, 
+.table-bordered > tfoot > tr > td, .table-bordered > tfoot > tr > th, .table-bordered > thead > tr > td, 
+.table-bordered > thead > tr > th {border-color: #37403f !important}
+
+label:hover {background: rgba(255,255,255,0.1) !important}
+}
+
+/*------ DOWNLOAD MANAGER (S3) ADDON CONFIGURATION PAGE ------*/
+@-moz-document url-prefix(moz-extension://TYPE-UUID-OF-DOWNLOAD-MANAGER-(S3)-HERE/content/options.html),
+url-prefix(moz-extension://TYPE-UUID-OF-DOWNLOAD-MANAGER-(S3)-HERE/content/create_new_downloads.html) {
+body, html {background: #222 !important; color: #fff !important}
+
+#tabsBox .tabsBox {background: #333 !important; border: 1px solid #555 !important}
+
+#tabs a:not(.selected) {background-color: #383838 !important; color: #aaa !important}
+
+#tabs a.selected, #generalTab, #appearanceTab, #virusScanTab,
+#download_historyTab, .caption span {background-color: #444 !important; color: #ddd !important}
+
+#tabs-generalTab a:not(.selected), #appearanceTab a:not(.selected) 
+{background-color: #505050 !important; color: #aaa !important}
+
+#tabs-generalTab a.selected, #generalTab--features, #generalTab--statusMode, #generalTab--queue,
+#tabs-appearanceTab a.selected, #appearanceTab--style, #appearanceTab--layout, #generalTab--contextMenu
+{background-color: #555 !important; color: #ddd !important; border: none !important}
+
+.groupbox {border: 1px solid #666 !important; box-shadow: 0 0 10px #000 !important}
+.groupbox:hover:not([disabled]) {border: 1px solid #AF5CCB !important; box-shadow: 0 0 10px #712a89 !important}
+
+.groupbox a:link, .groupbox a {color: #09f !important}
+.groupbox a:visited {color: #0070aa !important}
+.groupbox a:hover {color: #0ff !important}
+.groupbox a:active {color: #0050aa !important}
+
+input:not([type="number"]):not([type="checkbox"]):not([type="button"]):not([type="radio"]), textarea {
+	-moz-appearance: none !important; 
+	background: #323232 !important; 
+	color: #ddd !important;
+	border: 1px solid #666 !important}
+
+#customStyle_form table.table_colors tr {background: none !important}
+
+#customStyle_form .table_colors input:hover,
+#appearanceTab--layout input[type="color"]:hover {border: 1px solid #fff !important}
+
+#current_locale {border: 1px solid #666 !important}
+	
+.caption > div {
+	border-radius: 6px !important; 
+	background: #666 !important; 
+	border: none !important}
+
+#exclude_links_placeholder > div, 
+#exclude_links_placeholder {border: none !important; background: none !important}
+
+button, input[type="button"] {  
+  -moz-appearance: none !important;
+  border-radius: 3px !important;
+  background-color: #666 !important;
+  color: #ddd !important;
+  border: none !important}
+
+button:hover, input[type="button"]:hover {  
+  background-color: #222 !important;
+  color: #fff !important;
+  box-shadow: none !important}
+
+#save_settings, #copy_settings, #load_settings, 
+#reset_settings {padding: 0.5em !important}
+
+/* Checkbox coloring */
+input[type="checkbox"] {
+  -moz-appearance: none !important;
+  border: 1px solid #666 !important;
+  background-color: #444 !important;
+  transition: color 0.3s;
+  min-width: 16px;
+  min-height: 16px;
+  margin-bottom: 0 !important}
+
+input[type="checkbox"]:not([disabled]):hover {
+  box-shadow: 0 0 4px #0084ff !important;
+  border-color: #0084ff !important}
+
+input[type="checkbox"]:checked {
+  background: #444 url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="15px" height="15px" viewBox="0 0 16 16" ><path fill="rgb(200,200,200)" d="M 13.09,2.87 C 13.09,2.87 6.00,11.00 6.00,11.00 6.00,11.00 2.00,9.00 2.00,9.00 4.25,12.81 7.00,14.00 7.00,14.00 9.24,10.42 12.04,7.39 13.09,2.87 Z" /></svg>') no-repeat center center !important}
+
+/* Select boxes coloring */
+select {
+  -moz-appearance: none !important;
+  background: #555 url("data:image/svg+xml;charset=utf-8,%3Csvg width='11' height='7' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M434.574 488L430.5 492.147 426.428 488 425 489.399 430.5 494.999 436 489.399z' transform='translate(-425 -488)' fill='%23cccccc' fill-rule='evenodd'/%3E%3C/svg%3E") no-repeat calc(100% - 5px) 50% !important;
+  border: none !important;
+  padding: 3px 10px 3px 3px;
+  color: #ccc !important}
+
+select:hover {
+  background: #333 url("data:image/svg+xml;charset=utf-8,%3Csvg width='11' height='7' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M434.574 488L430.5 492.147 426.428 488 425 489.399 430.5 494.999 436 489.399z' transform='translate(-425 -488)' fill='%23cccccc' fill-rule='evenodd'/%3E%3C/svg%3E") no-repeat calc(100% - 5px) 50% !important;
+  color: #fff !important}
+
+select .menulist-dropmarker {display: none}
+}
+
+/*------ DOWNLOAD MANAGER (S3) ADDON DOWNLOADS HISTORY PAGE ------*/
+@-moz-document url-prefix(moz-extension://TYPE-UUID-OF-DOWNLOAD-MANAGER-(S3)-HERE/content/download_history.html),
+url-prefix(moz-extension://TYPE-UUID-OF-DOWNLOAD-MANAGER-(S3)-HERE/content/file_checksum.html) {
+body, html {background: #333 !important; color: #fff !important}
+
+#download_action_head {background: linear-gradient(#333, #111) !important}
+
+#download_action_head input[type="button"] {
+  -moz-appearance: none !important;
+  border-radius: 3px !important;
+  background-color: #111 !important;
+  color: #ddd !important;
+  border: none !important}
+
+#download_action_head input[type="button"]:hover {
+  background-color: #555 !important;
+  color: #fff !important}
+
+#s3downbar_searchbox {
+	-moz-appearance: none !important; 
+	background: #323232 !important; 
+	color: #ddd !important;
+	border: 1px solid #666 !important}
+
+#download_list_head {background: linear-gradient(#333, #555) !important}
+
+#download_list_head, #download_list_head div {border-color: #222 !important}
+
+.progress_bar[value] {background-color: #333 !important}
+
+#download_list_box:not([start_draw="true"]) .grid_rows[is_selected="true"] {
+	background-color: rgba(32, 96, 32, 0.3) !important;
+	color: #53c653 !important}
+
+#download_list_box:not([start_draw="true"]) .grid_rows:hover {
+	background-color: rgba(255,255,255, 0.25) !important}
+
+#s3downbar-ibmbeeacmbeeaebmfjpmnlgkhoejinha .contextmenu_box {
+	border: 1px solid #000 !important;
+	background: #444 !important;
+	color: #ddd !important;
+	box-shadow: 0 0 10px #000 !important}
+
+#s3downbar-ibmbeeacmbeeaebmfjpmnlgkhoejinha .contextmenu_box .contextmenu_menu:hover {
+	background-color: #555 !important;
+	color: #fff !important}
+
+/* Checkbox coloring */
+input[type="checkbox"] {
+  -moz-appearance: none !important;
+  border: 1px solid #666 !important;
+  background-color: #444 !important;
+  transition: color 0.3s;
+  min-width: 16px;
+  min-height: 16px;
+  margin-bottom: 0 !important}
+
+input[type="checkbox"]:not([disabled]):hover {
+  box-shadow: 0 0 4px #0084ff !important;
+  border-color: #0084ff !important}
+
+input[type="checkbox"]:checked {
+  background: #444 url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="15px" height="15px" viewBox="0 0 16 16" ><path fill="rgb(200,200,200)" d="M 13.09,2.87 C 13.09,2.87 6.00,11.00 6.00,11.00 6.00,11.00 2.00,9.00 2.00,9.00 4.25,12.81 7.00,14.00 7.00,14.00 9.24,10.42 12.04,7.39 13.09,2.87 Z" /></svg>') no-repeat center center !important}
+}
+
+/*------ DOWNLOAD MANAGER (S3) ADDON DOWNLOADS POPUP ------*/
+@-moz-document url-prefix(moz-extension://TYPE-UUID-OF-DOWNLOAD-MANAGER-(S3)-HERE/content/popup.html) {
+#s3downbar-ibmbeeacmbeeaebmfjpmnlgkhoejinha:not(.s3dmBox) {background-color: #333 !important; color: #fff !important}
+#s3downbar_hide_button, #s3downbar_main_menu_button, #s3downbar_clear_button,
+#s3downbar_holder_summary_progress {
+	background-color: #000 !important; 
+	color: #fff !important;
+	border-color: #222 !important}
+
+#s3downbar-ibmbeeacmbeeaebmfjpmnlgkhoejinha .contextmenu_box {
+	border: 1px solid #000 !important;
+	background: #444 !important;
+	color: #ddd !important;
+	box-shadow: 0 0 10px #000 !important}
+
+#s3downbar-ibmbeeacmbeeaebmfjpmnlgkhoejinha .contextmenu_box .contextmenu_menu:hover {
+	background-color: #555 !important;
+	color: #fff !important}
+}
+
+/*------ DOWNLOAD MANAGER (S3) ADDON INFORMATION BOTTOM BAR ------*/
+@-moz-document url-prefix(http), url-prefix(moz-extension://) {
+#s3downbar-ibmbeeacmbeeaebmfjpmnlgkhoejinha .tooltip_box {
+	background: linear-gradient(#333, #666) !important;
+	color: #ddd !important;
+	border: 1px solid #444 !important}
+
+#s3downbar-ibmbeeacmbeeaebmfjpmnlgkhoejinha .contextmenu_box {
+	border: 1px solid #000 !important;
+	background: #444 !important;
+	color: #ddd !important;
+	box-shadow: 0 0 10px #000 !important}
+
+#s3downbar-ibmbeeacmbeeaebmfjpmnlgkhoejinha .contextmenu_box .contextmenu_menu:hover {
+	background-color: #555 !important;
+	color: #fff !important}
+
+#s3downbar_download_tooltip_data_box > .download_data_tooltip_data > tbody > tr > td > div,
+#s3downbar_download_tooltip_filename {
+	color: #fff !important}
+
+#s3downbar_download_data_list_empty, #s3downbar_download_tooltip_hint_finish,
+#s3downbar_download_tooltip_hint_progress {color: #aaa !important}
+
+#s3downbar_download_tooltip_from {background-color: #333 !important; color: #05f !important}
+}
+
+/*------ FLASH VIDEO DOWNLOADER (youtube) ADDON OPTIONS PANEL------*/
+@-moz-document url(moz-extension://TYPE-UUID-OF-FLASH-VIDEO-DOWNLOADER-HERE/options.html) {
+body {background-color: #222 !important}
+
+.white_area, #showMain.fvd_settings_container, .options {background-color: #444 !important}
+.white_area {background-image: none !important}
+
+.fvd_settings_title, .fvd_settings_description, 
+.fvd_settings_fvd_description, span {color: #ccc !important}
+
+#masterHead {background: #555 !important; color: #ccc !important}
+
+#donateDownloadNative span {color: #fff !important}
+
+h2 {color: #FFF !important}
+
+/* Checkbox coloring */
+input[type="checkbox"] {
+  -moz-appearance: none !important;
+  border: 1px solid #666 !important;
+  background-color: #444 !important;
+  transition: color 0.3s;
+  min-width: 16px;
+  min-height: 16px;
+  margin-bottom: 0 !important}
+
+input[type="checkbox"]:not([disabled]):hover {
+  box-shadow: 0 0 4px #0084ff !important;
+  border-color: #0084ff !important}
+
+input[type="checkbox"]:checked {
+  background: #444 url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="15px" height="15px" viewBox="0 0 16 16" ><path fill="rgb(200,200,200)" d="M 13.09,2.87 C 13.09,2.87 6.00,11.00 6.00,11.00 6.00,11.00 2.00,9.00 2.00,9.00 4.25,12.81 7.00,14.00 7.00,14.00 9.24,10.42 12.04,7.39 13.09,2.87 Z" /></svg>') no-repeat center center !important}
+}
+
+/*------ FLASH VIDEO DOWNLOADER (youtube) ADDON POPUP ------*/
+@-moz-document url(moz-extension://TYPE-UUID-OF-FLASH-VIDEO-DOWNLOADER-HERE/popup.html) {
+
+body, .multiple_download_header, #filters_block,
+#snifferNotice {background-color: #333 !important}
+
+#download_container_wrapped, #download_item_container {background-color: #333 !important; color: #ccc !important}
+
+.download_item.group-video:hover {background-color: #444 !important}
+.download_group_item_wrapped:hover {background-color: #555 !important}
+
+#help_link_help {display: none !important}
+
+#help_link_folder {
+	background: linear-gradient(#333, #111) !important; 
+	color: #ccc !important;
+	border: 1px solid #000 !important}
+#help_link_folder:hover {background: linear-gradient(#111, #333) !important}
+
+h2, .group_download_title {color: #fff !important}
+
+.downloader_check_block {filter: invert(80%)}
+
+.downloader_filter_title, .downloader_check_text, .textEmptyNotice {color: #CCC !important}
+
+#footer_container, #header_container {background-color: #222 !important}
+
+#footer_container {border-top: 2px solid #000 !important}
+
+.footer .footer-item {color: #fff !important}
+.footer .footer-item:hover {background: #444 !important}
+}
+
+/*------ HTTPS EVERYWHERE ADDON ------*/
+@-moz-document url-prefix(moz-extension://TYPE-THE-UUID-OF-HTTPS-EVERYWHERE-ADDON-HERE/) {
+html, body {background: #444 !important; color: #ccc !important}
+
+h1, h2, h3 {color: #fff !important}
+
+label {color: #ccc !important}
+
+button, input[type="button"] {  
+  -moz-appearance: none !important;
+  border-radius: 3px !important;
+  background-color: #666 !important;
+  color: #ddd !important;
+  border: none !important;
+  padding: 5px !important;
+  margin: 3px !important}
+
+button:hover, input[type="button"]:hover {  
+  background-color: #333 !important;
+  color: #fff !important;
+  box-shadow: none !important}
+
+a:link, a {color: #09f !important}
+a:visited {color: #0070aa !important}
+a:hover {color: #0ff !important}
+a:active {color: #0050aa !important}
+
+input[type="text"]{
+	-moz-appearance: none !important;
+	background-color: #555 !important; 
+	border: 1px solid #777 !important;
+	color: #fff !important;
+	margin: 3px !important}
+
+input[type="text"]:focus{border: 1px solid #0a84ff !important}
+
+input[type="text"][disabled] {color: #aaa !important}
+
+.section-header-span.active {
+	background: #0050af !important; 
+	color: #fff !important;
+	cursor: default !important}
+
+.section-header-span.inactive {
+	background: #888 !important; 
+	color: #fff !important;
+	cursor: pointer !important}
+
+#update-channels-warning {background: #533 !important}
+
+/* Checkbox coloring */
+input[type="checkbox"] {
+  -moz-appearance: none !important;
+  border: 1px solid #666 !important;
+  background-color: #444 !important;
+  transition: color 0.3s;
+  min-width: 16px;
+  min-height: 16px;
+  margin-bottom: 0 !important}
+
+input[type="checkbox"]:not([disabled]):hover {
+  box-shadow: 0 0 4px #0084ff !important;
+  border-color: #0084ff !important}
+
+input[type="checkbox"]:checked {
+  background: #444 url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="15px" height="15px" viewBox="0 0 16 16" ><path fill="rgb(200,200,200)" d="M 13.09,2.87 C 13.09,2.87 6.00,11.00 6.00,11.00 6.00,11.00 2.00,9.00 2.00,9.00 4.25,12.81 7.00,14.00 7.00,14.00 9.24,10.42 12.04,7.39 13.09,2.87 Z" /></svg>') no-repeat center center !important}
+}
+
+/*------ NOSCRIPT ADDON SETTINGS AND PROMPT PAGE ------*/
+@-moz-document url-prefix(moz-extension://TYPE-UUID-OF-NOSCRIPT-ADDON-HERE/ui/options.html),
+url-prefix(moz-extension://TYPE-UUID-OF-NOSCRIPT-ADDON-HERE/ui/prompt.html),
+url-prefix(moz-extension://TYPE-UUID-OF-NOSCRIPT-ADDON-HERE/ui/siteInfo.html) {
+body, html {background: #222 !important}
+
+#main {background: linear-gradient(#555,#111) !important; color: #fff !important}
+
+#message {color: #fff !important}
+
+h1 {color: #fff !important}
+span {color: #ddd !important}
+
+.flextabs__content, .flextabs__toggle[aria-expanded="true"] {
+	background: #444 !important;
+	color: #ddd !important}
+
+.flextabs__toggle[aria-expanded="false"] {
+	background: #404040 !important;
+	color: #aaa !important}
+
+button:not(.flextabs__toggle) {
+  -moz-appearance: none !important;
+  border-radius: 3px !important;
+  background: #666 !important;
+  color: #ddd !important;
+  border: none !important}
+
+button:not(.flextabs__toggle):hover {
+  background: #333 !important;
+  color: #fff !important}
+
+.buttons button {padding: 5px !important; margin-right: 5px !important}
+
+#button0, #button1 {padding: 5px !important}
+
+.buttons button:hover {background: #444 !important}
+
+.presets, .url, .customizer-controls {color: #000 !important}
+
+#presets {filter: brightness(80%) !important}
+
+a:link {color: #0084ff !important}
+a:hover {color: #0ff !important}
+a:active {color: #0050aa !important}
+
+.customizer fieldset label {color: #000 !important}
+
+#newsite {
+	-moz-appearance: none !important; 
+	background: #323232 !important; 
+	color: #ddd !important;
+	border: 1px solid #666 !important}
+
+#sites .sites tr {background: #555 !important}
+
+#sites .sites tr:nth-child(even) {background: #666 !important}
+
+/* Checkbox coloring */
+input[type="checkbox"] {
+  -moz-appearance: none !important;
+  border: 1px solid #666 !important;
+  background-color: #444 !important;
+  transition: color 0.3s;
+  min-width: 16px;
+  min-height: 16px;
+  max-height: 16px !important;
+  margin-bottom: 0 !important}
+
+input[type="checkbox"]:not([disabled]):hover {
+  box-shadow: 0 0 4px #0084ff !important;
+  border-color: #0084ff !important}
+
+input[type="checkbox"]:checked {
+  background: #444 url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="15px" height="15px" viewBox="0 0 16 16" ><path fill="rgb(200,200,200)" d="M 13.09,2.87 C 13.09,2.87 6.00,11.00 6.00,11.00 6.00,11.00 2.00,9.00 2.00,9.00 4.25,12.81 7.00,14.00 7.00,14.00 9.24,10.42 12.04,7.39 13.09,2.87 Z" /></svg>') no-repeat center center !important}
+
+input[type="checkbox"]:disabled + span, input[type="checkbox"]:disabled {opacity: 0.5 !important}
+
+/* Select boxes coloring */
+select {
+  -moz-appearance: none !important;
+  background: #555 url("data:image/svg+xml;charset=utf-8,%3Csvg width='11' height='7' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M434.574 488L430.5 492.147 426.428 488 425 489.399 430.5 494.999 436 489.399z' transform='translate(-425 -488)' fill='%23cccccc' fill-rule='evenodd'/%3E%3C/svg%3E") no-repeat calc(100% - 5px) 50% !important;
+  border: none !important;
+  padding: 3px;
+  color: #ccc !important}
+
+select:hover {
+  background: #333 url("data:image/svg+xml;charset=utf-8,%3Csvg width='11' height='7' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M434.574 488L430.5 492.147 426.428 488 425 489.399 430.5 494.999 436 489.399z' transform='translate(-425 -488)' fill='%23cccccc' fill-rule='evenodd'/%3E%3C/svg%3E") no-repeat calc(100% - 5px) 50% !important;
+  color: #fff !important}
+
+select .menulist-dropmarker {display: none}
+}
+
+/*------ NOSCRIPT ADDON POPUP ------*/
+@-moz-document url-prefix(moz-extension://TYPE-UUID-OF-NOSCRIPT-HERE/ui/popup.html) {
+body, html, #main {background: #333 !important; color: #ddd !important}
+
+#top {border-bottom: 1px solid #555 !important}
+
+button {background-color: transparent !important}
+
+tr {color: #ddd !important}
+
+#sites .sites tr {background: #333 !important}
+
+span {color: #ddd !important}
+
+#sites .sites tr:nth-child(odd) {background: #404040 !important}
+
+/* Checkbox coloring */
+input[type="checkbox"] {
+  -moz-appearance: none !important;
+  border: 1px solid #666 !important;
+  background-color: #444 !important;
+  transition: color 0.3s;
+  min-width: 16px;
+  min-height: 16px;
+  max-height: 16px !important;
+  margin-bottom: 0 !important}
+
+input[type="checkbox"]:not([disabled]):hover {
+  box-shadow: 0 0 4px #0084ff !important;
+  border-color: #0084ff !important}
+
+input[type="checkbox"]:checked {
+  background: #444 url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="15px" height="15px" viewBox="0 0 16 16" ><path fill="rgb(200,200,200)" d="M 13.09,2.87 C 13.09,2.87 6.00,11.00 6.00,11.00 6.00,11.00 2.00,9.00 2.00,9.00 4.25,12.81 7.00,14.00 7.00,14.00 9.24,10.42 12.04,7.39 13.09,2.87 Z" /></svg>') no-repeat center center !important}
+
+input[type="checkbox"]:disabled + span, input[type="checkbox"]:disabled {opacity: 0.5 !important}
+}
+
+/*------ NOTIFIER FOR GMAIL (RESTARTLESS) ADDON ------*/
+@-moz-document url-prefix(moz-extension://TYPE-THE-UUID-OF-NOTIFIER-FOR-GMAIL-ADDON-HERE/) {
+html, #content {background: #303030 !important; color: #ccc !important}
+
+* {border-color: #555 !important}
+
+.ellipsis {color: #ccc !important}
+
+div[name="info"] a, #title {color: #fff !important}
+
+header, footer, #header, #labels .label {
+	background-color: #222 !important; 
+	color: #fff !important}
+
+#accounts .ellipsis {
+	background-color: #fff !important;
+	color: #000 !important;
+	filter: invert(90%);}
+
+header div[name="email-container"] {
+	background-color: transparent !important;
+	color: #000 !important;
+	filter: invert(81%);}
+
+body[data-star="false"] #content div[name="title"] #star {filter: invert(81%)}
+
+.btn, input[type="button"] {  
+  background-color: #666 !important;
+  color: #ddd !important;
+  border: none !important}
+
+.btn:hover, input[type="button"]:hover {  
+  background-color: #777 !important;
+  color: #fff !important}
+
+iframe {background: transparent !important}
+
+input[type="text"], input[type="color"]{
+	background-color: #444 !important;
+	color: #fff !important}
+
+input[type="number"] {
+	background: #222 !important;
+	outline-color: #555 !important}
+
+/* Select boxes coloring */
+select {
+  -moz-appearance: none !important;
+  background: #555 url("data:image/svg+xml;charset=utf-8,%3Csvg width='11' height='7' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M434.574 488L430.5 492.147 426.428 488 425 489.399 430.5 494.999 436 489.399z' transform='translate(-425 -488)' fill='%23cccccc' fill-rule='evenodd'/%3E%3C/svg%3E") no-repeat calc(100% - 5px) 50% !important;
+  border: none !important;
+  padding: 3px 10px 3px 3px;
+  color: #ccc !important}
+
+select:hover {
+  background: #333 url("data:image/svg+xml;charset=utf-8,%3Csvg width='11' height='7' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M434.574 488L430.5 492.147 426.428 488 425 489.399 430.5 494.999 436 489.399z' transform='translate(-425 -488)' fill='%23cccccc' fill-rule='evenodd'/%3E%3C/svg%3E") no-repeat calc(100% - 5px) 50% !important;
+  color: #fff !important}
+
+select .menulist-dropmarker {display: none}
+}
+
+/*------ MULTI-ACCOUNTS CONTAINER ADDON ------*/
+@-moz-document url-prefix(moz-extension://TYPE-THE-UUID-OF-MULTI-ACCOUNTS-CONTAINER-ADDON-HERE/) {
+html, body {background: #222 !important}
+
+h3, legend {color: #fff !important}
+span:not(#current-container), #container-info-movetabs,
+.container-info-tab-title, .truncate-text {color: #ccc !important}
+
+#sort-containers-link, .userContext-wrapper, .show-tabs:not(.pop-button-image-small), 
+#edit-containers-link, #container-add-link, #edit-container-cancel-link, .panel-back-arrow,
+.container-panel-row {
+	background-color: #333 !important;
+	color: #ccc !important}
+
+#sort-containers-link:hover, .userContext-wrapper:hover, .show-tabs:hover, 
+#edit-containers-link:hover, #container-add-link:hover, #edit-container-cancel-link:hover,
+.panel-back-arrow:hover, .clickable:hover, .pop-button:hover {
+	background-color: #444 !important;
+	color: #fff !important}
+
+.pop-button-image-small {fill: #fff !important}
+
+#container-page-assigned {filter: invert(80%)}
+
+#sort-containers-link, .container-panel-row {border-color: #666 !important}
+#edit-containers-link {border: 1px solid #666 !important}
+
+#container-add-link {
+	border-top: 1px solid #666 !important;
+	border-right: 1px solid #666 !important;
+	border-bottom: 1px solid #666 !important}
+
+.edit-containers-text {border-inline-end: transparent !important}
+.scrollable {border-block-start: 1px solid #666 !important}
+.panel-footer {border-block-end: transparent !important}
+
+#redirect-url {background-color: #333 !important}
+}
+
+@-moz-document url-prefix(http){
+.container-notification {
+	background-color: rgba(50,50,50,0.7) !important;
+	color: #0c0 !important}
+}
+
+/*------ ONETAB ADDON ------*/
+@-moz-document url-prefix(moz-extension://TYPE-THE-UUID-OF-ONETAB-ADDON-HERE/),
+url-prefix(https://www.one-tab.com/page/) {
+html, body {background: #303030 !important}
+
+#settingsDiv {background: #444 !important; border: 1px solid #666 !important}
+
+div {color: #ccc !important}
+
+#contentAreaDiv > div {border-color: #666 !important}
+
+a:link, a, a:visited, .clickable {color: #09f !important}
+a:hover, .clickable:hover {color: #0ff !important}
+a:active, .clickable:active {color: #0050aa !important}
+
+img[src="images/cross.png"] {filter: brightness(200%)}
+
+textarea {
+	-moz-appearance: none !important; 
+	background-color: #222 !important; 
+	color: #aaa !important;
+	border: 1px solid #555 !important}
+
+label::before {filter: invert(81%) hue-rotate(170deg)}
+
+/* Checkbox coloring */
+input[type="checkbox"] {
+  -moz-appearance: none !important;
+  border: 1px solid #666 !important;
+  background-color: #444 !important;
+  transition: color 0.3s;
+  min-width: 16px;
+  min-height: 16px;
+  margin-bottom: 0 !important}
+
+input[type="checkbox"]:not([disabled]):hover {
+  box-shadow: 0 0 4px #0084ff !important;
+  border-color: #0084ff !important}
+
+input[type="checkbox"]:checked {
+  background: #444 url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="15px" height="15px" viewBox="0 0 16 16" ><path fill="rgb(200,200,200)" d="M 13.09,2.87 C 13.09,2.87 6.00,11.00 6.00,11.00 6.00,11.00 2.00,9.00 2.00,9.00 4.25,12.81 7.00,14.00 7.00,14.00 9.24,10.42 12.04,7.39 13.09,2.87 Z" /></svg>') no-repeat center center !important}
+}
+
+/*------ POPUP BLOCKER ULTIMATE ADDON ------*/
+@-moz-document url-prefix(moz-extension://38a79f08-c31c-4d79-b61d-ee45fad0f41c/) {
+body {background-color: #333 !important; color: #ccc !important}
+
+table td {color: #ccc !important}
+
+td[data-type="status"] {filter: invert(80%) hue-rotate(144deg) contrast(1.10) brightness(1.205) saturate(0.9);}
+
+table td:not([data-type="status"]):hover {background-color: #444 !important}
+}
+
+/*------ PRIVACY BADGER ADDON SETTINGS PAGE ------*/
+@-moz-document url-prefix(moz-extension://TYPE-UUID-OF-PRIVACY-BADGER-HERE/skin/options.html) {
+body, html {background: #222 !important; color: #fff !important}
+
+#tabs {background: #444 !important; color: #ccc !important; border: 1px solid #666 !important}
+
+#tabs > ul {background-image: linear-gradient(#333, #222) !important; border: 1px solid #666 !important}
+
+label, p, span.i18n_show_tracking_domains_acknowledgement, .origin.tooltip {color: #ddd !important}
+
+.i18n_options_webrtc_warning, .i18n_options_incognito_warning {color: #aaa !important}
+
+span.i18n_import_user_data, span.i18n_export_user_data, h3, h3 span {color: #fff !important}
+
+#tabs > ul > li {
+	background: #252525 !important; 
+	border: 1px solid #555 !important}
+
+#tabs > ul > li span {color: #ccc !important}
+
+#tabs > ul > li.ui-state-hover {
+	background: #333 !important; 
+	border: 1px solid #606060 !important}
+
+#tabs > ul > li.ui-state-hover span {color: #ddd !important}
+
+#tabs > ul > li.ui-state-active {
+	background: #444 !important; 
+	color: #fff !important; 
+	border: 1px solid #666 !important}
+
+#tabs > ul > li.ui-state-active span {color: #fff !important}
+
+#newWhitelistDomain, #excludedDomainsBox, #trackingDomainSearch {
+	-moz-appearance: none !important;
+	color: #ddd !important;
+	background: #303030 !important;
+	border: 1px solid #666 !important}
+
+#trackingDomainSearch:hover, #newWhitelistDomain:hover {
+	border: 1px solid #db7924 !important}
+
+#blockedResources > .keyContainer > .key {background: none !important}
+
+#blockedResourcesInner > div {
+	background: #444 !important; 
+	color: #ccc !important;
+	border-top: 1px solid #666 !important}
+
+button {
+  -moz-appearance: none !important;
+  border-radius: 3px !important;
+  background: #666 !important;
+  color: #ddd !important;
+  border: none !important}
+
+button:hover {
+	background: #555 !important;
+	color: #fff !important}
+
+a:link, a {color: #0bb !important}
+a:visited, a:active {color: #088 !important}
+a:hover {color: #0dd !important}
+
+/* Checkbox coloring */
+input[type="checkbox"] {
+  -moz-appearance: none !important;
+  border: 1px solid #666 !important;
+  background-color: #444 !important;
+  transition: color 0.3s;
+  min-width: 16px;
+  min-height: 16px;
+  max-height: 16px !important;
+  margin-bottom: 0 !important}
+
+input[type="checkbox"]:not([disabled]):hover {
+  box-shadow: 0 0 4px #0084ff !important;
+  border-color: #0084ff !important}
+
+input[type="checkbox"]:checked {
+  background: #444 url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="15px" height="15px" viewBox="0 0 16 16" ><path fill="rgb(200,200,200)" d="M 13.09,2.87 C 13.09,2.87 6.00,11.00 6.00,11.00 6.00,11.00 2.00,9.00 2.00,9.00 4.25,12.81 7.00,14.00 7.00,14.00 9.24,10.42 12.04,7.39 13.09,2.87 Z" /></svg>') no-repeat center center !important}
+
+input[type="checkbox"]:disabled + span, input[type="checkbox"]:disabled {opacity: 0.5 !important}
+
+/* Select boxes coloring */
+select {
+  -moz-appearance: none !important;
+  background: #555 url("data:image/svg+xml;charset=utf-8,%3Csvg width='11' height='7' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M434.574 488L430.5 492.147 426.428 488 425 489.399 430.5 494.999 436 489.399z' transform='translate(-425 -488)' fill='%23cccccc' fill-rule='evenodd'/%3E%3C/svg%3E") no-repeat calc(100% - 5px) 50% !important;
+  border: none !important;
+  padding: 3px;
+  color: #ccc !important}
+
+select:hover {
+  background: #333 url("data:image/svg+xml;charset=utf-8,%3Csvg width='11' height='7' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M434.574 488L430.5 492.147 426.428 488 425 489.399 430.5 494.999 436 489.399z' transform='translate(-425 -488)' fill='%23cccccc' fill-rule='evenodd'/%3E%3C/svg%3E") no-repeat calc(100% - 5px) 50% !important;
+  color: #fff !important}
+
+select .menulist-dropmarker {display: none}
+}
+
+/*------ PRIVACY BADGER ADDON POPUP ------*/
+@-moz-document url-prefix(moz-extension://TYPE-UUID-OF-PRIVACY-BADGER-HERE/skin/popup.html) {
+body, html {background: #333 !important; color: #fff !important}
+
+label, span, .origin.tooltip {color: #ddd !important}
+span.i18n_name {color: #fff !important}
+
+button {
+  -moz-appearance: none !important;
+  border-radius: 3px !important;
+  background: #666 !important;
+  color: #ddd !important;
+  border: none !important}
+
+button:hover {
+  background: #444 !important;
+  color: #fff !important}
+
+a:link, a {color: #fc9336 !important}
+a:visited, a:active {color: #a3540f !important}
+a:hover {color: #f0a15c !important}
+
+#instruction {background: #444 !important; color: #ddd !important}
+
+#blockedResources > .keyContainer > .key {background: none !important}
+#blockedResourcesInner > div {
+	background: #333 !important; 
+	color: #ccc !important;
+	border-top: 1px solid #555 !important}
+}
+
+/*------ TAB SESSION MANAGER ------*/
+@-moz-document url-prefix(moz-extension://TYPE-UUID-OF-TAB-SESSION-MANAGER-HERE/options/index.html),
+url-prefix(moz-extension://TYPE-UUID-OF-TAB-SESSION-MANAGER-HERE/popup/index.html),
+url-prefix(moz-extension://TYPE-UUID-OF-TAB-SESSION-MANAGER-HERE/replaced/index.html) {
+
+:root {
+    --main-text: #ddd !important;
+    --sub-text: #aaa !important;
+    --line: #36b2b2 !important;
+    --button: #444 !important;
+    --highlight: #36b2b2 !important;
+    --main-bg: #333 !important;
+    --new: #ff4f4f !important;
+	--confirm: #ff4f4f !important}
+
+html {background: #333 !important}
+
+.button, input[type="button"] {background: #444 !important}
+.button:hover, input[type="button"]:hover {background: #222 !important}
+
+li.saveOnlyCurrentWindow {color: #ddd !important}
+li.saveOnlyCurrentWindow:hover {color: #000 !important}
+
+span.checkbox::before, #saveName {background: #303030 !important; border: 1px solid #666 !important}
+span.checkbox:hover::before, #saveName:hover {border: 1px solid #36b2b2 !important}
+
+#setting svg, .removeTagButton svg {fill: #000 !important}
+
+#sessionsArea, .sessionName span {color: #fff !important}
+
+textarea, input[type="number"], input[type="text"] {background: #303030 !important; color: #ddd !important}
+
+#saveButton, #saveOptionButton {background: #555 !important}
+
+#saveButton:not(:hover) {color: #ddd !important}
+
+.settingsButton svg, .heartButton:not(:hover) svg {fill: #333 !important; transition: color 3s}
+
+.tag span {color: #000 !important}
+
+.tabTitle a {color: #09f !important}
+.tabTitle a:hover {color: #0ff !important}
+.tabTitle a:active {color: #0050aa !important}
+}
+
+/*------ TEMPORARY CONTAINERS ADDON ------*/
+@-moz-document url-prefix(moz-extension://TYPE-THE-UUID-OF-TEMPORARY-CONTAINERS-ADDON-HERE/) {
+html, body, .dropdown.selection, .menu .item, .ui.menu {background: #222 !important}
+
+input[type="text"]{
+	background-color: #444 !important; 
+	border: 1px solid #666 !important;
+	color: #fff !important}
+
+input[type="text"]:focus{border: 1px solid #0a84ff !important}
+
+.ui.segment, .pusher  {
+	background: #303030 !important;
+	color: #ccc !important}
+
+.ui.segment.active, .item.active {background: #353535 !important}
+.item, label, h4, h3 {color: #ccc !important}
+.item.active, .dropdown.selection, .text, .label {color: #fff !important}
+
+.item:not(.active):hover{background: #282828 !important}
+
+.ui.selection.dropdown .menu > .item, .ui.tabular.menu, .ui.menu,
+.item.active, .ui.popup, .ui.segment {border-color: #666 !important}
+
+.ui.negative.message {
+	background-color: #533 !important;
+	color: #f33 !important}
+
+.ui.notice.message{
+	background-color: #555 !important;
+	color: #fff !important;
+	border-color: #ccc !important}
+
+.ui.notice.message a:link, .ui.notice.message a {color: #09f !important}
+.ui.notice.message a:visited {color: #0070aa !important}
+.ui.notice.message a:hover {color: #0ff !important}
+.ui.notice.message a:active {color: #0050aa !important}
+
+#tmpButton svg {filter: invert(90%) !important}
+
+label::before, .ui.popup {filter: invert(75%)}
+}
+
 /*------ UBLOCK ORIGIN BLOCKING PAGE ------*/
 @-moz-document url-prefix(moz-extension://TYPE-UUID-OF-UBLOCK-ORIGIN-HERE/document-blocked.html){
 
@@ -317,71 +1198,23 @@ button.important:hover {
 #domTree .isCosmeticHide, #domTree .isCosmeticHide li {background: rgba(255, 150, 150, 0.2) !important}
 }
 
-/*------ FLASH VIDEO DOWNLOADER (youtube) ADDON OPTIONS PANEL------*/
-@-moz-document url(moz-extension://TYPE-UUID-OF-FLASH-VIDEO-DOWNLOADER-HERE/options.html) {
-body {background-color: #222 !important}
+/*------ UNDO LAST TAB BUTTON (REVIVED) ADDON ------*/
+@-moz-document url-prefix(moz-extension://TYPE-UUID-OF-UNDO-LAST-TAB-HERE/data/popup/index.html) {
+body, html {background: #333 !important}
 
-.white_area, #showMain.fvd_settings_container, .options {background-color: #444 !important}
-.white_area {background-image: none !important}
+li {color: #aaa !important}
+li:hover {background-color: rgba(255,255,255, 0.1) !important}
 
-.fvd_settings_title, .fvd_settings_description, 
-.fvd_settings_fvd_description, span {color: #ccc !important}
+li span {
+	border-left: 1px solid #222 !important;
+	box-shadow: inset 1px 0 0 0 #000 !important}
 
-#masterHead {background: #555 !important; color: #ccc !important}
+li[data-disabled="true"] {color: #666 !important}
+li[data-disabled="true"]:hover {background-color: rgba(0,0,0, 0.2) !important}
 
-#donateDownloadNative span {color: #fff !important}
-
-h2 {color: #FFF !important}
-
-/* Checkbox coloring */
-input[type="checkbox"] {
-  -moz-appearance: none !important;
-  border: 1px solid #666 !important;
-  background-color: #444 !important;
-  transition: color 0.3s;
-  min-width: 16px;
-  min-height: 16px;
-  margin-bottom: 0 !important}
-
-input[type="checkbox"]:not([disabled]):hover {
-  box-shadow: 0 0 4px #0084ff !important;
-  border-color: #0084ff !important}
-
-input[type="checkbox"]:checked {
-  background: #444 url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="15px" height="15px" viewBox="0 0 16 16" ><path fill="rgb(200,200,200)" d="M 13.09,2.87 C 13.09,2.87 6.00,11.00 6.00,11.00 6.00,11.00 2.00,9.00 2.00,9.00 4.25,12.81 7.00,14.00 7.00,14.00 9.24,10.42 12.04,7.39 13.09,2.87 Z" /></svg>') no-repeat center center !important}
-}
-
-/*------ FLASH VIDEO DOWNLOADER (youtube) ADDON POPUP ------*/
-@-moz-document url(moz-extension://TYPE-UUID-OF-FLASH-VIDEO-DOWNLOADER-HERE/popup.html) {
-
-body, .multiple_download_header, #filters_block,
-#snifferNotice {background-color: #333 !important}
-
-#download_container_wrapped, #download_item_container {background-color: #333 !important; color: #ccc !important}
-
-.download_item.group-video:hover {background-color: #444 !important}
-.download_group_item_wrapped:hover {background-color: #555 !important}
-
-#help_link_help {display: none !important}
-
-#help_link_folder {
-	background: linear-gradient(#333, #111) !important; 
-	color: #ccc !important;
-	border: 1px solid #000 !important}
-#help_link_folder:hover {background: linear-gradient(#111, #333) !important}
-
-h2, .group_download_title {color: #fff !important}
-
-.downloader_check_block {filter: invert(80%)}
-
-.downloader_filter_title, .downloader_check_text, .textEmptyNotice {color: #CCC !important}
-
-#footer_container, #header_container {background-color: #222 !important}
-
-#footer_container {border-top: 2px solid #000 !important}
-
-.footer .footer-item {color: #fff !important}
-.footer .footer-item:hover {background: #444 !important}
+.separator {
+	border-top: 1px solid #222 !important;
+	box-shadow: inset 1px 1px 0 #000 !important}
 }
 
 /*------ VIDEO DOWNLOAD HELPER ADDON COMMON PART ------*/
@@ -527,817 +1360,6 @@ header, tr:nth-child(even) {background: #222 !important; color: #fff !important}
 main, tr:nth-child(odd) {background: #333 !important; color: #fff !important}
 }
 
-/*------ TAB SESSION MANAGER ------*/
-@-moz-document url-prefix(moz-extension://TYPE-UUID-OF-TAB-SESSION-MANAGER-HERE/options/index.html),
-url-prefix(moz-extension://TYPE-UUID-OF-TAB-SESSION-MANAGER-HERE/popup/index.html),
-url-prefix(moz-extension://TYPE-UUID-OF-TAB-SESSION-MANAGER-HERE/replaced/index.html) {
-
-:root {
-    --main-text: #ddd !important;
-    --sub-text: #aaa !important;
-    --line: #36b2b2 !important;
-    --button: #444 !important;
-    --highlight: #36b2b2 !important;
-    --main-bg: #333 !important;
-    --new: #ff4f4f !important;
-	--confirm: #ff4f4f !important}
-
-html {background: #333 !important}
-
-.button, input[type="button"] {background: #444 !important}
-.button:hover, input[type="button"]:hover {background: #222 !important}
-
-li.saveOnlyCurrentWindow {color: #ddd !important}
-li.saveOnlyCurrentWindow:hover {color: #000 !important}
-
-span.checkbox::before, #saveName {background: #303030 !important; border: 1px solid #666 !important}
-span.checkbox:hover::before, #saveName:hover {border: 1px solid #36b2b2 !important}
-
-#setting svg, .removeTagButton svg {fill: #000 !important}
-
-#sessionsArea, .sessionName span {color: #fff !important}
-
-textarea, input[type="number"], input[type="text"] {background: #303030 !important; color: #ddd !important}
-
-#saveButton, #saveOptionButton {background: #555 !important}
-
-#saveButton:not(:hover) {color: #ddd !important}
-
-.settingsButton svg, .heartButton:not(:hover) svg {fill: #333 !important; transition: color 3s}
-
-.tag span {color: #000 !important}
-
-.tabTitle a {color: #09f !important}
-.tabTitle a:hover {color: #0ff !important}
-.tabTitle a:active {color: #0050aa !important}
-}
-
-/*------ UNDO LAST TAB BUTTON (REVIVED) ADDON ------*/
-@-moz-document url-prefix(moz-extension://TYPE-UUID-OF-UNDO-LAST-TAB-HERE/data/popup/index.html) {
-body, html {background: #333 !important}
-
-li {color: #aaa !important}
-li:hover {background-color: rgba(255,255,255, 0.1) !important}
-
-li span {
-	border-left: 1px solid #222 !important;
-	box-shadow: inset 1px 0 0 0 #000 !important}
-
-li[data-disabled="true"] {color: #666 !important}
-li[data-disabled="true"]:hover {background-color: rgba(0,0,0, 0.2) !important}
-
-.separator {
-	border-top: 1px solid #222 !important;
-	box-shadow: inset 1px 1px 0 #000 !important}
-}
-
-/*------ DOWNLOAD MANAGER (S3) ADDON CONFIGURATION PAGE ------*/
-@-moz-document url-prefix(moz-extension://TYPE-UUID-OF-DOWNLOAD-MANAGER-(S3)-HERE/content/options.html),
-url-prefix(moz-extension://TYPE-UUID-OF-DOWNLOAD-MANAGER-(S3)-HERE/content/create_new_downloads.html) {
-body, html {background: #222 !important; color: #fff !important}
-
-#tabsBox .tabsBox {background: #333 !important; border: 1px solid #555 !important}
-
-#tabs a:not(.selected) {background-color: #383838 !important; color: #aaa !important}
-
-#tabs a.selected, #generalTab, #appearanceTab, #virusScanTab,
-#download_historyTab, .caption span {background-color: #444 !important; color: #ddd !important}
-
-#tabs-generalTab a:not(.selected), #appearanceTab a:not(.selected) 
-{background-color: #505050 !important; color: #aaa !important}
-
-#tabs-generalTab a.selected, #generalTab--features, #generalTab--statusMode, #generalTab--queue,
-#tabs-appearanceTab a.selected, #appearanceTab--style, #appearanceTab--layout, #generalTab--contextMenu
-{background-color: #555 !important; color: #ddd !important; border: none !important}
-
-.groupbox {border: 1px solid #666 !important; box-shadow: 0 0 10px #000 !important}
-.groupbox:hover:not([disabled]) {border: 1px solid #AF5CCB !important; box-shadow: 0 0 10px #712a89 !important}
-
-.groupbox a:link, .groupbox a {color: #09f !important}
-.groupbox a:visited {color: #0070aa !important}
-.groupbox a:hover {color: #0ff !important}
-.groupbox a:active {color: #0050aa !important}
-
-input:not([type="number"]):not([type="checkbox"]):not([type="button"]):not([type="radio"]), textarea {
-	-moz-appearance: none !important; 
-	background: #323232 !important; 
-	color: #ddd !important;
-	border: 1px solid #666 !important}
-
-#customStyle_form table.table_colors tr {background: none !important}
-
-#customStyle_form .table_colors input:hover,
-#appearanceTab--layout input[type="color"]:hover {border: 1px solid #fff !important}
-
-#current_locale {border: 1px solid #666 !important}
-	
-.caption > div {
-	border-radius: 6px !important; 
-	background: #666 !important; 
-	border: none !important}
-
-#exclude_links_placeholder > div, 
-#exclude_links_placeholder {border: none !important; background: none !important}
-
-button, input[type="button"] {  
-  -moz-appearance: none !important;
-  border-radius: 3px !important;
-  background-color: #666 !important;
-  color: #ddd !important;
-  border: none !important}
-
-button:hover, input[type="button"]:hover {  
-  background-color: #222 !important;
-  color: #fff !important;
-  box-shadow: none !important}
-
-#save_settings, #copy_settings, #load_settings, 
-#reset_settings {padding: 0.5em !important}
-
-/* Checkbox coloring */
-input[type="checkbox"] {
-  -moz-appearance: none !important;
-  border: 1px solid #666 !important;
-  background-color: #444 !important;
-  transition: color 0.3s;
-  min-width: 16px;
-  min-height: 16px;
-  margin-bottom: 0 !important}
-
-input[type="checkbox"]:not([disabled]):hover {
-  box-shadow: 0 0 4px #0084ff !important;
-  border-color: #0084ff !important}
-
-input[type="checkbox"]:checked {
-  background: #444 url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="15px" height="15px" viewBox="0 0 16 16" ><path fill="rgb(200,200,200)" d="M 13.09,2.87 C 13.09,2.87 6.00,11.00 6.00,11.00 6.00,11.00 2.00,9.00 2.00,9.00 4.25,12.81 7.00,14.00 7.00,14.00 9.24,10.42 12.04,7.39 13.09,2.87 Z" /></svg>') no-repeat center center !important}
-
-/* Select boxes coloring */
-select {
-  -moz-appearance: none !important;
-  background: #555 url("data:image/svg+xml;charset=utf-8,%3Csvg width='11' height='7' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M434.574 488L430.5 492.147 426.428 488 425 489.399 430.5 494.999 436 489.399z' transform='translate(-425 -488)' fill='%23cccccc' fill-rule='evenodd'/%3E%3C/svg%3E") no-repeat calc(100% - 5px) 50% !important;
-  border: none !important;
-  padding: 3px 10px 3px 3px;
-  color: #ccc !important}
-
-select:hover {
-  background: #333 url("data:image/svg+xml;charset=utf-8,%3Csvg width='11' height='7' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M434.574 488L430.5 492.147 426.428 488 425 489.399 430.5 494.999 436 489.399z' transform='translate(-425 -488)' fill='%23cccccc' fill-rule='evenodd'/%3E%3C/svg%3E") no-repeat calc(100% - 5px) 50% !important;
-  color: #fff !important}
-
-select .menulist-dropmarker {display: none}
-}
-
-/*------ DOWNLOAD MANAGER (S3) ADDON DOWNLOADS HISTORY PAGE ------*/
-@-moz-document url-prefix(moz-extension://TYPE-UUID-OF-DOWNLOAD-MANAGER-(S3)-HERE/content/download_history.html),
-url-prefix(moz-extension://TYPE-UUID-OF-DOWNLOAD-MANAGER-(S3)-HERE/content/file_checksum.html) {
-body, html {background: #333 !important; color: #fff !important}
-
-#download_action_head {background: linear-gradient(#333, #111) !important}
-
-#download_action_head input[type="button"] {
-  -moz-appearance: none !important;
-  border-radius: 3px !important;
-  background-color: #111 !important;
-  color: #ddd !important;
-  border: none !important}
-
-#download_action_head input[type="button"]:hover {
-  background-color: #555 !important;
-  color: #fff !important}
-
-#s3downbar_searchbox {
-	-moz-appearance: none !important; 
-	background: #323232 !important; 
-	color: #ddd !important;
-	border: 1px solid #666 !important}
-
-#download_list_head {background: linear-gradient(#333, #555) !important}
-
-#download_list_head, #download_list_head div {border-color: #222 !important}
-
-.progress_bar[value] {background-color: #333 !important}
-
-#download_list_box:not([start_draw="true"]) .grid_rows[is_selected="true"] {
-	background-color: rgba(32, 96, 32, 0.3) !important;
-	color: #53c653 !important}
-
-#download_list_box:not([start_draw="true"]) .grid_rows:hover {
-	background-color: rgba(255,255,255, 0.25) !important}
-
-#s3downbar-ibmbeeacmbeeaebmfjpmnlgkhoejinha .contextmenu_box {
-	border: 1px solid #000 !important;
-	background: #444 !important;
-	color: #ddd !important;
-	box-shadow: 0 0 10px #000 !important}
-
-#s3downbar-ibmbeeacmbeeaebmfjpmnlgkhoejinha .contextmenu_box .contextmenu_menu:hover {
-	background-color: #555 !important;
-	color: #fff !important}
-
-/* Checkbox coloring */
-input[type="checkbox"] {
-  -moz-appearance: none !important;
-  border: 1px solid #666 !important;
-  background-color: #444 !important;
-  transition: color 0.3s;
-  min-width: 16px;
-  min-height: 16px;
-  margin-bottom: 0 !important}
-
-input[type="checkbox"]:not([disabled]):hover {
-  box-shadow: 0 0 4px #0084ff !important;
-  border-color: #0084ff !important}
-
-input[type="checkbox"]:checked {
-  background: #444 url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="15px" height="15px" viewBox="0 0 16 16" ><path fill="rgb(200,200,200)" d="M 13.09,2.87 C 13.09,2.87 6.00,11.00 6.00,11.00 6.00,11.00 2.00,9.00 2.00,9.00 4.25,12.81 7.00,14.00 7.00,14.00 9.24,10.42 12.04,7.39 13.09,2.87 Z" /></svg>') no-repeat center center !important}
-}
-
-/*------ DOWNLOAD MANAGER (S3) ADDON DOWNLOADS POPUP ------*/
-@-moz-document url-prefix(moz-extension://TYPE-UUID-OF-DOWNLOAD-MANAGER-(S3)-HERE/content/popup.html) {
-#s3downbar-ibmbeeacmbeeaebmfjpmnlgkhoejinha:not(.s3dmBox) {background-color: #333 !important; color: #fff !important}
-#s3downbar_hide_button, #s3downbar_main_menu_button, #s3downbar_clear_button,
-#s3downbar_holder_summary_progress {
-	background-color: #000 !important; 
-	color: #fff !important;
-	border-color: #222 !important}
-
-#s3downbar-ibmbeeacmbeeaebmfjpmnlgkhoejinha .contextmenu_box {
-	border: 1px solid #000 !important;
-	background: #444 !important;
-	color: #ddd !important;
-	box-shadow: 0 0 10px #000 !important}
-
-#s3downbar-ibmbeeacmbeeaebmfjpmnlgkhoejinha .contextmenu_box .contextmenu_menu:hover {
-	background-color: #555 !important;
-	color: #fff !important}
-}
-
-/*------ DOWNLOAD MANAGER (S3) ADDON INFORMATION BOTTOM BAR ------*/
-@-moz-document url-prefix(http), url-prefix(moz-extension://) {
-#s3downbar-ibmbeeacmbeeaebmfjpmnlgkhoejinha .tooltip_box {
-	background: linear-gradient(#333, #666) !important;
-	color: #ddd !important;
-	border: 1px solid #444 !important}
-
-#s3downbar-ibmbeeacmbeeaebmfjpmnlgkhoejinha .contextmenu_box {
-	border: 1px solid #000 !important;
-	background: #444 !important;
-	color: #ddd !important;
-	box-shadow: 0 0 10px #000 !important}
-
-#s3downbar-ibmbeeacmbeeaebmfjpmnlgkhoejinha .contextmenu_box .contextmenu_menu:hover {
-	background-color: #555 !important;
-	color: #fff !important}
-
-#s3downbar_download_tooltip_data_box > .download_data_tooltip_data > tbody > tr > td > div,
-#s3downbar_download_tooltip_filename {
-	color: #fff !important}
-
-#s3downbar_download_data_list_empty, #s3downbar_download_tooltip_hint_finish,
-#s3downbar_download_tooltip_hint_progress {color: #aaa !important}
-
-#s3downbar_download_tooltip_from {background-color: #333 !important; color: #05f !important}
-}
-
-/*------ PRIVACY BADGER ADDON SETTINGS PAGE ------*/
-@-moz-document url-prefix(moz-extension://TYPE-UUID-OF-PRIVACY-BADGER-HERE/skin/options.html) {
-body, html {background: #222 !important; color: #fff !important}
-
-#tabs {background: #444 !important; color: #ccc !important; border: 1px solid #666 !important}
-
-#tabs > ul {background-image: linear-gradient(#333, #222) !important; border: 1px solid #666 !important}
-
-label, p, span.i18n_show_tracking_domains_acknowledgement, .origin.tooltip {color: #ddd !important}
-
-.i18n_options_webrtc_warning, .i18n_options_incognito_warning {color: #aaa !important}
-
-span.i18n_import_user_data, span.i18n_export_user_data, h3, h3 span {color: #fff !important}
-
-#tabs > ul > li {
-	background: #252525 !important; 
-	border: 1px solid #555 !important}
-
-#tabs > ul > li span {color: #ccc !important}
-
-#tabs > ul > li.ui-state-hover {
-	background: #333 !important; 
-	border: 1px solid #606060 !important}
-
-#tabs > ul > li.ui-state-hover span {color: #ddd !important}
-
-#tabs > ul > li.ui-state-active {
-	background: #444 !important; 
-	color: #fff !important; 
-	border: 1px solid #666 !important}
-
-#tabs > ul > li.ui-state-active span {color: #fff !important}
-
-#newWhitelistDomain, #excludedDomainsBox, #trackingDomainSearch {
-	-moz-appearance: none !important;
-	color: #ddd !important;
-	background: #303030 !important;
-	border: 1px solid #666 !important}
-
-#trackingDomainSearch:hover, #newWhitelistDomain:hover {
-	border: 1px solid #db7924 !important}
-
-#blockedResources > .keyContainer > .key {background: none !important}
-
-#blockedResourcesInner > div {
-	background: #444 !important; 
-	color: #ccc !important;
-	border-top: 1px solid #666 !important}
-
-button {
-  -moz-appearance: none !important;
-  border-radius: 3px !important;
-  background: #666 !important;
-  color: #ddd !important;
-  border: none !important}
-
-button:hover {
-	background: #555 !important;
-	color: #fff !important}
-
-a:link, a {color: #0bb !important}
-a:visited, a:active {color: #088 !important}
-a:hover {color: #0dd !important}
-
-/* Checkbox coloring */
-input[type="checkbox"] {
-  -moz-appearance: none !important;
-  border: 1px solid #666 !important;
-  background-color: #444 !important;
-  transition: color 0.3s;
-  min-width: 16px;
-  min-height: 16px;
-  max-height: 16px !important;
-  margin-bottom: 0 !important}
-
-input[type="checkbox"]:not([disabled]):hover {
-  box-shadow: 0 0 4px #0084ff !important;
-  border-color: #0084ff !important}
-
-input[type="checkbox"]:checked {
-  background: #444 url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="15px" height="15px" viewBox="0 0 16 16" ><path fill="rgb(200,200,200)" d="M 13.09,2.87 C 13.09,2.87 6.00,11.00 6.00,11.00 6.00,11.00 2.00,9.00 2.00,9.00 4.25,12.81 7.00,14.00 7.00,14.00 9.24,10.42 12.04,7.39 13.09,2.87 Z" /></svg>') no-repeat center center !important}
-
-input[type="checkbox"]:disabled + span, input[type="checkbox"]:disabled {opacity: 0.5 !important}
-
-/* Select boxes coloring */
-select {
-  -moz-appearance: none !important;
-  background: #555 url("data:image/svg+xml;charset=utf-8,%3Csvg width='11' height='7' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M434.574 488L430.5 492.147 426.428 488 425 489.399 430.5 494.999 436 489.399z' transform='translate(-425 -488)' fill='%23cccccc' fill-rule='evenodd'/%3E%3C/svg%3E") no-repeat calc(100% - 5px) 50% !important;
-  border: none !important;
-  padding: 3px;
-  color: #ccc !important}
-
-select:hover {
-  background: #333 url("data:image/svg+xml;charset=utf-8,%3Csvg width='11' height='7' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M434.574 488L430.5 492.147 426.428 488 425 489.399 430.5 494.999 436 489.399z' transform='translate(-425 -488)' fill='%23cccccc' fill-rule='evenodd'/%3E%3C/svg%3E") no-repeat calc(100% - 5px) 50% !important;
-  color: #fff !important}
-
-select .menulist-dropmarker {display: none}
-}
-
-/*------ PRIVACY BADGER ADDON POPUP ------*/
-@-moz-document url-prefix(moz-extension://TYPE-UUID-OF-PRIVACY-BADGER-HERE/skin/popup.html) {
-body, html {background: #333 !important; color: #fff !important}
-
-label, span, .origin.tooltip {color: #ddd !important}
-span.i18n_name {color: #fff !important}
-
-button {
-  -moz-appearance: none !important;
-  border-radius: 3px !important;
-  background: #666 !important;
-  color: #ddd !important;
-  border: none !important}
-
-button:hover {
-  background: #444 !important;
-  color: #fff !important}
-
-a:link, a {color: #fc9336 !important}
-a:visited, a:active {color: #a3540f !important}
-a:hover {color: #f0a15c !important}
-
-#instruction {background: #444 !important; color: #ddd !important}
-
-#blockedResources > .keyContainer > .key {background: none !important}
-#blockedResourcesInner > div {
-	background: #333 !important; 
-	color: #ccc !important;
-	border-top: 1px solid #555 !important}
-}
-
-/*------ NOSCRIPT ADDON SETTINGS AND PROMPT PAGE ------*/
-@-moz-document url-prefix(moz-extension://TYPE-UUID-OF-NOSCRIPT-ADDON-HERE/ui/options.html),
-url-prefix(moz-extension://TYPE-UUID-OF-NOSCRIPT-ADDON-HERE/ui/prompt.html),
-url-prefix(moz-extension://TYPE-UUID-OF-NOSCRIPT-ADDON-HERE/ui/siteInfo.html) {
-body, html {background: #222 !important}
-
-#main {background: linear-gradient(#555,#111) !important; color: #fff !important}
-
-#message {color: #fff !important}
-
-h1 {color: #fff !important}
-span {color: #ddd !important}
-
-.flextabs__content, .flextabs__toggle[aria-expanded="true"] {
-	background: #444 !important;
-	color: #ddd !important}
-
-.flextabs__toggle[aria-expanded="false"] {
-	background: #404040 !important;
-	color: #aaa !important}
-
-button:not(.flextabs__toggle) {
-  -moz-appearance: none !important;
-  border-radius: 3px !important;
-  background: #666 !important;
-  color: #ddd !important;
-  border: none !important}
-
-button:not(.flextabs__toggle):hover {
-  background: #333 !important;
-  color: #fff !important}
-
-.buttons button {padding: 5px !important; margin-right: 5px !important}
-
-#button0, #button1 {padding: 5px !important}
-
-.buttons button:hover {background: #444 !important}
-
-.presets, .url, .customizer-controls {color: #000 !important}
-
-#presets {filter: brightness(80%) !important}
-
-a:link {color: #0084ff !important}
-a:hover {color: #0ff !important}
-a:active {color: #0050aa !important}
-
-.customizer fieldset label {color: #000 !important}
-
-#newsite {
-	-moz-appearance: none !important; 
-	background: #323232 !important; 
-	color: #ddd !important;
-	border: 1px solid #666 !important}
-
-#sites .sites tr {background: #555 !important}
-
-#sites .sites tr:nth-child(even) {background: #666 !important}
-
-/* Checkbox coloring */
-input[type="checkbox"] {
-  -moz-appearance: none !important;
-  border: 1px solid #666 !important;
-  background-color: #444 !important;
-  transition: color 0.3s;
-  min-width: 16px;
-  min-height: 16px;
-  max-height: 16px !important;
-  margin-bottom: 0 !important}
-
-input[type="checkbox"]:not([disabled]):hover {
-  box-shadow: 0 0 4px #0084ff !important;
-  border-color: #0084ff !important}
-
-input[type="checkbox"]:checked {
-  background: #444 url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="15px" height="15px" viewBox="0 0 16 16" ><path fill="rgb(200,200,200)" d="M 13.09,2.87 C 13.09,2.87 6.00,11.00 6.00,11.00 6.00,11.00 2.00,9.00 2.00,9.00 4.25,12.81 7.00,14.00 7.00,14.00 9.24,10.42 12.04,7.39 13.09,2.87 Z" /></svg>') no-repeat center center !important}
-
-input[type="checkbox"]:disabled + span, input[type="checkbox"]:disabled {opacity: 0.5 !important}
-
-/* Select boxes coloring */
-select {
-  -moz-appearance: none !important;
-  background: #555 url("data:image/svg+xml;charset=utf-8,%3Csvg width='11' height='7' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M434.574 488L430.5 492.147 426.428 488 425 489.399 430.5 494.999 436 489.399z' transform='translate(-425 -488)' fill='%23cccccc' fill-rule='evenodd'/%3E%3C/svg%3E") no-repeat calc(100% - 5px) 50% !important;
-  border: none !important;
-  padding: 3px;
-  color: #ccc !important}
-
-select:hover {
-  background: #333 url("data:image/svg+xml;charset=utf-8,%3Csvg width='11' height='7' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M434.574 488L430.5 492.147 426.428 488 425 489.399 430.5 494.999 436 489.399z' transform='translate(-425 -488)' fill='%23cccccc' fill-rule='evenodd'/%3E%3C/svg%3E") no-repeat calc(100% - 5px) 50% !important;
-  color: #fff !important}
-
-select .menulist-dropmarker {display: none}
-}
-
-/*------ NOSCRIPT ADDON POPUP ------*/
-@-moz-document url-prefix(moz-extension://TYPE-UUID-OF-NOSCRIPT-HERE/ui/popup.html) {
-body, html, #main {background: #333 !important; color: #ddd !important}
-
-#top {border-bottom: 1px solid #555 !important}
-
-button {background-color: transparent !important}
-
-tr {color: #ddd !important}
-
-#sites .sites tr {background: #333 !important}
-
-span {color: #ddd !important}
-
-#sites .sites tr:nth-child(odd) {background: #404040 !important}
-
-/* Checkbox coloring */
-input[type="checkbox"] {
-  -moz-appearance: none !important;
-  border: 1px solid #666 !important;
-  background-color: #444 !important;
-  transition: color 0.3s;
-  min-width: 16px;
-  min-height: 16px;
-  max-height: 16px !important;
-  margin-bottom: 0 !important}
-
-input[type="checkbox"]:not([disabled]):hover {
-  box-shadow: 0 0 4px #0084ff !important;
-  border-color: #0084ff !important}
-
-input[type="checkbox"]:checked {
-  background: #444 url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="15px" height="15px" viewBox="0 0 16 16" ><path fill="rgb(200,200,200)" d="M 13.09,2.87 C 13.09,2.87 6.00,11.00 6.00,11.00 6.00,11.00 2.00,9.00 2.00,9.00 4.25,12.81 7.00,14.00 7.00,14.00 9.24,10.42 12.04,7.39 13.09,2.87 Z" /></svg>') no-repeat center center !important}
-
-input[type="checkbox"]:disabled + span, input[type="checkbox"]:disabled {opacity: 0.5 !important}
-}
-
-/*------ WINDOW RESIZE ADDON ------*/
-@-moz-document url-prefix(moz-extension://TYPE-UUID-OF-WINDOW-RESIZE-HERE/popup/choose_size.html) {
-a {color: #ddd !important}
-a:hover {
-	background-color: rgba(255,255,255,0.2) !important; 
-	color: #fff !important; 
-	border-color: transparent !important}
-}
-
-/*------ MULTI-ACCOUNTS CONTAINER ADDON ------*/
-@-moz-document url-prefix(moz-extension://TYPE-THE-UUID-OF-MULTI-ACCOUNTS-CONTAINER-ADDON-HERE/) {
-html, body {background: #222 !important}
-
-h3, legend {color: #fff !important}
-span:not(#current-container), #container-info-movetabs,
-.container-info-tab-title, .truncate-text {color: #ccc !important}
-
-#sort-containers-link, .userContext-wrapper, .show-tabs:not(.pop-button-image-small), 
-#edit-containers-link, #container-add-link, #edit-container-cancel-link, .panel-back-arrow,
-.container-panel-row {
-	background-color: #333 !important;
-	color: #ccc !important}
-
-#sort-containers-link:hover, .userContext-wrapper:hover, .show-tabs:hover, 
-#edit-containers-link:hover, #container-add-link:hover, #edit-container-cancel-link:hover,
-.panel-back-arrow:hover, .clickable:hover, .pop-button:hover {
-	background-color: #444 !important;
-	color: #fff !important}
-
-.pop-button-image-small {fill: #fff !important}
-
-#container-page-assigned {filter: invert(80%)}
-
-#sort-containers-link, .container-panel-row {border-color: #666 !important}
-#edit-containers-link {border: 1px solid #666 !important}
-
-#container-add-link {
-	border-top: 1px solid #666 !important;
-	border-right: 1px solid #666 !important;
-	border-bottom: 1px solid #666 !important}
-
-.edit-containers-text {border-inline-end: transparent !important}
-.scrollable {border-block-start: 1px solid #666 !important}
-.panel-footer {border-block-end: transparent !important}
-
-#redirect-url {background-color: #333 !important}
-}
-
-@-moz-document url-prefix(http){
-.container-notification {
-	background-color: rgba(50,50,50,0.7) !important;
-	color: #0c0 !important}
-}
-
-/*------ TEMPORARY CONTAINERS ADDON ------*/
-@-moz-document url-prefix(moz-extension://TYPE-THE-UUID-OF-TEMPORARY-CONTAINERS-ADDON-HERE/) {
-html, body, .dropdown.selection, .menu .item, .ui.menu {background: #222 !important}
-
-input[type="text"]{
-	background-color: #444 !important; 
-	border: 1px solid #666 !important;
-	color: #fff !important}
-
-input[type="text"]:focus{border: 1px solid #0a84ff !important}
-
-.ui.segment, .pusher  {
-	background: #303030 !important;
-	color: #ccc !important}
-
-.ui.segment.active, .item.active {background: #353535 !important}
-.item, label, h4, h3 {color: #ccc !important}
-.item.active, .dropdown.selection, .text, .label {color: #fff !important}
-
-.item:not(.active):hover{background: #282828 !important}
-
-.ui.selection.dropdown .menu > .item, .ui.tabular.menu, .ui.menu,
-.item.active, .ui.popup, .ui.segment {border-color: #666 !important}
-
-.ui.negative.message {
-	background-color: #533 !important;
-	color: #f33 !important}
-
-.ui.notice.message{
-	background-color: #555 !important;
-	color: #fff !important;
-	border-color: #ccc !important}
-
-.ui.notice.message a:link, .ui.notice.message a {color: #09f !important}
-.ui.notice.message a:visited {color: #0070aa !important}
-.ui.notice.message a:hover {color: #0ff !important}
-.ui.notice.message a:active {color: #0050aa !important}
-
-#tmpButton svg {filter: invert(90%) !important}
-
-label::before, .ui.popup {filter: invert(75%)}
-}
-
-/*------ HTTPS EVERYWHERE ADDON ------*/
-@-moz-document url-prefix(moz-extension://TYPE-THE-UUID-OF-HTTPS-EVERYWHERE-ADDON-HERE/) {
-html, body {background: #444 !important; color: #ccc !important}
-
-h1, h2, h3 {color: #fff !important}
-
-label {color: #ccc !important}
-
-button, input[type="button"] {  
-  -moz-appearance: none !important;
-  border-radius: 3px !important;
-  background-color: #666 !important;
-  color: #ddd !important;
-  border: none !important;
-  padding: 5px !important;
-  margin: 3px !important}
-
-button:hover, input[type="button"]:hover {  
-  background-color: #333 !important;
-  color: #fff !important;
-  box-shadow: none !important}
-
-a:link, a {color: #09f !important}
-a:visited {color: #0070aa !important}
-a:hover {color: #0ff !important}
-a:active {color: #0050aa !important}
-
-input[type="text"]{
-	-moz-appearance: none !important;
-	background-color: #555 !important; 
-	border: 1px solid #777 !important;
-	color: #fff !important;
-	margin: 3px !important}
-
-input[type="text"]:focus{border: 1px solid #0a84ff !important}
-
-input[type="text"][disabled] {color: #aaa !important}
-
-.section-header-span.active {
-	background: #0050af !important; 
-	color: #fff !important;
-	cursor: default !important}
-
-.section-header-span.inactive {
-	background: #888 !important; 
-	color: #fff !important;
-	cursor: pointer !important}
-
-#update-channels-warning {background: #533 !important}
-
-/* Checkbox coloring */
-input[type="checkbox"] {
-  -moz-appearance: none !important;
-  border: 1px solid #666 !important;
-  background-color: #444 !important;
-  transition: color 0.3s;
-  min-width: 16px;
-  min-height: 16px;
-  margin-bottom: 0 !important}
-
-input[type="checkbox"]:not([disabled]):hover {
-  box-shadow: 0 0 4px #0084ff !important;
-  border-color: #0084ff !important}
-
-input[type="checkbox"]:checked {
-  background: #444 url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="15px" height="15px" viewBox="0 0 16 16" ><path fill="rgb(200,200,200)" d="M 13.09,2.87 C 13.09,2.87 6.00,11.00 6.00,11.00 6.00,11.00 2.00,9.00 2.00,9.00 4.25,12.81 7.00,14.00 7.00,14.00 9.24,10.42 12.04,7.39 13.09,2.87 Z" /></svg>') no-repeat center center !important}
-}
-
-/*------ ONETAB ADDON ------*/
-@-moz-document url-prefix(moz-extension://TYPE-THE-UUID-OF-ONETAB-ADDON-HERE/),
-url-prefix(https://www.one-tab.com/page/) {
-html, body {background: #303030 !important}
-
-#settingsDiv {background: #444 !important; border: 1px solid #666 !important}
-
-div {color: #ccc !important}
-
-#contentAreaDiv > div {border-color: #666 !important}
-
-a:link, a, a:visited, .clickable {color: #09f !important}
-a:hover, .clickable:hover {color: #0ff !important}
-a:active, .clickable:active {color: #0050aa !important}
-
-img[src="images/cross.png"] {filter: brightness(200%)}
-
-textarea {
-	-moz-appearance: none !important; 
-	background-color: #222 !important; 
-	color: #aaa !important;
-	border: 1px solid #555 !important}
-
-label::before {filter: invert(81%) hue-rotate(170deg)}
-
-/* Checkbox coloring */
-input[type="checkbox"] {
-  -moz-appearance: none !important;
-  border: 1px solid #666 !important;
-  background-color: #444 !important;
-  transition: color 0.3s;
-  min-width: 16px;
-  min-height: 16px;
-  margin-bottom: 0 !important}
-
-input[type="checkbox"]:not([disabled]):hover {
-  box-shadow: 0 0 4px #0084ff !important;
-  border-color: #0084ff !important}
-
-input[type="checkbox"]:checked {
-  background: #444 url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="15px" height="15px" viewBox="0 0 16 16" ><path fill="rgb(200,200,200)" d="M 13.09,2.87 C 13.09,2.87 6.00,11.00 6.00,11.00 6.00,11.00 2.00,9.00 2.00,9.00 4.25,12.81 7.00,14.00 7.00,14.00 9.24,10.42 12.04,7.39 13.09,2.87 Z" /></svg>') no-repeat center center !important}
-}
-
-
-/*------ NOTIFIER FOR GMAIL (RESTARTLESS) ADDON ------*/
-@-moz-document url-prefix(moz-extension://TYPE-THE-UUID-OF-NOTIFIER-FOR-GMAIL-ADDON-HERE/) {
-html, #content {background: #303030 !important; color: #ccc !important}
-
-* {border-color: #555 !important}
-
-.ellipsis {color: #ccc !important}
-
-div[name="info"] a, #title {color: #fff !important}
-
-header, footer, #header, #labels .label {
-	background-color: #222 !important; 
-	color: #fff !important}
-
-#accounts .ellipsis {
-	background-color: #fff !important;
-	color: #000 !important;
-	filter: invert(90%);}
-
-header div[name="email-container"] {
-	background-color: transparent !important;
-	color: #000 !important;
-	filter: invert(81%);}
-
-body[data-star="false"] #content div[name="title"] #star {filter: invert(81%)}
-
-.btn, input[type="button"] {  
-  background-color: #666 !important;
-  color: #ddd !important;
-  border: none !important}
-
-.btn:hover, input[type="button"]:hover {  
-  background-color: #777 !important;
-  color: #fff !important}
-
-iframe {background: transparent !important}
-
-input[type="text"], input[type="color"]{
-	background-color: #444 !important;
-	color: #fff !important}
-
-input[type="number"] {
-	background: #222 !important;
-	outline-color: #555 !important}
-
-/* Select boxes coloring */
-select {
-  -moz-appearance: none !important;
-  background: #555 url("data:image/svg+xml;charset=utf-8,%3Csvg width='11' height='7' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M434.574 488L430.5 492.147 426.428 488 425 489.399 430.5 494.999 436 489.399z' transform='translate(-425 -488)' fill='%23cccccc' fill-rule='evenodd'/%3E%3C/svg%3E") no-repeat calc(100% - 5px) 50% !important;
-  border: none !important;
-  padding: 3px 10px 3px 3px;
-  color: #ccc !important}
-
-select:hover {
-  background: #333 url("data:image/svg+xml;charset=utf-8,%3Csvg width='11' height='7' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M434.574 488L430.5 492.147 426.428 488 425 489.399 430.5 494.999 436 489.399z' transform='translate(-425 -488)' fill='%23cccccc' fill-rule='evenodd'/%3E%3C/svg%3E") no-repeat calc(100% - 5px) 50% !important;
-  color: #fff !important}
-
-select .menulist-dropmarker {display: none}
-}
-
-/*------ POPUP BLOCKER ULTIMATE ADDON ------*/
-@-moz-document url-prefix(moz-extension://TYPE-THE-UUID-OF-POPUP-BLOCKER-ULTIMATE-ADDON-HERE/) {
-body {background-color: #333 !important}
-
-table td {color: #ccc !important}
-
-td[data-type="status"] {filter: invert(80%) hue-rotate(144deg) contrast(1.10) brightness(1.205) saturate(0.9);}
-
-table td:not([data-type="status"]):hover {background-color: #444 !important}
-}
-
 /*------ VIEWHANCE ADDON ------*/
 @-moz-document url-prefix(moz-extension://TYPE-THE-UUID-OF-VIEWHANCE-ADDON-HERE/options.html) {
 html {background: #222 !important}
@@ -1380,36 +1402,4 @@ input[type="checkbox"]:checked + .checkbox {
 
 input[type="checkbox"] + .checkbox:hover {
 	border-color: #888 !important}
-}
-
-/*------ HISTORY AND COOKIE AUTODELETE ADDONS ------*/
-@-moz-document url-prefix(moz-extension://HISTORY-AUTODELETE-ADDON-UUID-GOES-HERE/),
-url-prefix(moz-extension://COOKIE-AUTODELETE-ADDON-UUID-GOES-HERE/) {
-#layout, body {background: #15181d !important; color: #ccc !important}
-
-h2, h1 {color: #fff !important}
-
-label::before {filter: invert(90%)}
-
-.btn.btn-light, .nav-link.active, .alert.alert-primary {
-	background: #2b323b !important; 
-	border-color: #20252c !important;
-	color: #fff !important}
-
-.btn.btn-light path {fill: #ddd !important}
-.btn.btn-light:hover {background: #20252c !important}
-
-.row.nav.nav-tabs {border-color: #20252c !important}
-
-.form-control, #formText {background: #26292e !important; color: #ccc !important}
-.form-control:not(focus), #formText:not(focus) {border-color: #37403f !important}
-
-.table-striped > tbody > tr:nth-of-type(2n+1) {background: #222 !important}
-.table-striped > tbody > tr:hover {background: #26292e !important}
-
-.table-bordered, .table-bordered > tbody > tr > td, .table-bordered > tbody > tr > th, 
-.table-bordered > tfoot > tr > td, .table-bordered > tfoot > tr > th, .table-bordered > thead > tr > td, 
-.table-bordered > thead > tr > th {border-color: #37403f !important}
-
-label:hover {background: rgba(255,255,255,0.1) !important}
 }
