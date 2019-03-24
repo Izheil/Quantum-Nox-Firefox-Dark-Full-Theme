@@ -39,6 +39,8 @@ label::before {filter: invert(90%)}
 .table-bordered > tfoot > tr > td, .table-bordered > tfoot > tr > th, .table-bordered > thead > tr > td, 
 .table-bordered > thead > tr > th {border-color: #37403f !important}
 
+.card {background-color: #20252c !important}
+
 label:hover {background: rgba(255,255,255,0.1) !important}
 }
 
