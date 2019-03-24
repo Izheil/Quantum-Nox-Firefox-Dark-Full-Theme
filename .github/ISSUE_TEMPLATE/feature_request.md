@@ -3,8 +3,8 @@ name: Feature request
 about: Suggest an idea on how to enhace an already existing function, or some function
   that you'd like to see in the theme that couldn't be achieved through the use of  extensions.
 title: "[REQUEST]"
-labels: enhancement
-assignees: Izheil
+labels: ''
+assignees: ''
 
 ---
 

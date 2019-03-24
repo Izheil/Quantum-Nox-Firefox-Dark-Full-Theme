@@ -3,8 +3,8 @@ name: Bug report
 about: Any issue with the theme that isn't a feature request, such as some part of
   the UI not themed, or some functionability not working as explained in the documentation.
 title: "[BUG]"
-labels: bug
-assignees: Izheil
+labels: ''
+assignees: ''
 
 ---
 
