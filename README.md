@@ -48,38 +48,15 @@ This problem doesn't happen if you use a code editor such as notepad++, atom, su
 
 <p>If you are on windows and only want the theme or multirow, you can use the batch file installers inside the "installers" folder.</p> 
 
-<p>If you are using Linux or Mac, or want to add some more functionability (like deleting some useless context menu commands), you will have to use the methods described inside the 3 main folders of this repository:</p>
+<p>If you are using Linux or Mac, or want to add some more functionability (like deleting some useless context menu commands), you will have to use the methods described inside one of the 3 main folders of this repository:</p>
 
-<h4>Short version</h4>
+<h4>Short review of each folder:</h4>
 <ul>
   <li><b>CSS tweaks</b>: Enables removal of context menu items, multirow bookmarks, changing tab bar position (so that it could be under the bookmarks bar for example)</li>
-  <li><b>Full dark theme</b>: Gives dark colors to firefox UI, including the scrollbars and the tooltips.</li>
+  <li><b>Full dark theme</b>: Gives dark colors to firefox UI, including the scrollbars and the tooltips. Can also change the background image of <code>about:home</code> and the header image used as a persona.</li>
   <li><b>Multirow and other functions</b>: You can find the JS files that add extra functionability to Firefox that couldn't be done with CSS alone.</li>
 </ul>
 
-<h4>Detailed explanation</h4>
-<ul>
-  <li><b>CSS tweaks</b>: In this one you will find a userchrome with ONLY the features part of the theme (with the exception of multiple row tabs, which can be only enabled using the <b><code>MultiRowTabLiteforFx.uc.js</code> file inside the "Tooltips, Scrollbars & Multirow tabs\chrome" folder</b>). These features are the following:
-	<ul>
-	  <li>Multiple row tabs (only through <code>MultiRowTabLiteforFx.uc.js</code>). <img src="https://i.imgur.com/3LbvuMU.png"></li>
-	  <li>Multiple row bookmarks toolbar (2 usable rows by default, but it is NOT enabled by default. You can add more rows editing userchrome).</li>
-	  <li>Hides some rarely used commands on the context menu such as "Set image as desktop background" (you can turn these on again).</li>
-	  <li>Changes the tab close button to always be visible.</li>
-	  <li>You can hide the sidebar completelly resizing it instead of having to click the sidebar button.</li>
-	  <li>Can change the URL bar font (You have to change the commented line on userchrome to use it).</li>
-	  <li>Can change the tabs position under the URL bar (You have to change the commented line on userchrome to use it).</li>
-	</ul></li>
-  <li><b>Full dark theme</b>: Following the method described in this folder you will ONLY color Firefox (unless you use the dark theme + CSS tweaks userchrome file there), including a different style to scrollbars, and tooltips.<br />
-  If you only want to use a dark theme, and keep all the context menu options when right clicking on tabs/the web area (such as "Send image..." or "Send tab to device"), use the default userchrome in this folder instead of the "Dark theme + CSS tweaks userchrome" one. Apart from the basic Firefox UI theming, you can also theme a few other optional things (they require some editing of userchrome.css, or copying addons.css into the chrome folder):
-	<ul>
-	  <li>Styling for unloaded and unread tab titles.</li>
-	  <li>Can change the tab line color to Windows current theme color (You have to change the commented line that is described in line 19 inside <code>userChrome.css</code>).</li>
-	  <li>Can change the background image of your lightweight theme to one of your choice on <code>userChrome.css</code> (You have to be using a lightweight theme instead of the default dark theme of Firefox).</li>
-	  <li>Can change the default text color of input boxes for those using a dark OS theme that affects the background of these (You have to change the commented line that is described on line 15 inside <code>usercontent.css</code> to use it)</li>
-	  <li>Change the theme of any of the addons listed in the addons section below (You have to update the UUIDs of the extensions inside "addons.css" for this).</li>
-	  <li>Can set an image as background for the home page (You have to change the commented line that is described in line 19 inside <code>userContent.css</code>).<br /></li>
-	</ul><br /></li>
-</ul>
 <img src="https://i.imgur.com/OhKiBCI.png">
 
 <h4>You can turn the features you want on or off changing the commented lines on <code>userchrome.css</code> (To change them you just have to open it with notepad or any code editor, and encase between "/*" and "*/" (without the quotation marks) the lines you don't want to take effect). Of course, if you think that you are NEVER going to use certain feature, you can always delete the specific lines you don't want without any other side-effect.</h4>
