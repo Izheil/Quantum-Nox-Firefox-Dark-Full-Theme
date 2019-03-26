@@ -105,6 +105,11 @@ This problem doesn't happen if you use a code editor such as notepad++, atom, su
 <br /><br />
 
 <h2>FAQ:</h2>
+<h3>How do I submit an issue?</h3>
+<p>As of 26/03/2019 I stopped offering active support for new features or issues. This doesn't mean that I won't be mantaining the project, it just means I won't be taking feature requests nor unrelated issues to the functionability offered by the files inside this repository anymore.</p>
+
+<p>If you find some problem that is <b>directly related</b> with any of the functions offered by any of the files in this repository, you can comment it inside the relevant commit that you think may have affected the function that is giving you trouble. If you can't tell which, comment in the last one. Comments about new functionability or things that aren't related to the actual functionability of the files will be ignored (You can already ask about problems you may have with firefox on r/firefox or r/firefoxCSS subreddits, or on Firefox support pages).</p>
+
 <h3>The pre-loading screen of websites is still white, how can I change this?</h3>
 <p>The fastest way to solve the "blinking" white screen is to change the default web background color on Firefox settings > General > "Colors..." button > Background, which will make the blinking dissapear and be changed to the color you set up. This, although, can cause some issues on some very few and specific pages like BBC, where they don't set a background color to override the one set here (the number of sites with this problem is very small, most sites override the background color set by this setting).</p>
 
