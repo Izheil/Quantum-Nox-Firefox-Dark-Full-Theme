@@ -2,7 +2,7 @@
 
 <h3>Previously known as "Firefox 57+ full dark theme with scrollbars and multirow tabs", I decided to give it an actual name instead of leaving it as just a description.</h3>
 <p>This theme is mainly intended for the stable release of Firefox (<b>This means that while it will most probably work with nightly and ESR for the most part, it may have less support for those versions</b>).</p>
-<p>You can use it to fully change the colors of most of firefox UI to dark-gray colors (with #222-#444 colors mostly), including scrollbars, tooltips, sidebar, as well as some other things, such as removing some context menu options, enabling multirow tabs, changing the font of the url bar...</p>
+<p>You can use it to fully change the colors of most of firefox UI to dark-gray colors (with #222-#444 colors mostly), including scrollbars, tooltips, sidebar, as well as dialogs. With the files here you can also as remove some context menu options, enable multirow tabs, change the font of the url bar...</p>
 <p><b>Of course... you could as well use these files to color your firefox any way you wanted</b>, the only thing you'd have to do is change the correct values (what each class or id does is commented above each) in the .css files (as far as you know some 
 basic css or <a href="https://www.w3schools.com/colors/colors_picker.asp">color coding</a>, it shouldn't be too hard) using notepad, or some code editing program (such as notepad++ on Windows).</p>
 <p>To change these you will have to use the right hex codes. You can find a color picker to hex code in <a href="https://www.w3schools.com/colors/colors_picker.asp">this page</a>.</p>
@@ -45,6 +45,7 @@ This problem doesn't happen if you use a code editor such as notepad++, atom, su
 
 <h3>Main browser UI</h3>
 <img src="https://i.imgur.com/zNKhEV6.png" title="Dark firefox UI with custom background" />
+<img src="https://i.imgur.com/q8MhDSX.png" title="Dark firefox Dialog" />
 
 <p>If you are on windows and only want the theme or multirow, you can use the batch file installers inside the "installers" folder.</p> 
 
