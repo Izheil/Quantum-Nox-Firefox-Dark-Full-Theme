@@ -2,7 +2,7 @@
 @name         Quantum nox - Global dark style
 @description  Fork from the global dark style that Stormi wrote to use alongside Quantum nox - Firefox dark theme.
 @namespace    https://userstyles.org/styles/31267/global-dark-style-changes-everything-to-dark
-@version      1.0.5
+@version      1.0.6
 @author       Stormi, Izheil
 @homepageURL  https://github.com/Izheil/Quantum-Nox-Firefox-Dark-Full-Theme/tree/master/Global%20dark%20userstyle
 @updateURL	  https://raw.githubusercontent.com/Izheil/Quantum-Nox-Firefox-Dark-Full-Theme/master/Global%20dark%20userstyle/Quantum%20Nox%20-%20Global%20dark%20style.user.css
@@ -14,10 +14,11 @@
 @var          color     visitedColor "Visited link color"    #506079
 @var          color     selectColor  "Selected text background color"    #005599
 @var          color     textColor    "Selected text color"    #000000
-@var          color     bgColor       "Background color"  #181818
+@var          color     bgColor      "Background color"  #181818
 @var          text      darkBg       "Background img [wrap in url()]"  url("https://i.imgur.com/FrGqsTE.png")
-@var          checkbox  imgTransp    "Translucid images"  0
-@var          checkbox  lowCont      "Lower img contrast"  1
+@var          checkbox  imgHover     "100% bright img on hover"  0
+@var          number    contNum      "Image brightness %" ['%', 100, 0, 100, 1]
+@var          checkbox  invImgCol    "Invert image colors"  0
 @var          checkbox  headCont     "Lower header img contrast"  1
 @var          checkbox  divHide      "Hide div background images"  0
 @var          checkbox  headHide     "Hide header images"  0
@@ -227,19 +228,23 @@ if invMethod == "customSet"  {
     .mw-parser-output .main-top-left {background: linear-gradient(to right, #000, transparent) !important}
         
     /*----- IMAGE CHANGES -----*/
-    if imgTransp {
+    img, picture, div[style*="background-image:"]:not(.download_data_box) {
+        filter: brightness(contNum)
+    }
+
+    if imgHover {
         img, div[style*="background-image:"]:not(.download_data_box) {
-            opacity: 0.8 !important;
-            transition: opacity .2s
+            filter: brightness(contNum);
+            transition: filter .2s
             }
         img:hover, a:hover img, div[style*="background-image:"]:hover, #mpiv-popup {
-            opacity: 1 !important
+            filter: brightness(100%)
             }
         }
 
-    if lowCont {
-        img, picture, div[style*="background-image:"] {
-            filter: brightness(70%)
+    if invImgCol {
+        img, div[style*="background-image:"]:not(.download_data_box) {
+            filter: invert(100%);
             }
         }
 

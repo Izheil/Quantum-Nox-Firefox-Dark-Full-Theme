@@ -1,6 +1,6 @@
 /* You can find an updated version here: https://github.com/Izheil/Quantum-Nox-Firefox-Dark-Full-Theme */
 /* Made by Izheil */
-/* Last updated: 27/03/2019 */
+/* Last updated: 28/03/2019 */
 
 /* This part imports the Addons file if there is one, so that you don't have to edit the dynamic URL
 from the addons rules every time we update anything here */
@@ -479,7 +479,9 @@ input[type=text] {color: #aaa !important}
 .edit-menu button.icon.icon-edit, .edit-menu button.icon.icon-dismiss {
 	border-left: 1px solid #333 !important}
 
-.edit-menu {border: 1px solid #333 !important; background-color: #555 !important}
+.edit-menu, .top-site-icon.default-icon {border: 1px solid #333 !important; background-color: #555 !important}
+
+.context-menu-item .icon {fill: #ddd !important}
 
 .edit-menu button.icon.icon-unpin:hover, .edit-menu button.icon.icon-pin:hover, 
 .edit-menu button.icon.icon-edit:hover, .edit-menu button.icon.icon-dismiss:hover {
