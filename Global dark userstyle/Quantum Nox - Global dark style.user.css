@@ -2,7 +2,7 @@
 @name         Quantum nox - Global dark style
 @description  Fork from the global dark style that Stormi wrote to use alongside Quantum nox - Firefox dark theme.
 @namespace    https://userstyles.org/styles/31267/global-dark-style-changes-everything-to-dark
-@version      1.0.7
+@version      1.0.8
 @author       Stormi, Izheil
 @homepageURL  https://github.com/Izheil/Quantum-Nox-Firefox-Dark-Full-Theme/tree/master/Global%20dark%20userstyle
 @updateURL	  https://raw.githubusercontent.com/Izheil/Quantum-Nox-Firefox-Dark-Full-Theme/master/Global%20dark%20userstyle/Quantum%20Nox%20-%20Global%20dark%20style.user.css
@@ -20,7 +20,7 @@
 @var          number    contNum      "Image brightness %" ['%', 100, 0, 100, 1]
 @var          checkbox  invImgCol    "Invert image colors"  0
 @var          checkbox  headCont     "Lower header img contrast"  1
-@var          checkbox  divHide      "Hide div background images"  0
+@var          checkbox  divHide      "Hide div background images"  1
 @var          checkbox  headHide     "Hide header images"  0
 @var          select    invMethod    "Site theming method" {
     "Custom settings": "customSet",
@@ -228,22 +228,22 @@ if invMethod == "customSet"  {
     .mw-parser-output .main-top-left {background: linear-gradient(to right, #000, transparent) !important}
         
     /*----- IMAGE CHANGES -----*/
-    img, picture, div[style*="background-image:"]:not(.download_data_box) {
+    img, picture, div[style*="background-image:"]:not(.download_data_box):not(#s3downbar_download_box_progress){
         filter: brightness(contNum)
     }
 
     if imgHover {
-        img, div[style*="background-image:"]:not(.download_data_box) {
+        img, div[style*="background-image:"]:not(.download_data_box):not(#s3downbar_download_box_progress) {
             filter: brightness(contNum);
             transition: filter .2s
             }
-        img:hover, a:hover img, div[style*="background-image:"]:hover, #mpiv-popup {
+        img:hover, a:hover img, div[style*="background-image:"]:not(.download_data_box):not(#s3downbar_download_box_progress):hover, #mpiv-popup {
             filter: brightness(100%)
             }
         }
 
     if invImgCol {
-        img, div[style*="background-image:"]:not(.download_data_box) {
+        img, div[style*="background-image:"]:not(.download_data_box):not(#s3downbar_download_box_progress) {
             filter: invert(100%);
             }
         }
