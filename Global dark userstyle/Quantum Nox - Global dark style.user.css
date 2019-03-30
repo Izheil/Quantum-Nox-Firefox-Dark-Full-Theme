@@ -2,7 +2,7 @@
 @name         Quantum nox - Global dark style
 @description  Fork from the global dark style that Stormi wrote to use alongside Quantum nox - Firefox dark theme.
 @namespace    https://userstyles.org/styles/31267/global-dark-style-changes-everything-to-dark
-@version      1.0.8
+@version      1.0.9
 @author       Stormi, Izheil
 @homepageURL  https://github.com/Izheil/Quantum-Nox-Firefox-Dark-Full-Theme/tree/master/Global%20dark%20userstyle
 @updateURL	  https://raw.githubusercontent.com/Izheil/Quantum-Nox-Firefox-Dark-Full-Theme/master/Global%20dark%20userstyle/Quantum%20Nox%20-%20Global%20dark%20style.user.css
@@ -123,7 +123,7 @@ if invMethod == "customSet"  {
 
 
     /*----- DEFAULT BUTTONS, SEARCHBOXES & CO -----*/
-    input, select, button, [role="button"], a.button, a.submit, a.BigButton, a.TabLink, .install[onclick] {
+    input:not(#s3downbar_download_tooltip_source_box), select, button, [role="button"], a.button, a.submit, a.BigButton, a.TabLink, .install[onclick] {
         -moz-appearance: none !important;
         -webkit-appearance: none !important;
         transition: border-color 0.3s !important;
@@ -143,10 +143,10 @@ if invMethod == "customSet"  {
     a[href="javascript:;"]:hover, a[class*="button"]:not(:empty):hover, a[id*="button"]:hover, a[id*="Button"]:not(:empty):hover, div[class*="button"][onclick]:hover {
         background: #151515 !important;
         color: #FFF !important}
-    input *, select *, button *, a.button *, a.submit * {
+    input:not(#s3downbar_download_tooltip_source_box) *, select *, button *, a.button *, a.submit * {
         color: #BBB !important;
         text-shadow: none !important}
-    input:hover, input[type="button"]:hover, select:hover, button:hover, [role="button"]:hover, a.button:hover, a.submit:hover, a.BigButton:hover, a.TabLink:hover {
+    input:not(#s3downbar_download_tooltip_source_box):hover, input[type="button"]:hover, select:hover, button:hover, [role="button"]:hover, a.button:hover, a.submit:hover, a.BigButton:hover, a.TabLink:hover {
         border: 2px solid #555 !important;
         border-top-color: #555 !important;
         border-bottom-color: #555 !important;
@@ -228,22 +228,22 @@ if invMethod == "customSet"  {
     .mw-parser-output .main-top-left {background: linear-gradient(to right, #000, transparent) !important}
         
     /*----- IMAGE CHANGES -----*/
-    img, picture, div[style*="background-image:"]:not(.download_data_box):not(#s3downbar_download_box_progress){
+    img:not(#s3downbar_download_box_img), picture, div[style*="background-image:"]:not(.download_data_box):not(#s3downbar_download_box_progress){
         filter: brightness(contNum)
     }
 
     if imgHover {
-        img, div[style*="background-image:"]:not(.download_data_box):not(#s3downbar_download_box_progress) {
+        img:not(#s3downbar_download_box_img), div[style*="background-image:"]:not(.download_data_box):not(#s3downbar_download_box_progress) {
             filter: brightness(contNum);
             transition: filter .2s
             }
-        img:hover, a:hover img, div[style*="background-image:"]:not(.download_data_box):not(#s3downbar_download_box_progress):hover, #mpiv-popup {
+        img:not(#s3downbar_download_box_img):hover, a:hover img, div[style*="background-image:"]:not(.download_data_box):not(#s3downbar_download_box_progress):hover, #mpiv-popup {
             filter: brightness(100%)
             }
         }
 
     if invImgCol {
-        img, div[style*="background-image:"]:not(.download_data_box):not(#s3downbar_download_box_progress) {
+        img:not(#s3downbar_download_box_img), div[style*="background-image:"]:not(.download_data_box):not(#s3downbar_download_box_progress) {
             filter: invert(100%);
             }
         }
@@ -257,7 +257,7 @@ if invMethod == "customSet"  {
         }
 
     if divHide {
-        body, *:not(:empty):not(html):not(span):not(a):not(b):not(option):not(select):not(img):not([style="display: block;"]):not([onclick*="open"]):not([onclick*="s_objectID"]):not([class*="stars"]):not([id*="stars"]):not([id="rating"]):not([class="rating"]):not([class*="SPRITE"]):not([id*="SPRITE"]):not([class*="item"]):not([id*="item"]):not([class*="thumb"]):not([class*="icon"]):not([class*="photo"]):not(.view):not(.text):not([id*="lbImage"]):not([class*="cc-in"]):not([class*="gr-body"]):not([id*="watch"]):not(#globalsearch):not(header):not(section),
+        body, *:not(:empty):not(html):not(span):not(a):not(b):not(option):not(select):not(img):not([style="display: block;"]):not([onclick*="open"]):not([onclick*="s_objectID"]):not([class*="stars"]):not([id*="stars"]):not([id="rating"]):not([class="rating"]):not([class*="SPRITE"]):not([id*="SPRITE"]):not([class*="item"]):not([id*="item"]):not([class*="thumb"]):not([class*="icon"]):not([class*="photo"]):not(.view):not(.text):not([id*="lbImage"]):not([class*="cc-in"]):not([class*="gr-body"]):not([id*="watch"]):not(#globalsearch):not(header):not(section):not(.s3dmBox),
     .r3_hm, .gmbutton2 b, .gtab-i, .ph, .bstab-iLft, .csb, #pagination div, [style*="sprite2.png"], #mw-head-base, #mw-page-base {
           background-image: none !important}
         }
