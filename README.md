@@ -10,16 +10,15 @@ basic css or <a href="https://www.w3schools.com/colors/colors_picker.asp">color 
 <br />
 This problem doesn't happen if you use a code editor such as notepad++, atom, sublime text...</h4>
 
-<h3>Last update: <b>29/03/2019</b></h3>
+<h3>Last update: <b>02/04/2019</b></h3>
+<p>Files updated:</p>
+<ul>
+  <li><b>Quantum Nox - Global dark style.user.css</b>: Fixed issue with the checkboxes not showing the checked state.</li>
+</ul>
+<h3>Pre-Last update: <b>29/03/2019</b></h3>
 <p>Files updated:</p>
 <ul>
   <li><b>Quantum Nox - Global dark style.user.css</b>: You can change the brightness % of images via the context menu of stylus now. Also added the option to invert the color of images.</li>
-</ul>
-<h3>Pre-Last update: <b>23/03/2019</b></h3>
-<p>Files updated:</p>
-<ul>
-  <li><b>Addons.css</b>: Themed <a href="https://addons.mozilla.org/es/firefox/addon/history-autodelete/">History autodelete</a> and <a href="https://addons.mozilla.org/es/firefox/addon/cookie-autodelete/">Cookie autodelete</a> addons. Also reordered addons alphabetically inside the file.</li>
-  <li><b>MultirowTab*.uc.js</b>: Deleted FF65 versions. Added a comment on how to change the tab min width inside <code>about:config</code>.</li>
 </ul>
 
 <code>

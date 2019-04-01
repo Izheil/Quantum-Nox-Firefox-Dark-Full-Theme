@@ -2,7 +2,7 @@
 @name         Quantum nox - Global dark style
 @description  Fork from the global dark style that Stormi wrote to use alongside Quantum nox - Firefox dark theme.
 @namespace    https://userstyles.org/styles/31267/global-dark-style-changes-everything-to-dark
-@version      1.0.10
+@version      1.1.0
 @author       Stormi, Izheil
 @homepageURL  https://github.com/Izheil/Quantum-Nox-Firefox-Dark-Full-Theme/tree/master/Global%20dark%20userstyle
 @updateURL	  https://raw.githubusercontent.com/Izheil/Quantum-Nox-Firefox-Dark-Full-Theme/master/Global%20dark%20userstyle/Quantum%20Nox%20-%20Global%20dark%20style.user.css
@@ -124,7 +124,7 @@ if invMethod == "customSet"  {
 
 
     /*----- DEFAULT BUTTONS, SEARCHBOXES & CO -----*/
-    input:not(#s3downbar_download_tooltip_source_box), select, button, [role="button"], a.button, a.submit, a.BigButton, a.TabLink, .install[onclick] {
+    input:not(#s3downbar_download_tooltip_source_box):not([type="checkbox"]):not([type="radio"]), select, button, [role="button"], a.button, a.submit, a.BigButton, a.TabLink, .install[onclick] {
         -moz-appearance: none !important;
         -webkit-appearance: none !important;
         transition: border-color 0.3s !important;
@@ -144,10 +144,10 @@ if invMethod == "customSet"  {
     a[href="javascript:;"]:hover, a[class*="button"]:not(:empty):hover, a[id*="button"]:hover, a[id*="Button"]:not(:empty):hover, div[class*="button"][onclick]:hover {
         background: #151515 !important;
         color: #FFF !important}
-    input:not(#s3downbar_download_tooltip_source_box) *, select *, button *, a.button *, a.submit * {
+    input:not(#s3downbar_download_tooltip_source_box):not([type="checkbox"]):not([type="radio"]) *, select *, button *, a.button *, a.submit * {
         color: #BBB !important;
         text-shadow: none !important}
-    input:not(#s3downbar_download_tooltip_source_box):hover, input[type="button"]:hover, select:hover, button:hover, [role="button"]:hover, a.button:hover, a.submit:hover, a.BigButton:hover, a.TabLink:hover {
+    input:not(#s3downbar_download_tooltip_source_box):not([type="checkbox"]):not([type="radio"]):hover, input[type="button"]:hover, select:hover, button:hover, [role="button"]:hover, a.button:hover, a.submit:hover, a.BigButton:hover, a.TabLink:hover {
         border: 2px solid #555 !important;
         border-top-color: #555 !important;
         border-bottom-color: #555 !important;
@@ -163,13 +163,19 @@ if invMethod == "customSet"  {
         opacity: 0.5 !important;
         border-color: #333 !important}
 
+    input[type="checkbox"], input[type="radio"] {
+        -moz-appearance: none !important;
+        -webkit-appearance: none !important;
+        border: 2px solid #333;
+        min-width: 12px; 
+        min-height: 12px}
     input[type="checkbox"] {border-radius: 1px !important; margin-bottom: 0 !important}
     input[type="radio"], input[type="radio"]:focus {border-radius: 100% !important}
-    input[type="checkbox"], input[type="radio"] {min-width: 12px; min-height: 12px}
     input[type="checkbox"]:checked, input[type="radio"]:checked {
         border-color: linkColor !important;
         box-shadow: inset 0 0 2px #000 !important;
-        background: linkColor !important}
+        background: linkColor !important;
+        }
 
     select {
         padding-right: 15px !important;
