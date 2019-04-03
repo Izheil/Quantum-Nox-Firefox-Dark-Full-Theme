@@ -23,24 +23,24 @@
 <h2>How to add per-site exclusions</h2>
 <p>You can exclude certain sites from the userstyle to avoid having to turn it on or off on sites you have other more specific userstyles enabled.</p>
 
-<p>To do so, all you have to do is add the domain you don't want the style to apply inside the regexp line (without the http(s) header), and separate each one with a \|, like it's already done for a few sites by default:</p>
+<p>To do so, all you have to do is add the domain you don't want the style to apply inside the regexp line (without the http(s) header), and separate each one with a |, like it's already done for a few sites by default:</p>
 
 <img src="https://i.imgur.com/eaeJP0D.png">
 
-<p>For example, if we wanted to add an exclusion for tumblr, the full rule would look like:</p>
+<p>For example, if we already have some rule for some site and wanted to add an exclusion for tumblr, the new rule would look like:</p>
 
 <pre>
-@-moz-document regexp("https?://(?!(www.tvtime.com|www.t411.al|www.nespresso.com|www.wechoosethemoon.org|www.nasa.gov|((?!w+)([^\.]+)\.)?([^\.]+)\.google.(com|es|de)|duckduckgo.com|www.youtube.com|www.reddit.com|twitter.com|gfycat.com|www.tumblr.com)).*") {
+@-moz-document regexp("https?://(?!(www.example.com|www.tumblr.com)).*") {
 /* Add any other site you don't want to apply inside the regexp encased between |'s ^ */
 </pre> 
 
-<p>This would only make the userstyle ignore all pages that start with www.tumblr.com, <b>but not the subdomains like example.tumblr.com</b>.</p>
+<p>This would make the userstyle ignore all pages that start with www.tumblr.com (as well as the example domain before it), <b>but not the subdomains like example.tumblr.com</b>.</p>
 <p>If we only wanted to also exclude example.tumblr.com it would be as easy as adding only that one subdomain, but if we wanted to exclude ALL subdomains (no matter their subdomain name), we'd have to use <code>((?!w+)([^\.]+)\.)?</code> for all subdomain names (You don't have to specify the www. part before these regexp).</p>
 
 <p>That way, if we wanted to exclude all tumblr subdomains (we assume that some subdomains have -'s, so we need to use the complex regexp) would look like this</p>
 
 <pre>
-@-moz-document regexp("https?://(?!(www.tvtime.com|www.t411.al|www.nespresso.com|www.wechoosethemoon.org|www.nasa.gov|((?!w+)([^\.]+)\.)?([^\.]+)\.google.(com|es|de)|duckduckgo.com|www.youtube.com|www.reddit.com|twitter.com|gfycat.com|((?!w+)([^\.]+)\.)?tumblr.com)).*") {
+@-moz-document regexp("https?://(?!(www.example.com|((?!w+)([^\.]+)\.)?tumblr.com)).*") {
 /* Add any other site you don't want to apply inside the regexp encased between |'s ^ */
 </pre>
 
@@ -49,9 +49,14 @@
 <p>This excludes both the subdomains and the domain:</p>
 
 <pre>
-@-moz-document regexp("https?://(?!(www.tvtime.com|www.t411.al|www.nespresso.com|www.wechoosethemoon.org|www.nasa.gov|((?!w+)([^\.]+)\.)?([^\.]+)\.google.(com|es|de)|duckduckgo.com|www.youtube.com|www.reddit.com|twitter.com|gfycat.com|((?!w+)([^\.]+)\.)?([^\.]+)\.tumblr.com)).*") {
+@-moz-document regexp("https?://(?!(www.example.com|((?!w+)([^\.]+)\.)?([^\.]+)\.tumblr.com)).*") {
 /* Add any other site you don't want to apply inside the regexp encased between |'s ^ */
 </pre>
 
 <p>This would exclude both the subdomains and the domain of www.tumblr.com, but wouldn't exclude other location domains like www.tumblr.es (if that even existed).</p>
-<p>To solve this, you can also use <b>.(com|de|es|uk)</b> or similar rule with all the location domains of the page (see the google regexp already included by default), and can be used even without the subdomain regexp ones.</p>
+<p>To solve this, you can also use <b>.(com|de|es|uk)</b> or similar rules with all the location domains of the page, and can be used even without the subdomain regexp ones:</p>
+
+<pre>
+@-moz-document regexp("https?://(?!(www.example.com|((?!w+)([^\.]+)\.)?([^\.]+)\.tumblr.(com|de|es|uk))).*") {
+/* Add any other site you don't want to apply inside the regexp encased between |'s ^ */
+</pre>
