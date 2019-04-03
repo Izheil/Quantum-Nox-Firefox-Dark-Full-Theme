@@ -60,9 +60,12 @@ This problem doesn't happen if you use a code editor such as notepad++, atom, su
 <p>You can find a video tutorial on how to install the theme without installers <a href="https://youtu.be/kNHe6XDgUN4">here</a>.</p>
 
 <h2>General sites dark theme</h2>
-<p>You can add the global dark userstyle found inside the <b>Global dark userstyle</b> folder to theme general sites with an all-around CSS stylesheet.</p>
+<p>You can apply the global dark userstyle found inside the <b>Global dark userstyle</b> folder to theme general sites with an all-around CSS stylesheet. <b>You need stylus addon to use it</b>.</p>
+
 <p>While it's not perfect (meaning that you should still use per-site styles for the sites you visit often), it can help to darken most sites when browsing around general sites that you don't visit often, and thus don't want/can't find a specific userstyle for them.</p>
 <img src="https://i.imgur.com/S34ylDn.png">
+
+[![Install directly with Stylus](https://img.shields.io/badge/Install%20directly%20with-Stylus-00adad.svg)](https://raw.githubusercontent.com/Izheil/Quantum-Nox-Firefox-Dark-Full-Theme/master/Global%20dark%20userstyle/Quantum%20Nox%20-%20Global%20dark%20style.user.css)
 
 <h2>Addon dark themes</h2>
 <p>You can apply a dark theme to certain addons changing the UUID's of them inside the <code>addons.css</code> file inside the "Full dark theme" folder (more instructions on how to do that inside the addons file).</p>
