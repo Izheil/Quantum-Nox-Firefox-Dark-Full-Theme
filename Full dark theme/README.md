@@ -15,7 +15,7 @@
   <li>Create a folder named "chrome" in your profile folder if it doesn't exist yet.</li>
   <li><b>Optional</b>: Edit userchrome.css to change any style you aren't fully convinced with (or to give a different style to the unread tabs, etc...).</li>
   <li><b>Optional</b>: You can also edit userchrome.css to change the background of the <code>about:home</code> page.</li>
-  <li><b>Optional</b>: If you want a different style for the scrollbars or the tooltips, use any of the alternatives on the "Alternative scrollbars & tooltips" folder.</li>
+  <li><b>Optional</b>: If you want a different style for the scrollbars or the tooltips, use any of the alternatives on the <a href="https://github.com/Izheil/Quantum-Nox-Firefox-Dark-Full-Theme/tree/master/Full%20dark%20theme/Alternative%20scrollbars%20%26%20tooltips">Alternative scrollbars & tooltips</a> folder.</li>
   <li><b>Optional</b>: If you want the default scrollbar style (userchrome still paints it dark), or white tooltips, don't copy the relevant CSS files for them.</li>
   <li><b>Optional</b>: If you want a dark version of either of the addons mentioned in the <a href="https://github.com/Izheil/Quantum-Nox-Firefox-Dark-Full-Theme#addon-dark-themes">addons dark themes section</a> in the front page of this repository, change the UUID's of them inside <code>addons.css</code>. An explanation on how to do so is given inside the file.</li>
 </ul>

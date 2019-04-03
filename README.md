@@ -42,15 +42,15 @@ This problem doesn't happen if you use a code editor such as notepad++, atom, su
 <img src="https://i.imgur.com/zNKhEV6.png" title="Dark firefox UI with custom background" />
 <img src="https://i.imgur.com/q8MhDSX.png" title="Dark firefox Dialog" />
 
-<p>If you are on windows and only want the theme or multirow, you can use the batch file installers inside the "installers" folder.</p> 
+<p>If you are on windows and only want the theme or multirow, you can use the batch file installers inside the <a href="https://github.com/Izheil/Quantum-Nox-Firefox-Dark-Full-Theme/tree/master/Installers">installers</a> folder.</p> 
 
 <p>If you are using Linux or Mac, or want to add some more functionability (like deleting some useless context menu commands), you will have to use the methods described inside one of the 3 main folders of this repository:</p>
 
 <h4>Short review of each folder:</h4>
 <ul>
-  <li><b>CSS tweaks</b>: Enables removal of context menu items, multirow bookmarks, changing tab bar position (so that it could be under the bookmarks bar for example)</li>
-  <li><b>Full dark theme</b>: Gives dark colors to firefox UI, including the scrollbars and the tooltips. Can also change the background image of <code>about:home</code> and the header image used as a persona.</li>
-  <li><b>Multirow and other functions</b>: You can find the JS files that add extra functionability to Firefox that couldn't be done with CSS alone.</li>
+  <li><a href="https://github.com/Izheil/Quantum-Nox-Firefox-Dark-Full-Theme/tree/master/CSS%20tweaks">CSS tweaks</a>: Enables removal of context menu items, multirow bookmarks, changing tab bar position (so that it could be under the bookmarks bar for example)</li>
+  <li><a href="https://github.com/Izheil/Quantum-Nox-Firefox-Dark-Full-Theme/tree/master/Full%20dark%20theme">Full dark theme</a>: Gives dark colors to firefox UI, including the scrollbars and the tooltips. Can also change the background image of <code>about:home</code> and the header image used as a persona.</li>
+  <li><a href="https://github.com/Izheil/Quantum-Nox-Firefox-Dark-Full-Theme/tree/master/Multirow%20and%20other%20functions">Multirow and other functions</a>: You can find the JS files that add extra functionability to Firefox that couldn't be done with CSS alone.</li>
 </ul>
 
 <img src="https://i.imgur.com/OhKiBCI.png">
@@ -60,12 +60,14 @@ This problem doesn't happen if you use a code editor such as notepad++, atom, su
 <p>You can find a video tutorial on how to install the theme without installers <a href="https://youtu.be/kNHe6XDgUN4">here</a>.</p>
 
 <h2>General sites dark theme</h2>
-<p>You can apply the global dark userstyle found inside the <b>Global dark userstyle</b> folder to theme general sites with an all-around CSS stylesheet. <b>You need stylus addon to use it</b>.</p>
+<p>You can apply the global dark userstyle found inside the <a href="https://github.com/Izheil/Quantum-Nox-Firefox-Dark-Full-Theme/tree/master/Global%20dark%20userstyle">Global dark userstyle</a> folder to theme general sites with an all-around CSS stylesheet. <b>You need stylus addon to use it</b>.</p>
 
 <p>While it's not perfect (meaning that you should still use per-site styles for the sites you visit often), it can help to darken most sites when browsing around general sites that you don't visit often, and thus don't want/can't find a specific userstyle for them.</p>
 <img src="https://i.imgur.com/S34ylDn.png">
 
 [![Install directly with Stylus](https://img.shields.io/badge/Install%20directly%20with-Stylus-00adad.svg)](https://raw.githubusercontent.com/Izheil/Quantum-Nox-Firefox-Dark-Full-Theme/master/Global%20dark%20userstyle/Quantum%20Nox%20-%20Global%20dark%20style.user.css)
+
+<p>It is recommended that you check the <a href="https://github.com/Izheil/Quantum-Nox-Firefox-Dark-Full-Theme/tree/master/Global%20dark%20userstyle">Global dark userstyle</a> readme to know how to add site exclusions to the global userstyle.</p>
 
 <h2>Addon dark themes</h2>
 <p>You can apply a dark theme to certain addons changing the UUID's of them inside the <code>addons.css</code> file inside the "Full dark theme" folder (more instructions on how to do that inside the addons file).</p>
@@ -96,7 +98,7 @@ This problem doesn't happen if you use a code editor such as notepad++, atom, su
 <p>This theme colors scrollbars using <code>usercontent.css</code> to give them a basic re-color.</p> 
 <img src="https://i.imgur.com/hqwoq9n.png" title="Re-colored dark scrollbar" />
 
-<p>If you <b>want a different style on the scrollbars</b>, you can try using the <code>scrollbars.as.css</code> file inside the "Full dark theme" folder, which will make the scrollbars look more rounded and will have some sort of "puffy" effect when clicking them.</p>
+<p>If you <b>want a different style on the scrollbars</b>, you can try using the <code>scrollbars.as.css</code> file inside the <a href="https://github.com/Izheil/Quantum-Nox-Firefox-Dark-Full-Theme/tree/master/Full%20dark%20theme/Alternative%20scrollbars%20%26%20tooltips/Alternative%20scrollbars">Alternative scrollbars</a> folder, which will make the scrollbars look more rounded and will have some sort of "puffy" effect when clicking them.</p>
 <img src="https://i.imgur.com/sOHN1ds.gif" title="Custom dark blue scrollbar" />
 
 <p>If instead you just <b>don't want scrollbars to show at all but keep scrollability</b>, you can do this through <code>usercontent.css</code> setting the variable <code>--scrollbars-width</code> to none (should be the first rule on the <code>:root</code> section (almost at the start)), and deleting <code>scrollbars.as.css</code>.</p>
@@ -131,7 +133,7 @@ This problem doesn't happen if you use a code editor such as notepad++, atom, su
 <p>This is caused by your persona (lightweight theme), and while you could change these settings inside userchrome, I thought it was better to just change the settings on the persona directly (since not all personas will look the same). To do so you'd have to open <code>about:config</code>, and search for <b>lightweightThemes.usedThemes</b>. Once there, find the "textcolor" setting and type any color you'd want to use instead of black or the color being used by the theme (use #fff for white). The persona you are currently using should be in the first place in the list.</p>
 
 <h3>The bookmarks multirow shows an empty scrollbar when enabled.</h3>
-<p>If you are using an old version of the scrollbars, or you are just plain not using the scrollbars here, you will have to add some code to delete the empty scrollbars that show on the bookmark toolbars. You have to use this code on a "*.ac.css" file (so you would need to have firefox patched with the method explained on the <b>Tooltips, Scrollbars & Multirow tabs</b> folder), since otherwise it won't work:
+<p>If you are using an old version of the scrollbars, or you are just plain not using the scrollbars here, you will have to add some code to delete the empty scrollbars that show on the bookmark toolbars. You have to use this code on a "*.ac.css" file (so you would need to have firefox patched with the method explained on the <a href="https://github.com/Izheil/Quantum-Nox-Firefox-Dark-Full-Theme/tree/master/Multirow%20and%20other%20functions">Multirow and other functions</a> folder), since otherwise it won't work:
 
 <pre>
 /* This deletes the scrollbar from bookmarks toolbar when using multirow bookmarks */
@@ -147,10 +149,10 @@ This problem doesn't happen if you use a code editor such as notepad++, atom, su
 <p>To change the directory browsing page and change how .css or some .txt files appear when opened with Firefox, I had to specify it to affect urls that start with "file:///", meaning that any file opened with Firefox will get overriden with those rules as well. To prevent this, go to userContent.css, and comment out the lines that affect this url (This rule should be exactly under the color variables at the start of the file).</p>
 
 <h3>I placed userchrome.css inside my chrome folder and I still don't have multi-row tabs!</h3>
-<p>While we only needed to use CSS to enable multi-row tabs, this breaks tabs draggability, making reordering tabs when it was enabled a bit erratic, so to fix this, I decided to put all multi-row tabs code inside the <b>MultiRowTabLiteforFx.uc.js</b> file. This means that now Multi-row tabs can be enabled following the method described inside the <code>Multirow and other functions/Multirow tabs</code> folder. If you were using CSS code on your <code>userchrome.css</code> to enable multirow tabs, delete (or comment it out) for the js file to take effect.</p>
+<p>While we only needed to use CSS to enable multi-row tabs, this breaks tabs draggability, making reordering tabs when it was enabled a bit erratic, so to fix this, I decided to put all multi-row tabs code inside the <b>MultiRowTabLiteforFx.uc.js</b> file. This means that now Multi-row tabs can be enabled following the method described inside the <a href="https://github.com/Izheil/Quantum-Nox-Firefox-Dark-Full-Theme/tree/master/Multirow%20and%20other%20functions/Multirow%20tabs">Multirow tabs</a> folder. If you were using CSS code on your <code>userchrome.css</code> to enable multirow tabs, delete (or comment it out) for the js file to take effect.</p>
 
 <h3>Why use this method instead of using <a href="https://addons.mozilla.org/es/firefox/addon/styl-us/">Stylus</a>?</h3>
-<p>The main reason is that you can't style firefox about: pages nor the scrollbar with just stylus.</p>
+<p>The main reason is that you can't style firefox about: pages nor dialog windows with just stylus.</p>
 
 <h3>The theme is making the text of some addon popups unreadable, how do I fix this?</h3>
 <p>The theme is made so that it changes most background colors, including the one of the popups that don't have any background color specified by their original creator. Sadly it doesn't change the text of these by default, so you may have to do it manually, or report the addon you want themed here, or just use the fix inside userchrome.css (at around lines 326-329) to turn the addons back to their white background color.</p>

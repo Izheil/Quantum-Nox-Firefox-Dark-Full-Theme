@@ -18,8 +18,8 @@
 
 <h2>Contents of each folder:</h2>
 <ul>
-	<li><b>Multirow tabs</b>: Files to enable multiple rows of tabs instead of mono-row. You can chose between infinite rows and scrollable rows version. <ul><li><img src="https://i.imgur.com/qqQn4Ky.png"></li></ul></li>
-	<li><b>Other experimental features</b>: Any additional function that I come up with to fix some issue someone might have. Currently only bookmarks toggler (you can toggle the bookmarks bar with a key press) and navigator toolbox autohide (the navigator toolbox autohides like on fullscreen even on normal windows).</li>
+	<li><a href="https://github.com/Izheil/Quantum-Nox-Firefox-Dark-Full-Theme/tree/master/Multirow%20and%20other%20functions/Multirow%20tabs">Multirow tabs</a>: Files to enable multiple rows of tabs instead of mono-row. You can chose between infinite rows and scrollable rows version. <ul><li><img src="https://i.imgur.com/qqQn4Ky.png"></li></ul></li>
+	<li><a href="https://github.com/Izheil/Quantum-Nox-Firefox-Dark-Full-Theme/tree/master/Multirow%20and%20other%20functions/Other%20experimental%20features">Other experimental features</a>: Any additional function that I come up with to fix some issue someone might have. Currently only bookmarks toggler (you can toggle the bookmarks bar with a key press) and navigator toolbox autohide (the navigator toolbox autohides like on fullscreen even on normal windows).</li>
 </ul>
 
 <h3>Installation</h3>
