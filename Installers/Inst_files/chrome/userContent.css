@@ -1,6 +1,6 @@
 /* You can find an updated version here: https://github.com/Izheil/Quantum-Nox-Firefox-Dark-Full-Theme */
 /* Made by Izheil */
-/* Last updated: 28/03/2019 */
+/* Last updated: 08/04/2019 */
 
 /* This part imports the Addons file if there is one, so that you don't have to edit the dynamic URL
 from the addons rules every time we update anything here */
@@ -1392,7 +1392,7 @@ a.SectionLinks-clientApp-android:not(:hover) {color: #aaa !important}
 
 .Paginate .Paginate-item {margin-left: 3px !important; margin-right: 3px !important}
 
-a.SearchResult-link:hover h2, a:hover {color: #1494FB !important}
+a.SearchResult-link:hover h2, a:not(.Button):hover {color: #1494FB !important}
 
 h2.Home-SubjectShelf-subheading, .CardList h2.Card-header, 
 h1, .Paginate-page-number, .Badge, a.Button.Categories-link,
@@ -1414,6 +1414,8 @@ input#search-q {
 	color: #FFF !important}
 
 .SearchFilters-label {color: #ddd !important}
+
+.Button {color: #fff !important}
 
 /* Checkbox coloring */
 input[type="checkbox"] {

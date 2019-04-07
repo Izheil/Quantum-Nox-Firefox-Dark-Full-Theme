@@ -10,15 +10,15 @@ basic css or <a href="https://www.w3schools.com/colors/colors_picker.asp">color 
 <br />
 This problem doesn't happen if you use a code editor such as notepad++, atom, sublime text...</h4>
 
-<h3>Last update: <b>02/04/2019</b></h3>
+<h3>Last update: <b>08/04/2019</b></h3>
+<p>Files updated:</p>
+<ul>
+  <li><b>UserContent.css</b>: Now all text on buttons inside mozilla addons page should be white to avoid visibility problems (mainly because of the developers page).</li>
+</ul>
+<h3>Pre-Last update: <b>02/04/2019</b></h3>
 <p>Files updated:</p>
 <ul>
   <li><b>Quantum Nox - Global dark style.user.css</b>: Fixed issue with the checkboxes not showing the checked state.</li>
-</ul>
-<h3>Pre-Last update: <b>29/03/2019</b></h3>
-<p>Files updated:</p>
-<ul>
-  <li><b>Quantum Nox - Global dark style.user.css</b>: You can change the brightness % of images via the context menu of stylus now. Also added the option to invert the color of images.</li>
 </ul>
 
 <code>
