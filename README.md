@@ -93,6 +93,8 @@ This problem doesn't happen if you use a code editor such as notepad++, atom, su
 	<li><a href="https://addons.mozilla.org/es/firefox/addon/viewhance/">Viewhance</a></li>
 </ul>
 
+<p>You might have noticed that we no longer have <a href="https://gist.github.com/Izheil/49db523ee66d88995401bb6844605763">Lastpass dark theme</a> inside <code>addons.css</code> anymore. This is because at the time that addon was themed, I didn't know much about it. After some research it seems like Lastpass has had a history of security issues (in 2011, 2015, 2016, and 2017), as well as there being other open source alternatives out there that seem to be more reliable, like bitwarden (which already has a built-in dark mode) which is available for all major browsers.</p>
+
 <h3>The scrollbars</h3>
 
 <p>This theme colors scrollbars using <code>usercontent.css</code> to give them a basic re-color.</p> 
