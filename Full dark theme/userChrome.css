@@ -1,6 +1,6 @@
 /* You can find an updated version here: https://github.com/Izheil/Firefox-57-full-dark-theme-with-scrollbars */
 /* Made by Izheil */
-/* Last updated: 22/03/2019 */
+/* Last updated: 08/04/2019 */
 
 /* DO NOT DELETE THIS LINE */
 @namespace url("http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul");
@@ -74,7 +74,9 @@ in the rule below) */
 
   /* These ones are used for the read/unread tabs styling. For italic rules use 
   either "normal" or "italic" without the quotes for either no italics or using italics, 
-  and for bold, use either "bold" or "normal" in the same way */
+  and for bold, use either "bold" or "normal" in the same way. You'll want to use semi-transparent
+  colors (if any) for background colors, otherwise it will show as too bright opaque colors.
+  Requires the use of setAttribute_unread.uc.js for unread tabs editting. */
   --Loaded-and-selected-text: #eee;
   --Loaded-and-selected-italic: normal;
   --Loaded-and-selected-bold: normal;
@@ -885,14 +887,19 @@ treechildren::-moz-tree-separator {border-color: #000 !important}
 .tabbrowser-tab[selected="true"] .tab-label {
   color: var(--Loaded-and-selected-text) !important;
   font-style: var(--Loaded-and-selected-italic) !important;
-  font-weight: var(--Loaded-and-selected-bold) !important;
-  background-color: var(--Loaded-and-selected-background) !important}
+  font-weight: var(--Loaded-and-selected-bold) !important}
+
+.tabbrowser-tab[selected="true"] .tab-content {
+  background-color: var(--Loaded-and-selected-background) !important;
+  clip-path: inset(3px 0 0 0);}
 
 /* Loaded but unread (not selected) */
 .tabbrowser-tab:not([selected="true"])[unread] .tab-label {
   color: var(--Loaded-but-unread-text) !important;
   font-style: var(--Loaded-but-unread-italic) !important;
-  font-weight: var(--Loaded-but-unread-bold) !important;
+  font-weight: var(--Loaded-but-unread-bold) !important}
+
+.tabbrowser-tab:not([selected="true"])[unread] .tab-content {
   background-color: var(--Loaded-but-unread-background) !important}
 
 /* Not loaded yet (also visited) */
@@ -900,14 +907,19 @@ treechildren::-moz-tree-separator {border-color: #000 !important}
 .tabbrowser-tab:not([selected="true"])[visited] .tab-label {
   color: var(--Not-loaded-text) !important;
   font-style: var(--Not-loaded-italic) !important;
-  font-weight: var(--Not-loaded-bold) !important;
+  font-weight: var(--Not-loaded-bold) !important}
+
+.tabbrowser-tab:not([selected="true"])[pending] .tab-content,
+.tabbrowser-tab:not([selected="true"])[visited] .tab-content {
   background-color: var(--Not-loaded-background) !important}
 
 /* loading */
 .tabbrowser-tab[busy] .tab-text.tab-label {
   color: var(--Loading-text) !important;
   font-style: var(--Loading-italic) !important;
-  font-weight: var(--Loading-bold) !important;
+  font-weight: var(--Loading-bold) !important}
+
+.tabbrowser-tab[busy] .tab-content {
   background-color: var(--Loading-background) !important}
 
 /* ADDON POPUPS */

@@ -13,6 +13,7 @@
   <li>Type <code>about:support</code> in your URL bar, then go to that page.</li>
   <li>Click the "open folder" button inside the "profile folder" section.</li>
   <li>Create a folder named "chrome" in your profile folder if it doesn't exist yet.</li>
+  <li>Place all files from this folder inside the "chrome" folder.</li>
   <li><b>Optional</b>: Edit userchrome.css to change any style you aren't fully convinced with (or to give a different style to the unread tabs, etc...).</li>
   <li><b>Optional</b>: You can also edit userchrome.css to change the background of the <code>about:home</code> page.</li>
   <li><b>Optional</b>: If you want a different style for the scrollbars or the tooltips, use any of the alternatives on the <a href="https://github.com/Izheil/Quantum-Nox-Firefox-Dark-Full-Theme/tree/master/Full%20dark%20theme/Alternative%20scrollbars%20%26%20tooltips">Alternative scrollbars & tooltips</a> folder.</li>
