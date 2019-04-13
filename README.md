@@ -15,7 +15,7 @@ This problem doesn't happen if you use a code editor such as notepad++, atom, su
 <ul>
   <li><b>UserContent.css</b>: Painted about:preferences policies sign.</li>
 </ul>
-<h3>Pre-Last update: <b>02/04/2019</b></h3>
+<h3>Pre-Last update: <b>08/04/2019</b></h3>
 <p>Files updated:</p>
 <ul>
   <li><b>UserChrome.css</b>: Now you can change the color of unread/unloaded tabs instead of their text labels through the variables.</li>
