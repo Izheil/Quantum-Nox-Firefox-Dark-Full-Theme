@@ -2,7 +2,7 @@
 @name         Quantum nox - Global dark style
 @description  Fork from the global dark style that Stormi wrote to use alongside Quantum nox - Firefox dark theme.
 @namespace    https://github.com/Izheil/Quantum-Nox-Firefox-Dark-Full-Theme
-@version      2.0.0-Beta
+@version      2.0.1-Beta
 @author       Izheil
 @homepageURL  https://github.com/Izheil/Quantum-Nox-Firefox-Dark-Full-Theme/tree/master/Global%20dark%20userstyle
 @updateURL    https://raw.githubusercontent.com/Izheil/Quantum-Nox-Firefox-Dark-Full-Theme/master/Global%20dark%20userstyle/Quantum%20Nox%20-%20Global%20dark%20style.user.css
@@ -157,7 +157,7 @@ if invMethod == "customSet"  {
         background: rgba(255,255,255,0.1) !important;
         color: #fff !important}
     
-    .anchor-list a.hoverable, li[class*="btn"] a, div[class*="buttons"] a[onclick], [aria-selected="true"], button:not([class*="menu"]):not([id*="menu"]):not([role="switch"]):not([class*="ytp"]), input[type="submit"]:not(#searchbtn)  {
+    .anchor-list a.hoverable, li[class*="btn"] a, div[class*="buttons"] a[onclick], [aria-selected="true"], button:not([class*="menu"]):not([id*="menu"]):not([role="switch"]):not([class*="ytp"]):not([class*="play"]):not([class*="mute"]):not([class*="fullscreen"]), input[type="submit"]:not(#searchbtn)  {
         -moz-appearance: none !important;
         -webkit-appearance: none !important;
         background-color: #303030 !important; 
@@ -165,7 +165,7 @@ if invMethod == "customSet"  {
         border-radius: 3px !important}
         
     .anchor-list a.hoverable:hover, a[data-toggle="dropdown"]:not([class*="wrapper"]):not([role="menuitem"]):hover, li[class*="btn"]:hover a, div[class*="buttons"] a[onclick]:hover, 
-    div[class*="dropdown"] a:hover, div[class*="drop-down"] a:hover, button:not([class*="menu"]):not([id*="menu"]):not([role="switch"]):hover, input[type="submit"]:not(#searchbtn):hover, 
+    div[class*="dropdown"] a:hover, div[class*="drop-down"] a:hover, button:not([class*="menu"]):not([id*="menu"]):not([role="switch"]):not([class*="play"]):not([class*="mute"]):not([class*="fullscreen"]):hover, input[type="submit"]:not(#searchbtn):hover, 
     span[role="button"]:hover {
         background-color: #444 !important; 
         color: #fff !important}
