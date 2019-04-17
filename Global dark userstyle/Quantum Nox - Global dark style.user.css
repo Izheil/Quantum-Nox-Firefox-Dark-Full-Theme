@@ -67,7 +67,8 @@ if invMethod == "customSet"  {
         background-color: rgba(0,0,0,0.5) !important;
         box-shadow: 0 0 5px #000 !important} 
     
-    [class*="dialog"], [class*="light"], [class*="white"], div.Popover-message, ul.sub, div[role="menu"], .options, .vue-treeselect__menu {background-color: rgba(0,0,0,0.8) !important}
+    [class*="dialog"], [class*="light"], [class*="white"], div.Popover-message, ul.sub, div[role="menu"], .options, .vue-treeselect__menu, 
+    .ListResult, div[class*="menu"] {background-color: rgba(0,0,0,0.8) !important}
     #content-wrapper, .content-wrapper, .content-wrapper::after, .article, .flex_box > div, .Box-header, .select-menu-header {background-color: #252525 !important}
         
     div[class*="dropdown"]:not([class*="toggle"]):not([class*="has-children"]):not([class*="wrapper"]):not([role="menuitem"]):not([class*="header"]), 
