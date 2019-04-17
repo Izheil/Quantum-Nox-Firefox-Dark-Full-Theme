@@ -76,7 +76,7 @@ if invMethod == "customSet"  {
     li[class*="drop-down"]:not([class*="wrapper"]):not([role="menuitem"]):not([class*="header"]):not(.user-menu), [class*="popup"], [class*="popover"]:not([class*="link"]), 
     [class*="widget-content"], [class*="notice"] {background: rgba(0,0,0,0.5) !important}
         
-    pre, code, .w3-code, blockquote {
+    pre, code, .w3-code, blockquote, .ace_gutter-layer {
         background: rgba(255,255,255,0.1) !important;
         color: #ccc !important}
     pre > code {background: transparent !important}
@@ -114,7 +114,7 @@ if invMethod == "customSet"  {
     /* Textbox like inputs */
     input[type="text"]:not(#s3downbar_download_tooltip_source_box), input[type="email"], input[type="password"], input[type="tel"], 
     input[type="number"], input[type="date"], input[type="datetime-local"], input[type="month"], input[type="search"], input[type="time"],
-    input[type="url"], input[type="week"], textarea, input[readonly] {
+    input[type="url"], input[type="week"], textarea, input[readonly], .ace_scroller {
         background: #151515 !important;
         color: #ddd !important;
         border: 2px ridge #444 !important;
