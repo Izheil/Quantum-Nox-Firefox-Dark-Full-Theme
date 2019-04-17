@@ -1,13 +1,13 @@
 /* ==UserStyle==
 @name         Quantum nox - Global dark style
 @description  Fork from the global dark style that Stormi wrote to use alongside Quantum nox - Firefox dark theme.
-@namespace    https://userstyles.org/styles/31267/global-dark-style-changes-everything-to-dark
-@version      1.1.0
-@author       Stormi, Izheil
+@namespace    https://github.com/Izheil/Quantum-Nox-Firefox-Dark-Full-Theme
+@version      2.0.0-Beta
+@author       Izheil
 @homepageURL  https://github.com/Izheil/Quantum-Nox-Firefox-Dark-Full-Theme/tree/master/Global%20dark%20userstyle
-@updateURL	  https://raw.githubusercontent.com/Izheil/Quantum-Nox-Firefox-Dark-Full-Theme/master/Global%20dark%20userstyle/Quantum%20Nox%20-%20Global%20dark%20style.user.css
+@updateURL    https://raw.githubusercontent.com/Izheil/Quantum-Nox-Firefox-Dark-Full-Theme/master/Global%20dark%20userstyle/Quantum%20Nox%20-%20Global%20dark%20style.user.css
 @supportURL   https://github.com/Izheil/Quantum-Nox-Firefox-Dark-Full-Theme/tree/master/Global%20dark%20userstyle
-@license      CC BY-NC-SA
+@license      MPL-2.0
 @preprocessor stylus
 
 @var          color     linkColor    "Default link (and focus) color"    #2288dd
@@ -30,139 +30,147 @@
 }
 
 ==/UserStyle== */
-@-moz-document regexp("https?://(?!(www.tvtime.com|www.t411.al|www.nespresso.com|www.wechoosethemoon.org|www.nasa.gov|((?!w+)([^\.]+)\.)?([^\.]+)\.google.(com|es|de)|duckduckgo.com|www.youtube.com|www.reddit.com|twitter.com|gfycat.com|codepen.io)).*") {
+@-moz-document regexp("https?://(?!(www.tvtime.com|www.t411.al|www.nespresso.com|www.wechoosethemoon.org|www.nasa.gov|((?!w+)([^\.]+)\.)?([^\.]+)\.google.(com|es|de)|duckduckgo.com|www.youtube.com|www.reddit.com|twitter.com|gfycat.com|codepen.io|imgur.com)).*") {
 /* Add any other site you don't want to apply inside the regexp encased between |'s ^ */
 
 if invMethod == "customSet"  {
-    /***** COPY AND PASTE THE URL OF YOUR BACKROUND-IMAGE INSIDE THE url("") *****/
-    html {background: darkBg bgColor /* fixed color */ !important}
-         /***** FOR A SIMPLE DARK BACKGROUND JUST REMOVE THE URL LINE ABOVE *****/
-         /***** Some background-images (you can also use your own url):
-
-      default:      https://i.imgur.com/u6g66OP.png
-      old default1: https://abload.de/img/bg_digital94uzx.png
-      old default2: https://abload.de/img/ultra_x2vm9k.jpg
-                    https://abload.de/img/b2w4shd.png
-                    https://abload.de/img/b3qrs99.png
-                    https://abload.de/img/b4zcse8.png
-                    https://abload.de/img/b5b1s7x.png
-                    https://abload.de/img/b6umsmy.png
-                    https://abload.de/img/b7ars8c.png
-                    https://abload.de/img/kubrickbgcolor2darkr8skc.png
-                    https://abload.de/img/xpattern_darkq8s3i.png
-                    https://abload.de/img/mainpatternolxcq.png
-    */
-    /*----- DEFAULT TEXT, BORDER & BACKGROUND COLORS -----*/
-    * {
-        color: #aaa !important;
-        text-shadow: 0 0 1.5px #000 !important;
-        box-shadow: none !important;
-        background-color: transparent !important;
-        border-color: #444 !important;
-        border-top-color: #444 !important;
-        border-bottom-color: #444 !important;
-        border-left-color: #444 !important;
-        border-right-color: #444 !important}
-
-    body, .page-body {background: transparent !important}
-    *:before, *:after {background-color: transparent !important; border-color: #444 !important}
     
-    pre, pre::before, .language-css, .language-scss, code {background: rgba(40,30,30,.7) !important}
+    /* General elements background color */
+    html, iframe, embed, footer:not([class*="comment"]), [id*="footer"] {background: darkBg bgColor !important}
+    body, .body-content, .conversation-list-heading .inner, .content-block, .page-body {
+        background-image: none !important;
+        background-color: transparent !important;
+        color: #bbb !important}
+
+    * {
+        background-color: transparent !important;
+        border-color: #333 !important;
+        color: #aaa !important;
+        text-shadow: none !important;
+        box-shadow: none !important}
         
-    a, a * {
+    ::before, ::after {background-color: transparent !important; border: #333 !important}
+        
+    [class*="main"]:not([class*="nav"]):not([id*="nav"]):not([class*="header"]):not([id*="header"]), [id*="main"]:not([class*="nav"]):not([id*="nav"]):not([class*="header"]):not([id*="header"]),                [class*="Main"]:not([class*="nav"]):not([id*="nav"]):not([class*="header"]):not([id*="header"]), [id*="Main"]:not([class*="nav"]):not([id*="nav"]):not([class*="header"]):not([id*="header"]), 
+    main {background-color: bgColor !important}   
+        
+    div {color: #bbb !important}
+    
+    [class*="border"], div, ::before, ::after {
+        border-color: #333 !important}
+        
+    hr {background-color: #666 !important}
+        
+    header:not([class*="comment"]), [id*="header"], .header-wrap, .js-header-wrapper, div[class*="header-container"], nav, 
+    [class*="navi"]:not([class*="item"]):not([class*="btn"]):not([class*="button"]):not([class*="navigation"]):not([id*="Container"]):not([class*="timeline"]), 
+    div[class*="submenu"], div[class*="sub-menu"], div.navigation, .links-box, .Box-body, .commit-tease, [class*="menu-item"], ul[class*="menu"], [class*="pagehead"] {
+        background-color: rgba(0,0,0,0.5) !important;
+        box-shadow: 0 0 5px #000 !important} 
+    
+    [class*="dialog"], [class*="light"], [class*="white"], div.Popover-message, ul.sub, div[role="menu"], .options {background-color: rgba(0,0,0,0.8) !important}
+    #content-wrapper, .content-wrapper, .content-wrapper::after, .article, .flex_box > div, .Box-header, .select-menu-header {background-color: #252525 !important}
+        
+    div[class*="dropdown"]:not([class*="toggle"]):not([class*="has-children"]):not([class*="wrapper"]):not([role="menuitem"]):not([class*="header"]), 
+    div[class*="drop-down"]:not([class*="wrapper"]):not([role="menuitem"]):not([class*="header"]), .Dropdown-menu,
+    li[class*="dropdown"]:not([class*="toggle"]):not([class*="has-children"]):not([class*="wrapper"]):not([role="menuitem"]):not([class*="header"]):not(.user-menu), 
+    li[class*="drop-down"]:not([class*="wrapper"]):not([role="menuitem"]):not([class*="header"]):not(.user-menu), [class*="popup"], [class*="popover"]:not([class*="link"]), 
+    [class*="widget-content"], [class*="notice"] {background: rgba(0,0,0,0.5) !important}
+        
+    pre, code, .w3-code, blockquote {
+        background: rgba(255,255,255,0.1) !important;
+        color: #ccc !important}
+    pre > code {background: transparent !important}
+        
+    /* Text colors */
+    div[id*="install"], div[id*="install"] div, div[class*="install"], div[class*="install"] div {color: #fff !important}
+    figcaption, time, del {color: #999 !important}
+    p, li, .text-gray-dark, ins, i {color: #bbb !important}
+    i, svg {fill: #ccc !important}
+    h1, h2, h3, h4, h5, h6, summary, dt, span, em, b, strong {color: #ddd !important}
+
+    /* Links and text selection */
+    a, a *, .link-gray-dark {
         color: linkColor !important;
-        text-decoration: none !important}
-    a:hover, a:hover *, a:visited:hover, a:visited:hover *, span[onclick]:hover, div[onclick]:hover, [role="link"]:hover, [role="link"]:hover *, [role="button"]:hover *, [role="menuitem"]:hover, [role="menuitem"]:hover *, .link:hover, .link:hover * {
-        color: #F0F0F0 !important;
-        text-shadow: 0 0 5px rgba(255,255,200,0.9) !important}
+        text-decoration: none !important;
+        text-shadow: 0 0 1px #000 !important}
+        
     a:visited, a:visited * {
         color: visitedColor !important}
-    a.highlight, a.highlight *, a.active, a.active *, .selected, .selected *, [href="#"] {
-        color: #DDD !important;
-        font-weight: bold !important}
 
-    h1, h2, h3, h4, h5, h6, h1 *, h2 *, h3 *, strong, [id*="headline"], [class*="headline"], [id*="header"], [class*="header"], [class*="header"] td {
-        color: #DDD !important}
-    a h1, a h2, a h3, a h4, a h5, a h6, h1 a, h2 a, h3 a, a strong, a[id*="headline"], a[class*="headline"], a[id*="header"], a[class*="header"] {
-        text-decoration: underline !important}
-    [class*="error"], [class*="alert"], code, span[onclick], div[onclick] {
-        color: #900 !important}
+    a.active, a.selected, a.highlight [href="#"], a.is-selected, [class*="state-active"] {
+        color: #fff !important;
+        font-weight: bold !important;
+        background: rgba(255,255,255,0.1) !important}
+        
+    a:hover, a:hover *, a *:hover, a:hover *:hover, .link-gray-dark:hover, a[class*="label"], a[class*="Label"], span[class*="Label"] a {
+        color: #fff !important;
+        transition: color 200ms !important}        
 
-    [class*="dialog"], .bglight {background-color: rgba(0,0,0,0.8) !important}
+    ::selection {
+        background: selectColor !important; 
+        color: textColor !important;
+        text-shadow: 0 0 1px #000 !important}
+ 
+    /* Textbox like inputs */
+    input[type="text"]:not(#s3downbar_download_tooltip_source_box), input[type="email"], input[type="password"], input[type="tel"], 
+    input[type="number"], input[type="date"], input[type="datetime-local"], input[type="month"], input[type="search"], input[type="time"],
+    input[type="url"], input[type="week"], textarea, input[readonly] {
+        background: #151515 !important;
+        color: #ddd !important;
+        border: 2px ridge #444 !important;
+        box-shadow: none !important}
 
-    ::selection {background: selectColor !important; color: textColor !important}
-    :focus {outline: none !important}
+    input[type="text"]:not(#s3downbar_download_tooltip_source_box):hover, input[type="email"]:hover, input[type="password"]:hover, input[type="tel"]:hover, 
+    input[type="number"]:hover, input[type="date"]:hover, input[type="datetime-local"]:hover, input[type="month"]:hover, input[type="search"]:hover, input[type="time"]:hover,
+    input[type="url"]:hover, input[type="week"]:hover, textarea:hover {
+        background: #101010 !important;
+        border-color: #555 !important;
+        transition: all 200ms !important}
+        
+    input[type="text"]:not(#s3downbar_download_tooltip_source_box):focus, input[type="email"]:focus, input[type="password"]:focus, input[type="tel"]:focus, 
+    input[type="number"]:focus, input[type="date"]:focus, input[type="datetime-local"]:focus, input[type="month"]:focus, input[type="search"]:focus, input[type="time"]:focus,
+    input[type="url"]:focus, input[type="week"]:focus, textarea:focus {
+        background: #111 !important;
+        border-color: linkColor !important;
+        box-shadow: 0 0 5px linkColor !important;
+        transition: all 200ms !important}
 
-
-    /*----- MENU & CO BACKGROUND-COLORS -----*/
-    div[style="display: block;"], div[role="navigation"] {background: rgba(0,0,0,.5) !important}
-
-    table {
-        background: rgba(40,30,30,.6) !important;
-        border-radius: 6px !important}
-    table > tbody > tr:nth-child(even), table > tbody > tr > td:nth-child(even) {
-        background-color: rgba(0,0,0,.2) !important}
-
-    iframe, embed, nav, label [onclick], nav ul, div[style*="position:"][style*="left:"][style*="visible"], div[style*="z-index:"][style*="left:"][style*="visible"], div[style*="-moz-user-select"], div[role="menu"], div[role="dialog"], span[class*="script"] div, [id*="Menu"], [class*="dropdown"], [class*="popup"], [class="title"], ul[style*="display:"], ul[style*="visibility:"] ul, [id*="nav"] ul, [class*="nav"] ul, ul[class*="menu"], a[onclick][style*="display"], a[id*="ghosteryfirefox"], #ghostery-purple-bubble, #translator-popup, .menu, .tooltip, .hovercard, .vbmenu_popup {
-        background-color: rgba(5,5,5,.9) !important;
-        border-radius: 5px;
-        box-shadow: 1px 1px 5px #000 !important}
-    header, #header, footer, #footer {
-        background-color: rgba(19,19,19,.9) !important;
-        box-shadow: 0 0 5px #000 !important}
-    body > #dialog, body > .xenOverlay {
-        background-color: rgba(19,19,19,.96) !important;
-        background-clip: padding-box !important;
-        box-shadow: 0 0 15px #000, inset 0 0 0 1px rgba(200,200,200,.5), inset 0 0 5px #111 !important;
-        border: 10px solid rgba(99,99,99,.7) !important;
-        border-radius: 0 !important;}
-    [id*="overlay"], [id*="lightbox"], blockquote {
-        background-color: rgba(35,35,35,.9) !important;
-        border-radius: 5px}
-    pre, dl, .Message code {
-        background-color: rgba(5,5,5,.5) !important}
-
-
-    /*----- DEFAULT BUTTONS, SEARCHBOXES & CO -----*/
-    input:not(#s3downbar_download_tooltip_source_box):not([type="checkbox"]):not([type="radio"]), select, button, [role="button"], a.button, a.submit, a.BigButton, a.TabLink, .install[onclick] {
+    input[disabled] {opacity: 0.5 !important}
+        
+    /* Buttons */
+    div[class*="button"]:not([class*="buttons"]):not([class*="menu"]), div[class*="btn"], input[type="file"], input[type="color"], input[type="button"], a.social-count, a[class*="button"], a[class*="btn"],
+    summary.btn, clipboard-copy, .ellipsis-expander, file-attachment, .drag-and-drop, .btn, div[class*="button"]:not([class*="buttons"]) a, .pageNav-page, .pageNav-jump  {
         -moz-appearance: none !important;
         -webkit-appearance: none !important;
-        transition: border-color 0.3s !important;
-        background: #060606 !important;
-        color: #BBB !important;
-        text-shadow: 0 1px #000 !important;
-        border: 2px solid #333 !important;
-        border-radius: 4px !important;
-        box-shadow: 0 0 2px rgba(0,0,0,.9) !important}
-    a[href="javascript:;"], a[class*="button"]:not(:empty), a[id*="button"]:not(:empty), a[id*="Button"]:not(:empty), div[class*="button"][onclick] {
-        transition: border-color 0.3s !important;
-        background: #060606 !important;
-        color: #BBB !important;
-        text-shadow: 0 1px #000 !important;
-        border-color: #333 !important;
-        box-shadow: 0 0 2px rgba(0,0,0,.9) !important}
-    a[href="javascript:;"]:hover, a[class*="button"]:not(:empty):hover, a[id*="button"]:hover, a[id*="Button"]:not(:empty):hover, div[class*="button"][onclick]:hover {
-        background: #151515 !important;
-        color: #FFF !important}
-    input:not(#s3downbar_download_tooltip_source_box):not([type="checkbox"]):not([type="radio"]) *, select *, button *, a.button *, a.submit * {
-        color: #BBB !important;
-        text-shadow: none !important}
-    input:not(#s3downbar_download_tooltip_source_box):not([type="checkbox"]):not([type="radio"]):hover, input[type="button"]:hover, select:hover, button:hover, [role="button"]:hover, a.button:hover, a.submit:hover, a.BigButton:hover, a.TabLink:hover {
-        border: 2px solid #555 !important;
-        border-top-color: #555 !important;
-        border-bottom-color: #555 !important;
-        border-left-color: #555 !important;
-        border-right-color: #555 !important}
+        border-radius: 3px !important;
+        border-color: #555 !important;
+        background: rgba(255,255,255,0) !important;
+        color: #ddd !important;
+        box-shadow: none !important}
+        
+    div[class*="button"]:not([class*="buttons"]):not([class*="menu"]):not(.signup-button):hover, div[class*="btn"]:hover, 
+    input[type="file"]:hover, input[type="color"]:hover, div[class*="header"] li:not([class*="btn"]) a:not(img):not(svg):hover, #sidenav a:hover, 
+    input[type="button"]:hover, a.social-count:hover, a[class*="button"]:hover, a[class*="btn"]:hover, summary.btn:hover, clipboard-copy:hover,
+    .navigation-link:hover, a.menu-item:hover, div[class*="submenu"] a:hover, ul[class*="menu"] li:hover, .btn:hover, 
+    div[class*="button"]:not([class*="buttons"]) a:hover, .pageNav-page:hover, .pageNav-jump:hover, .dropdown-menu a[role="menuitem"]:hover, 
+    .dropdown-toggle[aria-expanded="true"], .options .item:hover {
+        background: rgba(255,255,255,0.1) !important;
+        color: #fff !important}
+    
+    .anchor-list a.hoverable, li[class*="btn"] a, div[class*="buttons"] a[onclick], [aria-selected="true"], button:not([class*="menu"]):not([id*="menu"]):not([role="switch"]):not([class*="ytp"]), input[type="submit"]:not(#searchbtn)  {
+        -moz-appearance: none !important;
+        -webkit-appearance: none !important;
+        background-color: #303030 !important; 
+        color: #ddd !important; 
+        border-radius: 3px !important}
+        
+    .anchor-list a.hoverable:hover, a[data-toggle="dropdown"]:not([class*="wrapper"]):not([role="menuitem"]):hover, li[class*="btn"]:hover a, div[class*="buttons"] a[onclick]:hover, 
+    div[class*="dropdown"] a:hover, div[class*="drop-down"] a:hover, button:not([class*="menu"]):not([id*="menu"]):not([role="switch"]):hover, input[type="submit"]:not(#searchbtn):hover, 
+    span[role="button"]:hover {
+        background-color: #444 !important; 
+        color: #fff !important}
 
-    input:not([type="checkbox"]):not([type="radio"]):focus, select:focus {
-        box-shadow: 0 0 5px linkColor !important}
-    input *:hover * {
-        color: #F0F0F0 !important;
-        text-shadow: 0 0 2px #FFF !important}
-    input[disabled], select[disabled], button[disabled], input[disabled]:hover, select[disabled]:hover, button[disabled]:hover, input[disabled]:focus, select[disabled]:focus, button[disabled]:focus {
-        opacity: 0.5 !important;
-        border-color: #333 !important}
-
+    /* Checkboxes and radio buttons */
     input[type="checkbox"], input[type="radio"] {
         -moz-appearance: none !important;
         -webkit-appearance: none !important;
@@ -171,53 +179,33 @@ if invMethod == "customSet"  {
         min-height: 12px}
     input[type="checkbox"] {border-radius: 1px !important; margin-bottom: 0 !important}
     input[type="radio"], input[type="radio"]:focus {border-radius: 100% !important}
-    input[type="checkbox"]:checked, input[type="radio"]:checked {
+    input[type="checkbox"]:checked, input[type="radio"]:checked, button[role="switch"] {
         border-color: linkColor !important;
         box-shadow: inset 0 0 2px #000 !important;
         background: linkColor !important;
         }
-
-    select {
+        
+    [class*="bullet-active"] {background-color: linkColor !important}
+        
+    /* Tables */
+    table {background: transparent !important; border-color: #333 !important}
+    th {background-color: rgba(255,255,255,0.3) !important; color: #fff !important}
+    tr:nth-child(odd), tr:nth-child(odd) td {background-color: rgba(255,255,255,0.02) !important; color: #ccc !important}
+    tr[aria-selected="true"] td {background: #333 !important}
+    tr:nth-child(even), tr:nth-child(even) td {background-color: rgba(0,0,0,0.05) !important; color: #ccc !important}
+    td {color: #ccc !important}
+    
+    /* Select boxes */
+    select, [role="combobox"] {
+        -moz-appearance: none !important;
+        -webkit-appearance: none !important;
         padding-right: 15px !important;
         background: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAcAAAAECAYAAABCxiV9AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAAeSURBVBhXY5g5c+Z/BiwALo6uAEMDTACXSWgSDAwA4jATh950E30AAAAASUVORK5CYII=') no-repeat right 4px center #060606 !important;
+        border-color: #333 !important;
+        box-shadow: none !important;
         transition: border-color 0.3s, background-position 0.3s !important}
-
-
-    button:active, input[type="submit"]:active, input[type="button"]:active, a.button:active, a[class*="button"]:not(:empty):active, a.submit:active, a.BigButton:active, a.TabLink:active, .Active .TabLink {
-        background: #292929 !important;
-        color: #FFF !important}
-
-    textarea {
-        -moz-appearance: none !important;
-        -webkit-appearance: none !important;
-        background: rgba(0,0,0,.3) !important;
-        border-radius: 3px !important;
-        border: 1px solid #000 !important;
-        box-shadow: inset 0 0 8px #000 !important;
-        transition: border-color, background, 0.3s !important}
-    textarea, textarea * {
-        color: #C8C8C8 !important;
-        text-shadow: 0 0 1px gray !important}
-    textarea:hover, textarea:focus:hover {
-        border-color: #333 !important}
-    textarea:focus {
-        background: rgba(0,0,0,.5) !important;
-        border-color: #222 !important}
-    textarea:focus, textarea:focus > * {
-        text-shadow: none !important;
-        box-shadow: none !important}
-
-    option, optgroup {
-        -moz-appearance: none !important;
-        -webkit-appearance: none !important;
-        background: none !important;
-        color: #666 !important}
-    optgroup {
-        background: #222 !important;
-        color: #DDD !important}
-    option:not([disabled]):hover, option:focus, option:checked {
-        background: linear-gradient(#333, #292929) !important;
-        color: #DDD !important}
+        
+    select:hover, [role="combobox"]:hover {background-color: #222 !important}
         
     /*----- MISC PAGE FIXES -----*/
     #mw-head {background: #151515 !important}
@@ -234,10 +222,39 @@ if invMethod == "customSet"  {
     li#ca-viewsource a{border-right: 1px solid #666 !important}
     .mw-parser-output .main-top-left {background: linear-gradient(to right, #000, transparent) !important}
         
+    .communitymailinglist a, #oh-menu-submit span, #oh-menu-join a {background: #333 !important; color: #ddd !important}
+    .communitymailinglist a:hover, #oh-menu-submit span:hover, #oh-menu-join a:hover {background: #444 !important; color: #fff !important}
+    
+    #disqus .load-comments, #simpleSearch, .vectorTabs {background: transparent !important; color: #ddd !important; border-color: #555 !important}
+    #disqus .load-comments:hover {background: rgba(255,255,255,0.1) !important; color: #fff !important}
+    #conversation [class*="nav"], .grey-angle-bg, .grey-graident, .light-grey-gradient,
+    .bottom-menu.body {background: transparent !important}
+        
+    span.cm-tag {color:  #d55d5d !important}
+    span.cm-tag.cm-bracket {color:  #4CAF50 !important}
+    span.cm-string {color: #9999ff !important}
+    span.cm-variable, span.cm-def {color: #a6a6a6 !important}
+    span.cm-property {color:  #ff6666 !important}
+        
+    .CodeMirror {background-color: transparent !important}
+        
+    .note {background: #331}
+        
+    .title, [id*="search"]:not([id*="btn"]):not([class*="btn"]), .probox {background: none !important; box-shadow: none !important}
+        
+    .probox input[type="search"] {filter: invert(80%) hue-rotate(180deg)}
+
+    .nav-main-item a:hover, a[data-service="GitHub"]:hover {background: rgba(255,255,255,0.1) !important}  
+    .download.big-button:not(.red)::after {background: #222 !important}
+    
+    .p-sectionLinks {background-color: rgba(0,0,0,0.8) !important}
+        
+    .contentRow-fader {background: linear-gradient(transparent, bgColor) !important}
+        
     /*----- IMAGE CHANGES -----*/
-	if (contNum < 100) {
-    	img:not(#s3downbar_download_box_img), picture {
-        	filter: brightness(contNum)}
+    if (contNum < 100) {
+        img:not(#s3downbar_download_box_img), picture, input[type="image"] {
+            filter: brightness(contNum)}
             
         if applyDiv {
             div[style*="background-image:"]:not(.download_data_box):not(#s3downbar_download_box_progress) {
@@ -246,16 +263,16 @@ if invMethod == "customSet"  {
     }
 
     if imgHover && invImgCol == 0 {
-        img:not(#s3downbar_download_box_img), div[style*="background-image:"]:not(.download_data_box):not(#s3downbar_download_box_progress) {
+        img:not(#s3downbar_download_box_img), div[style*="background-image:"]:not(.download_data_box):not(#s3downbar_download_box_progress), input[type="image"] {
             transition: filter .2s
             }
-        img:not(#s3downbar_download_box_img):hover, a:hover img, div[style*="background-image:"]:not(.download_data_box):not(#s3downbar_download_box_progress):hover {
+        img:not(#s3downbar_download_box_img):hover, a:hover img, div[style*="background-image:"]:not(.download_data_box):not(#s3downbar_download_box_progress):hover, input[type="image"]:hover {
             filter: none !important
             }
       }
 
     if invImgCol {
-        img:not(#s3downbar_download_box_img) {
+        img:not(#s3downbar_download_box_img), input[type="image"] {
             filter: invert(100%);
             }
         if applyDiv {
@@ -263,25 +280,24 @@ if invMethod == "customSet"  {
             filter: invert(100%)}
         }
       }
-
+        
     if headCont {
-        section, header {
+        section, #banner, .banner, .header, header {
           background-color: rgba(0,0,0,0.5) !important;
           background-blend-mode: darken !important}
 
-        section p, header p {background-color: rgba(0,0,0,0.3) !important}
+        section p, header p, #banner p, .banner p, .header p {background-color: rgba(0,0,0,0.3) !important}
         }
 
     if divHide {
-        body, *:not(:empty):not(html):not(span):not(a):not(b):not(option):not(select):not(img):not([style="display: block;"]):not([onclick*="open"]):not([onclick*="s_objectID"]):not([class*="stars"]):not([id*="stars"]):not([id="rating"]):not([class="rating"]):not([class*="SPRITE"]):not([id*="SPRITE"]):not([class*="item"]):not([id*="item"]):not([class*="thumb"]):not([class*="icon"]):not([class*="photo"]):not(.view):not(.text):not([id*="lbImage"]):not([class*="cc-in"]):not([class*="gr-body"]):not([id*="watch"]):not(#globalsearch):not(header):not(section):not(.s3dmBox),
-    .r3_hm, .gmbutton2 b, .gtab-i, .ph, .bstab-iLft, .csb, #pagination div, [style*="sprite2.png"], #mw-head-base, #mw-page-base {
+        body, *:not(:empty):not(span):not(a):not(b):not(option):not(select):not(img):not(header):not(section):not(.s3dmBox):not(picture) {
           background-image: none !important}
         }
 
     if headHide {
-        section, header {
+        section, #banner, .banner, .header, #content-wrapper, header p {
             background-image: none !important}
-        section p, header p {
+        section p, #banner p, .banner p, .header p, #content-wrapper p, header p {
             background-color: transparent !important}
         }
     }

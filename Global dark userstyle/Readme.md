@@ -1,11 +1,11 @@
 <h1>Quantum nox - Global dark style</h1>
-<p>This <a href="https://github.com/openstyles/stylus/wiki/UserCSS">userCSS</a> style is a fork of the <a href="https://userstyles.org/styles/31267/global-dark-style-changes-everything-to-dark">userstyle made by Stormi</a>, and is aimed to theme most sites you visit with dark colors similar to the ones used in Quantum Nox theme. This userstyle <b>doesn't work flawlessly on every site, nor does it intend to do so</b>, the main purpose is to just darken most sites you don't frequently visit (and thus finding specific userstyles for each one would be cumbersome apart from very inefficient) with an all-around dark style.</p>
+<p>This <a href="https://github.com/openstyles/stylus/wiki/UserCSS">userCSS</a> is aimed to theme most sites you visit with dark colors similar to the ones used in Quantum Nox theme. This userstyle <b>doesn't work flawlessly on every site, nor does it intend to do so</b>, the main purpose is to just darken most sites you don't frequently visit (and thus finding specific userstyles for each one would be cumbersome apart from very inefficient) with an all-around dark style.</p>
 
-<img src="https://i.imgur.com/S34ylDn.png">
+<img src="https://i.imgur.com/o94dio6.png">
 
 <p><b>For pages that you DO visit frequently, you should use a site-specific style instead</b>, not only for better compatibility, but also for better visuals. You can do this by looking for an already made userstyle of any page you want themed in the <a href="https://userstyles.org/">official userstyles page</a>.</p>
 
-<p>The advantage of this global dark style over others (or even the original version it came from) is that it can be customized from stylus popup to your liking, like changing images contrast, changing the color of links, the background, selected text background color, darkening method...</p>
+<p>The advantage of this global dark style over others is that it can be customized from stylus popup to your liking, like changing images contrast, changing the color of links, the background, selected text background color, darkening method...</p>
 
 <img src="https://i.imgur.com/NOuJvbA.png">
 

@@ -10,17 +10,15 @@ basic css or <a href="https://www.w3schools.com/colors/colors_picker.asp">color 
 <br />
 This problem doesn't happen if you use a code editor such as notepad++, atom, sublime text...</h4>
 
-<h3>Last update: <b>13/04/2019</b></h3>
+<h3>Last update: <b>17/04/2019</b></h3>
+<p>Files updated:</p>
+<ul>
+  <li><b>Quantum Nox - Global dark style.user.css</b>: Completelly rewrote the global userstyle to be able to use it with MPL license.</li>
+</ul>
+<h3>Pre-Last update: <b>13/04/2019</b></h3>
 <p>Files updated:</p>
 <ul>
   <li><b>UserContent.css</b>: Painted about:preferences policies sign.</li>
-</ul>
-<h3>Pre-Last update: <b>08/04/2019</b></h3>
-<p>Files updated:</p>
-<ul>
-  <li><b>UserChrome.css</b>: Now you can change the color of unread/unloaded tabs instead of their text labels through the variables.</li>
-  <li><b>UserContent.css</b>: Now all text on buttons inside mozilla addons page should be white to avoid visibility problems (mainly because of the developers page).</li>
-  <li><b>setAttribute_unread.uc.js</b>: Fix for unread tabs editting as mentioned in <a href="https://www.reddit.com/r/FirefoxCSS/comments/8yruy8/tabbrowsertabunread_backgroundimage/">this reddit thread</a>. Hopefully it will be a temporal fix until Mozilla decides to set the unread property by default again (or some better way to style it directly again).</li>
 </ul>
 
 <code>
@@ -165,7 +163,6 @@ This problem doesn't happen if you use a code editor such as notepad++, atom, su
 <p>The original code for the custom scrollbars which we modified here belongs to <b>Arty2</b>, and you can find it <a href="https://gist.github.com/Arty2/fdf19aea2c601032410516f059d58eb1">here</a>.
 <p>The original code for the multirow tabs (the CSS part) was written by <b>Andreicristianpetcu</b>, and you can find it <a href="https://discourse.mozilla.org/t/tabs-in-two-or-more-rows-like-tabmixpro-in-quantum/21657/2">here</a>, or for just the code, <a href="https://github.com/andreicristianpetcu/UserChrome-Tweaks/blob/09fa38a304af88b685f4086bc8ea9997dd7db0fd/tabs/multi_row_tabs_firefox_v57.css">here</a>. The fix of multi-row tabs draggability was made by <b>TroudhuK</b>, and you can find the original one <a href="https://github.com/TroudhuK/userChrome.js/blob/patch-1/Firefox-57/Mehrzeilige-Tableiste/MultiRowTabLiteforFx.uc.js">here</a>.</p>
 <p>The original code for the multirow bookmarks toolbar belongs to the original creator mentioned in <a href="https://www.reddit.com/r/firefox/comments/75wya9/multiple_row_bookmark_toolbar_for_firefox_5758/">this reddit thread</a>, whose code was fixed by <b>jscher2000</b> to use in our current firefox version.</p>
-<p>The original version of the global dark style for general websites which we modified here belongs to <b>Stormi</b>, and you can find it <a href="https://userstyles.org/styles/31267/global-dark-style-changes-everything-to-dark">here</a>.
 <p>The fix to be able to theme unread tabs again after FF61 (see <a href="https://bugzilla.mozilla.org/show_bug.cgi?format=default&id=1453957">bug 1453957</a> on bugzilla) as mentioned in <a href="https://www.reddit.com/r/FirefoxCSS/comments/8yruy8/tabbrowsertabunread_backgroundimage/">this reddit thread</a>, was made by <b>moko1960</b> to use in Firefox 61+.</p>
 <p>The code to be able to edit anonymous content (in our case the scrollbars and tooltips) was created thanks to the efforts of <a href="http://mozilla.zeniko.ch/userchrome.js.html">Zeniko</a>, <a href="https://github.com/nuchi/firefox-quantum-userchromejs">Nichu</a>, and <a href="https://github.com/Sporif/firefox-quantum-userchromejs">Sporif</a>.
 <p>Special thanks to <b>Messna</b> for noting the class turning into an ID on FF58, and <b>Snwflake</b> for fixing Firefox root folder location on MacOS.</p>
