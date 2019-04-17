@@ -67,7 +67,7 @@ if invMethod == "customSet"  {
         background-color: rgba(0,0,0,0.5) !important;
         box-shadow: 0 0 5px #000 !important} 
     
-    [class*="dialog"], [class*="light"], [class*="white"], div.Popover-message, ul.sub, div[role="menu"], .options {background-color: rgba(0,0,0,0.8) !important}
+    [class*="dialog"], [class*="light"], [class*="white"], div.Popover-message, ul.sub, div[role="menu"], .options, .vue-treeselect__menu {background-color: rgba(0,0,0,0.8) !important}
     #content-wrapper, .content-wrapper, .content-wrapper::after, .article, .flex_box > div, .Box-header, .select-menu-header {background-color: #252525 !important}
         
     div[class*="dropdown"]:not([class*="toggle"]):not([class*="has-children"]):not([class*="wrapper"]):not([role="menuitem"]):not([class*="header"]), 
@@ -153,7 +153,7 @@ if invMethod == "customSet"  {
     input[type="button"]:hover, a.social-count:hover, a[class*="button"]:hover, a[class*="btn"]:hover, summary.btn:hover, clipboard-copy:hover,
     .navigation-link:hover, a.menu-item:hover, div[class*="submenu"] a:hover, ul[class*="menu"] li:hover, .btn:hover, 
     div[class*="button"]:not([class*="buttons"]) a:hover, .pageNav-page:hover, .pageNav-jump:hover, .dropdown-menu a[role="menuitem"]:hover, 
-    .dropdown-toggle[aria-expanded="true"], .options .item:hover {
+    .dropdown-toggle[aria-expanded="true"], .options .item:hover, .vue-treeselect__menu > div > div:hover {
         background: rgba(255,255,255,0.1) !important;
         color: #fff !important}
     
