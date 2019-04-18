@@ -2,7 +2,7 @@
 @name         Quantum nox - Global dark style
 @description  Fork from the global dark style that Stormi wrote to use alongside Quantum nox - Firefox dark theme.
 @namespace    https://github.com/Izheil/Quantum-Nox-Firefox-Dark-Full-Theme
-@version      2.0.1-Beta
+@version      2.0.2
 @author       Izheil
 @homepageURL  https://github.com/Izheil/Quantum-Nox-Firefox-Dark-Full-Theme/tree/master/Global%20dark%20userstyle
 @updateURL    https://raw.githubusercontent.com/Izheil/Quantum-Nox-Firefox-Dark-Full-Theme/master/Global%20dark%20userstyle/Quantum%20Nox%20-%20Global%20dark%20style.user.css
@@ -68,7 +68,7 @@ if invMethod == "customSet"  {
         box-shadow: 0 0 5px #000 !important} 
     
     [class*="dialog"], [class*="light"], [class*="white"], div.Popover-message, ul.sub, div[role="menu"], .options, .vue-treeselect__menu, 
-    .ListResult, div[class*="menu"] {background-color: rgba(0,0,0,0.8) !important}
+    .ListResult, div[class*="menu"], .menu ul ul li a {background-color: rgba(0,0,0,0.8) !important}
     #content-wrapper, .content-wrapper, .content-wrapper::after, .article, .flex_box > div, .Box-header, .select-menu-header {background-color: #252525 !important}
         
     div[class*="dropdown"]:not([class*="toggle"]):not([class*="has-children"]):not([class*="wrapper"]):not([role="menuitem"]):not([class*="header"]), 
@@ -84,7 +84,7 @@ if invMethod == "customSet"  {
         
     /* Text colors */
     div[id*="install"], div[id*="install"] div, div[class*="install"], div[class*="install"] div {color: #fff !important}
-    figcaption, time, del {color: #999 !important}
+    figcaption, time, del, div.downlinks > dl > dt > a {color: #999 !important}
     p, li, .text-gray-dark, ins, i {color: #bbb !important}
     i, svg {fill: #ccc !important}
     h1, h2, h3, h4, h5, h6, summary, dt, span, em, b, strong {color: #ddd !important}
@@ -152,21 +152,25 @@ if invMethod == "customSet"  {
     div[class*="button"]:not([class*="buttons"]):not([class*="menu"]):not(.signup-button):hover, div[class*="btn"]:hover, 
     input[type="file"]:hover, input[type="color"]:hover, div[class*="header"] li:not([class*="btn"]) a:not(img):not(svg):hover, #sidenav a:hover, 
     input[type="button"]:hover, a.social-count:hover, a[class*="button"]:hover, a[class*="btn"]:hover, summary.btn:hover, clipboard-copy:hover,
-    .navigation-link:hover, a.menu-item:hover, div[class*="submenu"] a:hover, ul[class*="menu"] li:hover, .btn:hover, 
+    .navigation-link:hover, div[class*="submenu"] a:hover, ul[class*="menu"] li:hover, .btn:hover, 
     div[class*="button"]:not([class*="buttons"]) a:hover, .pageNav-page:hover, .pageNav-jump:hover, .dropdown-menu a[role="menuitem"]:hover, 
     .dropdown-toggle[aria-expanded="true"], .options .item:hover, .vue-treeselect__menu > div > div:hover {
         background: rgba(255,255,255,0.1) !important;
         color: #fff !important}
     
-    .anchor-list a.hoverable, li[class*="btn"] a, div[class*="buttons"] a[onclick], [aria-selected="true"], button:not([class*="menu"]):not([id*="menu"]):not([role="switch"]):not([class*="ytp"]):not([class*="play"]):not([class*="mute"]):not([class*="fullscreen"]), input[type="submit"]:not(#searchbtn)  {
+    .anchor-list a.hoverable, li[class*="btn"] a, div[class*="buttons"] a[onclick], [aria-selected="true"], 
+    button:not([class*="menu"]):not([id*="menu"]):not([role="switch"]):not([class*="ytp"]):not([class*="play"]):not([class*="mute"]):not([class*="fullscreen"]):not(.connect__button), 
+    input[type="submit"]:not(#searchbtn):not(#search-submit-button):not(#main-search-submit-button):not(#searchsubmit), [class*="menu-item"]:hover {
         -moz-appearance: none !important;
         -webkit-appearance: none !important;
         background-color: #303030 !important; 
         color: #ddd !important; 
         border-radius: 3px !important}
         
-    .anchor-list a.hoverable:hover, a[data-toggle="dropdown"]:not([class*="wrapper"]):not([role="menuitem"]):hover, li[class*="btn"]:hover a, div[class*="buttons"] a[onclick]:hover, 
-    div[class*="dropdown"] a:hover, div[class*="drop-down"] a:hover, button:not([class*="menu"]):not([id*="menu"]):not([role="switch"]):not([class*="play"]):not([class*="mute"]):not([class*="fullscreen"]):hover, input[type="submit"]:not(#searchbtn):hover, 
+    .anchor-list a.hoverable:hover, a[data-toggle="dropdown"]:not([class*="wrapper"]):not([role="menuitem"]):hover, 
+    li[class*="btn"]:hover a, div[class*="buttons"] a[onclick]:hover, div[class*="dropdown"] a:hover, div[class*="drop-down"] a:hover, 
+    button:not([class*="menu"]):not([id*="menu"]):not([role="switch"]):not([class*="play"]):not([class*="mute"]):not([class*="fullscreen"]):not(.connect__button):hover, 
+    input[type="submit"]:not(#searchbtn):not(#search-submit-button):not(#main-search-submit-button):not(#searchsubmit):hover, 
     span[role="button"]:hover {
         background-color: #444 !important; 
         color: #fff !important}
@@ -241,7 +245,8 @@ if invMethod == "customSet"  {
         
     .note {background: #331}
         
-    .title, [id*="search"]:not([id*="btn"]):not([class*="btn"]), .probox {background: none !important; box-shadow: none !important}
+    .title, [id*="search"]:not([id*="btn"]):not([class*="btn"]):not([id*="search-submit-button"])):not([type="submit"]), 
+    .probox {background: none !important; box-shadow: none !important}
         
     .probox input[type="search"] {filter: invert(80%) hue-rotate(180deg)}
 
@@ -291,7 +296,7 @@ if invMethod == "customSet"  {
         }
 
     if divHide {
-        body, *:not(:empty):not(span):not(a):not(b):not(option):not(select):not(img):not(header):not(section):not(.s3dmBox):not(picture) {
+        body, *:not(:empty):not(span):not(a):not(b):not(option):not(select):not(img):not(header):not(section):not(.s3dmBox):not(picture):not(button) {
           background-image: none !important}
         }
 
