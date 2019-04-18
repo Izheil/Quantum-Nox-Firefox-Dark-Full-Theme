@@ -51,7 +51,7 @@ if invMethod == "customSet"  {
         
     ::before, ::after {background-color: transparent !important; border: #333 !important}
         
-    [class*="main"]:not([class*="nav"]):not([id*="nav"]):not([class*="header"]):not([id*="header"]), [id*="main"]:not([class*="nav"]):not([id*="nav"]):not([class*="header"]):not([id*="header"]),                [class*="Main"]:not([class*="nav"]):not([id*="nav"]):not([class*="header"]):not([id*="header"]), [id*="Main"]:not([class*="nav"]):not([id*="nav"]):not([class*="header"]):not([id*="header"]), 
+    [class*="main"]:not([class*="nav"]):not([id*="nav"]):not([class*="header"]):not([id*="header"]), #main:not([class*="nav"]):not([id*="nav"]):not([class*="header"]):not([id*="header"]),                [class*="Main"]:not([class*="nav"]):not([id*="nav"]):not([class*="header"]):not([id*="header"]), #Main:not([class*="nav"]):not([id*="nav"]):not([class*="header"]):not([id*="header"]), 
     main {background-color: bgColor !important}   
         
     div {color: #bbb !important}
@@ -68,7 +68,7 @@ if invMethod == "customSet"  {
         box-shadow: 0 0 5px #000 !important} 
     
     [class*="dialog"], [class*="light"], [class*="white"], div.Popover-message, ul.sub, div[role="menu"], .options, .vue-treeselect__menu, 
-    .ListResult, div[class*="menu"], .menu ul ul li a, .menuparent a {background-color: rgba(0,0,0,0.8) !important}
+    .ListResult, div[class*="menu"], .menu ul ul li a, .menuparent a, .dropdown li ul li a, #description_popup {background-color: rgba(0,0,0,0.8) !important}
     #content-wrapper, .content-wrapper, .content-wrapper::after, .article, .flex_box > div, .Box-header, .select-menu-header {background-color: #202020 !important}
         
     div[class*="dropdown"]:not([class*="toggle"]):not([class*="has-children"]):not([class*="wrapper"]):not([role="menuitem"]):not([class*="header"]), 
@@ -77,7 +77,7 @@ if invMethod == "customSet"  {
     li[class*="drop-down"]:not([class*="wrapper"]):not([role="menuitem"]):not([class*="header"]):not(.user-menu), [class*="popup"], [class*="popover"]:not([class*="link"]), 
     [class*="widget-content"], [class*="notice"] {background: rgba(0,0,0,0.5) !important}
         
-    pre, code, .w3-code, blockquote, .ace_gutter-layer {
+    pre, code, .w3-code, blockquote, .ace_gutter-layer  {
         background: rgba(255,255,255,0.1) !important;
         color: #ccc !important}
     pre > code {background: transparent !important}
@@ -119,6 +119,7 @@ if invMethod == "customSet"  {
         background: #151515 !important;
         color: #ddd !important;
         border: 2px ridge #444 !important;
+        border-radius: 3px !important;
         box-shadow: none !important}
 
     input[type="text"]:not(#s3downbar_download_tooltip_source_box):hover, input[type="email"]:hover, input[type="password"]:hover, input[type="tel"]:hover, 
@@ -157,19 +158,16 @@ if invMethod == "customSet"  {
         background: rgba(255,255,255,0.1) !important;
         color: #fff !important}
     
-    .anchor-list a.hoverable, li[class*="btn"] a, div[class*="buttons"] a[onclick], [aria-selected="true"], 
-    button:not([class*="menu"]):not([id*="menu"]):not([role="switch"]):not([class*="ytp"]):not([class*="play"]):not([class*="mute"]):not([class*="fullscreen"]):not(.connect__button), 
-    input[type="submit"]:not(#searchbtn):not(#search-submit-button):not(#main-search-submit-button):not(#searchsubmit), [class*="menu-item"]:hover {
+    .anchor-list a.hoverable, li[class*="btn"] a, div[class*="buttons"] a[onclick], [aria-selected="true"], button:not([class*="menu"]):not([id*="menu"]):not([role="switch"]):not([class*="ytp"]):not([class*="play"]):not([class*="mute"]):not([class*="fullscreen"]):not(.connect__button), input[type="submit"]:not(#searchbtn):not(#search-submit-button):not(#main-search-submit-button):not(#searchsubmit), [class*="menu-item"]:hover  {
         -moz-appearance: none !important;
         -webkit-appearance: none !important;
         background-color: #303030 !important; 
         color: #ddd !important; 
         border-radius: 3px !important}
         
-    .anchor-list a.hoverable:hover, a[data-toggle="dropdown"]:not([class*="wrapper"]):not([role="menuitem"]):hover, 
-    li[class*="btn"]:hover a, div[class*="buttons"] a[onclick]:hover, div[class*="dropdown"] a:hover, div[class*="drop-down"] a:hover, 
-    button:not([class*="menu"]):not([id*="menu"]):not([role="switch"]):not([class*="play"]):not([class*="mute"]):not([class*="fullscreen"]):not(.connect__button):hover, 
-    input[type="submit"]:not(#searchbtn):not(#search-submit-button):not(#main-search-submit-button):not(#searchsubmit):hover, 
+    .anchor-list a.hoverable:hover, a[data-toggle="dropdown"]:not([class*="wrapper"]):not([role="menuitem"]):hover, li[class*="btn"]:hover a, div[class*="buttons"] a[onclick]:hover, 
+    div[class*="dropdown"] a:hover, div[class*="drop-down"] a:hover, button:not([class*="menu"]):not([id*="menu"]):not([role="switch"]):not([class*="play"]):not([class*="mute"]):not([class*="fullscreen"]):not(.connect__button):hover, 
+input[type="submit"]:not(#searchbtn):not(#search-submit-button):not(#main-search-submit-button):not(#searchsubmit):hover, 
     span[role="button"]:hover {
         background-color: #444 !important; 
         color: #fff !important}
@@ -244,8 +242,7 @@ if invMethod == "customSet"  {
         
     .note {background: #331}
         
-    .title, [id*="search"]:not([id*="btn"]):not([class*="btn"]):not([id*="search-submit-button"])):not([type="submit"]), 
-    .probox {background: none !important; box-shadow: none !important}
+    .title, [id*="search"]:not([id*="btn"]):not([class*="btn"]):not([id*="search-submit-button"]):not([type="submit"]), .probox {background: none !important; box-shadow: none !important}
         
     .probox input[type="search"] {filter: invert(80%) hue-rotate(180deg)}
 
