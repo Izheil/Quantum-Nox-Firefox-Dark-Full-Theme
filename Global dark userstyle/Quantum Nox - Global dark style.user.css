@@ -149,8 +149,7 @@ if invMethod == "customSet"  {
         color: #ddd !important;
         box-shadow: none !important}
         
-    div[class*="button"]:not([class*="buttons"]):not([class*="menu"]):not(.signup-button):hover, div[class*="btn"]:hover, 
-    input[type="file"]:hover, input[type="color"]:hover, div[class*="header"] li:not([class*="btn"]) a:not(img):not(svg):hover, #sidenav a:hover, 
+    div[class*="btn"]:hover, input[type="file"]:hover, input[type="color"]:hover, div[class*="header"] li:not([class*="btn"]) a:not(img):not(svg):hover, #sidenav a:hover, 
     input[type="button"]:hover, a.social-count:hover, a[class*="button"]:hover, a[class*="btn"]:hover, summary.btn:hover, clipboard-copy:hover,
     .navigation-link:hover, div[class*="submenu"] a:hover, ul[class*="menu"] li:hover, .btn:hover, 
     div[class*="button"]:not([class*="buttons"]) a:hover, .pageNav-page:hover, .pageNav-jump:hover, .dropdown-menu a[role="menuitem"]:hover, 
