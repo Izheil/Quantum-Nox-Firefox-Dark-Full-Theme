@@ -140,8 +140,8 @@ if invMethod == "customSet"  {
     input[disabled] {opacity: 0.5 !important}
         
     /* Buttons */
-    div[class*="button"]:not([class*="buttons"]):not([class*="menu"]), div[class*="btn"], input[type="file"], input[type="color"], input[type="button"], a.social-count, a[class*="button"], a[class*="btn"],
-    summary.btn, clipboard-copy, .ellipsis-expander, file-attachment, .drag-and-drop, .btn, div[class*="button"]:not([class*="buttons"]) a, .pageNav-page, .pageNav-jump  {
+    div[class*="button"]:not([class*="buttons"]):not([class*="menu"]), div[class*="btn"]:not(.btn-link), input[type="file"], input[type="color"], input[type="button"], a.social-count, a[class*="button"], a[class*="btn"],
+    summary.btn, clipboard-copy, .ellipsis-expander, file-attachment, .drag-and-drop, div[class*="button"]:not([class*="buttons"]):not(.btn-link) a, .pageNav-page, .pageNav-jump  {
         -moz-appearance: none !important;
         -webkit-appearance: none !important;
         border-radius: 3px !important;
@@ -158,7 +158,7 @@ if invMethod == "customSet"  {
         background: rgba(255,255,255,0.1) !important;
         color: #fff !important}
     
-    .anchor-list a.hoverable, li[class*="btn"] a, div[class*="buttons"] a[onclick], [aria-selected="true"], button:not([class*="menu"]):not([id*="menu"]):not([role="switch"]):not([class*="ytp"]):not([class*="play"]):not([class*="mute"]):not([class*="fullscreen"]):not(.connect__button), input[type="submit"]:not(#searchbtn):not(#search-submit-button):not(#main-search-submit-button):not(#searchsubmit), [class*="menu-item"]:hover  {
+    .anchor-list a.hoverable, li[class*="btn"] a, div[class*="buttons"] a[onclick], [aria-selected="true"], button:not([class*="menu"]):not([id*="menu"]):not([role="switch"]):not([class*="ytp"]):not([class*="play"]):not([class*="mute"]):not([class*="fullscreen"]):not(.connect__button):not(.btn-link), input[type="submit"]:not(#searchbtn):not(#search-submit-button):not(#main-search-submit-button):not(#searchsubmit), [class*="menu-item"]:hover  {
         -moz-appearance: none !important;
         -webkit-appearance: none !important;
         background-color: #303030 !important; 
