@@ -68,8 +68,8 @@ if invMethod == "customSet"  {
         box-shadow: 0 0 5px #000 !important} 
     
     [class*="dialog"], [class*="light"], [class*="white"], div.Popover-message, ul.sub, div[role="menu"], .options, .vue-treeselect__menu, 
-    .ListResult, div[class*="menu"], .menu ul ul li a {background-color: rgba(0,0,0,0.8) !important}
-    #content-wrapper, .content-wrapper, .content-wrapper::after, .article, .flex_box > div, .Box-header, .select-menu-header {background-color: #252525 !important}
+    .ListResult, div[class*="menu"], .menu ul ul li a, .menuparent a {background-color: rgba(0,0,0,0.8) !important}
+    #content-wrapper, .content-wrapper, .content-wrapper::after, .article, .flex_box > div, .Box-header, .select-menu-header {background-color: #202020 !important}
         
     div[class*="dropdown"]:not([class*="toggle"]):not([class*="has-children"]):not([class*="wrapper"]):not([role="menuitem"]):not([class*="header"]), 
     div[class*="drop-down"]:not([class*="wrapper"]):not([role="menuitem"]):not([class*="header"]), .Dropdown-menu,
