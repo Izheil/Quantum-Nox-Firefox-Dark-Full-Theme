@@ -77,7 +77,8 @@ if invMethod == "customSet"  {
     li[class*="drop-down"]:not([class*="wrapper"]):not([role="menuitem"]):not([class*="header"]):not(.user-menu), [class*="popup"], [class*="popover"]:not([class*="link"]), 
     [class*="widget-content"], [class*="notice"] {background: rgba(0,0,0,0.5) !important}
         
-    pre, code, .w3-code, blockquote, .ace_gutter-layer  {
+    pre, code, .w3-code, blockquote, .ace_gutter-layer,
+    .comment-text span.quote, .comment-text span.quote_wrapped  {
         background: rgba(255,255,255,0.1) !important;
         color: #ccc !important}
     pre > code {background: transparent !important}
