@@ -60,3 +60,19 @@
 @-moz-document regexp("https?://(?!(www.example.com|((?!w+)([^\.]+)\.)?([^\.]+)\.tumblr.(com|de|es|uk))).*") {
 /* Add any other site you don't want to apply inside the regexp encased between |'s ^ */
 </pre>
+
+<h2>Settings explanation</h2>
+<p>There are a few settings that you can change clicking the gear icon inside stylus popup that might not be intuitive:</p>
+
+<ul>
+	<li><b>Highlight links</b>: Sometimes link coloring will fail due to the site dark link color overwritting the changes of the global style. You can turn this setting on to put a light background color behind links for better visibility.</li>
+	<li><b>100% bright img on hover</b>: It will make images show as their default contrast when you hover over them (won't do anything unless you've set <b>Image brightness %</b> to anything lower than 100).</li>
+	<li><b>Image brightness %</b>: Will change the brightness of images tagged as <code><img></code>, so banners, header images, and other div background images will still show as default even if you change this setting. An example of images affected would be any that you can find inside posts of most social media sites, and possibly their logo. An exaple of the ones that WON't be affected would be the images that appear as the background of banners that common visual-oriented sites use (like <a href="https://www.gimp.org/">GIMP</a>, or <a href="https://www.apple.com">Apple</a>).</li>
+	<li><b>Invert image colors</b>: Shows the negative version of the image, while trying to respect non black/white colors.</li>
+	<li><b>Apply on div img background</b>: Applies the image brightness or color inversion changes (if enabled through the other settings) on divs that have an obvious background image (doesn't work with all elements).</li>
+	<li><b>Hide div background images</b>: Hides the background images of elements that aren't headers, nor post images. An example would be forums that use a gradient image for the post body of the threads, showing white over the whole post background. It also can hide certain images that act as banners, but won't hide all banners.</li>
+	<li><b>Hide header images</b>: Hides background images that act as headers and banners (like the examples provided on image brightness description).</li>
+	<li><b>Hide images of links</b>: This will hide all background images of links that have one, including certain buttons that are tagged as links.</li>
+	<li><b>Lower header img contrast</b>: This will try to lower the brightness of banners and header images while still showing their background (if hiding header images option is enabled, this one is not necesary).</li>
+	<li><b>Dark layers over divs</b>: This will paint semi-transparent dark layers behind most elements to attempt to lower the contrast of some elements that still have background images. You shouldn't need this unless you want to see the background images of divs (rare occasions).</li>
+</ul>

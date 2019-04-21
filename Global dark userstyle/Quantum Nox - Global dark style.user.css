@@ -2,7 +2,7 @@
 @name         Quantum nox - Global dark style
 @description  Global dark style to use alongside Firefox full dark theme - Quantum nox.
 @namespace    https://github.com/Izheil/Quantum-Nox-Firefox-Dark-Full-Theme
-@version      2.0.5
+@version      2.1.0
 @author       Izheil
 @homepageURL  https://github.com/Izheil/Quantum-Nox-Firefox-Dark-Full-Theme/tree/master/Global%20dark%20userstyle
 @updateURL    https://raw.githubusercontent.com/Izheil/Quantum-Nox-Firefox-Dark-Full-Theme/master/Global%20dark%20userstyle/Quantum%20Nox%20-%20Global%20dark%20style.user.css
@@ -15,14 +15,17 @@
 @var          color     selectColor  "Selected text background color"    #005599
 @var          color     textColor    "Selected text color"    #000000
 @var          color     bgColor      "Background color"  #181818
+@var          checkbox  linkHigh     "Highlight links"  0
 @var          text      darkBg       "Background img [wrap in url()]"  url("https://i.imgur.com/FrGqsTE.png")
 @var          checkbox  imgHover     "100% bright img on hover"  0
 @var          number    contNum      "Image brightness %" ['%', 100, 0, 100, 1]
-@var          checkbox  applyDiv     "Brightness on div img bg"  0
 @var          checkbox  invImgCol    "Invert image colors"  0
+@var          checkbox  applyDiv     "Apply on div img background"  0
 @var          checkbox  divHide      "Hide div background images"  1
 @var          checkbox  headHide     "Hide header images"  0
+@var          checkbox  linkHide     "Hide images of links"  0
 @var          checkbox  headCont     "Lower header img contrast"  1
+@var          checkbox  divCont      "Dark layers over divs"  0
 @var          select    invMethod    "Site theming method" {
     "Custom settings": "customSet",
     "Color Inversion": "colorInv",
@@ -63,7 +66,7 @@ if invMethod == "customSet"  {
         
     header:not([class*="comment"]), [id*="header"], .header-wrap, .js-header-wrapper, div[class*="header-container"], nav, 
     [class*="navi"]:not([class*="item"]):not([class*="btn"]):not([class*="button"]):not([class*="navigation"]):not([id*="Container"]):not([class*="timeline"]), 
-    div[class*="submenu"], div[class*="sub-menu"], div.navigation, .links-box, .Box-body, .commit-tease, [class*="menu-item"], ul[class*="menu"], [class*="pagehead"] {
+    div[class*="submenu"]:not([class*="footer"]):not([class*="Footer"]), div[class*="sub-menu"]:not([class*="footer"]):not([class*="Footer"]), div.navigation, .links-box, .Box-body, .commit-tease, [class*="menu-item"], ul[class*="menu"]:not([class*="footer"]):not([class*="Footer"]), [class*="pagehead"] {
         background-color: rgba(0,0,0,0.5) !important;
         box-shadow: 0 0 5px #000 !important} 
     
@@ -77,7 +80,7 @@ if invMethod == "customSet"  {
     li[class*="drop-down"]:not([class*="wrapper"]):not([role="menuitem"]):not([class*="header"]):not(.user-menu), [class*="popup"], [class*="popover"]:not([class*="link"]), 
     [class*="widget-content"], [class*="notice"] {background: rgba(0,0,0,0.5) !important}
         
-    pre, code, .w3-code, blockquote, .ace_gutter-layer,
+    pre, code, .w3-code, blockquote, .ace_gutter-layer, 
     .comment-text span.quote, .comment-text span.quote_wrapped  {
         background: rgba(255,255,255,0.1) !important;
         color: #ccc !important}
@@ -143,7 +146,7 @@ if invMethod == "customSet"  {
         
     /* Buttons */
     div[class*="button"]:not([class*="buttons"]):not([class*="menu"]), div[class*="btn"]:not(.btn-link), input[type="file"], input[type="color"], input[type="button"], a.social-count, a[class*="button"], a[class*="btn"],
-    summary.btn, clipboard-copy, .ellipsis-expander, file-attachment, .drag-and-drop, div[class*="button"]:not([class*="buttons"]):not(.btn-link) a, .pageNav-page, .pageNav-jump  {
+    summary.btn, clipboard-copy, .ellipsis-expander, file-attachment, .drag-and-drop, div[class*="button"]:not([class*="buttons"]) a, .pageNav-page, .pageNav-jump  {
         -moz-appearance: none !important;
         -webkit-appearance: none !important;
         border-radius: 3px !important;
@@ -154,16 +157,15 @@ if invMethod == "customSet"  {
         
     div[class*="btn"]:hover, input[type="file"]:hover, input[type="color"]:hover, div[class*="header"] li:not([class*="btn"]) a:not(img):not(svg):hover, #sidenav a:hover, 
     input[type="button"]:hover, a.social-count:hover, a[class*="button"]:hover, a[class*="btn"]:hover, summary.btn:hover, clipboard-copy:hover,
-    .navigation-link:hover, div[class*="submenu"] a:hover, ul[class*="menu"] li:hover, .btn:hover, 
+    .navigation-link:hover, div[class*="submenu"]:not([class*="footer"]):not([class*="Footer"]) a:hover, ul[class*="menu"]:not([class*="footer"]):not([class*="Footer"]) li:hover, .btn:hover, 
     div[class*="button"]:not([class*="buttons"]) a:hover, .pageNav-page:hover, .pageNav-jump:hover, .dropdown-menu a[role="menuitem"]:hover, 
     .dropdown-toggle[aria-expanded="true"], .options .item:hover, .vue-treeselect__menu > div > div:hover {
         background: rgba(255,255,255,0.1) !important;
         color: #fff !important}
     
     .anchor-list a.hoverable, li[class*="btn"] a, div[class*="buttons"] a[onclick], [aria-selected="true"], 
-    button:not([class*="menu"]):not([id*="menu"]):not([role="switch"]):not([class*="ytp"]):not([class*="play"]):not([class*="mute"]):not([class*="fullscreen"]):not(.connect__button):not(.btn-link), 
-    input[type="submit"]:not(#searchbtn):not(#search-submit-button):not(#main-search-submit-button):not(#searchsubmit), [class*="menu-item"]:hover, 
-    button#view-menu-btn, a.add-fav {
+button:not([class*="menu"]):not([id*="menu"]):not([role="switch"]):not([class*="ytp"]):not([class*="play"]):not([class*="mute"]):not([class*="fullscreen"]):not(.connect__button):not(.btn-link),
+input[type="submit"]:not(#searchbtn):not(#search-submit-button):not(#main-search-submit-button):not(#searchsubmit), [class*="menu-item"]:not([class*="footer"]):not([class*="Footer"]):hover, button#view-menu-btn, a.add-fav  {
         -moz-appearance: none !important;
         -webkit-appearance: none !important;
         background: #303030 !important; 
@@ -260,7 +262,7 @@ input[type="submit"]:not(#searchbtn):not(#search-submit-button):not(#main-search
         
     /*----- IMAGE CHANGES -----*/
     if (contNum < 100) {
-        img:not(#s3downbar_download_box_img), picture, input[type="image"] {
+        img:not(#s3downbar_download_box_img), input[type="image"] {
             filter: brightness(contNum)}
             
         if applyDiv {
@@ -280,39 +282,56 @@ input[type="submit"]:not(#searchbtn):not(#search-submit-button):not(#main-search
 
     if invImgCol {
         img:not(#s3downbar_download_box_img), input[type="image"] {
-            filter: invert(100%);
+            filter: invert(100%) hue-rotate(180deg);
             }
         if applyDiv {
             div[style*="background-image:"]:not(.download_data_box):not(#s3downbar_download_box_progress) {
-            filter: invert(100%)}
+            filter: invert(100%) hue-rotate(180deg)}
         }
       }
         
     if headCont {
-        section, #banner, .banner, .header, header {
+        section, #banner, .banner, .header, header, figure, picture {
           background-color: rgba(0,0,0,0.5) !important;
           background-blend-mode: darken !important}
 
-        section p, header p, #banner p, .banner p, .header p {background-color: rgba(0,0,0,0.3) !important}
+        section p, header p, #banner p, .banner p, .header p, figure p, picture p {background-color: rgba(0,0,0,0.3) !important}
         }
 
+    if divCont {
+        *:not(:empty):not(a):not(b):not(option):not(select):not(img):not(header):not(section):not(.s3dmBox):not(picture):not(button):not(p) {
+         background-color: rgba(0,0,0,0.5) !important;
+         background-blend-mode: darken !important}
+      }
+        
     if divHide {
-        body, *:not(:empty):not(span):not(a):not(b):not(option):not(select):not(img):not(header):not(section):not(.s3dmBox):not(picture):not(button) {
+        *:not(:empty):not(a):not(b):not(option):not(select):not(img):not(header):not(section):not(.s3dmBox):not(picture):not(button):not(p) {
           background-image: none !important}
         }
 
     if headHide {
-        section, #banner, .banner, .header, #content-wrapper, header p {
+        section, #banner, .banner, .header, #content-wrapper, header p, section p, figure, picture {
             background-image: none !important}
-        section p, #banner p, .banner p, .header p, #content-wrapper p, header p {
+        section p, #banner p, .banner p, .header p, #content-wrapper p, header p, figure p {
             background-color: transparent !important}
+        }
+
+    if linkHigh {
+        a {
+            box-shadow: 0 0 3px rgba(255, 204, 153 ,0.5) !important;
+            background-color: rgba(255, 204, 153 ,0.5) !important}
+        }
+
+    if linkHide {
+        a, a * {
+            background-image: none !important}
         }
     }
   
 if invMethod == "colorInv" {
     html {background: bgColor !important}
     body {background: linear-gradient(bgColor, bgColor) !important}
-    body > * {filter: invert(100%)}
+    body > * {filter: invert(100%) hue-rotate(180deg)}
     }
     
 if invMethod == "lowBright" {
