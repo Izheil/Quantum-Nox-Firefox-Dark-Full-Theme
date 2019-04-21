@@ -2,7 +2,7 @@
 @name         Quantum nox - Global dark style
 @description  Global dark style to use alongside Firefox full dark theme - Quantum nox.
 @namespace    https://github.com/Izheil/Quantum-Nox-Firefox-Dark-Full-Theme
-@version      2.0.4
+@version      2.0.5
 @author       Izheil
 @homepageURL  https://github.com/Izheil/Quantum-Nox-Firefox-Dark-Full-Theme/tree/master/Global%20dark%20userstyle
 @updateURL    https://raw.githubusercontent.com/Izheil/Quantum-Nox-Firefox-Dark-Full-Theme/master/Global%20dark%20userstyle/Quantum%20Nox%20-%20Global%20dark%20style.user.css
@@ -89,6 +89,7 @@ if invMethod == "customSet"  {
     p, li, .text-gray-dark, ins, i {color: #bbb !important}
     i, svg {fill: #ccc !important}
     h1, h2, h3, h4, h5, h6, summary, dt, span, em, b, strong {color: #ddd !important}
+    h1, h2, h3, h4, h5, h6 {background-image: none !important}
 
     /* Links and text selection */
     a, a *, .link-gray-dark {
@@ -159,7 +160,10 @@ if invMethod == "customSet"  {
         background: rgba(255,255,255,0.1) !important;
         color: #fff !important}
     
-    .anchor-list a.hoverable, li[class*="btn"] a, div[class*="buttons"] a[onclick], [aria-selected="true"], button:not([class*="menu"]):not([id*="menu"]):not([role="switch"]):not([class*="ytp"]):not([class*="play"]):not([class*="mute"]):not([class*="fullscreen"]):not(.connect__button):not(.btn-link), input[type="submit"]:not(#searchbtn):not(#search-submit-button):not(#main-search-submit-button):not(#searchsubmit), [class*="menu-item"]:hover, button#view-menu-btn  {
+    .anchor-list a.hoverable, li[class*="btn"] a, div[class*="buttons"] a[onclick], [aria-selected="true"], 
+    button:not([class*="menu"]):not([id*="menu"]):not([role="switch"]):not([class*="ytp"]):not([class*="play"]):not([class*="mute"]):not([class*="fullscreen"]):not(.connect__button):not(.btn-link), 
+    input[type="submit"]:not(#searchbtn):not(#search-submit-button):not(#main-search-submit-button):not(#searchsubmit), [class*="menu-item"]:hover, 
+    button#view-menu-btn, a.add-fav {
         -moz-appearance: none !important;
         -webkit-appearance: none !important;
         background: #303030 !important; 
@@ -169,7 +173,7 @@ if invMethod == "customSet"  {
     .anchor-list a.hoverable:hover, a[data-toggle="dropdown"]:not([class*="wrapper"]):not([role="menuitem"]):hover, li[class*="btn"]:hover a, div[class*="buttons"] a[onclick]:hover, 
     div[class*="dropdown"] a:hover, div[class*="drop-down"] a:hover, button:not([class*="menu"]):not([id*="menu"]):not([role="switch"]):not([class*="play"]):not([class*="mute"]):not([class*="fullscreen"]):not(.connect__button):not(.btn-link):hover, 
 input[type="submit"]:not(#searchbtn):not(#search-submit-button):not(#main-search-submit-button):not(#searchsubmit):hover, 
-    span[role="button"]:hover, button#view-menu-btn:hover {
+    span[role="button"]:hover, button#view-menu-btn:hover, a.add-fav:hover {
         background: #444 !important; 
         color: #fff !important}
 
