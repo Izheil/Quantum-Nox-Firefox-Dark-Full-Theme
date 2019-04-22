@@ -306,7 +306,7 @@ input[type="submit"]:not(#searchbtn):not(#search-submit-button):not(#main-search
       }
         
     if divHide {
-        *:not(:empty):not(a):not(b):not(option):not(select):not(img):not(header):not(section):not(.s3dmBox):not(picture):not(button):not(p) {
+        *:not(:empty):not(a):not(b):not(option):not(select):not(img):not(header):not(section):not(.s3dmBox):not(picture):not(button):not(p):not(td) {
           background-image: none !important}
         }
 
