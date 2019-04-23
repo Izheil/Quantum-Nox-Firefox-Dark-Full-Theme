@@ -2,7 +2,7 @@
 @name         Quantum nox - Global dark style
 @description  Global dark style to use alongside Firefox full dark theme - Quantum nox.
 @namespace    https://github.com/Izheil/Quantum-Nox-Firefox-Dark-Full-Theme
-@version      2.1.1
+@version      2.1.2
 @author       Izheil
 @homepageURL  https://github.com/Izheil/Quantum-Nox-Firefox-Dark-Full-Theme/tree/master/Global%20dark%20userstyle
 @updateURL    https://raw.githubusercontent.com/Izheil/Quantum-Nox-Firefox-Dark-Full-Theme/master/Global%20dark%20userstyle/Quantum%20Nox%20-%20Global%20dark%20style.user.css
@@ -84,7 +84,7 @@ if invMethod == "customSet"  {
     .comment-text span.quote, .comment-text span.quote_wrapped  {
         background: rgba(255,255,255,0.1) !important;
         color: #ccc !important}
-    pre > code {background: transparent !important}
+    pre > code, a[data-toggle="dropdown"]:not([class*="wrapper"]):not([role="menuitem"]), .dropdown-menu > li > a {background: transparent !important}
         
     /* Text colors */
     div[id*="install"], div[id*="install"] div, div[class*="install"], div[class*="install"] div {color: #fff !important}
@@ -103,7 +103,7 @@ if invMethod == "customSet"  {
     a:visited, a:visited * {
         color: visitedColor !important}
 
-    a.active, a.selected, a.highlight [href="#"], a.is-selected, [class*="state-active"], .btn-link {
+    a.active, a.selected, a.highlight [href="#"], a.is-selected, [class*="state-active"], .btn-link, .active > a {
         color: #fff !important;
         font-weight: bold !important;
         background: rgba(255,255,255,0.1) !important}
