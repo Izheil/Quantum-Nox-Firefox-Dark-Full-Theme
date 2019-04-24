@@ -2,7 +2,7 @@
 @name         Quantum nox - Global dark style
 @description  Global dark style to use alongside Firefox full dark theme - Quantum nox.
 @namespace    https://github.com/Izheil/Quantum-Nox-Firefox-Dark-Full-Theme
-@version      2.1.2
+@version      2.1.3
 @author       Izheil
 @homepageURL  https://github.com/Izheil/Quantum-Nox-Firefox-Dark-Full-Theme/tree/master/Global%20dark%20userstyle
 @updateURL    https://raw.githubusercontent.com/Izheil/Quantum-Nox-Firefox-Dark-Full-Theme/master/Global%20dark%20userstyle/Quantum%20Nox%20-%20Global%20dark%20style.user.css
@@ -66,12 +66,11 @@ if invMethod == "customSet"  {
         
     header:not([class*="comment"]), [id*="header"], .header-wrap, .js-header-wrapper, div[class*="header-container"], nav, 
     [class*="navi"]:not([class*="item"]):not([class*="btn"]):not([class*="button"]):not([class*="navigation"]):not([id*="Container"]):not([class*="timeline"]), 
-    div[class*="submenu"]:not([class*="footer"]):not([class*="Footer"]), div[class*="sub-menu"]:not([class*="footer"]):not([class*="Footer"]), div.navigation, .links-box, .Box-body, .commit-tease, [class*="menu-item"], ul[class*="menu"]:not([class*="footer"]):not([class*="Footer"]), [class*="pagehead"] {
+    div[class*="submenu"]:not([class*="footer"]):not([class*="Footer"]), div[class*="sub-menu"]:not([class*="footer"]):not([class*="Footer"]), 
+    div.navigation, .links-box, .Box-body, .commit-tease, [class*="menu-item"], ul[class*="menu"]:not([class*="footer"]):not([class*="Footer"]), [class*="pagehead"] {
         background-color: rgba(0,0,0,0.5) !important;
         box-shadow: 0 0 5px #000 !important} 
     
-    [class*="dialog"], [class*="light"], [class*="white"], div.Popover-message, ul.sub, div[role="menu"], .options, .vue-treeselect__menu, 
-    .ListResult, div[class*="menu"], .menu ul ul li a, .menuparent a, .dropdown li ul li a, #description_popup {background-color: rgba(0,0,0,0.8) !important}
     #content-wrapper, .content-wrapper, .content-wrapper::after, .article, .flex_box > div, .Box-header, .select-menu-header {background-color: #202020 !important}
         
     div[class*="dropdown"]:not([class*="toggle"]):not([class*="has-children"]):not([class*="wrapper"]):not([role="menuitem"]):not([class*="header"]), 
@@ -144,7 +143,7 @@ if invMethod == "customSet"  {
 
     input[disabled] {opacity: 0.5 !important}
         
-    /* Buttons */
+    /* Buttons and menus */
     div[class*="button"]:not([class*="buttons"]):not([class*="menu"]), div[class*="btn"]:not(.btn-link), input[type="file"], input[type="color"], input[type="button"], a.social-count, a[class*="button"], a[class*="btn"],
     summary.btn, clipboard-copy, .ellipsis-expander, file-attachment, .drag-and-drop, div[class*="button"]:not([class*="buttons"]) a, .pageNav-page, .pageNav-jump  {
         -moz-appearance: none !important;
@@ -154,15 +153,19 @@ if invMethod == "customSet"  {
         background: rgba(255,255,255,0) !important;
         color: #ddd !important;
         box-shadow: none !important}
-        
-    div[class*="btn"]:hover, input[type="file"]:hover, input[type="color"]:hover, div[class*="header"] li:not([class*="btn"]) a:not(img):not(svg):hover, #sidenav a:hover, 
+
+    [class*="dialog"], [class*="light"], [class*="white"], div.Popover-message, ul.sub, div[role="menu"], .options, .vue-treeselect__menu, 
+    .ListResult, div[class*="menu"], .menu ul ul li a, .menuparent a, .dropdown li ul li a, #description_popup, ul[role="listbox"] 
+    {background-color: rgba(0,0,0,0.8) !important}
+
+    div[class*="btn"]:not(.dl-btn-labelWrap):not(.dl-btn-cont):hover, input[type="file"]:hover, input[type="color"]:hover, div[class*="header"] li:not([class*="btn"]) a:not(img):not(svg):hover, #sidenav a:hover, 
     input[type="button"]:hover, a.social-count:hover, a[class*="button"]:hover, a[class*="btn"]:hover, summary.btn:hover, clipboard-copy:hover,
     .navigation-link:hover, div[class*="submenu"]:not([class*="footer"]):not([class*="Footer"]) a:hover, ul[class*="menu"]:not([class*="footer"]):not([class*="Footer"]) li:hover, .btn:hover, 
     div[class*="button"]:not([class*="buttons"]) a:hover, .pageNav-page:hover, .pageNav-jump:hover, .dropdown-menu a[role="menuitem"]:hover, 
-    .dropdown-toggle[aria-expanded="true"], .options .item:hover, .vue-treeselect__menu > div > div:hover {
+    .dropdown-toggle[aria-expanded="true"], .options .item:hover, .vue-treeselect__menu > div > div:hover, ul[role="listbox"] li:hover {
         background: rgba(255,255,255,0.1) !important;
         color: #fff !important}
-    
+
     .anchor-list a.hoverable, li[class*="btn"] a, div[class*="buttons"] a[onclick], [aria-selected="true"], 
 button:not([class*="menu"]):not([id*="menu"]):not([role="switch"]):not([class*="ytp"]):not([class*="play"]):not([class*="mute"]):not([class*="fullscreen"]):not(.connect__button):not(.btn-link),
 input[type="submit"]:not(#searchbtn):not(#search-submit-button):not(#main-search-submit-button):not(#searchsubmit), [class*="menu-item"]:not([class*="footer"]):not([class*="Footer"]):hover, button#view-menu-btn, a.add-fav  {
@@ -206,10 +209,10 @@ input[type="submit"]:not(#searchbtn):not(#search-submit-button):not(#main-search
         color: #ccc !important}
     
     /* Select boxes */
-    select, [role="combobox"] {
+    select, [role="combobox"], a[class*="select"]:not([class*="selected"]) {
         -moz-appearance: none !important;
         -webkit-appearance: none !important;
-        padding-right: 15px !important;
+        padding: 1px 15px 1px 3px !important;
         background: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAcAAAAECAYAAABCxiV9AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAAeSURBVBhXY5g5c+Z/BiwALo6uAEMDTACXSWgSDAwA4jATh950E30AAAAASUVORK5CYII=') no-repeat right 4px center #060606 !important;
         border-color: #333 !important;
         box-shadow: none !important;
