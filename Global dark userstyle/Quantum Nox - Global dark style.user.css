@@ -2,7 +2,7 @@
 @name         Quantum nox - Global dark style
 @description  Global dark style to use alongside Firefox full dark theme - Quantum nox.
 @namespace    https://github.com/Izheil/Quantum-Nox-Firefox-Dark-Full-Theme
-@version      2.1.4
+@version      2.1.5
 @author       Izheil
 @homepageURL  https://github.com/Izheil/Quantum-Nox-Firefox-Dark-Full-Theme/tree/master/Global%20dark%20userstyle
 @updateURL    https://raw.githubusercontent.com/Izheil/Quantum-Nox-Firefox-Dark-Full-Theme/master/Global%20dark%20userstyle/Quantum%20Nox%20-%20Global%20dark%20style.user.css
@@ -94,7 +94,7 @@ if invMethod == "customSet"  {
     h1, h2, h3, h4, h5, h6 {background-image: none !important}
 
     /* Links and text selection */
-    a, a *, .link-gray-dark {
+    a:link, a:link *, .link-gray-dark {
         color: linkColor !important;
         text-decoration: none !important;
         text-shadow: 0 0 1px #000 !important}
@@ -158,7 +158,7 @@ if invMethod == "customSet"  {
     .ListResult, div[class*="menu"], .menu ul ul li a, .menuparent a, .dropdown li ul li a, #description_popup, ul[role="listbox"] 
     {background-color: rgba(0,0,0,0.8) !important}
 
-    div[class*="btn"]:not(.dl-btn-labelWrap):not(.dl-btn-cont):not(.btn-set):not(.column):hover, input[type="file"]:hover, input[type="color"]:hover, div[class*="header"] li:not([class*="btn"]) a:not(img):not(svg):hover, #sidenav a:hover, 
+    div[class*="btn"]:not(.dl-btn-labelWrap):not(.dl-btn-cont):not(.btn-set):not(.column):not([class*="toolbar"]):hover, input[type="file"]:hover, input[type="color"]:hover, div[class*="header"] li:not([class*="btn"]) a:not(img):not(svg):hover, #sidenav a:hover, 
     input[type="button"]:hover, a.social-count:hover, a[class*="button"]:hover, a[class*="btn"]:hover, summary.btn:hover, clipboard-copy:hover,
     .navigation-link:hover, div[class*="submenu"]:not([class*="footer"]):not([class*="Footer"]) a:hover, ul[class*="menu"]:not([class*="footer"]):not([class*="Footer"]) li:hover, .btn:hover, 
     div[class*="button"]:not([class*="buttons"]) a:hover, .pageNav-page:hover, .pageNav-jump:hover, .dropdown-menu a[role="menuitem"]:hover, 
@@ -168,7 +168,8 @@ if invMethod == "customSet"  {
 
     .anchor-list a.hoverable, li[class*="btn"] a, div[class*="buttons"] a[onclick], [aria-selected="true"], 
 button:not([class*="menu"]):not([id*="menu"]):not([role="switch"]):not([class*="ytp"]):not([class*="play"]):not([class*="mute"]):not([class*="fullscreen"]):not(.connect__button):not(.btn-link),
-input[type="submit"]:not(#searchbtn):not(#search-submit-button):not(#main-search-submit-button):not(#searchsubmit), [class*="menu-item"]:not([class*="footer"]):not([class*="Footer"]):hover, button#view-menu-btn, a.add-fav  {
+input[type="submit"]:not(#searchbtn):not(#search-submit-button):not(#main-search-submit-button):not(#searchsubmit), [class*="menu-item"]:not([class*="footer"]):not([class*="Footer"]):hover, 
+button#view-menu-btn, a.add-fav, #action-menu-btn  {
         -moz-appearance: none !important;
         -webkit-appearance: none !important;
         background: #303030 !important; 
@@ -178,7 +179,7 @@ input[type="submit"]:not(#searchbtn):not(#search-submit-button):not(#main-search
     .anchor-list a.hoverable:hover, a[data-toggle="dropdown"]:not([class*="wrapper"]):not([role="menuitem"]):hover, li[class*="btn"]:hover a, div[class*="buttons"] a[onclick]:hover, 
     div[class*="dropdown"] a:hover, div[class*="drop-down"] a:hover, button:not([class*="menu"]):not([id*="menu"]):not([role="switch"]):not([class*="play"]):not([class*="mute"]):not([class*="fullscreen"]):not(.connect__button):not(.btn-link):hover, 
 input[type="submit"]:not(#searchbtn):not(#search-submit-button):not(#main-search-submit-button):not(#searchsubmit):hover, 
-    span[role="button"]:hover, button#view-menu-btn:hover, a.add-fav:hover {
+    span[role="button"]:hover, button#view-menu-btn:hover, a.add-fav:hover, #action-menu-btn:hover {
         background: #444 !important; 
         color: #fff !important}
 
@@ -263,6 +264,8 @@ input[type="submit"]:not(#searchbtn):not(#search-submit-button):not(#main-search
     .p-sectionLinks {background-color: rgba(0,0,0,0.8) !important}
         
     .contentRow-fader {background: linear-gradient(transparent, bgColor) !important}
+
+    .bz_comment_text span.quote, .bz_comment_text span.quote_wrapped, div.bz_comment_text pre {background: #444 !important; color: #fff !important}
         
     /*----- IMAGE CHANGES -----*/
     if (contNum < 100) {
