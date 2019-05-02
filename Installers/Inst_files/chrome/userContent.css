@@ -1611,7 +1611,7 @@ select {
   background: #444 url("data:image/svg+xml;charset=utf-8,%3Csvg width='11' height='7' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M434.574 488L430.5 492.147 426.428 488 425 489.399 430.5 494.999 436 489.399z' transform='translate(-425 -488)' fill='%23cccccc' fill-rule='evenodd'/%3E%3C/svg%3E") no-repeat calc(100% - 5px) 50% !important;
   border: none !important;
   padding: 3px;
-  color: #ccc !important
+  color: #ccc !important;
   margin-top: 6px !important}
 
 select:hover {
