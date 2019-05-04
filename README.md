@@ -167,7 +167,7 @@ This problem doesn't happen if you use a code editor such as notepad++, atom, su
 <p>The main reason is that you can't style firefox about: pages nor dialog windows with just stylus.</p>
 
 <h3>The theme is making the text of some addon popups unreadable, how do I fix this?</h3>
-<p>The theme is made so that it changes most background colors, including the one of the popups that don't have any background color specified by their original creator. Sadly it doesn't change the text of these by default, so you may have to do it manually, or report the addon you want themed here, or just use the fix inside userchrome.css (at around lines 326-329) to turn the addons back to their white background color.</p>
+<p>The theme is made so that it changes most background colors, including the one of the popups that don't have any background color specified by their original creator. Sadly it doesn't change the text of these by default, so you may have to do it manually, or report the addon you want themed here, or just use the fix inside userchrome.css (at around lines 926-929) to turn the addons back to their white background color.</p>
 
 <h2>Credits</h2>
 <p>The original code for the custom scrollbars which we modified here belongs to <b>Arty2</b>, and you can find it <a href="https://gist.github.com/Arty2/fdf19aea2c601032410516f059d58eb1">here</a>.
