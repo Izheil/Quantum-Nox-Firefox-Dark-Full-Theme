@@ -13,12 +13,12 @@ This problem doesn't happen if you use a code editor such as notepad++, atom, su
 <h3>Last update: <b>17/04/2019</b></h3>
 <p>Files updated:</p>
 <ul>
-  <li><b>Quantum Nox - Global dark style.user.css</b>: Completelly rewrote the global userstyle to be able to use it with MPL license.</li>
+  <li><b>Usercontent.css</b>: Darkened warning boxes in <a href="https://support.mozilla.org">support.mozilla.org</a>.</li>
 </ul>
 <h3>Pre-Last update: <b>13/04/2019</b></h3>
 <p>Files updated:</p>
 <ul>
-  <li><b>UserContent.css</b>: Painted about:preferences policies sign.</li>
+  <li><b>Quantum Nox - Global dark style.user.css</b>: Fully rewrote the global userstyle to be able to use it with MPL license.</li>
 </ul>
 
 <code>

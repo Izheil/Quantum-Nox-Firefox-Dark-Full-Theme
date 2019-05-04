@@ -36,7 +36,7 @@
 @-moz-document regexp("https?://(?!(www.tvtime.com|www.t411.al|www.nespresso.com|www.wechoosethemoon.org|www.nasa.gov|((?!w+)([^\.]+)\.)?([^\.]+)\.google.(com|es|de)|duckduckgo.com|www.youtube.com|www.reddit.com|twitter.com|gfycat.com|codepen.io|((?!w+)([^\.]+)\.)?([^\.]+)\.imgur.com)).*") {
 /* Add any other site you don't want to apply inside the regexp encased between |'s ^ */
 
-if invMethod == "customSet"  {
+if invMethod == "customSet" {
     
     /* General elements background color */
     html, iframe, embed, footer:not([class*="comment"]), [id*="footer"] {background: darkBg bgColor !important}
