@@ -10,7 +10,7 @@
 	<p>After you install it and your addons have been re-enabled, you can uninstall the fix (your addons will remain activated even if you uninstall it) going to <b>about:support</b>, opening the profile folder (there is a button for that in that page), accesing the extensions folder in there, and deleting the "hotfix-update-xpi-intermediate@mozilla.com.xpi" file that corresponds to the fix. The profile folder is the same parent folder where we place the chrome folder for the fixes in this repository.</p>
 </code>
 
-<br />
+<br /><br />
 <p>This theme is mainly intended for the stable release of Firefox (<b>This means that while it will most probably work with nightly and ESR for the most part, it may have less support for those versions</b>).</p>
 <p>You can use it to fully change the colors of most of firefox UI to dark-gray colors (with #222-#444 colors mostly), including scrollbars, tooltips, sidebar, as well as dialogs. With the files here you can also as remove some context menu options, enable multirow tabs, change the font of the url bar...</p>
 <p><b>Of course... you could as well use these files to color your firefox any way you wanted</b>, the only thing you'd have to do is change the correct values (what each class or id does is commented above each) in the .css files (as far as you know some 
