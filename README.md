@@ -13,7 +13,7 @@ This problem doesn't happen if you use a code editor such as notepad++, atom, su
 <h3>Last update: <b>17/04/2019</b></h3>
 <p>Files updated:</p>
 <ul>
-  <li><b>Usercontent.css</b>: Darkened warning boxes in <a href="https://support.mozilla.org">support.mozilla.org</a>.</li>
+  <li><b>Usercontent.css</b>: Darkened warning boxes in <a href="https://support.mozilla.org">support.mozilla.org</a>. Also fixed code boxes in <code>about:studies</code>.</li>
 </ul>
 <h3>Pre-Last update: <b>13/04/2019</b></h3>
 <p>Files updated:</p>

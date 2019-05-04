@@ -2,7 +2,7 @@
 @name         Quantum nox - Global dark style
 @description  Global dark style to use alongside Firefox full dark theme - Quantum nox.
 @namespace    https://github.com/Izheil/Quantum-Nox-Firefox-Dark-Full-Theme
-@version      2.1.5
+@version      2.1.6
 @author       Izheil
 @homepageURL  https://github.com/Izheil/Quantum-Nox-Firefox-Dark-Full-Theme/tree/master/Global%20dark%20userstyle
 @updateURL    https://raw.githubusercontent.com/Izheil/Quantum-Nox-Firefox-Dark-Full-Theme/master/Global%20dark%20userstyle/Quantum%20Nox%20-%20Global%20dark%20style.user.css
@@ -236,7 +236,8 @@ input[type="submit"]:not(#searchbtn):not(#search-submit-button):not(#main-search
     li#ca-viewsource a{border-right: 1px solid #666 !important}
     .mw-parser-output .main-top-left {background: linear-gradient(to right, #000, transparent) !important}
         
-    .communitymailinglist a, #oh-menu-submit span, #oh-menu-join a {background: #333 !important; color: #ddd !important}
+    .communitymailinglist a, #oh-menu-submit span, #oh-menu-join a,
+    .default .tv_content_alt {background: #333 !important; color: #ddd !important}
     .communitymailinglist a:hover, #oh-menu-submit span:hover, #oh-menu-join a:hover {background: #444 !important; color: #fff !important}
     
     #disqus .load-comments, #simpleSearch, .vectorTabs {background: transparent !important; color: #ddd !important; border-color: #555 !important}
@@ -253,9 +254,13 @@ input[type="submit"]:not(#searchbtn):not(#search-submit-button):not(#main-search
     .CodeMirror {background-color: transparent !important}
         
     .note {background: #331}
+    
+    .default .tv_tab_alt.tv_selected, .default .tv_selected {background: #555 !important; border-color: #666 !important; color: #ddd !important}
         
-    .title, [id*="search"]:not([id*="btn"]):not([class*="btn"]):not([id*="search-submit-button"]):not([type="submit"]), .probox {background: none !important; box-shadow: none !important}
-        
+    .title, [id*="search"]:not([id*="btn"]):not([class*="btn"]):not([id*="search-submit-button"]):not([type="submit"]), .probox,
+    .default .tv_tab_alt.tv_selected:before, .default .tv_tab_alt.tv_selected:after, 
+    .default .tv_selected:before, .default .tv_selected:after {background: none !important; box-shadow: none !important}
+    
     .probox input[type="search"] {filter: invert(80%) hue-rotate(180deg)}
 
     .nav-main-item a:hover, a[data-service="GitHub"]:hover {background: rgba(255,255,255,0.1) !important}  

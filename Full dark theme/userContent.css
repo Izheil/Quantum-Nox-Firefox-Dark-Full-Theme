@@ -562,6 +562,8 @@ button:hover {
 	background: var(--button-background-hover) !important;
     color: #FFF !important}
 
+code {background: #444 !important}
+
 textarea {
 	-moz-appearance: none !important;
 	background: #333;
