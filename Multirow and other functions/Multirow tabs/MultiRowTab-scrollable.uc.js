@@ -3,7 +3,7 @@
 // @namespace      http://space.geocities.yahoo.co.jp/gl/alice0775
 // @description    Multi-row tabs draggability fix, Experimental CSS version
 // @include        main
-// @compatibility  Firefox 67
+// @compatibility  Firefox 68
 // @author         Alice0775, Endor8, TroudhuK, Izheil
 // @version        23/03/2019 22:25 Comments on tab width
 // @version        09/03/2019 15:38 Fixed compatibility issue with Tab Session Manager addon

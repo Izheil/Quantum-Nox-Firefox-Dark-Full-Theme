@@ -9,7 +9,6 @@
 	<p><a href="https://news.ycombinator.com/item?id=19826903">User gpm in hacker news forum posted the previous fix</a>, which is just the extension that Firefox pushed through the studies channel mentioned in their blog (except you won't have to wait 6 hours with telemetry enabled to get it installed to reactivate your extensions).</p>
 	<p>After you install it and your addons have been re-enabled, you can uninstall the fix (your addons will remain activated even if you uninstall it) going to <b>about:support</b>, opening the profile folder (there is a button for that in that page), accesing the extensions folder in there, and deleting the "hotfix-update-xpi-intermediate@mozilla.com.xpi" file that corresponds to the fix. The profile folder is the same parent folder where we place the chrome folder for the fixes in this repository.</p>
 </code>
-
 <br /><br />
 <p>This theme is mainly intended for the stable release of Firefox (<b>This means that while it will most probably work with nightly and ESR for the most part, it may have less support for those versions</b>).</p>
 <p>You can use it to fully change the colors of most of firefox UI to dark-gray colors (with #222-#444 colors mostly), including scrollbars, tooltips, sidebar, as well as dialogs. With the files here you can also as remove some context menu options, enable multirow tabs, change the font of the url bar...</p>
@@ -20,15 +19,16 @@ basic css or <a href="https://www.w3schools.com/colors/colors_picker.asp">color 
 <br />
 This problem doesn't happen if you use a code editor such as notepad++, atom, sublime text...</h4>
 
-<h3>Last update: <b>17/04/2019</b></h3>
+<h3>Last update: <b>05/05/2019</b></h3>
+<p>Files updated:</p>
+<ul>
+  <li><b>MultiRowTab*-TabsBelow-Menu-onTop.css</b>: Added Multirow variants with tabs below the URL bar and menu bar on top.</li>
+  <li><b>MultiRowTab*-TabsBelow-Menu-aboveTabs.css</b>: Added Multirow variants with tabs below the URL bar and menu bar right over Tab bar.</li>
+</ul>
+<h3>Pre-Last update: <b>04/05/2019</b></h3>
 <p>Files updated:</p>
 <ul>
   <li><b>Usercontent.css</b>: Darkened warning boxes in <a href="https://support.mozilla.org">support.mozilla.org</a>. Also fixed code boxes in <code>about:studies</code>.</li>
-</ul>
-<h3>Pre-Last update: <b>13/04/2019</b></h3>
-<p>Files updated:</p>
-<ul>
-  <li><b>Quantum Nox - Global dark style.user.css</b>: Fully rewrote the global userstyle to be able to use it with MPL license.</li>
 </ul>
 
 <code>

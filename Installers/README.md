@@ -24,3 +24,6 @@ toolbarbutton#alltabs-button {
 <p>This version shows all tabs you currently have open splitting them on rows up to a max of 3 rows by default (can be changed using the variable inside the file). After the max number of rows has been reached, a scrollbar will be shown to be able to scroll around the extra tabs.</p>
 <img src="https://i.imgur.com/qqQn4Ky.png">
 
+<h3>Tabs below versions</h3>
+<p>These will swap the tab bar position under the URL bar, while keeping the menu bar on top.</p>
+<img src="https://i.imgur.com/5vbG6mh.png">

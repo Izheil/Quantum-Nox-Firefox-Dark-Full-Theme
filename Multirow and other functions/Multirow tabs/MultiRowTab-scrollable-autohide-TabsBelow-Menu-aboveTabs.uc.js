@@ -1,25 +1,11 @@
 // ==UserScript==
-// @name           MultiRowTabLiteforFx.uc.js
+// @name           MultiRowTab-scrollable-autohide.uc.js
 // @namespace      http://space.geocities.yahoo.co.jp/gl/alice0775
 // @description    Multi-row tabs draggability fix, Experimental CSS version
 // @include        main
 // @compatibility  Firefox 68
 // @author         Alice0775, Endor8, TroudhuK, Izheil
-// @version        23/03/2019 22:25 Comments on tab width
-// @version        09/03/2019 15:38 Fixed compatibility issue with Tab Session Manager addon
-// @version        18/02/2019 20:46 Tab line not being fully shown on maximized or fullscreen
-// @version        03/02/2019 15:15 Firefox 67
-// @version        01/02/2019 23:48 Fixed empty pixel line below tabs
-// @version        31/01/2019 10:32 Fixed issue with fullscreen
-// @version        30/01/2019 02:05 Fixed issue with a pixel being above the tab bar
-// @version        23/11/2018 00:41 Firefox 65
-// @version        19/10/2018 07:34 Firefox 62
-// @version        11/05/2018 15:05 Firefox 60
-// @version        08/05/2017 00:00 Firefox 48
-// @version        05/01/2017 00:01 hide favicon if busy
-// @version        02/09/2016 00:01 Bug 1222490 - Actually remove panorama for Fx45+
-// @version        02/09/2016 00:01 workaround css for lwt
-// @version        02/09/2016 00:00
+// @version        05/05/2019 04:46 Adapted multirow for for tabs below
 // ==/UserScript==
     zzzz_MultiRowTabLite();
 function zzzz_MultiRowTabLite() {
@@ -40,34 +26,83 @@ function zzzz_MultiRowTabLite() {
 
     .tabbrowser-tab:not([pinned]) {
         flex-grow: var(--tab-growth)}
-    
+
+    .tabbrowser-tab::after {border: none !important}
+
     #tabbrowser-tabs .tab-background, #tabbrowser-tabs .tabbrowser-tab {
         height: calc(var(--tab-min-height) + 1px) !important}
 
     #main-window[sizemode="normal"] .tabbrowser-tab .tab-line,
     #main-window[sizemode="maximized"] .tabbrowser-tab .tab-line, 
     #main-window[sizemode="fullscreen"] .tabbrowser-tab .tab-line {transform: translate(0,1px) !important}
-
-    #tabbrowser-tabs {margin-top: 0px !important}
+    
+    :root[uidensity="touch"] .tabbrowser-tab,
+    :root[uidensity="touch"] .tab-background {
+        min-height: calc(var(--tab-min-height) + 3px) !important}
 
     .tab-stack {width: 100%}
 
+    :root[uidensity="touch"] #tabbrowser-tabs .scrollbox-innerbox {    
+        min-height: calc(var(--tab-min-height) + 3px);
+        max-height: calc((var(--tab-min-height) + 3px)*var(--max-tab-rows))}
+
     #tabbrowser-tabs .arrowscrollbox-scrollbox {
         display: flex;
-        flex-wrap: wrap;}
+        flex-wrap: wrap; 
+        overflow-x: hidden;
+        overflow-y: auto;     
+        min-height: var(--tab-min-height);
+        max-height: calc(var(--tab-min-height)*var(--max-tab-rows))}
 
     #tabbrowser-tabs .tabbrowser-arrowscrollbox {
         overflow: visible;
-        display: block}
+        display: block;}
 
     .arrowscrollbox-overflow-start-indicator,
     .arrowscrollbox-overflow-end-indicator {position: fixed !important}
+
+    #main-window[tabsintitlebar] #tabbrowser-tabs scrollbar {
+        -moz-window-dragging: no-drag}
+
+    #tabbrowser-tabs .arrowscrollbox-scrollbox scrollbar {visibility: collapse}
 
     @media (-moz-os-version: windows-win10) {
     .titlebar-buttonbox, #titlebar-buttonbox {display: block !important; height:var(--tab-min-height) !important}}
 
     #tabbrowser-tabs .scrollbutton-up, #tabbrowser-tabs .scrollbutton-down, #alltabs-button
     {display: none}
+
+    /* TAB BAR BELOW
+    You can set the order of each bar here. 1 for top, and 3 bottom) */
+
+    /* #nav-bar is the ID for the URL bar, #PersonalToolbar the ID for the bookmarks bar, and
+    #titlebar should be self-explanatory (The tabs on bottom are already set by default here) */
+
+    /* Don't change the #navigator-toolbox margin unless you want more margin on top */
+
+    /* v Delete the "/*" after this comment to use it */
+    
+    #nav-bar {-moz-box-ordinal-group: 1 !important}
+    #PersonalToolbar {-moz-box-ordinal-group: 2 !important}
+    #titlebar {-moz-box-ordinal-group: 3 !important}
+
+    #toolbar-menubar .titlebar-buttonbox-container {
+      float: right !important}
+
+    #main-window:not([sizemode="fullscreen"]) #navigator-toolbox {margin-top: 7px !important}
+    /* ^ Change the margin to 40px if you want to use the menu bar on top ^ */
+    /* This changes the menu bar on top of the screen intead of over the tab bar */
+    /*
+    #toolbar-menubar {
+      position: fixed !important; 
+      width: 100% !important;
+      top: 5px !important;
+      margin-top: 7px !important}
+
+    #main-window[sizemode="fullscreen"] #toolbar-menubar {display: none !important}
+    #main-window:not([sizemode="fullscreen"]) #toolbar-menubar {display: block !important}
+    /* ^ There seems to be an issue with the "margin-top" rule inside #navigator-toolbox that would not allow fullscreen
+    to autohide, so it's safest to just hide it on fullscreen */
     `;
     var sss = Cc['@mozilla.org/content/style-sheet-service;1'].getService(Ci.nsIStyleSheetService);
     var uri = makeURI('data:text/css;charset=UTF=8,' + encodeURIComponent(css));
@@ -92,6 +127,39 @@ function zzzz_MultiRowTabLite() {
         }
         return tabs.length;
     };
+
+// This scrolls down to the current tab when you open a new one, or restore a session.
+function scrollToView() {
+	var selTab = document.querySelectorAll(".tabbrowser-tab[selected='true']")[0];
+    var selTab = document.querySelectorAll(".tabbrowser-tab[selected='true']")[0];
+	selTab.scrollIntoView({behavior: "smooth", block: "nearest", inline: "nearest"});
+}
+
+gBrowser.tabContainer.addEventListener('TabOpen', scrollToView, false);
+gBrowser.tabContainer.addEventListener("TabSelect", scrollToView, false);
+document.addEventListener("SSTabRestoring", scrollToView, false);
+
+// This autohides the scrollbar
+var scrollToggled;
+document.getElementById("tabbrowser-tabs").onmouseover = function(){
+    if (scrollToggled != true) {
+        scrollToggled = true;
+        var css =`
+        #tabbrowser-tabs .arrowscrollbox-scrollbox scrollbar {visibility: visible}
+
+        `;
+        var sss = Cc['@mozilla.org/content/style-sheet-service;1'].getService(Ci.nsIStyleSheetService);
+        var uri = makeURI('data:text/css;charset=UTF=8,' + encodeURIComponent(css));
+        sss.loadAndRegisterSheet(uri, sss.AGENT_SHEET);}}
+
+document.getElementById("tabbrowser-tabs").onmouseout = function(){
+    scrollToggled = false;
+    var css =`
+    #tabbrowser-tabs .arrowscrollbox-scrollbox scrollbar {visibility: collapse}
+    `;
+    var sss = Cc['@mozilla.org/content/style-sheet-service;1'].getService(Ci.nsIStyleSheetService);
+    var uri = makeURI('data:text/css;charset=UTF=8,' + encodeURIComponent(css));
+    sss.loadAndRegisterSheet(uri, sss.AGENT_SHEET);}
 
 // This sets when to apply the fix (by default a new row starts after the 23th open tab, unless you changed the min-size of tabs)
 gBrowser.tabContainer.ondragstart = function(){if(gBrowser.tabContainer.clientHeight > document.getElementsByClassName("tabbrowser-tab")[0].clientHeight) {
