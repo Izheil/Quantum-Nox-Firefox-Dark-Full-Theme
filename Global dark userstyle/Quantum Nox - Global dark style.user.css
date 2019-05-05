@@ -169,7 +169,7 @@ if invMethod == "customSet" {
     .anchor-list a.hoverable, div[class*="buttons"] a[onclick], [aria-selected="true"], 
 button:not([class*="menu"]):not([id*="menu"]):not([role="switch"]):not([class*="ytp"]):not([class*="play"]):not([class*="mute"]):not([class*="fullscreen"]):not(.connect__button):not(.btn-link),
 input[type="submit"]:not(#searchbtn):not(#search-submit-button):not(#main-search-submit-button):not(#searchsubmit), [class*="menu-item"]:not([class*="footer"]):not([class*="Footer"]):hover, button#view-menu-btn, a.add-fav,
-  #action-menu-btn {
+  #action-menu-btn, a[href="javascript:;"] {
         -moz-appearance: none !important;
         -webkit-appearance: none !important;
         background: #303030 !important; 
@@ -179,12 +179,12 @@ input[type="submit"]:not(#searchbtn):not(#search-submit-button):not(#main-search
     .anchor-list a.hoverable:hover, a[data-toggle="dropdown"]:not([class*="wrapper"]):not([role="menuitem"]):hover, div[class*="buttons"] a[onclick]:hover, 
     div[class*="dropdown"] a:hover, div[class*="drop-down"] a:hover, button:not([class*="menu"]):not([id*="menu"]):not([role="switch"]):not([class*="play"]):not([class*="mute"]):not([class*="fullscreen"]):not(.connect__button):not(.btn-link):hover, 
 input[type="submit"]:not(#searchbtn):not(#search-submit-button):not(#main-search-submit-button):not(#searchsubmit):hover, 
-    span[role="button"]:hover, button#view-menu-btn:hover, a.add-fav:hover, #action-menu-btn:hover {
+    span[role="button"]:hover, button#view-menu-btn:hover, a.add-fav:hover, #action-menu-btn:hover, a[href="javascript:;"]:hover {
         background: #444 !important; 
         color: #fff !important}
 
-    li[class*="btn"] a {background-color: transparent !important; color: #ddd !important}
-    li[class*="btn"]:hover a {
+    li[class*="btn"] a:not([href="javascript:;"])  {background-color: transparent !important; color: #ddd !important}
+    li[class*="btn"]:hover a:not([href="javascript:;"]) {
         background-color: rgba(255,255,255,.2) !important; 
         color: #fff !important; 
         border-radius: 6px !important}
