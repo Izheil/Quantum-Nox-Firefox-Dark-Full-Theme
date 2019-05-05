@@ -24,3 +24,10 @@ toolbarbutton#alltabs-button {
 
 <h3>MultiRowTab-scrollable-autohide.uc.js</h3>
 <p>Works with Firefox 66+. This version is the same as scrollable multirow, except the scrollbars are only shown when you hover over the tabs area. It fixes some very specific issue when loading a session restore and loading a page in a session-restored blank page.</p>
+
+<h2>Tab sizing</h2>
+<p>The size of tabs in the last row is by default resizable, (like in the pictures above, which is the default Firefox behaviour) which will make them shrink as more tabs are fit inside the row. If you want to make all the tabs have a fixed width (so that tabs in the last row won't resize depending on how many tabs are open in that row), you will have to edit the file and change the variable <code>--tab-growth</code> to 0 (which will use the value of <code>browser.tabs.tabMinWidth</code> in <b>about:config</b> as their fixed width).</p>
+<img src="https://i.imgur.com/twzsQ6V.png">
+
+<p>It's also possible to keep tab resizability but change the min-width of tabs through <code>browser.tabs.tabMinWidth</code> as well.</p>
+<p>As for tab max size, it can't be changed without causing issues with tab session managers (The issue made tab session managers to save the last 3 closed tabs when they were not suposed to), which is the reason why there isn't an option to change this inside here anymore.</p>
