@@ -84,6 +84,8 @@
 <p>Rounded tabs:</p>
   <img src="https://i.imgur.com/qoG4Iiy.png">
 
+<p>If you instead want the old style (pre FF57) rounded tabs for firefox, you should add <a href="https://github.com/wilfredwee/photon-australis">australis</a> code to your userchrome instead.</p>
+
 <h2>Installation</h2>
 
 <p>All you need to do is place the userChrome.css file inside <a href="https://github.com/Izheil/Quantum-Nox-Firefox-Dark-Full-Theme/tree/master/CSS%20tweaks#the-chrome-folder">the chrome folder</a> of your firefox profile.</p>
