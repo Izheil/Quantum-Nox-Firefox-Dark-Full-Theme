@@ -24,7 +24,7 @@ This problem doesn't happen if you use a code editor such as notepad++, atom, su
 
 <code>
 <h3>A note on people looking to replace some Tab Mix Plus features</h3>
-<p>As for using this theme to replace some functions of <b>Tab Mix Plus</b>, I'll keep the functions that can be done through CSS here until TMP gets back on track on webextensions (since these fixes are a bit more annoying to toggle for people that don't know CSS), but as of right now, it covers multi-row tabs, keep the close button on tabs always visible, and color-coding tabs when they are loaded, unloaded, etc...</p>
+<p>As for using this theme to replace some functions of <b>Tab Mix Plus</b>, I'll keep the functions that can be done through CSS here, and I'll try to point addons that cover some of the missing functions, but as of right now, the files in this repository covers multi-row tabs, keep the close button on tabs always visible, and color-coding tabs when they are loaded, unloaded, etc...</p>
 <p>Most other functions of Tab Mix Plus can already be "simulated" changing some <code>about:config</code> settings:</p>
  <ul>
  	<li>To keep FF open even after closing the last tab -> <code>browser.tabs.closeWindowWithLastTab</code> to <i>false</i>.</li>
