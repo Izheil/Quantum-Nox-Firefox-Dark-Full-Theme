@@ -1,0 +1,155 @@
+/* You can find an updated version here: https://github.com/Izheil/Quantum-Nox-Firefox-Dark-Full-Theme */
+/* Made by Izheil */
+/* Last updated: 06/05/2019 */
+
+/* CONTEXT MENU COMMANDS */
+
+/* These selectors target context menu commands so that you can hide them to make your context
+menus in Firefox less cluttered with things you never or rarely use.
+
+All of these commands are divided so that they can be explained, but they are all
+part of the same rule. If you only use a few selectors, make sure to copy the last 
+line right after (without a comma between the last selector and this) -> {display: none !important} 
+
+For example, if you ONLY want to hide the "Reload tab" context menu and the "Mute tab" one, you'd 
+write the rule like this:
+
+#context_reloadTab, #context_toggleMuteTab {display: none !important}
+
+Make sure to only do line breaks after a comma if you really need to (like in the rules below).
+*/
+
+/* -----TABS CONTEXT MENU----- */
+
+/* Reload tab */
+#context_reloadTab,
+
+/* Mute tab */
+#context_toggleMuteTab,
+
+/* Mute selected tabs */
+#context_toggleMuteSelectedTabs,
+
+/* Select all tabs */
+#context_selectAllTabs,
+
+/* Select all tabs (title bar context menu) */
+#toolbar-context-selectAllTabs
+
+/* Pin tab */
+#context_pinTab,
+
+/* Pin selected tabs */
+#context_pinSelectedTabs,
+
+/* Duplicate tab */
+#context_duplicateTab,
+
+/* Open tab in new window */
+#context_openTabInWindow,
+
+/* Separator from send tab to device */
+#context_sendTabToDevice_separator,
+
+/* Separator after the previous command */
+#tabContextMenu menuseparator:nth-child(17),
+
+/* Reload selected tabs */
+#context_reloadSelectedTabs, 
+
+/* Reload selected tabs (title bar context menu) */
+#toolbar-context-reloadSelectedTabs,
+#toolbar-context-reloadSelectedTab,
+
+/* Bookmark tab */
+#context_bookmarkTab,
+
+/* Bookmark selected tabs */
+#context_bookmarkSelectedTabs, 
+
+/* Bookmark selected tabs (title bar context menu) */
+#toolbar-context-bookmarkSelectedTab,
+
+/* Reopen in container */
+#context_reopenInContainer,
+
+/* Move tab */
+#context_moveTabOptions,
+
+/* Close all tabs to the right */
+#context_closeTabsToTheEnd,
+
+/* Close all other tabs */
+#context_closeOtherTabs,
+
+/* Close tab */
+#context_closeTab,
+
+/* -----BOOKMARK ITEMS CONTEXT MENU----- */
+
+/* Open bookmark in new window */
+#placesContext_open\:newwindow,
+
+/* Open bookmark in new private window */
+#placesContext_open\:newprivatewindow,
+
+/* Open all tabs in a bookmark folder & it's separator */
+#placesContext_openContainer\:tabs, 
+#placesContext_open\:newprivatewindow[disabled="true"] + #placesContext_openSeparator,
+
+/* -----WEBAREA CONTEXT MENU----- */
+
+/* Navigation buttons (Back, forward and reload buttons) & it's separator */
+#context-navigation, #context-sep-navigation,
+
+/* Send image... */ 
+#context-sendimage,
+
+/* Set image as desktop background... */
+#context-setDesktopBackground, 
+
+/* Bookmark this page */ 
+#context-bookmarkpage,
+
+/* Send page... */ 
+#context-sendpage,
+
+/* Send video... */
+#context-sendvideo,
+
+/* Save video screenshot */
+#context-video-saveimage,
+
+/* Frame selector separator */
+#frame-sep,
+
+/* Bookmark this link */ 
+#context-bookmarklink,
+
+/* Send link... */ 
+#context-sendlink,
+
+/* Search X on your default search engine */
+#context-searchselect,
+
+/* Open link in a new tab */
+#context-openlinkintab,
+/* Open link in a new window */
+#context-openlink,
+/* Open link in a new private window */
+#context-openlinkprivate,
+/* Open link commands separator (should only disable if you don't use any of the "open link..." commands) */
+#context-sep-open,
+
+/* Take a screenshot & it's separator */
+#screenshots_mozilla_org-menuitem-_create-screenshot, #_context-media-eme-separator,
+
+/* Send tab to device... (including it's separator) */
+#context_sendTabToDevice, #context_sendTabToDevice_separator,
+
+/* Send page to device... (including it's separator)*/ 
+#context-sendpagetodevice, #context-sep-sendpagetodevice,
+
+/* Send link to device... (including it's separator)*/ 
+#contentAreaContextMenu #context-sendlinktodevice, #contentAreaContextMenu #context-sep-sendlinktodevice 
+{display: none !important}

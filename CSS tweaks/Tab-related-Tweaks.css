@@ -1,0 +1,60 @@
+/* You can find an updated version here: https://github.com/Izheil/Quantum-Nox-Firefox-Dark-Full-Theme */
+/* Made by Izheil */
+/* Last updated: 06/05/2019 */
+
+/* TAB RELATED TWEAKS */
+
+/* This deletes the space that comes before the min/max/close button (space where you can place addons), but
+after the tabs section */
+.titlebar-spacer {width: 10px !important}
+
+/* TAB BAR BELOW
+You can set the order of each bar here. 1 for top, and 3 bottom.
+Don't use this one if you are using the multirow version of tabs below.
+
+Explanation of what each rule affects:
+- #nav-bar is the ID for the URL bar. 
+- #PersonalToolbar the ID for the bookmarks bar.
+- #titlebar should be affects the tabs bar and the menu bar (where file/tools menus are) */
+
+#nav-bar {-moz-box-ordinal-group: 2 !important}
+#PersonalToolbar {-moz-box-ordinal-group: 1 !important}
+#titlebar {-moz-box-ordinal-group: 3 !important}
+
+#toolbar-menubar .titlebar-buttonbox-container {
+  float: right !important}
+
+#main-window:not([sizemode="fullscreen"]) #navigator-toolbox {margin-top: 40px !important}
+/* ^ Change the margin to 7px if you want to leave the menu bar above tabs ^ */
+
+/* v This changes the menu bar on top of the screen intead of over the tab bar.
+   Disable the rules below (either delete or comment them out) if you want
+   the menu bar to be right above tabs v */
+#toolbar-menubar {
+  position: fixed !important; 
+  width: 100% !important;
+  top: 5px !important;
+  margin-top: 7px !important}
+
+#main-window[sizemode="fullscreen"] #toolbar-menubar {display: none !important}
+#main-window:not([sizemode="fullscreen"]) #toolbar-menubar {display: block !important}
+/* ^ There seems to be an issue with the "top: 0" rule inside #toolbar-menubar that would not allow fullscreen
+to autohide, so it's safest to just hide it on fullscreen */
+
+/* ROUNDED TABS */
+.tab-background {
+  border-radius: 15px 15px 0px 0px !important;
+  border-image: none !important}
+
+.tab-line {
+  margin-left: 12px;
+  margin-right: 12px}
+
+/* TAB CLOSE BUTTON ALWAYS VISIBLE */
+#TabsToolbar #tabbrowser-tabs .tabbrowser-tab:not([pinned]) .tab-close-button {
+  	visibility: visible !important;
+  	display: block !important}
+
+#TabsToolbar #tabbrowser-tabs .tabbrowser-tab:not([pinned])[faviconized="true"] .tab-close-button {
+  	visibility: collapse !important;
+  	display: none !important}

@@ -1,6 +1,6 @@
 /* You can find an updated version here: https://github.com/Izheil/Quantum-Nox-Firefox-Dark-Full-Theme */
 /* Made by Izheil */
-/* Last updated: 08/04/2019 */
+/* Last updated: 06/05/2019 */
 
 /* DO NOT DELETE THIS LINE */
 @namespace url("http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul");
@@ -1053,10 +1053,17 @@ to autohide, so it's safest to just hide it on fullscreen */
 
 /* CONTEXT MENU COMMANDS */
 
-/* All of these commands are divided so that they can be explained, but they are all
-part of the same rule */
+/* These selectors target context menu commands so that you can hide them to make your context
+menus in Firefox less cluttered with things you never or rarely use.
 
-/* Tabs context menu */
+All of these commands are divided so that they can be explained, but they are all
+part of the same rule. If you only use a few selectors, either delete the ones you want to be shown in firefox
+from here, or comment out (explained in the repository in the FAQ) the ones you want to still view.
+
+Make sure to NOT leave a comma before your last selector and the {display: none !important} rule, or none of them will apply.
+*/
+
+/* -----TABS CONTEXT MENU----- */
 
 /* Reload tab *//*
 #context_reloadTab,
@@ -1122,7 +1129,7 @@ part of the same rule */
 /* Close tab *//*
 #context_closeTab,
 
-/* Bookmark items context menu */
+/* -----BOOKMARK ITEMS CONTEXT MENU----- */
 
 /* Open bookmark in new window *//*
 #placesContext_open\:newwindow,
@@ -1134,7 +1141,7 @@ part of the same rule */
 #placesContext_openContainer\:tabs, 
 #placesContext_open\:newprivatewindow[disabled="true"] + #placesContext_openSeparator,
 
-/* Webarea context menu */
+/* -----WEBAREA CONTEXT MENU----- */
 
 /* Navigation buttons (Back, forward and reload buttons) & it's separator */
 #context-navigation, #context-sep-navigation,

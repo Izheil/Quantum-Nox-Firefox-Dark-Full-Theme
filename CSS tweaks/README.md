@@ -1,64 +1,88 @@
 <h1>Only functionability CSS tweaks</h1>
 
-<h3>Warning: This file will hide some context menu commands by default, so if you want to keep them, or some of them, comment out or delete the things that come after <code>/* CONTEXT MENU COMMANDS */</code> inside userchrome.css</h3>
+<p>The files contained here contain fixes that will let you alter the default behaviour of Firefox. They are intended to be used as a template of the functions that you can use on your own custom <code>userchrome.css</code> for this goal. This means that you shouldn't just copy everything in every file to your userchrome, but instead select the features you are interested on to customize your Firefox in the way that you want.</p> 
 
-<p>The userChrome.css file in this folder contains a series of CSS tweaks that can change your firefox in the following ways:</p>
+<p>With this goal in mind, a base empty <code>userchrome.css</code> is included (with the javascript fix included if you want to use it later, which won't work unless you have <code>userchrome.xml</code> as well), in case you don't have one already, so that you can use any of the tweaks included here without the need to know much CSS (you will just need to copy the things you want, which have a comment above them with a description of what each does).</p>
+
+<p>If you are using the dark theme <code>userchrome.css</code> file, add the fixes from the files here in that one instead.</p>
+
+<p>To make it work, it's as simple as copying the function you want to apply at the bottom of <code>userchrome.css</code>, place it inside <a href="https://github.com/Izheil/Quantum-Nox-Firefox-Dark-Full-Theme/tree/master/CSS%20tweaks#the-chrome-folder">the chrome folder</a> if you hadn't yet, and restart Firefox.</p>
+<p>I describe what tweaks does each file contain below.</p>
+
+<h4>You can also keep some tweak inside your <code>userchrome.css</code> without it being enabled by encasing the lines you don't want to apply between "/*" and "*/" (without the quotation marks).</h4>
+
+<h3>Bookmarks+URLbar+Sidebar.css</h3>
+
+<p>This file contains changes that affect the behaviour of the bookmarks bar (such as enabling <b>multirow bookmarks</b> that you can also make auto-hide), the URL bar, and the sidebar.</p>
+
 <ul>
   <li>Allow the sidebar be completelly closed by just resizing it.</li>
-  <li>Change the font used on the ULR box to prevent URL spoofing with a more differentiable font (<b>disabled by default</b>).</li>
-  <li>Tabs bar below bookmarks or URL box (<b>disabled by default</b>).</li>
-  <li>Give tabs a rounded corners appearance (<b>disabled by default</b>). </li>
-  <li>Tab close button always visible.</li>
-  <li>Bookmark toolbar auto-hide (<b>disabled by default</b>).</li>
+  <li>Change the font used on the ULR box to prevent URL spoofing with a more differentiable font.</li>
+  <li>Bookmark toolbar auto-hide.</li>
   <li>Fix for an issue with fullscreen not showing bookmark bar nor menu bar.</li>
-  <li>Delete the following commands from context menus:
+</ul>
+
+<h3>Context-menu-commands.css</h3>
+
+<p>This file contains selectors that target most commands contained in context menus (like send image, reload tab, etc..), so that you can hide them to make your context menus look less cluttered with commands that you may never or rarely use.</p>
+
+<ul>
+  <li>You can hide the following commands from context menus:
   	<ul>
-  	  <li>Reload tab (<b>not deleted by default</b>).</li>
-      <li>Mute tab (<b>not deleted by default</b>).</li>
-      <li>Mute selected tabs (<b>not deleted by default</b>).</li>
+  	  <li>Reload tab.</li>
+      <li>Mute tab.</li>
+      <li>Mute selected tabs.</li>
       <li>Select all tabs (only the active tab context menu, not the title context menu one).</li>
-  	  <li>Pin tab (<b>not deleted by default</b>).</li>
-      <li>Pin selected tabs (<b>not deleted by default</b>).</li>
-  	  <li>Duplicate tab (<b>not deleted by default</b>).</li>
+  	  <li>Pin tab.</li>
+      <li>Pin selected tabs.</li>
+  	  <li>Duplicate tab.</li>
   	  <li>Open tab in new window.</li>
-      <li>Send tab to device (<b>not deleted by default</b>).</li>
-      <li>Separators left by send tab to device on tabs context menu (<b>not deleted by default</b>).</li>
+      <li>Send tab to device.</li>
+      <li>Separators left by send tab to device on tabs context menu.</li>
   	  <li>Reload selected tabs (only the active tab context menu, not the title context menu one).</li>
       <li>Bookmark tab.</li>
   	  <li>Bookmark selected tabs.</li>
-      <li>Reopen tab in container (<b>not deleted by default</b>).</li>
+      <li>Reopen tab in container.</li>
       <li>Move tab.</li>
   	  <li>Close all tabs to the right.</li>
   	  <li>Close all other tabs.</li>
-  	  <li>Close tab (not deleted by default)</li>
-      <li>Open bookmarked page in a new window (not deleted by default).</li>
-      <li>Open bookmarked page in a new private window (not deleted by default).</li>
-      <li>Open all bookmarked pages in the bookmark folder (<b>deleted by default</b>).</li>
+  	  <li>Close tab.</li>
+      <li>Open bookmarked page in a new window.</li>
+      <li>Open bookmarked page in a new private window.</li>
+      <li>Open all bookmarked pages in the bookmark folder.</li>
   	  <li>Navigation buttons (Back, forward and reload buttons) & it's separator (since you can do the same with the keyboard or other buttons).</li>
   	  <li>Send image... (misclicking this when saving an image can happen easily, and waiting for outlook to open to close it gets annoying).</li>
   	  <li>Set image as desktop background...</li>
   	  <li>Bookmark this page (you can do the same with the star icon on the URL bar, or creating the bookmark manually with more control of where it's going to be placed).</li>
   	  <li>Send page...(same as with send image, if you wanted to send something, you'd open your prefered mail yourself).</li>
       <li>Send video... (same as with send page).</li>
-      <li>Save video capture (not deleted by default).</li>
-      <li>Frame selector separator (Deleted to avoid double separators).</li>
+      <li>Save video capture.</li>
+      <li>Frame selector separator (You can hide it to avoid double separators).</li>
   	  <li>Bookmark this link (same as bookmark this page).</li>
   	  <li>Send link... (same as send image).</li>
-      <li>Search highlighted word on your default search engine (same as send image).</li>
-  	  <li>Open link in new tab (not deleted by default, but you can the same middle mouse clicking, or holding ctrl while clicking a link).</li>
+      <li>Search highlighted word on your default search engine.</li>
+  	  <li>Open link in new tab (You can do the same middle mouse clicking, or holding ctrl while clicking a link).</li>
   	  <li>Open link in a new window.</li>
   	  <li>Open link in a private window.</li>
-  	  <li>Take a screenshot and its separator (only deleted the separator by default).</li>
+  	  <li>Take a screenshot and its separator.</li>
   	  <li>Send tab to device and its separators.</li>
   	  <li>Send page to device and its separator.</li>
   	  <li>Send link to device and its separator.</li>
   	</ul></li>
 </ul>
 
+<h3>Tab-related-Tweaks.css</h3>
+
+<p>These will let you change the look and position of the tabs and the tab box.</p>
+
+<ul>
+  <li><b>Tabs bar below</b> bookmarks or URL box.</li>
+  <li>Give tabs rounded corners.</li>
+  <li>Tab close button always visible.</li>
+</ul>
+
 <p>Rounded tabs:</p>
   <img src="https://i.imgur.com/qoG4Iiy.png">
-
-<h4>You can turn the features you want on or off changing the commented lines on the CSS file (To change them you just have to open the userchrome.css with notepad or any code editor, and encase between "/*" and "*/" (without the quotation marks) the lines you don't want to take effect). Of course, if you think that you are NEVER going to use certain feature, you can always delete the specific lines you don't want without any other side-effect.</h4>
 
 <h2>Installation</h2>
 

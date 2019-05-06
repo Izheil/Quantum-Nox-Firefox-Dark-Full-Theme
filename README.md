@@ -1,16 +1,6 @@
 <img src="https://i.imgur.com/F7qziom.png" title="Quantum Nox"/>
 
 <h3>Previously known as "Firefox 57+ full dark theme with scrollbars and multirow tabs", I decided to give it an actual name instead of leaving it as just a description.</h3>
-<code>
-	<h3>About the current addons fiasco (2019/05/04):</h3>
-	<p>As you know (or suffered) Firefox disabled most addons as of 2019/05/04 due to a problem with certificates renewal, for which they will be pulling a permanent fix on monday (or so was commented in reddit). This isn't related to any of the files from this repository, but I just thought that I should give a heads up about it.</p>
-	<p>For those that want to use addons on Firefox this weekend, <a href="https://blog.mozilla.org/addons/2019/05/04/update-regarding-add-ons-in-firefox/">Mozilla has explained that they have rolled out a temporal fix that requires you to turn on studies (thus enabling telemetry in the way), which may take up to 6 hours to take effect...</a></p>
-	<p><b>BUT</b> if you are like me and don't want to enable telemetry for 6 hours so that they can push the fix on you, you can find the fix that they mention in <a href="https://storage.googleapis.com/moz-fx-normandy-prod-addons/extensions/hotfix-update-xpi-intermediate%40mozilla.com-1.0.2-signed.xpi">this link</a>.</p>
-	<p><a href="https://news.ycombinator.com/item?id=19826903">User gpm in hacker news forum posted the previous fix</a>, which is just the extension that Firefox pushed through the studies channel mentioned in their blog (except you won't have to wait 6 hours with telemetry enabled to get it installed to reactivate your extensions).</p>
-	<p>After you install it and your addons have been re-enabled, you can uninstall the fix (your addons will remain activated even if you uninstall it) going to <b>about:support</b>, opening the profile folder (there is a button for that in that page), accesing the extensions folder in there, and deleting the "hotfix-update-xpi-intermediate@mozilla.com.xpi" file that corresponds to the fix. The profile folder is the same parent folder where we place the chrome folder for the fixes in this repository.</p>
-	<p>If that still doesn't work for you, you can try the method explained <a href="https://www.velvetbug.com/benb/icfix/">here</a>, which some redditor posted in <a href="https://www.reddit.com/r/firefox/comments/bkspmk/addons_fix_for_5602_older/">this thread</a>.</p>
-</code>
-<br /><br />
 <p>This theme is mainly intended for the stable release of Firefox (<b>This means that while it will most probably work with nightly and ESR for the most part, it may have less support for those versions</b>).</p>
 <p>You can use it to fully change the colors of most of firefox UI to dark-gray colors (with #222-#444 colors mostly), including scrollbars, tooltips, sidebar, as well as dialogs. With the files here you can also as remove some context menu options, enable multirow tabs, change the font of the url bar...</p>
 <p><b>Of course... you could as well use these files to color your firefox any way you wanted</b>, the only thing you'd have to do is change the correct values (what each class or id does is commented above each) in the .css files (as far as you know some 
@@ -20,16 +10,16 @@ basic css or <a href="https://www.w3schools.com/colors/colors_picker.asp">color 
 <br />
 This problem doesn't happen if you use a code editor such as notepad++, atom, sublime text...</h4>
 
-<h3>Last update: <b>05/05/2019</b></h3>
+<h3>Last update: <b>06/05/2019</b></h3>
+<p>Files updated:</p>
+<ul>
+  <li><b>CSS tweaks folder</b>: Split <code>userchrome.css</code> into smaller template CSS files so that people can copy only the functions they want to apply without having to worry about editting comments out.</li>
+</ul>
+<h3>Pre-Last update: <b>05/05/2019</b></h3>
 <p>Files updated:</p>
 <ul>
   <li><b>MultiRowTab*-TabsBelow-Menu-onTop.css</b>: Added Multirow variants with tabs below the URL bar and menu bar on top.</li>
   <li><b>MultiRowTab*-TabsBelow-Menu-aboveTabs.css</b>: Added Multirow variants with tabs below the URL bar and menu bar right over Tab bar.</li>
-</ul>
-<h3>Pre-Last update: <b>04/05/2019</b></h3>
-<p>Files updated:</p>
-<ul>
-  <li><b>Usercontent.css</b>: Darkened warning boxes in <a href="https://support.mozilla.org">support.mozilla.org</a>. Also fixed code boxes in <code>about:studies</code>.</li>
 </ul>
 
 <code>
