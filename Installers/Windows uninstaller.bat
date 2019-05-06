@@ -24,6 +24,8 @@ for /f %%f in ('dir /b "%_FIREFOX_PROFILES_PATH:"=%\*.default*"') do (
     del "%_FIREFOX_PROFILES_PATH:"=%\%%f\chrome\userContent.css"
     del "%_FIREFOX_PROFILES_PATH:"=%\%%f\chrome\MultiRowTabLiteforFx.uc.js"
     del "%_FIREFOX_PROFILES_PATH:"=%\%%f\chrome\MultiRowTab-scrollable.uc.js"
+    del "%_FIREFOX_PROFILES_PATH:"=%\%%f\chrome\MultiRowTabLiteforFx-TabsBelow.uc.js"
+    del "%_FIREFOX_PROFILES_PATH:"=%\%%f\chrome\MultiRowTab-scrollable-TabsBelow.uc.js"
     del "%_FIREFOX_PROFILES_PATH:"=%\%%f\chrome\userChrome.xml"
     del "%_FIREFOX_PROFILES_PATH:"=%\%%f\chrome\setAttribute_unread.uc.js"
 )
