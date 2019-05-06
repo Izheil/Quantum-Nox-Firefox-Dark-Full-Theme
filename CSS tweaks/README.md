@@ -81,7 +81,7 @@
   <li>Tab close button always visible.</li>
 </ul>
 
-<p>Rounded tabs:</p>
+<b>Rounded tabs:</b>
   <img src="https://i.imgur.com/qoG4Iiy.png">
 
 <p>If you instead want the old style (pre FF57) rounded tabs for firefox, you should add <a href="https://github.com/wilfredwee/photon-australis">australis</a> code to your userchrome instead.</p>
