@@ -72,7 +72,7 @@ This problem doesn't happen if you use a code editor such as notepad++, atom, su
 
 <h2>Addon dark themes</h2>
 <p>You can apply a dark theme to certain addons changing the UUID's of them inside the <code>addons.css</code> file inside the "Full dark theme" folder (more instructions on how to do that inside the addons file).</p>
-<img src="https://i.imgur.com/QEOrYbx.png" title="Dark addons" />
+<img src="https://i.imgur.com/bEleqP7.png" title="Dark addons" />
 <p>Here is a list of the themed addons:</p>
 <ul>
 	<li><a href="https://addons.mozilla.org/es/firefox/addon/video-downloader-player/">Ant Video Downloader</a></li>

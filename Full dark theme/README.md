@@ -3,7 +3,7 @@
 
 <img src="https://i.imgur.com/zNKhEV6.png" title="Dark firefox UI with custom background" />
 
-<img src="https://i.imgur.com/QEOrYbx.png" title="Dark addons" />
+<img src="https://i.imgur.com/bEleqP7.png" title="Dark addons" />
 
 <h2>Installation</h2>
 <p>You can check a video guide <a href="https://youtu.be/kNHe6XDgUN4">here</a>.</p>
