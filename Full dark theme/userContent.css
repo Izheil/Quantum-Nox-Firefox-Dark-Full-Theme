@@ -1,6 +1,6 @@
 /* You can find an updated version here: https://github.com/Izheil/Quantum-Nox-Firefox-Dark-Full-Theme */
 /* Made by Izheil */
-/* Last updated: 04/05/2019 */
+/* Last updated: 08/05/2019 */
 
 /* This part imports the Addons file if there is one, so that you don't have to edit the dynamic URL
 from the addons rules every time we update anything here */
@@ -1413,7 +1413,7 @@ h3, .Guides-section-title, ul.DropdownMenu-items .SectionLinks-subheader,
 .AMInstallButton-button--uninstall:hover {background-color: #aa3333 !important; color: #fff !important}
 
 input.SearchForm-query, 
-input#search-q {
+input#search-q, textarea {
 	background-color: #202020 !important;
 	color: #FFF !important}
 

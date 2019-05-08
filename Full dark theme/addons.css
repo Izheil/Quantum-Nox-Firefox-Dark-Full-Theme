@@ -1,6 +1,6 @@
 /* You can find an updated version here: https://github.com/Izheil/Quantum-Nox-Firefox-Dark-Full-Theme */
 /* Made by Izheil */
-/* Last updated: 23/03/2019 */
+/* Last updated: 08/05/2019 */
 
 /*------ HOW TO MAKE THE ADDON THEMES WORK ------*/
 /* To use this part of the code, you will have to find the dynamic UUID of your extensions, and replace it where the 
@@ -9,6 +9,77 @@ To find the UUID of an extension, just open about:debugging, and the UUID of eac
 (They look like a bunch of numbers with some -'s in between, like this: 00b72a90-6883-4e98-8785-1620d6b75664).
 If you did everything right, next time you start (or restart) firefox, the addon will be themed 
 (Each addon has a different UUID, and the UUID of an addon can also change if you uninstall and reinstall it). */
+
+/*------ ANT VIDEO DOWNLOADER ADDON POPUP ------*/
+@-moz-document url-prefix(moz-extension://ANT-VIDEO-DOWNLOADER-ADDON-UUID-GOES-HERE/) {
+html, .application--wrap, body, .application {background-color: #333 !important}
+
+a:not(.v-list__tile), #linkOpenFolder, #linkClearDownloads, 
+#linkClearDownloadsFinished, #linkClearDownloadsErrored, 
+.w3-tiny > button, .w3-small > button {color: #09f !important}
+
+a:not(.v-list__tile):hover, #linkOpenFolder:hover, #linkClearDownloads:hover, 
+#linkClearDownloadsFinished:hover, #linkClearDownloadsErrored:hover, 
+.w3-tiny > button:hover, .w3-small > button:hover {color: #0ff !important}
+
+a:not(.v-list__tile):active {color: #0050dd !important}
+
+.v-card, div[role="list"], form {
+  background-color: #444 !important; 
+  color: #ccc !important}
+
+.caption, .font-weight-light, button.theme--light, .v-select__selection, .v-list__tile__title,
+i, i::before {color: #ccc !important}
+
+.openSettingsButton {
+  -moz-appearance: none !important;
+  background-color: #666 !important;
+  border: none !important;
+  color: #ccc !important}
+
+.openSettingsButton:hover {
+  background-color: #333 !important;
+  color: #fff !important}
+
+button:not(.v-btn--flat):not(.v-btn--icon).theme--light {background-color: #555 !important}
+
+button.theme--light:hover, div[role="list"]:not(.v-list--dense) .v-list__tile:hover {
+  background-color: rgba(255,255,255,0.1) !important;
+  color: #fff !important}
+
+.w3-tiny, strong, a[style="background-color: #FFC"], h3, .headline, .v-label, .v-card__title a, .white--text, 
+span[style="background-color: #e6e6e6; color: #000000"] {
+  background-color: transparent !important; 
+  color: #fff !important}
+
+.v-list__tile__sub-title {color: #aaa !important}
+}
+
+@-moz-document url-prefix(https://www.ant.com) {
+html, body, .white_background {background: #222 !important}
+
+p, .tutorial_text {color: #ccc !important}
+
+a, .link_home_videosearch {color: #09f !important}
+a:hover, .link_home_videosearch:hover {color: #0ff !important}
+a:active {color: #0050dd !important}
+
+.navbar-default, .popup {background: #333 !important}
+
+#global-search-input, .popup-overlay, .tutorial-popup {
+    background: #151515 !important;
+    border-color: #666 !important;
+    box-shadow: 0px 1px 24px 1px #000 !important;
+    color: #ddd !important}
+
+.popup-overlay .close img {filter: invert(100%)}
+
+#advertising-appeal-region img {filter: invert(87%) hue-rotate(180deg)}
+
+.videosearch_home {background: #444 !important; border-color: #666 !important}
+
+.videosearch_home #icon-search {filter: grayscale(100%) brightness(300%)}
+}
 
 /*------ COOKIE AND HISTORY AUTODELETE ADDONS ------*/
 @-moz-document url-prefix(moz-extension://HISTORY-AUTODELETE-ADDON-UUID-GOES-HERE/),
@@ -249,73 +320,6 @@ input[type="checkbox"]:checked {
 #s3downbar_download_tooltip_hint_progress {color: #aaa !important}
 
 #s3downbar_download_tooltip_from {background-color: #333 !important; color: #05f !important}
-}
-
-/*------ FLASH VIDEO DOWNLOADER (youtube) ADDON OPTIONS PANEL------*/
-@-moz-document url(moz-extension://TYPE-UUID-OF-FLASH-VIDEO-DOWNLOADER-HERE/options.html) {
-body {background-color: #222 !important}
-
-.white_area, #showMain.fvd_settings_container, .options {background-color: #444 !important}
-.white_area {background-image: none !important}
-
-.fvd_settings_title, .fvd_settings_description, 
-.fvd_settings_fvd_description, span {color: #ccc !important}
-
-#masterHead {background: #555 !important; color: #ccc !important}
-
-#donateDownloadNative span {color: #fff !important}
-
-h2 {color: #FFF !important}
-
-/* Checkbox coloring */
-input[type="checkbox"] {
-  -moz-appearance: none !important;
-  border: 1px solid #666 !important;
-  background-color: #444 !important;
-  transition: color 0.3s;
-  min-width: 16px;
-  min-height: 16px;
-  margin-bottom: 0 !important}
-
-input[type="checkbox"]:not([disabled]):hover {
-  box-shadow: 0 0 4px #0084ff !important;
-  border-color: #0084ff !important}
-
-input[type="checkbox"]:checked {
-  background: #444 url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="15px" height="15px" viewBox="0 0 16 16" ><path fill="rgb(200,200,200)" d="M 13.09,2.87 C 13.09,2.87 6.00,11.00 6.00,11.00 6.00,11.00 2.00,9.00 2.00,9.00 4.25,12.81 7.00,14.00 7.00,14.00 9.24,10.42 12.04,7.39 13.09,2.87 Z" /></svg>') no-repeat center center !important}
-}
-
-/*------ FLASH VIDEO DOWNLOADER (youtube) ADDON POPUP ------*/
-@-moz-document url(moz-extension://TYPE-UUID-OF-FLASH-VIDEO-DOWNLOADER-HERE/popup.html) {
-
-body, .multiple_download_header, #filters_block,
-#snifferNotice {background-color: #333 !important}
-
-#download_container_wrapped, #download_item_container {background-color: #333 !important; color: #ccc !important}
-
-.download_item.group-video:hover {background-color: #444 !important}
-.download_group_item_wrapped:hover {background-color: #555 !important}
-
-#help_link_help {display: none !important}
-
-#help_link_folder {
-	background: linear-gradient(#333, #111) !important; 
-	color: #ccc !important;
-	border: 1px solid #000 !important}
-#help_link_folder:hover {background: linear-gradient(#111, #333) !important}
-
-h2, .group_download_title {color: #fff !important}
-
-.downloader_check_block {filter: invert(80%)}
-
-.downloader_filter_title, .downloader_check_text, .textEmptyNotice {color: #CCC !important}
-
-#footer_container, #header_container {background-color: #222 !important}
-
-#footer_container {border-top: 2px solid #000 !important}
-
-.footer .footer-item {color: #fff !important}
-.footer .footer-item:hover {background: #444 !important}
 }
 
 /*------ HTTPS EVERYWHERE ADDON ------*/

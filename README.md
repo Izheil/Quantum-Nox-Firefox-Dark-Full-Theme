@@ -13,13 +13,13 @@ This problem doesn't happen if you use a code editor such as notepad++, atom, su
 <h3>Last update: <b>06/05/2019</b></h3>
 <p>Files updated:</p>
 <ul>
-  <li><b>CSS tweaks folder</b>: Split <code>userchrome.css</code> into smaller template CSS files so that people can copy only the functions they want to apply without having to worry about editting comments out.</li>
+  <li><b>Usercontent.css</b>: Added a missing textarea box on mozilla addons page.</li>
+  <li><b>Addons.css</b>: Themed <a href="https://addons.mozilla.org/es/firefox/addon/video-downloader-player/">Ant Video Downloader</a> addon, and removed Flash Video Downloader (Mozilla took the original one down from their addons page).</li>
 </ul>
 <h3>Pre-Last update: <b>05/05/2019</b></h3>
 <p>Files updated:</p>
 <ul>
-  <li><b>MultiRowTab*-TabsBelow-Menu-onTop.css</b>: Added Multirow variants with tabs below the URL bar and menu bar on top.</li>
-  <li><b>MultiRowTab*-TabsBelow-Menu-aboveTabs.css</b>: Added Multirow variants with tabs below the URL bar and menu bar right over Tab bar.</li>
+  <li><b>CSS tweaks folder</b>: Split <code>userchrome.css</code> into smaller template CSS files so that people can copy only the functions they want to apply without having to worry about editting comments out.</li>
 </ul>
 
 <code>
@@ -72,12 +72,12 @@ This problem doesn't happen if you use a code editor such as notepad++, atom, su
 
 <h2>Addon dark themes</h2>
 <p>You can apply a dark theme to certain addons changing the UUID's of them inside the <code>addons.css</code> file inside the "Full dark theme" folder (more instructions on how to do that inside the addons file).</p>
-<img src="https://i.imgur.com/m7TGyqz.png" title="Dark addons" />
+<img src="https://i.imgur.com/QEOrYbx.png" title="Dark addons" />
 <p>Here is a list of the themed addons:</p>
 <ul>
+	<li><a href="https://addons.mozilla.org/es/firefox/addon/video-downloader-player/">Ant Video Downloader</a></li>
 	<li><a href="https://addons.mozilla.org/es/firefox/addon/cookie-autodelete/">Cookie autodelete</a></li>
 	<li><a href="https://addons.mozilla.org/es/firefox/addon/s3download-statusbar/">Download Manager (S3)</a></li>
-	<li><a href="https://addons.mozilla.org/es/firefox/addon/flash-video-downloader/">Flash Video Downloader</a></li>
 	<li><a href="https://addons.mozilla.org/es/firefox/addon/history-autodelete/">History autodelete</a></li>
 	<li><a href="https://addons.mozilla.org/es/firefox/addon/https-everywhere/">HTTPS Everywhere</a></li>
 	<li><a href="https://addons.mozilla.org/es/firefox/addon/noscript/">Noscript</a></li>
