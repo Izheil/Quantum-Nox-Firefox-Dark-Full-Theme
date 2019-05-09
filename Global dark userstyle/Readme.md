@@ -65,7 +65,7 @@
 <p>Following our previous tumblr example, let's say we wanted the theme to apply to www.tumblr.com/dashboard, but NOT on every other tumblr domain or subdomain page (like www.tumblr.com/settings or www.example.tumblr.com). We'd have to use regexp to create an inclusion for this with "dashboard":</p>
 
 <pre>
-@-moz-document regexp("https?://(?!(www.example.com|((?!w+)([^\.]+)\.)?([^\.]+)\.tumblr.((?!dashboard).)*$)).*") {
+@-moz-document regexp("https?://(?!(www.example.com|((?!w+)([^\.]+)\.)?([^\.]+)\.tumblr.(com|de|es|uk)((?!dashboard).)*$)).*") {
 /* Add any other site you don't want to apply inside the regexp encased between |'s ^ */
 </pre>
 
