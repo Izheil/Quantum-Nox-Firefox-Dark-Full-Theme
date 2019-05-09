@@ -27,17 +27,17 @@
 
 <img src="https://i.imgur.com/F2ecrCn.png">
 
-<p>For example, if we already have some rule for some site and <b>wanted to add an exclusion</b> for example.com, the new rule would look like:</p>
+<p>For example, if we already have some rule for some site and <b>wanted to add an exclusion</b> for <i>example.com</i>, the new rule would look like:</p>
 
 <pre>
 @-moz-document regexp("https?://(?!(www.nothingtoseehere.com|www.example.com)).*") {
 /* Add any other site you don't want to apply inside the regexp encased between |'s ^ */
 </pre> 
 
-<p>This would make the userstyle ignore all pages that start with www.example.com (as well as the nothingtoseehere domain before it), <b>but not the subdomains like subdomain.example.com</b>.</p>
-<p>If we only wanted to also exclude subdomain.example.com it would be as easy as adding only that one subdomain link to the exclusions, but <b>if we wanted to exclude ALL subdomains</b> (no matter their subdomain name) of example.com, we'd have to use <code>((?!w+)([^\.]+)\.)?</code> for all subdomain names (You don't have to specify the www part before these regexp).</p>
+<p>This would make the userstyle ignore all pages that start with <i>example.com</i> (as well as the <i>nothingtoseehere</i> domain before it), <b>but not the subdomains like <i>subdomain.example.com</i></b>.</p>
+<p>If we only wanted to also exclude <i>subdomain.example.com</i> it would be as easy as adding only that one subdomain link to the exclusions, but <b>if we wanted to exclude ALL subdomains</b> (no matter their subdomain name) of <i>example.com</i>, we'd have to use <code>((?!w+)([^\.]+)\.)?</code> for all subdomain names (You don't have to specify the www part before these regexp).</p>
 
-<p>That way, if we wanted to exclude all example subdomains (we assume that some subdomains may have -'s, so we need to use the complex regexp), but NOT the main domain (so we exclude all www.subdomain.example.com like pages, but not the www.example.com like pages) it would look like this:</p>
+<p>That way, if we wanted to exclude all example subdomains (we assume that some subdomains may have -'s, so we need to use the complex regexp), but NOT the main domain (so we exclude all <i>subdomain.example.com</i> like pages, but not the <i>example.com</i> like pages) it would look like this:</p>
 
 <pre>
 @-moz-document regexp("https?://(?!(www.nothingtoseehere.com|((?!w+)([^\.]+)\.)?example.com)).*") {
@@ -53,7 +53,7 @@
 /* Add any other site you don't want to apply inside the regexp encased between |'s ^ */
 </pre>
 
-<p>This would exclude both the subdomains and the domain of www.example.com, but wouldn't exclude other location domains like www.example.org.</p>
+<p>This would exclude both the subdomains and the domain of <i>example.com</i>, but wouldn't exclude other location domains like <i>example.org</i>.</p>
 <p>To solve this and <b>exclude specific location domains</b>, you can use <code>(com|org)</code> or similar rules with all the location domains of the page. This can be used independently of the previous regexp rules. The full example so far would be:</p>
 
 <pre>
@@ -62,7 +62,7 @@
 </pre>
 
 <p>Lastly, <b>if we wanted to INCLUDE some path of a domain to be affected by this, while still excluding all other pages of the domain</b>... we would use <code>((?!text-to-include-here).)*$</code> in the place where the text that distinguises the page we want to include would appear.</p>
-<p>Following our previous example, let's say we wanted the theme to apply to www.example.com/home, but NOT on every other example.com domain or subdomain page (like www.example.com/contact or www.subdomain.example.com). We'd have to use regexp to create an inclusion for this with "home":</p>
+<p>Following our previous example, let's say we wanted the theme to apply to <i>example.com/home</i>, but NOT on every other <i>example.com</i> domain or subdomain page (like <i>example.com/contact</i> or <i>subdomain.example.com</i>). We'd have to use regexp to create an inclusion for this with "home":</p>
 
 <pre>
 @-moz-document regexp("https?://(?!(www.nothingtoseehere.com|((?!w+)([^\.]+)\.)?([^\.]+)\.example.(com|org)((?!home).)*$)).*") {
