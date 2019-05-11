@@ -84,3 +84,10 @@
 	<li><b>Lower header img contrast</b>: This will try to lower the brightness of banners and header images while still showing their background (if hiding header images option is enabled, this one is not necesary).</li>
 	<li><b>Dark layers over divs</b>: This will paint semi-transparent dark layers behind most elements to attempt to lower the contrast of some elements that still have background images. You shouldn't need this unless you want to see the background images of divs (rare occasions).</li>
 </ul>
+
+<h2>Donations</h2>
+<p>If you want to support this theme, consider buying me a coffee to motivate me keep this repository up and running.</p>
+​
+<a href='https://ko-fi.com/K3K4TQ97' target='_blank'><img height='36' style='border:0px;height:36px;' src='https://az743702.vo.msecnd.net/cdn/kofi2.png?v=2' border='0' alt='Buy Me a Coffee at ko-fi.com' /></a>
+
+<p>Also, if you have some website that you think could work better with the theme (some white part that was left unthemed even with div backgrounds off, or some popup that has a transparent background) and none of the settings of the custom method work with it, you can comment it on the <a href="https://userstyles.org/styles/171676/global-dark-userstyle-qn-basic-css-version">stylish page where the basic CSS version was posted</p> (stating that you use the userCSS version instead).</p>
