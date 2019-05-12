@@ -618,6 +618,9 @@ if necessary depending on if you are using a custom OS theme (which may mess up 
 
 #editBMPanel_folderMenuList {padding: 1px !important; color: #ddd !important}
 
+/* These change the downloads history list background */
+#downloadsRichListBox {background: #444 !important; color: #ccc !important}
+
 /* PAGE INFORMATION WINDOW */
 
 /* This themes the top bar and it's buttons */
