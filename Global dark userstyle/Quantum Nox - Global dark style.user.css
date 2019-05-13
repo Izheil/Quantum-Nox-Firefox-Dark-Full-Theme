@@ -2,7 +2,7 @@
 @name         Quantum nox - Global dark style
 @description  Global dark style to use alongside Firefox full dark theme - Quantum nox.
 @namespace    https://github.com/Izheil/Quantum-Nox-Firefox-Dark-Full-Theme
-@version      2.1.10
+@version      2.2.0
 @author       Izheil
 @homepageURL  https://github.com/Izheil/Quantum-Nox-Firefox-Dark-Full-Theme/tree/master/Global%20dark%20userstyle
 @updateURL    https://raw.githubusercontent.com/Izheil/Quantum-Nox-Firefox-Dark-Full-Theme/master/Global%20dark%20userstyle/Quantum%20Nox%20-%20Global%20dark%20style.user.css
@@ -117,26 +117,26 @@ if invMethod == "customSet" {
         text-shadow: 0 0 1px #000 !important}
  
     /* Textbox like inputs */
-    input[type="text"]:not(#s3downbar_download_tooltip_source_box), input[type="email"], input[type="password"], input[type="tel"], 
+    input[type="text"]:not(#s3downbar_download_tooltip_source_box), input[type="email"], input[type="password"], input[type="tel"], input.input,
     input[type="number"], input[type="date"], input[type="datetime-local"], input[type="month"], input[type="search"], input[type="time"],
     input[type="url"], input[type="week"], textarea, input[readonly], .ace_scroller {
-        background: #151515 !important;
+        background: #101010 !important;
         color: #ddd !important;
         border: 2px ridge #444 !important;
         border-radius: 3px !important;
         box-shadow: none !important}
 
-    input[type="text"]:not(#s3downbar_download_tooltip_source_box):hover, input[type="email"]:hover, input[type="password"]:hover, input[type="tel"]:hover, 
+    input[type="text"]:not(#s3downbar_download_tooltip_source_box):hover, input[type="email"]:hover, input[type="password"]:hover, input[type="tel"]:hover, input.input:hover,
     input[type="number"]:hover, input[type="date"]:hover, input[type="datetime-local"]:hover, input[type="month"]:hover, input[type="search"]:hover, input[type="time"]:hover,
     input[type="url"]:hover, input[type="week"]:hover, textarea:hover {
-        background: #101010 !important;
+        background: #050505 !important;
         border-color: #555 !important;
         transition: all 200ms !important}
         
-    input[type="text"]:not(#s3downbar_download_tooltip_source_box):focus, input[type="email"]:focus, input[type="password"]:focus, input[type="tel"]:focus, 
+    input[type="text"]:not(#s3downbar_download_tooltip_source_box):focus, input[type="email"]:focus, input[type="password"]:focus, input[type="tel"]:focus, input.input:focus,
     input[type="number"]:focus, input[type="date"]:focus, input[type="datetime-local"]:focus, input[type="month"]:focus, input[type="search"]:focus, input[type="time"]:focus,
     input[type="url"]:focus, input[type="week"]:focus, textarea:focus {
-        background: #111 !important;
+        background: #050505 !important;
         border-color: linkColor !important;
         box-shadow: 0 0 5px linkColor !important;
         transition: all 200ms !important}
@@ -201,7 +201,7 @@ input[type="submit"]:not(#searchbtn):not(#search-submit-button):not(#main-search
         background-color: #444 !important;
         color: #fff !important}
 
-    /* Checkboxes and radio buttons */
+    /* Checkboxes, radio, and switch buttons */
     input[type="checkbox"], input[type="radio"] {
         -moz-appearance: none !important;
         -webkit-appearance: none !important;
@@ -210,14 +210,25 @@ input[type="submit"]:not(#searchbtn):not(#search-submit-button):not(#main-search
         min-height: 12px}
     input[type="checkbox"] {border-radius: 1px !important; margin-bottom: 0 !important}
     input[type="radio"], input[type="radio"]:focus {border-radius: 100% !important}
-    input[type="checkbox"]:checked, input[type="radio"]:checked, button[role="switch"] {
+    input[type="checkbox"]:checked, input[type="radio"]:checked {
         border-color: linkColor !important;
         box-shadow: inset 0 0 2px #000 !important;
         background: linkColor !important;
         }
         
     [class*="bullet-active"] {background-color: linkColor !important}
+    
+    i.radio-btn > input[type="radio"], i.check-box > input[type="checkbox"] {visibility: visible !important}    
+
+    label.switch:not(.checked)::after, .switch-slider::before, span.slider::before, 
+    button[role="switch"][aria-checked="false"] > div::after {background-color: #555 !important}
+    label.switch:not(.checked)::before, span.slider, button[role="switch"] {background-color: bgColor !important}
+    span.slider {border: 1px solid #444}
         
+    label.switch.checked::after, input[type="checkbox"]:checked + .switch-slider::before, 
+    input[type="checkbox"]:checked + .slider::before, button[role="switch"][aria-checked="true"] > div::after {background-color: linkColor !important}
+    button[role="switch"] > div::after {border-radius: 1em !important}
+
     /* Tables */
     table {background: transparent !important; border-color: #333 !important}
     th {background-color: rgba(80,80,80,0.3) !important; color: #fff !important}
@@ -284,7 +295,7 @@ input[type="submit"]:not(#searchbtn):not(#search-submit-button):not(#main-search
     .nav-main-item a:hover, a[data-service="GitHub"]:hover {background: rgba(255,255,255,0.1) !important}  
     .download.big-button:not(.red)::after, .post {background: #222 !important}
     
-    .p-sectionLinks {background-color: rgba(0,0,0,0.8) !important}
+    .p-sectionLinks, .navbar-brand {background-color: rgba(0,0,0,0.8) !important}
         
     .contentRow-fader {background: linear-gradient(transparent, bgColor) !important}
 
