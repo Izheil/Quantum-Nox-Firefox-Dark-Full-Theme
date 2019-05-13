@@ -2,7 +2,7 @@
 @name         Quantum nox - Global dark style
 @description  Global dark style to use alongside Firefox full dark theme - Quantum nox.
 @namespace    https://github.com/Izheil/Quantum-Nox-Firefox-Dark-Full-Theme
-@version      2.2.0
+@version      2.2.1
 @author       Izheil
 @homepageURL  https://github.com/Izheil/Quantum-Nox-Firefox-Dark-Full-Theme/tree/master/Global%20dark%20userstyle
 @updateURL    https://raw.githubusercontent.com/Izheil/Quantum-Nox-Firefox-Dark-Full-Theme/master/Global%20dark%20userstyle/Quantum%20Nox%20-%20Global%20dark%20style.user.css
@@ -218,6 +218,10 @@ input[type="submit"]:not(#searchbtn):not(#search-submit-button):not(#main-search
         
     [class*="bullet-active"] {background-color: linkColor !important}
     
+    ul.genres > li {transition: background 200ms}
+    ul.genres > li.include {background-color: rgba(51, 204, 51, 0.5) !important}
+    ul.genres > li.exclude {background-color: rgba(255, 51, 0, 0.5) !important}
+
     i.radio-btn > input[type="radio"], i.check-box > input[type="checkbox"] {visibility: visible !important}    
 
     label.switch:not(.checked)::after, .switch-slider::before, span.slider::before, 
