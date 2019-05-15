@@ -2,7 +2,7 @@
 @name         Quantum nox - Global dark theme
 @description  Global dark style to use alongside Firefox full dark theme - Quantum nox.
 @namespace    https://github.com/Izheil/Quantum-Nox-Firefox-Dark-Full-Theme
-@version      2.2.1
+@version      2.2.2
 @author       Izheil
 @homepageURL  https://github.com/Izheil/Quantum-Nox-Firefox-Dark-Full-Theme/tree/master/Global%20dark%20userstyle
 @updateURL    https://raw.githubusercontent.com/Izheil/Quantum-Nox-Firefox-Dark-Full-Theme/master/Global%20dark%20userstyle/Quantum%20Nox%20-%20Global%20dark%20style.user.css
@@ -141,7 +141,7 @@ if invMethod == "customSet" {
         box-shadow: 0 0 5px linkColor !important;
         transition: all 200ms !important}
 
-    input[disabled] {opacity: 0.5 !important}
+    input[disabled], .rc-button-default-disabled {opacity: 0.5 !important}
         
     /* Buttons and menus */
     div[class*="button"]:not([class*="buttons"]):not([class*="menu"]), div[class*="btn"]:not(.btn-link), input[type="file"], input[type="color"], input[type="button"], a.social-count, a[class*="button"], a[class*="btn"],
@@ -258,7 +258,8 @@ input[type="submit"]:not(#searchbtn):not(#search-submit-button):not(#main-search
     #mw-head {background: #151515 !important}
         
     li#ca-nstab-main, li#ca-talk, li#ca-view, 
-    li#ca-edit, li#ca-history, li#ca-nstab-project, li#ca-viewsource {background: #222 !important}
+    li#ca-edit, li#ca-history, li#ca-nstab-project, li#ca-viewsource, 
+    section.page-card.about {background: #222 !important}
         
     li#ca-nstab-main.selected, li#ca-talk.selected, li#ca-view.selected, 
     li#ca-edit.selected, li#ca-history.selected, li#ca-nstab-project.selected,
@@ -284,6 +285,8 @@ input[type="submit"]:not(#searchbtn):not(#search-submit-button):not(#main-search
     span.cm-variable, span.cm-def {color: #a6a6a6 !important}
     span.cm-property {color:  #ff6666 !important}
         
+    section.page-announcement-main .page-announcement-main-overlay {display: none !important}
+
     .CodeMirror {background-color: transparent !important}
         
     .note {background: #331}
