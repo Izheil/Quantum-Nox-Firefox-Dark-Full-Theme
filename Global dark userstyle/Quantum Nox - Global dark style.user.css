@@ -2,7 +2,7 @@
 @name         Quantum nox - Global dark theme
 @description  Global dark style to use alongside Firefox full dark theme - Quantum nox.
 @namespace    https://github.com/Izheil/Quantum-Nox-Firefox-Dark-Full-Theme
-@version      2.2.3
+@version      2.2.4
 @author       Izheil
 @homepageURL  https://github.com/Izheil/Quantum-Nox-Firefox-Dark-Full-Theme/tree/master/Global%20dark%20userstyle
 @updateURL    https://raw.githubusercontent.com/Izheil/Quantum-Nox-Firefox-Dark-Full-Theme/master/Global%20dark%20userstyle/Quantum%20Nox%20-%20Global%20dark%20style.user.css
@@ -108,7 +108,7 @@ if invMethod == "customSet" {
     a.active, a.selected, a.highlight [href="#"], a.is-selected, [class*="state-active"], .btn-link, .active > a {
         color: #fff !important;
         font-weight: bold !important;
-        background: rgba(255,255,255,0.1) !important}
+        background-color: rgba(255,255,255,0.1) !important}
         
     a:hover, a:hover *, a *:hover, a:hover *:hover, .link-gray-dark:hover, a[class*="label"], a[class*="Label"], span[class*="Label"] a {
         color: #fff !important;
@@ -148,7 +148,8 @@ if invMethod == "customSet" {
         
     /* Buttons and menus */
     div[class*="button"]:not([class*="buttons"]):not([class*="menu"]), div[class*="btn"]:not(.btn-link), input[type="file"], input[type="color"], input[type="button"], a.social-count, a[class*="button"], a[class*="btn"],
-    summary.btn, clipboard-copy, .ellipsis-expander, file-attachment, .drag-and-drop, div[class*="button"]:not([class*="buttons"]) a, .pageNav-page, .pageNav-jump  {
+    summary.btn, clipboard-copy, .ellipsis-expander, file-attachment, .drag-and-drop, div[class*="button"]:not([class*="buttons"]) a, .pageNav-page, .pageNav-jump,
+    input[type="submit"]:not(#searchbtn):not(#search-submit-button):not(#main-search-submit-button):not(#searchsubmit):not(.searchsubmit) {
         -moz-appearance: none !important;
         -webkit-appearance: none !important;
         border-radius: 3px !important;
@@ -170,9 +171,9 @@ if invMethod == "customSet" {
         color: #fff !important}
 
     .anchor-list a.hoverable, div[class*="buttons"] a[onclick], [aria-selected="true"], 
-button:not([class*="menu"]):not([id*="menu"]):not([role="switch"]):not([class*="ytp"]):not([class*="play"]):not([class*="mute"]):not([class*="fullscreen"]):not(.connect__button):not(.btn-link):not(.rc-button), 
-input[type="submit"]:not(#searchbtn):not(#search-submit-button):not(#main-search-submit-button):not(#searchsubmit), [class*="menu-item"]:not([class*="footer"]):not([class*="Footer"]):hover, 
-button#view-menu-btn, a.add-fav, #action-menu-btn {
+    button:not([class*="menu"]):not([id*="menu"]):not([role="switch"]):not([class*="ytp"]):not([class*="play"]):not([class*="mute"]):not([class*="fullscreen"]):not(.connect__button):not(.btn-link):not(.rc-button), 
+    input[type="submit"]:not(#searchbtn):not(#search-submit-button):not(#main-search-submit-button):not(#searchsubmit):not(.searchsubmit), 
+    [class*="menu-item"]:not([class*="footer"]):not([class*="Footer"]):hover, button#view-menu-btn, a.add-fav, #action-menu-btn {
         -moz-appearance: none !important;
         -webkit-appearance: none !important;
         background: #303030 !important; 
@@ -181,20 +182,22 @@ button#view-menu-btn, a.add-fav, #action-menu-btn {
         
     .anchor-list a.hoverable:hover, a[data-toggle="dropdown"]:not([class*="wrapper"]):not([role="menuitem"]):hover, div[class*="buttons"] a[onclick]:hover, 
     div[class*="dropdown"] a:hover, div[class*="drop-down"] a:hover, button:not([class*="menu"]):not([id*="menu"]):not([role="switch"]):not([class*="play"]):not([class*="mute"]):not([class*="fullscreen"]):not(.connect__button):not(.btn-link):not(.rc-button):hover, 
-input[type="submit"]:not(#searchbtn):not(#search-submit-button):not(#main-search-submit-button):not(#searchsubmit):hover, 
+    input[type="submit"]:not(#searchbtn):not(#search-submit-button):not(#main-search-submit-button):not(#searchsubmit):not(.searchsubmit):hover, 
     span[role="button"]:hover, button#view-menu-btn:hover, a.add-fav:hover, #action-menu-btn:hover {
         background: #444 !important; 
         color: #fff !important}
 
-    li[class*="btn"] a:not([href="javascript:;"]) {
+    li[class*="btn"] a:not([href="javascript:;"]), #searchbtn, #search-submit-button, 
+    #main-search-submit-button, #searchsubmit, .searchsubmit {
         background-color: transparent !important; 
         color: #ddd !important}
         
-    li[class*="btn"]:hover a:not([href="javascript:;"]) {
+    li[class*="btn"]:hover a:not([href="javascript:;"]):hover, #searchbtn:hover, #search-submit-button:hover, 
+    #main-search-submit-button:hover, #searchsubmit:hover, .searchsubmit:hover {
         background-color: rgba(255,255,255,.2) !important; 
         color: #fff !important; 
         border-radius: 6px !important}
-    
+        
     a[href="javascript:;"], .rc-button-default.goog-inline-block {
         background-color: #303030 !important;
         border-radius: 6px !important;
