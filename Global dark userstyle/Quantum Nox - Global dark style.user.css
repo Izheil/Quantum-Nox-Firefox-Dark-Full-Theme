@@ -2,7 +2,7 @@
 @name         Quantum nox - Global dark theme
 @description  Global dark style to use alongside Firefox full dark theme - Quantum nox.
 @namespace    https://github.com/Izheil/Quantum-Nox-Firefox-Dark-Full-Theme
-@version      2.2.2
+@version      2.2.3
 @author       Izheil
 @homepageURL  https://github.com/Izheil/Quantum-Nox-Firefox-Dark-Full-Theme/tree/master/Global%20dark%20userstyle
 @updateURL    https://raw.githubusercontent.com/Izheil/Quantum-Nox-Firefox-Dark-Full-Theme/master/Global%20dark%20userstyle/Quantum%20Nox%20-%20Global%20dark%20style.user.css
@@ -54,7 +54,10 @@ if invMethod == "customSet" {
         
     ::before, ::after {background-color: transparent !important; border: #333 !important}
         
-    [class*="main"]:not([class*="nav"]):not([id*="nav"]):not([class*="header"]):not([id*="header"]), #main:not([class*="nav"]):not([id*="nav"]):not([class*="header"]):not([id*="header"]),                [class*="Main"]:not([class*="nav"]):not([id*="nav"]):not([class*="header"]):not([id*="header"]), #Main:not([class*="nav"]):not([id*="nav"]):not([class*="header"]):not([id*="header"]), 
+    [class*="main"]:not([class*="nav"]):not([id*="nav"]):not([class*="header"]):not([id*="header"]):not([class*="overlay"]), 
+    #main:not([class*="nav"]):not([id*="nav"]):not([class*="header"]):not([id*="header"]),
+    [class*="Main"]:not([class*="nav"]):not([id*="nav"]):not([class*="header"]):not([id*="header"]):not([class*="overlay"]),
+    #Main:not([class*="nav"]):not([id*="nav"]):not([class*="header"]):not([id*="header"]), 
     main {background-color: bgColor !important}   
         
     div {color: #bbb !important}
