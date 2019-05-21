@@ -2,7 +2,7 @@
 @name         Quantum nox - Global dark theme
 @description  Global dark style to use alongside Firefox full dark theme - Quantum nox.
 @namespace    https://github.com/Izheil/Quantum-Nox-Firefox-Dark-Full-Theme
-@version      2.2.4
+@version      2.2.5
 @author       Izheil
 @homepageURL  https://github.com/Izheil/Quantum-Nox-Firefox-Dark-Full-Theme/tree/master/Global%20dark%20userstyle
 @updateURL    https://raw.githubusercontent.com/Izheil/Quantum-Nox-Firefox-Dark-Full-Theme/master/Global%20dark%20userstyle/Quantum%20Nox%20-%20Global%20dark%20style.user.css
@@ -80,7 +80,7 @@ if invMethod == "customSet" {
     div[class*="drop-down"]:not([class*="wrapper"]):not([role="menuitem"]):not([class*="header"]), .Dropdown-menu,
     li[class*="dropdown"]:not([class*="toggle"]):not([class*="has-children"]):not([class*="wrapper"]):not([role="menuitem"]):not([class*="header"]):not(.user-menu), 
     li[class*="drop-down"]:not([class*="wrapper"]):not([role="menuitem"]):not([class*="header"]):not(.user-menu), [class*="popup"], [class*="popover"]:not([class*="link"]), 
-    [class*="widget-content"], [class*="notice"], div[role="navigation"] {background: rgba(0,0,0,0.5) !important}
+    [class*="widget-content"], [class*="notice"], div[role="navigation"], div.nav ul#menu li ul {background: rgba(0,0,0,0.5) !important}
         
     pre, code, .w3-code, blockquote, .ace_gutter-layer, 
     .comment-text span.quote, .comment-text span.quote_wrapped  {
