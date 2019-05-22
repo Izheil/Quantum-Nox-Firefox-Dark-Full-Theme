@@ -1,6 +1,8 @@
 <img src="https://i.imgur.com/F7qziom.png" title="Quantum Nox"/>
 
 <h3>Previously known as "Firefox 57+ full dark theme with scrollbars and multirow tabs", I decided to give it an actual name instead of leaving it as just a description.</h3>
+<pre>Since Firefox 69 (current nightly), you have to enable <code>toolkit.legacyUserProfileCustomizations.stylesheets</code> in <code>about:config</code> for userchrome and usercontent to be loaded at all as per <a href="https://bugzilla.mozilla.org/show_bug.cgi?id=1541233#c35">bug #1541233</a>.</pre>
+
 <p>This theme is mainly intended for the stable release of Firefox (<b>This means that while it will most probably work with nightly and ESR for the most part, it may have less support for those versions</b>).</p>
 <p>You can use it to fully change the colors of most of firefox UI to dark-gray colors (with #222-#444 colors mostly), including scrollbars, tooltips, sidebar, as well as dialogs. With the files here you can also as remove some context menu options, enable multirow tabs, change the font of the url bar...</p>
 <p><b>Of course... you could as well use these files to color your firefox any way you wanted</b>, the only thing you'd have to do is change the correct values (what each class or id does is commented above each) in the .css files (as far as you know some 
@@ -113,6 +115,10 @@ This problem doesn't happen if you use a code editor such as notepad++, atom, su
 <p>As of 26/03/2019 I stopped offering active support for new features or issues. This doesn't mean that I won't be mantaining the project, it just means I won't be taking feature requests nor unrelated issues to the functionability offered by the files inside this repository anymore.</p>
 
 <p>If you find some problem that is <b>directly related</b> with any of the functions offered by any of the files in this repository, you can comment it inside the relevant commit that you think may have affected the function that is giving you trouble. If you can't tell which, comment in the last one. Comments about new functionability or things that aren't related to the actual functionability of the files will be ignored (You can already ask about problems you may have with firefox on <a href="https://www.reddit.com/r/firefox/">r/firefox</a> or <a href="https://www.reddit.com/r/firefoxcss/">r/firefoxCSS</a> subreddits, or on <a href="https://support.mozilla.org/">Firefox support</a> pages).</p>
+
+<h3>I placed the files inside the chrome folder but I don't see any change</h3>
+<p>Make sure you downloaded the raw files from the repository (either cloning the whole repository, downloading the RAW version of the files, or copying the code you are interested in yourself), and placed them inside the chrome folder inside the root profile folder (more information on that inside the dark theme section of this repository).</p>
+<p>If you are using Firefox 69+, you also need to have enabled <code>toolkit.legacyUserProfileCustomizations.stylesheets</code> in <code>about:config</code> for userchrome or usercontent (or any file in the chrome folder) to be loaded at all as per <a href="https://bugzilla.mozilla.org/show_bug.cgi?id=1541233#c35">bug #1541233</a>.</p>
 
 <h3>The pre-loading screen of websites is still white, how can I change this?</h3>
 <p>The fastest way to solve the "blinking" white screen is to change the default web background color on Firefox settings > General > "Colors..." button > Background, which will make the blinking dissapear and be changed to the color you set up. This, although, can cause some issues on some very few and specific pages like BBC, where they don't set a background color to override the one set here (the number of sites with this problem is very small, most sites override the background color set by this setting).</p>
