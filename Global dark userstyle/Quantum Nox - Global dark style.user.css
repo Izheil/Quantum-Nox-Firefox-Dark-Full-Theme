@@ -2,7 +2,7 @@
 @name         Quantum nox - Global dark theme
 @description  Global dark style to use alongside Firefox full dark theme - Quantum nox.
 @namespace    https://github.com/Izheil/Quantum-Nox-Firefox-Dark-Full-Theme
-@version      2.2.5
+@version      2.2.6
 @author       Izheil
 @homepageURL  https://github.com/Izheil/Quantum-Nox-Firefox-Dark-Full-Theme/tree/master/Global%20dark%20userstyle
 @updateURL    https://raw.githubusercontent.com/Izheil/Quantum-Nox-Firefox-Dark-Full-Theme/master/Global%20dark%20userstyle/Quantum%20Nox%20-%20Global%20dark%20style.user.css
@@ -48,7 +48,7 @@ if invMethod == "customSet" {
     * {
         background-color: transparent !important;
         border-color: #333 !important;
-        color: #aaa !important;
+        color: #aaa;
         text-shadow: none !important;
         box-shadow: none !important}
         
@@ -90,9 +90,9 @@ if invMethod == "customSet" {
         
     /* Text colors */
     div[id*="install"], div[id*="install"] div, div[class*="install"], div[class*="install"] div {color: #fff !important}
-    figcaption, time, del, div.downlinks > dl > dt > a {color: #999 !important}
-    p, li, .text-gray-dark, ins, i {color: #bbb !important}
-    i, svg {fill: #ccc !important}
+    figcaption, time, del, div.downlinks > dl > dt > a, small, aside {color: #999 !important}
+    p, li, .text-gray-dark, ins, i:not(.status) {color: #bbb !important}
+    i:not(.status), svg {fill: #ccc !important}
     h1, h2, h3, h4, h5, h6, summary, dt, span, em, b, strong {color: #ddd !important}
     h1, h2, h3, h4, h5, h6 {background-image: none !important}
 
@@ -187,6 +187,15 @@ if invMethod == "customSet" {
         background: #444 !important; 
         color: #fff !important}
 
+    a[href="javascript:;"], .rc-button-default.goog-inline-block, a.btn {
+        background-color: #303030 !important;
+        border-radius: 6px !important;
+        color: #ddd !important}
+        
+    a[href="javascript:;"]:hover, .rc-button-default.goog-inline-block:hover, a.btn:hover {
+        background-color: #444 !important;
+        color: #fff !important}
+
     li[class*="btn"] a:not([href="javascript:;"]), #searchbtn, #search-submit-button, 
     #main-search-submit-button, #searchsubmit, .searchsubmit {
         background-color: transparent !important; 
@@ -197,15 +206,6 @@ if invMethod == "customSet" {
         background-color: rgba(255,255,255,.2) !important; 
         color: #fff !important; 
         border-radius: 6px !important}
-        
-    a[href="javascript:;"], .rc-button-default.goog-inline-block {
-        background-color: #303030 !important;
-        border-radius: 6px !important;
-        color: #ddd !important}
-        
-    a[href="javascript:;"]:hover, .rc-button-default.goog-inline-block:hover {
-        background-color: #444 !important;
-        color: #fff !important}
 
     /* Checkboxes, radio, and switch buttons */
     input[type="checkbox"], input[type="radio"] {
@@ -252,10 +252,11 @@ if invMethod == "customSet" {
     select, [role="combobox"], a[class*="select"]:not([class*="selected"]) {
         -moz-appearance: none !important;
         -webkit-appearance: none !important;
-        padding: 1px 15px 1px 3px !important;
         background: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAcAAAAECAYAAABCxiV9AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAAeSURBVBhXY5g5c+Z/BiwALo6uAEMDTACXSWgSDAwA4jATh950E30AAAAASUVORK5CYII=') no-repeat right 4px center #060606 !important;
         border-color: #333 !important;
         box-shadow: none !important;
+        color: #ccc !important;
+        padding: 1px 15px 1px 3px !important;
         transition: border-color 0.3s, background-position 0.3s !important}
         
     select:hover, [role="combobox"]:hover {background-color: #222 !important}

@@ -1,5 +1,7 @@
 (function(){
-	if (location.href != 'chrome://browser/content/browser.xul' && !gBrowser.tabAnimationsInProgress && !aWebProgress.isLoadingDocument && Services.prefs.getBoolPref("toolkit.cosmeticAnimations.enabled")) return;
+	if (location.href != 'chrome://browser/content/browser.xul' && 
+		!gBrowser.tabContainer.childNode.tabAnimationsInProgress &&
+		Services.prefs.getBoolPref("toolkit.cosmeticAnimations.enabled")) return;
 
 	let func = {
 			add : function(e){
