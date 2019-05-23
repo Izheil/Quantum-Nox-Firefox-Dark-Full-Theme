@@ -12,16 +12,15 @@ basic css or <a href="https://www.w3schools.com/colors/colors_picker.asp">color 
 <br />
 This problem doesn't happen if you use a code editor such as notepad++, atom, sublime text...</h4>
 
-<h3>Last update: <b>12/05/2019</b></h3>
+<h3>Last update: <b>23/05/2019</b></h3>
+<p>Files updated:</p>
+<ul>
+  <li><b>setAttribute_unread.uc.js</b>: Now the throbber shouldn't show over the icon when the page is loading because of tagging the unread attribute too early.</li>
+</ul>
+<h3>Pre-Last update: <b>12/05/2019</b></h3>
 <p>Files updated:</p>
 <ul>
   <li><b>Userchrome.css</b>: Fixed white flashes on page pre-loading without affecting pages that use <code>about:blank</code>.</li>
-</ul>
-<h3>Pre-Last update: <b>06/05/2019</b></h3>
-<p>Files updated:</p>
-<ul>
-  <li><b>Usercontent.css</b>: Added a missing textarea box on mozilla addons page.</li>
-  <li><b>Addons.css</b>: Themed <a href="https://addons.mozilla.org/es/firefox/addon/video-downloader-player/">Ant Video Downloader</a> addon, and removed Flash Video Downloader (Mozilla took the original one down from their addons page).</li>
 </ul>
 
 <code>

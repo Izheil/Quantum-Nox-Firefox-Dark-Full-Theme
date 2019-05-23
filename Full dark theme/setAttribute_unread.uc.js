@@ -1,5 +1,6 @@
 (function(){
-	if(location.href != 'chrome://browser/content/browser.xul') return;
+	if (location.href != 'chrome://browser/content/browser.xul' && !gBrowser.tabAnimationsInProgress && !aWebProgress.isLoadingDocument && Services.prefs.getBoolPref("toolkit.cosmeticAnimations.enabled")) return;
+
 	let func = {
 			add : function(e){
 				e.target.setAttribute('unread', 'true');
