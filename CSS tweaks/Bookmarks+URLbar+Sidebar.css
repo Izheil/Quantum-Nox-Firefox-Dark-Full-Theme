@@ -1,6 +1,6 @@
 /* You can find an updated version here: https://github.com/Izheil/Quantum-Nox-Firefox-Dark-Full-Theme */
 /* Made by Izheil */
-/* Last updated: 06/05/2019 */
+/* Last updated: 25/05/2019 */
 
 /* SIDEBAR */
 
@@ -42,5 +42,5 @@ differentiable font (Thanks to BelladonnavGF for the tip) */
     max-height: calc(23px*(var(--bookmark-max-rows))) !important}
 
 /* AUTO-HIDE BOOKMARKS TOOLBAR */
-#PersonalToolbar {visibility: collapse !important;}
-#navigator-toolbox:hover > #PersonalToolbar {visibility: visible !important}
+/* This stopped working on FF67+, for the fix go to 
+"Multirow and other functions/Other experimental features" folder inside the repository */
