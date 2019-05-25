@@ -3,8 +3,9 @@
 // @namespace      http://https://github.com/Izheil/Quantum-Nox-Firefox-Dark-Full-Theme
 // @description    Makes the navigation toolbar autohide when on fullscreen even on Mac. Windows and Linux users don't need this.
 // @include        main
-// @compatibility  Firefox 65
+// @compatibility  Firefox 69
 // @author         Izheil
+// @version        25/05/2019 08:23 Fixed a compatibility issue with Firefox 67+
 // @version        17/03/2019 00:28 First release
 // ==/UserScript==
 
@@ -17,6 +18,11 @@ fsToggler.onmouseover = function() {
 	navBox.style.visibility = "visible";
 	navBox.style.opacity = "1";
 	fsToggler.style.display = "none";
+
+    var bookmarkItems = document.querySelectorAll("#PlacesToolbarItems .bookmark-item");
+		  for (var i = 0; i < bookmarkItems.length; i++) {
+		  	bookmarkItems[i].style.visibility = "visible";
+		  }
 }
 
 // This hides the navigation bar when hovering over the web area
