@@ -12,15 +12,18 @@ basic css or <a href="https://www.w3schools.com/colors/colors_picker.asp">color 
 <br />
 This problem doesn't happen if you use a code editor such as notepad++, atom, sublime text...</h4>
 
-<h3>Last update: <b>23/05/2019</b></h3>
+<h3>Last update: <b>25/05/2019</b></h3>
 <p>Files updated:</p>
 <ul>
-  <li><b>setAttribute_unread.uc.js</b>: Now the throbber shouldn't show over the icon when the page is loading because of tagging the unread attribute too early.</li>
+	<li><b>Bookmarks-toolbar-autohide.uc.js</b>: To autohide bookmarks (only show on hover) you can now use this file instead of the CSS tweak (which doesn't work anymore as of FF67+).</li>
+	<li><b>Bookmarks-Toggle.uc.js</b>: Fixed some compatibility issue with Firefox 67+.</li>
+	<li><b>Mac-fullscreen-fix-toolbox-autohide.uc.uc.js</b>: Fixed some compatibility issue with Firefox 67+.</li>
+	<li><b>Navigator-toolbox-autohide*.uc.js</b>: Fixed some compatibility issue with Firefox 67+.</li>
 </ul>
-<h3>Pre-Last update: <b>12/05/2019</b></h3>
+<h3>Pre-Last update: <b>23/05/2019</b></h3>
 <p>Files updated:</p>
 <ul>
-  <li><b>Userchrome.css</b>: Fixed white flashes on page pre-loading without affecting pages that use <code>about:blank</code>.</li>
+	<li><b>setAttribute_unread.uc.js</b>: Now the throbber shouldn't show over the icon when the page is loading because of tagging the unread attribute too early.</li>
 </ul>
 
 <code>

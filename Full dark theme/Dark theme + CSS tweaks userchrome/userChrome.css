@@ -1,6 +1,6 @@
 /* You can find an updated version here: https://github.com/Izheil/Quantum-Nox-Firefox-Dark-Full-Theme */
 /* Made by Izheil */
-/* Last updated: 12/05/2019 */
+/* Last updated: 25/05/2019 */
 
 /* DO NOT DELETE THIS LINE */
 @namespace url("http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul");
@@ -1051,11 +1051,6 @@ to autohide, so it's safest to just hide it on fullscreen */
     flex-wrap: wrap; 
     overflow: auto;
     max-height: calc(23px*(var(--bookmark-max-rows))) !important}
-
-/* AUTO-HIDE BOOKMARKS TOOLBAR */
-/*
-#PersonalToolbar {visibility: collapse !important;}
-#navigator-toolbox:hover > #PersonalToolbar {visibility: visible !important}
 
 /* CONTEXT MENU COMMANDS */
 
