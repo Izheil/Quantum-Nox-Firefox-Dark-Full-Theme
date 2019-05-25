@@ -3,18 +3,20 @@
 // @namespace      http://https://github.com/Izheil/Quantum-Nox-Firefox-Dark-Full-Theme
 // @description    Bookmarks toolbar toggle on keydown
 // @include        main
-// @compatibility  Firefox 65
+// @compatibility  Firefox 69
 // @author         Izheil
+// @version        25/05/2019 08:14 Added a compatibility fix for Firefox 67+
 // @version        27/12/2018 15:05 Simplified the code
 // @version        27/12/2018 15:05 Firefox 64
 // ==/UserScript==
 window.addEventListener("keydown", bookmarkToggle, false);
 
-// This assumes you have added the "visibility: collapse !important" rule on your userchrome.css for #PersonalToolbar
-// If you want them to be toggled by default, change this to true instead.
+// If you want them to be visible by default, change this to true instead.
 var toggled = false;
 
-document.getElementById("PersonalToolbar").style.visibility = "collapse";
+if (toggled == false) {
+	document.getElementById("PersonalToolbar").style.visibility = "collapse";
+}
 
 // If you want to use a combination of keys instead than one, include evt.key == "your key here" with
 // a && inclusion (for example evt.key == "F2" && evt.key =="a" would trigger the toggling when both
@@ -27,6 +29,12 @@ function bookmarkToggle(evt) {
 	// Input the key you want to use here
 	else if (evt.key == "F2" && toggled == false) {
      document.getElementById("PersonalToolbar").style.visibility = "visible";
+
+     var bookmarkItems = document.querySelectorAll("#PlacesToolbarItems .bookmark-item");
+		  for (var i = 0; i < bookmarkItems.length; i++) {
+		  	bookmarkItems[i].style.visibility = "visible";
+		  }
+
 	 toggled = true}
 }
 
