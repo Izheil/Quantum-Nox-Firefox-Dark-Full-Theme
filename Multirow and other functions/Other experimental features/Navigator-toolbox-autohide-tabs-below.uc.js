@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name           Navigator-toolbox-autohide-tabs-below.uc.js
 // @namespace      http://https://github.com/Izheil/Quantum-Nox-Firefox-Dark-Full-Theme
-// @description    Makes the navigation toolbar autohide even when not on fullscreen.
+// @description    Makes the navigation toolbar autohide even when not on fullscreen (tabs positioned below urlbar).
 // @include        main
 // @compatibility  Firefox 69
 // @author         Izheil

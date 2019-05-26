@@ -5,6 +5,7 @@
 // @include        main
 // @compatibility  Firefox 69
 // @author         Izheil
+// @version        26/05/2019 10:19 Added a variable to change the key to press
 // @version        25/05/2019 08:14 Added a compatibility fix for Firefox 67+
 // @version        27/12/2018 15:05 Simplified the code
 // @version        27/12/2018 15:05 Firefox 64
@@ -12,22 +13,22 @@
 window.addEventListener("keydown", bookmarkToggle, false);
 
 // If you want them to be visible by default, change this to true instead.
-var toggled = false;
+var toggled = false,
+// You can edit which key to press below. Make sure to encase the name between "" or '', and end the variable with a semicolon (;)
+// You can't use ctrl, shift, alt, or CMD.
+	keyPress = "F2";
 
 if (toggled == false) {
 	document.getElementById("PersonalToolbar").style.visibility = "collapse";
 }
 
-// If you want to use a combination of keys instead than one, include evt.key == "your key here" with
-// a && inclusion (for example evt.key == "F2" && evt.key =="a" would trigger the toggling when both
-// F2 and a buttons are pressed). For ctrl, shift, or alt keys, just use evt.ctrlKey, evt.shiftKey, and evt.altKey instead.
 function bookmarkToggle(evt) {
 	// Input the key you want to use here
-    if (evt.key == "F2" && toggled == true) {
+    if (evt.key == keyPress && toggled == true) {
 	 document.getElementById("PersonalToolbar").style.visibility = "collapse";
 	 toggled = false}
 	// Input the key you want to use here
-	else if (evt.key == "F2" && toggled == false) {
+	else if (evt.key == keyPress && toggled == false) {
      document.getElementById("PersonalToolbar").style.visibility = "visible";
 
      var bookmarkItems = document.querySelectorAll("#PlacesToolbarItems .bookmark-item");
