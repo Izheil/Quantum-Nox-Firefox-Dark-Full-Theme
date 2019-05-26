@@ -17,6 +17,7 @@ This problem doesn't happen if you use a code editor such as notepad++, atom, su
 <p>Files updated:</p>
 <ul>
 	<li><b>Navigator-toolbox-hide-by-keypress.uc.js</b>: You can now hide the navigation toolbar (like in fullscreen) when toggling a key when not on fullscreen.</li>
+	<li><b>Navigator-toolbox-hide-by-keypress-tabs-below.uc.js</b>: Same as above (but with tabs below the urlbar).</li>
 </ul>
 <h3>Pre-Last update: <b>25/05/2019</b></h3>
 <p>Files updated:</p>
