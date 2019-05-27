@@ -5,6 +5,7 @@
 // @include        main
 // @compatibility  Firefox 69
 // @author         Izheil
+// @version        27/05/2019 03:43 Gave variable a more unique name
 // @version        26/05/2019 10:19 First version
 // ==/UserScript==
 
@@ -14,19 +15,19 @@ var keyToPress = "F1",
 
 	// We define the non editable variables below
 	navBox = document.getElementById("navigator-toolbox"),
-	toggled = true;
+	navBoxVisible = true;
 
 // Event listener for keypresses
 window.addEventListener("keydown", navBoxHideToggle, false);
 
 function navBoxHideToggle(evt) {
 if (!window.fullScreen) {
-    if (evt.key == keyToPress && toggled == true) {
+    if (evt.key == keyToPress && navBoxVisible == true) {
 	 navBox.style.visibility = "collapse";
 	 navBox.style.opacity = "0";
-	 toggled = false}
+	 navBoxVisible = false}
 
-	else if (evt.key == keyToPress && toggled == false) {
+	else if (evt.key == keyToPress && navBoxVisible == false) {
      navBox.style.visibility = "visible";
      navBox.style.opacity = "1";
 
@@ -35,6 +36,6 @@ if (!window.fullScreen) {
 		  	bookmarkItems[i].style.visibility = "visible";
 		  }
 
-	 toggled = true}
+	 navBoxVisible = true}
 	}
 }

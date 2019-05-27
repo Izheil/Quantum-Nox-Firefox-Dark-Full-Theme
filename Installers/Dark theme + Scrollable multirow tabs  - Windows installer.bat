@@ -15,4 +15,5 @@ for /f %%f in ('dir /b "%_FIREFOX_PROFILES_PATH:"=%\*.default*"') do (
     echo Copying %_SOURCE_FILE% to "%_FIREFOX_PROFILES_PATH:"=%\%%f"
     xcopy /w /e %_SOURCE_FILE% "%_FIREFOX_PROFILES_PATH:"=%\%%f"
     del "%_FIREFOX_PROFILES_PATH:"=%\%%f\chrome\MultiRowTabLiteforFx.uc.js"
+    del "%_FIREFOX_PROFILES_PATH:"=%\%%f\chrome\Tabs-below-Menu-onTop.as.css"
 )
