@@ -10,7 +10,9 @@ toolbarbutton#alltabs-button {
     -moz-binding: url("userChrome.xml#js")}
 </pre>
 
-<p>For the empty userchrome with just that rule, you can find it inside the <b>Multirow tabs</b> folder inside the repository.</p>
+<b>To avoid problems using multiple files with the tabs below fixes, I split the tabs below tweak into a standalone file. If you want to have tabs below the url bar, use the files inside the <a href="https://github.com/Izheil/Quantum-Nox-Firefox-Dark-Full-Theme/tree/master/Multirow%20and%20other%20functions/Tabs%20below">tabs below</a> folder.</b>
+
+<p>For the empty userchrome with just that rule, you can find it inside this folder in the repository.</p>
 
 <p>There are probably better alternatives out there, so you should only use these if you really couldn't find it anywhere else (since, as mentioned, these are experimental)</p>
 

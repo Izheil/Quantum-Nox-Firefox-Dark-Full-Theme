@@ -11,6 +11,8 @@ toolbarbutton#alltabs-button {
     -moz-binding: url("userChrome.xml#js")}
 </pre>
 
+<b>To avoid problems using multiple files with the tabs below fixes, I split the tabs below tweak into a standalone file. If you want to have tabs below the url bar, use the files inside the <a href="https://github.com/Izheil/Quantum-Nox-Firefox-Dark-Full-Theme/tree/master/Multirow%20and%20other%20functions/Tabs%20below">tabs below</a> folder.</b>
+
 <h3>MultiRowTabLiteforFx.uc.js</h3>
 <p>Works with Firefox 66+. Shows all tabs you currently have open splitting them on rows, without any limit to the amount of rows to show. Choose this option if you want to always see all the tabs you have open without limits to the number of rows.</p>
 <img src="https://i.imgur.com/GWSgqD9.png">
@@ -18,14 +20,6 @@ toolbarbutton#alltabs-button {
 <h3>MultiRowTab-scrollable.uc.js</h3>
 <p>Works with Firefox 66+. Shows all tabs you currently have open splitting them on rows up to a max of 3 rows by default (can be changed using the variable inside the file). After the max number of rows has been reached, a scrollbar will be shown to be able to scroll around the extra tabs.</p>
 <img src="https://i.imgur.com/qqQn4Ky.png">
-
-<h3>MultiRowTab*-TabsBelow-Menu-onTop.uc.js</h3>
-<p>Works with Firefox 66+. These will change the tab bar below the URL and bookmark bar (you can change the position of each bar inside the file), while keeping the menu-bar (where the file, tools, etc menus and the min/max/close buttons are) on top. Works best with the menu bar toggled as always visible.</p>
-<img src="https://i.imgur.com/5vbG6mh.png">
-
-<h3>MultiRowTab*-TabsBelow-Menu-aboveTabs.uc.js</h3>
-<p>Works with Firefox 66+. These will change the tab bar below the URL and bookmark bar (you can change the position of each bar inside the file), but keeping the menu-bar (where the file, tools, etc menus and the min/max/close buttons are) right above the tabs bar (so below the URL and bookmarks, but above tabs).</p>
-<img src="https://i.imgur.com/ct1OBME.png">
 
 <h3>MultiRowTab-scrollable-autohide.uc.js</h3>
 <p>Works with Firefox 66+. This version is the same as scrollable multirow, except the scrollbars are only shown when you hover over the tabs area. It fixes some very specific issue when loading a session restore and loading a page in a session-restored blank page.</p>
