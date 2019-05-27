@@ -2,7 +2,7 @@
 @name         Quantum nox - Global dark theme
 @description  Global dark style to use alongside Firefox full dark theme - Quantum nox.
 @namespace    https://github.com/Izheil/Quantum-Nox-Firefox-Dark-Full-Theme
-@version      2.2.6
+@version      2.2.7
 @author       Izheil
 @homepageURL  https://github.com/Izheil/Quantum-Nox-Firefox-Dark-Full-Theme/tree/master/Global%20dark%20userstyle
 @updateURL    https://raw.githubusercontent.com/Izheil/Quantum-Nox-Firefox-Dark-Full-Theme/master/Global%20dark%20userstyle/Quantum%20Nox%20-%20Global%20dark%20style.user.css
@@ -159,7 +159,7 @@ if invMethod == "customSet" {
         box-shadow: none !important}
 
     [class*="dialog"], [class*="light"], [class*="white"], div.Popover-message, ul.sub, div[role="menu"], .options, .vue-treeselect__menu, 
-    .ListResult, div[class*="menu"], .menu ul ul li a, .menuparent a, .dropdown li ul li a, #description_popup, ul[role="listbox"] 
+    .ListResult, div[class*="menu"], .menu ul ul li a, .menuparent a, .dropdown li ul li a, #description_popup, ul[role="listbox"], ul[id*="contextmenu"]
     {background-color: rgba(0,0,0,0.8) !important}
 
     div[class*="btn"]:not(.dl-btn-labelWrap):not(.dl-btn-cont):not(.btn-set):not(.column):not([class*="toolbar"]):hover, input[type="file"]:hover, input[type="color"]:hover, div[class*="header"] li:not([class*="btn"]) a:not(img):not(svg):hover, #sidenav a:hover, 
@@ -304,7 +304,7 @@ if invMethod == "customSet" {
     .default .tv_tab_alt.tv_selected:before, .default .tv_tab_alt.tv_selected:after, 
     .default .tv_selected:before, .default .tv_selected:after {background: none !important; box-shadow: none !important}
     
-    .probox input[type="search"], .rc-button.goog-inline-block {filter: invert(80%) hue-rotate(180deg)}
+    .probox input[type="search"], .rc-button.goog-inline-block, .mf_filecontainer a::after {filter: invert(80%) hue-rotate(180deg)}
 
     .nav-main-item a:hover, a[data-service="GitHub"]:hover {background: rgba(255,255,255,0.1) !important}  
     .download.big-button:not(.red)::after, .post {background: #222 !important}
@@ -360,7 +360,7 @@ if invMethod == "customSet" {
       }
         
     if divHide {
-        *:not(:empty):not(a):not(b):not(option):not(select):not(img):not(header):not(section):not(.s3dmBox):not(picture):not(button):not(p):not(td) {
+        *:not(:empty):not(a):not(b):not(option):not(select):not(img):not(header):not(section):not(.s3dmBox):not(picture):not(button):not(p):not(td):not([class*="filetype"]) {
           background-image: none !important}
         }
 
