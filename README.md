@@ -13,17 +13,16 @@ basic css or <a href="https://www.w3schools.com/colors/colors_picker.asp">color 
 <br />
 This problem doesn't happen if you use a code editor such as notepad++, atom, sublime text...</h4>
 
-<h3>Last update: <b>27/05/2019</b></h3>
+<h3>Last update: <b>28/05/2019</b></h3>
 <p>Files updated:</p>
+<ul>
+	<li><b>Userchrome.xml</b>: Updated them to the lastest released version.</li>
+</ul>
+<h3>Pre-Last update: <b>27/05/2019</b></h3>
 <ul>
 	<li><b>Bookmarks-toggler.uc.js</b>: Added better compatibility with the navigation hide toggler script.</li>
 	<li><b>*-tabs-below-*.uc.js</b>: Deleted these alternative versions, and added tabs below standalone files for this tweak.</li>
 	<li><b>Tabs-below-Menu-onTop/overTabs.as.css</b>: Added standalone files for tabs below tweak for easier installation (<a href="https://github.com/Izheil/Quantum-Nox-Firefox-Dark-Full-Theme/tree/master/Multirow%20and%20other%20functions/Tabs%20below">inside multirow and other functions folder</a>).</li>
-</ul>
-<h3>Pre-Last update: <b>26/05/2019</b></h3>
-<ul>
-	<li><b>Navigator-toolbox-hide-by-keypress.uc.js</b>: You can now hide the navigation toolbar (like in fullscreen) when toggling a key when not on fullscreen.</li>
-	<li><b>Navigator-toolbox-hide-by-keypress-tabs-below.uc.js</b>: Same as above (but with tabs below the urlbar).</li>
 </ul>
 
 <code>
