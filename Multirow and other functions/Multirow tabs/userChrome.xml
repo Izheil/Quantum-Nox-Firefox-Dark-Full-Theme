@@ -6,7 +6,7 @@ https://opensource.org/licenses/MIT
 
 <!-- Run userChrome.js/userChrome.xul and .uc.js/.uc.xul/.css files  -->
 <bindings xmlns="http://www.mozilla.org/xbl">
-    <binding id="js">
+    <binding id="js" extends="chrome://global/content/bindings/toolbarbutton.xml#toolbarbutton">
         <implementation>
             <constructor><![CDATA[
                 if(window.userChromeJsMod) return;
