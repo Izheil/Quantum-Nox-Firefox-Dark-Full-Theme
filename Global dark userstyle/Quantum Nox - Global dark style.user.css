@@ -2,7 +2,7 @@
 @name         Quantum nox - Global dark theme
 @description  Global dark style to use alongside Firefox full dark theme - Quantum nox.
 @namespace    https://github.com/Izheil/Quantum-Nox-Firefox-Dark-Full-Theme
-@version      2.2.9
+@version      2.2.10
 @author       Izheil
 @homepageURL  https://github.com/Izheil/Quantum-Nox-Firefox-Dark-Full-Theme/tree/master/Global%20dark%20userstyle
 @updateURL    https://raw.githubusercontent.com/Izheil/Quantum-Nox-Firefox-Dark-Full-Theme/master/Global%20dark%20userstyle/Quantum%20Nox%20-%20Global%20dark%20style.user.css
@@ -267,7 +267,7 @@ if invMethod == "customSet" {
         
     li#ca-nstab-main, li#ca-talk, li#ca-view, 
     li#ca-edit, li#ca-history, li#ca-nstab-project, li#ca-viewsource, 
-    section.page-card.about {background: #222 !important}
+    section.page-card.about, .u-backgroundGrayLightest {background: #222 !important}
         
     li#ca-nstab-main.selected, li#ca-talk.selected, li#ca-view.selected, 
     li#ca-edit.selected, li#ca-history.selected, li#ca-nstab-project.selected,
@@ -279,7 +279,7 @@ if invMethod == "customSet" {
     .mw-parser-output .main-top-left {background: linear-gradient(to right, #000, transparent) !important}
         
     .communitymailinglist a, #oh-menu-submit span, #oh-menu-join a,
-    .default .tv_content_alt {background: #333 !important; color: #ddd !important}
+    .default .tv_content_alt, .u-backgroundTransparentWhiteDarkest {background: #333 !important; color: #ddd !important}
     .communitymailinglist a:hover, #oh-menu-submit span:hover, #oh-menu-join a:hover {background: #444 !important; color: #fff !important}
     
     #disqus .load-comments, #simpleSearch, .vectorTabs {background: transparent !important; color: #ddd !important; border-color: #555 !important}
