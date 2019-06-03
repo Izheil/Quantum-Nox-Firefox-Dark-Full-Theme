@@ -1,6 +1,6 @@
 /* You can find an updated version here: https://github.com/Izheil/Quantum-Nox-Firefox-Dark-Full-Theme */
 /* Made by Izheil */
-/* Last updated: 06/05/2019 */
+/* Last updated: 03/06/2019 */
 
 /* CONTEXT MENU COMMANDS */
 
@@ -87,6 +87,12 @@ Make sure to only do line breaks after a comma if you really need to (like in th
 
 /* -----BOOKMARK ITEMS CONTEXT MENU----- */
 
+/* Open bookmark */
+#placesContext_open,
+
+/* Open bookmark in new tab */
+#placesContext_open\:newtab,
+
 /* Open bookmark in new window */
 #placesContext_open\:newwindow,
 
@@ -95,7 +101,8 @@ Make sure to only do line breaks after a comma if you really need to (like in th
 
 /* Open all tabs in a bookmark folder & it's separator */
 #placesContext_openContainer\:tabs, 
-#placesContext_open\:newprivatewindow[disabled="true"] + #placesContext_openSeparator,
+#placesContext_open\:newprivatewindow[disabled="true"],
+#placesContext_openSeparator,
 
 /* -----WEBAREA CONTEXT MENU----- */
 

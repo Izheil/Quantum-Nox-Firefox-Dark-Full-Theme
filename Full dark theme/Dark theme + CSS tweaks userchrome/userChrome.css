@@ -1,6 +1,6 @@
 /* You can find an updated version here: https://github.com/Izheil/Quantum-Nox-Firefox-Dark-Full-Theme */
 /* Made by Izheil */
-/* Last updated: 25/05/2019 */
+/* Last updated: 03/06/2019 */
 
 /* DO NOT DELETE THIS LINE */
 @namespace url("http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul");
@@ -1132,6 +1132,12 @@ Make sure to NOT leave a comma before your last selector and the {display: none 
 
 /* -----BOOKMARK ITEMS CONTEXT MENU----- */
 
+/* Open bookmark */
+#placesContext_open,
+
+/* Open bookmark in new tab *//*
+#placesContext_open\:newtab,
+
 /* Open bookmark in new window *//*
 #placesContext_open\:newwindow,
 
@@ -1140,7 +1146,9 @@ Make sure to NOT leave a comma before your last selector and the {display: none 
 
 /* Open all tabs in a bookmark folder & it's separator */
 #placesContext_openContainer\:tabs, 
-#placesContext_open\:newprivatewindow[disabled="true"] + #placesContext_openSeparator,
+#placesContext_open\:newprivatewindow[disabled="true"],
+
+/* #placesContext_openSeparator, */
 
 /* -----WEBAREA CONTEXT MENU----- */
 
