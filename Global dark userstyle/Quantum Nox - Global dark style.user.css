@@ -2,7 +2,7 @@
 @name         Quantum nox - Global dark theme
 @description  Global dark style to use alongside Firefox full dark theme - Quantum nox.
 @namespace    https://github.com/Izheil/Quantum-Nox-Firefox-Dark-Full-Theme
-@version      2.2.12
+@version      2.2.13
 @author       Izheil
 @homepageURL  https://github.com/Izheil/Quantum-Nox-Firefox-Dark-Full-Theme/tree/master/Global%20dark%20userstyle
 @updateURL    https://raw.githubusercontent.com/Izheil/Quantum-Nox-Firefox-Dark-Full-Theme/master/Global%20dark%20userstyle/Quantum%20Nox%20-%20Global%20dark%20style.user.css
@@ -173,7 +173,7 @@ if invMethod == "customSet" {
     .anchor-list a.hoverable, div[class*="buttons"] a[onclick], [aria-selected="true"], 
     button:not([class*="menu"]):not([id*="menu"]):not([role="switch"]):not([class*="ytp"]):not([class*="play"]):not([class*="mute"]):not([class*="fullscreen"]):not(.connect__button):not(.btn-link):not(.rc-button):not([aria-label="Play"]):not([aria-label="Mute"]):not([aria-label="Fullscreen"]), 
     input[type="submit"]:not(#searchbtn):not(#search-submit-button):not(#main-search-submit-button):not(#searchsubmit):not(.searchsubmit), 
-    [class*="menu-item"]:not([class*="footer"]):not([class*="Footer"]):hover, button#view-menu-btn, a.add-fav, #action-menu-btn {
+    [class*="menu-item"]:not([class*="footer"]):not([class*="Footer"]):hover, button#view-menu-btn, a.add-fav, #action-menu-btn, a.Button {
         -moz-appearance: none !important;
         -webkit-appearance: none !important;
         background: #303030 !important; 
@@ -184,7 +184,7 @@ if invMethod == "customSet" {
     div[class*="dropdown"] a:hover, div[class*="drop-down"] a:hover, 
     button:not([class*="menu"]):not([id*="menu"]):not([role="switch"]):not([class*="play"]):not([class*="mute"]):not([class*="fullscreen"]):not(.connect__button):not(.btn-link):not(.rc-button):not([aria-label="Play"]):not([aria-label="Mute"]):not([aria-label="Fullscreen"]):hover, 
     input[type="submit"]:not(#searchbtn):not(#search-submit-button):not(#main-search-submit-button):not(#searchsubmit):not(.searchsubmit):hover, 
-    span[role="button"]:hover, button#view-menu-btn:hover, a.add-fav:hover, #action-menu-btn:hover {
+    span[role="button"]:hover, button#view-menu-btn:hover, a.add-fav:hover, #action-menu-btn:hover, a.Button:hover {
         background: #444 !important; 
         color: #fff !important}
 
