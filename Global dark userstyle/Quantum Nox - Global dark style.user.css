@@ -2,7 +2,7 @@
 @name         Quantum nox - Global dark theme
 @description  Global dark style to use alongside Firefox full dark theme - Quantum nox.
 @namespace    https://github.com/Izheil/Quantum-Nox-Firefox-Dark-Full-Theme
-@version      2.2.13
+@version      2.2.14
 @author       Izheil
 @homepageURL  https://github.com/Izheil/Quantum-Nox-Firefox-Dark-Full-Theme/tree/master/Global%20dark%20userstyle
 @updateURL    https://raw.githubusercontent.com/Izheil/Quantum-Nox-Firefox-Dark-Full-Theme/master/Global%20dark%20userstyle/Quantum%20Nox%20-%20Global%20dark%20style.user.css
@@ -70,7 +70,8 @@ if invMethod == "customSet" {
     header:not([class*="comment"]), [id*="header"], .header-wrap, .js-header-wrapper, div[class*="header-container"], nav, 
     [class*="navi"]:not([class*="item"]):not([class*="btn"]):not([class*="button"]):not([class*="navigation"]):not([id*="Container"]):not([class*="timeline"]), 
     div[class*="submenu"]:not([class*="footer"]):not([class*="Footer"]), div[class*="sub-menu"]:not([class*="footer"]):not([class*="Footer"]), 
-    div.navigation, .links-box, .Box-body, .commit-tease, [class*="menu-item"], ul[class*="menu"]:not([class*="footer"]):not([class*="Footer"]), [class*="pagehead"] {
+    div.navigation, .links-box, .Box-body, .commit-tease, [class*="menu-item"], ul[class*="menu"]:not([class*="footer"]):not([class*="Footer"]), [class*="pagehead"],
+    .pages-nav.content-block {
         background-color: rgba(0,0,0,0.5) !important;
         box-shadow: 0 0 5px #000 !important} 
     
@@ -232,12 +233,12 @@ if invMethod == "customSet" {
     i.radio-btn > input[type="radio"], i.check-box > input[type="checkbox"] {visibility: visible !important}    
 
     label.switch:not(.checked)::after, .switch-slider::before, span.slider::before, 
-    button[role="switch"][aria-checked="false"] > div::after {background-color: #555 !important}
+    button[role="switch"][aria-checked="false"] > div::after, .checkboxOff.switches::after  {background-color: #555 !important}
     label.switch:not(.checked)::before, span.slider, button[role="switch"] {background-color: bgColor !important}
-    span.slider {border: 1px solid #444}
+    span.slider, .checkdiv.switches {border: 1px solid #444}
         
     label.switch.checked::after, input[type="checkbox"]:checked + .switch-slider::before, 
-    input[type="checkbox"]:checked + .slider::before, button[role="switch"][aria-checked="true"] > div::after {background-color: linkColor !important}
+    input[type="checkbox"]:checked + .slider::before, button[role="switch"][aria-checked="true"] > div::after, .checkboxOn::after {background-color: linkColor !important}
     button[role="switch"] > div::after {border-radius: 1em !important}
 
     /* Tables */
@@ -267,7 +268,7 @@ if invMethod == "customSet" {
         
     li#ca-nstab-main, li#ca-talk, li#ca-view, 
     li#ca-edit, li#ca-history, li#ca-nstab-project, li#ca-viewsource, 
-    section.page-card.about, .u-backgroundGrayLightest {background: #222 !important}
+    section.page-card.about, .u-backgroundGrayLightest, .download.bar-table {background: #222 !important}
         
     li#ca-nstab-main.selected, li#ca-talk.selected, li#ca-view.selected, 
     li#ca-edit.selected, li#ca-history.selected, li#ca-nstab-project.selected,
@@ -278,8 +279,7 @@ if invMethod == "customSet" {
     li#ca-viewsource a{border-right: 1px solid #666 !important}
     .mw-parser-output .main-top-left {background: linear-gradient(to right, #000, transparent) !important}
         
-    .communitymailinglist a, #oh-menu-submit span, #oh-menu-join a,
-    .default .tv_content_alt, .u-backgroundTransparentWhiteDarkest {background: #333 !important; color: #ddd !important}
+    .communitymailinglist a, #oh-menu-submit span, #oh-menu-join a, .u-backgroundTransparentWhiteDarkest {background: #333 !important; color: #ddd !important}
     .communitymailinglist a:hover, #oh-menu-submit span:hover, #oh-menu-join a:hover {background: #444 !important; color: #fff !important}
     
     #disqus .load-comments, #simpleSearch, .vectorTabs {background: transparent !important; color: #ddd !important; border-color: #555 !important}
@@ -298,27 +298,25 @@ if invMethod == "customSet" {
     .ace_support.ace_constant {color: #0aa !important}
     .ace_comment {color: #aaa !important}
         
-    section.page-announcement-main .page-announcement-main-overlay {display: none !important}
-
     .CodeMirror, #columns {background-color: transparent !important}
         
     .note {background: #331}
-    
-    .default .tv_tab_alt.tv_selected, .default .tv_selected {background: #555 !important; border-color: #666 !important; color: #ddd !important}
         
-    .title, [id*="search"]:not([id*="btn"]):not([class*="btn"]):not([id*="search-submit-button"]):not([type="submit"]), .probox,
-    .default .tv_tab_alt.tv_selected:before, .default .tv_tab_alt.tv_selected:after, 
-    .default .tv_selected:before, .default .tv_selected:after {background: none !important; box-shadow: none !important}
-    
-    .probox input[type="search"], .rc-button.goog-inline-block, .mf_filecontainer a::after {filter: invert(80%) hue-rotate(180deg)}
+    .title, [id*="search"]:not([id*="btn"]):not([class*="btn"]):not([id*="search-submit-button"]):not([type="submit"]), 
+    .probox {background: none !important; box-shadow: none !important}
+        
+    .probox input[type="search"], .rc-button.goog-inline-block, .mf_filecontainer a::after, .pages-nav.nav-icon {filter: invert(80%) hue-rotate(180deg)}
 
     .nav-main-item a:hover, a[data-service="GitHub"]:hover {background: rgba(255,255,255,0.1) !important}  
-    .download.big-button:not(.red)::after, .post {background: #222 !important}
+    .download.big-button:not(.green)::after, .post {background: #222 !important}
+    .download.big-button:not(.green)::before {background: #333 !important}  
+    .download.big-button.green {border: 1px solid #555 !important}
+    .download.big-button.green:hover {border-color: #f00 !important} 
     
     .p-sectionLinks, .navbar-brand {background-color: rgba(0,0,0,0.8) !important}
         
     .contentRow-fader {background: linear-gradient(transparent, bgColor) !important}
-
+        
     .bz_comment_text span.quote, .bz_comment_text span.quote_wrapped, div.bz_comment_text pre {background: #444 !important; color: #fff !important}
         
     /*----- IMAGE CHANGES -----*/
