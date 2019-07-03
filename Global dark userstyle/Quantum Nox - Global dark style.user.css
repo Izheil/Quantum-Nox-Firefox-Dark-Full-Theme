@@ -2,7 +2,7 @@
 @name         Quantum nox - Global dark theme
 @description  Global dark style to use alongside Firefox full dark theme - Quantum nox.
 @namespace    https://github.com/Izheil/Quantum-Nox-Firefox-Dark-Full-Theme
-@version      2.2.14
+@version      2.2.16
 @author       Izheil
 @homepageURL  https://github.com/Izheil/Quantum-Nox-Firefox-Dark-Full-Theme/tree/master/Global%20dark%20userstyle
 @updateURL    https://raw.githubusercontent.com/Izheil/Quantum-Nox-Firefox-Dark-Full-Theme/master/Global%20dark%20userstyle/Quantum%20Nox%20-%20Global%20dark%20style.user.css
@@ -40,7 +40,7 @@ if invMethod == "customSet" {
     
     /* General elements background color */
     html, iframe, embed, footer:not([class*="comment"]), [id*="footer"] {background: darkBg bgColor !important}
-    body, .body-content, .conversation-list-heading .inner, .content-block, .page-body {
+    body, html body, .body-content, .conversation-list-heading .inner, .content-block, .page-body {
         background-image: none !important;
         background-color: transparent !important;
         color: #bbb !important}
@@ -160,8 +160,8 @@ if invMethod == "customSet" {
         box-shadow: none !important}
 
     [class*="dialog"], [class*="light"], [class*="white"]:not([class*="whitespace"]), div.Popover-message, ul.sub, div[role="menu"], .options, .vue-treeselect__menu, 
-    .ListResult, div[class*="menu"], .menu ul ul li a, .menuparent a, .dropdown li ul li a, #description_popup, ul[role="listbox"], ul[id*="contextmenu"]
-    {background-color: rgba(0,0,0,0.8) !important}
+    .ListResult, div[class*="menu"], .menu ul ul li a, .menuparent a, .dropdown li ul li a, #description_popup, ul[role="listbox"], ul[id*="contextmenu"], 
+    .qtip-pos-tl.qtip-fixed, .qtip-content {background-color: rgba(0,0,0,0.8) !important}
 
     div[class*="btn"]:not(.dl-btn-labelWrap):not(.dl-btn-cont):not(.btn-set):not(div[class*="btns"]):not(.column):not([class*="toolbar"]):hover, input[type="file"]:hover, input[type="color"]:hover, div[class*="header"] li:not([class*="btn"]) a:not(img):not(svg):hover, #sidenav a:hover, 
     input[type="button"]:hover, a.social-count:hover, a[class*="button"]:hover, a[class*="btn"]:hover, summary.btn:hover, clipboard-copy:hover,
