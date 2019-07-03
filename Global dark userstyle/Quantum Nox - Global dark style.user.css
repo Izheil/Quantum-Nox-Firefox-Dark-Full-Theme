@@ -294,7 +294,7 @@ if invMethod == "customSet" {
     span.cm-property, .ace_constant:not(.ace_numeric) {color: #ff6666 !important}
     .ace_constant.ace_numeric {color: #85f !important}
     .ace_keyword {color: #d80 !important}
-    .ace_paren .ace_rparen {color: #fff !important}
+    .ace_paren .ace_rparen, .jtip-top .jt-info.jt-imdb {color: #fff !important}
     .ace_support.ace_constant {color: #0aa !important}
     .ace_comment {color: #aaa !important}
         
