@@ -1,6 +1,6 @@
 /* You can find an updated version here: https://github.com/Izheil/Quantum-Nox-Firefox-Dark-Full-Theme */
 /* Made by Izheil */
-/* Last updated: 08/05/2019 */
+/* Last updated: 11/07/2019 */
 
 /* This part imports the Addons file if there is one, so that you don't have to edit the dynamic URL
 from the addons rules every time we update anything here */
@@ -26,15 +26,18 @@ To use, instead of "none;", type: url("URL-OF-THE-IMAGE-GOES-HERE"); <- Don't fo
 
 /* These change some Firefox pages colors (Mainly used for the 404 error page) */
 	--in-content-page-color: #ccc !important;
-	--in-content-page-background: #222 !important;
+	--in-content-page-background: #202020 !important;
 	--in-content-text-color: #ccc !important;
 	--in-content-box-background: #444 !important;
 	--in-content-box-background-hover: #555 !important;
 	--in-content-box-background-active: #333 !important;
 	--in-content-box-border-color: #777 !important;
+	--in-content-button-background: #555 !important;
+	--in-content-button-background-hover: #333 !important;
 	--in-content-primary-button-background: #05a !important;
 	--in-content-primary-button-background-hover: #0040aa !important;
 	--in-content-primary-button-background-active: #002070 !important;
+	--in-content-border-color: #666 !important;
 
 	/* These change the border highlight of some search boxes on about: pages */
 	--blue-50: #06d !important;
@@ -50,6 +53,9 @@ To use, instead of "none;", type: url("URL-OF-THE-IMAGE-GOES-HERE"); <- Don't fo
 	/* Variable to change the about:addons page extension names color */
 	--addons-addon-name: #38f;
 	--addons-addon-name-active: #0ef;
+
+	/* These change the description text color of about:addons */
+	--in-content-deemphasized-text: #aaa !important;
 
 	/* Variables to change all link colors on most pages */
 	--in-content-link-color: #09f !important;
@@ -72,6 +78,7 @@ To use, instead of "none;", type: url("URL-OF-THE-IMAGE-GOES-HERE"); <- Don't fo
 
 	/* This one changes the border of all boxes with a blue border focus effect */
 	--in-content-border-focus: #2066dd !important;
+	--card-shadow-hover: 0 0 0 2px var(--in-content-border-focus) !important;
 
 	/* This changes the highlight background color on selection text */
 	--highlight-on-selection-bg: #0565af;
@@ -1087,7 +1094,6 @@ td {background: #555 !important}
 
 /* Sidebar */
 :root {
-	--in-content-page-background: #202020 !important;
 	--in-content-category-text: #fff !important;
 	--in-content-text-color: #fff !important;
 	--in-content-selected-text: #000 !important;
@@ -1097,7 +1103,7 @@ td {background: #555 !important}
 
 /* Main Content */
 .main-content {
- 	background-color: #202020 !important;
+ 	background-color: var(--in-content-page-background) !important;
     color: #AAA !important}
 
 .groupbox-title, 
@@ -1133,17 +1139,17 @@ menulist[sizetopopup="pref"] .menulist-label-box {background: transparent !impor
 	color: #0FF !important}
 
 /* Search bar images on "search" category */
-image.searchBarImage {filter: invert(92%) hue-rotate(180deg)}
+image.searchBarImage {filter: contrast(150%)}
 
 /* This changes some of the buttons color */
-.accessory-button, button:not(#strictArrow):not(.dialogClose) {
+.accessory-button, button:not([data-l10n-id="content-blocking-expand-section"]):not(.dialogClose) {
   -moz-appearance: none !important;
   border-radius: 3px !important;
   background: var(--button-background) !important;
   color: #ddd !important;
   border: 1px solid var(--button-border) !important}
 
-.accessory-button:hover, button:not(#strictArrow):not(.dialogClose):hover {
+.accessory-button:hover, button:not([data-l10n-id="content-blocking-expand-section"]):not(.dialogClose):hover {
 	background: var(--button-background-hover) !important;
     color: #FFF !important}
 
@@ -1196,92 +1202,11 @@ menulist:hover {background: rgba(255,255,255,0.3) !important; color: #fff !impor
 	background: #303030 !important;
     color: #FFF !important}
 
-/* These change the addons background colors */
-.card {
-	max-width: 800px !important}
-
-.addon .description {color: #aaa !important}
-
-.addon:hover {
-	background-color: #383838 !important;
-	box-shadow: none !important}
-
-.addon:hover .description {color: #ccc !important}
-
-.content-inner-container .basicinfo-container {color: var(--addons-addon-name) !important}
-.addon.addon-view[selected="true"] .basicinfo-container {color: var(--addons-addon-name-active) !important}
-
-.addon.addon-view[active="false"] {opacity: 0.7}
-.addon.addon-view[active="false"] .basicinfo-container, 
-.addon.addon-view[active="false"] .description {color: #888 !important}
-
-.addon.addon-view[selected="true"] .description {color: #FFF !important}
-
-/* This changes the background highlight color of uninstalled extensions */
-.addon-view[pending="disable"], .addon-view[pending="uninstall"] {
-    --view-highlight-color: #111 !important}
-
-/* These change the selectors on the plugins page */
-.addon-control.state.no-auto-hide {background-color: #555 !important}
-.addon-control.state.no-auto-hide:hover {background-color: #444 !important}
-.addon-control.state.no-auto-hide[open="true"] {background-color: #303030 !important}
-
-.menulist-label-box {background: transparent !important}
-
 /* Should be self explanatory... but this is the alert message that goes over the addons list */
 .alert, .message-bar {
 	border: 1px solid #444 !important;
 	background-color: rgba(255,255,255,0.10) !important;
 	color: #Fff !important}
-
-/* Description of the addons/themes */
-.detail-view-container {color: #ccc !important}
-
-#detail-contributions {
-	background-color: rgba(0,0,0,0.15) !important; 
-	border: 1px solid #444 !important}
-
-#detail-rows * {text-shadow: none !important}
-
-#detail-rows .detail-row-label {color: #fff !important}
-
-#detail-contrib-description {color: #aaa !important}
-
-/* Change this to #fff for addon settings on about:addons if you can't read their text */
-#addon-options {background-color: #444 !important}
-}
-
-/* This is still in the addons page, it's the "discover" page thing */
-@-moz-document url-prefix(https://addons-discovery.cdn.mozilla.net), url-prefix(https://discovery.addons.mozilla.org) {
-.disco-content h1, .content h2, .DiscoPane-header-intro h1 {color: #FFF !important}
-
-.disco-content p, .content p, .content blockquote, .addon .heading span:not(a),
-.DiscoPane-header-intro p {color: #AAA !important}
-
-#react-view {background-color: #202020 !important}
-
-.AMInstallButton-button{
-	background: #3070f0 !important;
-	color: #ddd !important}
-
-.AMInstallButton-button:hover{
-	background: #1040A0 !important;
-	color: #fff !important}
-
-.AMInstallButton-button--uninstall {
-	background: #aa2020 !important;
-	color: #ddd !important}
-
-.AMInstallButton-button--uninstall:hover {
-	background: #802020 !important;
-	color: #fff !important}
-
-.addon.theme, .addon.extension, .addon.theme {background-color: #444 !important}
-
-.heading a, .Footer a {color: #09f !important}
-.heading a:visited {color: #0070aa !important}
-.heading a:hover, .Footer a:hover {color: #0ff !important}
-.heading a:active {color: #0050dd !important}
 }
 
 /*------ HEALTHREPORT PAGE (about:healthreport) ------*/
