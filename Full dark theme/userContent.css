@@ -1,6 +1,6 @@
 /* You can find an updated version here: https://github.com/Izheil/Quantum-Nox-Firefox-Dark-Full-Theme */
 /* Made by Izheil */
-/* Last updated: 11/07/2019 */
+/* Last updated: 11/07/2019 22:53 */
 
 /* This part imports the Addons file if there is one, so that you don't have to edit the dynamic URL
 from the addons rules every time we update anything here */
@@ -66,6 +66,7 @@ To use, instead of "none;", type: url("URL-OF-THE-IMAGE-GOES-HERE"); <- Don't fo
 	/* These change the selected categories color on sidebars on about: pages*/
 	--in-content-category-text-selected: #0a84ff !important;
 	--in-content-category-text-selected-active: #0060df !important;
+	--in-content-border-highlight: var(--in-content-category-text-selected) !important;
 
 	/* These change some colors on about:home */
 	--home-text: #50AAFF;
@@ -292,12 +293,36 @@ html {
 }
 
 /*------ HOME/NEWTAB PAGE (About:home, about:newtab) ------*/ 
-@-moz-document url-prefix(about:home), url-prefix(about:newtab) {
-
+@-moz-document url-prefix(about:home), url-prefix(about:newtab), url-prefix(about:welcome) {
 body { 
  	background-color: #202020 !important;
     color: var(--home-text) !important;
     overflow: auto !important}
+
+/* About:welcome related dialogs */
+input[data-l10n-id="onboarding-join-form-email"] {color: #ddd !important}
+.modalOverlayOuter {background: rgba(0,0,0,0.7) !important}
+
+.trailheadCards, .trailheadCard {background: rgba(0,0,0,0.5) !important}
+.trailheadCards h1 {color: #fff !important; font-weight: bold !important}
+.trailheadCard h3 {color: #fff !important}
+.trailheadCard p {color: #ccc !important}
+
+.trailheadCard button {
+	background-color: #444 !important;
+	color: #ddd !important}
+
+.trailheadCard button:hover {
+	background-color: #666 !important;
+	color: #fff !important}
+
+.trailheadCard button:active {
+	background-color: #222 !important;
+	color: #fff !important}
+
+.icon-dismiss {fill: #ddd !important}
+
+.icon-dismiss:hover {background-color: rgba(255,255,255,0.2) !important}
 
 /* Context menus of the web area */
 .context-menu {
@@ -541,6 +566,11 @@ body {
 a.button {color: #fff !important}
 }
 
+/*------ PAGES UNDER CONSTRUCTION ------*/
+@-moz-document url(about:library) {
+.under-construction {filter: invert(89.5%) hue-rotate(190deg)}
+}
+
 /*------ COMMON ATTRIBUTES ON MOST ABOUT PAGES ------*/
 @-moz-document url(about:about), url(about:), 
 url(https://www.mozilla.org/credits/), url-prefix(about:cache),
@@ -550,12 +580,16 @@ url-prefix(about:profiles), url(about:crashes), url(about:license),
 url-prefix(about:memory), url-prefix(about:networking), url(about:performance),
 url(about:rights), url(about:robots), url-prefix(about:studies), 
 url-prefix(about:telemetry), url(about:url-classifier), url(about:webrtc),
-url(about:devtools), url(about:serviceworkers) {
+url(about:devtools), url(about:serviceworkers), url(about:library) {
 
 p, pre, li, label {color: #AAA !important}
 h1 {color: #1C7BFF !important}
 h2 {color: #ddd !important}
 h3 {color: #ddd !important}
+
+a, a:link {color: var(--in-content-link-color) !important}
+a:hover {color: var(--in-content-link-color-hover) !important}
+a:active {color: var(--in-content-link-color-active) !important}
 
 button {
   -moz-appearance: none !important;
@@ -644,15 +678,17 @@ url-prefix(about:buildconfig), url-prefix(about:networking),
 url-prefix(about:telemetry) {
 
 th {background: #333 !important; 
-	color: #fff !important;
-	outline: 1px solid #000 !important;
-	padding-left: 4px !important}
+	color: #fff !important}
 
 td {background: #555 !important; 
-	color: #ddd !important;
-	outline: 1px solid #000 !important;
-	border: none !important;
-	padding-left: 4px !important}}
+	color: #ddd !important}
+
+td, th {
+	border: 2px solid #000 !important;
+	padding-left: 4px !important}
+
+table {border-collapse: collapse}
+}
 
 /*------ BACKGROUND OF MOST ABOUT PAGES  ------*/
 @-moz-document url(about:), url(about:about), url(https://www.mozilla.org/credits/),
@@ -975,6 +1011,8 @@ treechildren::-moz-tree-row(selected){
 
 #categories button.selected {color: var(--in-content-category-text-selected) !important}
 
+.addons-tip-icon {fill: #ddd !important}
+
 /* This affects the main content part */
 .target-list .addon-target-container {
 	background-color: #444 !important; 
@@ -990,15 +1028,13 @@ treechildren::-moz-tree-row(selected){
     color: #FFF !important;
 	text-decoration: none !important}
 
-.addons-tip-icon {filter: invert(100%) !important}
-
 /* These are the alert message that appears on the "workers" category, and the status notice */
 .service-worker-multi-process {
 	background-color: #a44 !important; 
 	color: #ddd !important;
 	border-radius: 6px !important}
 
-span.target-status {background-color: #151515 !important}
+span.target-status {background-color: #151515 !important; color: #ddd !important}
 }
 
 /*------ CONFIGURATION PAGE (about:config) ------*/
@@ -1049,8 +1085,6 @@ button:not(.primary):hover {
 	background-color: #101010 !important;
 	color: #FA0 !important}
 
-.notice a:link {color: #4080CC !important}
-
 dl {color: #ddd !important}}
 
 /*------ MEMORY LOAD PAGE (about:memory) ------*/
@@ -1075,14 +1109,19 @@ url(about:performance), url(about:url-classifier) {
 
 :root {
 	--in-content-table-header-background: #333 !important;
-	--aboutSupport-table-background: #555 !important;
-	--aboutProfiles-table-background: #555 !important;
-	--in-content-link-color-hover: #0FF !important;
 	--in-content-box-border-color: #aaa !important;
 	--in-content-table-border-dark-color: #000 !important;
 	--in-content-border-color: #000 !important}
 
-td {background: #555 !important}
+td {background: #444 !important}
+
+#dispatch-thead td {color: #fff !important}
+
+tr[data-l10n-id="item"]:not(:hover):not([selected="true"]) td {background-color: #333 !important}
+tr[data-l10n-id="item"]:nth-child(even):not(:hover):not([selected="true"]) td {background-color: #282828 !important}
+tr[data-l10n-id="item"]:not([selected="true"]) td {color: #aaa !important}
+
+tr[data-l10n-id="item"][selected="true"] td {background: #555 !important}
 
 .page-subtitle {color: #ddd !important}
 
@@ -1090,13 +1129,14 @@ td {background: #555 !important}
 }
 
 /*------ SETTINGS/ADDONS COMMON PART (about:preferences, about:addons) ------*/
-@-moz-document url-prefix(about:preferences), url-prefix(about:addons){
+@-moz-document url-prefix(about:preferences), url-prefix(about:addons), url-prefix(about:policies){
 
 /* Sidebar */
 :root {
 	--in-content-category-text: #fff !important;
 	--in-content-text-color: #fff !important;
 	--in-content-selected-text: #000 !important;
+	--in-content-box-background-even: rgba(0,0,0,0.1) !important;
 	--in-content-item-selected: var(--in-content-category-text-selected) !important;
 	--in-content-item-hover: rgba(0,90,170,0.25) !important;
 	background-color: #303030 !important}
@@ -1110,6 +1150,18 @@ td {background: #555 !important}
 
 /* These change the heading text colors to white */
 #isDefaultLabel, #updateBox, #heading-name, #legacy-extensions-heading {color: #FFF !important}
+
+/* About:policies page */
+#sectionTitle {color: #fff !important}
+
+table {border-collapse: collapse}
+#documentation tbody, #active tbody {background: #444 !important}
+#documentation thead, #active thead {background: #333 !important; color: #eee !important}
+#documentation td.schema {background: rgba(255,255,255,0.1) !important; color: #ddd !important}
+#documentation td, #active td, #documentation th, #active th {border: 2px solid #000 !important}
+#documentation th {border-bottom: none !important}
+#documentation td:nth-child(odd) {background: rgba(0,0,0,.2) !important; color: #ddd !important}
+#active td:nth-child(3n) {color: #ddd !important; font-weight: bold}
 
 /* Search Panel, Dialog boxes and inputs in general */
 #engineList, .dialogBox > .groupbox-title, #browserHomePage,
