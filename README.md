@@ -1,7 +1,7 @@
 <img src="https://i.imgur.com/F7qziom.png" title="Quantum Nox"/>
 
 <h3>Previously known as "Firefox 57+ full dark theme with scrollbars and multirow tabs", I decided to give it an actual name instead of leaving it as just a description.</h3>
-<pre>Since Firefox 69 (current nightly), you have to enable <code>toolkit.legacyUserProfileCustomizations.stylesheets</code> 
+<pre>Since Firefox 69, you have to enable <code>toolkit.legacyUserProfileCustomizations.stylesheets</code> 
 in <code>about:config</code> for userchrome and usercontent to be loaded at all as per <a href="https://bugzilla.mozilla.org/show_bug.cgi?id=1541233#c35">bug #1541233</a>.</pre>
 
 <p>This theme is mainly intended for the stable release of Firefox (<b>This means that while it will most probably work with nightly and ESR for the most part, it may have less support for those versions</b>).</p>
