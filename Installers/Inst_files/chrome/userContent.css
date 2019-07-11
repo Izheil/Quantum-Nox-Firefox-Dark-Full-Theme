@@ -61,7 +61,7 @@ To use, instead of "none;", type: url("URL-OF-THE-IMAGE-GOES-HERE"); <- Don't fo
 	--in-content-link-color: #09f !important;
   	--in-content-link-color-hover: #0ff !important;
   	--in-content-link-color-active: #0070aa !important;
-  	--in-content-link-color-visited: #0050aa !important;
+  	--in-content-link-color-visited: #007acc !important;
 	
 	/* These change the selected categories color on sidebars on about: pages*/
 	--in-content-category-text-selected: #0a84ff !important;
@@ -262,6 +262,9 @@ only the images */
 #startPrivateBrowsing:hover {
   background: #333 !important;
   color: #fff !important}
+
+/* Undo message boxes */
+message-bar:not(.alert) .container, message-bar:not(.alert) {background: #444 !important}
 
 /*------ LOG BROWSING PAGE (about:sync-log) ------*/
 @-moz-document url-prefix(about:sync-log) {
