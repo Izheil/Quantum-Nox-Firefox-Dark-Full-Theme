@@ -1,6 +1,6 @@
 /* You can find an updated version here: https://github.com/Izheil/Quantum-Nox-Firefox-Dark-Full-Theme */
 /* Made by Izheil */
-/* Last updated: 03/06/2019 */
+/* Last updated: 13/07/2019 */
 
 /* DO NOT DELETE THIS LINE */
 @namespace url("http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul");
@@ -24,7 +24,7 @@ without this change) */
 
   /* Url and search bars */
   --url-and-searchbar-color: #ccc;
-  --urlbar-separator-color: #5F6670;
+  --urlbar-popup-url-color: #5ad !important;
   --toolbar-field-focus-border-color: #444 !important;
   --lwt-toolbar-field-background-color: rgb(71,71,73) !important}
 
@@ -36,9 +36,6 @@ without this change) */
 /* This changes the background color of the browser toolbar for those using the default dark theme to a static dark color. 
 You may need to change the --toolbar-bgcolor in the rules above for the tab contrast color to be less dark if using this */
 #main-window {background-color: #282829 !important}
-
-/* This solves the white flashing that happens on page pre-loading */
-#tabbrowser-tabpanels {background-color: #222 !important}
 
 /* Tab line color. Using -moz-win-accentcolor as the color value changes it to the current window color (on Windows)
 but is disabled by default in this theme (Disable for the default tab line color). *//*
