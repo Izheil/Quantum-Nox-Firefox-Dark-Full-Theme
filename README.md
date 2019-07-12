@@ -13,14 +13,14 @@ basic css or <a href="https://www.w3schools.com/colors/colors_picker.asp">color 
 <br />
 This problem doesn't happen if you use a code editor such as notepad++, atom, sublime text...</h4>
 
-<h3>Last update: <b>11/07/2019</b> (2nd update)</h3>
+<h3>Last update: <b>13/07/2019</b></h3>
 <p>Files updated:</p>
 <ul>
-	<li><b>Usercontent.css</b>: Fixed some issues on most <code>about:</code> pages.</li>
+	<li><b>Userchrome.css</b>: Now the links inside the autocomplete box inside the urlbar should display the correct color again.</li>
 </ul>
-<h3>Pre-Last update: <b>07/07/2019</b></h3>
+<h3>Pre-Last update: <b>11/07/2019</b></h3>
 <ul>
-	<li><b>Userchrome.xml</b>: Updated them to the lastest released version from Sporif, for compatibility with FF69.a2 (current nightly).</li>
+	<li><b>Usercontent.css</b>: Fixed some issues on most <code>about:</code> pages.</li>
 </ul>
 
 <code>
