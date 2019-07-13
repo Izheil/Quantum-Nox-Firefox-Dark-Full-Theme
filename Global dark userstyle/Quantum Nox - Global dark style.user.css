@@ -159,7 +159,7 @@ if invMethod == "customSet" {
         color: #ddd !important;
         box-shadow: none !important}
 
-    [class*="dialog"], [class*="light"], [class*="white"]:not([class*="whitespace"]), div.Popover-message, ul.sub, div[role="menu"], .options, .vue-treeselect__menu, 
+    [class*="dialog"], [class*="light"], [class*="white"]:not([class*="whitespace"]), [class*="bg-gray"], div.Popover-message, ul.sub, div[role="menu"], .options, .vue-treeselect__menu, 
     .ListResult, div[class*="menu"], .menu ul ul li a, .menuparent a, .dropdown li ul li a, #description_popup, ul[role="listbox"], ul[id*="contextmenu"], 
     .qtip-pos-tl.qtip-fixed, .qtip-content, .tooltipster-content {background-color: rgba(0,0,0,0.8) !important}
 
