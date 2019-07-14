@@ -2,7 +2,7 @@
 @name         Quantum nox - Global dark theme
 @description  Global dark style to use alongside Firefox full dark theme - Quantum nox.
 @namespace    https://github.com/Izheil/Quantum-Nox-Firefox-Dark-Full-Theme
-@version      2.2.18
+@version      2.3.0
 @author       Izheil
 @homepageURL  https://github.com/Izheil/Quantum-Nox-Firefox-Dark-Full-Theme/tree/master/Global%20dark%20userstyle
 @updateURL    https://raw.githubusercontent.com/Izheil/Quantum-Nox-Firefox-Dark-Full-Theme/master/Global%20dark%20userstyle/Quantum%20Nox%20-%20Global%20dark%20style.user.css
@@ -54,7 +54,7 @@ if invMethod == "customSet" {
         
     ::before, ::after {background-color: transparent !important; border: #333 !important}
         
-    [class*="main"]:not([class*="nav"]):not([id*="nav"]):not([class*="header"]):not([id*="header"]):not([class*="overlay"]), 
+    [class*="main"]:not([class*="nav"]):not([id*="nav"]):not([class*="header"]):not([id*="header"]):not([class*="overlay"]):not([class*="remain"]), 
     #main:not([class*="nav"]):not([id*="nav"]):not([class*="header"]):not([id*="header"]),
     [class*="Main"]:not([class*="nav"]):not([id*="nav"]):not([class*="header"]):not([id*="header"]):not([class*="overlay"]),
     #Main:not([class*="nav"]):not([id*="nav"]):not([class*="header"]):not([id*="header"]), 
@@ -69,7 +69,7 @@ if invMethod == "customSet" {
         
     header:not([class*="comment"]), [id*="header"], .header-wrap, .js-header-wrapper, div[class*="header-container"], nav, 
     [class*="navi"]:not([class*="item"]):not([class*="btn"]):not([class*="button"]):not([class*="navigation"]):not([id*="Container"]):not([class*="timeline"]), 
-    div[class*="submenu"]:not([class*="footer"]):not([class*="Footer"]), div[class*="sub-menu"]:not([class*="footer"]):not([class*="Footer"]), 
+    div[class*="submenu"]:not([class*="footer"]):not([class*="Footer"]):not([role="button"]), div[class*="sub-menu"]:not([class*="footer"]):not([class*="Footer"]), 
     div.navigation, .links-box, .Box-body, .commit-tease, [class*="menu-item"], ul[class*="menu"]:not([class*="footer"]):not([class*="Footer"]), [class*="pagehead"],
     .pages-nav.content-block {
         background-color: rgba(0,0,0,0.5) !important;
@@ -80,7 +80,7 @@ if invMethod == "customSet" {
     div[class*="dropdown"]:not([class*="toggle"]):not([class*="has-children"]):not([class*="wrapper"]):not([role="menuitem"]):not([class*="header"]), 
     div[class*="drop-down"]:not([class*="wrapper"]):not([role="menuitem"]):not([class*="header"]), .Dropdown-menu,
     li[class*="dropdown"]:not([class*="toggle"]):not([class*="has-children"]):not([class*="wrapper"]):not([role="menuitem"]):not([class*="header"]):not(.user-menu), 
-    li[class*="drop-down"]:not([class*="wrapper"]):not([role="menuitem"]):not([class*="header"]):not(.user-menu), [class*="popup"], [class*="popover"]:not([class*="link"]), 
+    li[class*="drop-down"]:not([class*="wrapper"]):not([role="menuitem"]):not([class*="header"]):not(.user-menu), [class*="popup"]:not(.vjs-menu-button-popup), [class*="popover"]:not([class*="link"]), 
     [class*="widget-content"], [class*="notice"], div[role="navigation"], div.nav ul#menu li ul {background: rgba(0,0,0,0.5) !important}
         
     pre, code, .w3-code, blockquote, .ace_gutter-layer, 
@@ -160,10 +160,11 @@ if invMethod == "customSet" {
         box-shadow: none !important}
 
     [class*="dialog"], [class*="light"], [class*="white"]:not([class*="whitespace"]), [class*="bg-gray"], div.Popover-message, ul.sub, div[role="menu"], .options, .vue-treeselect__menu, 
-    .ListResult, div[class*="menu"], .menu ul ul li a, .menuparent a, .dropdown li ul li a, #description_popup, ul[role="listbox"], ul[id*="contextmenu"], 
+    .ListResult, div[class*="menu"]:not([role="button"]):not(.vjs-control), .menu ul ul li a, .menuparent a, .dropdown li ul li a, #description_popup, ul[role="listbox"], ul[id*="contextmenu"], 
     .qtip-pos-tl.qtip-fixed, .qtip-content, .tooltipster-content {background-color: rgba(0,0,0,0.8) !important}
 
-    div[class*="btn"]:not(.dl-btn-labelWrap):not(.dl-btn-cont):not(.btn-set):not(div[class*="btns"]):not(.column):not([class*="toolbar"]):hover, input[type="file"]:hover, input[type="color"]:hover, div[class*="header"] li:not([class*="btn"]) a:not(img):not(svg):hover, #sidenav a:hover, 
+    div[class*="btn"]:not(.dl-btn-labelWrap):not(.dl-btn-cont):not(.btn-set):not(div[class*="btns"]):not(.column):not([class*="toolbar"]):hover, input[type="file"]:hover, 
+    input[type="color"]:hover, div[class*="header"] li:not([class*="btn"]) a:not(img):not(svg):hover, #sidenav a:hover, 
     input[type="button"]:hover, a.social-count:hover, a[class*="button"]:hover, a[class*="btn"]:hover, summary.btn:hover, clipboard-copy:hover,
     .navigation-link:hover, div[class*="submenu"]:not([class*="footer"]):not([class*="Footer"]) a:hover, ul[class*="menu"]:not([class*="footer"]):not([class*="Footer"]) li:hover, .btn:hover, 
     div[class*="button"]:not([class*="buttons"]) a:hover, .pageNav-page:hover, .pageNav-jump:hover, .dropdown-menu a[role="menuitem"]:hover, 
@@ -172,7 +173,7 @@ if invMethod == "customSet" {
         color: #fff !important}
 
     .anchor-list a.hoverable, div[class*="buttons"] a[onclick], [aria-selected="true"], 
-    button:not([class*="menu"]):not([id*="menu"]):not([role="switch"]):not([class*="ytp"]):not([class*="play"]):not([class*="mute"]):not([class*="fullscreen"]):not(.connect__button):not(.btn-link):not(.rc-button):not([aria-label="Play"]):not([aria-label="Mute"]):not([aria-label="Fullscreen"]), 
+    button:not([class*="menu"]):not([id*="menu"]):not([role="switch"]):not([class*="ytp"]):not([class*="play"]):not([class*="mute"]):not([class*="fullscreen"]):not(.connect__button):not(.btn-link):not(.rc-button):not([aria-label="Play"]):not([aria-label="Mute"]):not([aria-label="Fullscreen"]):not(.vjs-control), 
     input[type="submit"]:not(#searchbtn):not(#search-submit-button):not(#main-search-submit-button):not(#searchsubmit):not(.searchsubmit), 
     [class*="menu-item"]:not([class*="footer"]):not([class*="Footer"]):hover, button#view-menu-btn, a.add-fav, #action-menu-btn, a.Button {
         -moz-appearance: none !important;
@@ -183,7 +184,7 @@ if invMethod == "customSet" {
         
     .anchor-list a.hoverable:hover, a[data-toggle="dropdown"]:not([class*="wrapper"]):not([role="menuitem"]):hover, div[class*="buttons"] a[onclick]:hover, 
     div[class*="dropdown"] a:hover, div[class*="drop-down"] a:hover, 
-    button:not([class*="menu"]):not([id*="menu"]):not([role="switch"]):not([class*="play"]):not([class*="mute"]):not([class*="fullscreen"]):not(.connect__button):not(.btn-link):not(.rc-button):not([aria-label="Play"]):not([aria-label="Mute"]):not([aria-label="Fullscreen"]):hover, 
+    button:not([class*="menu"]):not([id*="menu"]):not([role="switch"]):not([class*="play"]):not([class*="mute"]):not([class*="fullscreen"]):not(.connect__button):not(.btn-link):not(.rc-button):not([aria-label="Play"]):not([aria-label="Mute"]):not([aria-label="Fullscreen"]):not(.vjs-control):hover, 
     input[type="submit"]:not(#searchbtn):not(#search-submit-button):not(#main-search-submit-button):not(#searchsubmit):not(.searchsubmit):hover, 
     span[role="button"]:hover, button#view-menu-btn:hover, a.add-fav:hover, #action-menu-btn:hover, a.Button:hover {
         background: #444 !important; 
@@ -264,8 +265,44 @@ if invMethod == "customSet" {
     select:hover, [role="combobox"]:hover {background-color: #222 !important}
         
     /*----- MISC PAGE FIXES -----*/
-    #mw-head {background: #151515 !important}
+     
+    /* Disqus */
+    #disqus .load-comments, #simpleSearch, .vectorTabs {background: transparent !important; color: #ddd !important; border-color: #555 !important}
+    #disqus .load-comments:hover, .ace_selection {background: rgba(255,255,255,0.1) !important; color: #fff !important}
+    #conversation [class*="nav"], .grey-angle-bg, .grey-graident, .light-grey-gradient,
+    .bottom-menu.body {background: transparent !important}
+          
+    /* Code editors */
+    span.cm-tag, .ace-cobalt .ace_meta.ace_tag {color:  #d55d5d !important}
+    span.cm-tag.cm-bracket, .ace_entity, .ace_support.ace_function, .ace_support.ace_type {color:  #4CAF50 !important}
+    span.cm-string, .ace_string {color: #9999ff !important}
+    span.cm-variable, span.cm-def, .ace_variable {color: #dd0 !important}
+    span.cm-property, .ace_constant:not(.ace_numeric) {color: #ff6666 !important}
+    .ace_constant.ace_numeric {color: #85f !important}
+    .ace_keyword {color: #d80 !important}
+    .ace_paren .ace_rparen, .jtip-top .jt-info.jt-imdb {color: #fff !important}
+    .ace_support.ace_constant {color: #0aa !important}
+    .ace_comment {color: #aaa !important}
         
+    .CodeMirror, #columns {background-color: transparent !important}
+
+    /* Mega */ 
+    .download.big-button:not(.green)::after, .post {background: #222 !important}
+    .download.big-button:not(.green)::before {background: #333 !important}  
+    .download.big-button.green {border: 1px solid #555 !important}
+    .download.big-button.green:hover {border-color: #f00 !important} 
+    
+     /* Video player buttons */
+    .jw-progress, .vjs-load-progress, .vjs-play-progress, .vjs-play-progress::before, .vjs-volume-level, .video-time-bar
+    .video-time-bar::before {background-color: #fff !important}
+    .jw-buffer, .jw-rail, .vjs-progress-holder::before, .video-progress-bar, .vjs-progress-holder, 
+    .vjs-load-progress {background-color: rgba(255,255,255,0.3) !important}  
+    .jw-icon-settings {background: transparent !important}
+    
+    .vjs-control-bar {background: rgba(0,0,0,0.7) !important}
+        
+    /* Wikis */
+    #mw-head {background: #151515 !important}
     li#ca-nstab-main, li#ca-talk, li#ca-view, 
     li#ca-edit, li#ca-history, li#ca-nstab-project, li#ca-viewsource, 
     section.page-card.about, .u-backgroundGrayLightest, .download.bar-table {background: #222 !important}
@@ -279,40 +316,18 @@ if invMethod == "customSet" {
     li#ca-viewsource a{border-right: 1px solid #666 !important}
     .mw-parser-output .main-top-left {background: linear-gradient(to right, #000, transparent) !important}
         
+    /* Other */
+        
     .communitymailinglist a, #oh-menu-submit span, #oh-menu-join a, .u-backgroundTransparentWhiteDarkest {background: #333 !important; color: #ddd !important}
     .communitymailinglist a:hover, #oh-menu-submit span:hover, #oh-menu-join a:hover {background: #444 !important; color: #fff !important}
-    
-    #disqus .load-comments, #simpleSearch, .vectorTabs {background: transparent !important; color: #ddd !important; border-color: #555 !important}
-    #disqus .load-comments:hover, .ace_selection {background: rgba(255,255,255,0.1) !important; color: #fff !important}
-    #conversation [class*="nav"], .grey-angle-bg, .grey-graident, .light-grey-gradient,
-    .bottom-menu.body {background: transparent !important}
-        
-    span.cm-tag, .ace-cobalt .ace_meta.ace_tag {color:  #d55d5d !important}
-    span.cm-tag.cm-bracket, .ace_entity, .ace_support.ace_function, .ace_support.ace_type {color:  #4CAF50 !important}
-    span.cm-string, .ace_string {color: #9999ff !important}
-    span.cm-variable, span.cm-def, .ace_variable {color: #dd0 !important}
-    span.cm-property, .ace_constant:not(.ace_numeric) {color: #ff6666 !important}
-    .ace_constant.ace_numeric {color: #85f !important}
-    .ace_keyword {color: #d80 !important}
-    .ace_paren .ace_rparen, .jtip-top .jt-info.jt-imdb {color: #fff !important}
-    .ace_support.ace_constant {color: #0aa !important}
-    .ace_comment {color: #aaa !important}
-        
-    .CodeMirror, #columns {background-color: transparent !important}
-        
+
+    .nav-main-item a:hover, a[data-service="GitHub"]:hover {background: rgba(255,255,255,0.1) !important} 
     .note {background: #331}
         
-    .title, [id*="search"]:not([id*="btn"]):not([class*="btn"]):not([id*="search-submit-button"]):not([type="submit"]), 
-    .probox {background: none !important; box-shadow: none !important}
+    .title, [id*="search"]:not([id*="btn"]):not([class*="btn"]):not([id*="search-submit-button"]):not([type="submit"]), .probox {background: none !important; box-shadow: none !important}
         
     .probox input[type="search"], .rc-button.goog-inline-block, .mf_filecontainer a::after, .pages-nav.nav-icon {filter: invert(80%) hue-rotate(180deg)}
-
-    .nav-main-item a:hover, a[data-service="GitHub"]:hover {background: rgba(255,255,255,0.1) !important}  
-    .download.big-button:not(.green)::after, .post {background: #222 !important}
-    .download.big-button:not(.green)::before {background: #333 !important}  
-    .download.big-button.green {border: 1px solid #555 !important}
-    .download.big-button.green:hover {border-color: #f00 !important} 
-    
+        
     .p-sectionLinks, .navbar-brand {background-color: rgba(0,0,0,0.8) !important}
     .item.tooltipstered > div {background-color: rgba(0,0,0,0.5) !important}
         
