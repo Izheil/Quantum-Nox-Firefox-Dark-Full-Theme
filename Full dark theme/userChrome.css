@@ -1,6 +1,6 @@
 /* You can find an updated version here: https://github.com/Izheil/Quantum-Nox-Firefox-Dark-Full-Theme */
 /* Made by Izheil */
-/* Last updated: 13/07/2019 */
+/* Last updated: 16/07/2019 */
 
 /* DO NOT DELETE THIS LINE */
 @namespace url("http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul");
@@ -144,6 +144,8 @@ for icons on the bookmarks bar under the url bar. Just make sure to put commas a
 /* Text color of the url bar and search box */
 #urlbar, .searchbar-textbox {
   color: var(--url-and-searchbar-color) !important}
+
+.searchbar-search-button {fill: #ccc !important}
 
 /* Max, min and close buttons */
 
