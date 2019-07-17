@@ -13,14 +13,14 @@ basic css or <a href="https://www.w3schools.com/colors/colors_picker.asp">color 
 <br />
 This problem doesn't happen if you use a code editor such as notepad++, atom, sublime text...</h4>
 
-<h3>Last update: <b>16/07/2019</b></h3>
+<h3>Last update: <b>17/07/2019</b></h3>
 <p>Files updated:</p>
 <ul>
-	<li><b>Userchrome.css</b>: Fixed the search bar icon color on nightly.</li>
+	<li><b>UserContent.css</b>: Fixed some problem with <code>accounts.firefox.com</code> panels.</li>
 </ul>
-<h3>Pre-Last update: <b>13/07/2019</b></h3>
+<h3>Pre-Last update: <b>16/07/2019</b></h3>
 <ul>
-	<li><b>Userchrome.css</b>: Now the links inside the autocomplete box inside the urlbar should display the correct color again.</li>
+	<li><b>Userchrome.css</b>: Fixed the search bar icon color on nightly.</li>
 </ul>
 
 <code>
