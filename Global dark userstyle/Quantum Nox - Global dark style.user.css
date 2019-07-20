@@ -2,7 +2,7 @@
 @name         Quantum nox - Global dark theme
 @description  Global dark style to use alongside Firefox full dark theme - Quantum nox.
 @namespace    https://github.com/Izheil/Quantum-Nox-Firefox-Dark-Full-Theme
-@version      2.3.0
+@version      2.3.1
 @author       Izheil
 @homepageURL  https://github.com/Izheil/Quantum-Nox-Firefox-Dark-Full-Theme/tree/master/Global%20dark%20userstyle
 @updateURL    https://raw.githubusercontent.com/Izheil/Quantum-Nox-Firefox-Dark-Full-Theme/master/Global%20dark%20userstyle/Quantum%20Nox%20-%20Global%20dark%20style.user.css
@@ -57,7 +57,7 @@ if invMethod == "customSet" {
     [class*="main"]:not([class*="nav"]):not([id*="nav"]):not([class*="header"]):not([id*="header"]):not([class*="overlay"]):not([class*="remain"]), 
     #main:not([class*="nav"]):not([id*="nav"]):not([class*="header"]):not([id*="header"]),
     [class*="Main"]:not([class*="nav"]):not([id*="nav"]):not([class*="header"]):not([id*="header"]):not([class*="overlay"]),
-    #Main:not([class*="nav"]):not([id*="nav"]):not([class*="header"]):not([id*="header"]), 
+    #Main:not([class*="nav"]):not([id*="nav"]):not([class*="header"]):not([id*="header"]),
     main {background-color: bgColor !important}   
         
     div {color: #bbb !important}
@@ -83,7 +83,7 @@ if invMethod == "customSet" {
     li[class*="drop-down"]:not([class*="wrapper"]):not([role="menuitem"]):not([class*="header"]):not(.user-menu), [class*="popup"]:not(.vjs-menu-button-popup), [class*="popover"]:not([class*="link"]), 
     [class*="widget-content"], [class*="notice"], div[role="navigation"], div.nav ul#menu li ul {background: rgba(0,0,0,0.5) !important}
         
-    pre, code, .w3-code, blockquote, .ace_gutter-layer, 
+    pre, pre.prettyprint, code, .w3-code, blockquote, .ace_gutter-layer, 
     .comment-text span.quote, .comment-text span.quote_wrapped  {
         background: rgba(255,255,255,0.1) !important;
         color: #ccc !important}
@@ -275,14 +275,14 @@ if invMethod == "customSet" {
     /* Code editors */
     span.cm-tag, .ace-cobalt .ace_meta.ace_tag {color:  #d55d5d !important}
     span.cm-tag.cm-bracket, .ace_entity, .ace_support.ace_function, .ace_support.ace_type {color:  #4CAF50 !important}
-    span.cm-string, .ace_string {color: #9999ff !important}
+    span.cm-string, .ace_string, .prettyprint .str {color: #9999ff !important}
     span.cm-variable, span.cm-def, .ace_variable {color: #dd0 !important}
     span.cm-property, .ace_constant:not(.ace_numeric) {color: #ff6666 !important}
-    .ace_constant.ace_numeric {color: #85f !important}
+    .ace_constant.ace_numeric, .prettyprint .lit {color: #85f !important}
     .ace_keyword {color: #d80 !important}
-    .ace_paren .ace_rparen, .jtip-top .jt-info.jt-imdb {color: #fff !important}
+    .ace_paren .ace_rparen, .jtip-top .jt-info.jt-imdb, .prettyprint .pun {color: #fff !important}
     .ace_support.ace_constant {color: #0aa !important}
-    .ace_comment {color: #aaa !important}
+    .ace_comment, .prettyprint .com {color: #aaa !important}
         
     .CodeMirror, #columns {background-color: transparent !important}
 

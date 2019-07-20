@@ -25,8 +25,7 @@
 function zzzz_MultiRowTabLite() {
     var css =`
     /* MULTIROW TABS CSS */
-    /* You can set the max number of rows before the scrollbar appears here.
-
+    /* 
      - For tab minimum width, you have to go to about:config and modify [browser.tabs.tabMinWidth] 
        to the value you want.
 
@@ -35,7 +34,6 @@ function zzzz_MultiRowTabLite() {
         Value of 0 -> Tab doesn't grow. Uses tab min width as fixed width. */
 
     :root {
-        --max-tab-rows: 3;
         --tab-growth: 1}
 
     .tabbrowser-tab:not([pinned]) {
