@@ -122,6 +122,12 @@ This problem doesn't happen if you use a code editor such as notepad++, atom, su
 <h3>The pre-loading screen of websites is still white, how can I change this?</h3>
 <p>The fastest way to solve the "blinking" white screen is to change the default web background color on Firefox settings > General > "Colors..." button > Background, which will make the blinking dissapear and be changed to the color you set up. This, although, can cause some issues on some very few and specific pages like BBC, where they don't set a background color to override the one set here (the number of sites with this problem is very small, most sites override the background color set by this setting).</p>
 
+<h3>The tabs toolbar background has the default windows 7 color instead of dark colors.</h3>
+<p>Since this only happens when not using a persona, either install a lightweight theme, or uncomment the rule in line 38 (#TabsToolbar one) on <code>userchrome.css</code>. To do so, just delete the ending "/*" in the line above it.</p>
+
+<h3>The urlbar shows as white background with white text over it after installing the theme.</h3>
+<p>This only happens when using Firefox default theme, either use firefox built-in dark theme along with this one, or use any other lightweight theme you like.</p>
+
 <h3>The synced tabs sidebar isn't themed.</h3>
 <p>Since it's anonymous content of the browser we can't theme it through userChrome or userContent, which is why you will have to apply the fix inside <code>Sync-tabs-sidebar.as.css</code>. It requires the use of external CSS files loading, which is enabled thorugh <code>userchrome.css</code> and <code>userchrome.xml</code>.</p>
 
