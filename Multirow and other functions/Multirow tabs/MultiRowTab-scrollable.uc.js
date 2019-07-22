@@ -43,6 +43,11 @@ function zzzz_MultiRowTabLite() {
     #tabbrowser-tabs .tab-background {
         min-height: var(--tab-min-height) !important}
 
+    @media (-moz-os-version: windows-win10) {
+    #tabbrowser-tabs .tab-background, #tabbrowser-tabs .tabbrowser-tab {
+        height: calc(var(--tab-min-height) + 1px) !important}
+    }
+
     #main-window[sizemode="normal"] .tabbrowser-tab .tab-line,
     #main-window[sizemode="maximized"] .tabbrowser-tab .tab-line, 
     #main-window[sizemode="fullscreen"] .tabbrowser-tab .tab-line {transform: translate(0,1px) !important}
