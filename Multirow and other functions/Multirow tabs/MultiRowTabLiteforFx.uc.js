@@ -5,6 +5,7 @@
 // @include        main
 // @compatibility  Firefox 68
 // @author         Alice0775, Endor8, TroudhuK, Izheil
+// @version        22/07/2019 19:21 Compatibility fix with Windows 7
 // @version        23/03/2019 22:25 Comments on tab width
 // @version        09/03/2019 15:38 Fixed compatibility issue with Tab Session Manager addon
 // @version        18/02/2019 20:46 Tab line not being fully shown on maximized or fullscreen
@@ -39,8 +40,8 @@ function zzzz_MultiRowTabLite() {
     .tabbrowser-tab:not([pinned]) {
         flex-grow: var(--tab-growth)}
     
-    #tabbrowser-tabs .tab-background, #tabbrowser-tabs .tabbrowser-tab {
-        height: calc(var(--tab-min-height) + 1px) !important}
+    #tabbrowser-tabs .tab-background{
+        height: var(--tab-min-height) !important}
 
     #main-window[sizemode="normal"] .tabbrowser-tab .tab-line,
     #main-window[sizemode="maximized"] .tabbrowser-tab .tab-line, 
