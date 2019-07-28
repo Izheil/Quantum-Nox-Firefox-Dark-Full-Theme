@@ -322,6 +322,8 @@ if invMethod == "customSet" {
     .communitymailinglist a, #oh-menu-submit span, #oh-menu-join a, .u-backgroundTransparentWhiteDarkest {background: #333 !important; color: #ddd !important}
     .communitymailinglist a:hover, #oh-menu-submit span:hover, #oh-menu-join a:hover {background: #444 !important; color: #fff !important}
 
+    .bg-c-w100, .c-c-w100 {background-color: transparent !important}
+
     .nav-main-item a:hover, a[data-service="GitHub"]:hover {background: rgba(255,255,255,0.1) !important} 
     .note {background: #331}
         
