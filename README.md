@@ -13,14 +13,14 @@ basic css or <a href="https://www.w3schools.com/colors/colors_picker.asp">color 
 <br />
 This problem doesn't happen if you use a code editor such as notepad++, atom, sublime text...</h4>
 
-<h3>Last update: <b>22/07/2019</b></h3>
+<h3>Last update: <b>04/08/2019</b></h3>
 <p>Files updated:</p>
 <ul>
-	<li><b>MultiRowTab*.uc.js</b>: Fixed some compatibility issue on windows 7.</li>
+	<li><b>UserChrome.xml</b>: The "show tabs list" arrow button that appears when not having multirow and having overflow tabs should be visible again.</li>
 </ul>
-<h3>Pre-Last update: <b>17/07/2019</b></h3>
+<h3>Pre-Last update: <b>22/07/2019</b></h3>
 <ul>
-	<li><b>Usercontent.css</b>: Fixed some problem with <code>accounts.firefox.com</code> panels.</li>
+	<li><b>MultiRowTab*.uc.js</b>: Fixed some compatibility issue on windows 7.</li>
 </ul>
 
 <code>
