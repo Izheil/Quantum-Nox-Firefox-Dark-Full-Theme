@@ -2,7 +2,7 @@
 @name         Quantum nox - Global dark theme
 @description  Global dark style to use alongside Firefox full dark theme - Quantum nox.
 @namespace    https://github.com/Izheil/Quantum-Nox-Firefox-Dark-Full-Theme
-@version      2.3.7
+@version      2.3.8
 @author       Izheil
 @homepageURL  https://github.com/Izheil/Quantum-Nox-Firefox-Dark-Full-Theme/tree/master/Global%20dark%20userstyle
 @updateURL    https://raw.githubusercontent.com/Izheil/Quantum-Nox-Firefox-Dark-Full-Theme/master/Global%20dark%20userstyle/Quantum%20Nox%20-%20Global%20dark%20style.user.css
@@ -41,7 +41,7 @@ if invMethod == "customSet" {
     /* General elements background color */
     html, iframe, embed, footer:not([class*="comment"]), [id*="footer"] {background: darkBg bgColor !important}
     body, html body, .body-content, .conversation-list-heading .inner, .content-block, .page-body, body.navless, 
-    .container-fluid, .topic-body, .body_wrapper {
+    .container-fluid, .topic-body, .body_wrapper, .single_wrap .single_post {
         background-image: none !important;
         background-color: transparent !important;
         color: #bbb !important}
@@ -324,7 +324,10 @@ if invMethod == "customSet" {
     /* Other */
         
     .communitymailinglist a, #oh-menu-submit span, #oh-menu-join a, .u-backgroundTransparentWhiteDarkest {background: #333 !important; color: #ddd !important}
-    .communitymailinglist a:hover, #oh-menu-submit span:hover, #oh-menu-join a:hover {background: #444 !important; color: #fff !important}
+    .communitymailinglist a:hover, #oh-menu-submit span:hover, #oh-menu-join a:hover, .bz_comment_text span.quote, 
+    .bz_comment_text span.quote_wrapped, div.bz_comment_text pre {background: #444 !important; color: #fff !important}
+
+    .bg-secondary {background: #222828 !important}
 
     .bg-c-w100, .c-c-w100 {background-color: transparent !important}
 
@@ -340,7 +343,7 @@ if invMethod == "customSet" {
         
     .contentRow-fader {background: linear-gradient(transparent, bgColor) !important}
         
-    .bz_comment_text span.quote, .bz_comment_text span.quote_wrapped, div.bz_comment_text pre {background: #444 !important; color: #fff !important}
+
         
     /*----- IMAGE CHANGES -----*/
     if (contNum < 100) {
