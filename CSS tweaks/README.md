@@ -95,8 +95,8 @@
   <li>Type <code>about:support</code> in your URL bar, then go to that page.</li>
   <li>Click the "open folder" button inside the "profile folder" section.</li>
   <li>Create a folder named "chrome" in your profile folder if it doesn't exist yet.</li>
-  <li>Place "userchrome.css" inside the "chrome" folder.</li>
-  <li><b>Optional</b>: Edit userchrome.css to delete (or comment out) any function you aren't going to use or don't want.</li>
+  <li>Place "userchrome.css" inside <a href="https://github.com/Izheil/Quantum-Nox-Firefox-Dark-Full-Theme/tree/master/CSS%20tweaks#the-chrome-folder">the chrome folder</a>.</li>
+  <li>Edit userchrome.css to add the rules that are you interested in from the files "Context-menu-commands.css", "Bookmarks+URLbar+Sidebar.css", or "Tab-related-Tweaks.css" from this repository, or any other CSS rule you want to apply.</li>
 </ul>
 
 <h2>The chrome folder</h2>
