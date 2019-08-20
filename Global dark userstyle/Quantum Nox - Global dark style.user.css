@@ -2,7 +2,7 @@
 @name         Quantum nox - Global dark theme
 @description  Global dark style to use alongside Firefox full dark theme - Quantum nox.
 @namespace    https://github.com/Izheil/Quantum-Nox-Firefox-Dark-Full-Theme
-@version      2.3.10
+@version      2.3.12
 @author       Izheil
 @homepageURL  https://github.com/Izheil/Quantum-Nox-Firefox-Dark-Full-Theme/tree/master/Global%20dark%20userstyle
 @updateURL    https://raw.githubusercontent.com/Izheil/Quantum-Nox-Firefox-Dark-Full-Theme/master/Global%20dark%20userstyle/Quantum%20Nox%20-%20Global%20dark%20style.user.css
@@ -150,7 +150,8 @@ if invMethod == "customSet" {
     input[disabled], .rc-button-default-disabled {opacity: 0.5 !important}
         
     /* Buttons and menus */
-    div[class*="button"]:not([class*="buttons"]):not([class*="menu"]), div[class*="btn"]:not(.btn-link), input[type="file"], input[type="color"], input[type="button"], a.social-count, a[class*="button"], a[class*="btn"],
+    div[class*="button"]:not([class*="buttons"]):not([class*="menu"]):not([class*="play"]):not([class*="fullscreen"]), div[class*="btn"]:not(.btn-link):not([class*="play"]):not(.insider-btn):not(.fullscreen-btn), 
+    input[type="file"], input[type="color"], input[type="button"], a.social-count, a[class*="button"], a[class*="btn"],
     summary.btn, clipboard-copy, .ellipsis-expander, file-attachment, .drag-and-drop, div[class*="button"]:not([class*="buttons"]) a, .pageNav-page, .pageNav-jump,
     input[type="submit"]:not(#searchbtn):not(#search-submit-button):not(#main-search-submit-button):not(#searchsubmit):not(.searchsubmit) {
         -moz-appearance: none !important;
@@ -161,7 +162,7 @@ if invMethod == "customSet" {
         color: #ddd !important;
         box-shadow: none !important}
 
-    [class*="dialog"], [class*="light"], [class*="Light"], [class*="white"]:not([class*="whitespace"]), [class*="White"]:not([class*="Whitespace"]), 
+    [class*="dialog"], [class*="light"], [class*="Light"], [class*="white"]:not([class*="whitespace"]), [class*="White"]:not([class*="Whitespace"]), .tb .bg-light,
     [class*="bg-gray"], div.Popover-message, ul.sub, div[role="menu"], .options, .vue-treeselect__menu, .ListResult, div[class*="menu"]:not([role="button"]):not(.vjs-control), 
     .menu ul ul li a, .menuparent a, .dropdown li ul li a, #description_popup, ul[role="listbox"], ul[id*="contextmenu"],.qtip-pos-tl.qtip-fixed, 
     .qtip-content, .tooltipster-content, .backgroundMidSilver {background-color: rgba(0,0,0,0.8) !important}
@@ -297,14 +298,24 @@ if invMethod == "customSet" {
     
      /* Video player buttons */
     .jw-progress, .vjs-load-progress, .vjs-play-progress, .vjs-play-progress::before, .vjs-volume-level, .video-time-bar
-    .video-time-bar::before, .XSlider .ProgressBar .SeekBar-buffered {background-color: #fff !important}
+    .video-time-bar::before, .XSlider .ProgressBar .SeekBar-buffered, .player .played, .drt-bar-processed, .drt-seeker, 
+    .xp-progress-bar .filler, .xp-progress-bar .handle, .fluid_controls_currentprogress, .fluid_control_currentvolume, 
+    .fluid_control_volume_currentpos {background-color: #fff !important}
+    
     .jw-buffer, .jw-rail, .vjs-progress-holder::before, .video-progress-bar, .vjs-progress-holder, .vjs-load-progress, 
-    .XSlider .ProgressBar {background-color: rgba(255,255,255,0.2) !important}  
+    .XSlider .ProgressBar, .player .buffered, .drt-bar-full, .drt-bar-buffered, .drt-volume-bar .drt-inner-bar, 
+    .xp-progress-bar .buffer, .xp-progress-bar .seeker, .fluid_controls_progress, .fluid_controls_buffered, 
+    .fluid_control_volume {background-color: rgba(255,255,255,0.2) !important}
+    
+    #main_video_fluid_controls_container {background: linear-gradient(transparent, rgba(0,0,0,0.7)) !important}
+
     .jw-icon-settings {background: transparent !important}
     
+    .fluid_fluid_control_duration, .fluid_button_content, #main_video_tooltip {color: #fff !important}
+        
     .XSlider .ProgressBar-inner.SeekBar-played, .XSlider .ProgressBar-inner.VolumeBar-progress {background-color: #08f !important}
         
-    .vjs-control-bar, .XSlider .ProgressBar-inner.SeekBar-hover {background: rgba(0,0,0,0.7) !important}
+    .vjs-control-bar, .XSlider .ProgressBar-inner.SeekBar-hover, .drt-control-bar {background: rgba(0,0,0,0.7) !important}
         
     /* Wikis */
     #mw-head {background: #151515 !important}
@@ -322,10 +333,11 @@ if invMethod == "customSet" {
     .mw-parser-output .main-top-left {background: linear-gradient(to right, #000, transparent) !important}
         
     /* Other */
-        
     .communitymailinglist a, #oh-menu-submit span, #oh-menu-join a, .u-backgroundTransparentWhiteDarkest {background: #333 !important; color: #ddd !important}
     .communitymailinglist a:hover, #oh-menu-submit span:hover, #oh-menu-join a:hover, .bz_comment_text span.quote, 
     .bz_comment_text span.quote_wrapped, div.bz_comment_text pre {background: #444 !important; color: #fff !important}
+
+    #dealSearchBar, #dealCategorySearchBar, .rb-new__button:not(:hover) .xh-icon::before {color: #ccc !important}
 
     .bg-secondary {background: #222828 !important}
 
