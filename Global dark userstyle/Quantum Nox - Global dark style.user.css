@@ -341,7 +341,9 @@ if invMethod == "customSet" {
     .bz_comment_text span.quote_wrapped, div.bz_comment_text pre {background: #444 !important; color: #fff !important}
 
     #dealSearchBar, #dealCategorySearchBar, .rb-new__button:not(:hover) .xh-icon::before {color: #ccc !important}
-
+    
+    pre.result {background-color: #000 !important}
+    
     .rating-block__button {background-color: #151515 !important}
 
     .bg-secondary {background: #222828 !important}
