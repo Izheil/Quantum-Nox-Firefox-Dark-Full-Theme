@@ -1,12 +1,12 @@
 /* You can find an updated version here: https://github.com/Izheil/Quantum-Nox-Firefox-Dark-Full-Theme */
 /* Made by Izheil */
-/* Last updated: 16/07/2019 */
+/* Last updated: 03/09/2019 */
 
 /* DO NOT DELETE THIS LINE */
 @namespace url("http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul");
 
 /* This enables the use of JS external files */
-toolbarbutton#alltabs-button {
+hbox#fullscr-toggler {
     -moz-binding: url("userChrome.xml#js")}
 
 /* COLORING PART STARTS HERE */

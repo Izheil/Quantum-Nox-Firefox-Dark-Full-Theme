@@ -7,7 +7,7 @@
 
 <pre>
 /* This enables the use of JS external files */
-toolbarbutton#alltabs-button {
+hbox#fullscr-toggler {
     -moz-binding: url("userChrome.xml#js")}
 </pre>
 

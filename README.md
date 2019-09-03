@@ -13,14 +13,15 @@ basic css or <a href="https://www.w3schools.com/colors/colors_picker.asp">color 
 <br />
 This problem doesn't happen if you use a code editor such as notepad++, atom, sublime text...</h4>
 
-<h3>Last update: <b>04/08/2019</b></h3>
+<h3>Last update: <b>03/09/2019</b></h3>
 <p>Files updated:</p>
 <ul>
-	<li><b>UserChrome.xml</b>: The "show tabs list" arrow button that appears when not having multirow and having overflow tabs should be visible again.</li>
+	<li><b>UserChrome.css</b>: Changed the element to bind <code>UserChrome.xml</code>, so that the "show tabs list" arrow button is displayed correctly when not using multirow. Instead of that button, now the binding uses the empty element used to show the navigator toolbox in fullscreen (The element that you hover to show the navigator toolbox will still work as intended, since it was empty to start with).</li>
+	<li><b>UserChrome.xml</b>: A bug where FF69 wouldn't load it correctly (due to the removal of a xml binding by firefox) was fixed.</li>
 </ul>
-<h3>Pre-Last update: <b>22/07/2019</b></h3>
+<h3>Pre-Last update: <b>04/08/2019</b></h3>
 <ul>
-	<li><b>MultiRowTab*.uc.js</b>: Fixed some compatibility issue on windows 7.</li>
+	<li><b>UserChrome.xml</b>: The "show tabs list" arrow button that appears when not having multirow and having overflow tabs should be visible again.</li>
 </ul>
 
 <code>
