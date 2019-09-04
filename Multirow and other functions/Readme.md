@@ -2,7 +2,7 @@
 <p>You can load other CSS files or JS files that couldn't be loaded in a regular way through JS injection, which lets us modify the scrollbars further, or change the behaviour of tabs (like for multirow)</p>
 <p>It should be the same for all OS, and it works by binding to a random DOM element some JS code, letting us run other JS files, or AGENT_SHEET level CSS.</p>
 
-<p>For this method, we use <code>userchrome.css</code> and <code>userchrome.xml</code> to enable the previously mentioned files (for further details on what is needed check the folders inside this one).</p>
+<p>For this method, we use <code>userChrome.css</code> and <code>userChrome.xml</code> to enable the previously mentioned files (for further details on what is needed check the folders inside this one).</p>
 
 <p>You could make your own files, as far as you follow this naming convention:</p>
 <ul>
@@ -24,12 +24,12 @@
 </ul>
 
 <h3>Installation</h3>
-<p>To install any of the files, just copy the file(s) you are interested on inside any of the folders here along with <code>userchrome.xml</code>, and copy them to your chrome folder. You also will need to have enabled the use of <code>userchrome.xml</code> through <code>userchrome.css</code> (you can learn how to do it inside any of the folders).</p>
+<p>To install any of the files, just copy the file(s) you are interested on inside any of the folders here along with <code>userChrome.xml</code>, and copy them to your chrome folder. You also will need to have enabled the use of <code>userChrome.xml</code> through <code>userChrome.css</code> (you can learn how to do it inside any of the folders).</p>
 
 <h3>The chrome folder</h3>
 <p>This is where you have to place the files of this repository.</p>
 <p>The fastest way to find it is to just type <code>about:support</code> on the URL bar of your firefox, and then click the <b>open folder</b> button inside the "profile folder" section.</p>
-<p>After this, your profile folder will be open. You may or may not see the chrome folder. If you don't see it, just create it and place inside the <code>usercontent.css</code> and <code>userchrome.css</code> files.</p>
+<p>After this, your profile folder will be open. You may or may not see the chrome folder. If you don't see it, just create it and place inside the <code>userContent.css</code> and <code>userChrome.css</code> files.</p>
 
 <p>If you want to know the exact location for profile folders (information taken from <a href="http://kb.mozillazine.org/Profile_folder_-_Firefox">here</a>):</p>
 
