@@ -2,7 +2,7 @@
 
 <h3>Previously known as "Firefox 57+ full dark theme with scrollbars and multirow tabs", I decided to give it an actual name instead of leaving it as just a description.</h3>
 <pre>Since Firefox 69, you have to enable <code>toolkit.legacyUserProfileCustomizations.stylesheets</code> 
-in <code>about:config</code> for userchrome and usercontent to be loaded at all as per <a href="https://bugzilla.mozilla.org/show_bug.cgi?id=1541233#c35">bug #1541233</a>.</pre>
+in <code>about:config</code> for userChrome and userContent to be loaded at all as per <a href="https://bugzilla.mozilla.org/show_bug.cgi?id=1541233#c35">bug #1541233</a>.</pre>
 
 <p>This theme is mainly intended for the stable release of Firefox (<b>This means that while it will most probably work with nightly and ESR for the most part, it may have less support for those versions</b>).</p>
 <p>You can use it to fully change the colors of most of firefox UI to dark-gray colors (with #222-#444 colors mostly), including scrollbars, tooltips, sidebar, as well as dialogs. With the files here you can also as remove some context menu options, enable multirow tabs, change the font of the url bar...</p>
@@ -58,7 +58,7 @@ This problem doesn't happen if you use a code editor such as notepad++, atom, su
 
 <img src="https://i.imgur.com/OhKiBCI.png">
 
-<h4>You can turn the features you want on or off changing the commented lines on <code>userchrome.css</code> (To change them you just have to open it with notepad or any code editor, and encase between "/*" and "*/" (without the quotation marks) the lines you don't want to take effect). Of course, if you think that you are NEVER going to use certain feature, you can always delete the specific lines you don't want without any other side-effect.</h4>
+<h4>You can turn the features you want on or off changing the commented lines on <code>userChrome.css</code> (To change them you just have to open it with notepad or any code editor, and encase between "/*" and "*/" (without the quotation marks) the lines you don't want to take effect). Of course, if you think that you are NEVER going to use certain feature, you can always delete the specific lines you don't want without any other side-effect.</h4>
 
 <p>You can find a video tutorial on how to install the theme without installers <a href="https://youtu.be/kNHe6XDgUN4">here</a>.</p>
 
@@ -100,14 +100,14 @@ This problem doesn't happen if you use a code editor such as notepad++, atom, su
 
 <h3>The scrollbars</h3>
 
-<p>This theme colors scrollbars using <code>usercontent.css</code> to give them a basic re-color.</p> 
+<p>This theme colors scrollbars using <code>userContent.css</code> to give them a basic re-color.</p> 
 <img src="https://i.imgur.com/hqwoq9n.png" title="Re-colored dark scrollbar" />
 
 <p>If you <b>want a different style on the scrollbars</b>, you can try using the <code>scrollbars.as.css</code> file inside the <a href="https://github.com/Izheil/Quantum-Nox-Firefox-Dark-Full-Theme/tree/master/Full%20dark%20theme/Alternative%20scrollbars%20%26%20tooltips/Alternative%20scrollbars">Alternative scrollbars</a> folder, which will make the scrollbars look more rounded and will have some sort of "puffy" effect when clicking them.</p>
 <img src="https://i.imgur.com/sOHN1ds.gif" title="Custom dark blue scrollbar" />
 
-<p>If instead you just <b>don't want scrollbars to show at all but keep scrollability</b>, you can do this through <code>usercontent.css</code> setting the variable <code>--scrollbars-width</code> to none (should be the first rule on the <code>:root</code> section (almost at the start)), and deleting <code>scrollbars.as.css</code>.</p>
-<p>If you aren't using the usercontent provided here for some reason, you can always just add this code to your self-created <code>usercontent.css</code>:</p><code>*|* {scrollbar-width: none !important}</code>
+<p>If instead you just <b>don't want scrollbars to show at all but keep scrollability</b>, you can do this through <code>userContent.css</code> setting the variable <code>--scrollbars-width</code> to none (should be the first rule on the <code>:root</code> section (almost at the start)), and deleting <code>scrollbars.as.css</code>.</p>
+<p>If you aren't using the userContent provided here for some reason, you can always just add this code to your self-created <code>userContent.css</code>:</p><code>*|* {scrollbar-width: none !important}</code>
 <br /><br />
 
 <h2>FAQ:</h2>
@@ -118,22 +118,22 @@ This problem doesn't happen if you use a code editor such as notepad++, atom, su
 
 <h3>I placed the files inside the chrome folder but I don't see any change</h3>
 <p>Make sure you downloaded the raw files from the repository (either cloning the whole repository, downloading the RAW version of the files, or copying the code you are interested in yourself), and placed them inside the chrome folder inside the root profile folder (more information on that inside the dark theme section of this repository).</p>
-<p>If you are using Firefox 69+, you also need to have enabled <code>toolkit.legacyUserProfileCustomizations.stylesheets</code> in <code>about:config</code> for userchrome or usercontent (or any file in the chrome folder) to be loaded at all as per <a href="https://bugzilla.mozilla.org/show_bug.cgi?id=1541233#c35">bug #1541233</a>.</p>
+<p>If you are using Firefox 69+, you also need to have enabled <code>toolkit.legacyUserProfileCustomizations.stylesheets</code> in <code>about:config</code> for userChrome or userContent (or any file in the chrome folder) to be loaded at all as per <a href="https://bugzilla.mozilla.org/show_bug.cgi?id=1541233#c35">bug #1541233</a>.</p>
 
 <h3>The pre-loading screen of websites is still white, how can I change this?</h3>
 <p>The fastest way to solve the "blinking" white screen is to change the default web background color on Firefox settings > General > "Colors..." button > Background, which will make the blinking dissapear and be changed to the color you set up. This, although, can cause some issues on some very few and specific pages like BBC, where they don't set a background color to override the one set here (the number of sites with this problem is very small, most sites override the background color set by this setting).</p>
 
 <h3>The tabs toolbar background has the default windows 7 color instead of dark colors.</h3>
-<p>Since this only happens when not using a persona, either install a lightweight theme, or uncomment the rule in line 38 (#TabsToolbar one) on <code>userchrome.css</code>. To do so, just delete the ending "/*" in the line above it.</p>
+<p>Since this only happens when not using a persona, either install a lightweight theme, or uncomment the rule in line 38 (#TabsToolbar one) on <code>userChrome.css</code>. To do so, just delete the ending "/*" in the line above it.</p>
 
 <h3>The urlbar shows as white background with white text over it after installing the theme.</h3>
 <p>This only happens when using Firefox default theme, either use firefox built-in dark theme along with this one, or use any other lightweight theme you like.</p>
 
 <h3>The synced tabs sidebar isn't themed.</h3>
-<p>Since it's anonymous content of the browser we can't theme it through userChrome or userContent, which is why you will have to apply the fix inside <code>Sync-tabs-sidebar.as.css</code>. It requires the use of external CSS files loading, which is enabled thorugh <code>userchrome.css</code> and <code>userchrome.xml</code>.</p>
+<p>Since it's anonymous content of the browser we can't theme it through userChrome or userContent, which is why you will have to apply the fix inside <code>Sync-tabs-sidebar.as.css</code>. It requires the use of external CSS files loading, which is enabled thorugh <code>userChrome.css</code> and <code>userChrome.xml</code>.</p>
 
-<h3>Some context menu commands dissapear after installing userchrome.</h3>
-<p>If you only want the dark theme, use the default <code>userchrome.css</code> file inside "Full dark theme", which won't make the context menu commands dissapear. In case you want to use the features part of the theme, just delete everything after the line that says <code>/* CONTEXT MENU COMMANDS */</code> (you can find it using the search option on notepad, or the code editor you are using).</p>
+<h3>Some context menu commands dissapear after installing userChrome.</h3>
+<p>If you only want the dark theme, use the default <code>userChrome.css</code> file inside "Full dark theme", which won't make the context menu commands dissapear. In case you want to use the features part of the theme, just delete everything after the line that says <code>/* CONTEXT MENU COMMANDS */</code> (you can find it using the search option on notepad, or the code editor you are using).</p>
 <p>In case you still want to delete some commands but not all, just comment out the ones that you want to appear, and leave as active the ones that you want to dissapear.</p>
 <p>For example, this is active, so the command is hidden:</p>
 <pre>/* Send image... */
@@ -145,7 +145,7 @@ This problem doesn't happen if you use a code editor such as notepad++, atom, su
 
 
 <h3>The bookmarks toolbar text/tabs text color is black and I can't see the letters over the dark background.</h3>
-<p>This is caused by your persona (lightweight theme), and while you could change these settings inside userchrome, I thought it was better to just change the settings on the persona directly (since not all personas will look the same). To do so you'd have to open <code>about:config</code>, and search for <b>lightweightThemes.usedThemes</b>. Once there, find the "textcolor" setting and type any color you'd want to use instead of black or the color being used by the theme (use #fff for white). The persona you are currently using should be in the first place in the list.</p>
+<p>This is caused by your persona (lightweight theme), and while you could change these settings inside userChrome, I thought it was better to just change the settings on the persona directly (since not all personas will look the same). To do so you'd have to open <code>about:config</code>, and search for <b>lightweightThemes.usedThemes</b>. Once there, find the "textcolor" setting and type any color you'd want to use instead of black or the color being used by the theme (use #fff for white). The persona you are currently using should be in the first place in the list.</p>
 
 <h3>The bookmarks multirow shows an empty scrollbar when enabled.</h3>
 <p>If you are using an old version of the scrollbars, or you are just plain not using the scrollbars here, you will have to add some code to delete the empty scrollbars that show on the bookmark toolbars. You have to use this code on a "*.ac.css" file (so you would need to have firefox patched with the method explained on the <a href="https://github.com/Izheil/Quantum-Nox-Firefox-Dark-Full-Theme/tree/master/Multirow%20and%20other%20functions">Multirow and other functions</a> folder), since otherwise it won't work:
@@ -163,14 +163,14 @@ This problem doesn't happen if you use a code editor such as notepad++, atom, su
 <h3>I'm opening web files locally (as in opening html pages that you have created or downloaded) and the background is not the color it should be.</h3>
 <p>To change the directory browsing page and change how .css or some .txt files appear when opened with Firefox, I had to specify it to affect urls that start with "file:///", meaning that any file opened with Firefox will get overriden with those rules as well. To prevent this, go to userContent.css, and comment out the lines that affect this url (This rule should be exactly under the color variables at the start of the file).</p>
 
-<h3>I placed userchrome.css inside my chrome folder and I still don't have multi-row tabs!</h3>
-<p>While we only needed to use CSS to enable multi-row tabs, this breaks tabs draggability, making reordering tabs when it was enabled a bit erratic, so to fix this, I decided to put all multi-row tabs code inside the <b>MultiRowTabLiteforFx.uc.js</b> file. This means that now Multi-row tabs can be enabled following the method described inside the <a href="https://github.com/Izheil/Quantum-Nox-Firefox-Dark-Full-Theme/tree/master/Multirow%20and%20other%20functions/Multirow%20tabs">Multirow tabs</a> folder. If you were using CSS code on your <code>userchrome.css</code> to enable multirow tabs, delete (or comment it out) for the js file to take effect.</p>
+<h3>I placed userChrome.css inside my chrome folder and I still don't have multi-row tabs!</h3>
+<p>While we only needed to use CSS to enable multi-row tabs, this breaks tabs draggability, making reordering tabs when it was enabled a bit erratic, so to fix this, I decided to put all multi-row tabs code inside the <b>MultiRowTabLiteforFx.uc.js</b> file. This means that now Multi-row tabs can be enabled following the method described inside the <a href="https://github.com/Izheil/Quantum-Nox-Firefox-Dark-Full-Theme/tree/master/Multirow%20and%20other%20functions/Multirow%20tabs">Multirow tabs</a> folder. If you were using CSS code on your <code>userChrome.css</code> to enable multirow tabs, delete (or comment it out) for the js file to take effect.</p>
 
 <h3>Why use this method instead of using <a href="https://addons.mozilla.org/es/firefox/addon/styl-us/">Stylus</a>?</h3>
 <p>The main reason is that you can't style firefox about: pages nor dialog windows with just stylus.</p>
 
 <h3>The theme is making the text of some addon popups unreadable, how do I fix this?</h3>
-<p>The theme is made so that it changes most background colors, including the one of the popups that don't have any background color specified by their original creator. Sadly it doesn't change the text of these by default, so you may have to do it manually, or report the addon you want themed here, or just use the fix inside userchrome.css (at around lines 926-929) to turn the addons back to their white background color.</p>
+<p>The theme is made so that it changes most background colors, including the one of the popups that don't have any background color specified by their original creator. Sadly it doesn't change the text of these by default, so you may have to do it manually, or report the addon you want themed here, or just use the fix inside userChrome.css (at around lines 926-929) to turn the addons back to their white background color.</p>
 
 <h2>Credits</h2>
 <p>The original code for the custom scrollbars which we modified here belongs to <b>Arty2</b>, and you can find it <a href="https://gist.github.com/Arty2/fdf19aea2c601032410516f059d58eb1">here</a>.

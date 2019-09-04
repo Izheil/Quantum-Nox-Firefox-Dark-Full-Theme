@@ -1,15 +1,15 @@
 <h1>Only functionability CSS tweaks</h1>
 
-<p>The files contained here contain fixes that will let you alter the default behaviour of Firefox. They are intended to be used as a template of the functions that you can use on your own custom <code>userchrome.css</code> for this goal. This means that you shouldn't just copy everything in every file to your userchrome, but instead select the features you are interested on to customize your Firefox in the way that you want.</p> 
+<p>The files contained here contain fixes that will let you alter the default behaviour of Firefox. They are intended to be used as a template of the functions that you can use on your own custom <code>userChrome.css</code> for this goal. This means that you shouldn't just copy everything in every file to your userChrome, but instead select the features you are interested on to customize your Firefox in the way that you want.</p> 
 
-<p>With this goal in mind, a base empty <code>userchrome.css</code> is included (with the javascript fix included if you want to use it later, which won't work unless you have <code>userchrome.xml</code> as well), in case you don't have one already, so that you can use any of the tweaks included here without the need to know much CSS (you will just need to copy the things you want, which have a comment above them with a description of what each does).</p>
+<p>With this goal in mind, a base empty <code>userChrome.css</code> is included (with the javascript fix included if you want to use it later, which won't work unless you have <code>userChrome.xml</code> as well), in case you don't have one already, so that you can use any of the tweaks included here without the need to know much CSS (you will just need to copy the things you want, which have a comment above them with a description of what each does).</p>
 
-<p>If you are using the dark theme <code>userchrome.css</code> file, add the fixes from the files here in that one instead.</p>
+<p>If you are using the dark theme <code>userChrome.css</code> file, add the fixes from the files here in that one instead.</p>
 
-<p>To make it work, it's as simple as copying the function you want to apply at the bottom of <code>userchrome.css</code>, place it inside <a href="https://github.com/Izheil/Quantum-Nox-Firefox-Dark-Full-Theme/tree/master/CSS%20tweaks#the-chrome-folder">the chrome folder</a> if you hadn't yet, and restart Firefox.</p>
+<p>To make it work, it's as simple as copying the function you want to apply at the bottom of <code>userChrome.css</code>, place it inside <a href="https://github.com/Izheil/Quantum-Nox-Firefox-Dark-Full-Theme/tree/master/CSS%20tweaks#the-chrome-folder">the chrome folder</a> if you hadn't yet, and restart Firefox.</p>
 <p>I describe what tweaks does each file contain below.</p>
 
-<h4>You can also keep some tweak inside your <code>userchrome.css</code> without it being enabled by encasing the lines you don't want to apply between "/*" and "*/" (without the quotation marks).</h4>
+<h4>You can also keep some tweak inside your <code>userChrome.css</code> without it being enabled by encasing the lines you don't want to apply between "/*" and "*/" (without the quotation marks).</h4>
 
 <h3>Bookmarks+URLbar+Sidebar.css</h3>
 
@@ -84,7 +84,7 @@
 <b>Rounded tabs:</b>
   <img src="https://i.imgur.com/qoG4Iiy.png">
 
-<p>If you instead want the old style (pre FF57) rounded tabs for firefox, you should add <a href="https://github.com/wilfredwee/photon-australis">australis</a> code to your userchrome instead.</p>
+<p>If you instead want the old style (pre FF57) rounded tabs for firefox, you should add <a href="https://github.com/wilfredwee/photon-australis">australis</a> code to your userChrome instead.</p>
 
 <h2>Installation</h2>
 
@@ -95,15 +95,15 @@
   <li>Type <code>about:support</code> in your URL bar, then go to that page.</li>
   <li>Click the "open folder" button inside the "profile folder" section.</li>
   <li>Create a folder named "chrome" in your profile folder if it doesn't exist yet.</li>
-  <li>Place "userchrome.css" inside <a href="https://github.com/Izheil/Quantum-Nox-Firefox-Dark-Full-Theme/tree/master/CSS%20tweaks#the-chrome-folder">the chrome folder</a>.</li>
-  <li>Edit userchrome.css to add the rules that are you interested in from the files "Context-menu-commands.css", "Bookmarks+URLbar+Sidebar.css", or "Tab-related-Tweaks.css" from this repository, or any other CSS rule you want to apply.</li>
+  <li>Place "userChrome.css" inside <a href="https://github.com/Izheil/Quantum-Nox-Firefox-Dark-Full-Theme/tree/master/CSS%20tweaks#the-chrome-folder">the chrome folder</a>.</li>
+  <li>Edit userChrome.css to add the rules that are you interested in from the files "Context-menu-commands.css", "Bookmarks+URLbar+Sidebar.css", or "Tab-related-Tweaks.css" from this repository, or any other CSS rule you want to apply.</li>
 </ul>
 
 <h2>The chrome folder</h2>
 
 <p>The fastest way to find it is to just type <code>about:support</code> on the URL bar of your firefox, and then click the <b>open folder</b> button inside the "profile folder" section. After this, your profile folder will be open.</p>
 
-<p><i>You may or may not see the chrome folder. If you don't see it, just create it and place inside the usercontent.css and userchrome.css files.</i></p>
+<p><i>You may or may not see the chrome folder. If you don't see it, just create it and place inside the userContent.css and userChrome.css files.</i></p>
 
 <p>If you want to know the exact location for profile folders (information taken from <a href="http://kb.mozillazine.org/Profile_folder_-_Firefox">here</a>):</p>
 
@@ -111,7 +111,7 @@
 
 <pre>C:\Users\(Windows login/user name)\AppData\Roaming\Mozilla\Firefox\Profiles\(profile folder)</pre>
 
-<p><i>If you have never used userchrome.css or usercontent.css before, you will have to create a folder named "chrome" inside the profile folder, which is where you will have to place these files.</i></p>
+<p><i>If you have never used userChrome.css or userContent.css before, you will have to create a folder named "chrome" inside the profile folder, which is where you will have to place these files.</i></p>
 
 <p>This is where you would have to place the files once you have created the chrome folder:</p>
 
@@ -127,7 +127,7 @@
 
 <pre>/home/(Your-username)/.mozilla/firefox/(profile folder)</pre>
 
-<p><i>If you have never used userchrome.css or usercontent.css before, you will have to create a folder named "chrome" inside the profile folder, which is where you will have to place these files.</i></p>
+<p><i>If you have never used userChrome.css or userContent.css before, you will have to create a folder named "chrome" inside the profile folder, which is where you will have to place these files.</i></p>
 
 <p>This is where you would have to place the files once you have created the chrome folder:</p>
 
@@ -140,7 +140,7 @@
 <pre>~/Library/Application Support/Firefox/Profiles/(profile folder)
 ~/Library/Mozilla/Firefox/Profiles/(profile folder)</pre>
 
-<p><i>If you have never used userchrome.css or usercontent.css before, you will have to create a folder named "chrome" inside the profile folder, which is where you will have to place these files.</i></p>
+<p><i>If you have never used userChrome.css or userContent.css before, you will have to create a folder named "chrome" inside the profile folder, which is where you will have to place these files.</i></p>
 
 <p>This is where you would have to place the files once you have created the chrome folder:</p>
 

@@ -2,8 +2,8 @@
 <p>You can have multi-row tabs using any of these javascript files.</p>
 <p>There are 2 versions, one that creates infinite rows of bars as you keep opening tabs, and another that shows a max number of rows that you can specify before showing a scrollbar to show the rest of rows.</p>
 
-<p>You need to place <b>userchrome.xml</b> (If you already have one from this repository, you don't need to change it) on your <a href="https://github.com/Izheil/Quantum-Nox-Firefox-Dark-Full-Theme/tree/master/Multirow%20and%20other%20functions#the-chrome-folder">chrome folder</a> along with any of these files for them to work, along with it's binding rule on <code>userchrome.css</code>, which is already added in any of the userchrome versions of this repository.</p>
-<p>For just the <code>userchrome.css</code> with the binding (and no other code), use the one inside this folder, unless you want to add it to your own custom userchrome, in which case you have to copy this rule inside it:</p>
+<p>You need to place <b>userChrome.xml</b> (If you already have one from this repository, you don't need to change it) on your <a href="https://github.com/Izheil/Quantum-Nox-Firefox-Dark-Full-Theme/tree/master/Multirow%20and%20other%20functions#the-chrome-folder">chrome folder</a> along with any of these files for them to work, along with it's binding rule on <code>userChrome.css</code>, which is already added in any of the userChrome versions of this repository.</p>
+<p>For just the <code>userChrome.css</code> with the binding (and no other code), use the one inside this folder, unless you want to add it to your own custom userChrome, in which case you have to copy this rule inside it:</p>
 
 <pre>
 /* This enables the use of JS external files */
