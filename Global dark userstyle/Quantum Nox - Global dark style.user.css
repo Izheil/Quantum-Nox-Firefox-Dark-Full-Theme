@@ -340,7 +340,7 @@ if invMethod == "customSet" {
     .communitymailinglist a:hover, #oh-menu-submit span:hover, #oh-menu-join a:hover, .bz_comment_text span.quote, 
     .bz_comment_text span.quote_wrapped, div.bz_comment_text pre {background: #444 !important; color: #fff !important}
 
-    #dealSearchBar, #dealCategorySearchBar, .rb-new__button:not(:hover) .xh-icon::before {color: #ccc !important}
+    #dealSearchBar, #dealCategorySearchBar, .rb-new__button:not(:hover) .xh-icon::before, .BuCcI input {color: #ccc !important}
     
     pre.result {background-color: #000 !important}
     
