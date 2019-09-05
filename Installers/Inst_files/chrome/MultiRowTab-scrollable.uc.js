@@ -40,26 +40,20 @@ function zzzz_MultiRowTabLite() {
         
     .tabbrowser-tab::after {border: none !important}
 
-    #tabbrowser-tabs .tab-background {min-height: var(--tab-min-height) !important}
+    #tabbrowser-tabs .tab-background {
+        max-height: var(--tab-min-height) !important;
+        min-height: var(--tab-min-height) !important}
 
     @media (-moz-os-version: windows-win10) {
-    #tabbrowser-tabs .tab-background, #tabbrowser-tabs .tabbrowser-tab {
-        height: calc(var(--tab-min-height) + 1px) !important}
+        #tabbrowser-tabs .tab-background, #tabbrowser-tabs .tabbrowser-tab {
+            height: calc(var(--tab-min-height) + 1px) !important}
     }
     
     #main-window[sizemode="normal"] .tabbrowser-tab .tab-line,
     #main-window[sizemode="maximized"] .tabbrowser-tab .tab-line, 
     #main-window[sizemode="fullscreen"] .tabbrowser-tab .tab-line {transform: translate(0,1px) !important}
-    
-    :root[uidensity="touch"] .tabbrowser-tab,
-    :root[uidensity="touch"] .tab-background {
-        min-height: calc(var(--tab-min-height) + 3px) !important}
 
     .tab-stack {width: 100%}
-
-    :root[uidensity="touch"] #tabbrowser-tabs .scrollbox-innerbox {    
-        min-height: calc(var(--tab-min-height) + 3px);
-        max-height: calc((var(--tab-min-height) + 3px)*var(--max-tab-rows))}
 
     #tabbrowser-tabs .arrowscrollbox-scrollbox {
         display: flex;
@@ -73,6 +67,16 @@ function zzzz_MultiRowTabLite() {
         overflow: visible;
         display: block;}
 
+    :root[uidensity="touch"] .tabbrowser-tab,
+    :root[uidensity="touch"] .tab-stack {   
+        min-height: calc(var(--tab-min-height) + 3px) !important;
+        max-height: calc(var(--tab-min-height) + 3px) !important;
+        margin-bottom: 0 !important}
+
+    :root[uidensity="touch"] #tabbrowser-tabs .arrowscrollbox-scrollbox {
+        min-height: var(--tab-min-height) !important;
+        max-height: calc((var(--tab-min-height)*var(--max-tab-rows)))}
+
     .arrowscrollbox-overflow-start-indicator,
     .arrowscrollbox-overflow-end-indicator {position: fixed !important}
 
@@ -80,9 +84,10 @@ function zzzz_MultiRowTabLite() {
         -moz-window-dragging: no-drag}
 
     @media (-moz-os-version: windows-win10) {
-    .titlebar-buttonbox, #titlebar-buttonbox {display: block !important; height:var(--tab-min-height) !important}}
+        .titlebar-buttonbox, #titlebar-buttonbox {display: block !important; height:var(--tab-min-height) !important}}
 
-    #tabbrowser-tabs .scrollbutton-up, #tabbrowser-tabs .scrollbutton-down, #alltabs-button
+    #tabbrowser-tabs .scrollbutton-up, #tabbrowser-tabs .scrollbutton-down, #alltabs-button, 
+    :root:not([customizing]) #TabsToolbar #new-tab-button, #tabbrowser-tabs spacer, .tabbrowser-tab::after
     {display: none}
     `;
     var sss = Cc['@mozilla.org/content/style-sheet-service;1'].getService(Ci.nsIStyleSheetService);
@@ -90,15 +95,16 @@ function zzzz_MultiRowTabLite() {
     sss.loadAndRegisterSheet(uri, sss.AGENT_SHEET);
     gBrowser.tabContainer._getDropIndex = function(event, isLink) {
         var tabs = document.querySelectorAll(".tabbrowser-tab")
+        var tab = this._getDragTargetTab(event, isLink);
         if (window.getComputedStyle(this).direction == "ltr") {
-        	for (let i = 0; i < tabs.length; i++) {
+        	for (let i = tab ? tab._tPos : 0; i < tabs.length; i++) {
                 let rect = tabs[i].getBoundingClientRect();
         		if (event.screenX < rect.x + rect.width / 2
                  && event.screenY < rect.y + rect.height) // multirow fix
         			return i;
             }
         } else {
-        	for (let i = 0; i < tabs.length; i++) {
+        	for (let i = tab ? tab._tPos : 0; i < tabs.length; i++) {
                 let rect = tabs[i].getBoundingClientRect();
         		if (event.screenX > rect.x + rect.width / 2
                  && event.screenY < rect.y + rect.height) // multirow fix
@@ -150,7 +156,7 @@ gBrowser.tabContainer.ondragstart = function(){if(gBrowser.tabContainer.clientHe
         var ltr = (window.getComputedStyle(this).direction == "ltr");
         var rect = this.arrowScrollbox.getBoundingClientRect();
         var newMarginX, newMarginY;
-        if (newIndex == this.childNodes.length) {
+        if (newIndex == tabs.length) {
             let tabRect = tabs[newIndex - 1].getBoundingClientRect();
             if (ltr)
                 newMarginX = tabRect.right - rect.left;
