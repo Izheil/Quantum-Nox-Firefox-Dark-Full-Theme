@@ -3,8 +3,9 @@
 // @namespace      http://space.geocities.yahoo.co.jp/gl/alice0775
 // @description    Multi-row tabs draggability fix, Experimental CSS version
 // @include        main
-// @compatibility  Firefox 68
+// @compatibility  Firefox 69
 // @author         Alice0775, Endor8, TroudhuK, Izheil
+// @version        05/09/2019 03:24 Fixed tab draggability to work with FF69
 // @version        22/07/2019 19:21 Compatibility fix with Windows 7
 // @version        23/03/2019 22:25 Comments on tab width
 // @version        09/03/2019 15:38 Fixed compatibility issue with Tab Session Manager addon
@@ -92,21 +93,20 @@ function zzzz_MultiRowTabLite() {
     var uri = makeURI('data:text/css;charset=UTF=8,' + encodeURIComponent(css));
     sss.loadAndRegisterSheet(uri, sss.AGENT_SHEET);
     gBrowser.tabContainer._getDropIndex = function(event, isLink) {
-        var tabs = this.childNodes;
-        var tab = this._getDragTargetTab(event, isLink);
+        var tabs = document.querySelectorAll(".tabbrowser-tab")
         if (window.getComputedStyle(this).direction == "ltr") {
-        	for (let i = tab ? tab._tPos : 0; i < tabs.length; i++) {
-                let boxObject = tabs[i].boxObject;
-        		if (event.screenX < boxObject.screenX + boxObject.width / 2
-                 && event.screenY < boxObject.screenY + boxObject.height) // multirow fix
-        			return i;
+            for (let i = 0; i < tabs.length; i++) {
+                let rect = tabs[i].getBoundingClientRect();
+                if (event.screenX < rect.x + rect.width / 2
+                 && event.screenY < rect.y + rect.height) // multirow fix
+                    return i;
             }
         } else {
-        	for (let i = tab ? tab._tPos : 0; i < tabs.length; i++) {
-                let boxObject = tabs[i].boxObject;
-        		if (event.screenX > boxObject.screenX + boxObject.width / 2
-                 && event.screenY < boxObject.screenY + boxObject.height) // multirow fix
-        			return i;
+            for (let i = 0; i < tabs.length; i++) {
+                let rect = tabs[i].getBoundingClientRect();
+                if (event.screenX > rect.x + rect.width / 2
+                 && event.screenY < rect.y + rect.height) // multirow fix
+                    return i;
             }
         }
         return tabs.length;
@@ -148,7 +148,7 @@ document.getElementById("tabbrowser-tabs").onmouseout = function(){
 // This sets when to apply the fix (by default a new row starts after the 23th open tab, unless you changed the min-size of tabs)
 gBrowser.tabContainer.ondragstart = function(){if(gBrowser.tabContainer.clientHeight > document.getElementsByClassName("tabbrowser-tab")[0].clientHeight) {
 
-    gBrowser.tabContainer._getDropEffectForTabDrag = function(event){return "";}; // multirow fix: to make the default "dragover" handler does nothing
+    gBrowser.tabContainer._getDropEffectForTabDrag = function(event){return "";}; // multirow fix: to make the default "dragover" handler do nothing
     gBrowser.tabContainer._onDragOver = function(event) {
         event.preventDefault();
         event.stopPropagation();
@@ -157,34 +157,35 @@ gBrowser.tabContainer.ondragstart = function(){if(gBrowser.tabContainer.clientHe
 
         var effects = orig_getDropEffectForTabDrag(event);
         if (effects == "link") {
-        	let tab = this._getDragTargetTab(event, true);
-        	if (tab) {
-        		if (!this._dragTime)
-        			this._dragTime = Date.now();
-        		if (!tab.hasAttribute("pending") && // annoying fix
+            let tab = this._getDragTargetTab(event, true);
+            if (tab) {
+                if (!this._dragTime)
+                    this._dragTime = Date.now();
+                if (!tab.hasAttribute("pendingicon") && // annoying fix
                     Date.now() >= this._dragTime + this._dragOverDelay)
-        			this.selectedItem = tab;
-        		ind.collapsed = true;
-        		return;
-        	}
+                    this.selectedItem = tab;
+                ind.hidden = true;
+                return;
+            }
         }
 
         var newIndex = this._getDropIndex(event, effects == "link");
         if (newIndex == null)
-            return;
+            return
 
+        var tabs = document.querySelectorAll(".tabbrowser-tab")
         var ltr = (window.getComputedStyle(this).direction == "ltr");
         var rect = this.arrowScrollbox.getBoundingClientRect();
         var newMarginX, newMarginY;
         if (newIndex == this.childNodes.length) {
-            let tabRect = this.childNodes[newIndex - 1].getBoundingClientRect();
+            let tabRect = tabs[newIndex - 1].getBoundingClientRect();
             if (ltr)
                 newMarginX = tabRect.right - rect.left;
             else
                 newMarginX = rect.right - tabRect.left;
             newMarginY = tabRect.top + tabRect.height - rect.top - rect.height; // multirow fix
         } else {
-            let tabRect = this.childNodes[newIndex].getBoundingClientRect();
+            let tabRect = tabs[newIndex].getBoundingClientRect();
             if (ltr)
                 newMarginX = tabRect.left - rect.left;
             else
@@ -192,7 +193,7 @@ gBrowser.tabContainer.ondragstart = function(){if(gBrowser.tabContainer.clientHe
             newMarginY = tabRect.top + tabRect.height - rect.top - rect.height; // multirow fix
         }
 
-        ind.collapsed = false;
+        ind.hidden = false;
 
         newMarginX += ind.clientWidth / 2;
         if (!ltr)
@@ -200,7 +201,8 @@ gBrowser.tabContainer.ondragstart = function(){if(gBrowser.tabContainer.clientHe
 
         ind.style.transform = "translate(" + Math.round(newMarginX) + "px," + Math.round(newMarginY) + "px)"; // multirow fix
         ind.style.marginInlineStart = (-ind.clientWidth) + "px";
-    };
+        }
+    }
     gBrowser.tabContainer.addEventListener("dragover", gBrowser.tabContainer._onDragOver, true);
 
     gBrowser.tabContainer.onDrop = function(event) {
@@ -214,7 +216,7 @@ gBrowser.tabContainer.ondragstart = function(){if(gBrowser.tabContainer.clientHe
         }
         var dropEffect = dt.dropEffect;
         if (draggedTab && dropEffect == "copy") {}
-        else if (draggedTab && draggedTab.parentNode == this) {
+        else {
             newIndex = this._getDropIndex(event, false);
             if (newIndex > draggedTab._tPos)
                 newIndex--;
@@ -222,38 +224,48 @@ gBrowser.tabContainer.ondragstart = function(){if(gBrowser.tabContainer.clientHe
         }
     };
     gBrowser.tabContainer.addEventListener("drop", function(event){this.onDrop(event);}, true);
-}}}
+}};
 
 // copy of the original and overrided _getDropEffectForTabDrag method
 function orig_getDropEffectForTabDrag(event) {
-    var dt = event.dataTransfer;
-    if (dt.mozItemCount == 1) {
-        var types = dt.mozTypesAt(0);
+      var dt = event.dataTransfer;
+
+      let isMovingTabs = dt.mozItemCount > 0;
+      for (let i = 0; i < dt.mozItemCount; i++) {
         // tabs are always added as the first type
-        if (types[0] == TAB_DROP_TYPE) {
-            let sourceNode = dt.mozGetDataAt(TAB_DROP_TYPE, 0);
-            if (sourceNode instanceof XULElement &&
-                sourceNode.localName == "tab" &&
-                sourceNode.ownerGlobal.isChromeWindow &&
-                sourceNode.ownerDocument.documentElement.getAttribute("windowtype") == "navigator:browser" &&
-                sourceNode.ownerGlobal.gBrowser.tabContainer == sourceNode.parentNode) {
-                // Do not allow transfering a private tab to a non-private window
-                // and vice versa.
-                if (PrivateBrowsingUtils.isWindowPrivate(window) !=
-                    PrivateBrowsingUtils.isWindowPrivate(sourceNode.ownerGlobal))
-                    return "none";
+        let types = dt.mozTypesAt(0);
+        if (types[0] != TAB_DROP_TYPE) {
+          isMovingTabs = false;
+          break;
+        
+        }}
+      if (isMovingTabs) {
+        let sourceNode = dt.mozGetDataAt(TAB_DROP_TYPE, 0);
+        if (
+          sourceNode instanceof XULElement &&
+          sourceNode.localName == "tab" &&
+          sourceNode.ownerGlobal.isChromeWindow &&
+          sourceNode.ownerDocument.documentElement.getAttribute("windowtype") ==
+            "navigator:browser" &&
+          sourceNode.ownerGlobal.gBrowser.tabContainer == sourceNode.container
+        ) {
+          // Do not allow transfering a private tab to a non-private window
+          // and vice versa.
+          if (
+            PrivateBrowsingUtils.isWindowPrivate(window) !=
+            PrivateBrowsingUtils.isWindowPrivate(sourceNode.ownerGlobal)
+          ) {
+            return "none";}
 
-                if (window.gMultiProcessBrowser !=
-                    sourceNode.ownerGlobal.gMultiProcessBrowser)
-                    return "none";
+          if (
+            window.gMultiProcessBrowser !=
+            sourceNode.ownerGlobal.gMultiProcessBrowser
+          ) {
+            return "none";}
 
-                return dt.dropEffect == "copy" ? "copy" : "move";
-            }
-        }
-    }
+          return dt.dropEffect == "copy" ? "copy" : "move";
+        }}
 
-    if (browserDragAndDrop.canDropLink(event)) {
-        return "link";
-    }
-    return "none";
-}
+      if (browserDragAndDrop.canDropLink(event)) {
+        return "link";}
+      return "none";}
