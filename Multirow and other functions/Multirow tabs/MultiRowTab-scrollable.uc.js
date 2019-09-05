@@ -136,16 +136,16 @@ gBrowser.tabContainer.ondragstart = function(){if(gBrowser.tabContainer.clientHe
 
         var effects = orig_getDropEffectForTabDrag(event);
         if (effects == "link") {
-        	let tab = this._getDragTargetTab(event, true);
-        	if (tab) {
-        		if (!this._dragTime)
-        			this._dragTime = Date.now();
-        		if (!tab.hasAttribute("pendingicon") && // annoying fix
+            let tab = this._getDragTargetTab(event, true);
+            if (tab) {
+                if (!this._dragTime)
+                    this._dragTime = Date.now();
+                if (!tab.hasAttribute("pendingicon") && // annoying fix
                     Date.now() >= this._dragTime + this._dragOverDelay)
-        			this.selectedItem = tab;
-        		ind.hidden = true;
-        		return;
-        	}
+                    this.selectedItem = tab;
+                ind.hidden = true;
+                return;
+            }
         }
 
         var newIndex = this._getDropIndex(event, effects == "link");
@@ -182,6 +182,7 @@ gBrowser.tabContainer.ondragstart = function(){if(gBrowser.tabContainer.clientHe
         ind.style.marginInlineStart = (-ind.clientWidth) + "px";
         }
     }
+
     gBrowser.tabContainer.addEventListener("dragover", gBrowser.tabContainer._onDragOver, true);
 
     gBrowser.tabContainer.onDrop = function(event) {
