@@ -45,9 +45,9 @@ function zzzz_MultiRowTabLite() {
         min-height: var(--tab-min-height) !important}
 
     @media (-moz-os-version: windows-win10) {
-    #tabbrowser-tabs .tab-background, #tabbrowser-tabs .tabbrowser-tab {
-        height: calc(var(--tab-min-height) + 1px) !important}
-    }
+        #tabbrowser-tabs .tab-background, #tabbrowser-tabs .tabbrowser-tab {
+            min-height: calc(var(--tab-min-height) + 1px) !important}
+        }
 
     #main-window[sizemode="normal"] .tabbrowser-tab .tab-line,
     #main-window[sizemode="maximized"] .tabbrowser-tab .tab-line, 
