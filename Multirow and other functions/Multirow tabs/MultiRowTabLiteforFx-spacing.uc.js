@@ -5,23 +5,7 @@
 // @include        main
 // @compatibility  Firefox 69
 // @author         Alice0775, Endor8, TroudhuK, Izheil
-// @version        06/09/2019 00:06 Minor fix to repeat the background image when having too many tabs
-// @version        05/09/2019 03:24 Fixed tab draggability to work with FF69
-// @version        22/07/2019 19:21 Compatibility fix with Windows 7
-// @version        23/03/2019 22:25 Comments on tab width
-// @version        09/03/2019 15:38 Fixed compatibility issue with Tab Session Manager addon
-// @version        18/02/2019 20:46 Tab line not being fully shown on maximized or fullscreen
-// @version        03/02/2019 15:15 Firefox 67
-// @version        01/02/2019 23:48 Fixed empty pixel line below tabs
-// @version        31/01/2019 10:32 Fixed issue with fullscreen
-// @version        30/01/2019 02:05 Fixed issue with a pixel being above the tab bar
-// @version        23/11/2018 00:41 Firefox 65
-// @version        19/10/2018 07:34 Firefox 62
-// @version        11/05/2018 15:05 Firefox 60
-// @version        08/05/2017 00:00 Firefox 48
-// @version        05/01/2017 00:01 hide favicon if busy
-// @version        02/09/2016 00:01 Bug 1222490 - Actually remove panorama for Fx45+
-// @version        02/09/2016 00:01 workaround css for lwt
+// @version        05/09/2019 23:22 Released the first version of the alternative multirow
 // ==/UserScript==
     zzzz_MultiRowTabLite();
 function zzzz_MultiRowTabLite() {
@@ -133,8 +117,6 @@ gBrowser.tabContainer.ondragstart = function(){if(gBrowser.tabContainer.clientHe
         event.preventDefault();
         event.stopPropagation();
 
-        var ind = this._tabDropIndicator;
-
         var effects = orig_getDropEffectForTabDrag(event);
         if (effects == "link") {
             let tab = this._getDragTargetTab(event, true);
@@ -144,7 +126,6 @@ gBrowser.tabContainer.ondragstart = function(){if(gBrowser.tabContainer.clientHe
                 if (!tab.hasAttribute("pendingicon") && // annoying fix
                     Date.now() >= this._dragTime + this._dragOverDelay)
                     this.selectedItem = tab;
-                ind.hidden = true;
                 return;
             }
         }
@@ -153,7 +134,19 @@ gBrowser.tabContainer.ondragstart = function(){if(gBrowser.tabContainer.clientHe
         if (newIndex == null)
             return
 
-        var tabs = document.getElementsByClassName("tabbrowser-tab")
+        // These loops change the behaviour of the dragging to imitate firefox default one
+        var tabs = document.getElementsByClassName("tabbrowser-tab");
+        var selTab = document.querySelectorAll(".tabbrowser-tab[selected='true']")[0]
+        for (let i = 0; i < newIndex; i++) {
+            tabs[i].style.transform = "initial";
+        }
+        selTab.style.display = "none";
+        for (let i = newIndex; i < tabs.length; i++) {
+            let tabrect = tabs[i].getBoundingClientRect();
+            tabs[i].style.transition = "all 0.2s ease-out";
+            tabs[i].style.transform = "translate(" + tabrect.width + "px," + 0 + ")";
+        }
+
         var ltr = (window.getComputedStyle(this).direction == "ltr");
         var rect = this.arrowScrollbox.getBoundingClientRect();
         var newMarginX, newMarginY;
@@ -172,20 +165,29 @@ gBrowser.tabContainer.ondragstart = function(){if(gBrowser.tabContainer.clientHe
                 newMarginX = rect.right - tabRect.right;
             newMarginY = tabRect.top + tabRect.height - rect.top - rect.height; // multirow fix
         }
-
-        ind.hidden = false;
-
-        newMarginX += ind.clientWidth / 2;
-        if (!ltr)
-            newMarginX *= -1;
-
-        ind.style.transform = "translate(" + Math.round(newMarginX) + "px," + Math.round(newMarginY) + "px)"; // multirow fix
-        ind.style.marginInlineStart = (-ind.clientWidth) + "px";
+        return
         }
     
     gBrowser.tabContainer.addEventListener("dragover", gBrowser.tabContainer._onDragOver, true);
+}
+    // This prevents the fix from leaving the tab invisible if exiting tab dragging 
+    // before dropping the tab
+    gBrowser.tabContainer.ondragend = function(event) {
+        var tabs = document.getElementsByClassName("tabbrowser-tab");
+        for (let i = 0; i < tabs.length; i++) {
+            tabs[i].style.display = "block";
+            tabs[i].style.transform = "initial";
+        }
+    }
 
     gBrowser.tabContainer.onDrop = function(event) {
+        var tabs = document.getElementsByClassName("tabbrowser-tab");
+
+        // This resets tab display to default after tab moving animation
+        for (let i = 0; i < tabs.length; i++) {
+            tabs[i].style.display = "block";
+            tabs[i].style.transform = "initial";
+        }
         var newIndex;
         var dt = event.dataTransfer;
         var draggedTab;
@@ -204,7 +206,7 @@ gBrowser.tabContainer.ondragstart = function(){if(gBrowser.tabContainer.clientHe
         }
     };
     gBrowser.tabContainer.addEventListener("drop", function(event){this.onDrop(event);}, true);
-}};
+};
 
 // copy of the original and overrided _getDropEffectForTabDrag method
 function orig_getDropEffectForTabDrag(event) {
