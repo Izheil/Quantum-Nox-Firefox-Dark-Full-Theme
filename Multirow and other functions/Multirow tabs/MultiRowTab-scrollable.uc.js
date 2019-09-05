@@ -94,20 +94,20 @@ function zzzz_MultiRowTabLite() {
     var uri = makeURI('data:text/css;charset=UTF=8,' + encodeURIComponent(css));
     sss.loadAndRegisterSheet(uri, sss.AGENT_SHEET);
     gBrowser.tabContainer._getDropIndex = function(event, isLink) {
-        var tabs = document.querySelectorAll(".tabbrowser-tab")
+        var tabs = document.getElementsByClassName("tabbrowser-tab")
         var tab = this._getDragTargetTab(event, isLink);
         if (window.getComputedStyle(this).direction == "ltr") {
         	for (let i = tab ? tab._tPos : 0; i < tabs.length; i++) {
                 let rect = tabs[i].getBoundingClientRect();
-        		if (event.screenX < rect.x + rect.width / 2
-                 && event.screenY < rect.y + rect.height) // multirow fix
+        		if (event.clientX < rect.x + rect.width / 2
+                 && event.clientY < rect.y + rect.height) // multirow fix
         			return i;
             }
         } else {
         	for (let i = tab ? tab._tPos : 0; i < tabs.length; i++) {
                 let rect = tabs[i].getBoundingClientRect();
-        		if (event.screenX > rect.x + rect.width / 2
-                 && event.screenY < rect.y + rect.height) // multirow fix
+        		if (event.clientX > rect.x + rect.width / 2
+                 && event.clientY < rect.y + rect.height) // multirow fix
         			return i;
             }
         }
@@ -152,7 +152,7 @@ gBrowser.tabContainer.ondragstart = function(){if(gBrowser.tabContainer.clientHe
         if (newIndex == null)
             return
 
-        var tabs = document.querySelectorAll(".tabbrowser-tab")
+        var tabs = document.getElementsByClassName("tabbrowser-tab")
         var ltr = (window.getComputedStyle(this).direction == "ltr");
         var rect = this.arrowScrollbox.getBoundingClientRect();
         var newMarginX, newMarginY;
