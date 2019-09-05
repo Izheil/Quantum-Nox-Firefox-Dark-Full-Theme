@@ -180,7 +180,7 @@ gBrowser.tabContainer.ondragstart = function(){if(gBrowser.tabContainer.clientHe
         var ltr = (window.getComputedStyle(this).direction == "ltr");
         var rect = this.arrowScrollbox.getBoundingClientRect();
         var newMarginX, newMarginY;
-        if (newIndex == this.childNodes.length) {
+        if (newIndex == tabs.length) {
             let tabRect = tabs[newIndex - 1].getBoundingClientRect();
             if (ltr)
                 newMarginX = tabRect.right - rect.left;
