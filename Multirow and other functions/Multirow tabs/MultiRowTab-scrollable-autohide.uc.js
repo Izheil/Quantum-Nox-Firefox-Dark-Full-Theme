@@ -42,7 +42,8 @@ function zzzz_MultiRowTabLite() {
     .tabbrowser-tab::after {border: none !important}
 
     #tabbrowser-tabs .tab-background {
-        height: var(--tab-min-height) !important}
+        max-height: var(--tab-min-height) !important;
+        min-height: var(--tab-min-height) !important}
 
     @media (-moz-os-version: windows-win10) {
     #tabbrowser-tabs .tab-background, #tabbrowser-tabs .tabbrowser-tab {
@@ -52,16 +53,8 @@ function zzzz_MultiRowTabLite() {
     #main-window[sizemode="normal"] .tabbrowser-tab .tab-line,
     #main-window[sizemode="maximized"] .tabbrowser-tab .tab-line, 
     #main-window[sizemode="fullscreen"] .tabbrowser-tab .tab-line {transform: translate(0,1px) !important}
-    
-    :root[uidensity="touch"] .tabbrowser-tab,
-    :root[uidensity="touch"] .tab-background {
-        min-height: calc(var(--tab-min-height) + 3px) !important}
 
     .tab-stack {width: 100%}
-
-    :root[uidensity="touch"] #tabbrowser-tabs .scrollbox-innerbox {    
-        min-height: calc(var(--tab-min-height) + 3px);
-        max-height: calc((var(--tab-min-height) + 3px)*var(--max-tab-rows))}
 
     #tabbrowser-tabs .arrowscrollbox-scrollbox {
         display: flex;
@@ -74,6 +67,16 @@ function zzzz_MultiRowTabLite() {
     #tabbrowser-tabs .tabbrowser-arrowscrollbox {
         overflow: visible;
         display: block;}
+
+    :root[uidensity="touch"] .tabbrowser-tab,
+    :root[uidensity="touch"] .tab-stack {   
+        min-height: calc(var(--tab-min-height) + 3px) !important;
+        max-height: calc(var(--tab-min-height) + 3px) !important;
+        margin-bottom: 0 !important}
+
+    :root[uidensity="touch"] #tabbrowser-tabs .arrowscrollbox-scrollbox {
+        min-height: var(--tab-min-height) !important;
+        max-height: calc((var(--tab-min-height)*var(--max-tab-rows)))}
 
     .arrowscrollbox-overflow-start-indicator,
     .arrowscrollbox-overflow-end-indicator {position: fixed !important}
