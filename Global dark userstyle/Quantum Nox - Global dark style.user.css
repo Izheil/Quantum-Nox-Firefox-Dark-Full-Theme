@@ -2,7 +2,7 @@
 @name         Quantum nox - Global dark theme
 @description  Global dark style to use alongside Firefox full dark theme - Quantum nox.
 @namespace    https://github.com/Izheil/Quantum-Nox-Firefox-Dark-Full-Theme
-@version      2.3.17
+@version      2.3.18
 @author       Izheil
 @homepageURL  https://github.com/Izheil/Quantum-Nox-Firefox-Dark-Full-Theme/tree/master/Global%20dark%20userstyle
 @updateURL    https://raw.githubusercontent.com/Izheil/Quantum-Nox-Firefox-Dark-Full-Theme/master/Global%20dark%20userstyle/Quantum%20Nox%20-%20Global%20dark%20style.user.css
@@ -303,12 +303,12 @@ if invMethod == "customSet" {
     .jw-progress, .vjs-load-progress, .vjs-play-progress, .vjs-play-progress::before, .vjs-volume-level, .video-time-bar
     .video-time-bar::before, .XSlider .ProgressBar .SeekBar-buffered, .player .played, .drt-bar-processed, .drt-seeker, 
     .xp-progress-bar .filler, .xp-progress-bar .handle, .fluid_controls_currentprogress, .fluid_control_currentvolume, 
-    .fluid_control_volume_currentpos {background-color: #fff !important}
-    
+    .fluid_control_volume_currentpos, .bui-bar-normal {background-color: #fff !important}
+        
     .jw-buffer, .jw-rail, .vjs-progress-holder::before, .video-progress-bar, .vjs-progress-holder, .vjs-load-progress, 
     .XSlider .ProgressBar, .player .buffered, .drt-bar-full, .drt-bar-buffered, .drt-volume-bar .drt-inner-bar, 
     .xp-progress-bar .buffer, .xp-progress-bar .seeker, .fluid_controls_progress, .fluid_controls_buffered, 
-    .fluid_control_volume {background-color: rgba(255,255,255,0.2) !important}
+    .fluid_control_volume, .bui-bar-wrap, .bui-bar-buffer {background-color: rgba(255,255,255,0.2) !important}  
     
     #main_video_fluid_controls_container {background: linear-gradient(transparent, rgba(0,0,0,0.7)) !important}
 
