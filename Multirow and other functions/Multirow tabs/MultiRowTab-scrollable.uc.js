@@ -154,7 +154,7 @@ gBrowser.tabContainer.ondragstart = function(){if(gBrowser.tabContainer.clientHe
         if (newIndex == null)
             return
 
-        var tabs = document.getElementsByClassName("tabbrowser-tab")
+        var tabs = document.getElementsByClassName("tabbrowser-tab");
         var ltr = (window.getComputedStyle(this).direction == "ltr");
         var rect = this.arrowScrollbox.getBoundingClientRect();
         var newMarginX, newMarginY;
@@ -183,7 +183,8 @@ gBrowser.tabContainer.ondragstart = function(){if(gBrowser.tabContainer.clientHe
         ind.style.transform = "translate(" + Math.round(newMarginX) + "px," + Math.round(newMarginY) + "px)"; // multirow fix
         ind.style.marginInlineStart = (-ind.clientWidth) + "px";
         }
-    
+    }
+
     gBrowser.tabContainer.addEventListener("dragover", gBrowser.tabContainer._onDragOver, true);
 
     gBrowser.tabContainer.onDrop = function(event) {
@@ -250,4 +251,3 @@ function orig_getDropEffectForTabDrag(event) {
       if (browserDragAndDrop.canDropLink(event)) {
         return "link";}
       return "none";}
-}

@@ -5,7 +5,6 @@
 // @include        main
 // @compatibility  Firefox 69
 // @author         Alice0775, Endor8, TroudhuK, Izheil
-// @version        06/09/2019 00:06 Minor fix to repeat the background image when having too many tabs
 // @version        05/09/2019 03:24 Fixed tab draggability to work with FF69
 // @version        22/07/2019 19:21 Compatibility fix with Windows 7
 // @version        23/03/2019 22:25 Comments on tab width
@@ -59,7 +58,7 @@ function zzzz_MultiRowTabLite() {
     #main-window[sizemode="maximized"] .tabbrowser-tab .tab-line, 
     #main-window[sizemode="fullscreen"] .tabbrowser-tab .tab-line {transform: translate(0,1px) !important}
     */
-    
+
     #tabbrowser-tabs {margin-top: 0px !important}
 
     .tab-stack {width: 100%}
@@ -153,7 +152,7 @@ gBrowser.tabContainer.ondragstart = function(){if(gBrowser.tabContainer.clientHe
         if (newIndex == null)
             return
 
-        var tabs = document.getElementsByClassName("tabbrowser-tab")
+        var tabs = document.getElementsByClassName("tabbrowser-tab");
         var ltr = (window.getComputedStyle(this).direction == "ltr");
         var rect = this.arrowScrollbox.getBoundingClientRect();
         var newMarginX, newMarginY;
@@ -182,29 +181,30 @@ gBrowser.tabContainer.ondragstart = function(){if(gBrowser.tabContainer.clientHe
         ind.style.transform = "translate(" + Math.round(newMarginX) + "px," + Math.round(newMarginY) + "px)"; // multirow fix
         ind.style.marginInlineStart = (-ind.clientWidth) + "px";
         }
-    
-    gBrowser.tabContainer.addEventListener("dragover", gBrowser.tabContainer._onDragOver, true);
-}};
+    }
 
-gBrowser.tabContainer.onDrop = function(event) {
-    var newIndex;
-    var dt = event.dataTransfer;
-    var draggedTab;
-    if (dt.mozTypesAt(0)[0] == TAB_DROP_TYPE) {
-        draggedTab = dt.mozGetDataAt(TAB_DROP_TYPE, 0);
-        if (!draggedTab)
-            return;
-    }
-    var dropEffect = dt.dropEffect;
-    if (draggedTab && dropEffect == "copy") {}
-    else {
-        newIndex = this._getDropIndex(event, false);
-        if (newIndex > draggedTab._tPos)
-            newIndex--;
-        gBrowser.moveTabTo(draggedTab, newIndex);
-    }
-};
-gBrowser.tabContainer.addEventListener("drop", function(event){this.onDrop(event);}, true);
+    gBrowser.tabContainer.addEventListener("dragover", gBrowser.tabContainer._onDragOver, true);
+
+    gBrowser.tabContainer.onDrop = function(event) {
+        var newIndex;
+        var dt = event.dataTransfer;
+        var draggedTab;
+        if (dt.mozTypesAt(0)[0] == TAB_DROP_TYPE) {
+            draggedTab = dt.mozGetDataAt(TAB_DROP_TYPE, 0);
+            if (!draggedTab)
+                return;
+        }
+        var dropEffect = dt.dropEffect;
+        if (draggedTab && dropEffect == "copy") {}
+        else {
+            newIndex = this._getDropIndex(event, false);
+            if (newIndex > draggedTab._tPos)
+                newIndex--;
+            gBrowser.moveTabTo(draggedTab, newIndex);
+        }
+    };
+    gBrowser.tabContainer.addEventListener("drop", function(event){this.onDrop(event);}, true);
+}};
 
 // copy of the original and overrided _getDropEffectForTabDrag method
 function orig_getDropEffectForTabDrag(event) {
@@ -249,4 +249,3 @@ function orig_getDropEffectForTabDrag(event) {
       if (browserDragAndDrop.canDropLink(event)) {
         return "link";}
       return "none";}
-}

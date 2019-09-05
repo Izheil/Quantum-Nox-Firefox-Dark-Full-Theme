@@ -148,6 +148,8 @@ gBrowser.tabContainer.ondragstart = function(){if(gBrowser.tabContainer.clientHe
         event.preventDefault();
         event.stopPropagation();
 
+        var ind = this._tabDropIndicator;
+
         var effects = orig_getDropEffectForTabDrag(event);
         if (effects == "link") {
             let tab = this._getDragTargetTab(event, true);
@@ -157,6 +159,7 @@ gBrowser.tabContainer.ondragstart = function(){if(gBrowser.tabContainer.clientHe
                 if (!tab.hasAttribute("pendingicon") && // annoying fix
                     Date.now() >= this._dragTime + this._dragOverDelay)
                     this.selectedItem = tab;
+                ind.hidden = true;
                 return;
             }
         }
@@ -196,48 +199,57 @@ gBrowser.tabContainer.ondragstart = function(){if(gBrowser.tabContainer.clientHe
                 newMarginX = rect.right - tabRect.right;
             newMarginY = tabRect.top + tabRect.height - rect.top - rect.height; // multirow fix
         }
-        return
+
+        ind.hidden = false;
+
+        newMarginX += ind.clientWidth / 2;
+        if (!ltr)
+            newMarginX *= -1;
+
+        ind.style.transform = "translate(" + Math.round(newMarginX) + "px," + Math.round(newMarginY) + "px)"; // multirow fix
+        ind.style.marginInlineStart = (-ind.clientWidth) + "px";
         }
-    
+    }
+
     gBrowser.tabContainer.addEventListener("dragover", gBrowser.tabContainer._onDragOver, true);
+
+    // This prevents the fix from leaving the tab invisible if exiting tab dragging 
+    // before dropping the tab
+    gBrowser.tabContainer.ondragend = function(event) {
+        var tabs = document.getElementsByClassName("tabbrowser-tab");
+        for (let i = 0; i < tabs.length; i++) {
+            tabs[i].style.display = "block";
+            tabs[i].style.transform = "initial";
+        }
+    }
+
+    gBrowser.tabContainer.onDrop = function(event) {
+        var tabs = document.getElementsByClassName("tabbrowser-tab");
+
+        // This resets tab display to default after tab moving animation
+        for (let i = 0; i < tabs.length; i++) {
+            tabs[i].style.display = "block";
+            tabs[i].style.transform = "initial";
+        }
+        var newIndex;
+        var dt = event.dataTransfer;
+        var draggedTab;
+        if (dt.mozTypesAt(0)[0] == TAB_DROP_TYPE) {
+            draggedTab = dt.mozGetDataAt(TAB_DROP_TYPE, 0);
+            if (!draggedTab)
+                return;
+        }
+        var dropEffect = dt.dropEffect;
+        if (draggedTab && dropEffect == "copy") {}
+        else {
+            newIndex = this._getDropIndex(event, false);
+            if (newIndex > draggedTab._tPos)
+                newIndex--;
+            gBrowser.moveTabTo(draggedTab, newIndex);
+        }
+    };
+    gBrowser.tabContainer.addEventListener("drop", function(event){this.onDrop(event);}, true);
 }};
-
-// This prevents the fix from leaving the tab invisible if exiting tab dragging 
-// before dropping the tab
-gBrowser.tabContainer.ondragend = function(event) {
-    var tabs = document.getElementsByClassName("tabbrowser-tab");
-    for (let i = 0; i < tabs.length; i++) {
-        tabs[i].style.display = "block";
-        tabs[i].style.transform = "initial";
-    }
-}
-
-gBrowser.tabContainer.onDrop = function(event) {
-    var tabs = document.getElementsByClassName("tabbrowser-tab");
-
-    // This resets tab display to default after tab moving animation
-    for (let i = 0; i < tabs.length; i++) {
-        tabs[i].style.display = "block";
-        tabs[i].style.transform = "initial";
-    }
-    var newIndex;
-    var dt = event.dataTransfer;
-    var draggedTab;
-    if (dt.mozTypesAt(0)[0] == TAB_DROP_TYPE) {
-        draggedTab = dt.mozGetDataAt(TAB_DROP_TYPE, 0);
-        if (!draggedTab)
-            return;
-    }
-    var dropEffect = dt.dropEffect;
-    if (draggedTab && dropEffect == "copy") {}
-    else {
-        newIndex = this._getDropIndex(event, false);
-        if (newIndex > draggedTab._tPos)
-            newIndex--;
-        gBrowser.moveTabTo(draggedTab, newIndex);
-    }
-};
-gBrowser.tabContainer.addEventListener("drop", function(event){this.onDrop(event);}, true);
 
 // copy of the original and overrided _getDropEffectForTabDrag method
 function orig_getDropEffectForTabDrag(event) {
@@ -282,4 +294,3 @@ function orig_getDropEffectForTabDrag(event) {
       if (browserDragAndDrop.canDropLink(event)) {
         return "link";}
       return "none";}
-}
