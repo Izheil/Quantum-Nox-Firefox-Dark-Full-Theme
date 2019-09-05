@@ -92,7 +92,7 @@ function zzzz_MultiRowTabLite() {
     .titlebar-buttonbox, #titlebar-buttonbox {display: block !important; height:var(--tab-min-height) !important}}
 
     #tabbrowser-tabs .scrollbutton-up, #tabbrowser-tabs .scrollbutton-down, #alltabs-button, 
-    :root:not([customizing]) #TabsToolbar #new-tab-button, #tabbrowser-tabs spacer, .tabbrowser-tab::after
+    :root:not([customizing]) #TabsToolbar #new-tab-button, .tabbrowser-tab::after
     {display: none}
     `;
     var sss = Cc['@mozilla.org/content/style-sheet-service;1'].getService(Ci.nsIStyleSheetService);
