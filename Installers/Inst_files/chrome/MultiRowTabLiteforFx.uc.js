@@ -49,10 +49,12 @@ function zzzz_MultiRowTabLite() {
             min-height: calc(var(--tab-min-height) + 1px) !important}
         }
 
+    /* This fix is intended for some updates when the tab line gets chopped on top of screen 
     #main-window[sizemode="normal"] .tabbrowser-tab .tab-line,
     #main-window[sizemode="maximized"] .tabbrowser-tab .tab-line, 
     #main-window[sizemode="fullscreen"] .tabbrowser-tab .tab-line {transform: translate(0,1px) !important}
-
+    */
+    
     #tabbrowser-tabs {margin-top: 0px !important}
 
     .tab-stack {width: 100%}
@@ -146,7 +148,7 @@ gBrowser.tabContainer.ondragstart = function(){if(gBrowser.tabContainer.clientHe
         if (newIndex == null)
             return
 
-        var tabs = document.getElementsByClassName(".tabbrowser-tab")
+        var tabs = document.getElementsByClassName("tabbrowser-tab")
         var ltr = (window.getComputedStyle(this).direction == "ltr");
         var rect = this.arrowScrollbox.getBoundingClientRect();
         var newMarginX, newMarginY;
@@ -176,6 +178,7 @@ gBrowser.tabContainer.ondragstart = function(){if(gBrowser.tabContainer.clientHe
         ind.style.marginInlineStart = (-ind.clientWidth) + "px";
         }
     }
+
     gBrowser.tabContainer.addEventListener("dragover", gBrowser.tabContainer._onDragOver, true);
 
     gBrowser.tabContainer.onDrop = function(event) {

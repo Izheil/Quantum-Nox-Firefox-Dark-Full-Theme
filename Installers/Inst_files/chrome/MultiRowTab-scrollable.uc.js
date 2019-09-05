@@ -49,9 +49,11 @@ function zzzz_MultiRowTabLite() {
             min-height: calc(var(--tab-min-height) + 1px) !important}
     }
     
+    /* This fix is intended for some updates when the tab line gets chopped on top of screen 
     #main-window[sizemode="normal"] .tabbrowser-tab .tab-line,
     #main-window[sizemode="maximized"] .tabbrowser-tab .tab-line, 
     #main-window[sizemode="fullscreen"] .tabbrowser-tab .tab-line {transform: translate(0,1px) !important}
+    */
 
     .tab-stack {width: 100%}
 
@@ -136,16 +138,16 @@ gBrowser.tabContainer.ondragstart = function(){if(gBrowser.tabContainer.clientHe
 
         var effects = orig_getDropEffectForTabDrag(event);
         if (effects == "link") {
-        	let tab = this._getDragTargetTab(event, true);
-        	if (tab) {
-        		if (!this._dragTime)
-        			this._dragTime = Date.now();
-        		if (!tab.hasAttribute("pendingicon") && // annoying fix
+            let tab = this._getDragTargetTab(event, true);
+            if (tab) {
+                if (!this._dragTime)
+                    this._dragTime = Date.now();
+                if (!tab.hasAttribute("pendingicon") && // annoying fix
                     Date.now() >= this._dragTime + this._dragOverDelay)
-        			this.selectedItem = tab;
-        		ind.hidden = true;
-        		return;
-        	}
+                    this.selectedItem = tab;
+                ind.hidden = true;
+                return;
+            }
         }
 
         var newIndex = this._getDropIndex(event, effects == "link");
@@ -182,6 +184,7 @@ gBrowser.tabContainer.ondragstart = function(){if(gBrowser.tabContainer.clientHe
         ind.style.marginInlineStart = (-ind.clientWidth) + "px";
         }
     }
+
     gBrowser.tabContainer.addEventListener("dragover", gBrowser.tabContainer._onDragOver, true);
 
     gBrowser.tabContainer.onDrop = function(event) {
