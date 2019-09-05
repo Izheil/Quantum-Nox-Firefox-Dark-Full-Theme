@@ -184,27 +184,27 @@ gBrowser.tabContainer.ondragstart = function(){if(gBrowser.tabContainer.clientHe
         }
     
     gBrowser.tabContainer.addEventListener("dragover", gBrowser.tabContainer._onDragOver, true);
-
-    gBrowser.tabContainer.onDrop = function(event) {
-        var newIndex;
-        var dt = event.dataTransfer;
-        var draggedTab;
-        if (dt.mozTypesAt(0)[0] == TAB_DROP_TYPE) {
-            draggedTab = dt.mozGetDataAt(TAB_DROP_TYPE, 0);
-            if (!draggedTab)
-                return;
-        }
-        var dropEffect = dt.dropEffect;
-        if (draggedTab && dropEffect == "copy") {}
-        else {
-            newIndex = this._getDropIndex(event, false);
-            if (newIndex > draggedTab._tPos)
-                newIndex--;
-            gBrowser.moveTabTo(draggedTab, newIndex);
-        }
-    };
-    gBrowser.tabContainer.addEventListener("drop", function(event){this.onDrop(event);}, true);
 }};
+
+gBrowser.tabContainer.onDrop = function(event) {
+    var newIndex;
+    var dt = event.dataTransfer;
+    var draggedTab;
+    if (dt.mozTypesAt(0)[0] == TAB_DROP_TYPE) {
+        draggedTab = dt.mozGetDataAt(TAB_DROP_TYPE, 0);
+        if (!draggedTab)
+            return;
+    }
+    var dropEffect = dt.dropEffect;
+    if (draggedTab && dropEffect == "copy") {}
+    else {
+        newIndex = this._getDropIndex(event, false);
+        if (newIndex > draggedTab._tPos)
+            newIndex--;
+        gBrowser.moveTabTo(draggedTab, newIndex);
+    }
+};
+gBrowser.tabContainer.addEventListener("drop", function(event){this.onDrop(event);}, true);
 
 // copy of the original and overrided _getDropEffectForTabDrag method
 function orig_getDropEffectForTabDrag(event) {

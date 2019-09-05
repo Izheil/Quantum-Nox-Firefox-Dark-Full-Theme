@@ -175,44 +175,44 @@ gBrowser.tabContainer.ondragstart = function(){if(gBrowser.tabContainer.clientHe
         }
     
     gBrowser.tabContainer.addEventListener("dragover", gBrowser.tabContainer._onDragOver, true);
-}
-    // This prevents the fix from leaving the tab invisible if exiting tab dragging 
-    // before dropping the tab
-    gBrowser.tabContainer.ondragend = function(event) {
-        var tabs = document.getElementsByClassName("tabbrowser-tab");
-        for (let i = 0; i < tabs.length; i++) {
-            tabs[i].style.display = "block";
-            tabs[i].style.transform = "initial";
-        }
+}};
+
+// This prevents the fix from leaving the tab invisible if exiting tab dragging 
+// before dropping the tab
+gBrowser.tabContainer.ondragend = function(event) {
+    var tabs = document.getElementsByClassName("tabbrowser-tab");
+    for (let i = 0; i < tabs.length; i++) {
+        tabs[i].style.display = "block";
+        tabs[i].style.transform = "initial";
     }
+}
 
-    gBrowser.tabContainer.onDrop = function(event) {
-        var tabs = document.getElementsByClassName("tabbrowser-tab");
+gBrowser.tabContainer.onDrop = function(event) {
+    var tabs = document.getElementsByClassName("tabbrowser-tab");
 
-        // This resets tab display to default after tab moving animation
-        for (let i = 0; i < tabs.length; i++) {
-            tabs[i].style.display = "block";
-            tabs[i].style.transform = "initial";
-        }
-        var newIndex;
-        var dt = event.dataTransfer;
-        var draggedTab;
-        if (dt.mozTypesAt(0)[0] == TAB_DROP_TYPE) {
-            draggedTab = dt.mozGetDataAt(TAB_DROP_TYPE, 0);
-            if (!draggedTab)
-                return;
-        }
-        var dropEffect = dt.dropEffect;
-        if (draggedTab && dropEffect == "copy") {}
-        else {
-            newIndex = this._getDropIndex(event, false);
-            if (newIndex > draggedTab._tPos)
-                newIndex--;
-            gBrowser.moveTabTo(draggedTab, newIndex);
-        }
-    };
-    gBrowser.tabContainer.addEventListener("drop", function(event){this.onDrop(event);}, true);
+    // This resets tab display to default after tab moving animation
+    for (let i = 0; i < tabs.length; i++) {
+        tabs[i].style.display = "block";
+        tabs[i].style.transform = "initial";
+    }
+    var newIndex;
+    var dt = event.dataTransfer;
+    var draggedTab;
+    if (dt.mozTypesAt(0)[0] == TAB_DROP_TYPE) {
+        draggedTab = dt.mozGetDataAt(TAB_DROP_TYPE, 0);
+        if (!draggedTab)
+            return;
+    }
+    var dropEffect = dt.dropEffect;
+    if (draggedTab && dropEffect == "copy") {}
+    else {
+        newIndex = this._getDropIndex(event, false);
+        if (newIndex > draggedTab._tPos)
+            newIndex--;
+        gBrowser.moveTabTo(draggedTab, newIndex);
+    }
 };
+gBrowser.tabContainer.addEventListener("drop", function(event){this.onDrop(event);}, true);
 
 // copy of the original and overrided _getDropEffectForTabDrag method
 function orig_getDropEffectForTabDrag(event) {
