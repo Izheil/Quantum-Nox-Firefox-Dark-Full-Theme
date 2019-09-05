@@ -86,7 +86,8 @@ function zzzz_MultiRowTabLite() {
     @media (-moz-os-version: windows-win10) {
         .titlebar-buttonbox, #titlebar-buttonbox {display: block !important; height:var(--tab-min-height) !important}}
 
-    #tabbrowser-tabs .scrollbutton-up, #tabbrowser-tabs .scrollbutton-down, #alltabs-button
+    #tabbrowser-tabs .scrollbutton-up, #tabbrowser-tabs .scrollbutton-down, #alltabs-button, 
+    :root:not([customizing]) #TabsToolbar #new-tab-button, #tabbrowser-tabs spacer, .tabbrowser-tab::after
     {display: none}
     `;
     var sss = Cc['@mozilla.org/content/style-sheet-service;1'].getService(Ci.nsIStyleSheetService);
@@ -94,15 +95,16 @@ function zzzz_MultiRowTabLite() {
     sss.loadAndRegisterSheet(uri, sss.AGENT_SHEET);
     gBrowser.tabContainer._getDropIndex = function(event, isLink) {
         var tabs = document.querySelectorAll(".tabbrowser-tab")
+        var tab = this._getDragTargetTab(event, isLink);
         if (window.getComputedStyle(this).direction == "ltr") {
-        	for (let i = 0; i < tabs.length; i++) {
+        	for (let i = tab ? tab._tPos : 0; i < tabs.length; i++) {
                 let rect = tabs[i].getBoundingClientRect();
         		if (event.screenX < rect.x + rect.width / 2
                  && event.screenY < rect.y + rect.height) // multirow fix
         			return i;
             }
         } else {
-        	for (let i = 0; i < tabs.length; i++) {
+        	for (let i = tab ? tab._tPos : 0; i < tabs.length; i++) {
                 let rect = tabs[i].getBoundingClientRect();
         		if (event.screenX > rect.x + rect.width / 2
                  && event.screenY < rect.y + rect.height) // multirow fix
