@@ -179,7 +179,7 @@ This problem doesn't happen if you use a code editor such as notepad++, atom, su
 <p>The fix to be able to theme unread tabs again after FF61 (see <a href="https://bugzilla.mozilla.org/show_bug.cgi?format=default&id=1453957">bug 1453957</a> on bugzilla) as mentioned in <a href="https://www.reddit.com/r/FirefoxCSS/comments/8yruy8/tabbrowsertabunread_backgroundimage/">this reddit thread</a>, was made by <b>moko1960</b> to use in Firefox 61+.</p>
 <p>The code to be able to edit anonymous content (in our case the scrollbars and tooltips) was created thanks to the efforts of <a href="http://mozilla.zeniko.ch/userchrome.js.html">Zeniko</a>, <a href="https://github.com/nuchi/firefox-quantum-userchromejs">Nichu</a>, and <a href="https://github.com/Sporif/firefox-quantum-userchromejs">Sporif</a>.
 <p>Special thanks to <b>Messna</b> for noting the class turning into an ID on FF58, and <b>Snwflake</b> for fixing Firefox root folder location on MacOS.</p>
-<p>Also thanks to <b>BelladonnavGF</b>, <b>DallasBelt</b>, <b>Demir-delic</b>, <b>Gitut2007</b>, <b>Hakerdefo</b>, <b>Sergio</b>, <b>Tkhquang</b> and <b>YiannisNi</b> for noting some issues with the theme, and the requests for new features that extended this project.</p>
+<p>Also thanks to <b>532910</b>, <b>BelladonnavGF</b>, <b>DallasBelt</b>, <b>Demir-delic</b>, <b>Gitut2007</b>, <b>Hakerdefo</b>, <b>Tkhquang</b> and <b>YiannisNi</b> for noting some issues with the theme, and the requests for new features that extended this project.</p>
 
 <h2>Donations</h2>
 <p>If you want to support this project, consider buying me a coffee to motivate me keep this repository up and running.</p>
