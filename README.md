@@ -16,7 +16,7 @@ This problem doesn't happen if you use a code editor such as notepad++, atom, su
 <h3>Last update: <b>05/09/2019</b></h3>
 <p>Files updated:</p>
 <ul>
-	<li><b>MultiRowTabs*.uc.js</b>: Fixed Tab draggability for FF69+.</li>
+	<li><b>MultiRowTabs*.uc.js</b>: Fixed Tab draggability for FF69+. Also fixed some issues with Touch density tabs appearing "floating".</li>
 </ul>
 <h3>Pre-Last update: <b>03/09/2019</b></h3>
 <ul>
