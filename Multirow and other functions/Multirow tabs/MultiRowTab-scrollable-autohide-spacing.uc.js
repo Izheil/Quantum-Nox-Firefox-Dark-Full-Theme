@@ -1,10 +1,11 @@
 // ==UserScript==
-// @name           MultiRowTab-scrollable-autohide.uc.js
+// @name           MultiRowTab-scrollable-autohide-spacing.uc.js
 // @namespace      http://space.geocities.yahoo.co.jp/gl/alice0775
 // @description    Multi-row tabs draggability fix, Experimental CSS version
 // @include        main
 // @compatibility  Firefox 69
 // @author         Alice0775, Endor8, TroudhuK, Izheil
+// @version        06/09/2019 11:33 Some fixes to paliate the lower row start space glitch
 // @version        05/09/2019 23:22 Released the first version of the alternative multirow
 // ==/UserScript==
     zzzz_MultiRowTabLite();
@@ -25,7 +26,8 @@ function zzzz_MultiRowTabLite() {
         --tab-growth: 1}
 
     .tabbrowser-tab:not([pinned]) {
-        flex-grow: var(--tab-growth)}
+        flex-grow: var(--tab-growth);
+        transition: transform 0.1s !important}
 
     .tabbrowser-tab::after {border: none !important}
 
@@ -142,6 +144,9 @@ document.getElementById("tabbrowser-tabs").onmouseout = function(){
 
 // This sets when to apply the fix (by default a new row starts after the 23th open tab, unless you changed the min-size of tabs)
 gBrowser.tabContainer.ondragstart = function(){if(gBrowser.tabContainer.clientHeight > document.getElementsByClassName("tabbrowser-tab")[0].clientHeight) {
+    var tabs = document.getElementsByClassName("tabbrowser-tab");
+    var selTab = document.querySelectorAll(".tabbrowser-tab[selected='true']")[0];
+    var selIndex = selTab._tPos;
 
     gBrowser.tabContainer._getDropEffectForTabDrag = function(event){return "";}; // multirow fix: to make the default "dragover" handler do nothing
     gBrowser.tabContainer._onDragOver = function(event) {
@@ -166,21 +171,26 @@ gBrowser.tabContainer.ondragstart = function(){if(gBrowser.tabContainer.clientHe
             return
 
         // These loops change the behaviour of the dragging to imitate firefox default one
-        var tabs = document.getElementsByClassName("tabbrowser-tab");
-        var selTab = document.querySelectorAll(".tabbrowser-tab[selected='true']")[0];
+        for (let i = 0; i < tabs.length; i++) {
+            let tabrect = tabs[i].getBoundingClientRect();
+            tabs[i].style.transform = "initial";
+        }
+        
         var newTab = document.getElementsByClassName("tabs-newtab-button")[0];
 
-        for (let i = 0; i < newIndex; i++) {
-            tabs[i].style.transform = "initial";
-            }
-        selTab.style.display = "none";
         newTab.style.display = "none";
+        selTab.style.opacity = 0;
 
-        for (let i = newIndex; i < tabs.length; i++) {
-            let tabrect = tabs[i].getBoundingClientRect();
-            tabs[i].style.transition = "all 0.2s ease-out";
-            tabs[i].style.transform = "translate(" + tabrect.width + "px," + 0 + ")";
-            }
+        if (selIndex > newIndex) {
+            for (let i = newIndex; i < selIndex; i++) {
+                let tabrect = tabs[i].getBoundingClientRect();
+                tabs[i].style.transform = "translate(" + tabrect.width + "px," + 0 + ")";
+                }
+        } else if (selIndex == newIndex) {selTab.style.display = "block"}
+            for (let i = selIndex; i < newIndex; i++) {
+                let tabrect = tabs[i].getBoundingClientRect();
+                tabs[i].style.transform = "translate(" + (tabrect.width * -1) + "px," + 0 + ")";
+                }
         }
     }
 
@@ -190,13 +200,12 @@ gBrowser.tabContainer.ondragstart = function(){if(gBrowser.tabContainer.clientHe
     // before dropping the tab
     gBrowser.tabContainer.ondragend = function(event) {
         var tabs = document.getElementsByClassName("tabbrowser-tab");
-        var selTab = document.querySelectorAll(".tabbrowser-tab[selected='true']")[0];
         var newTab = document.getElementsByClassName("tabs-newtab-button")[0];
 
-        selTab.style.display = "block";
         newTab.style.display = "block";
         for (let i = 0; i < tabs.length; i++) {
             tabs[i].style.transform = "initial";
+            tabs[i].style.opacity = 1;
         }
     }
 
@@ -206,10 +215,10 @@ gBrowser.tabContainer.ondragstart = function(){if(gBrowser.tabContainer.clientHe
         var newTab = document.getElementsByClassName("tabs-newtab-button")[0];
 
         // This resets tab display to default after tab moving animation
-        selTab.style.display = "block";
         newTab.style.display = "block";
         for (let i = 0; i < tabs.length; i++) {
             tabs[i].style.transform = "initial";
+            tabs[i].style.opacity = 1;
         }
         var newIndex;
         var dt = event.dataTransfer;
