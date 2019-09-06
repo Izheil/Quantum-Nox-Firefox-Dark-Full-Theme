@@ -25,7 +25,8 @@ hbox#fullscr-toggler {
 <p>Works with Firefox 69+. This version is the same as scrollable multirow, except the scrollbars are only shown when you hover over the tabs area. It fixes some very specific issue when loading a session restore and loading a page in a session-restored blank page.</p>
 
 <h3>MultiRowTab-*-spacing.uc.js</h3>
-<p>Works with Firefox 69+. The spacing versions do the same as the others, except they try to imitate firefox default tab moving animation. <b>This version is more resource-heavy while you are moving tabs</b>, which shouldn't be much of an issue if you don't usually hold tabs in the air for minutes, but if you have a low-end computer, or are worried about resource usage or performance, you should consider using any of the other non-spacing versions instead. There is a small issue with tabs from the upper row forcing a space in the rows directly below it when dragging the tab to the upper rows.</p>
+<p>Works with Firefox 69+. The spacing versions do the same as the others, except they try to imitate firefox default tab moving animation. <b>This version is more resource-heavy while you are moving tabs</b>, which shouldn't be much of an issue if you don't usually hold tabs in the air for minutes, but if you have a low-end computer, or are worried about resource usage or performance, you should consider using any of the other non-spacing versions instead.</p> 
+<p>There is also a small issue with tabs from the upper rows forcing a space in the rows directly below it when dragging the tab to the upper rows.</p>
 <img src="https://i.imgur.com/ZfKRlWQ.png">
 
 <h2>Tab sizing</h2>
