@@ -5,6 +5,7 @@
 // @include        main
 // @compatibility  Firefox 69
 // @author         Alice0775, Endor8, TroudhuK, Izheil
+// @version        06/09/2019 23:37 Fixed issue with tabs when moving to another window
 // @version        05/09/2019 03:24 Fixed tab draggability to work with FF69
 // @version        22/07/2019 19:21 Compatibility fix with Windows 7
 // @version        23/03/2019 22:25 Comments on tab width
@@ -40,6 +41,10 @@ function zzzz_MultiRowTabLite() {
     .tabbrowser-tab:not([pinned]) {
         flex-grow: var(--tab-growth)}
     
+    .tabbrowser-tab::after {border: none !important}
+    
+    :root:-moz-lwtheme[lwtheme-image] {background-repeat: repeat-y !important}
+
     #tabbrowser-tabs .tab-background{
         max-height: var(--tab-min-height) !important;
         min-height: var(--tab-min-height) !important}
@@ -54,7 +59,7 @@ function zzzz_MultiRowTabLite() {
     #main-window[sizemode="maximized"] .tabbrowser-tab .tab-line, 
     #main-window[sizemode="fullscreen"] .tabbrowser-tab .tab-line {transform: translate(0,1px) !important}
     */
-    
+
     #tabbrowser-tabs {margin-top: 0px !important}
 
     .tab-stack {width: 100%}
@@ -148,7 +153,7 @@ gBrowser.tabContainer.ondragstart = function(){if(gBrowser.tabContainer.clientHe
         if (newIndex == null)
             return
 
-        var tabs = document.getElementsByClassName("tabbrowser-tab")
+        var tabs = document.getElementsByClassName("tabbrowser-tab");
         var ltr = (window.getComputedStyle(this).direction == "ltr");
         var rect = this.arrowScrollbox.getBoundingClientRect();
         var newMarginX, newMarginY;
@@ -184,15 +189,19 @@ gBrowser.tabContainer.ondragstart = function(){if(gBrowser.tabContainer.clientHe
     gBrowser.tabContainer.onDrop = function(event) {
         var newIndex;
         var dt = event.dataTransfer;
+        var dropEffect = dt.dropEffect;
         var draggedTab;
+        let movingTabs;
         if (dt.mozTypesAt(0)[0] == TAB_DROP_TYPE) {
             draggedTab = dt.mozGetDataAt(TAB_DROP_TYPE, 0);
-            if (!draggedTab)
-                return;
+            if (!draggedTab) {
+              return;
+            }
+            movingTabs = draggedTab._dragData.movingTabs;
+            draggedTab.container._finishGroupSelectedTabs(draggedTab);
         }
-        var dropEffect = dt.dropEffect;
         if (draggedTab && dropEffect == "copy") {}
-        else {
+        else if (draggedTab && draggedTab.container == this) {
             newIndex = this._getDropIndex(event, false);
             if (newIndex > draggedTab._tPos)
                 newIndex--;

@@ -5,6 +5,7 @@
 // @include        main
 // @compatibility  Firefox 69
 // @author         Alice0775, Endor8, TroudhuK, Izheil
+// @version        06/09/2019 23:37 Fixed issue with tabs when moving to another window
 // @version        06/09/2019 11:33 Some fixes to paliate the lower row start space glitch
 // @version        05/09/2019 23:22 Released the first version of the alternative multirow
 // ==/UserScript==
@@ -202,15 +203,19 @@ gBrowser.tabContainer.ondragstart = function(){if(gBrowser.tabContainer.clientHe
         }
         var newIndex;
         var dt = event.dataTransfer;
+        var dropEffect = dt.dropEffect;
         var draggedTab;
+        let movingTabs;
         if (dt.mozTypesAt(0)[0] == TAB_DROP_TYPE) {
             draggedTab = dt.mozGetDataAt(TAB_DROP_TYPE, 0);
-            if (!draggedTab)
-                return;
+            if (!draggedTab) {
+              return;
+            }
+            movingTabs = draggedTab._dragData.movingTabs;
+            draggedTab.container._finishGroupSelectedTabs(draggedTab);
         }
-        var dropEffect = dt.dropEffect;
         if (draggedTab && dropEffect == "copy") {}
-        else {
+        else if (draggedTab && draggedTab.container == this) {
             newIndex = this._getDropIndex(event, false);
             if (newIndex > draggedTab._tPos)
                 newIndex--;
