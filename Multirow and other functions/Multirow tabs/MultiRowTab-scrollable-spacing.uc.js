@@ -147,7 +147,6 @@ gBrowser.tabContainer.ondragstart = function(){if(gBrowser.tabContainer.clientHe
 
         // These loops change the behaviour of the dragging to imitate firefox default one
         for (let i = 0; i < tabs.length; i++) {
-            let tabrect = tabs[i].getBoundingClientRect();
             tabs[i].style.transform = "initial";
         }
         
@@ -157,15 +156,27 @@ gBrowser.tabContainer.ondragstart = function(){if(gBrowser.tabContainer.clientHe
         selTab.style.opacity = 0;
 
         if (selIndex > newIndex) {
+            for (let i = selIndex; i < tabs.length; i++) {
+                tabs[i].style.transform = "initial";
+            }
             for (let i = newIndex; i < selIndex; i++) {
                 let tabrect = tabs[i].getBoundingClientRect();
                 tabs[i].style.transform = "translate(" + tabrect.width + "px," + 0 + ")";
                 }
-        } else if (selIndex == newIndex) {selTab.style.display = "block"}
+        } else if (selIndex == newIndex) {
+            for (let i = 0; i < tabs.length; i++) {
+                tabs[i].style.transform = "initial";
+            }
+            selTab.style.display = "block"}
+          else {
+            for (let i = 0; i < selIndex; i++) {
+                tabs[i].style.transform = "initial";
+            }
             for (let i = selIndex; i < newIndex; i++) {
                 let tabrect = tabs[i].getBoundingClientRect();
                 tabs[i].style.transform = "translate(" + (tabrect.width * -1) + "px," + 0 + ")";
                 }
+            }
         }
     }
 
