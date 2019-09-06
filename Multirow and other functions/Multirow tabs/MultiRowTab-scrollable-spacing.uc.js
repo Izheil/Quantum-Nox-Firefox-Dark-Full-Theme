@@ -123,8 +123,6 @@ gBrowser.tabContainer.ondragstart = function(){if(gBrowser.tabContainer.clientHe
         event.preventDefault();
         event.stopPropagation();
 
-        var ind = this._tabDropIndicator;
-
         var effects = orig_getDropEffectForTabDrag(event);
         if (effects == "link") {
             let tab = this._getDragTargetTab(event, true);
@@ -134,7 +132,6 @@ gBrowser.tabContainer.ondragstart = function(){if(gBrowser.tabContainer.clientHe
                 if (!tab.hasAttribute("pendingicon") && // annoying fix
                     Date.now() >= this._dragTime + this._dragOverDelay)
                     this.selectedItem = tab;
-                ind.hidden = true;
                 return;
             }
         }
@@ -145,44 +142,19 @@ gBrowser.tabContainer.ondragstart = function(){if(gBrowser.tabContainer.clientHe
 
         // These loops change the behaviour of the dragging to imitate firefox default one
         var tabs = document.getElementsByClassName("tabbrowser-tab");
-        var selTab = document.querySelectorAll(".tabbrowser-tab[selected='true']")[0]
+        var selTab = document.querySelectorAll(".tabbrowser-tab[selected='true']")[0];
+        var newTab = document.getElementsByClassName("tabs-newtab-button")[0];
+
         for (let i = 0; i < newIndex; i++) {
             tabs[i].style.transform = "initial";
-        }
+            }
         selTab.style.display = "none";
+        newTab.style.display = "none";
         for (let i = newIndex; i < tabs.length; i++) {
             let tabrect = tabs[i].getBoundingClientRect();
             tabs[i].style.transition = "all 0.2s ease-out";
             tabs[i].style.transform = "translate(" + tabrect.width + "px," + 0 + ")";
-        }
-
-        var ltr = (window.getComputedStyle(this).direction == "ltr");
-        var rect = this.arrowScrollbox.getBoundingClientRect();
-        var newMarginX, newMarginY;
-        if (newIndex == tabs.length) {
-            let tabRect = tabs[newIndex - 1].getBoundingClientRect();
-            if (ltr)
-                newMarginX = tabRect.right - rect.left;
-            else
-                newMarginX = rect.right - tabRect.left;
-            newMarginY = tabRect.top + tabRect.height - rect.top - rect.height; // multirow fix
-        } else {
-            let tabRect = tabs[newIndex].getBoundingClientRect();
-            if (ltr)
-                newMarginX = tabRect.left - rect.left;
-            else
-                newMarginX = rect.right - tabRect.right;
-            newMarginY = tabRect.top + tabRect.height - rect.top - rect.height; // multirow fix
-        }
-
-        ind.hidden = false;
-
-        newMarginX += ind.clientWidth / 2;
-        if (!ltr)
-            newMarginX *= -1;
-
-        ind.style.transform = "translate(" + Math.round(newMarginX) + "px," + Math.round(newMarginY) + "px)"; // multirow fix
-        ind.style.marginInlineStart = (-ind.clientWidth) + "px";
+            }
         }
     }
 
@@ -192,18 +164,25 @@ gBrowser.tabContainer.ondragstart = function(){if(gBrowser.tabContainer.clientHe
     // before dropping the tab
     gBrowser.tabContainer.ondragend = function(event) {
         var tabs = document.getElementsByClassName("tabbrowser-tab");
+        var selTab = document.querySelectorAll(".tabbrowser-tab[selected='true']")[0];
+        var newTab = document.getElementsByClassName("tabs-newtab-button")[0];
+
+        selTab.style.display = "block";
+        newTab.style.display = "block";
         for (let i = 0; i < tabs.length; i++) {
-            tabs[i].style.display = "block";
             tabs[i].style.transform = "initial";
         }
     }
 
     gBrowser.tabContainer.onDrop = function(event) {
         var tabs = document.getElementsByClassName("tabbrowser-tab");
+        var selTab = document.querySelectorAll(".tabbrowser-tab[selected='true']")[0];
+        var newTab = document.getElementsByClassName("tabs-newtab-button")[0];
 
         // This resets tab display to default after tab moving animation
+        selTab.style.display = "block";
+        newTab.style.display = "block";
         for (let i = 0; i < tabs.length; i++) {
-            tabs[i].style.display = "block";
             tabs[i].style.transform = "initial";
         }
         var newIndex;
