@@ -175,6 +175,7 @@ gBrowser.tabContainer.ondragstart = function(){if(gBrowser.tabContainer.clientHe
             }
         selTab.style.display = "none";
         newTab.style.display = "none";
+
         for (let i = newIndex; i < tabs.length; i++) {
             let tabrect = tabs[i].getBoundingClientRect();
             tabs[i].style.transition = "all 0.2s ease-out";
