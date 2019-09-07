@@ -25,8 +25,10 @@ function zzzz_MultiRowTabLite() {
         --tab-growth: 1}
 
     .tabbrowser-tab:not([pinned]) {
-        flex-grow: var(--tab-growth);
-        transition: transform 0.1s !important}
+        flex-grow: var(--tab-growth)}
+
+    .tabbrowser-tab:not([selected]) {
+        transition: transform 0.1s ease-out !important} 
     
     .tabbrowser-tab::after {border: none !important}
     
@@ -115,8 +117,8 @@ document.addEventListener("SSTabRestoring", scrollToView, false);
 // This sets when to apply the fix (by default a new row starts after the 23th open tab, unless you changed the min-size of tabs)
 gBrowser.tabContainer.ondragstart = function(){if(gBrowser.tabContainer.clientHeight > document.getElementsByClassName("tabbrowser-tab")[0].clientHeight) {
     var tabs = document.getElementsByClassName("tabbrowser-tab");
-    var selTab = document.querySelectorAll(".tabbrowser-tab[selected='true']")[0];
-    var selIndex = selTab._tPos;
+    var draggedTab = event.dataTransfer.mozGetDataAt(TAB_DROP_TYPE, 0);
+    var selIndex = draggedTab._tPos;
 
     gBrowser.tabContainer._getDropEffectForTabDrag = function(event){return "";}; // multirow fix: to make the default "dragover" handler do nothing
     gBrowser.tabContainer._onDragOver = function(event) {
@@ -142,53 +144,62 @@ gBrowser.tabContainer.ondragstart = function(){if(gBrowser.tabContainer.clientHe
 
         // These loops change the behaviour of the dragging to imitate firefox default one
         for (let i = 0; i < tabs.length; i++) {
-            tabs[i].style.transform = "initial";
+            tabs[i].style.transform = "";
         }
         
         var newTab = document.getElementsByClassName("tabs-newtab-button")[0];
-
+        var draggedTab = event.dataTransfer.mozGetDataAt(TAB_DROP_TYPE, 0);
+        var ltr = (window.getComputedStyle(this).direction == "ltr");
+        var rect = this.arrowScrollbox.getBoundingClientRect();
+        var newMarginX, newMarginY;
         newTab.style.display = "none";
-        selTab.style.opacity = 0;
+        draggedTab.style.opacity = 0;
 
+        // This is the spacing fix
         if (selIndex > newIndex) {
             for (let i = selIndex; i < tabs.length; i++) {
-                tabs[i].style.transform = "initial";
+                tabs[i].style.transform = "";
             }
             for (let i = newIndex; i < selIndex; i++) {
                 let tabrect = tabs[i].getBoundingClientRect();
+                tabs[i].style.transition = "transform 0.1s";
                 tabs[i].style.transform = "translate(" + tabrect.width + "px," + 0 + ")";
                 }
         } else if (selIndex == newIndex) {
             for (let i = 0; i < tabs.length; i++) {
-                tabs[i].style.transform = "initial";
+                tabs[i].style.transform = "";
             }
-            selTab.style.display = "block"}
-          else {
+            draggedTab.style.display = ""}
+        else {
             for (let i = 0; i < selIndex; i++) {
-                tabs[i].style.transform = "initial";
+                tabs[i].style.transform = "";
             }
             for (let i = selIndex; i < newIndex; i++) {
                 let tabrect = tabs[i].getBoundingClientRect();
+                tabs[i].style.transition = "transform 0.1s";
                 tabs[i].style.transform = "translate(" + (tabrect.width * -1) + "px," + 0 + ")";
                 }
-            }
         }
     }
+}
 
-    gBrowser.tabContainer.addEventListener("dragover", gBrowser.tabContainer._onDragOver, true);
+/* events fired on the drop targets */
+gBrowser.tabContainer.addEventListener("dragover", gBrowser.tabContainer._onDragOver, true);
+gBrowser.tabContainer.addEventListener("dragleave", gBrowser.tabContainer.ondragend, true);
 
-    // This prevents the fix from leaving the tab invisible if exiting tab dragging 
-    // before dropping the tab
-    gBrowser.tabContainer.ondragend = function(event) {
-        var tabs = document.getElementsByClassName("tabbrowser-tab");
-        var newTab = document.getElementsByClassName("tabs-newtab-button")[0];
+// This prevents the fix from leaving the tab invisible if exiting tab dragging 
+// before dropping the tab
+gBrowser.tabContainer.ondragend =  function(event) {
+    var tabs = document.getElementsByClassName("tabbrowser-tab");
+    var newTab = document.getElementsByClassName("tabs-newtab-button")[0];
 
-        newTab.style.display = "block";
-        for (let i = 0; i < tabs.length; i++) {
-            tabs[i].style.transform = "initial";
-            tabs[i].style.opacity = 1;
-        }
+    newTab.style.display = "";
+    for (let i = 0; i < tabs.length; i++) {
+        tabs[i].style.transform = "";
+        tabs[i].style.opacity = "";
+        tabs[i].style.transition = "";
     }
+  }
 
     gBrowser.tabContainer.onDrop = function(event) {
         var tabs = document.getElementsByClassName("tabbrowser-tab");
@@ -196,10 +207,11 @@ gBrowser.tabContainer.ondragstart = function(){if(gBrowser.tabContainer.clientHe
         var newTab = document.getElementsByClassName("tabs-newtab-button")[0];
 
         // This resets tab display to default after tab moving animation
-        newTab.style.display = "block";
+        newTab.style.display = "";
         for (let i = 0; i < tabs.length; i++) {
-            tabs[i].style.transform = "initial";
-            tabs[i].style.opacity = 1;
+            tabs[i].style.transform = "";
+            tabs[i].style.opacity = "";
+            tabs[i].style.transition = "";
         }
         var newIndex;
         var dt = event.dataTransfer;

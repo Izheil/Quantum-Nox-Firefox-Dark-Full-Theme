@@ -13,14 +13,14 @@ basic css or <a href="https://www.w3schools.com/colors/colors_picker.asp">color 
 <br />
 This problem doesn't happen if you use a code editor such as notepad++, atom, sublime text...</h4>
 
-<h3>Last update: <b>06/09/2019</b></h3>
+<h3>Last update: <b>07/09/2019</b></h3>
 <p>Files updated:</p>
 <ul>
-	<li><b>MultiRowTabs*-spacing.uc.js</b>: Added a new version of MultiRowTabs. This version tries to imitate Firefox default tab-moving animation (pushing tabs to the side).</li>
+	<li><b>MultiRowTabs*.uc.js</b>: Fixed some issue when moving tabs to another window.</li>
 </ul>
-<h3>Pre-Last update: <b>03/09/2019</b></h3>
+<h3>Pre-Last update: <b>06/09/2019</b></h3>
 <ul>
-	<li><b>MultiRowTabs*.uc.js</b>: Fixed Tab draggability for FF69+. Also fixed some issues with Touch density tabs appearing "floating".</li>
+	<li><b>MultiRowTabs*-spacing.uc.js</b>: Added a new version of MultiRowTabs. This version tries to imitate Firefox default tab-moving animation (pushing tabs to the side).</li>
 </ul>
 
 <code>
