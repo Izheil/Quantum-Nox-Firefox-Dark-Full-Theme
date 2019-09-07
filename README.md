@@ -16,6 +16,7 @@ This problem doesn't happen if you use a code editor such as notepad++, atom, su
 <h3>Last update: <b>07/09/2019</b></h3>
 <p>Files updated:</p>
 <ul>
+	<li><b>Addons.css</b>: Fixed some of the new elements of <a href="https://addons.mozilla.org/es/firefox/addon/tab-session-manager/">Tab session manager</a> addon.</li>
 	<li><b>MultiRowTabs*.uc.js</b>: Fixed some issue when moving tabs to another window.</li>
 </ul>
 <h3>Pre-Last update: <b>06/09/2019</b></h3>
