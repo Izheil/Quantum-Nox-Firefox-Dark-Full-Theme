@@ -14,15 +14,15 @@ hbox#fullscr-toggler {
 <b>To avoid problems using multiple files with the tabs below fixes, I split the tabs below tweak into a standalone file. If you want to have tabs below the url bar, use the files inside the <a href="https://github.com/Izheil/Quantum-Nox-Firefox-Dark-Full-Theme/tree/master/Multirow%20and%20other%20functions/Tabs%20below">tabs below</a> folder.</b>
 
 <h3>MultiRowTabLiteforFx.uc.js</h3>
-<p>Works with Firefox 69+. Shows all tabs you currently have open splitting them on rows, without any limit to the amount of rows to show. Choose this option if you want to always see all the tabs you have open without limits to the number of rows.</p>
+<p>Works with Firefox 69+. Shows all tabs you currently have open splitting them on rows, without any limit to the amount of rows to show. Choose this option if you want to always see all the tabs you have open without limits to the number of rows. When dragging tabs around, an arrow will show where the dragged tab will be placed.</p>
 <img src="https://i.imgur.com/GWSgqD9.png">
 
 <h3>MultiRowTab-scrollable.uc.js</h3>
-<p>Works with Firefox 69+. Shows all tabs you currently have open splitting them on rows up to a max of 3 rows by default (can be changed using the variable inside the file). After the max number of rows has been reached, a scrollbar will be shown to be able to scroll around the extra tabs.</p>
-<img src="https://i.imgur.com/qqQn4Ky.png">
+<p>Works with Firefox 69+. Shows all tabs you currently have open splitting them on rows up to a max of 3 rows by default (can be changed using the variable inside the file). After the max number of rows has been reached, a scrollbar will be shown to be able to scroll around the extra tabs. When dragging tabs around, an arrow will show where the dragged tab will be placed.</p>
+<img src="https://i.imgur.com/2YUO9vq.png">
 
 <h3>MultiRowTab-scrollable-autohide.uc.js</h3>
-<p>Works with Firefox 69+. This version is the same as scrollable multirow, except the scrollbars are only shown when you hover over the tabs area. It fixes some very specific issue when loading a session restore and loading a page in a session-restored blank page.</p>
+<p>Works with Firefox 69+. This version is the same as scrollable multirow, except the scrollbars are only shown when you hover over the tabs area. It fixes some very specific issue when loading a session restore and loading a long page with a lot of content, which sometimes would make some webarea scrollbars get "stuck".</p>
 
 <h3>MultiRowTab-*-spacing.uc.js</h3>
 <p>Works with Firefox 69+. The spacing versions do the same as the others, except they try to imitate firefox default tab moving animation. <b>This version is more resource-heavy while you are moving tabs</b>, which shouldn't be much of an issue if you don't usually hold tabs in the air for minutes, but if you have a low-end computer, or are worried about resource usage or performance, you should consider using any of the other non-spacing versions instead.</p> 
