@@ -1,6 +1,6 @@
 /* You can find an updated version here: https://github.com/Izheil/Quantum-Nox-Firefox-Dark-Full-Theme */
 /* Made by Izheil */
-/* Last updated: 07/09/2019 */
+/* Last updated: 08/09/2019 */
 
 /*------ HOW TO MAKE THE ADDON THEMES WORK ------*/
 /* To use this part of the code, you will have to find the dynamic UUID of your extensions, and replace it where the 
@@ -303,23 +303,25 @@ input[type="checkbox"]:checked {
 	border: 1px solid #444 !important}
 
 #s3downbar-ibmbeeacmbeeaebmfjpmnlgkhoejinha .contextmenu_box {
-	border: 1px solid #000 !important;
-	background: #444 !important;
-	color: #ddd !important;
-	box-shadow: 0 0 10px #000 !important}
+  border: 1px solid #000 !important;
+  background: #444 !important;
+  color: #ddd !important;
+  box-shadow: 0 0 10px #000 !important}
 
 #s3downbar-ibmbeeacmbeeaebmfjpmnlgkhoejinha .contextmenu_box .contextmenu_menu:hover {
-	background-color: #555 !important;
-	color: #fff !important}
+  background-color: #555 !important;
+  color: #fff !important}
 
 #s3downbar_download_tooltip_data_box > .download_data_tooltip_data > tbody > tr > td > div,
 #s3downbar_download_tooltip_filename {
-	color: #fff !important}
+  color: #fff !important}
 
 #s3downbar_download_data_list_empty, #s3downbar_download_tooltip_hint_finish,
-#s3downbar_download_tooltip_hint_progress {color: #aaa !important}
+#s3downbar_download_tooltip_hint_progress, #s3downbar_download_tooltip_to,
+#s3downbar_download_tooltip_size, #s3downbar_download_virus_scan_box, #s3downbar_download_tooltip_timeStart,
+#s3downbar_download_tooltip_timeEnd, #s3downbar_download_tooltip_speed {color: #aaa !important}
 
-#s3downbar_download_tooltip_from {background-color: #333 !important; color: #05f !important}
+#s3downbar_download_tooltip_data_box input, #s3downbar_download_tooltip_from {background-color: #333 !important; color: #05f !important}
 }
 
 /*------ HTTPS EVERYWHERE ADDON ------*/
@@ -861,6 +863,10 @@ textarea, input[type="number"], input[type="text"] {background: #303030 !importa
 .tabTitle a {color: #09f !important}
 .tabTitle a:hover {color: #0ff !important}
 .tabTitle a:active {color: #0050aa !important}
+
+.tagsContainer .tag {color: #000 !important}
+.tagIcon, .tagsContainer .tag svg {fill: #000 !important}
+.collapseButton svg path {stroke: #ccc !important}
 }
 
 /*------ TEMPORARY CONTAINERS ADDON ------*/

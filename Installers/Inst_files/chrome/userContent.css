@@ -1276,6 +1276,8 @@ menulist:hover {background: rgba(255,255,255,0.3) !important; color: #fff !impor
 
 #policies-container {background-color: #333 !important}
 
+#engineList > treechildren::-moz-tree-image(engineShown, checked) {fill: #aaa !important}
+
 .no-results-image, .checkbox-icon {filter: invert(85%)}
 }
 
