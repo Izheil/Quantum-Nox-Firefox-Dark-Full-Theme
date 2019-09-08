@@ -1,6 +1,6 @@
 /* You can find an updated version here: https://github.com/Izheil/Quantum-Nox-Firefox-Dark-Full-Theme */
 /* Made by Izheil */
-/* Last updated: 17/07/2019 06:46 */
+/* Last updated: 08/09/2019 */
 
 /* This part imports the Addons file if there is one, so that you don't have to edit the dynamic URL
 from the addons rules every time we update anything here */
@@ -14,11 +14,6 @@ auto = default OS size | thin = half the width (will be hidden in about: pages) 
     --scrollbars-width: auto;
     --scrollbars-thumb-color: #05a;
     --scrollbars-track-color: #252525;
-
-/* This is a little fix for all pages in case you have a dark OS theme, you can use a neutral color
-like #7f7f7f (graish) or #2066dd (bluish) so that the letters can be seen in either a white or dark background for 
-text-inputting things. Leave as "none" for default letter color. */
-/*	--text-color-for-input-fields: #777;
 
 /* You can put the url of an image that you want to be used as background for the about:home page.
 To use, instead of "none;", type: url("URL-OF-THE-IMAGE-GOES-HERE"); <- Don't forget the ending semicolon! */
@@ -38,6 +33,7 @@ To use, instead of "none;", type: url("URL-OF-THE-IMAGE-GOES-HERE"); <- Don't fo
 	--in-content-primary-button-background-hover: #0040aa !important;
 	--in-content-primary-button-background-active: #002070 !important;
 	--in-content-border-color: #666 !important;
+	--about-title-color: #1C7BFF; /* This one is used for about: pages titles */
 
 	/* These change the border highlight of some search boxes on about: pages */
 	--blue-50: #06d !important;
@@ -59,7 +55,7 @@ To use, instead of "none;", type: url("URL-OF-THE-IMAGE-GOES-HERE"); <- Don't fo
 
 	/* Variables to change all link colors on most pages */
 	--in-content-link-color: #09f !important;
-  	--in-content-link-color-hover: #0ff !important;
+  	--in-content-link-color-hover: #0cf !important;
   	--in-content-link-color-active: #0070aa !important;
   	--in-content-link-color-visited: #007acc !important;
 	
@@ -123,16 +119,6 @@ th {color: #ddd !important}
 td {color: #aaa !important}
 
 /* v Don't delete this unless you delete this whole section */
-}
-
-/*------ INPUT BOXES TEXT ------*/
-
-/* This changes the input fields text color (fix for custom OS themes) *//*
-@-moz-document url-prefix(http){
-form select, input[type=text], input[type=email], input[type=password], input[type=date], 
-input[type=datetime-local], input[type=time], input[type=week], input[type=month], 
-input[type=number], input[type=search], input[type=tel], input[type=url], textarea 
-{color: var(--text-color-for-input-fields) !important}
 }
 
 /*------ END OF INPUT BOXES TEXT - SCROLLBAR COLORS BELOW ------*/
@@ -332,7 +318,8 @@ input[data-l10n-id="onboarding-join-form-email"] {color: #ddd !important}
 	background-color: #505050 !important;
 	color: #ccc}
 
-.context-menu > ul > li > a:hover, .context-menu > ul > li > a:focus {
+.context-menu > ul > li > a:hover, .context-menu > ul > li > a:focus,
+.context-menu > ul > li > button:hover, .context-menu > ul > li > button:focus {
 	background-color: var(--in-content-context-highlight) !important}
 
 /* Context menus of the about information area */
@@ -583,10 +570,12 @@ url-prefix(about:profiles), url(about:crashes), url(about:license),
 url-prefix(about:memory), url-prefix(about:networking), url(about:performance),
 url(about:rights), url(about:robots), url-prefix(about:studies), 
 url-prefix(about:telemetry), url(about:url-classifier), url(about:webrtc),
-url(about:devtools), url(about:serviceworkers), url(about:library) {
+url(about:devtools), url(about:serviceworkers), url(about:library), 
+url(about:protections), url(about:certificate) {
 
 p, pre, li, label {color: #AAA !important}
-h1 {color: #1C7BFF !important}
+h1 {color: #fff !important}
+h1[data-l10n-id="page-title"], body > h1, h1#plugs {color: var(--about-title-color) !important}
 h2 {color: #ddd !important}
 h3 {color: #ddd !important}
 
@@ -698,7 +687,7 @@ table {border-collapse: collapse}
 url-prefix(about:checkerboard), url(about:accounts), url-prefix(about:cache), 
 url-prefix(about:plugins), url-prefix(about:buildconfig), url-prefix(about:memory),
 url-prefix(about:support), url-prefix(about:profiles), url(about:robots), url(about:serviceworkers),
-url(about:webrtc) {
+url(about:webrtc), url(about:protections) {
 body, html {background-color: #202020 !important}}
 
 /* Fix for Ublock Origin Element picker and DOM inspector (while keeping about:blank dark) *//*
@@ -836,7 +825,11 @@ select {border: 1px solid #111 !important}
 	background-color: #333 !important; 
 	border: 1px solid #111 !important}
 
-#categories, #category-raw {background: #444 !important}
+#categories, #category-raw {
+	background: #333 !important;
+	margin-top: 0 !important;
+	padding-top: 3em}
+	
 #categories {margin-bottom: 0 !important}
 }
 
@@ -1000,6 +993,34 @@ treechildren::-moz-tree-row(selected){
 /*------ DEBUGGING PAGE (about:debugging) ------*/
 @-moz-document url-prefix(about:debugging) {
 
+/* This is the new layout */
+:root {
+	--bg-color: #202020 !important;
+	--text-color: #ccc !important;
+	--category-text: #fff !important;
+	--category-text-selected: var(--in-content-category-text-selected) !important;
+	--link-color: var(--in-content-link-color) !important;
+	--link-color-active: var(--in-content-link-color-active) !important;
+	--link-color-hover: var(--in-content-link-color-hover) !important;
+	--grey-90-a10: #555 !important;
+	--grey-90-a20: #666 !important;
+	--grey-90: #ccc !important;
+	--white-100: #444 !important;
+	--box-background: #333 !important;
+	--box-border-color: #555 !important;
+	--card-separator-color: #666 !important;
+	--blue-60: var(--in-content-primary-button-background) !important;
+	--blue-70: var(--in-content-primary-button-background-hover) !important;
+	--grey-50: #aaa !important;
+	--grey-20: #666 !important;
+}
+
+.sidebar__footer__icon {filter: invert(100%) !important}
+.primary-button {color: #ddd !important}
+.sidebar {background-color: #333 !important}
+
+/*-- Old layout starts here --*/
+
 /* This affects the categories part */
 #categories {
 	background-color: #303030 !important;
@@ -1038,6 +1059,7 @@ treechildren::-moz-tree-row(selected){
 	border-radius: 6px !important}
 
 span.target-status {background-color: #151515 !important; color: #ddd !important}
+
 }
 
 /*------ CONFIGURATION PAGE (about:config) ------*/
@@ -1104,7 +1126,29 @@ dl {color: #ddd !important}}
 	--in-content-page-background: #202020 !important;
 	--in-content-text-color: #aaa !important;
 	--in-content-box-background: #404040 !important;
-	--in-content-box-border-color: #777 !important}}
+	--in-content-box-border-color: #777 !important}
+}
+
+/*------ PROTECTIONS PAGE (about:protections) ------*/
+@-moz-document url(about:protections){
+.report-card {
+	background-color: #333 !important;
+	color: #ccc !important}
+
+#legend label:not(:hover):not(:focus) {background-color: #404040 !important}
+.tab-content {background-color: #444 !important}
+}
+
+/*------ CERTIFICATES PAGE (about:certificate) ------*/
+@-moz-document url(about:certificate) {
+.certificate-tabs {background-color: #333 !important}
+
+span.info {background-color: #444 !important}
+label {background-color: #333 !important}
+h1 {border-color: #666 !important}
+
+.info-group-title, .info-group-title-hr {background-color: #555 !important}
+}
 
 /*------ INFORMATION PAGES WITH TABLES ------*/
 @-moz-document url-prefix(about:support), url-prefix(about:profiles), 
