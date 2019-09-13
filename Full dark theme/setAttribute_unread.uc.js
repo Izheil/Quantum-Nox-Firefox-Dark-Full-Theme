@@ -1,5 +1,5 @@
 (function(){
-	if (location.href != 'chrome://browser/content/browser.xul') return;
+	if (location.href != 'chrome://browser/content/browser.xhtml') return;
 
 	let func = {
 		
