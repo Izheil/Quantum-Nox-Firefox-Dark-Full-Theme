@@ -1,5 +1,5 @@
 (function(){
-	if (location.href != 'chrome://browser/content/browser.xul' && 
+	if (location.href != 'chrome://browser/content/browser.xhtml' && 
 		!gBrowser.tabContainer.childNode.tabAnimationsInProgress &&
 		Services.prefs.getBoolPref("toolkit.cosmeticAnimations.enabled")) return;
 
