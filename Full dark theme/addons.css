@@ -1,6 +1,6 @@
 /* You can find an updated version here: https://github.com/Izheil/Quantum-Nox-Firefox-Dark-Full-Theme */
 /* Made by Izheil */
-/* Last updated: 08/09/2019 */
+/* Last updated: 13/09/2019 */
 
 /*------ HOW TO MAKE THE ADDON THEMES WORK ------*/
 /* To use this part of the code, you will have to find the dynamic UUID of your extensions, and replace it where the 
@@ -857,6 +857,9 @@ textarea, input[type="number"], input[type="text"] {background: #303030 !importa
 .sessionItem:hover, #menu > ul > li > button:hover {background-color: #444 !important}
 
 .sessionItem.isSelected {background-color: #555 !important}
+
+.buttonsContainer {background-color: rgba(40,40,40,0.8) !important}
+.buttonsContainer button:hover {background-color: rgba(255,255,255,0.1) !important}
 
 .tag span {color: #000 !important}
 

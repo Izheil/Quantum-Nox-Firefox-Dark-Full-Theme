@@ -348,7 +348,7 @@ if invMethod == "customSet" {
 
     .bg-secondary {background: #222828 !important}
 
-    .bg-c-w100, .c-c-w100 {background-color: transparent !important}
+    .bg-c-w100, .c-c-w100, .PageList {background-color: transparent !important}
 
     .nav-main-item a:hover, a[data-service="GitHub"]:hover {background: rgba(255,255,255,0.1) !important} 
     .note {background: #331}

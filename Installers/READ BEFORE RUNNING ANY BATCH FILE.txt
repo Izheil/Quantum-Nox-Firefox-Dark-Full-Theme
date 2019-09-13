@@ -1,6 +1,8 @@
 All installers
 -----------------
 
+Keep the "inst_files" and "Patch_files" folders in the same folder as the .bat files in order for them to work.
+
 Some of these installers will overwrite your userchrome.css files inside the chrome folder of your firefox profile, so if you have any custom userchrome.css file, make sure to make a backup to add the changes you made on it to the userchrome.css files that will be copied. 
 
 The batch files will prompt you if you want to overwrite the files if you have any named the same, but you should still make a backup of any files you may have.
