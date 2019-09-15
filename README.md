@@ -13,15 +13,14 @@ basic css or <a href="https://www.w3schools.com/colors/colors_picker.asp">color 
 <br />
 This problem doesn't happen if you use a code editor such as notepad++, atom, sublime text...</h4>
 
-<h3>Last update: <b>13/09/2019</b></h3>
+<h3>Last update: <b>15/09/2019</b></h3>
 <p>Files updated:</p>
 <ul>
-	<li><b>Addons.css</b>: Fixed the hover buttons of open and remove a session from user saved sessions in <a href="https://addons.mozilla.org/es/firefox/addon/tab-session-manager/">Tab session manager</a> addon></li>
+	<li><b>Addons.css</b>: Minor fox for some buttons on <a href="https://addons.mozilla.org/es/firefox/addon/tab-session-manager/">Tab session manager</a> addon.</li>
 </ul>
-<h3>Pre-Last update: <b>08/09/2019</b></h3>
+<h3>Pre-Last update: <b>13/09/2019</b></h3>
 <ul>
-	<li><b>Addons.css</b>: Fixed some more elements of <a href="https://addons.mozilla.org/es/firefox/addon/tab-session-manager/">Tab session manager</a> addon, and fixed the popup from .<a href="https://addons.mozilla.org/es/firefox/addon/s3download-statusbar/">Download Manager (S3)</a></li>
-	<li><b>userContent.css</b>: Fixed <code>about:debugging</code> and themed the new <code>about:</code> pages in FF69+.</li>
+	<li><b>Addons.css</b>: Fixed the hover buttons of open and remove a session from user saved sessions in <a href="https://addons.mozilla.org/es/firefox/addon/tab-session-manager/">Tab session manager</a> addon.</li>
 </ul>
 
 <code>
