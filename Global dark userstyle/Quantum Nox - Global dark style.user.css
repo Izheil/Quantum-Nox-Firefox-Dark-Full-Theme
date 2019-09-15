@@ -2,7 +2,7 @@
 @name         Quantum nox - Global dark theme
 @description  Global dark style to use alongside Firefox full dark theme - Quantum nox.
 @namespace    https://github.com/Izheil/Quantum-Nox-Firefox-Dark-Full-Theme
-@version      2.3.18
+@version      2.3.19
 @author       Izheil
 @homepageURL  https://github.com/Izheil/Quantum-Nox-Firefox-Dark-Full-Theme/tree/master/Global%20dark%20userstyle
 @updateURL    https://raw.githubusercontent.com/Izheil/Quantum-Nox-Firefox-Dark-Full-Theme/master/Global%20dark%20userstyle/Quantum%20Nox%20-%20Global%20dark%20style.user.css
@@ -126,7 +126,7 @@ if invMethod == "customSet" {
     /* Textbox like inputs */
     input[type="text"]:not(#s3downbar_download_tooltip_source_box), input[type="email"], input[type="password"], input[type="tel"], input.input,
     input[type="number"], input[type="date"], input[type="datetime-local"], input[type="month"], input[type="search"], input[type="time"],
-    input[type="url"], input[type="week"], textarea, input[readonly], .ace_scroller {
+    input[type="url"], input[type="week"], textarea, input[readonly], .ace_scroller, .SearchBar input[name="q"] {
         background: #101010 !important;
         color: #ddd !important;
         border: 2px ridge #444 !important;
