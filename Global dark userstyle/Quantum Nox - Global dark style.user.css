@@ -55,7 +55,7 @@ if invMethod == "customSet" {
         
     ::before, ::after {background-color: transparent !important; border-color: #333 !important}
         
-    [class*="main"]:not([class*="nav"]):not([id*="nav"]):not([class*="header"]):not([id*="header"]):not([class*="overlay"]):not([class*="remain"]), 
+    [class*="main"]:not([class*="nav"]):not([id*="nav"]):not([class*="header"]):not([id*="header"]):not([class*="overlay"]):not([class*="remain"]):not([class*="menu"]), 
     #main:not([class*="nav"]):not([id*="nav"]):not([class*="header"]):not([id*="header"]),
     [class*="Main"]:not([class*="nav"]):not([id*="nav"]):not([class*="header"]):not([id*="header"]):not([class*="overlay"]),
     #Main:not([class*="nav"]):not([id*="nav"]):not([class*="header"]):not([id*="header"]),
@@ -164,7 +164,7 @@ if invMethod == "customSet" {
         box-shadow: none !important}
 
     [class*="dialog"], [class*="light"], [class*="Light"], [class*="white"]:not([class*="whitespace"]), [class*="White"]:not([class*="Whitespace"]), .tb .bg-light,
-    [class*="bg-gray"], div.Popover-message, ul.sub, div[role="menu"], .options, .vue-treeselect__menu, .ListResult, div[class*="menu"]:not([role="button"]):not(.vjs-control), 
+    [class*="bg-gray"], div.Popover-message, ul.sub, div[role="menu"], .options, .vue-treeselect__menu, .ListResult, div[class*="menu"]:not([role="button"]):not(.vjs-control):not(.main-menu), 
     .menu ul ul li a, .menuparent a, .dropdown li ul li a, #description_popup, ul[role="listbox"], ul[id*="contextmenu"],.qtip-pos-tl.qtip-fixed, 
     .qtip-content, .tooltipster-content, .backgroundMidSilver {background-color: rgba(0,0,0,0.8) !important}
 
