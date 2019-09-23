@@ -16,7 +16,7 @@ This problem doesn't happen if you use a code editor such as notepad++, atom, su
 <h3>Last update: <b>23/09/2019</b></h3>
 <p>Files updated:</p>
 <ul>
-	<li><b>userChrome.css</b>: Fix for some elements of firefox popups and search bar. If you have an OS that paints buttons dark, you won't have to do anything. Otherwise, you will have to enable the rule on line 317 to show dialogs with dark buttons.</li>
+	<li><b>userChrome.css</b>: Fix for some elements of firefox popups and search bar. If you have an OS that paints buttons dark, you won't have to do anything. Otherwise, you will have to enable the rule on line 320 to show dialogs with dark buttons.</li>
 	<li><b>userContent.css</b>: Some fixes for <code>about:sessionrestore</code>.</li>
 </ul>
 <h3>Pre-Last update: <b>15/09/2019</b></h3>
@@ -126,6 +126,9 @@ This problem doesn't happen if you use a code editor such as notepad++, atom, su
 <h3>The tabs toolbar background has the default windows 7 color instead of dark colors.</h3>
 <p>Since this only happens when not using a persona, either install a lightweight theme, or uncomment the rule in line 38 (#TabsToolbar one) on <code>userChrome.css</code>. To do so, just delete the ending "/*" in the line above it.</p>
 
+<h3>Some dialog buttons still appear as white.</h3>
+<p>After FF69+, it's not possible to change the color of hover buttons on these dialogs with CSS (seems to be a bug with Firefox), so the only way to do this without JS is to invert the colors. The problem is that people that have an OS that paints these buttons dark would get the colors inverted to white... So if you are experiencing this issue, delete the ending "/*" on <a href="https://github.com/Izheil/Quantum-Nox-Firefox-Dark-Full-Theme/commit/72e766b3be4e0bfcbaa122bb427248f1b1bef759">line 320 on userChrome.css</a></p>
+
 <h3>The urlbar shows as white background with white text over it after installing the theme.</h3>
 <p>This only happens when using Firefox default theme, either use firefox built-in dark theme along with this one, or use any other lightweight theme you like.</p>
 
@@ -142,7 +145,6 @@ This problem doesn't happen if you use a code editor such as notepad++, atom, su
 <pre>/* Send image... *//*
 #context-sendimage,*/</pre>
 <p>You will see that the ones that I have commented out by default only have the starting "/*" of the comment after the description of what they are, since the closing "*/" would come from the next description comment below them.</p>
-
 
 <h3>The bookmarks toolbar text/tabs text color is black and I can't see the letters over the dark background.</h3>
 <p>This is caused by your persona (lightweight theme), and while you could change these settings inside userChrome, I thought it was better to just change the settings on the persona directly (since not all personas will look the same). To do so you'd have to open <code>about:config</code>, and search for <b>lightweightThemes.usedThemes</b>. Once there, find the "textcolor" setting and type any color you'd want to use instead of black or the color being used by the theme (use #fff for white). The persona you are currently using should be in the first place in the list.</p>
