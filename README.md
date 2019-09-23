@@ -13,14 +13,15 @@ basic css or <a href="https://www.w3schools.com/colors/colors_picker.asp">color 
 <br />
 This problem doesn't happen if you use a code editor such as notepad++, atom, sublime text...</h4>
 
-<h3>Last update: <b>15/09/2019</b></h3>
+<h3>Last update: <b>23/09/2019</b></h3>
 <p>Files updated:</p>
 <ul>
-	<li><b>Addons.css</b>: Minor fox for some buttons on <a href="https://addons.mozilla.org/es/firefox/addon/tab-session-manager/">Tab session manager</a> addon.</li>
+	<li><b>userChrome.css</b>: Fix for some elements of firefox popups and search bar. If you have an OS that paints buttons dark, you won't have to do anything. Otherwise, you will have to enable the rule on line 317 to show dialogs with dark buttons.</li>
+	<li><b>userContent.css</b>: Some fixes for <code>about:sessionrestore</code>.</li>
 </ul>
-<h3>Pre-Last update: <b>13/09/2019</b></h3>
+<h3>Pre-Last update: <b>15/09/2019</b></h3>
 <ul>
-	<li><b>Addons.css</b>: Fixed the hover buttons of open and remove a session from user saved sessions in <a href="https://addons.mozilla.org/es/firefox/addon/tab-session-manager/">Tab session manager</a> addon.</li>
+	<li><b>Addons.css</b>: Minor fox for some buttons on <a href="https://addons.mozilla.org/es/firefox/addon/tab-session-manager/">Tab session manager</a> addon.</li>
 </ul>
 
 <code>

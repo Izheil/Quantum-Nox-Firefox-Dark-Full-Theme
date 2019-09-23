@@ -1,6 +1,6 @@
 /* You can find an updated version here: https://github.com/Izheil/Quantum-Nox-Firefox-Dark-Full-Theme */
 /* Made by Izheil */
-/* Last updated: 08/09/2019 */
+/* Last updated: 23/09/2019 */
 
 /* This part imports the Addons file if there is one, so that you don't have to edit the dynamic URL
 from the addons rules every time we update anything here */
@@ -216,7 +216,8 @@ dialog menulist:hover {
 .netReset #errorPageContainer:not(.button-container),
 .netOffline #errorPageContainer:not(.button-container),
 .dnsNotFound #errorPageContainer:not(.button-container),
-.malformedURI #errorPageContainer, #lic-info .license-header:not(a) {filter: invert(98%) hue-rotate(200deg)}
+.malformedURI #errorPageContainer, #lic-info .license-header:not(a),
+.container.restore-chosen > .description-wrapper {filter: invert(98%) hue-rotate(200deg)}
 
 /* This fixes the inverted colors caused by the image filter (since I couldn't directly filter 
 only the images */
@@ -234,7 +235,8 @@ only the images */
 .netOffline #errorPageContainer #text-container,
 .dnsNotFound #errorPageContainer #text-container,
 .malformedURI #errorPageContainer #text-container, 
-#lic-info .license-header p, #lic-info .license-header h1 {filter: invert(98%) hue-rotate(-200deg)}
+#lic-info .license-header p, #lic-info .license-header h1,
+.container.restore-chosen > .description-wrapper > * {filter: invert(98%) hue-rotate(-200deg)}
 
 #errorPageContainer #text-container h1 {color: #1C7BFF !important}
 

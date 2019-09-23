@@ -1,6 +1,6 @@
 /* You can find an updated version here: https://github.com/Izheil/Quantum-Nox-Firefox-Dark-Full-Theme */
 /* Made by Izheil */
-/* Last updated: 03/09/2019 */
+/* Last updated: 23/09/2019 */
 
 /* DO NOT DELETE THIS LINE */
 @namespace url("http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul");
@@ -33,9 +33,9 @@ without this change) */
 .tab-stack > .tab-background[selected="true"]:-moz-lwtheme {
   background-position: left top !important}
 
-/* This changes the background color of the browser toolbar for those using the default dark theme to a static dark color. 
-You may need to change the --toolbar-bgcolor in the rules above for the tab contrast color to be less dark if using this */
-#main-window {background-color: #282829 !important}
+/* This changes the background color of the tabs background toolbar for those using the default dark theme on Windows 7. 
+You may need to change the --toolbar-bgcolor in the rules above for the tab contrast color to be less dark if using this *//*
+#TabsToolbar {background-color: #222 !important}
 
 /* Tab line color. Using -moz-win-accentcolor as the color value changes it to the current window color (on Windows)
 but is disabled by default in this theme (Disable for the default tab line color). *//*
@@ -110,17 +110,18 @@ in the rule below) */
   color: #fff !important}
 
 /* This changes the color of the sidebar panel text */
-#bookmarks-view treechildren, #historyTree treechildren {color: #ccc !important}
+#bookmarks-view treechildren, #historyTree treechildren,
+dialog richlistitem {color: #ccc !important}
 
 /* This is a fix for treechildren that might look whiteish in linux */
-treechildren::-moz-tree-row {background: transparent !important}
+treechildren::-moz-tree-row, dialog richlistitem {background: transparent !important}
 
 /* This changes all treechildren elements highlights (list-like elements) */
-treechildren::-moz-tree-row(hover) {
+treechildren::-moz-tree-row(hover), dialog richlistitem:hover {
   background: var(--Lists-treechildren-hover-bg) !important;
   border: var(--Lists-treechildren-hover-border) !important}
 
-treechildren::-moz-tree-row(selected){
+treechildren::-moz-tree-row(selected), dialog richlistitem[selected] {
   background: var(--Lists-treechildren-selected-bg) !important;
   border: var(--Lists-treechildren-selected-border) !important}
 
@@ -230,7 +231,11 @@ dialog groupbox {
   -moz-appearance: none !important; 
   border: 1px solid #666 !important}
 
-#infoIcon {filter: invert(80%)}
+/* Dialog Icons */
+#infoIcon, .message-icon,
+.alert-icon,
+.error-icon,
+.question-icon {fill: invert(80%)}
 
 /* Checkbox coloring */
 checkbox .checkbox-check {
@@ -302,14 +307,20 @@ window:not(#main-window):not(#CookiesDialog):not(#SignonViewerDialog):not(.theme
 dialog button, toolbar[printpreview="true"] button {
   -moz-appearance: none !important;
   border-radius: 3px !important;
-  background: #555 !important;
+  background-color: #555 !important;
   color: #ddd !important;
   padding: 2px !important}
 
 dialog button:hover, toolbar[printpreview="true"] button:hover {
-  background: #444 !important;
+  background-color: #444 !important;
   color: #fff !important}
 
+/* After FF69, dialog buttons can't be colored with :hover, so we have to apply this fix depending on 
+the default colors of your OS. Enable if you have an OS that paints buttons white.
+To enable just delete the /* in there -> *//*
+.dialog-button-box button {filter: invert(80%) hue-rotate(190deg)}
+
+/* Textboxes colors */
 dialog textbox, toolbar[printpreview="true"] textbox {
   transition: all 0.25s ease-in-out !important;
   -moz-appearance: none !important; 
@@ -475,6 +486,17 @@ menuseparator {
 
 /* Color of default icons on bookmark bar and bookmark popup (world icon, aka not-favicon-found icon) */
 .bookmark-item[scheme="http"], .bookmark-item[scheme="http"] .menu-iconic-icon {fill: var(--Bookmark-favicon-icon) !important}
+
+/* Other colors of the bookmark popup */
+.panel-header, 
+#identity-popup-mainView-panel-header {background-color: rgba(0,0,0,0.2) !important}
+
+#editBookmarkPanelBottomButtons.panel-footer {background-color: #444 !important}
+
+/* Remove cookies headers on url bar popup */
+.identity-popup-cookiesView-list-header {color: #ddd !important}
+#identity-popup-content-blocking-detected, .identity-popup-content-blocking-empty-label,
+#identity-popup-permission-empty-hint {color: #aaa !important}
 
 /* Fix for the space above the "save as" option after the navigation buttons have been eliminated. Change 
 if necessary depending on if you are using a custom OS theme (which may mess up the padding of the separators) */
