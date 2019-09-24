@@ -235,7 +235,7 @@ dialog groupbox {
 #infoIcon, .message-icon,
 .alert-icon,
 .error-icon,
-.question-icon {fill: invert(80%)}
+.question-icon {filter: invert(80%)}
 
 /* Checkbox coloring */
 checkbox .checkbox-check {
