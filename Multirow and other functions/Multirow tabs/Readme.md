@@ -24,11 +24,6 @@ hbox#fullscr-toggler {
 <h3>MultiRowTab-scrollable-autohide.uc.js</h3>
 <p>Works with Firefox 69+. This version is the same as scrollable multirow, except the scrollbars are only shown when you hover over the tabs area. It fixes some very specific issue when loading a session restore and loading a long page with a lot of content, which sometimes would make some webarea scrollbars get "stuck".</p>
 
-<h3>MultiRowTab-*-spacing.uc.js</h3>
-<p>Works with Firefox 69+. The spacing versions do the same as the others, except they try to imitate firefox default tab moving animation. <b>This version is more resource-heavy while you are moving tabs</b>, which shouldn't be much of an issue if you don't usually hold tabs in the air for minutes, but if you have a low-end computer, or are worried about resource usage or performance, you should consider using any of the other non-spacing versions instead.</p> 
-<p>There is also a small issue with tabs from the upper rows forcing a space in the rows directly below it when dragging the tab to the upper rows.</p>
-<img src="https://i.imgur.com/scWHxog.png">
-
 <h2>Tab sizing</h2>
 <p>The size of tabs in the last row is by default resizable, (like in the pictures above, which is the default Firefox behaviour) which will make them shrink as more tabs are fit inside the row. If you want to make all the tabs have a fixed width (so that tabs in the last row won't resize depending on how many tabs are open in that row), you will have to edit the file and change the variable <code>--tab-growth</code> to 0 (which will use the value of <code>browser.tabs.tabMinWidth</code> in <b>about:config</b> as their fixed width).</p>
 <img src="https://i.imgur.com/twzsQ6V.png">
