@@ -34,22 +34,24 @@
 /* Add any other site you don't want to apply inside the regexp encased between |'s ^ */
 </pre> 
 
-<p>This would make the userstyle ignore all pages that start with <i>example.com</i> (as well as the <i>nothingtoseehere</i> domain before it), <b>but not the subdomains like <i>subdomain.example.com</i></b>.</p>
-<p>If we only wanted to also exclude <i>subdomain.example.com</i> it would be as easy as adding only that one subdomain link to the exclusions, but <b>if we wanted to exclude ALL subdomains</b> (no matter their subdomain name) of <i>example.com</i>, we'd have to use <code>((?!w+)([^\.]+)\.)?</code> for all subdomain names (You don't have to specify the www part before these regexp).</p>
+<p>This would make the userstyle ignore all pages that start with <i>www.example.com</i> (as well as the <i>nothingtoseehere</i> domain before it), <b>but not the subdomains like <i>subdomain.example.com</i></b>.</p>
+<b>We also must be cautious to use (or avoid) the <b>www.</b> heading in the exclusion. If it appears in the URL bar when you access the site (for example, if you see <code>https://www.example.com</code> in the URL bar when you access the site), you will have to write it like <code>www.example.com</code>, but for others where the url looks like <code>https://example.com</code> you will only have to type <code>example.com</code> in the exclusion rule.</b>
 
-<p>That way, if we wanted to exclude all example subdomains (we assume that some subdomains may have -'s, so we need to use the complex regexp), but NOT the main domain (so we exclude all <i>subdomain.example.com</i> like pages, but not the <i>example.com</i> like pages) it would look like this:</p>
+<p>If we only wanted to also exclude <i>subdomain.example.com</i> it would be as easy as adding only that one subdomain link to the exclusions, but <b>if we wanted to exclude ALL subdomains</b> (no matter their subdomain name) of <i>example.com</i>, we'd have to use <code>(?!w+)([^\.]+)\.</code> for all subdomain names (You don't have to specify the www part before these regexp).</p>
+
+<p>That way, if we wanted to exclude all example subdomains (we assume that some subdomains may have -'s, so we need to use the complex regexp), but NOT the main domain (so we exclude all <i>subdomain.example.com</i> like pages, but not the <i>www.example.com</i> like pages) it would look like this:</p>
 
 <pre>
-@-moz-document regexp("https?://(?!(www.nothingtoseehere.com|((?!w+)([^\.]+)\.)?example.com)).*") {
+@-moz-document regexp("https?://(?!(www.nothingtoseehere.com|(?!w+)([^\.]+)\.example.com)).*") {
 /* Add any other site you don't want to apply inside the regexp encased between |'s ^ */
 </pre>
 
-<p><b>If we wanted to exclude BOTH the subdomains and the domain</b> with just 1 selector, we would write it like <code>((?!w+)([^\.]+)\.)?([^\.]+)\.</code>, otherwise we'd have to specify them apart.</p>
+<p><b>If we wanted to exclude BOTH the subdomains and the domain</b> with just 1 selector, we would write it like <code>(((?!w+)([^\.]+)\.)?([^\.]+)\.)?</code>, otherwise we'd have to specify them apart.</p>
 
 <p>This excludes both the subdomains and the domain:</p>
 
 <pre>
-@-moz-document regexp("https?://(?!(www.nothingtoseehere.com|((?!w+)([^\.]+)\.)?([^\.]+)\.example.com)).*") {
+@-moz-document regexp("https?://(?!(www.nothingtoseehere.com|(((?!w+)([^\.]+)\.)?([^\.]+)\.)?example.com)).*") {
 /* Add any other site you don't want to apply inside the regexp encased between |'s ^ */
 </pre>
 
@@ -57,7 +59,7 @@
 <p>To solve this and <b>exclude specific location domains</b>, you can use <code>(com|org)</code> or similar rules with all the location domains of the page. This can be used independently of the previous regexp rules. The full example so far would be:</p>
 
 <pre>
-@-moz-document regexp("https?://(?!(www.nothingtoseehere.com|((?!w+)([^\.]+)\.)?([^\.]+)\.example.(com|org))).*") {
+@-moz-document regexp("https?://(?!(www.nothingtoseehere.com|(((?!w+)([^\.]+)\.)?([^\.]+)\.)?example.(com|org))).*") {
 /* Add any other site you don't want to apply inside the regexp encased between |'s ^ */
 </pre>
 
@@ -65,9 +67,14 @@
 <p>Following our previous example, let's say we wanted the theme to apply to <i>example.com/home</i>, but NOT on every other <i>example.com</i> domain or subdomain page (like <i>example.com/contact</i> or <i>subdomain.example.com</i>). We'd have to use regexp to create an inclusion for this with "home":</p>
 
 <pre>
-@-moz-document regexp("https?://(?!(www.nothingtoseehere.com|((?!w+)([^\.]+)\.)?([^\.]+)\.example.(com|org)((?!home).)*$)).*") {
+@-moz-document regexp("https?://(?!(www.nothingtoseehere.com|(((?!w+)([^\.]+)\.)?([^\.]+)\.)?example.(com|org)((?!home).)*$)).*") {
 /* Add any other site you don't want to apply inside the regexp encased between |'s ^ */
 </pre>
+
+<h2>How to force color-inversion method instead of regular theming for a site</h2>
+<p>Since version 2.4.0 you can specify sites that you want to be themed with the "Color Inversion" method, which just returns the page with the complete opposite colors it has by default.</p>
+<p>All you need to do is add a new section and specify the start of the url, or the domain of the page (depending on the option you choose).</p>
+<img src="https://i.imgur.com/ZErV54r.png">
 
 <h2>Settings explanation</h2>
 <p>There are a few settings that you can change clicking the gear icon inside stylus popup that might not be intuitive:</p>
