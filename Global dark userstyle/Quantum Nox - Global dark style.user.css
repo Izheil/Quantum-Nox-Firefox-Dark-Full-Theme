@@ -2,7 +2,7 @@
 @name         Quantum nox - Global dark theme
 @description  Global dark style to use alongside Firefox full dark theme - Quantum nox.
 @namespace    https://github.com/Izheil/Quantum-Nox-Firefox-Dark-Full-Theme
-@version      2.3.20
+@version      2.4.0
 @author       Izheil
 @homepageURL  https://github.com/Izheil/Quantum-Nox-Firefox-Dark-Full-Theme/tree/master/Global%20dark%20userstyle
 @updateURL    https://raw.githubusercontent.com/Izheil/Quantum-Nox-Firefox-Dark-Full-Theme/master/Global%20dark%20userstyle/Quantum%20Nox%20-%20Global%20dark%20style.user.css
@@ -33,7 +33,7 @@
 }
 
 ==/UserStyle== */
-@-moz-document regexp("https?://(?!(www.nespresso.com|www.wechoosethemoon.org|www.nasa.gov|(translate|images|photos|books|scholar|accounts|mail|drive|calendar|docs|news|keep|play|notifications|www).google.(com|es|de)((?!recaptcha).)*$|duckduckgo.com|www.youtube.com|www.reddit.com|twitter.com|gfycat.com|codepen.io|((?!w+)([^\.]+)\.)?([^\.]+)\.imgur.com)).*") {
+@-moz-document regexp("https?://(?!(www.nespresso.com|www.wechoosethemoon.org|www.nasa.gov|(translate|images|photos|books|scholar|accounts|mail|drive|calendar|docs|news|keep|play|notifications|www).google.(com|es|de)((?!recaptcha).)*$|duckduckgo.com|www.youtube.com|www.reddit.com|twitter.com|gfycat.com|codepen.io|((?!w+)([^\.]+)\.)?([^\.]+)\.imgur.com|www.virustotal.com)).*") {
 /* Add any other site you don't want to apply inside the regexp encased between |'s ^ */
 
 if invMethod == "customSet" {
@@ -76,7 +76,7 @@ if invMethod == "customSet" {
         background-color: rgba(0,0,0,0.5) !important;
         box-shadow: 0 0 5px #000 !important} 
     
-    #content-wrapper, .content-wrapper, .content-wrapper::after, .article, .flex_box > div, .Box-header, .select-menu-header {background-color: #202020 !important}
+    #content-wrapper, .content-wrapper, .content-wrapper::after, .article, .flex_box > div, .Box-header, .select-menu-header, .modal {background-color: #202020 !important}
         
     div[class*="dropdown"]:not([class*="toggle"]):not([class*="has-children"]):not([class*="wrapper"]):not([role="menuitem"]):not([class*="header"]), 
     div[class*="drop-down"]:not([class*="wrapper"]):not([role="menuitem"]):not([class*="header"]), .Dropdown-menu,
@@ -443,4 +443,10 @@ if invMethod == "lowBright" {
     html {background: darkBg bgColor /* fixed color */ !important} 
     body {opacity: 0.5}
     }
+}
+
+@-moz-document url-prefix("https://www.virustotal.com") {
+    html {background: bgColor !important}
+    body {background: linear-gradient(bgColor, bgColor) !important}
+    body > * {filter: invert(80%) hue-rotate(180deg)}
 }
