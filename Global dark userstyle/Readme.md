@@ -35,7 +35,8 @@
 </pre> 
 
 <p>This would make the userstyle ignore all pages that start with <i>www.example.com</i> (as well as the <i>nothingtoseehere</i> domain before it), <b>but not the subdomains like <i>subdomain.example.com</i></b>.</p>
-<b>We also must be cautious to use (or avoid) the <b>www.</b> heading in the exclusion. If it appears in the URL bar when you access the site (for example, if you see <code>https://www.example.com</code> in the URL bar when you access the site), you will have to write it like <code>www.example.com</code>, but for others where the url looks like <code>https://example.com</code> you will only have to type <code>example.com</code> in the exclusion rule.</b>
+
+<p><b>We also must be cautious to use (or avoid) the <b>www.</b> heading in the exclusion. If it appears in the URL bar when you access the site (for example, if you see <code>https://www.example.com</code> in the URL bar when you access the site), you will have to write it like <code>www.example.com</code>, but for others where the url looks like <code>https://example.com</code> you will only have to type <code>example.com</code> in the exclusion rule.</b></p>
 
 <p>If we only wanted to also exclude <i>subdomain.example.com</i> it would be as easy as adding only that one subdomain link to the exclusions, but <b>if we wanted to exclude ALL subdomains</b> (no matter their subdomain name) of <i>example.com</i>, we'd have to use <code>(?!w+)([^\.]+)\.</code> for all subdomain names (You don't have to specify the www part before these regexp).</p>
 
