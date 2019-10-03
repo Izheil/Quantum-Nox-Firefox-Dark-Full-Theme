@@ -8,6 +8,14 @@
 <h2>Installation</h2>
 <p>You can check a video guide <a href="https://youtu.be/kNHe6XDgUN4">here</a>.</p>
 
+<p><strong>Note: As of Firefox 69, you will need to enable the use of these files through a configuration setting.</strong> The preference in question is <code>toolkit.legacyUserProfileCustomizations.stylesheets</code>. Here is how you change its value:
+<ol>
+	<li>Load <code>about:config</code> in the Firefox address bar.</li>
+    	<li>Confirm that you will be careful.</li>
+    	<li>Search for <code>toolkit.legacyUserProfileCustomizations.stylesheets</code> using the search at the top.</li>
+	<li>Toggle the preference. <code>True</code> means Firefox supports the CSS files, <code>False</code> that it ignores them.</li>
+</ol>
+
 <h4>Step by step:</h4>
 <ul>
   <li>Type <code>about:support</code> in your URL bar, then go to that page.</li>
@@ -22,6 +30,7 @@
 </ul>
 
 <h4>Long explanation:</h4>
+
 <p>Most of the job is already done with the <code>userContent.css</code> and <code>userChrome.css</code>  files that you have to place in the 
 <a href="https://github.com/Izheil/Quantum-Nox-Firefox-Dark-Full-Theme/tree/master/Full%20dark%20theme#the-chrome-folder">the chrome folder</a> of your firefox profile. For this to work as intended, you should be using a persona (aka lightweight theme) or the default dark theme (The persona used on the screenshot is "<a href="https://addons.mozilla.org/es/firefox/addon/polygon-dark-by-madonna/">Dark Polygon</a>" by <b>MaDonna</b>.</p>
 <p>You can also change the tab line color to Windows current theme color (You have to change the commented line that is described in line 19 inside userChrome.css), and the background image of your lightweight theme to one of your choice.</p>
