@@ -7,7 +7,7 @@
 
 <p>The advantage of this global dark style over others is that it can be customized from stylus popup to your liking, like changing images contrast, changing the color of links, the background, selected text background color, darkening method...</p>
 
-<img src="https://i.imgur.com/NOuJvbA.png">
+<img src="https://i.imgur.com/kSCXDj8.png">
 
 <p>You can find the dark theme of stylus used in the image (along with other styles made by the same author) <a href="https://gitlab.com/RaitaroH/Stylus-DeepDark">here</a>.</p>
 
