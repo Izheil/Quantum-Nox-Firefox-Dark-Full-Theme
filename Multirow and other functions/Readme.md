@@ -26,6 +26,14 @@
 <h3>Installation</h3>
 <p>To install any of the files, just copy the file(s) you are interested on inside any of the folders here along with <code>userChrome.xml</code>, and copy them to your chrome folder. You also will need to have enabled the use of <code>userChrome.xml</code> through <code>userChrome.css</code> (you can learn how to do it inside any of the folders).</p>
 
+<p><strong>Note: As of Firefox 69, you will need to enable the use of these files through a configuration setting.</strong> The preference in question is <code>toolkit.legacyUserProfileCustomizations.stylesheets</code>. Here is how you change its value:
+<ol>
+	<li>Load <code>about:config</code> in the Firefox address bar.</li>
+    	<li>Confirm that you will be careful.</li>
+    	<li>Search for <code>toolkit.legacyUserProfileCustomizations.stylesheets</code> using the search at the top.</li>
+	<li>Toggle the preference. <code>True</code> means Firefox supports the CSS files, <code>False</code> that it ignores them.</li>
+</ol>
+
 <h3>The chrome folder</h3>
 <p>This is where you have to place the files of this repository.</p>
 <p>The fastest way to find it is to just type <code>about:support</code> on the URL bar of your firefox, and then click the <b>open folder</b> button inside the "profile folder" section.</p>
