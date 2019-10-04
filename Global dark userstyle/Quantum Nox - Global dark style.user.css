@@ -2,7 +2,7 @@
 @name         Quantum nox - Global dark theme
 @description  Global dark style to use alongside Firefox full dark theme - Quantum nox.
 @namespace    https://github.com/Izheil/Quantum-Nox-Firefox-Dark-Full-Theme
-@version      2.4.2
+@version      2.4.4
 @author       Izheil
 @homepageURL  https://github.com/Izheil/Quantum-Nox-Firefox-Dark-Full-Theme/tree/master/Global%20dark%20userstyle
 @updateURL    https://raw.githubusercontent.com/Izheil/Quantum-Nox-Firefox-Dark-Full-Theme/master/Global%20dark%20userstyle/Quantum%20Nox%20-%20Global%20dark%20style.user.css
@@ -18,7 +18,8 @@
 @var          checkbox  linkHigh     "Highlight links"  0
 @var          text      darkBg       "Background img [wrap in url()]"  url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAAKCAYAAACNMs+9AAAC4HpUWHRSYXcgcHJvZmlsZSB0eXBlIGV4aWYAAHja7ZdbktwgDEX/WUWWgCSEYDk8q7KDLD8Xm3Y/ZpKqTPKRjzbTxlbjK3EPZmbc+PF9um84KAu7oJZijtHjCDlkLrhI/jzOnnw4zudRdk/PcXd9wQgJejlv49jjC+J6f8DCjtfnuLO2ddIWokv4OGRlXtd9F7mFhM847XuX9wMlPkxnf7ht2S3+eh8MZnSFHjziIST+PJ+ZBFVIloI+4MzCayBiK5KOs3z0z13WfWLgdfXin79VJnc7TqHbtOKLTztO+hKXKw0/VUR8ZebHikyuFB/8m7OnOcc5uxKig11xT+o2leMKAyvsPN2IaIaP4tqOltESlk4DtY6pVucrbjIxvJ4UqFOhSePoGzWUGHiwoWducHzFkhhnbgeUsBpNNgc+HSxYGsgJwnzVQkfevPIhWULmThjJBDFaNB+bew18tT0JzbmWOZFPl1eoi9eSRRmL3DpjFIDQ3J7q4S+5s/OvxwIrIKiHzQkTLL6eElXpvrbk4CxeHYYGf74vZH0LwCLkVhRDAgI+kihF8sZsRPAxgU9B5SyBKwiQOuWOKjmIRMBJvHLjGaNjLCufYWwvAKESxYAGLxBghaAh4n1LWELFqWhQ1aimSbOWKDFEjTFaXPtUMbFgatHMkmUrSVJImmKylFJOJXMWbGPqcsyWU865FCQtoUCrYHxBoHKVGqrWWK2mmmtpWD4tNG2xWUstt9K5S8cW4Hrs1lPPvQwaWEojDB1x2EgjjzKx1qbMMHXGaTPNPMtFbVN9pvZK7vfUaFPjA9QaZ3dqCJvdJGhtJ7qYgRgHAnFbBLCgeTHziULgRW4x85nFiSijSl1wOi1iIBgGsU662N3J/ZKbg7t/yo0/I+cWun9Bzi10D+Q+cvuEWi/HdisHoPUWwlPskILXbzKKSfjBr5Ov9c7/pcBb6C30FnoLvYXeQm+h/0pIJv54yPh36ifnS5IFdAxqSAAAAYVpQ0NQSUNDIFBST0ZJTEUAAHicfZE9SMNAHMVf00pVKoIWkeKQoTpZEBVxlCoWwUJpK7TqYHLpFzRpSFJcHAXXgoMfi1UHF2ddHVwFQfADxMXVSdFFSvxfU2gR48FxP97de9y9A4R6mammbwJQNctIxqJiJrsq+l/hwxAG0IOQxEw9nlpMw3V83cPD17sIz3I/9+foU3ImAzwi8RzTDYt4g3hm09I57xMHWVFSiM+Jxw26IPEj12WH3zgXmizwzKCRTs4TB4nFQgfLHcyKhko8TRxWVI3yhYzDCuctzmq5ylr35C8M5LSVFNdpjiCGJcSRgAgZVZRQhoUIrRopJpK0H3Xxh5r+BLlkcpXAyLGAClRITT/4H/zu1sxPTTpJgSjQ9WLbH6OAfxdo1Gz7+9i2GyeA9xm40tr+Sh2Y/SS91tbCR0D/NnBx3dbkPeByBxh+0iVDakpemkI+D7yf0TdlgcFboHfN6a21j9MHIE1dLd8AB4fAWIGy113e3d3Z279nWv39AE06cphlEhhtAAAABmJLR0QAXABcAFwD21O+AAAACXBIWXMAAC4jAAAuIwF4pT92AAAAB3RJTUUH4wQWEwgDk0arlAAAAE5JREFUGNONkLENACAIBF/XoXb/Aax/HyvNRSHRhodcLqAiYkjSrsysXXiEObM9H0OVU4i2PWu3nrDtefps8cxYws8vfEGZscr9vpQHMC+whzB2TU619AAAAABJRU5ErkJggg==')
 @var          checkbox  imgHover     "100% bright img on hover"  0
-@var          number    contNum      "Image brightness %" ['%', 100, 0, 100, 1]
+@var          select    contNum      "Image brightness %" {
+    "100%": "100%", "90%": "90%", "80%": "80%", "70%": "70%", "60%": "60%", "50%": "50%", "40%": "40%", "30%": "30%", "20%": "20%", "10%": "10%"}
 @var          checkbox  invImgCol    "Invert image colors"  0
 @var          checkbox  applyDiv     "Apply on div img background"  0
 @var          checkbox  divHide      "Hide div background images"  1
