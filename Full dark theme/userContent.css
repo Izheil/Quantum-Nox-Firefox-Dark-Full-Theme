@@ -1,6 +1,6 @@
 /* You can find an updated version here: https://github.com/Izheil/Quantum-Nox-Firefox-Dark-Full-Theme */
 /* Made by Izheil */
-/* Last updated: 23/09/2019 */
+/* Last updated: 04/10/2019 */
 
 /* This part imports the Addons file if there is one, so that you don't have to edit the dynamic URL
 from the addons rules every time we update anything here */
@@ -344,6 +344,8 @@ input[data-l10n-id="onboarding-join-form-email"] {color: #ddd !important}
 .modal {
  	background: #222 !important;
     border: 1px solid #555 !important}
+
+.icon.icon-clear-input {fill: #ccc !important}
 
 /* The cards borders part starts here */
 .card-outer .context-menu-button, .top-sites-list .top-site-outer .context-menu-button {
