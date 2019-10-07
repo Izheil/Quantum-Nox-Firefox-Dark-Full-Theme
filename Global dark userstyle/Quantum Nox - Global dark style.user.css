@@ -2,7 +2,7 @@
 @name         Quantum nox - Global dark theme
 @description  Global dark style to use alongside Firefox full dark theme - Quantum nox.
 @namespace    https://github.com/Izheil/Quantum-Nox-Firefox-Dark-Full-Theme
-@version      2.4.4
+@version      2.4.5
 @author       Izheil
 @homepageURL  https://github.com/Izheil/Quantum-Nox-Firefox-Dark-Full-Theme/tree/master/Global%20dark%20userstyle
 @updateURL    https://raw.githubusercontent.com/Izheil/Quantum-Nox-Firefox-Dark-Full-Theme/master/Global%20dark%20userstyle/Quantum%20Nox%20-%20Global%20dark%20style.user.css
@@ -321,7 +321,8 @@ if invMethod == "customSet" {
         
     .XSlider .ProgressBar-inner.SeekBar-played, .XSlider .ProgressBar-inner.VolumeBar-progress {background-color: #08f !important}
         
-    .vjs-control-bar, .XSlider .ProgressBar-inner.SeekBar-hover, .drt-control-bar, div[ng-if="videoSettingsDisplay"] {background: rgba(0,0,0,0.7) !important}
+    .vjs-control-bar, .XSlider .ProgressBar-inner.SeekBar-hover, .drt-control-bar, div[ng-if="videoSettingsDisplay"],
+    .WheelStopper .PlayerOptionContainer {background: rgba(0,0,0,0.7) !important}
         
     /* Wikis */
     #mw-head {background: #151515 !important}
