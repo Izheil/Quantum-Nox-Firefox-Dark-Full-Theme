@@ -27,6 +27,14 @@
 </ul>
 
 <p>After that, copy the whole <code>utils</code> folder inside your <a href="https://github.com/Izheil/Quantum-Nox-Firefox-Dark-Full-Theme/tree/master/Multirow%20and%20other%20functions/JS%20Loader#the-chrome-folder">chrome folder</a>, along with <code>Agentsheet_Loader.uc.js</code>.</p>
+
+<p>If you did it right, the structure of the chrome folder should look like:</p>
+<ul>
+  <li>utils (folder)</li>
+  <li>Agentsheet_Loader.uc.js</li>
+  <li>Any other optional file like userChrome.css or userContent.css</li>
+</ul>
+
 <p>The file <code>Agentsheet_Loader.uc.js</code> will enable the use of external agent sheet CSS files. If you aren't going to include any .as.css file, you can avoid copying it completelly.</p>
 <p>To use agent sheet CSS files, you must give them the extension <code>.as.css</code>, since they won't be read if they are only named as .css files (unless you import them directly through <code>userChrome.css</code> with an <b>@import</b> rule.
 

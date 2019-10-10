@@ -13,15 +13,16 @@ basic css or <a href="https://www.w3schools.com/colors/colors_picker.asp">color 
 <br />
 This problem doesn't happen if you use a code editor such as notepad++, atom, sublime text...</h4>
 
-<h3>Last update: <b>23/09/2019</b></h3>
+<h3>Last update: <b>10/10/2019</b></h3>
 <p>Files updated:</p>
+<ul>
+	<li><b>userChrome.xml</b>: Removed these files to favour the new patching method. The reason is that Firefox already removed all XBL bindings, and it's probable that they will drop support for this method in the near future.</li>
+	<li><b>JS Loader (folder)</b>: Added the new patching method in this folder. It requires to locate firefox root folder and the chrome folder.</li>
+</ul>
+<h3>Pre-Last update: <b>23/09/2019</b></h3>
 <ul>
 	<li><b>userChrome.css</b>: Fix for some elements of firefox popups and search bar. If you have an OS that paints buttons dark, you won't have to do anything. Otherwise, you will have to enable the rule on line 320 to show dialogs with dark buttons.</li>
 	<li><b>userContent.css</b>: Some fixes for <code>about:sessionrestore</code>.</li>
-</ul>
-<h3>Pre-Last update: <b>15/09/2019</b></h3>
-<ul>
-	<li><b>Addons.css</b>: Minor fox for some buttons on <a href="https://addons.mozilla.org/es/firefox/addon/tab-session-manager/">Tab session manager</a> addon.</li>
 </ul>
 
 <code>
@@ -116,9 +117,14 @@ This problem doesn't happen if you use a code editor such as notepad++, atom, su
 
 <p>If you find some problem that is <b>directly related</b> with any of the functions offered by any of the files in this repository, you can comment it inside the relevant commit that you think may have affected the function that is giving you trouble. If you can't tell which, comment in the last one. Comments about new functionability or things that aren't related to the actual functionability of the files will be ignored (You can already ask about problems you may have with firefox on <a href="https://www.reddit.com/r/firefox/">r/firefox</a> or <a href="https://www.reddit.com/r/firefoxcss/">r/firefoxCSS</a> subreddits, or on <a href="https://support.mozilla.org/">Firefox support</a> pages).</p>
 
+<h3>Why did you remove the <code>userchrome.xml</code> method?</h3>
+<p>Mozilla has finally removed all XBL bindings from Firefox, and it's only a matter of time until they remove support for this method (which depended on it), so I decided to switch to this new method as soon as possible to avoid the upcoming problems. If you still use the userchrome.xml method you can still use it until Mozilla removes support for it, in which case you will have to switch to the new one.</p>
+<p>You can find the new patching method in the <a href="https://github.com/Izheil/Quantum-Nox-Firefox-Dark-Full-Theme/tree/master/Multirow and other functions/JS Loader">JS Loader</a> folder.</p>
+
 <h3>I placed the files inside the chrome folder but I don't see any change</h3>
 <p>Make sure you downloaded the raw files from the repository (either cloning the whole repository, downloading the RAW version of the files, or copying the code you are interested in yourself), and placed them inside the chrome folder inside the root profile folder (more information on that inside the dark theme section of this repository).</p>
 <p>If you are using Firefox 69+, you also need to have enabled <code>toolkit.legacyUserProfileCustomizations.stylesheets</code> in <code>about:config</code> for userChrome or userContent (or any file in the chrome folder) to be loaded at all as per <a href="https://bugzilla.mozilla.org/show_bug.cgi?id=1541233#c35">bug #1541233</a>.</p>
+<p>If you instead are only using the multi-row files, make sure that you patched firefox root folder along with the chrome folder as explained in <a href="https://github.com/Izheil/Quantum-Nox-Firefox-Dark-Full-Theme/tree/master/Multirow and other functions/JS Loader">JS Loader</a>.</p>
 
 <h3>The pre-loading screen of websites is still white, how can I change this?</h3>
 <p>The fastest way to solve the "blinking" white screen is to change the default web background color on Firefox settings > General > "Colors..." button > Background, which will make the blinking dissapear and be changed to the color you set up. This, although, can cause some issues on some very few and specific pages like BBC, where they don't set a background color to override the one set here (the number of sites with this problem is very small, most sites override the background color set by this setting).</p>
@@ -133,7 +139,7 @@ This problem doesn't happen if you use a code editor such as notepad++, atom, su
 <p>This only happens when using Firefox default theme, either use firefox built-in dark theme along with this one, or use any other lightweight theme you like.</p>
 
 <h3>The synced tabs sidebar isn't themed.</h3>
-<p>Since it's anonymous content of the browser we can't theme it through userChrome or userContent, which is why you will have to apply the fix inside <code>Sync-tabs-sidebar.as.css</code>. It requires the use of external CSS files loading, which is enabled thorugh <code>userChrome.css</code> and <code>userChrome.xml</code>.</p>
+<p>Since it's anonymous content of the browser we can't theme it through userChrome or userContent, which is why you will have to apply the fix inside <code>Sync-tabs-sidebar.as.css</code>. It requires the use of external CSS files loading, which is enabled through <code>Agentsheet_Loader.uc.js</code> and the other files inside <a href="https://github.com/Izheil/Quantum-Nox-Firefox-Dark-Full-Theme/tree/master/Multirow and other functions/JS Loader">JS Loader</a> folder.</p>
 
 <h3>Some context menu commands dissapear after installing userChrome.</h3>
 <p>If you only want the dark theme, use the default <code>userChrome.css</code> file inside "Full dark theme", which won't make the context menu commands dissapear. In case you want to use the features part of the theme, just delete everything after the line that says <code>/* CONTEXT MENU COMMANDS */</code> (you can find it using the search option on notepad, or the code editor you are using).</p>
@@ -158,6 +164,8 @@ This problem doesn't happen if you use a code editor such as notepad++, atom, su
 </pre>
 
 <h3>I only want to use the multirow/(Any other) feature, but not the other ones!</h3>
+<p>If you only want to use multirow, then first patch firefox with the method in <a href="https://github.com/Izheil/Quantum-Nox-Firefox-Dark-Full-Theme/tree/master/Multirow and other functions/JS Loader">JS Loader</a>, and then just use any of the multirow files inside <a href="https://github.com/Izheil/Quantum-Nox-Firefox-Dark-Full-Theme/tree/master/Multirow%20and%20other%20functions/Multirow%20tabs">Multirow tabs</a> folder. You don't need to use <code>userChrome.css</code> nor <code>userContent.css</code> for this at all with the new patching method.</p>
+
 <p>You only need to modify <b>userChrome.css</b>, deleting the lines that you don't want to apply (Every function has a comment above it saying what each ruleset does), or if you think you may want them later, just encase the feature parts that you don't want to apply between /* and */:</p>
 
 <code>/* This is an example of a comment that wouldn't be read on a .css file */</code>
@@ -165,7 +173,7 @@ This problem doesn't happen if you use a code editor such as notepad++, atom, su
 <h3>I'm opening web files locally (as in opening html pages that you have created or downloaded) and the background is not the color it should be.</h3>
 <p>To change the directory browsing page and change how .css or some .txt files appear when opened with Firefox, I had to specify it to affect urls that start with "file:///", meaning that any file opened with Firefox will get overriden with those rules as well. To prevent this, go to userContent.css, and comment out the lines that affect this url (This rule should be exactly under the color variables at the start of the file).</p>
 
-<h3>I placed userChrome.css inside my chrome folder and I still don't have multi-row tabs!</h3>
+<h3>I placed <code>userChrome.css</code> inside my chrome folder and I still don't have multi-row tabs!</h3>
 <p>While we only needed to use CSS to enable multi-row tabs, this breaks tabs draggability, making reordering tabs when it was enabled a bit erratic, so to fix this, I decided to put all multi-row tabs code inside the <b>MultiRowTabLiteforFx.uc.js</b> file. This means that now Multi-row tabs can be enabled following the method described inside the <a href="https://github.com/Izheil/Quantum-Nox-Firefox-Dark-Full-Theme/tree/master/Multirow%20and%20other%20functions/Multirow%20tabs">Multirow tabs</a> folder. If you were using CSS code on your <code>userChrome.css</code> to enable multirow tabs, delete (or comment it out) for the js file to take effect.</p>
 
 <h3>Why use this method instead of using <a href="https://addons.mozilla.org/es/firefox/addon/styl-us/">Stylus</a>?</h3>
@@ -179,7 +187,7 @@ This problem doesn't happen if you use a code editor such as notepad++, atom, su
 <p>The original code for the multirow tabs (the CSS part) was written by <b>Andreicristianpetcu</b>, and you can find it <a href="https://discourse.mozilla.org/t/tabs-in-two-or-more-rows-like-tabmixpro-in-quantum/21657/2">here</a>, or for just the code, <a href="https://github.com/andreicristianpetcu/UserChrome-Tweaks/blob/09fa38a304af88b685f4086bc8ea9997dd7db0fd/tabs/multi_row_tabs_firefox_v57.css">here</a>. The fix of multi-row tabs draggability was made by <b>TroudhuK</b>, and you can find the original one <a href="https://github.com/TroudhuK/userChrome.js/blob/patch-1/Firefox-57/Mehrzeilige-Tableiste/MultiRowTabLiteforFx.uc.js">here</a>.</p>
 <p>The original code for the multirow bookmarks toolbar belongs to the original creator mentioned in <a href="https://www.reddit.com/r/firefox/comments/75wya9/multiple_row_bookmark_toolbar_for_firefox_5758/">this reddit thread</a>, whose code was fixed by <b>jscher2000</b> to use in our current firefox version.</p>
 <p>The fix to be able to theme unread tabs again after FF61 (see <a href="https://bugzilla.mozilla.org/show_bug.cgi?format=default&id=1453957">bug 1453957</a> on bugzilla) as mentioned in <a href="https://www.reddit.com/r/FirefoxCSS/comments/8yruy8/tabbrowsertabunread_backgroundimage/">this reddit thread</a>, was made by <b>moko1960</b> to use in Firefox 61+.</p>
-<p>The code to be able to edit anonymous content (in our case the scrollbars and tooltips) was created thanks to the efforts of <a href="http://mozilla.zeniko.ch/userchrome.js.html">Zeniko</a>, <a href="https://github.com/nuchi/firefox-quantum-userchromejs">Nichu</a>, and <a href="https://github.com/Sporif/firefox-quantum-userchromejs">Sporif</a>.
+<p>The code to be able to edit anonymous content (in our case the scrollbars and tooltips) was created thanks to the efforts of <a href="http://mozilla.zeniko.ch/userchrome.js.html">Zeniko</a>, <a href="https://github.com/nuchi/firefox-quantum-userchromejs">Nichu</a>, and <a href="https://github.com/Sporif/firefox-quantum-userchromejs">Sporif</a>, and <a href="https://github.com/xiaoxiaoflood/firefox-scripts">Xiaoxiaoflood</a>.
 <p>Special thanks to <b>Messna</b> for noting the class turning into an ID on FF58, and <b>Snwflake</b> for fixing Firefox root folder location on MacOS.</p>
 <p>Also thanks to <b>532910</b>, <b>BelladonnavGF</b>, <b>DallasBelt</b>, <b>Demir-delic</b>, <b>Gitut2007</b>, <b>Hakerdefo</b>, <b>Tkhquang</b> and <b>YiannisNi</b> for noting some issues with the theme, and the requests for new features that extended this project.</p>
 
