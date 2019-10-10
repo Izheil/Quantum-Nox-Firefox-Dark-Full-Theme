@@ -2,7 +2,7 @@
 @name         Quantum nox - Global dark theme
 @description  Global dark style to use alongside Firefox full dark theme - Quantum nox.
 @namespace    https://github.com/Izheil/Quantum-Nox-Firefox-Dark-Full-Theme
-@version      2.4.5
+@version      2.4.6
 @author       Izheil
 @homepageURL  https://github.com/Izheil/Quantum-Nox-Firefox-Dark-Full-Theme/tree/master/Global%20dark%20userstyle
 @updateURL    https://raw.githubusercontent.com/Izheil/Quantum-Nox-Firefox-Dark-Full-Theme/master/Global%20dark%20userstyle/Quantum%20Nox%20-%20Global%20dark%20style.user.css
@@ -196,12 +196,12 @@ if invMethod == "customSet" {
         background-color: #444 !important; 
         color: #fff !important}
 
-    a[href="javascript:;"]:not(.fancybox-nav), .rc-button-default.goog-inline-block, a.btn {
+    a[href="javascript:;"]:not(.fancybox-nav):not(.QvAa1), .rc-button-default.goog-inline-block, a.btn {
         background-color: #303030 !important;
         border-radius: 6px !important;
         color: #ddd !important}
         
-    a[href="javascript:;"]:not(.fancybox-nav):hover, .rc-button-default.goog-inline-block:hover, a.btn:hover {
+    a[href="javascript:;"]:not(.fancybox-nav):not(.QvAa1):hover, .rc-button-default.goog-inline-block:hover, a.btn:hover {
         background-color: #444 !important;
         color: #fff !important}
 
