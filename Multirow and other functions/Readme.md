@@ -1,14 +1,9 @@
 <h1>Multirow and other custom functions through JS injection</h1>
 <p>You can load other CSS files or JS files that couldn't be loaded in a regular way through JS injection, which lets us modify the scrollbars further, or change the behaviour of tabs (like for multirow)</p>
-<p>It should be the same for all OS, and it works by binding to a random DOM element some JS code, letting us run other JS files, or AGENT_SHEET level CSS.</p>
+<p>Mozilla finally removed all XBL bindings from firefox, so in advance of the removal of the posibility to inject JS scripts through <b>userchrome.xml</b>, I decided to update the patching method to another one that doesn't rely on this.</p>
+<p>If you are still using the old userchrome.xml method, you can keep using it until Mozilla decides to deprecate XUL completelly, in which case it will stop working and you will have to use the new one explained below.</p>
 
-<p>For this method, we use <code>userChrome.css</code> and <code>userChrome.xml</code> to enable the previously mentioned files (for further details on what is needed check the folders inside this one).</p>
-
-<p>You could make your own files, as far as you follow this naming convention:</p>
-<ul>
-	<li><code>*.uc.js</code> for javascript files.</li>
-	<li><code>*.as.css</code> for AGENT_SHEET level CSS files.</li>
-</ul>
+<p>For this method, we use the files inside the <a href="https://github.com/Izheil/Quantum-Nox-Firefox-Dark-Full-Theme/tree/master/Multirow%20and%20other%20functions/JS%20Loader">JS Loader</a> folder.</p>
 
 <p>The only little problem with this method is that <b>you will have to delete the start up cache files for the changes to take effect every time you make a change to any of the <i>*.uc.js</i></b> files (like the multi-row one, or the bookmarks toggler).</p>
 
@@ -18,23 +13,16 @@
 
 <h2>Contents of each folder:</h2>
 <ul>
+	<li><a href="https://github.com/Izheil/Quantum-Nox-Firefox-Dark-Full-Theme/tree/master/Multirow%20and%20other%20functions/JS%20Loader">JS Loader</a>: These are the files that will enable the use of the userscripts contained in the other folders.</li>
 	<li><a href="https://github.com/Izheil/Quantum-Nox-Firefox-Dark-Full-Theme/tree/master/Multirow%20and%20other%20functions/Multirow%20tabs">Multirow tabs</a>: Files to enable multiple rows of tabs instead of mono-row. You can chose between infinite rows and scrollable rows version. <ul><li><img src="https://i.imgur.com/qqQn4Ky.png"></li></ul></li>
 	<li><a href="https://github.com/Izheil/Quantum-Nox-Firefox-Dark-Full-Theme/tree/master/Multirow%20and%20other%20functions/Other%20experimental%20features">Other experimental features</a>: You can find some additional features that can only be done through javascript here, such as autohidding the UI of Firefox, or toggling visibility of bookmarks bar with a keypress.</li>
 	<li><a href="https://github.com/Izheil/Quantum-Nox-Firefox-Dark-Full-Theme/tree/master/Multirow%20and%20other%20functions/Tabs%20below">Tabs below</a>: These files will change the position of the Tabs bar to be below the URL bar. You can edit the rules within them to change the order to your liking.</li>
 </ul>
 
-<h3>Installation</h3>
-<p>To install any of the files, just copy the file(s) you are interested on inside any of the folders here along with <code>userChrome.xml</code>, and copy them to your chrome folder. You also will need to have enabled the use of <code>userChrome.xml</code> through <code>userChrome.css</code> (you can learn how to do it inside any of the folders).</p>
+<h2>Installation</h2>
+<p>To install any of the files, just copy the file(s) you are interested on inside any of the folders here to your <a href="https://github.com/Izheil/Quantum-Nox-Firefox-Dark-Full-Theme/tree/master/Multirow%20and%20other%20functions#the-chrome-folder">chrome folder</a>. You also will need to have patched firefox using the files inside the <a href="https://github.com/Izheil/Quantum-Nox-Firefox-Dark-Full-Theme/tree/master/Multirow%20and%20other%20functions/JS%20Loader">JS Loader</a> folder.</p>
 
-<p><strong>Note: As of Firefox 69, you will need to enable the use of these files through a configuration setting.</strong> The preference in question is <code>toolkit.legacyUserProfileCustomizations.stylesheets</code>. Here is how you change its value:
-<ol>
-	<li>Load <code>about:config</code> in the Firefox address bar.</li>
-    	<li>Confirm that you will be careful.</li>
-    	<li>Search for <code>toolkit.legacyUserProfileCustomizations.stylesheets</code> using the search at the top.</li>
-	<li>Toggle the preference. <code>True</code> means Firefox supports the CSS files, <code>False</code> that it ignores them.</li>
-</ol>
-
-<h3>The chrome folder</h3>
+<h2>The chrome folder</h2>
 <p>This is where you have to place the files of this repository.</p>
 <p>The fastest way to find it is to just type <code>about:support</code> on the URL bar of your firefox, and then click the <b>open folder</b> button inside the "profile folder" section.</p>
 <p>After this, your profile folder will be open. You may or may not see the chrome folder. If you don't see it, just create it and place inside the <code>userContent.css</code> and <code>userChrome.css</code> files.</p>

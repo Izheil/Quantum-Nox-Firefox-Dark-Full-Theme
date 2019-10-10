@@ -1,6 +1,0 @@
-/* DO NOT DELETE THIS LINE */
-@namespace url("http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul");
-
-/* This enables the use of JS external files */
-hbox#fullscr-toggler {
-    -moz-binding: url("userChrome.xml#js")}
