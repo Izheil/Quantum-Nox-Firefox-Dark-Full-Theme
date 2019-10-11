@@ -18,7 +18,7 @@
 <p>Works with Firefox 69-70. This version is the same as scrollable multirow, except the scrollbars are only shown when you hover over the tabs area. It fixes some very specific issue when loading a session restore and loading a long page with a lot of content, which sometimes would make some webarea scrollbars get "stuck".</p>
 
 <h3>MultiRowTab-*FF71.uc.js</h3>
-<p>Temporary fixes for multirow to work with Firefox 71. These won't work with FF69 or FF70.</p>
+<p>Compatibility fix to work with Firefox 71. You might need to change the margin values in the <code>#tabbrowser-tabs .tabbrowser-arrowscrollbox</code> selector rule to avoid unneeded padding on top and below tabs if you don't use Windows 10. These versions won't work with FF69 or FF70.</p>
 
 <h2>Tab sizing</h2>
 <p>The size of tabs in the last row is by default resizable, (like in the pictures above, which is the default Firefox behaviour) which will make them shrink as more tabs are fit inside the row. If you want to make all the tabs have a fixed width (so that tabs in the last row won't resize depending on how many tabs are open in that row), you will have to edit the file and change the variable <code>--tab-growth</code> to 0 (which will use the value of <code>browser.tabs.tabMinWidth</code> in <b>about:config</b> as their fixed width).</p>

@@ -5,7 +5,7 @@
 // @include        main
 // @compatibility  Firefox 71
 // @author         Alice0775, Endor8, TroudhuK, Izheil
-// @version        11/10/2019 05:44 Basic compatibility fix for FF71 (still needs work)
+// @version        11/10/2019 18:32 Compatibility fix for FF71
 // @version        06/09/2019 23:37 Fixed issue with tabs when moving to another window
 // @version        05/09/2019 03:24 Fixed tab draggability to work with FF69
 // @version        22/07/2019 19:21 Compatibility fix with Windows 7
@@ -46,28 +46,30 @@ function zzzz_MultiRowTabLite() {
     
     :root:-moz-lwtheme[lwtheme-image] {background-repeat: repeat-y !important}
 
-    #tabbrowser-tabs .tab-background{
-        max-height: var(--tab-min-height) !important;
-        min-height: var(--tab-min-height) !important}
+    #tabbrowser-tabs .tab-background {
+        max-height: calc(var(--tab-min-height) + 1px) !important;
+        min-height: calc(var(--tab-min-height) + 1px) !important}
 
-    /* This fix is intended for some updates when the tab line gets chopped on top of screen 
+    /* This fix is intended for some updates when the tab line gets chopped on top of screen */
     #main-window[sizemode="normal"] .tabbrowser-tab .tab-line,
     #main-window[sizemode="maximized"] .tabbrowser-tab .tab-line, 
-    #main-window[sizemode="fullscreen"] .tabbrowser-tab .tab-line {transform: translate(0,1px) !important}
-    */
-
-    #tabbrowser-tabs {margin-top: 0px !important}
+    #main-window[sizemode="fullscreen"] .tabbrowser-tab .tab-line,
+    :root[uidensity="touch"] .tabbrowser-tab .tab-line,
+    :root[uidensity="compact"] .tabbrowser-tab .tab-line {transform: translate(0,1px) !important}
+    
+    #tabbrowser-tabs .tabbrowser-arrowscrollbox {
+      overflow: visible; 
+      display: block;
+      margin-bottom: -17px !important;
+      margin-top: -17px !important;
+    }
 
     .tab-stack {width: 100%}
 
-    #tabbrowser-tabs .tabbrowser-arrowscrollbox {
-        overflow: visible;
-        display: block}
-
     :root[uidensity="touch"] .tabbrowser-tab,
     :root[uidensity="touch"] .tab-stack {   
-        min-height: calc(var(--tab-min-height) + 3px) !important;
-        max-height: calc(var(--tab-min-height) + 3px) !important;
+        min-height: calc(var(--tab-min-height) + 1px) !important;
+        max-height: calc(var(--tab-min-height) + 1px) !important;
         margin-bottom: 0 !important}
 
     :root[uidensity="touch"] #tabbrowser-tabs .arrowscrollbox-scrollbox {
@@ -75,6 +77,8 @@ function zzzz_MultiRowTabLite() {
 
     @media (-moz-os-version: windows-win10) {
     .titlebar-buttonbox, #titlebar-buttonbox {display: block !important; height:var(--tab-min-height) !important}}
+
+    scrollbar {-moz-window-dragging: no-drag !important}
 
     #alltabs-button, :root:not([customizing]) #TabsToolbar #new-tab-button, .tabbrowser-tab::after
     {display: none}
@@ -87,7 +91,7 @@ function zzzz_MultiRowTabLite() {
     var style = document.createElement( 'style' )
     style.innerHTML = `
     scrollbox {
-        display: inline-flex;
+        display: flex;
         flex-wrap: wrap;}
 
     .arrowscrollbox-overflow-start-indicator,
