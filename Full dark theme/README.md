@@ -114,7 +114,7 @@ It will, although, not turn dark the extension popups you may have. <p>
 
 <h4>For Mac, you can find the root folder in this path:</h4>
 
-<pre>/Applications/Firefox.app/content/resources</pre>
+<pre>/Applications/Firefox.app/Contents/resources</pre>
 
 <p>To open "Firefox.app", Ctrl-click it and select Show Package Contents. If you simply click it, you will start the application.</p>
 
