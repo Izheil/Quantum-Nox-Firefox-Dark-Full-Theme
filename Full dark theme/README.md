@@ -6,7 +6,6 @@
 <img src="https://i.imgur.com/bEleqP7.png" title="Dark addons" />
 
 <h2>Installation</h2>
-<p>You can check a video guide <a href="https://youtu.be/kNHe6XDgUN4">here</a>.</p>
 
 <p><strong>Note: As of Firefox 69, you will need to enable the use of these files through a configuration setting.</strong> The preference in question is <code>toolkit.legacyUserProfileCustomizations.stylesheets</code>. Here is how you change its value:
 <ol>
@@ -21,23 +20,14 @@
   <li>Type <code>about:support</code> in your URL bar, then go to that page.</li>
   <li>Click the "open folder" button inside the "profile folder" section.</li>
   <li>Create a folder named "chrome" in your profile folder if it doesn't exist yet.</li>
-  <li>Place all files from this folder <b>AND</b> the <code>utils</code> folder inside the "chrome" folder.</li>
+  <li>Place all files (.css files) from this folder to the "chrome" folder.</li>
+  <li><b>Optional</b>: If you want to use the custom dark scrollbars, or dark tooltips, you will also have to enable JS injection through the method explained <a href="https://github.com/Izheil/Quantum-Nox-Firefox-Dark-Full-Theme/tree/master/Multirow%20and%20other%20functions/JS%20Loader">here</a>.</li>
   <li><b>Optional</b>: Edit userChrome.css to change any style you aren't fully convinced with (or to give a different style to the unread tabs, etc...).</li>
   <li><b>Optional</b>: You can also edit userChrome.css to change the background of the <code>about:home</code> page.</li>
   <li><b>Optional</b>: If you want a different style for the scrollbars or the tooltips, use any of the alternatives on the <a href="https://github.com/Izheil/Quantum-Nox-Firefox-Dark-Full-Theme/tree/master/Full%20dark%20theme/Alternative%20scrollbars%20%26%20tooltips">Alternative scrollbars & tooltips</a> folder.</li>
   <li><b>Optional</b>: If you want the default scrollbar style (userChrome still paints it dark), or white tooltips, don't copy the relevant CSS files for them.</li>
   <li><b>Optional</b>: If you want a dark version of either of the addons mentioned in the <a href="https://github.com/Izheil/Quantum-Nox-Firefox-Dark-Full-Theme#addon-dark-themes">addons dark themes section</a> in the front page of this repository, change the UUID's of them inside <code>addons.css</code>. An explanation on how to do so is given inside the file.</li>
 </ul>
-
-<h4>Long explanation:</h4>
-
-<p>Most of the job is already done with the <code>userContent.css</code> and <code>userChrome.css</code> files that you have to place in the 
-<a href="https://github.com/Izheil/Quantum-Nox-Firefox-Dark-Full-Theme/tree/master/Full%20dark%20theme#the-chrome-folder">the chrome folder</a> of your firefox profile. For the theme to work as intended, you should be using a persona (aka lightweight theme) or the default dark theme (The persona used on the screenshot is "<a href="https://addons.mozilla.org/es/firefox/addon/polygon-dark-by-madonna/">Dark Polygon</a>" by <b>MaDonna</b>.</p>
-<p>You can also change the tab line color to Windows current theme color (You have to change the commented line that is described in line 19 inside userChrome.css), and the background image of your lightweight theme to one of your choice.</p>
-<p>If you want, it's possible to change the background of the <code>about:home</code> and <code>about:newtab</code> pages editting line 20 on userContent.css, and deleting the final "/*", and specifying the route of the image you want to use as background (if it's a link, place it where the "file:///" part is, otherwise, place the path of the file after the "file:///".</p>
-<img src="https://i.imgur.com/OhKiBCI.png">
-<p>For the optional improvements (being able to change the style of unread tabs, theming the sync tabs sidebar, theming the scrollbar and tooltips further, enabling support for userscripts like multirow), you will need to do some extra steps as explained below.</p>
-<p>You will also have to place the <code>utils</code> folder inside <a href="https://github.com/Izheil/Quantum-Nox-Firefox-Dark-Full-Theme/tree/master/Full%20dark%20theme#the-chrome-folder">the chrome folder</a>, and copy everything inside the <code>root</code> folder (not the root folder itself) to your <a href="https://github.com/Izheil/Quantum-Nox-Firefox-Dark-Full-Theme/tree/master/Full%20dark%20theme#Firefox-root-folder">firefox root folder</a>. <b>Make sure that a folder named "defaults" exists where you are copying the contents of the <code>root</code> folder from this repository.</b>.</p>
 
 <p>If you have copied everything right, the folders structure should look something like this:</p>
 <p>Structure of <a href="https://github.com/Izheil/Quantum-Nox-Firefox-Dark-Full-Theme/tree/master/Full%20dark%20theme#the-chrome-folder">the chrome folder</a> files inside your profile folder:</p>
@@ -72,11 +62,6 @@
   <li>config.js</li>
   <li>Other .dll files</li>
 </ul>
-
-<p>The files <code>scrollbars.as.css</code> and <code>tooltips.as.css</code> give a custom style to the scrollbars, the tooltips to look dark, so if you don't want these to have a custom style, don't copy these files.</p>
-<p>If you would also like a dark version of either <a href="https://addons.mozilla.org/es/firefox/addon/ublock-origin/">Ublock Origin</a>, <a href="https://addons.mozilla.org/es/firefox/addon/video-downloadhelper/">Video Download Helper</a>, <a href="https://addons.mozilla.org/es/firefox/addon/flash-video-downloader/">Flash Video Downloader</a>, <a href="https://addons.mozilla.org/es/firefox/addon/tab-session-manager/">Tab session manager</a>, <a href="https://addons.mozilla.org/es/firefox/addon/undo-closed-tabs-revived/">Undo closed tabs button</a>, <a href="https://addons.mozilla.org/es/firefox/addon/s3download-statusbar/">Download Manager (S3)</a>, <a href="https://addons.mozilla.org/es/firefox/addon/privacy-badger17/">Privacy badger</a>, <a href="https://addons.mozilla.org/es/firefox/addon/noscript/">Noscript</a>, <a href="https://addons.mozilla.org/es/firefox/addon/lastpass-password-manager/">LastPass password manager</a>, <a href="https://addons.mozilla.org/en-US/firefox/addon/window-resize/">Windows resize</a> or <a href="https://addons.mozilla.org/es/firefox/addon/s3google-translator/">S3 Translator</a>, copy the "addons.css" file in your <a href="https://github.com/Izheil/Quantum-Nox-Firefox-Dark-Full-Theme/tree/master/Full%20dark%20theme#the-chrome-folder">the chrome folder</a> as well. You will also need to edit the "addons.css" file to update the dynamic URLs of the addons you want to theme (further explanations inside the "addons.css" file). Also make sure to delete the comment start slash (/*) from the ending rules (the rules under the line that says ADDON POPUPS) in userChrome.css to change the color of the popup arrows on those extensions that may need it.</p>
-<p>In case that you just want to change the default scrollbars with the custom ones from the .as.css files, you can apply just that without the need
-of using the userContent or userChrome files provided here.</p>
 
 <h2>The userChrome.css file</h2>
 
