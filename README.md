@@ -9,23 +9,21 @@ in <code>about:config</code> for userChrome and userContent to be loaded at all 
 
 <p>If you want to know how to change some colors of the theme, check the <a href="https://github.com/Izheil/Quantum-Nox-Firefox-Dark-Full-Theme/tree/master/Info#Editting CSS files">Info</a> section.</p>
 
-<h3>Last update: <b>10/10/2019</b></h3>
+<h3>Last update: <b>11/10/2019</b></h3>
 <p>Files updated:</p>
+<ul>
+	<li><b>MultiRowTab*FF71.uc.js</b>: Added a compatibility fix for FF71 multi-row tabs.</li>
+</ul>
+<h3>Pre-Last update: <b>10/10/2019</b></h3>
 <ul>
 	<li><b>userChrome.xml</b>: Removed these files to favour the new patching method. The reason is that Firefox already removed all XBL bindings, and it's probable that they will drop support for this method in the near future.</li>
 	<li><b>JS Loader (folder)</b>: Added the new patching method in this folder. It requires to locate firefox root folder and the chrome folder.</li>
 </ul>
-<h3>Pre-Last update: <b>23/09/2019</b></h3>
-<ul>
-	<li><b>userChrome.css</b>: Fix for some elements of firefox popups and search bar. If you have an OS that paints buttons dark, you won't have to do anything. Otherwise, you will have to enable the rule on line 320 to show dialogs with dark buttons.</li>
-	<li><b>userContent.css</b>: Some fixes for <code>about:sessionrestore</code>.</li>
-</ul>
 
 <h3>A note on people looking to replace some Tab Mix Plus features:</h3>
 <p>You can find some of the basic settings that can be simulated through <code>about:config</code> and some addons <a href="https://github.com/Izheil/Quantum-Nox-Firefox-Dark-Full-Theme/tree/master/Info#Replacing-some-Tab-Mix-Plus-features">here</a>.</p>
-</br>
 
-<h3>Main browser UI</h3>
+<h2>Main browser UI</h2>
 <img src="https://i.imgur.com/zNKhEV6.png" title="Dark firefox UI with custom background" />
 <img src="https://i.imgur.com/q8MhDSX.png" title="Dark firefox Dialog" />
 
