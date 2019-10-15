@@ -282,15 +282,18 @@ if invMethod == "customSet" {
     span.cm-tag, .ace-cobalt .ace_meta.ace_tag {color:  #d55d5d !important}
     span.cm-tag.cm-bracket, .ace_entity, .ace_support.ace_function, .ace_support.ace_type {color:  #4CAF50 !important}
     span.cm-string, .ace_string, .prettyprint .str, .syntaxhighlighter .string {color: #9999ff !important}
-    span.cm-variable, span.cm-def, .ace_variable, .crayon-theme-familiar .crayon-pre .crayon-v {color: #dd0 !important}
+    span.cm-variable, span.cm-def, .ace_variable, .crayon-theme-familiar .crayon-pre .crayon-v, 
+    .crayon-theme-github .crayon-pre .crayon-v {color: #dd0 !important}
     span.cm-property, .ace_constant:not(.ace_numeric) {color: #ff6666 !important}
     .ace_constant.ace_numeric, .prettyprint .lit {color: #85f !important}
     .ace_keyword {color: #d80 !important}
     .ace_paren .ace_rparen, .jtip-top .jt-info.jt-imdb, .prettyprint .pun, 
-    .crayon-theme-familiar .crayon-pre .crayon-i {color: #fff !important}
+    .crayon-theme-familiar .crayon-pre .crayon-i, .crayon-theme-github .crayon-pre .crayon-r, 
+    .crayon-theme-github .crayon-pre .crayon-i {color: #fff !important}
     .ace_support.ace_constant {color: #0aa !important}
-    .ace_comment, .prettyprint .com, .crayon-theme-familiar .crayon-pre .crayon-sy, .syntaxhighlighter .plain {color: #aaa !important}
-    .crayon-theme-familiar .crayon-striped-line {background: rgba(0,0,0,0.3) !important}
+    .ace_comment, .prettyprint .com, .crayon-theme-familiar .crayon-pre .crayon-sy, .syntaxhighlighter .plain, 
+    .crayon-theme-github .crayon-pre .crayon-sy {color: #aaa !important}
+    .crayon-theme-familiar .crayon-striped-line, .crayon-theme-github .crayon-table .crayon-nums {background: rgba(0,0,0,0.3) !important}
         
     .CodeMirror, #columns, .syntaxhighlighter .line.alt2, .syntaxhighlighter .line.alt1 {background-color: transparent !important}
 
