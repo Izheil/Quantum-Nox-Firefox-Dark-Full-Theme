@@ -62,4 +62,3 @@ function switchToTab(event) {
 }
 
 gBrowser.tabContainer.addEventListener('mouseover', hoverHandler, false);
-//document.getElementsByClassName("tabbrowser-tab")[0].addEventListener('mouseover', switchToTab, false);
