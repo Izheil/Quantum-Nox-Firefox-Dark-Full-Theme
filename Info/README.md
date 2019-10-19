@@ -10,7 +10,7 @@ basic css or <a href="https://www.w3schools.com/colors/colors_picker.asp">color 
 
 <h2>Replacing some Tab Mix Plus features</h2>
 
-<p>The files in this repository cover <a href="https://github.com/Izheil/Quantum-Nox-Firefox-Dark-Full-Theme/tree/master/Multirow%20and%20other%20functions/Multirow%20tabs">multi-row tabs</a>, <a href="https://github.com/Izheil/Quantum-Nox-Firefox-Dark-Full-Theme/tree/master/CSS%20tweaks">keep the close button on tabs always visible</a>, and color-coding tabs when they are loaded, unloaded, etc...</p>
+<p>The files in this repository cover <a href="https://github.com/Izheil/Quantum-Nox-Firefox-Dark-Full-Theme/tree/master/Multirow%20and%20other%20functions/Multirow%20tabs">multi-row tabs</a>, <a href="https://github.com/Izheil/Quantum-Nox-Firefox-Dark-Full-Theme/tree/master/CSS%20tweaks">keep the close button on tabs always visible</a>, <a href="https://github.com/Izheil/Quantum-Nox-Firefox-Dark-Full-Theme/tree/master/Multirow%20and%20other%20functions/Other%20experimental%20features#Switch-to-tab-on-hoverucjs">switch tab on hover</a>, and color-coding tabs when they are loaded, unloaded, etc...</p>
 <p>Most other functions of Tab Mix Plus can already be "simulated" changing some <code>about:config</code> settings:</p>
  <ul>
  	<li>To keep FF open even after closing the last tab -> <code>browser.tabs.closeWindowWithLastTab</code> to <i>false</i>.</li>
