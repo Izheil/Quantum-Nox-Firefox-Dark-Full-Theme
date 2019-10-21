@@ -19,7 +19,6 @@
   </ul>
   <li>fonts (folder)</li>
   <li>gmp-clearkey (folder)</li>
-  <li>META-INF (folder)</li>
   <li>uninstall (folder)</li>
   <li>firefox.exe/firefox</li>
   <li>config.js</li>
