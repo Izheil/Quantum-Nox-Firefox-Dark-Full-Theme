@@ -503,6 +503,10 @@ menuseparator {
 if necessary depending on if you are using a custom OS theme (which may mess up the padding of the separators) */
 #context-savepage {padding-top: 3px !important}
 
+/* Protections popup text */
+#protections-popup-category-list description[role="heading"] {color: #ddd !important}
+.text-link, .protections-popup-category, #protections-popup-trackers-blocked-counter-description {color: #aaa !important}
+
 /* LIBRARY MENU */
 
 /* These change top bar background color */
@@ -872,8 +876,6 @@ if necessary depending on if you are using a custom OS theme (which may mess up 
 /* Changes the color of the url bar search options */
 .urlbarView .search-panel-header, 
 .urlbarView .search-panel-one-offs {background: #444 !important}
-
-.urlbarView .search-one-offs {border-color: #666 !important}
 
 /* Changes the color of search engine options button */
 .search-setting-button {
