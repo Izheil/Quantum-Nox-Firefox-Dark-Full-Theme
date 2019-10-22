@@ -12,7 +12,7 @@ in <code>about:config</code> for userChrome and userContent to be loaded at all 
 <h3>Last update: <b>19/10/2019</b></h3>
 <p>Files updated:</p>
 <ul>
-	<li><b>Switch-to-tab-on-hover.uc.js</b>: Added a new experimental feature. It tries to simulate the "switch on hover" option from Tab Mix Plus. When you hover over a tab with this userscript enabled, you will switch to it without the need to click it. You can also set a delay on the variable inside the file.</li>
+	<li><b>Switch-to-tab-on-hover.uc.js</b>: Added a new experimental feature. It tries to simulate the "switch on hover" option from Tab Mix Plus. When you hover over a tab with this userscript enabled, you will switch to it without the need to click it.</li>
 </ul>
 <h3>Pre-Last update: <b>11/10/2019</b></h3>
 <ul>

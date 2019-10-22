@@ -20,7 +20,7 @@
 <p>Hides the navigation toolbox when pressing a key (F1 by default) when NOT in fullscreen mode. You can change the binded key through the variables inside the file..</p>
 
 <h3>Switch-to-tab-on-hover.uc.js</h3>
-<p>Lets you switch to another tab just by hovering over it. You can set the delay to which it should register the hover inside the variable inside the file.</p>
+<p>Lets you switch to another tab just by hovering over it.</p>
 
 <h3>Test.as.css</h3>
 <p>This is a test file to check that both external non-userchrome css files and js files are loaded through <code>userchrome.xml</code>. It draws a red border around all editable elements inside firefox UI.</p>
