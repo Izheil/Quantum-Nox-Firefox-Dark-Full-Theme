@@ -1,6 +1,6 @@
 /* You can find an updated version here: https://github.com/Izheil/Quantum-Nox-Firefox-Dark-Full-Theme */
 /* Made by Izheil */
-/* Last updated: 23/09/2019 */
+/* Last updated: 22/10/2019 */
 
 /* DO NOT DELETE THIS LINE */
 @namespace url("http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul");
@@ -146,7 +146,8 @@ for icons on the bookmarks bar under the url bar. Just make sure to put commas a
 #urlbar, .searchbar-textbox {
   color: var(--url-and-searchbar-color) !important}
 
-.searchbar-search-button {fill: #ccc !important}
+.searchbar-search-button, .urlbar-icon,
+.search-setting-button-compact > .button-box > .button-icon {fill: #ccc !important}
 
 /* Max, min and close buttons */
 
@@ -867,6 +868,12 @@ if necessary depending on if you are using a custom OS theme (which may mess up 
 
 /* Changes the color of search engines choices */
 .search-panel-one-offs {background: var(--Search-engine-choices-gradient) !important}
+
+/* Changes the color of the url bar search options */
+.urlbarView .search-panel-header, 
+.urlbarView .search-panel-one-offs {background: #444 !important}
+
+.urlbarView .search-one-offs {border-color: #666 !important}
 
 /* Changes the color of search engine options button */
 .search-setting-button {
