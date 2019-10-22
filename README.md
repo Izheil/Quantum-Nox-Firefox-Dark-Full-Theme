@@ -9,14 +9,14 @@ in <code>about:config</code> for userChrome and userContent to be loaded at all 
 
 <p>If you want to know how to change some colors of the theme, check the <a href="https://github.com/Izheil/Quantum-Nox-Firefox-Dark-Full-Theme/tree/master/Info#Editting CSS files">Info</a> section.</p>
 
-<h3>Last update: <b>19/10/2019</b></h3>
+<h3>Last update: <b>23/10/2019</b></h3>
 <p>Files updated:</p>
 <ul>
-	<li><b>Switch-to-tab-on-hover.uc.js</b>: Added a new experimental feature. It tries to simulate the "switch on hover" option from Tab Mix Plus. When you hover over a tab with this userscript enabled, you will switch to it without the need to click it.</li>
+	<li><b>userChrome</b>: Added some fixes for the privacy popup (the shield one), and added a variable to change the urlbar separators (line that appears next to the shield icon in the url bar).</li>
 </ul>
-<h3>Pre-Last update: <b>11/10/2019</b></h3>
+<h3>Pre-Last update: <b>19/10/2019</b></h3>
 <ul>
-	<li><b>MultiRowTab*FF71.uc.js</b>: Added a compatibility fix for FF71 multi-row tabs.</li>
+	<li><b>Switch-to-tab-on-hover.uc.js</b>: Added a new experimental feature. It tries to simulate the "switch on hover" option from Tab Mix Plus. When you hover over a tab with this userscript enabled, you will switch to it without the need to click it.</li>
 </ul>
 
 <h3>A note on people looking to replace some Tab Mix Plus features:</h3>
