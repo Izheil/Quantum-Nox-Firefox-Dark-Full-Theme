@@ -15,7 +15,7 @@
 <ul>
 	<li><a href="https://github.com/Izheil/Quantum-Nox-Firefox-Dark-Full-Theme/tree/master/Multirow%20and%20other%20functions/JS%20Loader">JS Loader</a>: These are the files that will enable the use of the userscripts contained in the other folders.</li>
 	<li><a href="https://github.com/Izheil/Quantum-Nox-Firefox-Dark-Full-Theme/tree/master/Multirow%20and%20other%20functions/Multirow%20tabs">Multirow tabs</a>: Files to enable multiple rows of tabs instead of mono-row. You can chose between infinite rows and scrollable rows version. <ul><li><img src="https://i.imgur.com/qqQn4Ky.png"></li></ul></li>
-	<li><a href="https://github.com/Izheil/Quantum-Nox-Firefox-Dark-Full-Theme/tree/master/Multirow%20and%20other%20functions/Other%20experimental%20features">Other features</a>: You can find some additional features that can only be done through javascript here, such as autohidding the UI of Firefox, toggling visibility of bookmarks bar with a keypress, or focusing tabs on hover.</li>
+	<li><a href="https://github.com/Izheil/Quantum-Nox-Firefox-Dark-Full-Theme/tree/master/Multirow%20and%20other%20functions/Other%20features">Other features</a>: You can find some additional features that can only be done through javascript here, such as autohidding the UI of Firefox, toggling visibility of bookmarks bar with a keypress, or focusing tabs on hover.</li>
 	<li><a href="https://github.com/Izheil/Quantum-Nox-Firefox-Dark-Full-Theme/tree/master/Multirow%20and%20other%20functions/Tabs%20below">Tabs below</a>: These files will change the position of the Tabs bar to be below the URL bar. You can edit the rules within them to change the order to your liking.</li>
 </ul>
 
