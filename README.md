@@ -12,12 +12,12 @@ in <code>about:config</code> for userChrome and userContent to be loaded at all 
 <h3>Last update: <b>23/10/2019</b></h3>
 <p>Files updated:</p>
 <ul>
-	<li><b>Switch-to-tab-on-hover.uc.js</b>: Fixed the delay part of the script. You should now be able to set a delay before switching to the hovered tab.</li>
+	<li><b>Focus-tab-on-hover.uc.js</b>: Fixed the delay part of the script. You should now be able to set a delay before switching to the hovered tab.</li>
 	<li><b>userChrome</b>: Added some fixes for the privacy popup (the shield one), and added a variable to change the urlbar separators (line that appears next to the shield icon in the url bar).</li>
 </ul>
 <h3>Pre-Last update: <b>19/10/2019</b></h3>
 <ul>
-	<li><b>Switch-to-tab-on-hover.uc.js</b>: Added a new experimental feature. It tries to simulate the "switch on hover" option from Tab Mix Plus. When you hover over a tab with this userscript enabled, you will switch to it without the need to click it.</li>
+	<li><b>Focus-tab-on-hover.uc.js</b>: Added a new experimental feature. It tries to simulate the "switch on hover" option from Tab Mix Plus. When you hover over a tab with this userscript enabled, you will switch to it without the need to click it.</li>
 </ul>
 
 <h3>A note on people looking to replace some Tab Mix Plus features:</h3>

@@ -8,6 +8,9 @@
 <h3>Bookmarks-toggle.uc.js</h3>
 <p>Toggles visibility of the bookmarks toolbar when pressing F2 (you can change which keys in the file). You need to have the "fullscreen fix" disabled on userchrome.css if using any of the "CSS tweaks" versions from this repository.</p>
 
+<h3>Focus-tab-on-hover.uc.js</h3>
+<p>Lets you switch to another tab just by hovering over it. You can specify a delay to wait before switching to the hovered tab inside the file (the variable on top of the file).</p>
+
 <h3>Mac-fullscreen-fix-toolbox-autohide.uc.js</h3>
 <p>Forces autohide of the toolbar in fullscreen mode to fix a common issue on Mac devices where the toolbar won't do this even with the setting enabled. Windows and Linux users shouldn't need this (since it already autohides if you have it toggled in the context menu of the toolbar in fullscreen mode).</p>
 
@@ -16,9 +19,6 @@
 
 <h3>Navigator-toolbox-hide-by-keypress.uc.js</h3>
 <p>Hides the navigation toolbox when pressing a key (F1 by default) when NOT in fullscreen mode. You can change the binded key through the variables inside the file..</p>
-
-<h3>Switch-to-tab-on-hover.uc.js</h3>
-<p>Lets you switch to another tab just by hovering over it. You can specify a delay to wait before switching to the hovered tab inside the file (the variable on top of the file).</p>
 
 <h3>Test.as.css</h3>
 <p>This is a test file to check that both external non-userchrome css files and js files are loaded through <code>userchrome.xml</code>. It draws a red border around all editable elements inside firefox UI.</p>

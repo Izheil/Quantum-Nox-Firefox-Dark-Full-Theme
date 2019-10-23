@@ -1,5 +1,5 @@
 // ==UserScript==
-// @name           Switch-to-tab-on-hover.uc.js
+// @name           Focus-tab-on-hover.uc.js
 // @namespace      https://github.com/Izheil/Quantum-Nox-Firefox-Dark-Full-Theme
 // @description    Switches to the tab you hovered over.
 // @include        main
