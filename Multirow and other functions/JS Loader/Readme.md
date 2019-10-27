@@ -25,17 +25,16 @@
   <li>Other .dll files</li>
 </ul>
 
-<p>After that, copy the whole <code>utils</code> folder inside your <a href="https://github.com/Izheil/Quantum-Nox-Firefox-Dark-Full-Theme/tree/master/Multirow%20and%20other%20functions/JS%20Loader#the-chrome-folder">chrome folder</a>, along with <code>Agentsheet_Loader.uc.js</code>.</p>
+<p>After that, copy the whole <code>utils</code> folder inside your <a href="https://github.com/Izheil/Quantum-Nox-Firefox-Dark-Full-Theme/tree/master/Multirow%20and%20other%20functions/JS%20Loader#the-chrome-folder">chrome folder</a>.</p>
 
 <p>If you did it right, the structure of the chrome folder should look like:</p>
 <ul>
   <li>utils (folder)</li>
-  <li>Agentsheet_Loader.uc.js</li>
-  <li>Any other optional file like userChrome.css or userContent.css</li>
+  <li>Any other optional file like userChrome.css, userContent.css, MultiRowTabLiteforFx.uc.js, etc...</li>
 </ul>
 
-<p>The file <code>Agentsheet_Loader.uc.js</code> will enable the use of external agent sheet CSS files. If you aren't going to include any .as.css file, you can avoid copying it completelly.</p>
-<p>To use agent sheet CSS files, you must give them the extension <code>.as.css</code>, since they won't be read if they are only named as .css files (unless you import them directly through <code>userChrome.css</code> with an <b>@import</b> rule.
+<p>The files inside the "utils" folder will enable both <code>*.uc.js</code> and <code>*.as.css</code> files inside your chrome folder.</p>
+<p>To override CSS styles that can't be changed in any other way (like for scrollbars, or certain tooltips), you must give the CSS files you want to use the extension <code>.as.css</code>, since they won't be read at all if you don't (unless you import them directly through <code>userChrome.css</code> with an <b>@import</b> rule, but they will be read with the same privileges as userChrome.css).</p>
 
 <h2>Firefox root folder</h2>
 <p>The root folder is where both the executable and the "defaults" folder of your current installed firefox are located</p>

@@ -32,9 +32,8 @@
 <p>If you have copied everything right, the folders structure should look something like this:</p>
 <p>Structure of <a href="https://github.com/Izheil/Quantum-Nox-Firefox-Dark-Full-Theme/tree/master/Full%20dark%20theme#the-chrome-folder">the chrome folder</a> files inside your profile folder:</p>
 <ul>
-  <li>utils (folder)</li>
+  <li><b>utils (folder)</b></li>
   <li>addons.css</li>
-  <li>Agentsheet_Loader.uc.js</li>
   <li>scrollbars.as.css</li>
   <li>setAttribute_unread.uc.js</li>
   <li>Sync-tabs-sidebar.as.css</li>
@@ -51,7 +50,7 @@
     <li>pref (folder)</li>
     <ul>
       <li>channel-prefs.js</li>
-      <li>config-prefs.js</li>
+      <li><b>config-prefs.js</b></li>
     </ul>
   </ul>
   <li>fonts (folder)</li>
@@ -59,9 +58,11 @@
   <li>META-INF (folder)</li>
   <li>uninstall (folder)</li>
   <li>firefox.exe/firefox</li>
-  <li>config.js</li>
+  <li><b>config.js</b></li>
   <li>Other .dll files</li>
 </ul>
+
+<p>Bolded files or folders mark the required things to enable JS injection.</p>
 
 <h2>The userChrome.css file</h2>
 

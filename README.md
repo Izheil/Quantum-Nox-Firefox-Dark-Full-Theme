@@ -9,15 +9,16 @@ in <code>about:config</code> for userChrome and userContent to be loaded at all 
 
 <p>If you want to know how to change some colors of the theme, check the <a href="https://github.com/Izheil/Quantum-Nox-Firefox-Dark-Full-Theme/tree/master/Info#Editting CSS files">Info</a> section.</p>
 
-<h3>Last update: <b>23/10/2019</b></h3>
+<h3>Last update: <b>27/10/2019</b></h3>
 <p>Files updated:</p>
+<ul>
+	<li><b>JS Loader/userChrome.jsm</b>: Now you won't need the Agentsheet_Loader.uc.js file anymore. You can now load <code>*.as.css</code> files directly without the need of <code>Agentsheet_Loader.uc.js</code>.</li>
+	<li><b>Agentsheet_Loader.uc.js</b>: Removed this file, since it's not longer needed (integrated into the <a href="https://github.com/Izheil/Quantum-Nox-Firefox-Dark-Full-Theme/tree/master/Multirow%20and%20other%20functions/JS%20Loader">JS Loader</a> patch).</li>
+</ul>
+<h3>Pre-Last update: <b>23/10/2019</b></h3>
 <ul>
 	<li><b>Focus-tab-on-hover.uc.js</b>: Fixed the delay part of the script. You should now be able to set a delay before switching to the hovered tab.</li>
 	<li><b>userChrome</b>: Added some fixes for the privacy popup (the shield one), and added a variable to change the urlbar separators (line that appears next to the shield icon in the url bar).</li>
-</ul>
-<h3>Pre-Last update: <b>19/10/2019</b></h3>
-<ul>
-	<li><b>Focus-tab-on-hover.uc.js</b>: Added a new experimental feature. It tries to simulate the "switch on hover" option from Tab Mix Plus. When you hover over a tab with this userscript enabled, you will switch to it without the need to click it.</li>
 </ul>
 
 <h3>A note on people looking to replace some Tab Mix Plus features:</h3>
@@ -104,3 +105,7 @@ in <code>about:config</code> for userChrome and userContent to be loaded at all 
 <p>If you want to support this project, consider buying me a coffee to motivate me keep this repository up and running.</p>
 ​
 <a href='https://ko-fi.com/K3K4TQ97' target='_blank'><img height='36' style='border:0px;height:36px;' src='https://az743702.vo.msecnd.net/cdn/kofi2.png?v=2' border='0' alt='Buy Me a Coffee at ko-fi.com' /></a>
+
+<p>...or any other amount you see fit on paypal.</p>
+
+<a href="https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=BMUFYBSRA7ENL&source=url"><img alt="" border="0" src="https://www.paypal.com/en_ES/i/scr/pixel.gif" width="1" height="1" /></a>

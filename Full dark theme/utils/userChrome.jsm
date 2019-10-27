@@ -6,7 +6,7 @@ const {xPref} = ChromeUtils.import('chrome://userchromejs/content/xPref.jsm');
 let UC = {};
 
 let _uc = {
-  ALWAYSEXECUTE: 'Agentsheet_Loader.uc.js',
+  ALWAYSEXECUTE: 'userChrome.uc.js',
   BROWSERCHROME: 'chrome://browser/content/browser.xhtml',
   PREF_ENABLED: 'userChromeJS.enabled',
   PREF_SCRIPTSDISABLED: 'userChromeJS.scriptsDisabled',
@@ -14,10 +14,16 @@ let _uc = {
   getScripts: function () {
     this.scripts = {};
     let files = Services.dirsvc.get('UChrm', Ci.nsIFile).directoryEntries.QueryInterface(Ci.nsISimpleEnumerator);
+    let sss = Cc['@mozilla.org/content/style-sheet-service;1'].getService(Ci.nsIStyleSheetService);
     while (files.hasMoreElements()) {
       let file = files.getNext().QueryInterface(Ci.nsIFile);
+      let fileURI = Services.io.newFileURI(file);
       if (/\.uc\.js$/i.test(file.leafName)) {
         _uc.getScriptData(file);
+      }
+      else if(/\.as\.css$/i.test(file.leafName)) {
+        if(!sss.sheetRegistered(fileURI, sss.AGENT_SHEET))
+          sss.loadAndRegisterSheet(fileURI, sss.AGENT_SHEET);
       }
     }
   },

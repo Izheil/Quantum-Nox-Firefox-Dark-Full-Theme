@@ -5,7 +5,7 @@
 
 <p>For this method, we use the files inside the <a href="https://github.com/Izheil/Quantum-Nox-Firefox-Dark-Full-Theme/tree/master/Multirow%20and%20other%20functions/JS%20Loader">JS Loader</a> folder.</p>
 
-<p>The only little problem with this method is that <b>you will have to delete the start up cache files for the changes to take effect every time you make a change to any of the <i>*.uc.js</i></b> files (like the multi-row one, or the bookmarks toggler).</p>
+<p>As with every other method, if some changes of your script aren't getting updated after changing it and restarting Firefox, <b>the first thing to try is to delete the start up cache files for the changes of any <i>*.uc.js</i> files (like the multi-row one, or the bookmarks toggler) to take effect</b>.</p>
 
 <p>To clear the start up cache you have to type <code>about:profiles</code> on firefox URL bar, go to that page, open the local profile directory through that page, and then delete all files inside the "startupCache" folder.</p>
 
