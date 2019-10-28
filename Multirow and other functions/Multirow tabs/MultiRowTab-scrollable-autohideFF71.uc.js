@@ -1,5 +1,5 @@
 // ==UserScript==
-// @name           MultiRowTab-scrollableFF71.uc.js
+// @name           MultiRowTab-scrollable-autohideFF71.uc.js
 // @namespace      http://space.geocities.yahoo.co.jp/gl/alice0775
 // @description    Multi-row tabs draggability fix, Experimental CSS version
 // @include        main
