@@ -2,7 +2,7 @@
 @name         Quantum nox - Global dark theme
 @description  Global dark style to use alongside Firefox full dark theme - Quantum nox.
 @namespace    https://github.com/Izheil/Quantum-Nox-Firefox-Dark-Full-Theme
-@version      2.4.7
+@version      2.4.8
 @author       Izheil
 @homepageURL  https://github.com/Izheil/Quantum-Nox-Firefox-Dark-Full-Theme/tree/master/Global%20dark%20userstyle
 @updateURL    https://raw.githubusercontent.com/Izheil/Quantum-Nox-Firefox-Dark-Full-Theme/master/Global%20dark%20userstyle/Quantum%20Nox%20-%20Global%20dark%20style.user.css
@@ -284,18 +284,20 @@ if invMethod == "customSet" {
     span.cm-string, .ace_string, .prettyprint .str, .syntaxhighlighter .string {color: #9999ff !important}
     span.cm-variable, span.cm-def, .ace_variable, .crayon-theme-familiar .crayon-pre .crayon-v, 
     .crayon-theme-github .crayon-pre .crayon-v {color: #dd0 !important}
-    span.cm-property, .ace_constant:not(.ace_numeric) {color: #ff6666 !important}
+    span.cm-property, .ace_constant:not(.ace_numeric), .crayon-theme-xcode .crayon-pre .crayon-cn {color: #ff6666 !important}
     .ace_constant.ace_numeric, .prettyprint .lit {color: #85f !important}
-    .ace_keyword {color: #d80 !important}
+    .ace_keyword, .crayon-theme-xcode .crayon-pre .crayon-e {color: #d80 !important}
     .ace_paren .ace_rparen, .jtip-top .jt-info.jt-imdb, .prettyprint .pun, 
     .crayon-theme-familiar .crayon-pre .crayon-i, .crayon-theme-github .crayon-pre .crayon-r, 
-    .crayon-theme-github .crayon-pre .crayon-i {color: #fff !important}
+    .crayon-theme-github .crayon-pre .crayon-i, .crayon-theme-xcode .crayon-pre .crayon-o {color: #fff !important}
     .ace_support.ace_constant {color: #0aa !important}
     .ace_comment, .prettyprint .com, .crayon-theme-familiar .crayon-pre .crayon-sy, .syntaxhighlighter .plain, 
-    .crayon-theme-github .crayon-pre .crayon-sy {color: #aaa !important}
-    .crayon-theme-familiar .crayon-striped-line, .crayon-theme-github .crayon-table .crayon-nums {background: rgba(0,0,0,0.3) !important}
+    .crayon-theme-github .crayon-pre .crayon-sy, .crayon-theme-xcode .crayon-pre .crayon-sy {color: #aaa !important}
+    .crayon-theme-familiar .crayon-striped-line, .crayon-theme-github .crayon-table .crayon-nums, 
+    .crayon-theme-xcode .crayon-striped-line {background: rgba(0,0,0,0.3) !important}
         
-    .CodeMirror, #columns, .syntaxhighlighter .line.alt2, .syntaxhighlighter .line.alt1 {background-color: transparent !important}
+    .CodeMirror, #columns, .syntaxhighlighter .line.alt2, .syntaxhighlighter .line.alt1, 
+    .syntaxhighlighter .line.alt2 {background-color: transparent !important}
 
     /* Mega */ 
     .download.big-button:not(.green)::after, .post {background: #222 !important}
