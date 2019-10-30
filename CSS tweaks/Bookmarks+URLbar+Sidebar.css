@@ -55,8 +55,6 @@ You can set the order of each bar here. 1 for top, and 3 bottom) */
 to autohide, so it's safest to just hide it on fullscreen */
 
 /* MULTI-ROW BOOKMARKS TOOLBAR */
-
-/* To use the scrolling multirow bookmarks you have to delete the /* under this line */
 #PersonalToolbar {
   min-height: 21px !important;
   max-height: calc(23px*(var(--bookmark-max-rows))) !important}
@@ -72,5 +70,6 @@ to autohide, so it's safest to just hide it on fullscreen */
     max-height: calc(23px*(var(--bookmark-max-rows))) !important}
 
 /* AUTO-HIDE BOOKMARKS TOOLBAR */
-/* This stopped working on FF67+, for the fix go to 
-"Multirow and other functions/Other experimental features" folder inside the repository */
+#navigator-toolbox:not(:hover) #PersonalToolbar {visibility: collapse !important}
+#navigator-toolbox:hover #PersonalToolbar {visibility: visible !important}
+#navigator-toolbox:hover #PersonalToolbar .bookmark-item {visibility: visible !important}
