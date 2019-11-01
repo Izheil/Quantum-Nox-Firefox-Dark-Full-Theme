@@ -1,6 +1,6 @@
 /* You can find an updated version here: https://github.com/Izheil/Quantum-Nox-Firefox-Dark-Full-Theme */
 /* Made by Izheil */
-/* Last updated: 22/10/2019 */
+/* Last updated: 01/11/2019 */
 
 /* DO NOT DELETE THIS LINE */
 @namespace url("http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul");
@@ -27,6 +27,8 @@ without this change) */
   --urlbar-popup-url-color: #5ad !important;
   --toolbar-field-focus-border-color: #444 !important;
   --lwt-toolbar-field-background-color: rgb(71,71,73) !important;
+  --lwt-toolbar-field-focus: rgb(71,71,73) !important;
+  --lwt-toolbar-field-color: #ccc !important;
   --urlbar-separator-color: #777 !important}
 
 /* Fix for some lightweight themes not working properly when set manually here (appearing with a lot of padding to the left) *//*
