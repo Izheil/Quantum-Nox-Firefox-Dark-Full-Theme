@@ -2,7 +2,7 @@
 @name         Quantum nox - Global dark theme
 @description  Global dark style to use alongside Firefox full dark theme - Quantum nox.
 @namespace    https://github.com/Izheil/Quantum-Nox-Firefox-Dark-Full-Theme
-@version      2.4.8
+@version      2.4.9
 @author       Izheil
 @homepageURL  https://github.com/Izheil/Quantum-Nox-Firefox-Dark-Full-Theme/tree/master/Global%20dark%20userstyle
 @updateURL    https://raw.githubusercontent.com/Izheil/Quantum-Nox-Firefox-Dark-Full-Theme/master/Global%20dark%20userstyle/Quantum%20Nox%20-%20Global%20dark%20style.user.css
@@ -77,7 +77,8 @@ if invMethod == "customSet" {
         background-color: rgba(0,0,0,0.5) !important;
         box-shadow: 0 0 5px #000 !important} 
     
-    #content-wrapper, .content-wrapper, .content-wrapper::after, .article, .flex_box > div, .Box-header, .select-menu-header, .modal {background-color: #202020 !important}
+    #content-wrapper, .content-wrapper, .content-wrapper::after, .article, .flex_box > div, .Box-header, .select-menu-header, .modal,
+    #styleguide-v2 #wrapper {background-color: #202020 !important}
         
     div[class*="dropdown"]:not([class*="toggle"]):not([class*="has-children"]):not([class*="wrapper"]):not([role="menuitem"]):not([class*="header"]), 
     div[class*="drop-down"]:not([class*="wrapper"]):not([role="menuitem"]):not([class*="header"]), .Dropdown-menu,
@@ -167,7 +168,7 @@ if invMethod == "customSet" {
     [class*="dialog"], [class*="light"], [class*="Light"], [class*="white"]:not([class*="whitespace"]), [class*="White"]:not([class*="Whitespace"]), .tb .bg-light,
     [class*="bg-gray"], div.Popover-message, ul.sub, div[role="menu"], .options, .vue-treeselect__menu, .ListResult, div[class*="menu"]:not([role="button"]):not(.vjs-control):not(.main-menu):not(.material-menu-backdrop), 
     .menu ul ul li a, .menuparent a, .dropdown li ul li a, #description_popup, ul[role="listbox"], ul[id*="contextmenu"],.qtip-pos-tl.qtip-fixed, 
-    .qtip-content, .tooltipster-content, .backgroundMidSilver {background-color: rgba(0,0,0,0.8) !important}
+    .qtip-content, .tooltipster-content, .backgroundMidSilver, .sub_nav, .sub_nav .overlay {background-color: rgba(0,0,0,0.8) !important}
 
     div[class*="btn"]:not(.dl-btn-labelWrap):not(.dl-btn-cont):not(.btn-set):not(div[class*="btns"]):not(.column):not([class*="toolbar"]):hover, input[type="file"]:hover, 
     input[type="color"]:hover, div[class*="header"] li:not([class*="btn"]) a:not(img):not(svg):hover, #sidenav a:hover, 
@@ -418,7 +419,7 @@ if invMethod == "customSet" {
       }
         
     if divHide {
-        *:not(:empty):not(a):not(b):not(option):not(select):not(img):not(header):not(section):not(.s3dmBox):not(picture):not(button):not(p):not(td):not([class*="filetype"]):not(.Thumbnail):not([class*="thumb"]), 
+        *:not(:empty):not(a):not(b):not(option):not(select):not(img):not(header):not(section):not(.s3dmBox):not(picture):not(button):not(p):not(td):not([class*="filetype"]):not(.Thumbnail):not([class*="thumb"]):not([id*="image"]):not([id*="Image"]), 
         #page .bottom, #page .top {
           background-image: none !important}
         }
