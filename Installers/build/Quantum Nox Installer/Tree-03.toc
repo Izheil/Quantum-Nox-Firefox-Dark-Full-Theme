@@ -1,8 +1,0 @@
-('.\\root',
- 'root\\',
- [],
- 'DATA',
- [('root\\config.js', '.\\root\\config.js', 'DATA'),
-  ('root\\defaults\\pref\\config-prefs.js',
-   '.\\root\\defaults\\pref\\config-prefs.js',
-   'DATA')])
