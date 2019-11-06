@@ -13,8 +13,5 @@
 	<li>Toggle the preference. <code>True</code> means Firefox supports the CSS files, <code>False</code> that it ignores them.</li>
 </ol>
 
-<h3>Tabs-below-Menu-onTop.as.css</h3>
+<h3>Tabs-below.as.css</h3>
 <p>Changes the order of the toolbars inside the navigation box. This one sets the position of the tab bar below the url bar, and the menu bar (the one with file, edit, etc...) to be on top of all the other bars (you need to have the menu bar toggled as always visible). <b>If you use this file, delete any code you had on userChrome.css to change the tabs position to avoid any conflict</b>.</p>
-
-<h3>Tabs-below-Menu-overTabs.as.css</h3>
-<p>Changes the order of the toolbars inside the navigation box. This one sets the position of the tab bar below the url bar, and the menu bar (the one with file, edit, etc...) to be right above the tabs bar, but below the url bar. <b>If you use this file, delete any code you had on userChrome.css to change the tabs position to avoid any conflict</b>.</p>

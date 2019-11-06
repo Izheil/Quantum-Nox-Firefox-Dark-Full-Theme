@@ -1,0 +1,12 @@
+('.\\utils',
+ 'utils\\',
+ [],
+ 'DATA',
+ [('utils\\boot.jsm', '.\\utils\\boot.jsm', 'DATA'),
+  ('utils\\chrome.manifest', '.\\utils\\chrome.manifest', 'DATA'),
+  ('utils\\RDFDataSource.jsm', '.\\utils\\RDFDataSource.jsm', 'DATA'),
+  ('utils\\RDFManifestConverter.jsm',
+   '.\\utils\\RDFManifestConverter.jsm',
+   'DATA'),
+  ('utils\\userChrome.jsm', '.\\utils\\userChrome.jsm', 'DATA'),
+  ('utils\\xPref.jsm', '.\\utils\\xPref.jsm', 'DATA')])
