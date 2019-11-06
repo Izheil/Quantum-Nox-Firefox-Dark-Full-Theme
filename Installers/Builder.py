@@ -55,7 +55,7 @@ elif SystemOS() == "Mac":
     if os.access(PFolder, os.F_OK) == False:
         PFolder = ""
 
-# We get the user folders here
+# We get the default folders for each installation here
 if SystemOS() == "Windows":
     root = r"C:\Program Files (x86)\Mozilla Firefox"
     rootN = r"C:\Program Files (x86)\Firefox Nightly"
@@ -67,7 +67,7 @@ if SystemOS() == "Windows":
         rootN = r"C:\Program Files (x86)\Firefox Nightly"
         if os.access(rootN, os.F_OK) == False:
             rootN = r"C:\Program Files\Firefox Nightly"
-            if os.access(root, os.F_OK) == False:
+            if os.access(rootN, os.F_OK) == False:
                 rootN = "Not found"
 elif SystemOS() == "Linux" or SystemOS() == "Unknown":
     root = r"/usr/lib/firefox/browser"
@@ -78,7 +78,7 @@ elif SystemOS() == "Linux" or SystemOS() == "Unknown":
             rootN = "Not found"
     if os.access(rootN, os.F_OK) == False:
         root = r"/usr/lib64/firefoxnightly/browser"
-        if os.access(root, os.F_OK) == False:
+        if os.access(rootN, os.F_OK) == False:
             rootN = "Not found"
 elif SystemOS() == "Mac":
     root = r"/Applications/Firefox.app/content/resources"
@@ -88,15 +88,29 @@ PrFols = []
 for x in Profiles:
     PrFols.append(os.path.normpath(MozPFolder + "/" + x))
 
-# We get the default folders for each installation here
+# We get the default user folders here
 if root != "Not found" or rootN != "Not found":
     NProfile = "Not found"
     RProfile = "Not found"
     for x in PrFols:
-        if x[-8:] == "-nightly":
+        splitter = x.split(".")
+        ProfileName = splitter[-1]
+        if ProfileName == "default-nightly":
             NProfile = x
-        elif x[-8:] == ".default":
+        elif ProfileName == "default":
             RProfile = x
+        elif ProfileName[0:6] == "default" and RProfile != "Not found":
+            RProfile = x
+        elif ProfileName[0:14] == "default-nightly" and NProfile != "Not found":
+            NProfile = x
+
+    if RProfile == "Not found":
+        if len(PrFols) == 1 and root != "Not found" and rootN == "Not found":
+            RProfile = PrFols[0]
+
+    if NProfile == "Not found":
+        if len(PrFols) == 1 and rootN != "Not found" and root == "Not found":
+            NProfile = PrFols[0]
 
 def fullPatcher(FFversion, FFprofile):
     "This method patches both the root and profile folders"
@@ -114,13 +128,15 @@ def fullPatcher(FFversion, FFprofile):
             os.access(os.path.normpath(FFversion + "/defaults/pref/config-prefs.js"), os.F_OK):
 
                 if os.access(os.path.normpath(FFversion + "/config.js"), os.F_OK):
-                    shutil.copy2(os.path.normpath(sys._MEIPASS + "/root/defaults/pref/config-prefs.js"), os.path.normpath(FFversion + "/defaults/pref/"))
+                    shutil.copy2(os.path.normpath(sys._MEIPASS + "/root/defaults/pref/config-prefs.js"), 
+                                 os.path.normpath(FFversion + "/defaults/pref/"))
 
                 else: shutil.copy2(os.path.normpath(sys._MEIPASS + "/root/config.js"), FFversion)
 
             else: 
                 shutil.copy2(os.path.normpath(sys._MEIPASS + "/root/config.js"), FFversion)
-                shutil.copy2(os.path.normpath(sys._MEIPASS + "/root/defaults/pref/config-prefs.js"), os.path.normpath(FFversion + "/defaults/pref/"))
+                shutil.copy2(os.path.normpath(sys._MEIPASS + "/root/defaults/pref/config-prefs.js"),
+                             os.path.normpath(FFversion + "/defaults/pref/"))
 
         if FFprofile != "None":
 
@@ -131,10 +147,12 @@ def fullPatcher(FFversion, FFprofile):
                     for file in f:
                             utilFiles.append(os.path.join(r, file))
                 for file in utilFiles:
-                    distutils.file_util.copy_file(file, os.path.normpath(FFprofile + "/chrome/utils"), update=True)
+                    distutils.file_util.copy_file(file, 
+                        os.path.normpath(FFprofile + "/chrome/utils"), update=True)
 
             else: 
-                shutil.copytree(os.path.normpath(sys._MEIPASS + "/utils"), os.path.normpath(FFprofile + "/chrome/utils"))
+                shutil.copytree(os.path.normpath(sys._MEIPASS + "/utils"), 
+                                os.path.normpath(FFprofile + "/chrome/utils"))
     except IOError:
         messagebox.showerror("Error", "You need higher privileges to apply the patch.")
 
@@ -188,8 +206,12 @@ def openProfile(profileFolder):
         chromeFolder = os.path.normpath(profileFolder + "/chrome")
         if os.access(chromeFolder, os.F_OK) == True:
             webbrowser.open(chromeFolder)
-        else: messagebox.showerror("Error", "Couldn't locate the profile chrome folder.\nSelect a valid one and try again.")
-    else: messagebox.showerror("Error", "Couldn't locate the profile folder.\nSelect a valid one and try again.")
+        else: 
+            messagebox.showerror("Error", 
+            "Couldn't locate the profile chrome folder.\nSelect a valid one and try again.")
+    else: 
+        messagebox.showerror("Error", 
+        "Couldn't locate the profile folder.\nSelect a valid one and try again.")
 
 class patcherUI(Frame):
     "This class creates the UI of the patcher"
@@ -409,14 +431,16 @@ class patcherUI(Frame):
                    os.access(os.path.normpath(rpCkFF12.get() + "/defaults/pref"), os.F_OK) == True:
                    fullPatcher(rpCkFF12.get(), "None")
                 else: 
-                    messagebox.showerror("Error", "Firefox root folder location is wrong.\nSelect a valid one and try again.")
+                    messagebox.showerror("Error", 
+                        "Firefox root folder location is wrong.\nSelect a valid one and try again.")
                     return
 
                 if os.access(rpCkFF22.get(), os.F_OK) == True:
                     fullPatcher("None", rpCkFF22.get())
 
                     if CkMR.get() == 1:
-                        FF71 = messagebox.askyesno("Firefox 71 prompt", "Is your current Firefox version 71 or above?")
+                        FF71 = messagebox.askyesno("Firefox 71 prompt", 
+                            "Is your current Firefox version 71 or above?")
                         try:
                             if FF71 == True:
                                 distutils.file_util.copy_file(Fire71MR, FFChrome)
@@ -441,14 +465,16 @@ class patcherUI(Frame):
                                 os.remove(FFCMRL71)
 
                         except IOError:
-                            messagebox.showwarning("Warning", "Couldn't manage to install Multi-row Tabs function.")
+                            messagebox.showwarning("Warning", 
+                                "Couldn't manage to install Multi-row Tabs function.")
 
                     if CkTB.get() == 1:
                         try:
                             distutils.file_util.copy_file(FireTB, FFChrome, update=True)
 
                         except IOError:
-                            messagebox.showwarning("Warning", "Couldn't manage to install Tabs Below function.")
+                            messagebox.showwarning("Warning", 
+                                "Couldn't manage to install Tabs Below function.")
 
                     if CkFT.get() == 1:
                         try:
@@ -457,10 +483,12 @@ class patcherUI(Frame):
                             FireFile = os.path.normpath(rpCkFF22.get() + "/chrome/Focus-tab-on-hover.uc.js")
                             writeFT(FireFile)
                         except IOError:
-                            messagebox.showwarning("Warning", "Couldn't manage to install Focus Tab on hover function.")
+                            messagebox.showwarning("Warning", 
+                                "Couldn't manage to install Focus Tab on hover function.")
 
                 else: 
-                    messagebox.showerror("Error", "Firefox profile folder location is wrong.\nSelect a valid one and try again.")
+                    messagebox.showerror("Error", 
+                        "Firefox profile folder location is wrong.\nSelect a valid one and try again.")
                     return
 
             if CkFFN.get() == 1:
@@ -468,7 +496,8 @@ class patcherUI(Frame):
                    os.access(os.path.normpath(rpCkFFN12.get() + "/defaults/pref"), os.F_OK) == True:
                    fullPatcher(rpCkFFN12.get(), "None")
                 else: 
-                    messagebox.showerror("Error", "Nightly root folder location is wrong.\nSelect a valid one and try again.")
+                    messagebox.showerror("Error", 
+                        "Nightly root folder location is wrong.\nSelect a valid one and try again.")
                     return
 
                 if os.access(rpCkFFN22.get(), os.F_OK) == True:
@@ -484,23 +513,27 @@ class patcherUI(Frame):
                                 os.remove(FFNCMRL71)
 
                         except IOError:
-                            messagebox.showwarning("Warning", "Couldn't manage to install Multi-row Tabs function.")
+                            messagebox.showwarning("Warning", 
+                                "Couldn't manage to install Multi-row Tabs function.")
 
                     if CkTB.get() == 1:
                         try:
                             distutils.file_util.copy_file(FireTB, FFNChrome, update=True)
 
                         except IOError:
-                            messagebox.showwarning("Warning", "Couldn't manage to install Tabs Below function.")
+                            messagebox.showwarning("Warning", 
+                                "Couldn't manage to install Tabs Below function.")
 
                     if CkFT.get() == 1:
                         try:
                             FireFile = os.path.normpath(rpCkFFN22.get() + "/chrome/Focus-tab-on-hover.uc.js")
                             writeFT(FireFile)
                         except IOError:
-                            messagebox.showwarning("Warning", "Couldn't manage to install Focus Tab on hover function.")
+                            messagebox.showwarning("Warning", 
+                                "Couldn't manage to install Focus Tab on hover function.")
                 else: 
-                    messagebox.showerror("Error", "Firefox profile folder location is wrong.\nSelect a valid one and try again.")
+                    messagebox.showerror("Error", 
+                        "Firefox profile folder location is wrong.\nSelect a valid one and try again.")
                     return
 
             if CkFFP.get() == 1:
@@ -555,14 +588,16 @@ class patcherUI(Frame):
                                     os.remove(FFCMRL71)
 
                             except IOError:
-                                messagebox.showwarning("Warning", "Couldn't manage to install Multi-row Tabs function.")
+                                messagebox.showwarning("Warning", 
+                                    "Couldn't manage to install Multi-row Tabs function.")
 
                         if CkTB.get() == 1:
                             try:
                                 distutils.file_util.copy_file(FireTB, FFChrome, update=True)
 
                             except IOError:
-                                messagebox.showwarning("Warning", "Couldn't manage to install Tabs Below function.")
+                                messagebox.showwarning("Warning", 
+                                    "Couldn't manage to install Tabs Below function.")
 
                         if CkFT.get() == 1:
                             try:
@@ -571,16 +606,20 @@ class patcherUI(Frame):
                                 FireFile = os.path.normpath(x + "/chrome/Focus-tab-on-hover.uc.js")
                                 writeFT(FireFile)
                             except IOError:
-                                messagebox.showwarning("Warning", "Couldn't manage to install Focus Tab on hover function.")
+                                messagebox.showwarning("Warning", 
+                                    "Couldn't manage to install Focus Tab on hover function.")
 
                     else: 
-                        messagebox.showerror("Error", "Couldn't access the selected profile.\nIt was either deleted or moved.")
+                        messagebox.showerror("Error", 
+                            "Couldn't access the selected profile.\nIt was either deleted or moved.")
             
             if (CkFFP.get() == 0 and CkFFN.get() == 0 and CkFF.get() == 0) or \
                (CkFFP.get() == 1 and CkFFN.get() == 0 and CkFF.get() == 0 and values == []):
-                messagebox.showerror("Nothing happened", "You need to select at least one profile to patch.")
+                messagebox.showerror("Nothing happened", 
+                    "You need to select at least one profile to patch.")
             else:
-                messagebox.showinfo("Patching complete", "The patching is complete.\nRestart Firefox for changes to take effect.")
+                messagebox.showinfo("Patching complete", 
+                    "The patching is complete.\nRestart Firefox for changes to take effect.")
 
             checkPatchFF()
             checkPatchFFN()
@@ -683,9 +722,14 @@ class patcherUI(Frame):
 
             if CkFFP.get() == 1 and CkFFN.get() == 0 and CkFF.get() == 0:
                 if values != []:
-                    messagebox.showinfo("Unpatch complete", "Functions removed successfully.\nRestart firefox for changes to take effect.")
-                else: messagebox.showwarning("No profile selected", "You need to select at least one profile folder.")
-            else: messagebox.showinfo("Unpatch complete", "Patch files removed succesfully.\nRestart firefox for changes to take effect.")
+                    messagebox.showinfo("Unpatch complete", 
+                        "Functions removed successfully.\nRestart firefox for changes to take effect.")
+                else: 
+                    messagebox.showwarning("No profile selected", 
+                    "You need to select at least one profile folder.")
+            else: 
+                messagebox.showinfo("Unpatch complete", 
+                "Patch files removed succesfully.\nRestart firefox for changes to take effect.")
 
             checkPatchFF()
             checkPatchFFN()
@@ -769,25 +813,30 @@ class patcherUI(Frame):
         rpReset.grid(column=0, row=12, sticky="W", columnspan=2)
 
         # This other part covers the featurePatch frame
-        FPLF = LabelFrame(featurePatch, padx=20, pady=20, text="Choose what functions you want to install/uninstall:", font=("", 10, "bold"))
+        FPLF = LabelFrame(featurePatch, padx=20, pady=20, 
+            text="Choose what functions you want to install/uninstall:", font=("", 10, "bold"))
         FPLF.grid(column=0, row=0, columnspan=4)
 
-        fpLb = Label(FPLF, text="You need to patch the Firefox version you are using for\nthese changes to take effect.\n")
+        fpLb = Label(FPLF, 
+            text="You need to patch the Firefox version you are using for\nthese changes to take effect.\n")
         fpLb.grid(column=0, row=0, columnspan=4, sticky="W")
 
         CkMR = tkinter.IntVar()
         CkMR1E = tkinter.IntVar()
         RdMR = tkinter.IntVar()
-        fpCkMR = Checkbutton(FPLF, text="Multi-row Tabs", variable=CkMR, command=updateMRChildren)
+        fpCkMR = Checkbutton(FPLF, text="Multi-row Tabs", 
+            variable=CkMR, command=updateMRChildren)
         fpCkMR.select()
         fpCkMR.grid(column=0, row=1, columnspan=4, sticky="W")
-        fpCkMR1 = Radiobutton(FPLF, text="Scrollable rows", value=0, variable=RdMR, command=updateMRSpinbox)
+        fpCkMR1 = Radiobutton(FPLF, text="Scrollable rows", 
+            value=0, variable=RdMR, command=updateMRSpinbox)
         fpCkMR1.grid(column=1, row=2, sticky="W")
         fpCkMR1E = Spinbox(FPLF, from_=2, to=10, textvariable=CkMR1E)
         fpCkMR1E.delete(0,"end")
         fpCkMR1E.insert(0, 3)
         fpCkMR1E.grid(column=2, row=2, columnspan=2, sticky="WE")
-        fpCkMR2 = Radiobutton(FPLF, text="All rows visible", value=1, variable=RdMR, command=updateMRSpinbox)
+        fpCkMR2 = Radiobutton(FPLF, text="All rows visible", 
+            value=1, variable=RdMR, command=updateMRSpinbox)
         fpCkMR2.grid(column=1, row=3, sticky="W")
 
         CkTB = tkinter.IntVar()
@@ -796,7 +845,8 @@ class patcherUI(Frame):
 
         CkFT = tkinter.IntVar()
         CkFTDE = tkinter.IntVar()
-        fpCkFT = Checkbutton(FPLF, text="Focus Tab on hover", variable=CkFT, command=updateFTChildren)
+        fpCkFT = Checkbutton(FPLF, text="Focus Tab on hover", 
+            variable=CkFT, command=updateFTChildren)
         fpCkFT.grid(column=0, row=5, columnspan=4, sticky="W")
         fpCkFTD = Label(FPLF, text="Specify Delay (in ms)", state="disabled")
         fpCkFTD.grid(column=0, row=6, columnspan=2, sticky="E")
@@ -816,7 +866,8 @@ class patcherUI(Frame):
 
         PatchStatusFF = Frame(PatchStats)
         PatchStatusFF.pack(side="top", fill="x", pady=6)
-        FFChromeFolder = Button(PatchStatusFF, text="Open profile", cursor="hand2", command=lambda:openProfile(rpCkFF22.get()))
+        FFChromeFolder = Button(PatchStatusFF, text="Open profile", 
+            cursor="hand2", command=lambda:openProfile(rpCkFF22.get()))
         FFChromeFolder.pack(side="right")
         PatchStatusFFl = Label(PatchStatusFF, text="Firefox:  ")
         PatchStatusFFl.pack(side="left")
@@ -826,7 +877,8 @@ class patcherUI(Frame):
         
         PatchStatusFFN = Frame(PatchStats)
         PatchStatusFFN.pack(side="bottom", fill="x", pady=10)
-        FFNChromeFolder = Button(PatchStatusFFN, text="Open profile", cursor="hand2", command=lambda:openProfile(rpCkFFN22.get()))
+        FFNChromeFolder = Button(PatchStatusFFN, text="Open profile", 
+            cursor="hand2", command=lambda:openProfile(rpCkFFN22.get()))
         FFNChromeFolder.pack(side="right")
         PatchStatusFFNl = Label(PatchStatusFFN, text="Nightly: ")
         PatchStatusFFNl.pack(side="left")
@@ -834,9 +886,11 @@ class patcherUI(Frame):
         checkPatchFFN()
         PatchStatusFFNr.pack(side="left")
 
-        PatchButton = Button(featurePatch, text="Patch", cursor="hand2", pady=5, padx=5, command=patchInstall)
+        PatchButton = Button(featurePatch, text="Patch", cursor="hand2", 
+            pady=5, padx=5, command=patchInstall)
         PatchButton.grid(column=0, row=2, pady=10, columnspan=2, padx=5, sticky="WE")
-        unPatchButton = Button(featurePatch, text="Remove Patch", cursor="hand2", pady=5, padx=5, command=patchRemove)
+        unPatchButton = Button(featurePatch, text="Remove Patch", 
+            cursor="hand2", pady=5, padx=5, command=patchRemove)
         unPatchButton.grid(column=2, row=2, columnspan=2, padx=5, sticky="WE")
 
         rootPatch.grid(column=0, row=0)
