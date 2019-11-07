@@ -17,7 +17,7 @@ elevate.elevate()
 def SystemOS():
     "Identifies the OS"
 
-    if sys.platform.startswith('win') or sys.platform.endswith('win'):
+    if sys.platform.startswith('win'):
         SystemOS = "Windows"
     elif sys.platform.startswith('linux'):
         SystemOS = "Linux"
@@ -39,7 +39,7 @@ elif SystemOS() == "Linux":
     SFolder = home + r"/.Quantum Nox"
 elif SystemOS() == "Mac":
     home = str(Path.home())
-    MozPFolder = home + r"/Application Support/Firefox/Profiles"
+    MozPFolder = home + r"/Library/Application Support/Firefox/Profiles"
     Profiles = os.listdir(MozPFolder)
     SFolder = home + r"/Quantum Nox"
 
@@ -83,28 +83,34 @@ elif SystemOS() == "Linux" or SystemOS() == "Unknown":
         if os.access(rootN, os.F_OK) == False:
             rootN = "Not found"
 elif SystemOS() == "Mac":
-    root = r"/Applications/Firefox.app/content/resources"
-    rootN = r"/Applications/FirefoxNightly.app/content/resources"
+    root = r"/Applications/Firefox.app/contents/resources"
+    rootN = r"/Applications/FirefoxNightly.app/contents/resources"
+    if os.access(root, os.F_OK) == False:
+            rootN = "Not found"
+    if os.access(rootN, os.F_OK) == False:
+            rootN = "Not found"
 
 PrFols = []
 for x in Profiles:
     PrFols.append(os.path.normpath(MozPFolder + "/" + x))
 
 # We get the default user folders here
+NProfile = "Not found"
+RProfile = "Not found"
 if root != "Not found" or rootN != "Not found":
-    NProfile = "Not found"
-    RProfile = "Not found"
     for x in PrFols:
         splitter = x.split(".")
         ProfileName = splitter[-1]
         if ProfileName == "default-nightly":
             NProfile = x
+        elif ProfileName == "default-release":
+            RProfile = x
         elif ProfileName == "default":
             RProfile = x
-        elif ProfileName[0:6] == "default" and RProfile != "Not found":
-            RProfile = x
-        elif ProfileName[0:14] == "default-nightly" and NProfile != "Not found":
+        elif ProfileName[0:15] == "default-nightly":
             NProfile = x
+        elif ProfileName[0:7] == "default":
+            RProfile = x
 
     if RProfile == "Not found":
         if len(PrFols) == 1 and root != "Not found" and rootN == "Not found":
@@ -887,12 +893,11 @@ class patcherUI(Frame):
         unPatchButton.grid(column=2, row=2, columnspan=2, padx=5, sticky="WE")
 
         rootPatch.grid(column=0, row=0)
-        featurePatch.grid(column=1, row=0)
+        featurePatch.grid(column=1, row=0, padx=30, sticky="W")
 
 def UIStart():
 
     QNWindow = tkinter.Tk()
-    QNWindow.geometry("965x536")
     QNWindow.iconbitmap('icon.ico')
     QNWindow.resizable(False, False)
     app = patcherUI()
