@@ -4,7 +4,7 @@ block_cipher = None
 
 
 a = Analysis(['Builder.py'],
-             pathex=['D:\\Documentos\\Sync\\Programs & Scripts\\QN installer'],
+             pathex=['.'],
              binaries=[],
              datas=[("icon.ico", ".")],
              hiddenimports=[],
