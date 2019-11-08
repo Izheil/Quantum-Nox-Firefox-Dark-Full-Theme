@@ -2,7 +2,7 @@
 @name         Quantum nox - Global dark theme
 @description  Global dark style to use alongside Firefox full dark theme - Quantum nox.
 @namespace    https://github.com/Izheil/Quantum-Nox-Firefox-Dark-Full-Theme
-@version      2.4.9
+@version      2.5.0
 @author       Izheil
 @homepageURL  https://github.com/Izheil/Quantum-Nox-Firefox-Dark-Full-Theme/tree/master/Global%20dark%20userstyle
 @updateURL    https://raw.githubusercontent.com/Izheil/Quantum-Nox-Firefox-Dark-Full-Theme/master/Global%20dark%20userstyle/Quantum%20Nox%20-%20Global%20dark%20style.user.css
@@ -15,6 +15,13 @@
 @var          color     selectColor  "Selected text background color"    #005599
 @var          color     textColor    "Selected text color"    #000000
 @var          color     bgColor      "Background color"  #181818
+@var          color     trackColor   "Scrollbar track color"  #202020
+@var          color     thumbColor   "Scrollbar thumb color"  #05a
+@var          select    scrollWidth  "Scrollbar Width"  {
+    "Default": "auto",
+    "Thin": "thin",
+    "Hidden": "none"
+}
 @var          checkbox  linkHigh     "Highlight links"  0
 @var          text      darkBg       "Background img [wrap in url()]"  url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAAKCAYAAACNMs+9AAAC4HpUWHRSYXcgcHJvZmlsZSB0eXBlIGV4aWYAAHja7ZdbktwgDEX/WUWWgCSEYDk8q7KDLD8Xm3Y/ZpKqTPKRjzbTxlbjK3EPZmbc+PF9um84KAu7oJZijtHjCDlkLrhI/jzOnnw4zudRdk/PcXd9wQgJejlv49jjC+J6f8DCjtfnuLO2ddIWokv4OGRlXtd9F7mFhM847XuX9wMlPkxnf7ht2S3+eh8MZnSFHjziIST+PJ+ZBFVIloI+4MzCayBiK5KOs3z0z13WfWLgdfXin79VJnc7TqHbtOKLTztO+hKXKw0/VUR8ZebHikyuFB/8m7OnOcc5uxKig11xT+o2leMKAyvsPN2IaIaP4tqOltESlk4DtY6pVucrbjIxvJ4UqFOhSePoGzWUGHiwoWducHzFkhhnbgeUsBpNNgc+HSxYGsgJwnzVQkfevPIhWULmThjJBDFaNB+bew18tT0JzbmWOZFPl1eoi9eSRRmL3DpjFIDQ3J7q4S+5s/OvxwIrIKiHzQkTLL6eElXpvrbk4CxeHYYGf74vZH0LwCLkVhRDAgI+kihF8sZsRPAxgU9B5SyBKwiQOuWOKjmIRMBJvHLjGaNjLCufYWwvAKESxYAGLxBghaAh4n1LWELFqWhQ1aimSbOWKDFEjTFaXPtUMbFgatHMkmUrSVJImmKylFJOJXMWbGPqcsyWU865FCQtoUCrYHxBoHKVGqrWWK2mmmtpWD4tNG2xWUstt9K5S8cW4Hrs1lPPvQwaWEojDB1x2EgjjzKx1qbMMHXGaTPNPMtFbVN9pvZK7vfUaFPjA9QaZ3dqCJvdJGhtJ7qYgRgHAnFbBLCgeTHziULgRW4x85nFiSijSl1wOi1iIBgGsU662N3J/ZKbg7t/yo0/I+cWun9Bzi10D+Q+cvuEWi/HdisHoPUWwlPskILXbzKKSfjBr5Ov9c7/pcBb6C30FnoLvYXeQm+h/0pIJv54yPh36ifnS5IFdAxqSAAAAYVpQ0NQSUNDIFBST0ZJTEUAAHicfZE9SMNAHMVf00pVKoIWkeKQoTpZEBVxlCoWwUJpK7TqYHLpFzRpSFJcHAXXgoMfi1UHF2ddHVwFQfADxMXVSdFFSvxfU2gR48FxP97de9y9A4R6mammbwJQNctIxqJiJrsq+l/hwxAG0IOQxEw9nlpMw3V83cPD17sIz3I/9+foU3ImAzwi8RzTDYt4g3hm09I57xMHWVFSiM+Jxw26IPEj12WH3zgXmizwzKCRTs4TB4nFQgfLHcyKhko8TRxWVI3yhYzDCuctzmq5ylr35C8M5LSVFNdpjiCGJcSRgAgZVZRQhoUIrRopJpK0H3Xxh5r+BLlkcpXAyLGAClRITT/4H/zu1sxPTTpJgSjQ9WLbH6OAfxdo1Gz7+9i2GyeA9xm40tr+Sh2Y/SS91tbCR0D/NnBx3dbkPeByBxh+0iVDakpemkI+D7yf0TdlgcFboHfN6a21j9MHIE1dLd8AB4fAWIGy113e3d3Z279nWv39AE06cphlEhhtAAAABmJLR0QAXABcAFwD21O+AAAACXBIWXMAAC4jAAAuIwF4pT92AAAAB3RJTUUH4wQWEwgDk0arlAAAAE5JREFUGNONkLENACAIBF/XoXb/Aax/HyvNRSHRhodcLqAiYkjSrsysXXiEObM9H0OVU4i2PWu3nrDtefps8cxYws8vfEGZscr9vpQHMC+whzB2TU619AAAAABJRU5ErkJggg==')
 @var          checkbox  imgHover     "100% bright img on hover"  0
@@ -27,6 +34,11 @@
 @var          checkbox  linkHide     "Hide images of links"  0
 @var          checkbox  headCont     "Lower header img contrast"  1
 @var          checkbox  divCont      "Dark layers over divs"  0
+@var          select    scrollScope  "Use custom scrollbar"  {
+    "Themed sites": "Site",
+    "All sites": "All",
+    "Nowhere": "None"
+}
 @var          select    invMethod    "Site theming method" {
     "Custom settings": "customSet",
     "Color Inversion": "colorInv",
@@ -168,7 +180,7 @@ if invMethod == "customSet" {
     [class*="dialog"], [class*="light"], [class*="Light"], [class*="white"]:not([class*="whitespace"]), [class*="White"]:not([class*="Whitespace"]), .tb .bg-light,
     [class*="bg-gray"], div.Popover-message, ul.sub, div[role="menu"], .options, .vue-treeselect__menu, .ListResult, div[class*="menu"]:not([role="button"]):not(.vjs-control):not(.main-menu):not(.material-menu-backdrop), 
     .menu ul ul li a, .menuparent a, .dropdown li ul li a, #description_popup, ul[role="listbox"], ul[id*="contextmenu"],.qtip-pos-tl.qtip-fixed, 
-    .qtip-content, .tooltipster-content, .backgroundMidSilver, .sub_nav, .sub_nav .overlay {background-color: rgba(0,0,0,0.8) !important}
+    .qtip-content, .tooltipster-content, .backgroundMidSilver, .sub_nav, .sub_nav .overlay, .nanoModal  {background-color: rgba(0,0,0,0.8) !important}
 
     div[class*="btn"]:not(.dl-btn-labelWrap):not(.dl-btn-cont):not(.btn-set):not(div[class*="btns"]):not(.column):not([class*="toolbar"]):hover, input[type="file"]:hover, 
     input[type="color"]:hover, div[class*="header"] li:not([class*="btn"]) a:not(img):not(svg):hover, #sidenav a:hover, 
@@ -372,7 +384,77 @@ if invMethod == "customSet" {
         
     .contentRow-fader {background: linear-gradient(transparent, bgColor) !important}
         
+    /*----- SCROLLBAR CHANGES (ONLY ON THEMED SITES) -----*/
+    if (scrollScope == "Site") {
+        
+        /* FIREFOX */
+        :root{
+            scrollbar-color: thumbColor trackColor !important;
+            scrollbar-width: scrollWidth !important}
 
+        /* CHROMIUM BASED BROWSERS */
+	    html[hide-scrollbar="true"] ::-webkit-scrollbar {display: none}
+	    
+	    if (scrollWidth == "auto") {
+	        ::-webkit-scrollbar {
+	            width: 16px !important;
+	            height: 16px !important}
+
+	    ::-webkit-scrollbar-button:vertical:decrement {
+	      background: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAABhWlDQ1BJQ0MgcHJvZmlsZQAAKJF9kT1Iw0AcxV9TS4tWHOwg4pCh6mJBVEQ3qWIRLJS2QqsOJpd+QZOGJMXFUXAtOPixWHVwcdbVwVUQBD9AXFydFF2kxP+lhRYxHhz34929x907QKiXmWp2jQOqZhnJWFTMZFdF/yt6EIAPo5iVmKnHU4tpuI6ve3j4ehfhWe7n/hy9Ss5kgEcknmO6YRFvEE9vWjrnfeIQK0oK8TnxmEEXJH7kutzkN84FhwWeGTLSyXniELFY6GC5g1nRUImniMOKqlG+kGmywnmLs1qustY9+QuDOW0lxXWaQ4hhCXEkIEJGFSWUYSFCq0aKiSTtR138g44/QS6ZXCUwciygAhWS4wf/g9/dmvnJiWZSMAr4Xmz7Yxjw7wKNmm1/H9t24wTwPgNXWttfqQMzn6TX2lr4COjbBi6u25q8B1zuAANPumRIjuSlKeTzwPsZfVMW6L8FuteavbX2cfoApKmr5Rvg4BAYKVD2usu7A529/Xum1d8PsytywSh+aA4AAAAGYktHRAAAAAAAAPlDu38AAAAJcEhZcwAACxMAAAsTAQCanBgAAAAHdElNRQfjCwgGDQUvKSwCAAAAGXRFWHRDb21tZW50AENyZWF0ZWQgd2l0aCBHSU1QV4EOFwAAAIJJREFUOMvNU0EOwCAIa9Wv8P+bn/EtC7uwxRlBl+wwExMDtJUSgN+fWmuYL1GytbYUSDvg6BdpIaAAVETcAgbqOtbOiLgJdkm4ALNrZUqSAscJINulZ3AJvKGIHAagxXRnChf4LrY3Z55Nx9iDo9hIkL1RdSR369bWg6C8WBH9bNlOjcgtTlSmKcUAAAAASUVORK5CYII=') trackColor !important}
+
+	    ::-webkit-scrollbar-button:vertical:increment {
+	        background: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAABhWlDQ1BJQ0MgcHJvZmlsZQAAKJF9kT1Iw0AcxV9TS4tWHOwg4pCh6mJBVEQ3qWIRLJS2QqsOJpd+QZOGJMXFUXAtOPixWHVwcdbVwVUQBD9AXFydFF2kxP+lhRYxHhz34929x907QKiXmWp2jQOqZhnJWFTMZFdF/yt6EIAPo5iVmKnHU4tpuI6ve3j4ehfhWe7n/hy9Ss5kgEcknmO6YRFvEE9vWjrnfeIQK0oK8TnxmEEXJH7kutzkN84FhwWeGTLSyXniELFY6GC5g1nRUImniMOKqlG+kGmywnmLs1qustY9+QuDOW0lxXWaQ4hhCXEkIEJGFSWUYSFCq0aKiSTtR138g44/QS6ZXCUwciygAhWS4wf/g9/dmvnJiWZSMAr4Xmz7Yxjw7wKNmm1/H9t24wTwPgNXWttfqQMzn6TX2lr4COjbBi6u25q8B1zuAANPumRIjuSlKeTzwPsZfVMW6L8FuteavbX2cfoApKmr5Rvg4BAYKVD2usu7A529/Xum1d8PsytywSh+aA4AAAAGYktHRAAAAAAAAPlDu38AAAAJcEhZcwAACxMAAAsTAQCanBgAAAAHdElNRQfjCwgGDDRn7B15AAAAGXRFWHRDb21tZW50AENyZWF0ZWQgd2l0aCBHSU1QV4EOFwAAAI5JREFUOMvNktEKwzAIRU/awr7E/3/Lz/gnpZ17SSDZ1I7uZUIgaO65KoEfo/SLqj6AXUQsE6gqwAo8RcSWoXbcMR4BJ2DNIXMHOHqnS/CwfJOLANY6KW9ia2eKLejWgKKq6zheuoxhRnPqU05EfEAAIRK7gATyIQ4BDsQVZ0ucDLK/wdW3vS3uUWvlv+MFNEZDRaFDPRYAAAAASUVORK5CYII=') trackColor !important}
+
+	    ::-webkit-scrollbar-button:horizontal:decrement {
+	        background: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAABhWlDQ1BJQ0MgcHJvZmlsZQAAKJF9kT1Iw0AcxV9TS4tWHOwg4pCh6mJBVEQ3qWIRLJS2QqsOJpd+QZOGJMXFUXAtOPixWHVwcdbVwVUQBD9AXFydFF2kxP+lhRYxHhz34929x907QKiXmWp2jQOqZhnJWFTMZFdF/yt6EIAPo5iVmKnHU4tpuI6ve3j4ehfhWe7n/hy9Ss5kgEcknmO6YRFvEE9vWjrnfeIQK0oK8TnxmEEXJH7kutzkN84FhwWeGTLSyXniELFY6GC5g1nRUImniMOKqlG+kGmywnmLs1qustY9+QuDOW0lxXWaQ4hhCXEkIEJGFSWUYSFCq0aKiSTtR138g44/QS6ZXCUwciygAhWS4wf/g9/dmvnJiWZSMAr4Xmz7Yxjw7wKNmm1/H9t24wTwPgNXWttfqQMzn6TX2lr4COjbBi6u25q8B1zuAANPumRIjuSlKeTzwPsZfVMW6L8FuteavbX2cfoApKmr5Rvg4BAYKVD2usu7A529/Xum1d8PsytywSh+aA4AAAAGYktHRAAAAAAAAPlDu38AAAAJcEhZcwAACxMAAAsTAQCanBgAAAAHdElNRQfjCwgGDSqE+BFbAAAAGXRFWHRDb21tZW50AENyZWF0ZWQgd2l0aCBHSU1QV4EOFwAAAHxJREFUOMvFk8ENwCAMAx1glez/yzKepH2UfqCiCIkUITXPKBeZ2AB/l3iGSPatCCCp6hEWYAC4AJxTBQXOvWJVfRrhIywtPFTQSB7BuZ8PTjiO4NcCM9tjo5nVI7meIAtHzO4geWyUxSChLpomsfe9VCpxXiuSQlK2/MYbwfUzWt5jRVUAAAAASUVORK5CYII=') trackColor !important}
+
+	    ::-webkit-scrollbar-button:horizontal:increment {
+	        background: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAABhWlDQ1BJQ0MgcHJvZmlsZQAAKJF9kT1Iw0AcxV9TS4tWHOwg4pCh6mJBVEQ3qWIRLJS2QqsOJpd+QZOGJMXFUXAtOPixWHVwcdbVwVUQBD9AXFydFF2kxP+lhRYxHhz34929x907QKiXmWp2jQOqZhnJWFTMZFdF/yt6EIAPo5iVmKnHU4tpuI6ve3j4ehfhWe7n/hy9Ss5kgEcknmO6YRFvEE9vWjrnfeIQK0oK8TnxmEEXJH7kutzkN84FhwWeGTLSyXniELFY6GC5g1nRUImniMOKqlG+kGmywnmLs1qustY9+QuDOW0lxXWaQ4hhCXEkIEJGFSWUYSFCq0aKiSTtR138g44/QS6ZXCUwciygAhWS4wf/g9/dmvnJiWZSMAr4Xmz7Yxjw7wKNmm1/H9t24wTwPgNXWttfqQMzn6TX2lr4COjbBi6u25q8B1zuAANPumRIjuSlKeTzwPsZfVMW6L8FuteavbX2cfoApKmr5Rvg4BAYKVD2usu7A529/Xum1d8PsytywSh+aA4AAAAGYktHRAAAAAAAAPlDu38AAAAJcEhZcwAACxMAAAsTAQCanBgAAAAHdElNRQfjCwgGDSBkLfhFAAAAGXRFWHRDb21tZW50AENyZWF0ZWQgd2l0aCBHSU1QV4EOFwAAAIpJREFUOMvFktEJwzAMRJ+dQifRMh7Yy9wmpY3zk4IRip2mherHYOnE00nw70gAku7AE3j1STObNsj7+wBWn5R0jiAQtL5mRJID5OQatxFJij4lpZ2i+VpPk6MGZtaAxZNEvuQrq6u1XhtBEqWUsQdH4qNNfL3GNDuY2TW+TVyA26diOtF6VvDz2ACD0DOn15jzcQAAAABJRU5ErkJggg==') trackColor !important}
+	        
+	    ::-webkit-scrollbar-button:increment:start {
+	        width: 0 !important;
+	        height: 0 !important}
+	        
+	    ::-webkit-scrollbar-button:decrement:end {
+	        width: 0 !important;
+	        height: 0 !important}
+	    }
+
+	    if (scrollWidth == "thin") {
+	        ::-webkit-scrollbar {
+	            width: 8px !important;
+	            height: 8px !important}
+	    }
+
+	    if (scrollWidth == "none") {
+	        ::-webkit-scrollbar {
+	            width: 0 !important;
+	            height: 0 !important}
+	    }
+
+	    ::-webkit-scrollbar-thumb {
+	        -webkit-appearance: none !important;
+	        background-color: thumbColor !important;
+	        border-radius: 0px !important;
+	        box-shadow: none !important}
+
+	    ::-webkit-scrollbar-thumb:hover {
+	        -webkit-appearance: none !important;
+	        background-color: thumbColor !important;
+	        box-shadow: inset 0 0 0 16px rgba(255, 255, 255, 0.25) !important}
+
+	    ::-webkit-scrollbar-thumb:active {
+	        -webkit-appearance: none !important;
+	        background-color: thumbColor !important;
+	        box-shadow: inset 0 0 0 16px rgba(255, 255, 255, 0.25) !important}
+
+	    ::-webkit-scrollbar-track {
+	        background-color: trackColor !important}
+
+	    ::-webkit-scrollbar-corner {
+	        background: trackColor !important}
+    }
         
     /*----- IMAGE CHANGES -----*/
     if (contNum < 100) {
@@ -453,6 +535,78 @@ if invMethod == "lowBright" {
     html {background: darkBg bgColor /* fixed color */ !important} 
     body {opacity: 0.5}
     }
+}
+
+/*----- SCROLLBAR CHANGES (ALL SITES) -----*/
+if (scrollScope == "All") {
+    
+    /* FIREFOX */
+    :root{
+        scrollbar-color: thumbColor trackColor !important;
+        scrollbar-width: scrollWidth !important}
+
+    /* CHROMIUM BASED BROWSERS */
+    html[hide-scrollbar="true"] ::-webkit-scrollbar {display: none}
+    
+    if (scrollWidth == "auto") {
+        ::-webkit-scrollbar {
+            width: 16px !important;
+            height: 16px !important}
+
+    ::-webkit-scrollbar-button:vertical:decrement {
+      background: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAABhWlDQ1BJQ0MgcHJvZmlsZQAAKJF9kT1Iw0AcxV9TS4tWHOwg4pCh6mJBVEQ3qWIRLJS2QqsOJpd+QZOGJMXFUXAtOPixWHVwcdbVwVUQBD9AXFydFF2kxP+lhRYxHhz34929x907QKiXmWp2jQOqZhnJWFTMZFdF/yt6EIAPo5iVmKnHU4tpuI6ve3j4ehfhWe7n/hy9Ss5kgEcknmO6YRFvEE9vWjrnfeIQK0oK8TnxmEEXJH7kutzkN84FhwWeGTLSyXniELFY6GC5g1nRUImniMOKqlG+kGmywnmLs1qustY9+QuDOW0lxXWaQ4hhCXEkIEJGFSWUYSFCq0aKiSTtR138g44/QS6ZXCUwciygAhWS4wf/g9/dmvnJiWZSMAr4Xmz7Yxjw7wKNmm1/H9t24wTwPgNXWttfqQMzn6TX2lr4COjbBi6u25q8B1zuAANPumRIjuSlKeTzwPsZfVMW6L8FuteavbX2cfoApKmr5Rvg4BAYKVD2usu7A529/Xum1d8PsytywSh+aA4AAAAGYktHRAAAAAAAAPlDu38AAAAJcEhZcwAACxMAAAsTAQCanBgAAAAHdElNRQfjCwgGDQUvKSwCAAAAGXRFWHRDb21tZW50AENyZWF0ZWQgd2l0aCBHSU1QV4EOFwAAAIJJREFUOMvNU0EOwCAIa9Wv8P+bn/EtC7uwxRlBl+wwExMDtJUSgN+fWmuYL1GytbYUSDvg6BdpIaAAVETcAgbqOtbOiLgJdkm4ALNrZUqSAscJINulZ3AJvKGIHAagxXRnChf4LrY3Z55Nx9iDo9hIkL1RdSR369bWg6C8WBH9bNlOjcgtTlSmKcUAAAAASUVORK5CYII=') trackColor !important}
+
+    ::-webkit-scrollbar-button:vertical:increment {
+        background: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAABhWlDQ1BJQ0MgcHJvZmlsZQAAKJF9kT1Iw0AcxV9TS4tWHOwg4pCh6mJBVEQ3qWIRLJS2QqsOJpd+QZOGJMXFUXAtOPixWHVwcdbVwVUQBD9AXFydFF2kxP+lhRYxHhz34929x907QKiXmWp2jQOqZhnJWFTMZFdF/yt6EIAPo5iVmKnHU4tpuI6ve3j4ehfhWe7n/hy9Ss5kgEcknmO6YRFvEE9vWjrnfeIQK0oK8TnxmEEXJH7kutzkN84FhwWeGTLSyXniELFY6GC5g1nRUImniMOKqlG+kGmywnmLs1qustY9+QuDOW0lxXWaQ4hhCXEkIEJGFSWUYSFCq0aKiSTtR138g44/QS6ZXCUwciygAhWS4wf/g9/dmvnJiWZSMAr4Xmz7Yxjw7wKNmm1/H9t24wTwPgNXWttfqQMzn6TX2lr4COjbBi6u25q8B1zuAANPumRIjuSlKeTzwPsZfVMW6L8FuteavbX2cfoApKmr5Rvg4BAYKVD2usu7A529/Xum1d8PsytywSh+aA4AAAAGYktHRAAAAAAAAPlDu38AAAAJcEhZcwAACxMAAAsTAQCanBgAAAAHdElNRQfjCwgGDDRn7B15AAAAGXRFWHRDb21tZW50AENyZWF0ZWQgd2l0aCBHSU1QV4EOFwAAAI5JREFUOMvNktEKwzAIRU/awr7E/3/Lz/gnpZ17SSDZ1I7uZUIgaO65KoEfo/SLqj6AXUQsE6gqwAo8RcSWoXbcMR4BJ2DNIXMHOHqnS/CwfJOLANY6KW9ia2eKLejWgKKq6zheuoxhRnPqU05EfEAAIRK7gATyIQ4BDsQVZ0ucDLK/wdW3vS3uUWvlv+MFNEZDRaFDPRYAAAAASUVORK5CYII=') trackColor !important}
+
+    ::-webkit-scrollbar-button:horizontal:decrement {
+        background: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAABhWlDQ1BJQ0MgcHJvZmlsZQAAKJF9kT1Iw0AcxV9TS4tWHOwg4pCh6mJBVEQ3qWIRLJS2QqsOJpd+QZOGJMXFUXAtOPixWHVwcdbVwVUQBD9AXFydFF2kxP+lhRYxHhz34929x907QKiXmWp2jQOqZhnJWFTMZFdF/yt6EIAPo5iVmKnHU4tpuI6ve3j4ehfhWe7n/hy9Ss5kgEcknmO6YRFvEE9vWjrnfeIQK0oK8TnxmEEXJH7kutzkN84FhwWeGTLSyXniELFY6GC5g1nRUImniMOKqlG+kGmywnmLs1qustY9+QuDOW0lxXWaQ4hhCXEkIEJGFSWUYSFCq0aKiSTtR138g44/QS6ZXCUwciygAhWS4wf/g9/dmvnJiWZSMAr4Xmz7Yxjw7wKNmm1/H9t24wTwPgNXWttfqQMzn6TX2lr4COjbBi6u25q8B1zuAANPumRIjuSlKeTzwPsZfVMW6L8FuteavbX2cfoApKmr5Rvg4BAYKVD2usu7A529/Xum1d8PsytywSh+aA4AAAAGYktHRAAAAAAAAPlDu38AAAAJcEhZcwAACxMAAAsTAQCanBgAAAAHdElNRQfjCwgGDSqE+BFbAAAAGXRFWHRDb21tZW50AENyZWF0ZWQgd2l0aCBHSU1QV4EOFwAAAHxJREFUOMvFk8ENwCAMAx1glez/yzKepH2UfqCiCIkUITXPKBeZ2AB/l3iGSPatCCCp6hEWYAC4AJxTBQXOvWJVfRrhIywtPFTQSB7BuZ8PTjiO4NcCM9tjo5nVI7meIAtHzO4geWyUxSChLpomsfe9VCpxXiuSQlK2/MYbwfUzWt5jRVUAAAAASUVORK5CYII=') trackColor !important}
+
+    ::-webkit-scrollbar-button:horizontal:increment {
+        background: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAABhWlDQ1BJQ0MgcHJvZmlsZQAAKJF9kT1Iw0AcxV9TS4tWHOwg4pCh6mJBVEQ3qWIRLJS2QqsOJpd+QZOGJMXFUXAtOPixWHVwcdbVwVUQBD9AXFydFF2kxP+lhRYxHhz34929x907QKiXmWp2jQOqZhnJWFTMZFdF/yt6EIAPo5iVmKnHU4tpuI6ve3j4ehfhWe7n/hy9Ss5kgEcknmO6YRFvEE9vWjrnfeIQK0oK8TnxmEEXJH7kutzkN84FhwWeGTLSyXniELFY6GC5g1nRUImniMOKqlG+kGmywnmLs1qustY9+QuDOW0lxXWaQ4hhCXEkIEJGFSWUYSFCq0aKiSTtR138g44/QS6ZXCUwciygAhWS4wf/g9/dmvnJiWZSMAr4Xmz7Yxjw7wKNmm1/H9t24wTwPgNXWttfqQMzn6TX2lr4COjbBi6u25q8B1zuAANPumRIjuSlKeTzwPsZfVMW6L8FuteavbX2cfoApKmr5Rvg4BAYKVD2usu7A529/Xum1d8PsytywSh+aA4AAAAGYktHRAAAAAAAAPlDu38AAAAJcEhZcwAACxMAAAsTAQCanBgAAAAHdElNRQfjCwgGDSBkLfhFAAAAGXRFWHRDb21tZW50AENyZWF0ZWQgd2l0aCBHSU1QV4EOFwAAAIpJREFUOMvFktEJwzAMRJ+dQifRMh7Yy9wmpY3zk4IRip2mherHYOnE00nw70gAku7AE3j1STObNsj7+wBWn5R0jiAQtL5mRJID5OQatxFJij4lpZ2i+VpPk6MGZtaAxZNEvuQrq6u1XhtBEqWUsQdH4qNNfL3GNDuY2TW+TVyA26diOtF6VvDz2ACD0DOn15jzcQAAAABJRU5ErkJggg==') trackColor !important}
+        
+    ::-webkit-scrollbar-button:increment:start {
+        width: 0 !important;
+        height: 0 !important}
+        
+    ::-webkit-scrollbar-button:decrement:end {
+        width: 0 !important;
+        height: 0 !important}
+    }
+
+    if (scrollWidth == "thin") {
+        ::-webkit-scrollbar {
+            width: 8px !important;
+            height: 8px !important}
+    }
+
+    if (scrollWidth == "none") {
+        ::-webkit-scrollbar {
+            width: 0 !important;
+            height: 0 !important}
+    }
+
+    ::-webkit-scrollbar-thumb {
+        -webkit-appearance: none !important;
+        background-color: thumbColor !important;
+        border-radius: 0px !important;
+        box-shadow: none !important}
+
+    ::-webkit-scrollbar-thumb:hover {
+        -webkit-appearance: none !important;
+        background-color: thumbColor !important;
+        box-shadow: inset 0 0 0 16px rgba(255, 255, 255, 0.25) !important}
+
+    ::-webkit-scrollbar-thumb:active {
+        -webkit-appearance: none !important;
+        background-color: thumbColor !important;
+        box-shadow: inset 0 0 0 16px rgba(255, 255, 255, 0.25) !important}
+
+    ::-webkit-scrollbar-track {
+        background-color: trackColor !important}
+
+    ::-webkit-scrollbar-corner {
+        background: trackColor !important}
 }
 
 @-moz-document url-prefix("https://www.virustotal.com") {

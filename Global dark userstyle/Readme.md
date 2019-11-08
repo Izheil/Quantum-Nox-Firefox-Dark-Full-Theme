@@ -9,6 +9,9 @@
 
 <img src="https://i.imgur.com/kSCXDj8.png">
 
+<p>As per version 2.5.0 it will also paint scrollbars dark. You can choose wether to use the scrollbar recolor everywhere or only on the themed sites. It will only apply to themed sites by default.</p>
+<img src="https://i.imgur.com/hqwoq9n.png" title="Re-colored dark scrollbar" />
+
 <p>You can find the dark theme of stylus used in the image (along with other styles made by the same author) <a href="https://gitlab.com/RaitaroH/Stylus-DeepDark">here</a>.</p>
 
 <h2>How to install</h2>
