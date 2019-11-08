@@ -2,7 +2,7 @@
 @name         Quantum nox - Global dark theme
 @description  Global dark style to use alongside Firefox full dark theme - Quantum nox.
 @namespace    https://github.com/Izheil/Quantum-Nox-Firefox-Dark-Full-Theme
-@version      2.5.0
+@version      2.5.1
 @author       Izheil
 @homepageURL  https://github.com/Izheil/Quantum-Nox-Firefox-Dark-Full-Theme/tree/master/Global%20dark%20userstyle
 @updateURL    https://raw.githubusercontent.com/Izheil/Quantum-Nox-Firefox-Dark-Full-Theme/master/Global%20dark%20userstyle/Quantum%20Nox%20-%20Global%20dark%20style.user.css
@@ -168,7 +168,7 @@ if invMethod == "customSet" {
     div[class*="button"]:not([class*="buttons"]):not([class*="menu"]):not([class*="play"]):not([class*="fullscreen"]), div[class*="btn"]:not(.btn-link):not([class*="play"]):not(.insider-btn):not(.fullscreen-btn), 
     input[type="file"], input[type="color"], input[type="button"], a.social-count, a[class*="button"], a[class*="btn"],
     summary.btn, clipboard-copy, .ellipsis-expander, file-attachment, .drag-and-drop, div[class*="button"]:not([class*="buttons"]) a, .pageNav-page, .pageNav-jump,
-    input[type="submit"]:not(#searchbtn):not(#search-submit-button):not(#main-search-submit-button):not(#searchsubmit):not(.searchsubmit) {
+    input[type="submit"]:not([id*="search"]):not([id*="Search"]):not(.searchsubmit) {
         -moz-appearance: none !important;
         -webkit-appearance: none !important;
         border-radius: 3px !important;
@@ -193,7 +193,7 @@ if invMethod == "customSet" {
 
     .anchor-list a.hoverable, div[class*="buttons"] a[onclick], [aria-selected="true"], 
     button:not([class*="menu"]):not([id*="menu"]):not([role="switch"]):not([class*="ytp"]):not([class*="play"]):not([class*="mute"]):not([class*="fullscreen"]):not(.connect__button):not([class*="btn"]):not(.rc-button):not([aria-label="Play"]):not([aria-label="Mute"]):not([aria-label="Fullscreen"]):not(.vjs-control):not(.rb-new__button):not([class*="rating"]), 
-    input[type="submit"]:not(#searchbtn):not(#search-submit-button):not(#main-search-submit-button):not(#searchsubmit):not(.searchsubmit), 
+    input[type="submit"]:not([id*="search"]):not([id*="Search"]):not(.searchsubmit), 
     [class*="menu-item"]:not([class*="footer"]):not([class*="Footer"]):hover, button#view-menu-btn, a.add-fav, #action-menu-btn, a.Button {
         -moz-appearance: none !important;
         -webkit-appearance: none !important;
@@ -204,7 +204,7 @@ if invMethod == "customSet" {
     .anchor-list a.hoverable:hover, a[data-toggle="dropdown"]:not([class*="wrapper"]):not([role="menuitem"]):hover, div[class*="buttons"] a[onclick]:hover, 
     div[class*="dropdown"] a:hover, div[class*="drop-down"] a:hover, 
     button:not([class*="menu"]):not([id*="menu"]):not([role="switch"]):not([class*="play"]):not([class*="mute"]):not([class*="fullscreen"]):not(.connect__button):not(.btn-link):not(.rc-button):not([aria-label="Play"]):not([aria-label="Mute"]):not([aria-label="Fullscreen"]):not(.vjs-control):hover, 
-    input[type="submit"]:not(#searchbtn):not(#search-submit-button):not(#main-search-submit-button):not(#searchsubmit):not(.searchsubmit):hover, 
+    input[type="submit"]:not([id*="search"]):not([id*="Search"]):not(.searchsubmit):hover, 
     span[role="button"]:hover, button#view-menu-btn:hover, a.add-fav:hover, #action-menu-btn:hover, a.Button:hover {
         background-color: #444 !important; 
         color: #fff !important}
@@ -218,16 +218,17 @@ if invMethod == "customSet" {
         background-color: #444 !important;
         color: #fff !important}
 
-    li[class*="btn"] a:not([href="javascript:;"]), #searchbtn, #search-submit-button, 
-    #main-search-submit-button, #searchsubmit, .searchsubmit {
+    li[class*="btn"] a:not([href="javascript:;"]), input[type="submit"][id*="search"], .searchsubmit {
         background-color: transparent !important; 
         color: #ddd !important}
         
-    li[class*="btn"]:hover a:not([href="javascript:;"]):hover, #searchbtn:hover, #search-submit-button:hover, 
-    #main-search-submit-button:hover, #searchsubmit:hover, .searchsubmit:hover {
+    li[class*="btn"]:hover a:not([href="javascript:;"]):hover {
         background-color: rgba(255,255,255,.2) !important; 
         color: #fff !important; 
         border-radius: 6px !important}
+        
+    input[type="submit"][id*="search"]:hover {
+        filter: brightness(150%) !important}
 
     /* Checkboxes, radio, and switch buttons */
     input[type="checkbox"], input[type="radio"] {
@@ -272,14 +273,14 @@ if invMethod == "customSet" {
     
     /* Select boxes */
     select, [role="combobox"], a[class*="select"]:not([class*="selected"]) {
-        -moz-appearance: none !important;
-        -webkit-appearance: none !important;
-        background: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAcAAAAECAYAAABCxiV9AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAAeSURBVBhXY5g5c+Z/BiwALo6uAEMDTACXSWgSDAwA4jATh950E30AAAAASUVORK5CYII=') no-repeat right 4px center #060606 !important;
-        border-color: #333 !important;
-        box-shadow: none !important;
-        color: #ccc !important;
-        padding: 1px 15px 1px 3px !important;
-        transition: border-color 0.3s, background-position 0.3s !important}
+	    -moz-appearance: none !important;
+	    -webkit-appearance: none !important;
+	    background: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAcAAAAECAYAAABCxiV9AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAAeSURBVBhXY5g5c+Z/BiwALo6uAEMDTACXSWgSDAwA4jATh950E30AAAAASUVORK5CYII=') no-repeat right 4px center #060606 !important;
+	    border: 1px solid #333 !important;
+	    box-shadow: none !important;
+		color: #ccc !important;
+	    padding: 3px 15px 3px 5px !important;
+	    transition: border-color 0.3s, background-position 0.3s !important}
         
     select:hover, [role="combobox"]:hover {background-color: #222 !important}
         
