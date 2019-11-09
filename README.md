@@ -9,16 +9,15 @@ in <code>about:config</code> for userChrome and userContent to be loaded at all 
 
 <p>If you want to know how to change some colors of the theme, check the <a href="https://github.com/Izheil/Quantum-Nox-Firefox-Dark-Full-Theme/tree/master/Info#Editting CSS files">Info</a> section.</p>
 
-<h3>Last update: <b>01/11/2019</b></h3>
+<h3>Last update: <b>06/11/2019</b></h3>
 <p>Files updated:</p>
 <ul>
-	<li><b>userChrome.css</b>: Minor fixes for nightly urlbar.</li>
-	<li><b>userContent.css</b>: Minor fixes <code>about:config</code>w.</li>
+	<li><b>Quantum Nox Installer.py</b>: You can now install multi-row and some other functions using a GUI. Use the patcher in <a href="https://github.com/Izheil/Quantum-Nox-Firefox-Dark-Full-Theme/releases/tag/FF70">releases</a>.</li>
 </ul>
-<h3>Pre-Last update: <b>27/10/2019</b></h3>
+<h3>Pre-Last update: <b>01/10/2019</b></h3>
 <ul>
-	<li><b>JS Loader/userChrome.jsm</b>: Now you won't need the Agentsheet_Loader.uc.js file anymore. You can now load <code>*.as.css</code> files directly without the need of <code>Agentsheet_Loader.uc.js</code>.</li>
-	<li><b>Agentsheet_Loader.uc.js</b>: Removed this file, since it's not longer needed (integrated into the <a href="https://github.com/Izheil/Quantum-Nox-Firefox-Dark-Full-Theme/tree/master/Multirow%20and%20other%20functions/JS%20Loader">JS Loader</a> patch).</li>
+	<li><b>userChrome.css</b>: Minor fixes for nightly urlbar.</li>
+	<li><b>userContent.css</b>: Minor fixes <code>about:config</code>.</li>
 </ul>
 
 <h3>A note on people looking to replace some Tab Mix Plus features:</h3>
