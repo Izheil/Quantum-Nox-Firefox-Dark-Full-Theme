@@ -208,7 +208,7 @@ def erasePatch(FFversion, FFprofile):
 
 def callhome():
     "This method opens the repository page"
-    webbrowser.open_new(r"https://github.com/Izheil/Quantum-Nox-Firefox-Dark-Full-Theme/tree/master/Multirow%20and%20other%20functions")
+    webbrowser.open_new(r"https://github.com/Izheil/Quantum-Nox-Firefox-Dark-Full-Theme/tree/master/Multirow%20and%20other%20functions/Other%20features")
 
 def openProfile(profileFolder):
     if os.access(profileFolder, os.F_OK) == True:
@@ -354,17 +354,21 @@ class patcherUI(Frame):
                 fpCkMR1.config(state="disabled")
                 fpCkMR2.config(state="disabled")
                 fpCkMR1E.config(state="disabled")
+                fpCkMR1C.config(state="disabled")
             elif CkMR.get() == 1:
                 fpCkMR1.config(state="normal")
                 fpCkMR2.config(state="normal")
                 fpCkMR1E.config(state="normal")
+                fpCkMR1C.config(state="disabled")
 
         def updateMRSpinbox():
             if RdMR.get() == 1:
                 fpCkMR1E.config(state="disabled")
+                fpCkMR1C.config(state="disabled")
             elif RdMR.get() == 0:
                 fpCkMR1E.config(state="normal")
-
+                fpCkMR1C.config(state="normal")
+                
         def updateFTChildren():
             if CkFT.get() == 0:
                 fpCkFTD.config(state="disabled")
@@ -420,6 +424,13 @@ class patcherUI(Frame):
 
             Fire71MR = os.path.normpath(os.getcwd() + "/functions/MultiRowTab-scrollableFF71.uc.js")
             FireMR = os.path.normpath(os.getcwd() + "/functions/MultiRowTab-scrollable.uc.js")
+
+            Fire71MRL = os.path.normpath(os.getcwd() + "/functions/MultiRowTabLiteforFF71.uc.js")
+            FireMRL = os.path.normpath(os.getcwd() + "/functions/MultiRowTabLiteforFx.uc.js")
+
+            Fire71MRA = os.path.normpath(os.getcwd() + "/functions/MultiRowTab-scrollable-autohideFF71.uc.js")
+            FireMRA = os.path.normpath(os.getcwd() + "/functions/MultiRowTab-scrollable-autohide.uc.js")
+
             FireTB = os.path.normpath(os.getcwd() + "/functions/Tabs-below.as.css")
             FireFT = os.path.normpath(os.getcwd() + "/functions/Focus-tab-on-hover.uc.js")
 
@@ -429,12 +440,104 @@ class patcherUI(Frame):
             FFCMRL = os.path.normpath(rpCkFF22.get() + "/chrome/MultiRowTabLiteforFx.uc.js")
             FFCMRL71 = os.path.normpath(rpCkFF22.get() + "/chrome/MultiRowTabLiteforFF71.uc.js")
 
-            FFNCMR = os.path.normpath(rpCkFFN22.get() + "/chrome/MultiRowTab-scrollable.uc.js")
-            FFNCMR71 = os.path.normpath(rpCkFFN22.get() + "/chrome/MultiRowTab-scrollableFF71.uc.js")
+            FFCMRA = os.path.normpath(rpCkFF22.get() + "/chrome/MultiRowTab-scrollable-autohide.uc.js")
+            FFCMRA71 = os.path.normpath(rpCkFF22.get() + "/chrome/MultiRowTab-scrollable-autohideFF71.uc.js")
 
-            FFNCMRL = os.path.normpath(rpCkFFN22.get() + "/chrome/MultiRowTabLiteforFx.uc.js")
-            FFNCMRL71 = os.path.normpath(rpCkFFN22.get() + "/chrome/MultiRowTabLiteforFF71.uc.js")
+            FFNCMR = os.path.normpath(rpCkFFN22.get() + "/chrome/MultiRowTab-scrollableFF71.uc.js")
+            FFNCMRL = os.path.normpath(rpCkFFN22.get() + "/chrome/MultiRowTabLiteforFF71.uc.js")
+            FFNCMRA = os.path.normpath(rpCkFFN22.get() + "/chrome/MultiRowTab-scrollable-autohideFF71.uc.js")
 
+            # We define the common multi-row choice patching here
+            def MRpatch():
+                try:
+                    if RdMR.get() == 0:
+                        if FF71 == True:
+                            if CkMR1C.get() == 0:
+                                distutils.file_util.copy_file(Fire71MR, FFChrome)
+
+                                if os.access(FFCMRA71, os.F_OK) == True:
+                                    os.remove(FFCMRA71)
+
+                                writeMR(FFCMR71)
+
+                            if CkMR1C.get() == 1:
+                                distutils.file_util.copy_file(Fire71MRA, FFChrome)
+
+                                if os.access(FFCMR71, os.F_OK) == True:
+                                    os.remove(FFCMR71)
+
+                                writeMR(FFCMRA71)
+
+                            if os.access(FFCMRA, os.F_OK) == True:
+                                    os.remove(FFCMRA)
+
+                            if os.access(FFCMR, os.F_OK) == True:
+                                    os.remove(FFCMR)
+
+                        else:
+
+                            if CkMR1C.get() == 0:
+                                distutils.file_util.copy_file(FireMR, FFChrome)
+
+                                if os.access(FFCMRA, os.F_OK) == True:
+                                    os.remove(FFCMRA)
+
+                                writeMR(FFCMR)
+
+                            if CkMR1C.get() == 1:
+                                distutils.file_util.copy_file(FireMRA, FFChrome)
+
+                                if os.access(FFCMR, os.F_OK) == True:
+                                    os.remove(FFCMR)
+
+                                writeMR(FFCMRA)
+
+                            if os.access(FFCMR71, os.F_OK) == True:
+                                    os.remove(FFCMR71)
+
+                            if os.access(FFCMRA71, os.F_OK) == True:
+                                    os.remove(FFCMRA71)
+
+                        if os.access(FFCMRL, os.F_OK) == True:
+                            os.remove(FFCMRL)
+
+                        if os.access(FFCMRL71, os.F_OK) == True:
+                            os.remove(FFCMRL71)
+
+                    else:
+                        if FF71 == True:
+                            distutils.file_util.copy_file(Fire71MRL, FFChrome)
+
+                            if os.access(FFCMRL, os.F_OK) == True:
+                                os.remove(FFCMRL)
+
+                            writeMR(FFCMR71)
+
+                        else:
+                            distutils.file_util.copy_file(FireMRL, FFChrome)
+
+                            if os.access(FFCMRL71, os.F_OK) == True:
+                                os.remove(FFCMRL71)
+
+                            writeMR(FFCMR)
+
+                        if os.access(FFCMR, os.F_OK) == True:
+                            os.remove(FFCMR)
+
+                        if os.access(FFCMR71, os.F_OK) == True:
+                            os.remove(FFCMR71)
+
+                        if os.access(FFCMRA, os.F_OK) == True:
+                            os.remove(FFCMRA)
+
+                        if os.access(FFCMRA71, os.F_OK) == True:
+                            os.remove(FFCMRA71)
+
+                except IOError:
+                    messagebox.showwarning("Warning", 
+                        "Couldn't manage to install Multi-row Tabs function.")
+
+            # We handle the rest of choices here
             if CkFF.get() == 1:
                 if os.access(rpCkFF12.get(), os.F_OK) == True and \
                    os.access(os.path.normpath(rpCkFF12.get() + "/defaults/pref"), os.F_OK) == True:
@@ -449,33 +552,9 @@ class patcherUI(Frame):
 
                     if CkMR.get() == 1:
                         FF71 = messagebox.askyesno("Firefox 71 prompt", 
-                            "Is your current Firefox version 71 or above?")
-                        try:
-                            if FF71 == True:
-                                distutils.file_util.copy_file(Fire71MR, FFChrome)
+                            "Is your current Firefox (stable) version 71 or above?")
 
-                                if os.access(FFCMR, os.F_OK) == True:
-                                    os.remove(FFCMR)
-
-                                writeMR(FFCMR71)
-
-                            else:
-                                distutils.file_util.copy_file(FireMR, FFChrome)
-
-                                if os.access(FFCMR71, os.F_OK) == True:
-                                    os.remove(FFCMR71)
-
-                                writeMR(FFCMR)
-
-                            if os.access(FFCMRL, os.F_OK) == True:
-                                os.remove(FFCMRL)
-
-                            if os.access(FFCMRL71, os.F_OK) == True:
-                                os.remove(FFCMRL71)
-
-                        except IOError:
-                            messagebox.showwarning("Warning", 
-                                "Couldn't manage to install Multi-row Tabs function.")
+                        MRpatch()
 
                     if CkTB.get() == 1:
                         try:
@@ -500,6 +579,7 @@ class patcherUI(Frame):
                         "Firefox profile folder location is wrong.\nSelect a valid one and try again.")
                     return
 
+
             if CkFFN.get() == 1:
                 if os.access(rpCkFFN12.get(), os.F_OK) == True and \
                    os.access(os.path.normpath(rpCkFFN12.get() + "/defaults/pref"), os.F_OK) == True:
@@ -514,12 +594,36 @@ class patcherUI(Frame):
 
                     if CkMR.get() == 1:
                         try:
-                            distutils.file_util.copy_file(Fire71MR, FFNChrome)
+                            if RdMR.get() == 0:
+                                if CkMR1C.get() == 0:
+                                    distutils.file_util.copy_file(Fire71MR, FFNChrome)
 
-                            writeMR(FFNCMR71)
+                                    if os.access(FFNCMRA, os.F_OK) == True:
+                                        os.remove(FFNCMRA)
 
-                            if os.access(FFNCMRL71, os.F_OK) == True:
-                                os.remove(FFNCMRL71)
+                                    writeMR(FFNCMR)
+
+                                if CkMR1C.get() == 1:
+                                    distutils.file_util.copy_file(Fire71MRA, FFNChrome)
+
+                                    if os.access(FFNCMR, os.F_OK) == True:
+                                        os.remove(FFNCMR)
+
+                                    writeMR(FFNCMRA)
+
+                                if os.access(FFNCMRL, os.F_OK) == True:
+                                    os.remove(FFNCMRL)
+
+                            else:
+                                distutils.file_util.copy_file(Fire71MRL, FFNChrome)
+
+                                writeMR(FFNCMRL)
+
+                                if os.access(FFNCMR, os.F_OK) == True:
+                                    os.remove(FFNCMR)
+
+                                if os.access(FFNCMRA, os.F_OK) == True:
+                                    os.remove(FFNCMRA)
 
                         except IOError:
                             messagebox.showwarning("Warning", 
@@ -559,6 +663,9 @@ class patcherUI(Frame):
                     FFCMRL = os.path.normpath(x + "/chrome/MultiRowTabLiteforFx.uc.js")
                     FFCMRL71 = os.path.normpath(x + "/chrome/MultiRowTabLiteforFF71.uc.js")
 
+                    FFCMRA = os.path.normpath(x + "/chrome/MultiRowTab-scrollable-autohide.uc.js")
+                    FFCMRA71 = os.path.normpath(x + "/chrome/MultiRowTab-scrollable-autohideFF71.uc.js")
+
                     if SystemOS() == "Windows":
                         splitter = x.split("\\")
                         selectedProfile = splitter[-1]
@@ -573,32 +680,8 @@ class patcherUI(Frame):
                         if CkMR.get() == 1:
                             FF71 = messagebox.askyesno("Firefox 71 prompt", 
                             "Does the following profile belong to a Firefox version of 71 or above?\n{0}".format(selectedProfile))
-                            try:
-                                if FF71 == True:
-                                    distutils.file_util.copy_file(Fire71MR, FFChrome)
 
-                                    if os.access(FFCMR, os.F_OK) == True:
-                                        os.remove(FFCMR)
-
-                                    writeMR(FFCMR71)
-
-                                else:
-                                    distutils.file_util.copy_file(FireMR, FFChrome)
-
-                                    if os.access(FFCMR71, os.F_OK) == True:
-                                        os.remove(FFCMR71)
-
-                                    writeMR(FFCMR)
-
-                                if os.access(FFCMRL, os.F_OK) == True:
-                                    os.remove(FFCMRL)
-
-                                if os.access(FFCMRL71, os.F_OK) == True:
-                                    os.remove(FFCMRL71)
-
-                            except IOError:
-                                messagebox.showwarning("Warning", 
-                                    "Couldn't manage to install Multi-row Tabs function.")
+                            MRpatch()
 
                         if CkTB.get() == 1:
                             try:
@@ -669,6 +752,12 @@ class patcherUI(Frame):
                     if os.access(os.path.normpath(rpCkFF22.get() + "/chrome/MultiRowTabLiteforFF71.uc.js"), os.F_OK) == True:
                         os.remove(os.path.normpath(rpCkFF22.get() + "/chrome/MultiRowTabLiteforFF71.uc.js"))
 
+                    if os.access(os.path.normpath(rpCkFF22.get() + "/chrome/MultiRowTab-scrollable-autohide.uc.js"), os.F_OK) == True:
+                        os.remove(os.path.normpath(rpCkFF22.get() + "/chrome/MultiRowTab-scrollable-autohide.uc.js"))
+
+                    if os.access(os.path.normpath(rpCkFF22.get() + "/chrome/MultiRowTab-scrollable-autohideFF71.uc.js"), os.F_OK) == True:
+                        os.remove(os.path.normpath(rpCkFF22.get() + "/chrome/MultiRowTab-scrollable-autohideFF71.uc.js"))
+
                 if CkTB.get() == 1:
                     if os.access(os.path.normpath(rpCkFF22.get() + "/chrome/Tabs-below.as.css"), os.F_OK) == True:
                         os.remove(os.path.normpath(rpCkFF22.get() + "/chrome/Tabs-below.as.css"))
@@ -693,6 +782,12 @@ class patcherUI(Frame):
 
                     if os.access(os.path.normpath(rpCkFFN22.get() + "/chrome/MultiRowTabLiteforFF71.uc.js"), os.F_OK) == True:
                         os.remove(os.path.normpath(rpCkFFN22.get() + "/chrome/MultiRowTabLiteforFF71.uc.js"))
+
+                    if os.access(os.path.normpath(rpCkFFN22.get() + "/chrome/MultiRowTab-scrollable-autohide.uc.js"), os.F_OK) == True:
+                        os.remove(os.path.normpath(rpCkFFN22.get() + "/chrome/MultiRowTab-scrollable-autohide.uc.js"))
+
+                    if os.access(os.path.normpath(rpCkFFN22.get() + "/chrome/MultiRowTab-scrollable-autohideFF71.uc.js"), os.F_OK) == True:
+                        os.remove(os.path.normpath(rpCkFFN22.get() + "/chrome/MultiRowTab-scrollable-autohideFF71.uc.js"))
 
                 if CkTB.get() == 1:
                     if os.access(os.path.normpath(rpCkFFN22.get() + "/chrome/Tabs-below.as.css"), os.F_OK) == True:
@@ -720,6 +815,12 @@ class patcherUI(Frame):
 
                         if os.access(os.path.normpath(x + "/chrome/MultiRowTabLiteforFF71.uc.js"), os.F_OK) == True:
                             os.remove(os.path.normpath(x + "/chrome/MultiRowTabLiteforFF71.uc.js"))
+
+                        if os.access(os.path.normpath(x + "/chrome/MultiRowTab-scrollable-autohide.uc.js"), os.F_OK) == True:
+                            os.remove(os.path.normpath(x + "/chrome/MultiRowTab-scrollable-autohide.uc.js"))
+
+                        if os.access(os.path.normpath(x + "/chrome/MultiRowTab-scrollable-autohideFF71.uc.js"), os.F_OK) == True:
+                            os.remove(os.path.normpath(x + "/chrome/MultiRowTab-scrollable-autohideFF71.uc.js"))
 
                     if CkTB.get() == 1:
                         if os.access(os.path.normpath(x + "/chrome/Tabs-below.as.css"), os.F_OK) == True:
@@ -830,6 +931,7 @@ class patcherUI(Frame):
 
         CkMR = tkinter.IntVar()
         CkMR1E = tkinter.IntVar()
+        CkMR1C = tkinter.IntVar()
         RdMR = tkinter.IntVar()
         fpCkMR = Checkbutton(FPLF, text="Multi-row Tabs", variable=CkMR, command=updateMRChildren)
         fpCkMR.select()
@@ -840,24 +942,26 @@ class patcherUI(Frame):
         fpCkMR1E.delete(0,"end")
         fpCkMR1E.insert(0, 3)
         fpCkMR1E.grid(column=2, row=2, columnspan=2, sticky="WE")
+        fpCkMR1C = Checkbutton(FPLF, text="Autohide", variable=CkMR1C)
+        fpCkMR1C.grid(column=1, row=3, columnspan=2, padx=20, sticky="W")
         fpCkMR2 = Radiobutton(FPLF, text="All rows visible", value=1, variable=RdMR, command=updateMRSpinbox)
-        fpCkMR2.grid(column=1, row=3, sticky="W")
+        fpCkMR2.grid(column=1, row=4, sticky="W")
 
         CkTB = tkinter.IntVar()
         fpCkTB = Checkbutton(FPLF, text="Tabs below URL bar", variable=CkTB)
-        fpCkTB.grid(column=0, row=4, columnspan=4, sticky="W")
+        fpCkTB.grid(column=0, row=5, columnspan=4, sticky="W")
 
         CkFT = tkinter.IntVar()
         CkFTDE = tkinter.IntVar()
         fpCkFT = Checkbutton(FPLF, text="Focus Tab on hover", variable=CkFT, command=updateFTChildren)
-        fpCkFT.grid(column=0, row=5, columnspan=4, sticky="W")
+        fpCkFT.grid(column=0, row=6, columnspan=4, sticky="W")
         fpCkFTD = Label(FPLF, text="Specify Delay (in ms)", state="disabled")
-        fpCkFTD.grid(column=0, row=6, columnspan=2, sticky="E")
+        fpCkFTD.grid(column=0, row=7, columnspan=2, sticky="E")
         fpCkFTDE = Spinbox(FPLF, from_=0, to=2000, textvariable=CkFTDE)
         fpCkFTDE.delete(0,"end")
         fpCkFTDE.insert(0, 200)
         fpCkFTDE.config(state="disabled")
-        fpCkFTDE.grid(column=3, row=6, columnspan=2, sticky="W")
+        fpCkFTDE.grid(column=3, row=7, columnspan=2, sticky="W")
         fpspacer3 = Label(FPLF, text="").grid(column=0, row=8, sticky="w")
 
         fpfooter = Label(FPLF, text="For other functions:").grid(column=0, row=9, columnspan=4, sticky="w")
