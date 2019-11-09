@@ -28,8 +28,6 @@ function hoverHandler(e){
 	if (delayBeforeSwitch > 0) {
 		var delay;
 		delay = setTimeout(function(){
-			window.shiet = true;
-			console.log(window.shiet);
 			EvEl.closest("tabs")._selectNewTab(EvEl)
 		}, delayBeforeSwitch);
 		EvEl.onmouseout = function(){
