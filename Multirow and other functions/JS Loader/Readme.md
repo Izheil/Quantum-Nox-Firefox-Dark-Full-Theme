@@ -2,7 +2,9 @@
 <p>The files here are a fork of the work of <a href="https://github.com/xiaoxiaoflood/firefox-scripts">xiaoxiaoflood</a>, fixed to work with FF69+, and only loading the necessary things to load external JS and CSS files.</p>
 
 <h2>Installation</h2>
-<p>You can patch your Firefox using the installer in the <a href="https://github.com/Izheil/Quantum-Nox-Firefox-Dark-Full-Theme/releases">releases</a> section, or you can follow the explanations below for the manual installation.</p>
+<p>You can patch your Firefox using the installer in the <a href="https://github.com/Izheil/Quantum-Nox-Firefox-Dark-Full-Theme/releases">releases</a> section. The patcher will choose the default profile folder, so if you have more than 1 profile you should go to <code>about:profiles</code> and make sure that the path the patcher selects is the same as the one of the profile that you are currently using.</p>
+
+<p>Alternatively you can follow the explanations below for the manual installation.</p>
 
 <h3>Manual installation</h3>
 <p>To patch firefox with this method, you will have to locate both <a href="https://github.com/Izheil/Quantum-Nox-Firefox-Dark-Full-Theme/tree/master/Multirow%20and%20other%20functions/JS%20Loader#Firefox-root-folder">firefox root folder</a>, and your profile <a href="https://github.com/Izheil/Quantum-Nox-Firefox-Dark-Full-Theme/tree/master/Multirow%20and%20other%20functions/JS%20Loader#the-chrome-folder">chrome folder</a>.</p>
