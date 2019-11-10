@@ -1,3 +1,4 @@
+#!/usr/bin/python3.7
 import os
 import re
 import sys
@@ -7,12 +8,11 @@ import tkinter
 import elevate
 import webbrowser
 import distutils.core
+import getpass
 from pathlib import Path
 from tkinter import (LabelFrame, Checkbutton, Frame, Label, Entry, 
                     filedialog, Button, Listbox, Radiobutton, Spinbox, 
                     Scrollbar, messagebox, PhotoImage)
-
-elevate.elevate()
 
 def SystemOS():
     "Identifies the OS"
@@ -26,6 +26,12 @@ def SystemOS():
     else: SystemOS = "Unknown"
     return SystemOS
 
+if SystemOS() == "Linux":
+    if os.geteuid() != 0:
+        os.execvp("sudo", ["sudo"] + ["python3"] + sys.argv)
+        
+else: elevate.elevate()
+
 # We get the user folders here
 if SystemOS() == "Windows":
     home = os.environ['APPDATA']
@@ -33,7 +39,7 @@ if SystemOS() == "Windows":
     Profiles = os.listdir(MozPFolder)
     SFolder = home + r'\Quantum Nox'
 elif SystemOS() == "Linux":
-    home = str(Path.home())
+    home = "/home/" + os.getenv("SUDO_USER")
     MozPFolder = home + r"/.mozilla/firefox"
     Profiles = os.listdir(MozPFolder)
     SFolder = home + r"/.Quantum Nox"
@@ -72,21 +78,21 @@ if SystemOS() == "Windows":
             if os.access(rootN, os.F_OK) == False:
                 rootN = "Not found"
 elif SystemOS() == "Linux" or SystemOS() == "Unknown":
-    root = r"/usr/lib/firefox/browser"
-    rootN = r"/usr/lib/firefoxnightly/browser"
+    root = r"/usr/lib/firefox/"
+    rootN = r"/usr/lib/firefoxnightly/"
     if os.access(root, os.F_OK) == False:
-        root = r"/usr/lib64/firefox/browser"
+        root = r"/usr/lib64/firefox/"
         if os.access(root, os.F_OK) == False:
             rootN = "Not found"
     if os.access(rootN, os.F_OK) == False:
-        root = r"/usr/lib64/firefoxnightly/browser"
+        rootN = r"/usr/lib64/firefoxnightly/"
         if os.access(rootN, os.F_OK) == False:
             rootN = "Not found"
 elif SystemOS() == "Mac":
     root = r"/Applications/Firefox.app/contents/resources"
     rootN = r"/Applications/FirefoxNightly.app/contents/resources"
     if os.access(root, os.F_OK) == False:
-            rootN = "Not found"
+            root = "Not found"
     if os.access(rootN, os.F_OK) == False:
             rootN = "Not found"
 
@@ -1002,8 +1008,9 @@ class patcherUI(Frame):
 def UIStart():
 
     QNWindow = tkinter.Tk()
-    QNWindow.iconbitmap('icon.ico')
     QNWindow.resizable(False, False)
+    if SystemOS() == "Windows":
+        QNWindow.iconbitmap('icon.png')
     app = patcherUI()
     QNWindow.title("Quantum Nox - Firefox Patcher")
     QNWindow.mainloop()
