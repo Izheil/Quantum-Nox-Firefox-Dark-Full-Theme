@@ -51,7 +51,7 @@ basic css or <a href="https://www.w3schools.com/colors/colors_picker.asp">color 
 <p>This only happens when using Firefox default theme, either use firefox built-in dark theme along with this one, or use any other lightweight theme you like.</p>
 
 <h3>The synced tabs sidebar isn't themed.</h3>
-<p>Since it's anonymous content of the browser we can't theme it through userChrome or userContent, which is why you will have to apply the fix inside <code>Sync-tabs-sidebar.as.css</code>. It requires the use of external CSS files loading, which is enabled through <code>Agentsheet_Loader.uc.js</code> and the other files inside <a href="https://github.com/Izheil/Quantum-Nox-Firefox-Dark-Full-Theme/tree/master/Multirow and other functions/JS Loader">JS Loader</a> folder.</p>
+<p>Since it's anonymous content of the browser we can't theme it through userChrome or userContent, which is why you will have to apply the fix inside <code>Sync-tabs-sidebar.as.css</code>. It requires the use of external CSS files loading, which is enabled through the use of the files inside <a href="https://github.com/Izheil/Quantum-Nox-Firefox-Dark-Full-Theme/tree/master/Multirow and other functions/JS Loader">JS Loader</a> folder.</p>
 
 <h3>Some context menu commands dissapear after installing userChrome.</h3>
 <p>If you only want the dark theme, use the default <code>userChrome.css</code> file inside "Full dark theme", which won't make the context menu commands dissapear. In case you want to use the features part of the theme, just delete everything after the line that says <code>/* CONTEXT MENU COMMANDS */</code> (you can find it using the search option on notepad, or the code editor you are using).</p>
