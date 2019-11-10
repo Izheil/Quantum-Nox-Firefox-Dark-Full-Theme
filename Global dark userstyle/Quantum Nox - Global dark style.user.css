@@ -359,31 +359,38 @@ if invMethod == "customSet" {
     .mw-parser-output .main-top-left {background: linear-gradient(to right, #000, transparent) !important}
         
     /* Other */
-    .communitymailinglist a, #oh-menu-submit span, #oh-menu-join a, .u-backgroundTransparentWhiteDarkest {background: #333 !important; color: #ddd !important}
-    .communitymailinglist a:hover, #oh-menu-submit span:hover, #oh-menu-join a:hover, .bz_comment_text span.quote, 
-    .bz_comment_text span.quote_wrapped, div.bz_comment_text pre {background: #444 !important; color: #fff !important}
+    .communitymailinglist a, #oh-menu-submit span, #oh-menu-join a, 
+	.u-backgroundTransparentWhiteDarkest {background: #333 !important; color: #ddd !important}
 
-    #dealSearchBar, #dealCategorySearchBar, .rb-new__button:not(:hover) .xh-icon::before, .BuCcI input {color: #ccc !important}
-    
-    pre.result {background-color: #000 !important}
-    
-    .rating-block__button {background-color: #151515 !important}
+	.communitymailinglist a:hover, #oh-menu-submit span:hover, #oh-menu-join a:hover, .bz_comment_text span.quote, 
+	.bz_comment_text span.quote_wrapped, div.bz_comment_text pre {background: #444 !important; color: #fff !important}
 
-    .bg-secondary {background: #222828 !important}
+	.rating-block__button {background-color: #151515 !important}
+	pre.result, .navbar.bg-light {background-color: #000 !important}
+	.bg-secondary {background: #222828 !important}
+	.nav-main-item a:hover, a[data-service="GitHub"]:hover {background: rgba(255,255,255,0.1) !important} 
+	.note {background: #331}
 
-    .bg-c-w100, .c-c-w100, .PageList, .old-post-page, .post-reply, .reply-counter, .reply-counter span {background-color: transparent !important}
+	h2.sync-black {color: #fff !important}
+	#dealSearchBar, #dealCategorySearchBar, .rb-new__button:not(:hover) .xh-icon::before, .BuCcI input {color: #ccc !important}
 
-    .nav-main-item a:hover, a[data-service="GitHub"]:hover {background: rgba(255,255,255,0.1) !important} 
-    .note {background: #331}
-        
-    .title, [id*="search"]:not([id*="btn"]):not([class*="btn"]):not([id*="search-submit-button"]):not([type="submit"]), .probox {background: none !important; box-shadow: none !important}
-        
-    .probox input[type="search"], .rc-button.goog-inline-block, .mf_filecontainer a::after, .pages-nav.nav-icon {filter: invert(80%) hue-rotate(180deg)}
-        
-    .p-sectionLinks, .navbar-brand, .site-navigation2__child-list, .site-navigation2__panel {background-color: rgba(0,0,0,0.8) !important}
-    .item.tooltipstered > div {background-color: rgba(0,0,0,0.5) !important}
-        
-    .contentRow-fader {background: linear-gradient(transparent, bgColor) !important}
+	.article-single figure img {mix-blend-mode: screen !important}
+
+	.title, [id*="search"]:not([id*="btn"]):not([class*="btn"]):not([id*="search-submit-button"]):not([type="submit"]), 
+	.probox {background: none !important; box-shadow: none !important}
+
+	.bg-c-w100, .c-c-w100, .PageList, .old-post-page, .post-reply, 
+	.reply-counter, .reply-counter span {background-color: transparent !important}
+	    
+	.probox input[type="search"], .rc-button.goog-inline-block, .mf_filecontainer a::after, .pages-nav.nav-icon {filter: invert(80%) hue-rotate(180deg)}
+	    
+	.p-sectionLinks, .navbar-brand, .site-navigation2__child-list, .site-navigation2__panel {background-color: rgba(0,0,0,0.8) !important}
+	.item.tooltipstered > div {background-color: rgba(0,0,0,0.5) !important}
+	    
+	.contentRow-fader {background: linear-gradient(transparent, bgColor) !important}
+	    
+	.bz_comment_text span.quote, .bz_comment_text span.quote_wrapped, 
+	div.bz_comment_text pre {background: #444 !important; color: #fff !important}
         
     /*----- SCROLLBAR CHANGES (ONLY ON THEMED SITES) -----*/
     if (scrollScope == "Site") {
