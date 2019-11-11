@@ -1,3 +1,4 @@
+#!/usr/bin/python3.7
 import os
 import re
 import sys
@@ -12,8 +13,6 @@ from tkinter import (LabelFrame, Checkbutton, Frame, Label, Entry,
                     filedialog, Button, Listbox, Radiobutton, Spinbox, 
                     Scrollbar, messagebox, PhotoImage)
 
-elevate.elevate()
-
 def SystemOS():
     "Identifies the OS"
 
@@ -26,6 +25,12 @@ def SystemOS():
     else: SystemOS = "Unknown"
     return SystemOS
 
+if SystemOS() == "Linux":
+    if os.geteuid() != 0:
+        os.execvp("sudo", ["sudo"] + ["python3"] + sys.argv)
+        
+else: elevate.elevate()
+
 # We get the user folders here
 if SystemOS() == "Windows":
     home = os.environ['APPDATA']
@@ -33,7 +38,7 @@ if SystemOS() == "Windows":
     Profiles = os.listdir(MozPFolder)
     SFolder = home + r'\Quantum Nox'
 elif SystemOS() == "Linux":
-    home = str(Path.home())
+    home = "/home/" + os.getenv("SUDO_USER")
     MozPFolder = home + r"/.mozilla/firefox"
     Profiles = os.listdir(MozPFolder)
     SFolder = home + r"/.Quantum Nox"
@@ -72,21 +77,21 @@ if SystemOS() == "Windows":
             if os.access(rootN, os.F_OK) == False:
                 rootN = "Not found"
 elif SystemOS() == "Linux" or SystemOS() == "Unknown":
-    root = r"/usr/lib/firefox/browser"
-    rootN = r"/usr/lib/firefoxnightly/browser"
+    root = r"/usr/lib/firefox/"
+    rootN = r"/usr/lib/firefoxnightly/"
     if os.access(root, os.F_OK) == False:
-        root = r"/usr/lib64/firefox/browser"
+        root = r"/usr/lib64/firefox/"
         if os.access(root, os.F_OK) == False:
             rootN = "Not found"
     if os.access(rootN, os.F_OK) == False:
-        root = r"/usr/lib64/firefoxnightly/browser"
+        rootN = r"/usr/lib64/firefoxnightly/"
         if os.access(rootN, os.F_OK) == False:
             rootN = "Not found"
 elif SystemOS() == "Mac":
     root = r"/Applications/Firefox.app/contents/resources"
     rootN = r"/Applications/FirefoxNightly.app/contents/resources"
     if os.access(root, os.F_OK) == False:
-            rootN = "Not found"
+            root = "Not found"
     if os.access(rootN, os.F_OK) == False:
             rootN = "Not found"
 
@@ -188,13 +193,18 @@ def erasePatch(FFversion, FFprofile):
 
             # We patch the profile folder here
             if os.access(os.path.normpath(FFprofile + "/chrome/utils"), os.F_OK):
-
-                os.remove(os.path.normpath(FFprofile + "/chrome/utils/boot.jsm"))
-                os.remove(os.path.normpath(FFprofile + "/chrome/utils/chrome.manifest"))
-                os.remove(os.path.normpath(FFprofile + "/chrome/utils/RDFDataSource.jsm"))
-                os.remove(os.path.normpath(FFprofile + "/chrome/utils/RDFManifestConverter.jsm"))
-                os.remove(os.path.normpath(FFprofile + "/chrome/utils/userChrome.jsm"))
-                os.remove(os.path.normpath(FFprofile + "/chrome/utils/xPref.jsm"))
+                if os.access(os.path.normpath(FFprofile + "/chrome/utils/boot.jsm"), os.F_OK):
+                    os.remove(os.path.normpath(FFprofile + "/chrome/utils/boot.jsm"))
+                if os.access(os.path.normpath(FFprofile + "/chrome/utils/chrome.manifest"), os.F_OK):
+                    os.remove(os.path.normpath(FFprofile + "/chrome/utils/chrome.manifest"))
+                if os.access(os.path.normpath(FFprofile + "/chrome/utils/RDFDataSource.jsm"), os.F_OK):
+                    os.remove(os.path.normpath(FFprofile + "/chrome/utils/RDFDataSource.jsm"))
+                if os.access(os.path.normpath(FFprofile + "/chrome/utils/RDFManifestConverter.jsm"), os.F_OK):
+                    os.remove(os.path.normpath(FFprofile + "/chrome/utils/RDFManifestConverter.jsm"))
+                if os.access(os.path.normpath(FFprofile + "/chrome/utils/userChrome.jsm"), os.F_OK):
+                    os.remove(os.path.normpath(FFprofile + "/chrome/utils/userChrome.jsm"))
+                if os.access(os.path.normpath(FFprofile + "/chrome/utils/xPref.jsm"), os.F_OK):
+                    os.remove(os.path.normpath(FFprofile + "/chrome/utils/xPref.jsm"))
 
                 utilChromeFiles = []
                 for r, d, f in os.walk(os.path.normpath(FFprofile + "/chrome/utils")):
@@ -1002,8 +1012,9 @@ class patcherUI(Frame):
 def UIStart():
 
     QNWindow = tkinter.Tk()
-    QNWindow.iconbitmap(os.path.normpath(sys._MEIPASS + 'icon.ico'))
     QNWindow.resizable(False, False)
+    if SystemOS() == "Windows":
+        QNWindow.iconbitmap(os.path.normpath(sys._MEIPASS + '/icon.ico'))
     app = patcherUI()
     QNWindow.title("Quantum Nox - Firefox Patcher")
     QNWindow.mainloop()

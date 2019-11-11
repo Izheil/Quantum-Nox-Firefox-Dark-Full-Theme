@@ -8,7 +8,6 @@ import tkinter
 import elevate
 import webbrowser
 import distutils.core
-import getpass
 from pathlib import Path
 from tkinter import (LabelFrame, Checkbutton, Frame, Label, Entry, 
                     filedialog, Button, Listbox, Radiobutton, Spinbox, 
@@ -194,13 +193,18 @@ def erasePatch(FFversion, FFprofile):
 
             # We patch the profile folder here
             if os.access(os.path.normpath(FFprofile + "/chrome/utils"), os.F_OK):
-
-                os.remove(os.path.normpath(FFprofile + "/chrome/utils/boot.jsm"))
-                os.remove(os.path.normpath(FFprofile + "/chrome/utils/chrome.manifest"))
-                os.remove(os.path.normpath(FFprofile + "/chrome/utils/RDFDataSource.jsm"))
-                os.remove(os.path.normpath(FFprofile + "/chrome/utils/RDFManifestConverter.jsm"))
-                os.remove(os.path.normpath(FFprofile + "/chrome/utils/userChrome.jsm"))
-                os.remove(os.path.normpath(FFprofile + "/chrome/utils/xPref.jsm"))
+                if os.access(os.path.normpath(FFprofile + "/chrome/utils/boot.jsm"), os.F_OK):
+                    os.remove(os.path.normpath(FFprofile + "/chrome/utils/boot.jsm"))
+                if os.access(os.path.normpath(FFprofile + "/chrome/utils/chrome.manifest"), os.F_OK):
+                    os.remove(os.path.normpath(FFprofile + "/chrome/utils/chrome.manifest"))
+                if os.access(os.path.normpath(FFprofile + "/chrome/utils/RDFDataSource.jsm"), os.F_OK):
+                    os.remove(os.path.normpath(FFprofile + "/chrome/utils/RDFDataSource.jsm"))
+                if os.access(os.path.normpath(FFprofile + "/chrome/utils/RDFManifestConverter.jsm"), os.F_OK):
+                    os.remove(os.path.normpath(FFprofile + "/chrome/utils/RDFManifestConverter.jsm"))
+                if os.access(os.path.normpath(FFprofile + "/chrome/utils/userChrome.jsm"), os.F_OK):
+                    os.remove(os.path.normpath(FFprofile + "/chrome/utils/userChrome.jsm"))
+                if os.access(os.path.normpath(FFprofile + "/chrome/utils/xPref.jsm"), os.F_OK):
+                    os.remove(os.path.normpath(FFprofile + "/chrome/utils/xPref.jsm"))
 
                 utilChromeFiles = []
                 for r, d, f in os.walk(os.path.normpath(FFprofile + "/chrome/utils")):
@@ -1010,7 +1014,7 @@ def UIStart():
     QNWindow = tkinter.Tk()
     QNWindow.resizable(False, False)
     if SystemOS() == "Windows":
-        QNWindow.iconbitmap('icon.png')
+        QNWindow.iconbitmap('icon.ico')
     app = patcherUI()
     QNWindow.title("Quantum Nox - Firefox Patcher")
     QNWindow.mainloop()
