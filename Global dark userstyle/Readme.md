@@ -3,7 +3,15 @@
 
 <img src="https://i.imgur.com/mbeHNQp.png">
 
-<p><b>For pages that you DO visit frequently, you should use a site-specific style instead</b>, not only for better compatibility, but also for better visuals. You can do this by looking for an already made userstyle of any page you want themed in the <a href="https://userstyles.org/">official userstyles page</a>.</p>
+<p><b>For pages that you DO visit frequently, you should use a site-specific style instead</b>, not only for better compatibility, but also for better visuals. You can do this by looking for an already made userstyle of any page you want themed in the <a href="https://userstyles.org/">official userstyles page</a>. With this in mind, this theme won't apply by default to sites like Google, Reddit, Twitter, Youtube, or Userstyles.org (since there are better alternatives out there that would do a better job at theming these sites that people visit more frequently), although you can change the regexp with the <a href="https://github.com/Izheil/Quantum-Nox-Firefox-Dark-Full-Theme/tree/master/Global%20dark%20userstyle#how-to-add-per-site-exclusions">method explained below</a> to include them as sites to theme.</p>
+
+<p>Examples of alternatives for these sites are the following:</p>
+<ul>
+	<li><a href="https://userstyles.org/styles/167419">Google</a></li>
+	<li><a href="https://userstyles.org/styles/123887">Youtube</a></li>
+	<li><a href="https://userstyles.org/styles/141833">Userstyles</a></li>
+</ul>
+<p>For Reddit and Twitter there are already built-in dark themes, so there is no need for an external alternative.</p>
 
 <p>The advantage of this global dark style over others is that it can be customized from stylus popup to your liking, like changing images contrast, changing the color of links, the background, selected text background color, darkening method...</p>
 
