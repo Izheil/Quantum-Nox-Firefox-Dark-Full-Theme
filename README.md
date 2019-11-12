@@ -12,7 +12,8 @@ in <code>about:config</code> for userChrome and userContent to be loaded at all 
 <h3>Last update: <b>12/11/2019</b></h3>
 <p>Files updated:</p>
 <ul>
-	<li><b>userChrome.CSS</b>: Fixed some issue with the navigator box and context menus on Firefox Nightly.</li>
+	<li><b>userChrome.css</b>: Fixed some issue with the navigator box and context menus on Firefox Nightly, as well as the icons of the library dialog.</li>
+	<li><b>userContent.css</b>: Fixed the library dialog button colors.</li>
 </ul>
 <h3>Pre-Last update: <b>11/11/2019</b></h3>
 <ul>

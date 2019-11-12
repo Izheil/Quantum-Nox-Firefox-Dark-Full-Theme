@@ -512,6 +512,9 @@ if necessary depending on if you are using a custom OS theme (which may mess up 
 /* These change top bar background color */
 #placesToolbar {background-color: #333 !important}
 
+#placesToolbar #organizeButton image, #placesToolbar #viewMenu image,
+#placesToolbar #maintenanceButton image {filter: invert(70%) !important}
+
 /* These change the lists background color */
 #placesView, #placesView .scrollbox-innerbox,
 #infoPane, #placesList, #placeContent, 

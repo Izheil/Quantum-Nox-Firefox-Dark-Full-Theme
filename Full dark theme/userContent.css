@@ -1,6 +1,6 @@
 /* You can find an updated version here: https://github.com/Izheil/Quantum-Nox-Firefox-Dark-Full-Theme */
 /* Made by Izheil */
-/* Last updated: 01/11/2019 */
+/* Last updated: 12/11/2019 */
 
 /* This part imports the Addons file if there is one, so that you don't have to edit the dynamic URL
 from the addons rules every time we update anything here */
@@ -859,6 +859,9 @@ treechildren::-moz-tree-row(selected){
 
 /* These change top bar background color */
 #placesToolbar {background-color: #333 !important}
+
+#placesToolbar #organizeButton image, #placesToolbar #viewMenu image,
+#placesToolbar #maintenanceButton image {filter: invert(70%) !important}
 
 /* These change the lists background color */
 #placesView, #placesView .scrollbox-innerbox,
