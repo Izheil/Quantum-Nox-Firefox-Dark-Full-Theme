@@ -1,13 +1,9 @@
 /* You can find an updated version here: https://github.com/Izheil/Quantum-Nox-Firefox-Dark-Full-Theme */
 /* Made by Izheil */
-/* Last updated: 01/11/2019 */
+/* Last updated: 12/11/2019 */
 
 /* DO NOT DELETE THIS LINE */
 @namespace url("http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul");
-
-/* This enables the use of JS external files */
-hbox#fullscr-toggler {
-    -moz-binding: url("userChrome.xml#js")}
 
 /* COLORING PART STARTS HERE */
 
@@ -15,7 +11,7 @@ hbox#fullscr-toggler {
 
 /* This root class will modify the colors of toolbar background color (by default is transparent white 
 without this change) */
-:root:-moz-lwtheme {
+*|*:root:-moz-lwtheme {
   --toolbar-bgcolor: rgba(0,0,0,.6) !important;
   
   /* You can change the lightweight theme header and footer images with this. 
@@ -29,6 +25,7 @@ without this change) */
   --lwt-toolbar-field-background-color: rgb(71,71,73) !important;
   --lwt-toolbar-field-focus: rgb(71,71,73) !important;
   --lwt-toolbar-field-color: #ccc !important;
+  --lwt-text-color: #ccc !important;
   --urlbar-separator-color: #777 !important}
 
 /* Fix for some lightweight themes not working properly when set manually here (appearing with a lot of padding to the left) *//*
@@ -50,7 +47,7 @@ but is disabled by default in this theme (Disable for the default tab line color
 
 /* These rules will modify most highlight (background on hover) colors inside Firefox (except sidebar items, which are 
 in the rule below) */
-:root {
+*|*:root {
   --bookmark-toolbar-text: var(--lwt-text-color); /* var(--lwt-text-color) for default color of the used theme */
   --nav-bar-icons-color: var(--chrome-color); /* var(--chrome-color) for default color of the used theme */
   --Min-max-buttons-hover-bg: rgba(255,255,255,0.2);
@@ -342,7 +339,7 @@ dialog textbox[focused="true"], toolbar[printpreview="true"] textbox[focused="tr
 
 /* The windows default theme colors will mainly affect the customizing page (when
 you aren't using the default dark theme of mozilla, that is) */
-:root {
+*|*:root {
   --toolbar-bgcolor: #303030 !important;
   --toolbar-non-lwt-bgcolor: #303030 !important;
   --toolbar-non-lwt-textcolor: #fff !important}
@@ -389,7 +386,7 @@ you aren't using the default dark theme of mozilla, that is) */
 /* CONTEXT MENUS */
 
 /* Main menu colors */
-:root {
+*|*:root {
   --panel-separator-color: rgba(0,0,0, .5) !important;
   --arrowpanel-background: #444 !important;
   --arrowpanel-color: #ccc !important;
