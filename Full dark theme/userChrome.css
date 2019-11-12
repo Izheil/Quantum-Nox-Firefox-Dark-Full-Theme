@@ -407,7 +407,7 @@ you aren't using the default dark theme of mozilla, that is) */
 #appMenu-zoomReset-button:active {background-color: #222 !important}
 
 /* This one changes the letters color of all context menus */
-menu, menuitem {
+menu, menuitem, window menuitem {
   color: #ccc !important;
   -moz-appearance: none !important}
 
@@ -415,8 +415,14 @@ menu, menuitem {
 selection effect). The open in tabs bookmark item is added here since it also needs the 
 padding that we remove in the next rule */ 
 menuitem, .bookmark-item .openintabs-menuitem,
-#history-menu menupopup > menu, #view-menu menupopup > menu {
-  padding-top: 3px !important;
+menupopup > menu {
+  padding-top: 1px !important;
+  padding-bottom: 1px !important}
+
+#main-menubar menuitem, #main-menubar menu, menupopup > menuitem, 
+#placesToolbar #organizeButton > *, #placesToolbar #viewMenu > *,
+#placesToolbar #maintenanceButton > * {
+  padding-top: 2px !important;
   padding-bottom: 2px !important}
 
 /* This removes the unnecesary padding from the bookmark items */
