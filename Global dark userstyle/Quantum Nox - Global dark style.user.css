@@ -336,6 +336,9 @@ if invMethod == "customSet" {
 
     .jw-icon-settings {background: transparent !important}
     
+    pre.result, .navbar.bg-light {background-color: #000 !important}
+    h2.sync-black {color: #fff !important}
+    
     .fluid_fluid_control_duration, .fluid_button_content, #main_video_tooltip {color: #fff !important}
         
     .XSlider .ProgressBar-inner.SeekBar-played, .XSlider .ProgressBar-inner.VolumeBar-progress {background-color: #08f !important}
