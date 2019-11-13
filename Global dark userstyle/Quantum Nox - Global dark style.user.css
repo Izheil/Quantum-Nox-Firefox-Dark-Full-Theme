@@ -2,7 +2,7 @@
 @name         Quantum nox - Global dark theme
 @description  Global dark style to use alongside Firefox full dark theme - Quantum nox.
 @namespace    https://github.com/Izheil/Quantum-Nox-Firefox-Dark-Full-Theme
-@version      2.5.4
+@version      2.5.5
 @author       Izheil
 @homepageURL  https://github.com/Izheil/Quantum-Nox-Firefox-Dark-Full-Theme/tree/master/Global%20dark%20userstyle
 @updateURL    https://raw.githubusercontent.com/Izheil/Quantum-Nox-Firefox-Dark-Full-Theme/master/Global%20dark%20userstyle/Quantum%20Nox%20-%20Global%20dark%20style.user.css
@@ -90,7 +90,7 @@ if invMethod == "customSet" {
         box-shadow: 0 0 5px #000 !important} 
     
     #content-wrapper, .content-wrapper, .content-wrapper::after, .article, .flex_box > div, .Box-header, .select-menu-header, .modal,
-    #styleguide-v2 #wrapper {background-color: #202020 !important}
+    #styleguide-v2 #wrapper, .smarthelp-react-app {background-color: #202020 !important}
         
     div[class*="dropdown"]:not([class*="toggle"]):not([class*="has-children"]):not([class*="wrapper"]):not([role="menuitem"]):not([class*="header"]), 
     div[class*="drop-down"]:not([class*="wrapper"]):not([role="menuitem"]):not([class*="header"]), .Dropdown-menu,
