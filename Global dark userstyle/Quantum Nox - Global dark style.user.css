@@ -97,7 +97,7 @@ if invMethod == "customSet" {
     li[class*="dropdown"]:not([class*="toggle"]):not([class*="has-children"]):not([class*="wrapper"]):not([role="menuitem"]):not([class*="header"]):not(.user-menu), 
     li[class*="drop-down"]:not([class*="wrapper"]):not([role="menuitem"]):not([class*="header"]):not(.user-menu), [class*="popup"]:not(.vjs-menu-button-popup), [class*="popover"]:not([class*="link"]), 
     [class*="widget-content"], [class*="notice"], div[role="navigation"], div.nav ul#menu li ul, div[class*="dialog"] > .content, 
-    div[class*="Dialog"] > .content, .css-hmkap5, .css-gkxqox {background: rgba(0,0,0,0.5) !important}
+    div[class*="Dialog"] > .content, .css-hmkap5, .css-gkxqox, .bg-default {background: rgba(0,0,0,0.5) !important}
         
     pre, pre.prettyprint, code, .w3-code, blockquote, .ace_gutter-layer, 
     .comment-text span.quote, .comment-text span.quote_wrapped  {
@@ -389,7 +389,7 @@ if invMethod == "customSet" {
 	    
 	.p-sectionLinks, .navbar-brand, .site-navigation2__child-list, .site-navigation2__panel,
     #item_detail_wrapper #correct_answer {background-color: rgba(0,0,0,0.8) !important}
-	.item.tooltipstered > div, .postbitlegacy .postdetails {background-color: rgba(0,0,0,0.5) !important}
+	.item.tooltipstered > div, .postbitlegacy .postdetails, .upgrade-panel.pn-flex.mb {background-color: rgba(0,0,0,0.5) !important}
 	    
 	.contentRow-fader {background: linear-gradient(transparent, bgColor) !important}
 	    
