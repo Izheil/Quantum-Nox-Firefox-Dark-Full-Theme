@@ -46,7 +46,7 @@
 }
 
 ==/UserStyle== */
-@-moz-document regexp("https?://(?!(www.nespresso.com|www.wechoosethemoon.org|www.nasa.gov|(translate|images|photos|books|scholar|accounts|mail|drive|calendar|docs|news|keep|play|notifications|www).google.(com|es|de)((?!recaptcha).)*$|duckduckgo.com|www.youtube.com|www.reddit.com|twitter.com|gfycat.com|codepen.io|(((?!w+)([^\.]+)\.)?([^\.]+)\.)?imgur.com|www.virustotal.com)).*") {
+@-moz-document regexp("https?://(?!(www.nespresso.com|www.wechoosethemoon.org|www.nasa.gov|(translate|images|photos|books|scholar|accounts|mail|drive|calendar|docs|news|keep|play|notifications|www).google.(com|es|de)((?!recaptcha).)*$|duckduckgo.com|www.youtube.com|www.reddit.com|twitter.com|gfycat.com|codepen.io|(((?!w+)([^\.]+)\.)?([^\.]+)\.)?imgur.com|www.virustotal.com|((?!w+))?([^\.]+)\.userstyles.org)).*") {
 /* Add any other site you don't want to apply inside the regexp encased between |'s ^ */
 
 if invMethod == "customSet" {
