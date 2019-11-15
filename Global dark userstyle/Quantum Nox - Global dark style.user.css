@@ -369,7 +369,7 @@ if invMethod == "customSet" {
 	.communitymailinglist a:hover, #oh-menu-submit span:hover, #oh-menu-join a:hover, .bz_comment_text span.quote, 
 	.bz_comment_text span.quote_wrapped, div.bz_comment_text pre {background: #444 !important; color: #fff !important}
 
-	.rating-block__button {background-color: #151515 !important}
+	.rating-block__button, .TTreview {background-color: #151515 !important}
 	pre.result, .navbar.bg-light {background-color: #000 !important}
 	.bg-secondary, *[class*="vc_custom_"] {background: #222828 !important}
 	.nav-main-item a:hover, a[data-service="GitHub"]:hover {background: rgba(255,255,255,0.1) !important} 
