@@ -1,6 +1,6 @@
 /* You can find an updated version here: https://github.com/Izheil/Quantum-Nox-Firefox-Dark-Full-Theme */
 /* Made by Izheil */
-/* Last updated: 12/11/2019 */
+/* Last updated: 15/11/2019 */
 
 /* This part imports the Addons file if there is one, so that you don't have to edit the dynamic URL
 from the addons rules every time we update anything here */
@@ -253,6 +253,10 @@ only the images */
 
 /* Undo message boxes */
 message-bar:not(.alert) .container, message-bar:not(.alert) {background: #444 !important}
+
+/* About:preferences option select dialogs. Children on hover and select */
+#permissionsBox > richlistitem:hover {background-color: rgba(255,255,255,0.1) !important}
+#permissionsBox > richlistitem[selected="true"] {background-color: rgba(255,255,255,0.2) !important}
 
 /*------ LOG BROWSING PAGE (about:sync-log) ------*/
 @-moz-document url-prefix(about:sync-log) {
