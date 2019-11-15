@@ -432,15 +432,9 @@ class patcherUI(Frame):
             FFChrome = os.path.normpath(rpCkFF22.get() + "/chrome")
             FFNChrome = os.path.normpath(rpCkFFN22.get() + "/chrome")
 
-            Fire71MR = os.path.normpath(os.getcwd() + "/functions/MultiRowTab-scrollableFF71.uc.js")
             FireMR = os.path.normpath(os.getcwd() + "/functions/MultiRowTab-scrollable.uc.js")
-
-            Fire71MRL = os.path.normpath(os.getcwd() + "/functions/MultiRowTabLiteforFF71.uc.js")
             FireMRL = os.path.normpath(os.getcwd() + "/functions/MultiRowTabLiteforFx.uc.js")
-
-            Fire71MRA = os.path.normpath(os.getcwd() + "/functions/MultiRowTab-scrollable-autohideFF71.uc.js")
             FireMRA = os.path.normpath(os.getcwd() + "/functions/MultiRowTab-scrollable-autohide.uc.js")
-
             FireTB = os.path.normpath(os.getcwd() + "/functions/Tabs-below.as.css")
             FireFT = os.path.normpath(os.getcwd() + "/functions/Focus-tab-on-hover.uc.js")
 
@@ -461,52 +455,38 @@ class patcherUI(Frame):
             def MRpatch():
                 try:
                     if RdMR.get() == 0:
-                        if FF71 == True:
-                            if CkMR1C.get() == 0:
-                                distutils.file_util.copy_file(Fire71MR, FFChrome)
 
-                                if os.access(FFCMRA71, os.F_OK) == True:
-                                    os.remove(FFCMRA71)
-
-                                writeMR(FFCMR71)
-
-                            if CkMR1C.get() == 1:
-                                distutils.file_util.copy_file(Fire71MRA, FFChrome)
-
-                                if os.access(FFCMR71, os.F_OK) == True:
-                                    os.remove(FFCMR71)
-
-                                writeMR(FFCMRA71)
+                        if CkMR1C.get() == 0:
+                            distutils.file_util.copy_file(FireMR, FFChrome)
 
                             if os.access(FFCMRA, os.F_OK) == True:
-                                    os.remove(FFCMRA)
-
-                            if os.access(FFCMR, os.F_OK) == True:
-                                    os.remove(FFCMR)
-
-                        else:
-
-                            if CkMR1C.get() == 0:
-                                distutils.file_util.copy_file(FireMR, FFChrome)
-
-                                if os.access(FFCMRA, os.F_OK) == True:
-                                    os.remove(FFCMRA)
-
+                                os.remove(FFCMRA)
+                            try:
                                 writeMR(FFCMR)
-
-                            if CkMR1C.get() == 1:
-                                distutils.file_util.copy_file(FireMRA, FFChrome)
-
+                            except IOError:
+                                messagebox.showwarning("Write access error", 
+                                    "There was a problem while trying to write Multi-row scrollable.")
                                 if os.access(FFCMR, os.F_OK) == True:
                                     os.remove(FFCMR)
 
+                        if CkMR1C.get() == 1:
+                            distutils.file_util.copy_file(FireMRA, FFChrome)
+
+                            if os.access(FFCMR, os.F_OK) == True:
+                                os.remove(FFCMR)
+                            try:
                                 writeMR(FFCMRA)
+                            except IOError:
+                                messagebox.showwarning("Write access error", 
+                                    "There was a problem while trying to write Multi-row autohide.")
+                                if os.access(FFCMRA, os.F_OK) == True:
+                                    os.remove(FFCMRA)
 
-                            if os.access(FFCMR71, os.F_OK) == True:
-                                    os.remove(FFCMR71)
+                        if os.access(FFCMR71, os.F_OK) == True:
+                                os.remove(FFCMR71)
 
-                            if os.access(FFCMRA71, os.F_OK) == True:
-                                    os.remove(FFCMRA71)
+                        if os.access(FFCMRA71, os.F_OK) == True:
+                                os.remove(FFCMRA71)
 
                         if os.access(FFCMRL, os.F_OK) == True:
                             os.remove(FFCMRL)
@@ -515,21 +495,18 @@ class patcherUI(Frame):
                             os.remove(FFCMRL71)
 
                     else:
-                        if FF71 == True:
-                            distutils.file_util.copy_file(Fire71MRL, FFChrome)
+                        distutils.file_util.copy_file(FireMRL, FFChrome)
 
+                        if os.access(FFCMRL71, os.F_OK) == True:
+                            os.remove(FFCMRL71)
+
+                        try:
+                            writeMR(FFCMRL)
+                        except IOError:
+                            messagebox.showwarning("Write access error", 
+                                "There was a problem while trying to write Multi-row unlimited.")
                             if os.access(FFCMRL, os.F_OK) == True:
                                 os.remove(FFCMRL)
-
-                            writeMR(FFCMR71)
-
-                        else:
-                            distutils.file_util.copy_file(FireMRL, FFChrome)
-
-                            if os.access(FFCMRL71, os.F_OK) == True:
-                                os.remove(FFCMRL71)
-
-                            writeMR(FFCMR)
 
                         if os.access(FFCMR, os.F_OK) == True:
                             os.remove(FFCMR)
@@ -561,8 +538,6 @@ class patcherUI(Frame):
                     fullPatcher("None", rpCkFF22.get())
 
                     if CkMR.get() == 1:
-                        FF71 = messagebox.askyesno("Firefox 71 prompt", 
-                            "Is your current Firefox (stable) version 71 or above?")
 
                         MRpatch()
 
@@ -606,7 +581,7 @@ class patcherUI(Frame):
                         try:
                             if RdMR.get() == 0:
                                 if CkMR1C.get() == 0:
-                                    distutils.file_util.copy_file(Fire71MR, FFNChrome)
+                                    distutils.file_util.copy_file(FireMR, FFNChrome)
 
                                     if os.access(FFNCMRA, os.F_OK) == True:
                                         os.remove(FFNCMRA)
@@ -614,7 +589,7 @@ class patcherUI(Frame):
                                     writeMR(FFNCMR)
 
                                 if CkMR1C.get() == 1:
-                                    distutils.file_util.copy_file(Fire71MRA, FFNChrome)
+                                    distutils.file_util.copy_file(FireMRA, FFNChrome)
 
                                     if os.access(FFNCMR, os.F_OK) == True:
                                         os.remove(FFNCMR)
@@ -625,7 +600,7 @@ class patcherUI(Frame):
                                     os.remove(FFNCMRL)
 
                             else:
-                                distutils.file_util.copy_file(Fire71MRL, FFNChrome)
+                                distutils.file_util.copy_file(FireMRL, FFNChrome)
 
                                 writeMR(FFNCMRL)
 
@@ -688,9 +663,6 @@ class patcherUI(Frame):
                         fullPatcher("None", x)
 
                         if CkMR.get() == 1:
-                            FF71 = messagebox.askyesno("Firefox 71 prompt", 
-                            "Does the following profile belong to a Firefox version of 71 or above?\n{0}".format(selectedProfile))
-
                             MRpatch()
 
                         if CkTB.get() == 1:

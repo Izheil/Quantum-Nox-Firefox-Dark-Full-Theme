@@ -1,10 +1,12 @@
 // ==UserScript==
-// @name           MultiRowTabLiteforFx.uc.js
+// @name           MultiRowTab-scrollableFF71.uc.js
 // @namespace      http://space.geocities.yahoo.co.jp/gl/alice0775
 // @description    Multi-row tabs draggability fix, Experimental CSS version
 // @include        main
-// @compatibility  Firefox 69
+// @compatibility  Firefox 72
 // @author         Alice0775, Endor8, TroudhuK, Izheil
+// @version        15/11/2019 15:45 Unified FF67+ and FF72 versions
+// @version        11/10/2019 18:32 Compatibility fix for FF71
 // @version        06/09/2019 23:37 Fixed issue with tabs when moving to another window
 // @version        05/09/2019 03:24 Fixed tab draggability to work with FF69
 // @version        22/07/2019 19:21 Compatibility fix with Windows 7
@@ -25,9 +27,10 @@
 // ==/UserScript==
     zzzz_MultiRowTabLite();
 function zzzz_MultiRowTabLite() {
-    var css =`
+	var css =`
     /* MULTIROW TABS CSS */
-    /* 
+    /* You can set the max number of rows before the scrollbar appears here.
+
      - For tab minimum width, you have to go to about:config and modify [browser.tabs.tabMinWidth] 
        to the value you want.
 
@@ -36,80 +39,115 @@ function zzzz_MultiRowTabLite() {
         Value of 0 -> Tab doesn't grow. Uses tab min width as fixed width. */
 
     :root {
+        --max-tab-rows: TABROWS;
         --tab-growth: 1}
 
     .tabbrowser-tab:not([pinned]) {
         flex-grow: var(--tab-growth)}
-    
+        
     .tabbrowser-tab::after {border: none !important}
-    
+
     :root:-moz-lwtheme[lwtheme-image] {background-repeat: repeat-y !important}
 
-    #tabbrowser-tabs .tab-background{
+    #tabbrowser-tabs .tab-background {
         max-height: var(--tab-min-height) !important;
         min-height: var(--tab-min-height) !important}
 
     @media (-moz-os-version: windows-win10) {
         #tabbrowser-tabs .tab-background, #tabbrowser-tabs .tabbrowser-tab {
             min-height: calc(var(--tab-min-height) + 1px) !important}
-        }
-
-    /* This fix is intended for some updates when the tab line gets chopped on top of screen 
+    }
+    
+    /* This fix is intended for some updates when the tab line gets chopped on top of screen */
     #main-window[sizemode="normal"] .tabbrowser-tab .tab-line,
     #main-window[sizemode="maximized"] .tabbrowser-tab .tab-line, 
-    #main-window[sizemode="fullscreen"] .tabbrowser-tab .tab-line {transform: translate(0,1px) !important}
-    */
+    #main-window[sizemode="fullscreen"] .tabbrowser-tab .tab-line,
+	:root[uidensity="touch"] .tabbrowser-tab .tab-line,
+	:root[uidensity="compact"] .tabbrowser-tab .tab-line {transform: translate(0,1px) !important}
 
-    #tabbrowser-tabs {margin-top: 0px !important}
-
-    .tab-stack {width: 100%}
-
-    #tabbrowser-tabs .arrowscrollbox-scrollbox {
-        display: flex;
-        flex-wrap: wrap;}
+	.tab-stack {width: 100%}
 
     #tabbrowser-tabs .tabbrowser-arrowscrollbox {
         overflow: visible;
         display: block}
 
-    :root[uidensity="touch"] .tabbrowser-tab,
+	:root[uidensity="touch"] .tabbrowser-tab,
     :root[uidensity="touch"] .tab-stack {   
         min-height: calc(var(--tab-min-height) + 3px) !important;
         max-height: calc(var(--tab-min-height) + 3px) !important;
         margin-bottom: 0 !important}
 
     :root[uidensity="touch"] #tabbrowser-tabs .arrowscrollbox-scrollbox {
-        min-height: var(--tab-min-height) !important;}
-
-    .arrowscrollbox-overflow-start-indicator,
-    .arrowscrollbox-overflow-end-indicator {position: fixed !important}
+    	min-height: var(--tab-min-height) !important;
+    	max-height: calc((var(--tab-min-height)*var(--max-tab-rows)))}
 
     @media (-moz-os-version: windows-win10) {
-    .titlebar-buttonbox, #titlebar-buttonbox {display: block !important; height:var(--tab-min-height) !important}}
+        .titlebar-buttonbox, #titlebar-buttonbox {display: block !important; height:var(--tab-min-height) !important}}
 
-    #tabbrowser-tabs .scrollbutton-up, #tabbrowser-tabs .scrollbutton-down, #alltabs-button, 
-    :root:not([customizing]) #TabsToolbar #new-tab-button, .tabbrowser-tab::after
+    #alltabs-button, :root:not([customizing]) #TabsToolbar #new-tab-button, .tabbrowser-tab::after
     {display: none}
-    `;
-    var sss = Cc['@mozilla.org/content/style-sheet-service;1'].getService(Ci.nsIStyleSheetService);
-    var uri = makeURI('data:text/css;charset=UTF=8,' + encodeURIComponent(css));
-    sss.loadAndRegisterSheet(uri, sss.AGENT_SHEET);
+
+	`;
+
+    // Here the FF71+ changes
+	if (document.querySelector("#tabbrowser-tabs .tabbrowser-arrowscrollbox").shadowRoot) {
+	    css +=`
+
+		scrollbar {-moz-window-dragging: no-drag !important}
+	    `;
+
+	    // This is a fix for the shadow elements:
+	    var style = document.createElement( 'style' )
+	    style.innerHTML = `
+        scrollbox {
+            display: flex;
+            flex-wrap: wrap}
+
+	    .arrowscrollbox-overflow-start-indicator,
+	    .arrowscrollbox-overflow-end-indicator {position: fixed !important}
+
+	    .scrollbutton-up, .scrollbutton-down, spacer {display: none !important}
+	    `
+	    document.querySelector("#tabbrowser-tabs .tabbrowser-arrowscrollbox").shadowRoot.appendChild( style )  
+	} else {
+        // Here the FF66-FF70 changes
+		css +=`
+
+        #tabbrowser-tabs .scrollbutton-up, #tabbrowser-tabs .scrollbutton-down {
+            display: none !important}
+
+		#tabbrowser-tabs .arrowscrollbox-scrollbox {
+            display: flex;
+            flex-wrap: wrap;}
+
+	    .arrowscrollbox-overflow-start-indicator,
+    	.arrowscrollbox-overflow-end-indicator {position: fixed !important}
+
+	    #main-window[tabsintitlebar] #tabbrowser-tabs scrollbar {
+	        -moz-window-dragging: no-drag}
+	    `;
+	}
+
+	var sss = Cc['@mozilla.org/content/style-sheet-service;1'].getService(Ci.nsIStyleSheetService);
+	var uri = makeURI('data:text/css;charset=UTF=8,' + encodeURIComponent(css));
+	sss.loadAndRegisterSheet(uri, sss.AGENT_SHEET);
+
     gBrowser.tabContainer._getDropIndex = function(event, isLink) {
         var tabs = document.getElementsByClassName("tabbrowser-tab")
         var tab = this._getDragTargetTab(event, isLink);
         if (window.getComputedStyle(this).direction == "ltr") {
-            for (let i = tab ? tab._tPos : 0; i < tabs.length; i++) {
+        	for (let i = tab ? tab._tPos : 0; i < tabs.length; i++) {
                 let rect = tabs[i].getBoundingClientRect();
-                if (event.clientX < rect.x + rect.width / 2
+        		if (event.clientX < rect.x + rect.width / 2
                  && event.clientY < rect.y + rect.height) // multirow fix
-                    return i;
+        			return i;
             }
         } else {
-            for (let i = tab ? tab._tPos : 0; i < tabs.length; i++) {
+        	for (let i = tab ? tab._tPos : 0; i < tabs.length; i++) {
                 let rect = tabs[i].getBoundingClientRect();
-                if (event.clientX > rect.x + rect.width / 2
+        		if (event.clientX > rect.x + rect.width / 2
                  && event.clientY < rect.y + rect.height) // multirow fix
-                    return i;
+        			return i;
             }
         }
         return tabs.length;
@@ -117,8 +155,8 @@ function zzzz_MultiRowTabLite() {
 
 // This scrolls down to the current tab when you open a new one, or restore a session.
 function scrollToView() {
-    var selTab = document.querySelectorAll(".tabbrowser-tab[selected='true']")[0];
-    selTab.scrollIntoView({behavior: "smooth", block: "nearest", inline: "nearest"});
+	var selTab = document.querySelectorAll(".tabbrowser-tab[selected='true']")[0];
+	selTab.scrollIntoView({behavior: "smooth", block: "nearest", inline: "nearest"});
 }
 
 gBrowser.tabContainer.addEventListener('TabOpen', scrollToView, false);

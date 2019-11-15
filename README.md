@@ -12,7 +12,9 @@ in <code>about:config</code> for userChrome and userContent to be loaded at all 
 <h3>Last update: <b>15/11/2019</b></h3>
 <p>Files updated:</p>
 <ul>
+	<li><b>MultirowTab*.uc.js</b>: Unified FF67+ versions with FF71+ versions. Now you can use the same multi-row file for both Firefox Stable and Nightly.</li>
 	<li><b>userContent.css</b>: Fixed <code>about:preferences</code> option select dialogs elements on hover.</li>
+
 </ul>
 <h3>Pre-Last update: <b>12/11/2019</b></h3>
 <ul>
