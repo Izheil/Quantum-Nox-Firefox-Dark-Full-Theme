@@ -1,6 +1,6 @@
 /* You can find an updated version here: https://github.com/Izheil/Quantum-Nox-Firefox-Dark-Full-Theme */
 /* Made by Izheil */
-/* Last updated: 15/09/2019 */
+/* Last updated: 18/11/2019 */
 
 /*------ HOW TO MAKE THE ADDON THEMES WORK ------*/
 /* To use this part of the code, you will have to find the dynamic UUID of your extensions, and replace it where the 
@@ -321,7 +321,7 @@ input[type="checkbox"]:checked {
 #s3downbar_download_tooltip_size, #s3downbar_download_virus_scan_box, #s3downbar_download_tooltip_timeStart,
 #s3downbar_download_tooltip_timeEnd, #s3downbar_download_tooltip_speed {color: #aaa !important}
 
-#s3downbar_download_tooltip_data_box input, #s3downbar_download_tooltip_from {background-color: #333 !important; color: #05f !important}
+#s3downbar_download_tooltip_data_box input, #s3downbar_download_tooltip_from {background-color: #333 !important; color: #0af !important}
 }
 
 /*------ HTTPS EVERYWHERE ADDON ------*/
