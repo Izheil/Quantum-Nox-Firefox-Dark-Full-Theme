@@ -12,14 +12,13 @@ in <code>about:config</code> for userChrome and userContent to be loaded at all 
 <h3>Last update: <b>15/11/2019</b></h3>
 <p>Files updated:</p>
 <ul>
-	<li><b>MultirowTab*.uc.js</b>: Unified FF67+ versions with FF71+ versions. Now you can use the same multi-row file for both Firefox Stable and Nightly.</li>
-	<li><b>userContent.css</b>: Fixed <code>about:preferences</code> option select dialogs elements on hover.</li>
+	<li><b>userContent.css</b>: Fixed mozilla addons intro page new white containers.</li>
 
 </ul>
-<h3>Pre-Last update: <b>12/11/2019</b></h3>
+<h3>Pre-Last update: <b>15/11/2019</b></h3>
 <ul>
-	<li><b>userChrome.css</b>: Fixed some issue with the navigator box and context menus on Firefox Nightly, as well as the icons of the library dialog.</li>
-	<li><b>userContent.css</b>: Fixed the library dialog button colors.</li>
+	<li><b>MultirowTab*.uc.js</b>: Unified FF67+ versions with FF71+ versions. Now you can use the same multi-row file for both Firefox Stable and Nightly.</li>
+	<li><b>userContent.css</b>: Fixed <code>about:preferences</code> option select dialogs elements on hover.</li>
 </ul>
 
 <h3>A note on people looking to replace some Tab Mix Plus features:</h3>
