@@ -2,7 +2,7 @@
 @name         Quantum nox - Global dark theme
 @description  Global dark style to use alongside Firefox full dark theme - Quantum nox.
 @namespace    https://github.com/Izheil/Quantum-Nox-Firefox-Dark-Full-Theme
-@version      2.5.13
+@version      2.5.14
 @author       Izheil
 @homepageURL  https://github.com/Izheil/Quantum-Nox-Firefox-Dark-Full-Theme/tree/master/Global%20dark%20userstyle
 @updateURL    https://raw.githubusercontent.com/Izheil/Quantum-Nox-Firefox-Dark-Full-Theme/master/Global%20dark%20userstyle/Quantum%20Nox%20-%20Global%20dark%20style.user.css
@@ -98,7 +98,7 @@ if invMethod == "customSet" {
     li[class*="dropdown"]:not([class*="toggle"]):not([class*="has-children"]):not([class*="wrapper"]):not([role="menuitem"]):not([class*="header"]):not(.user-menu), 
     li[class*="drop-down"]:not([class*="wrapper"]):not([role="menuitem"]):not([class*="header"]):not(.user-menu), [class*="popup"]:not(.vjs-menu-button-popup), [class*="popover"]:not([class*="link"]), 
     [class*="widget-content"], [class*="notice"], div[role="navigation"], div.nav ul#menu li ul, div[class*="dialog"] > .content, 
-    div[class*="Dialog"] > .content, .css-hmkap5, .css-gkxqox, .bg-default {background: rgba(0,0,0,0.5) !important}
+    div[class*="Dialog"] > .content, .css-hmkap5, .css-gkxqox, .bg-default {background: rgba(0,0,0,0.8) !important}
         
     pre, pre.prettyprint, code, .w3-code, blockquote, .ace_gutter-layer, 
     .comment-text span.quote, .comment-text span.quote_wrapped, .blockquote, .quote  {
@@ -182,7 +182,7 @@ if invMethod == "customSet" {
     [class*="bg-gray"], div.Popover-message, ul.sub, div[role="menu"], .options, .vue-treeselect__menu, .ListResult, div[class*="menu"]:not([role="button"]):not(.vjs-control):not(.main-menu):not(.material-menu-backdrop), 
     .menu ul ul li a, .menuparent a, .dropdown li ul li a, #description_popup, ul[role="listbox"], ul[id*="contextmenu"],.qtip-pos-tl.qtip-fixed, 
     .qtip-content, .tooltipster-content, .backgroundMidSilver, .sub_nav, .sub_nav .overlay, .nanoModal, header.sticky .header_bottom,
-    .secondLevel[data-menu] {background-color: rgba(0,0,0,0.8) !important}
+    .secondLevel[data-menu], .tooltiptext {background-color: rgba(0,0,0,0.8) !important}
 
     div[class*="btn"]:not(.dl-btn-labelWrap):not(.dl-btn-cont):not(.btn-set):not(div[class*="btns"]):not(.column):not([class*="toolbar"]):hover, input[type="file"]:hover, 
     input[type="color"]:hover, div[class*="header"] li:not([class*="btn"]) a:not(img):not(svg):hover, #sidenav a:hover, 
