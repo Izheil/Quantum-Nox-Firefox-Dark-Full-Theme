@@ -371,6 +371,8 @@ if invMethod == "customSet" {
 	.content-for-input {border: 1px solid #666 !important}
 	.editor-label .slider {border: 2px solid #34374c !important}
 
+    span.flat-bar span.level {background-color: #05a !important}
+
 	.communitymailinglist a:hover, #oh-menu-submit span:hover, #oh-menu-join a:hover, .bz_comment_text span.quote, 
 	.bz_comment_text span.quote_wrapped, div.bz_comment_text pre,
 	.editor-label .slider::before {background: #444 !important; color: #fff !important}
