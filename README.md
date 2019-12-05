@@ -45,7 +45,7 @@ in <code>about:config</code> for userChrome and userContent to be loaded at all 
 <p>You can apply the global dark userstyle found inside the <a href="https://github.com/Izheil/Quantum-Nox-Firefox-Dark-Full-Theme/tree/master/Global%20dark%20userstyle">Global dark userstyle</a> folder to theme general sites with an all-around CSS stylesheet. <b>You need stylus addon to use it</b>.</p>
 
 <p>While it's not perfect (meaning that you should still use per-site styles for the sites you visit often), it can help to darken most sites when browsing around general sites that you don't visit often, and thus don't want/can't find a specific userstyle for them.</p>
-<img src="https://i.imgur.com/o94dio6.png">
+<img src="https://i.imgur.com/mbeHNQp.png">
 
 <a href="https://raw.githubusercontent.com/Izheil/Quantum-Nox-Firefox-Dark-Full-Theme/master/Global%20dark%20userstyle/Quantum%20Nox%20-%20Global%20dark%20style.user.css"><img src="https://img.shields.io/badge/Install%20directly%20with-Stylus-00adad.svg"></a>
 
