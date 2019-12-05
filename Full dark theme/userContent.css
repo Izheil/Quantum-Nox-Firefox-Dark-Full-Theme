@@ -1,6 +1,6 @@
 /* You can find an updated version here: https://github.com/Izheil/Quantum-Nox-Firefox-Dark-Full-Theme */
 /* Made by Izheil */
-/* Last updated: 20/11/2019 */
+/* Last updated: 05/12/2019 */
 
 /* This part imports the Addons file if there is one, so that you don't have to edit the dynamic URL
 from the addons rules every time we update anything here */
@@ -567,6 +567,16 @@ a.button {color: #fff !important}
 /*------ PAGES UNDER CONSTRUCTION ------*/
 @-moz-document url(about:library) {
 .under-construction {filter: invert(89.5%) hue-rotate(190deg)}
+}
+
+/*------  LOCKWISE PAGE ------*/
+@-moz-document url(about:logins) {
+:root {
+--in-content-page-background: #2A2A2E !important;
+--in-content-page-color: rgb(249, 249, 250) !important;
+--in-content-box-background: #202023 !important;
+--in-content-box-background-hover: rgba(249,249,250,0.15) !important;
+--in-content-box-background-active: rgba(249,249,250,0.2) !important}
 }
 
 /*------ COMMON ATTRIBUTES ON MOST ABOUT PAGES ------*/
@@ -1156,11 +1166,13 @@ dl {color: #ddd !important}}
 @-moz-document url(about:certificate) {
 .certificate-tabs {background-color: #333 !important}
 
-span.info {background-color: #444 !important}
 label {background-color: #333 !important}
 h1 {border-color: #666 !important}
 
-.info-group-title, .info-group-title-hr {background-color: #555 !important}
+.title[data-l10n-id="certificate-viewer-error-title"] {color: #000 !important}
+.error[data-l10n-id="certificate-viewer-error-message"] {color: #555 !important}
+
+error-section {filter: invert(98%) hue-rotate(200deg)}
 }
 
 /*------ INFORMATION PAGES WITH TABLES ------*/
@@ -1184,6 +1196,10 @@ tr[data-l10n-id="item"]:not([selected="true"]) td {color: #aaa !important}
 tr[data-l10n-id="item"][selected="true"] td {background: #555 !important}
 
 .page-subtitle {color: #ddd !important}
+
+input[type="checkbox"]:checked {
+	background-image: url("chrome://global/skin/icons/check.svg") !important;
+	fill: #2292d0 !important;}
 
 #profiles hr {display: none !important}
 }
