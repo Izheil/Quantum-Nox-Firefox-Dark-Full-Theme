@@ -3,8 +3,9 @@
 // @namespace      https://github.com/Izheil/Quantum-Nox-Firefox-Dark-Full-Theme
 // @description    Switches to the tab you hovered over.
 // @include        main
-// @compatibility  Firefox 70
+// @compatibility  Firefox 73
 // @author         Izheil
+// @version        06/12/2019 18:27 Fixed some issue with undefined elements
 // @version        23/10/2019 02:49 Fixed delay function
 // @version        19/10/2019 23:37 Initial release
 // ==/UserScript==
@@ -25,17 +26,18 @@ function getParentByClass(el, className) {
 
 function hoverHandler(e){
 	var EvEl = getParentByClass(e.target, "tabbrowser-tab");
-	if (delayBeforeSwitch > 0) {
-		var delay;
-		delay = setTimeout(function(){
+	if (EvEl != undefined) {
+		if (delayBeforeSwitch > 0) {
+			var delay;
+			delay = setTimeout(function(){
+				EvEl.closest("tabs")._selectNewTab(EvEl)
+			}, delayBeforeSwitch);
+			EvEl.onmouseout = function(){
+				clearTimeout(delay);
+			}
+		} else {
 			EvEl.closest("tabs")._selectNewTab(EvEl)
-		}, delayBeforeSwitch);
-		EvEl.onmouseout = function(){
-			console.log("Moving on");
-			clearTimeout(delay);
 		}
-	} else {
-		EvEl.closest("tabs")._selectNewTab(EvEl)
 	}
 }
 
