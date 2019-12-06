@@ -12,13 +12,11 @@ in <code>about:config</code> for userChrome and userContent to be loaded at all 
 <h3>Last update: <b>05/12/2019</b></h3>
 <p>Files updated:</p>
 <ul>
-	<li><b>userContent.css</b>: Fixed lockwise background color and url-classifier checkboxes.</li>
+	<li><b>Focus-tab-on-hover.uc.js</b>: Fixed some issue of hover over non-tab elements.</li>
 </ul>
 <h3>Pre-Last update: <b>15/11/2019</b></h3>
 <ul>
-	<li><b>userContent.css</b>: .</li>
-	<li><b>MultirowTab*.uc.js</b>: Unified FF67+ versions with FF71+ versions. Now you can use the same multi-row file for both Firefox Stable and Nightly.</li>
-	<li><b>userContent.css</b>: Fixed <code>about:preferences</code> option select dialogs elements on hover and mozilla addons intro page new white containers.</li>
+	<li><b>userContent.css</b>: Fixed lockwise background color and url-classifier checkboxes.</li>
 </ul>
 
 <h3>A note on people looking to replace some Tab Mix Plus features:</h3>
