@@ -29,6 +29,7 @@ without this change) */
   --lwt-toolbar-field-background-color: rgb(71,71,73) !important;
   --lwt-toolbar-field-focus: rgb(71,71,73) !important;
   --lwt-toolbar-field-color: #ccc !important;
+  --lwt-toolbar-field-focus-color: var(--lwt-toolbar-field-color) !important;
   --lwt-text-color: #ccc !important;
   --urlbar-separator-color: #777 !important}
 
