@@ -18,6 +18,10 @@ without this change) */
   To use this, enable the "lightweight themes fix" below. Delete the final /* to use -> *//*
   --lwt-header-image: url("file:///") !important;
 
+  /* This inverts the button color of dialog boxes. If using an OS that paints buttons white,
+  uncomment this line (by deleting the ending /* ->) *//*
+  --dialog-buttons-fix: invert(80%) hue-rotate(190deg);
+
   /* Url and search bars */
   --url-and-searchbar-color: #ccc;
   --urlbar-popup-url-color: #5ad !important;
@@ -318,8 +322,8 @@ dialog button:hover, toolbar[printpreview="true"] button:hover {
 
 /* After FF69, dialog buttons can't be colored with :hover, so we have to apply this fix depending on 
 the default colors of your OS. Enable if you have an OS that paints buttons white.
-To enable just delete the /* in there -> *//*
-.dialog-button-box button {filter: invert(80%) hue-rotate(190deg)}
+To enable just delete the /* in there -> */
+.dialog-button-box button {filter: var(--dialog-buttons-fix)}
 
 /* Textboxes colors */
 dialog textbox, toolbar[printpreview="true"] textbox {
