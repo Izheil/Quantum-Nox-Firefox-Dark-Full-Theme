@@ -1,6 +1,6 @@
 /* You can find an updated version here: https://github.com/Izheil/Quantum-Nox-Firefox-Dark-Full-Theme */
 /* Made by Izheil */
-/* Last updated: 12/11/2019 */
+/* Last updated: 08/12/2019 */
 
 /* DO NOT DELETE THIS LINE */
 @namespace url("http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul");
@@ -300,7 +300,7 @@ dialog menulist .menulist-dropmarker {display: none}
   background-color: rgb(23,25,50) !important}
 
 /* This is aimed for notification popups */
-window:not(#main-window):not(#CookiesDialog):not(#SignonViewerDialog):not(.theme-dark) > * {
+window:not(#main-window):not(#CookiesDialog):not(#SignonViewerDialog):not(.theme-dark):not(#aboutDialog) > * {
   background-color: #444 !important; 
   color: #fff !important}
 
@@ -322,7 +322,7 @@ To enable just delete the /* in there -> *//*
 .dialog-button-box button {filter: invert(80%) hue-rotate(190deg)}
 
 /* Textboxes colors */
-dialog textbox, toolbar[printpreview="true"] textbox, .dialog-button-box button {
+dialog textbox, toolbar[printpreview="true"] textbox {
   transition: all 0.25s ease-in-out !important;
   -moz-appearance: none !important; 
   border: 1px solid #666 !important;
@@ -407,7 +407,7 @@ you aren't using the default dark theme of mozilla, that is) */
 #appMenu-zoomReset-button:active {background-color: #222 !important}
 
 /* This one changes the letters color of all context menus */
-menu, menuitem {
+menu, menuitem, window menuitem {
   color: #ccc !important;
   -moz-appearance: none !important}
 
@@ -415,8 +415,14 @@ menu, menuitem {
 selection effect). The open in tabs bookmark item is added here since it also needs the 
 padding that we remove in the next rule */ 
 menuitem, .bookmark-item .openintabs-menuitem,
-#history-menu menupopup > menu, #view-menu menupopup > menu {
-  padding-top: 3px !important;
+menupopup > menu {
+  padding-top: 1px !important;
+  padding-bottom: 1px !important}
+
+#main-menubar menuitem, #main-menubar menu, menupopup > menuitem, 
+#placesToolbar #organizeButton > *, #placesToolbar #viewMenu > *,
+#placesToolbar #maintenanceButton > * {
+  padding-top: 2px !important;
   padding-bottom: 2px !important}
 
 /* This removes the unnecesary padding from the bookmark items */
@@ -511,6 +517,9 @@ if necessary depending on if you are using a custom OS theme (which may mess up 
 
 /* These change top bar background color */
 #placesToolbar {background-color: #333 !important}
+
+#placesToolbar #organizeButton image, #placesToolbar #viewMenu image,
+#placesToolbar #maintenanceButton image {filter: invert(70%) !important}
 
 /* These change the lists background color */
 #placesView, #placesView .scrollbox-innerbox,
@@ -959,7 +968,6 @@ treechildren::-moz-tree-separator {border-color: #000 !important}
   background-color: var(--Loading-background) !important}
 
 /* ADDON POPUPS */
-
 /* This resets the color of addon popups before applying any other color (for better text readibility).
 Enable this if you are having issues with some addon popup texts and you are not using addons.css file *//*
 #customizationui-widget-panel .panel-arrow {fill: #fff !important}

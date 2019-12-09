@@ -1,6 +1,6 @@
 /* You can find an updated version here: https://github.com/Izheil/Quantum-Nox-Firefox-Dark-Full-Theme */
 /* Made by Izheil */
-/* Last updated: 06/11/2019 */
+/* Last updated: 08/12/2019 */
 
 /* TAB BAR BELOW
 You can set the order of each bar here. 1 for top, and 3 bottom.
@@ -28,9 +28,11 @@ The values are 1px 0 1px 0 by default (corresponding to Top, Right, Down, Left s
 
 /* Don't change the #navigator-toolbox margin unless you want more margin on top */
 #main-window:not([sizemode="fullscreen"]) #navigator-toolbox {margin-top: 35px !important}
-/* ^ Don't change the margin to anything lower than 40px if you want to use the menu bar on top ^ */
+/* ^ Don't change the margin to anything lower than 35px if you want to see the menu bar on top of all bars ^ */
+/* ^ Change to 10px to use menu-over-tabs instead ^ */
 
-/* v This changes the menu bar on top of the screen intead of over the tab bar */
+/* v This changes the menu bar on top of the screen intead of over the tab bar. Delete or comment out 
+if you want to use menu-over-tabs version */
 #toolbar-menubar {
   position: fixed !important; 
   width: 100% !important;

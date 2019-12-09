@@ -387,6 +387,12 @@ class patcherUI(Frame):
                 fpCkFTD.config(state="normal")
                 fpCkFTDE.config(state="normal")
 
+        def updateTBCheck():
+            if CkTB.get() == 0:
+                fpCkTB1.config(state="disabled")
+            elif CkTB.get() == 1:
+                fpCkTB1.config(state="normal")
+
         # We check the patch status with these methods
         def checkPatchFF():
             PatchStatusFFr.config(text="Not Patched", fg="#cc0000")
@@ -436,24 +442,50 @@ class patcherUI(Frame):
             FireMRL = os.path.normpath(os.getcwd() + "/functions/MultiRowTabLiteforFx.uc.js")
             FireMRA = os.path.normpath(os.getcwd() + "/functions/MultiRowTab-scrollable-autohide.uc.js")
             FireTB = os.path.normpath(os.getcwd() + "/functions/Tabs-below.as.css")
+            FireTBoT = os.path.normpath(os.getcwd() + "/functions/Tabs-below-Menu-overTabs.as.css")
             FireFT = os.path.normpath(os.getcwd() + "/functions/Focus-tab-on-hover.uc.js")
 
-            FFCMR = os.path.normpath(rpCkFF22.get() + "/chrome/MultiRowTab-scrollable.uc.js")
-            FFCMR71 = os.path.normpath(rpCkFF22.get() + "/chrome/MultiRowTab-scrollableFF71.uc.js")
+            FFTB = os.path.normpath(rpCkFF22.get() + "/chrome/Tabs-below.as.css")
+            FFTBoT = os.path.normpath(rpCkFF22.get() + "/chrome/Tabs-below-Menu-overTabs.as.css")
+            FFTBaA = os.path.normpath(rpCkFF22.get() + "/chrome/Tabs-below-Menu-onTop.as.css")
 
-            FFCMRL = os.path.normpath(rpCkFF22.get() + "/chrome/MultiRowTabLiteforFx.uc.js")
-            FFCMRL71 = os.path.normpath(rpCkFF22.get() + "/chrome/MultiRowTabLiteforFF71.uc.js")
-
-            FFCMRA = os.path.normpath(rpCkFF22.get() + "/chrome/MultiRowTab-scrollable-autohide.uc.js")
-            FFCMRA71 = os.path.normpath(rpCkFF22.get() + "/chrome/MultiRowTab-scrollable-autohideFF71.uc.js")
-
-            FFNCMR = os.path.normpath(rpCkFFN22.get() + "/chrome/MultiRowTab-scrollableFF71.uc.js")
-            FFNCMRL = os.path.normpath(rpCkFFN22.get() + "/chrome/MultiRowTabLiteforFF71.uc.js")
-            FFNCMRA = os.path.normpath(rpCkFFN22.get() + "/chrome/MultiRowTab-scrollable-autohideFF71.uc.js")
+            FFNTB = os.path.normpath(rpCkFFN22.get() + "/chrome/Tabs-below.as.css")
+            FFNTBoT = os.path.normpath(rpCkFFN22.get() + "/chrome/Tabs-below-Menu-overTabs.as.css")
+            FFNTBaA = os.path.normpath(rpCkFFN22.get() + "/chrome/Tabs-below-Menu-onTop.as.css")
 
             # We define the common multi-row choice patching here
-            def MRpatch():
+            def MRpatch(FFversion):
                 try:
+                    if FFversion == "Stable":
+                        FFChrome = os.path.normpath(rpCkFF22.get() + "/chrome")
+                        FFCMR = os.path.normpath(rpCkFF22.get() + "/chrome/MultiRowTab-scrollable.uc.js")
+                        FFCMRL = os.path.normpath(rpCkFF22.get() + "/chrome/MultiRowTabLiteforFx.uc.js")
+                        FFCMRA = os.path.normpath(rpCkFF22.get() + "/chrome/MultiRowTab-scrollable-autohide.uc.js")
+
+                        FFCMR71 = os.path.normpath(rpCkFF22.get() + "/chrome/MultiRowTab-scrollableFF71.uc.js")
+                        FFCMRL71 = os.path.normpath(rpCkFF22.get() + "/chrome/MultiRowTabLiteforFF71.uc.js")
+                        FFCMRA71 = os.path.normpath(rpCkFF22.get() + "/chrome/MultiRowTab-scrollable-autohideFF71.uc.js")
+
+                    elif FFversion == "Nightly":
+                        FFChrome = os.path.normpath(rpCkFFN22.get() + "/chrome")
+                        FFCMR = os.path.normpath(rpCkFFN22.get() + "/chrome/MultiRowTab-scrollable.uc.js")
+                        FFCMRL = os.path.normpath(rpCkFFN22.get() + "/chrome/MultiRowTabLiteforFx.uc.js")
+                        FFCMRA = os.path.normpath(rpCkFFN22.get() + "/chrome/MultiRowTab-scrollable-autohide.uc.js")
+
+                        FFCMR71 = os.path.normpath(rpCkFFN22.get() + "/chrome/MultiRowTab-scrollableFF71.uc.js")
+                        FFCMRL71 = os.path.normpath(rpCkFFN22.get() + "/chrome/MultiRowTabLiteforFF71.uc.js")
+                        FFCMRA71 = os.path.normpath(rpCkFFN22.get() + "/chrome/MultiRowTab-scrollable-autohideFF71.uc.js")
+
+                    elif FFversion == "Profiles":
+                        FFChrome = os.path.normpath(x + "/chrome")
+                        FFCMR = os.path.normpath(x + "/chrome/MultiRowTab-scrollable.uc.js")
+                        FFCMRL = os.path.normpath(x + "/chrome/MultiRowTabLiteforFx.uc.js")
+                        FFCMRA = os.path.normpath(x + "/chrome/MultiRowTab-scrollable-autohide.uc.js")
+
+                        FFCMR71 = os.path.normpath(x + "/chrome/MultiRowTab-scrollableFF71.uc.js")
+                        FFCMRL71 = os.path.normpath(x + "/chrome/MultiRowTabLiteforFF71.uc.js")
+                        FFCMRA71 = os.path.normpath(x + "/chrome/MultiRowTab-scrollable-autohideFF71.uc.js")
+
                     if RdMR.get() == 0:
 
                         if CkMR1C.get() == 0:
@@ -463,6 +495,7 @@ class patcherUI(Frame):
                                 os.remove(FFCMRA)
                             try:
                                 writeMR(FFCMR)
+
                             except IOError:
                                 messagebox.showwarning("Write access error", 
                                     "There was a problem while trying to write Multi-row scrollable.")
@@ -476,6 +509,7 @@ class patcherUI(Frame):
                                 os.remove(FFCMR)
                             try:
                                 writeMR(FFCMRA)
+
                             except IOError:
                                 messagebox.showwarning("Write access error", 
                                     "There was a problem while trying to write Multi-row autohide.")
@@ -502,6 +536,7 @@ class patcherUI(Frame):
 
                         try:
                             writeMR(FFCMRL)
+
                         except IOError:
                             messagebox.showwarning("Write access error", 
                                 "There was a problem while trying to write Multi-row unlimited.")
@@ -539,12 +574,24 @@ class patcherUI(Frame):
 
                     if CkMR.get() == 1:
 
-                        MRpatch()
+                        MRpatch("Stable")
 
                     if CkTB.get() == 1:
-                        try:
-                            distutils.file_util.copy_file(FireTB, FFChrome, update=True)
+                        try: 
+                            if CkTB1.get() == 1:
+                                distutils.file_util.copy_file(FireTBoT, FFChrome, update=True)
 
+                                if os.access(FFTB, os.F_OK):
+                                    os.remove(FFTB)
+
+                            else:
+                                distutils.file_util.copy_file(FireTB, FFChrome, update=True)
+
+                                if os.access(FFTBoT, os.F_OK):
+                                    os.remove(FFTBoT)
+
+                            if os.access(FFTBaA, os.F_OK):
+                                os.remove(FFTBaA)
                         except IOError:
                             messagebox.showwarning("Warning", 
                                 "Couldn't manage to install Tabs Below function.")
@@ -578,52 +625,32 @@ class patcherUI(Frame):
                     fullPatcher("None", rpCkFFN22.get())
 
                     if CkMR.get() == 1:
-                        try:
-                            if RdMR.get() == 0:
-                                if CkMR1C.get() == 0:
-                                    distutils.file_util.copy_file(FireMR, FFNChrome)
-
-                                    if os.access(FFNCMRA, os.F_OK) == True:
-                                        os.remove(FFNCMRA)
-
-                                    writeMR(FFNCMR)
-
-                                if CkMR1C.get() == 1:
-                                    distutils.file_util.copy_file(FireMRA, FFNChrome)
-
-                                    if os.access(FFNCMR, os.F_OK) == True:
-                                        os.remove(FFNCMR)
-
-                                    writeMR(FFNCMRA)
-
-                                if os.access(FFNCMRL, os.F_OK) == True:
-                                    os.remove(FFNCMRL)
-
-                            else:
-                                distutils.file_util.copy_file(FireMRL, FFNChrome)
-
-                                writeMR(FFNCMRL)
-
-                                if os.access(FFNCMR, os.F_OK) == True:
-                                    os.remove(FFNCMR)
-
-                                if os.access(FFNCMRA, os.F_OK) == True:
-                                    os.remove(FFNCMRA)
-
-                        except IOError:
-                            messagebox.showwarning("Warning", 
-                                "Couldn't manage to install Multi-row Tabs function.")
+                        MRpatch("Nightly")
 
                     if CkTB.get() == 1:
-                        try:
-                            distutils.file_util.copy_file(FireTB, FFNChrome, update=True)
+                        try: 
+                            if CkTB1.get() == 1:
+                                distutils.file_util.copy_file(FireTBoT, FFNChrome, update=True)
 
+                                if os.access(FFNTB, os.F_OK):
+                                    os.remove(FFNTB)
+
+                            else:
+                                distutils.file_util.copy_file(FireTB, FFNChrome, update=True)
+
+                                if os.access(FFNTBoT, os.F_OK):
+                                    os.remove(FFNTBoT)
+
+                            if os.access(FFNTBaA, os.F_OK):
+                                os.remove(FFNTBaA)
                         except IOError:
                             messagebox.showwarning("Warning", 
                                 "Couldn't manage to install Tabs Below function.")
 
                     if CkFT.get() == 1:
                         try:
+                            distutils.file_util.copy_file(FireFT, FFNChrome, update=True)
+
                             FireFile = os.path.normpath(rpCkFFN22.get() + "/chrome/Focus-tab-on-hover.uc.js")
                             writeFT(FireFile)
                         except IOError:
@@ -642,14 +669,9 @@ class patcherUI(Frame):
                 for x in values:
                     FFChrome = os.path.normpath(x + "/chrome")
 
-                    FFCMR = os.path.normpath(x + "/chrome/MultiRowTab-scrollable.uc.js")
-                    FFCMR71 = os.path.normpath(x + "/chrome/MultiRowTab-scrollableFF71.uc.js")
-
-                    FFCMRL = os.path.normpath(x + "/chrome/MultiRowTabLiteforFx.uc.js")
-                    FFCMRL71 = os.path.normpath(x + "/chrome/MultiRowTabLiteforFF71.uc.js")
-
-                    FFCMRA = os.path.normpath(x + "/chrome/MultiRowTab-scrollable-autohide.uc.js")
-                    FFCMRA71 = os.path.normpath(x + "/chrome/MultiRowTab-scrollable-autohideFF71.uc.js")
+                    FFTB = os.path.normpath(x + "/chrome/Tabs-below.as.css")
+                    FFTBoT = os.path.normpath(x + "/chrome/Tabs-below-Menu-overTabs.as.css")
+                    FFTBaA = os.path.normpath(x + "/chrome/Tabs-below-Menu-onTop.as.css")
 
                     if SystemOS() == "Windows":
                         splitter = x.split("\\")
@@ -663,12 +685,24 @@ class patcherUI(Frame):
                         fullPatcher("None", x)
 
                         if CkMR.get() == 1:
-                            MRpatch()
+                            MRpatch("Profiles")
 
                         if CkTB.get() == 1:
-                            try:
-                                distutils.file_util.copy_file(FireTB, FFChrome, update=True)
+                            try: 
+                                if CkTB1.get() == 1:
+                                    distutils.file_util.copy_file(FireTBoT, FFChrome, update=True)
 
+                                    if os.access(FFTB, os.F_OK):
+                                        os.remove(FFTB)
+
+                                else:
+                                    distutils.file_util.copy_file(FireTB, FFChrome, update=True)
+
+                                    if os.access(FFTBoT, os.F_OK):
+                                        os.remove(FFTBoT)
+
+                                if os.access(FFTBaA, os.F_OK):
+                                        os.remove(FFTBaA)
                             except IOError:
                                 messagebox.showwarning("Warning", 
                                     "Couldn't manage to install Tabs Below function.")
@@ -701,24 +735,28 @@ class patcherUI(Frame):
         # This method will call the required functions to remove the patch
         def patchRemove():
             if (CkFF.get() == 1 and CkFFN.get() == 0) or (CkFF.get() == 0 and CkFFN.get() == 1):
-                removeAll = messagebox.askyesno("Remove all", 
-                    "This will remove all the patch files from the selected Firefox installation.\nIs that okay?")
+                removeAll = messagebox.askyesno("Remove all?", 
+                    "Do you want to remove all files installed (both the patch and the functions)?")
                 if removeAll == False:
-                    messagebox.showwarning("Function removal", 
-                    "Only the selected functions will be removed from the selected Firefox installation.")
+                    removeFunctions = messagebox.askyesno("Function removal", 
+                    "Do you want to remove only the functions?.")
+                    if removeFunctions == False:
+                        return
             elif CkFF.get() == 1 and CkFFN.get() == 1:
                 removeAll = messagebox.askyesno("Remove all", 
                     "This will remove all the patch files from the selected Firefox installations.\nIs that okay?")
                 if removeAll == False:
-                    messagebox.showwarning("Function removal", 
-                    "Only the selected functions will be removed from the selected Firefox installations.")
-            elif CkFFP.get() == 0:
+                    removeFunctions = messagebox.askyesno("Function removal", 
+                    "Do you want to remove only the functions?.")
+                    if removeFunctions == False:
+                        return
+            elif CkFFP.get() == 0 and not rpCkFFP1.curselection():
                 messagebox.showerror("No option selected", 
                     "You need to select at least one Firefox installation\nor profile folder to remove it's installed patch.")
                 return
 
             if CkFF.get() == 1:
-                if removeAll == True:
+                if removeAll:
                     erasePatch(rpCkFF12.get(), rpCkFF22.get())
 
                 if CkMR.get() == 1:
@@ -743,6 +781,10 @@ class patcherUI(Frame):
                 if CkTB.get() == 1:
                     if os.access(os.path.normpath(rpCkFF22.get() + "/chrome/Tabs-below.as.css"), os.F_OK) == True:
                         os.remove(os.path.normpath(rpCkFF22.get() + "/chrome/Tabs-below.as.css"))
+                    if os.access(os.path.normpath(rpCkFF22.get() + "/chrome/Tabs-below-Menu-onTop.as.css"), os.F_OK) == True:
+                        os.remove(os.path.normpath(rpCkFF22.get() + "/chrome/Tabs-below-Menu-onTop.as.css"))
+                    if os.access(os.path.normpath(rpCkFF22.get() + "/chrome/Tabs-below-Menu-overTabs.as.css"), os.F_OK) == True:
+                        os.remove(os.path.normpath(rpCkFF22.get() + "/chrome/Tabs-below-Menu-overTabs.as.css"))
 
                 if CkFT.get() == 1:
                     if os.access(os.path.normpath(rpCkFF22.get() + "/chrome/Focus-tab-on-hover.uc.js"), os.F_OK) == True:
@@ -807,6 +849,10 @@ class patcherUI(Frame):
                     if CkTB.get() == 1:
                         if os.access(os.path.normpath(x + "/chrome/Tabs-below.as.css"), os.F_OK) == True:
                             os.remove(os.path.normpath(x + "/chrome/Tabs-below.as.css"))
+                        if os.access(os.path.normpath(x + "/chrome/Tabs-below-Menu-onTop.as.css"), os.F_OK) == True:
+                            os.remove(os.path.normpath(x + "/chrome/Tabs-below-Menu-onTop.as.css"))
+                        if os.access(os.path.normpath(x + "/chrome/Tabs-below-Menu-overTabs.as.css"), os.F_OK) == True:
+                            os.remove(os.path.normpath(x + "/chrome/Tabs-below-Menu-overTabs.as.css"))
 
                     if CkFT.get() == 1:
                         if os.access(os.path.normpath(x + "/chrome/Focus-tab-on-hover.uc.js"), os.F_OK) == True:
@@ -930,25 +976,28 @@ class patcherUI(Frame):
         fpCkMR2.grid(column=1, row=4, sticky="W")
 
         CkTB = tkinter.IntVar()
-        fpCkTB = Checkbutton(FPLF, text="Tabs below URL bar", variable=CkTB)
+        CkTB1 = tkinter.IntVar()
+        fpCkTB = Checkbutton(FPLF, text="Tabs below URL bar", variable=CkTB, command=updateTBCheck)
         fpCkTB.grid(column=0, row=5, columnspan=4, sticky="W")
+        fpCkTB1 = Checkbutton(FPLF, text="Menu right above tabs", variable=CkTB1, state="disabled")
+        fpCkTB1.grid(column=1, row=6, columnspan=2, padx=20, sticky="W")
 
         CkFT = tkinter.IntVar()
         CkFTDE = tkinter.IntVar()
         fpCkFT = Checkbutton(FPLF, text="Focus Tab on hover", variable=CkFT, command=updateFTChildren)
-        fpCkFT.grid(column=0, row=6, columnspan=4, sticky="W")
+        fpCkFT.grid(column=0, row=7, columnspan=4, sticky="W")
         fpCkFTD = Label(FPLF, text="Specify Delay (in ms)", state="disabled")
-        fpCkFTD.grid(column=0, row=7, columnspan=2, sticky="E")
+        fpCkFTD.grid(column=0, row=8, columnspan=2, sticky="E")
         fpCkFTDE = Spinbox(FPLF, from_=0, to=2000, textvariable=CkFTDE)
         fpCkFTDE.delete(0,"end")
         fpCkFTDE.insert(0, 200)
         fpCkFTDE.config(state="disabled")
-        fpCkFTDE.grid(column=3, row=7, columnspan=2, sticky="W")
-        fpspacer3 = Label(FPLF, text="").grid(column=0, row=8, sticky="w")
+        fpCkFTDE.grid(column=3, row=9, columnspan=2, sticky="W")
+        fpspacer3 = Label(FPLF, text="").grid(column=0, row=10, sticky="w")
 
-        fpfooter = Label(FPLF, text="For other functions:").grid(column=0, row=9, columnspan=4, sticky="w")
+        fpfooter = Label(FPLF, text="For other functions:").grid(column=0, row=11, columnspan=4, sticky="w")
         fpfooterL = Button(FPLF, text="Visit repository", cursor="hand2", command=callhome)
-        fpfooterL.grid(column=0, row=10, columnspan=4, sticky="we")
+        fpfooterL.grid(column=0, row=12, columnspan=4, sticky="we")
 
         PatchStats = LabelFrame(featurePatch, text="Patch status", padx=20)
         PatchStats.grid(column=0, row=1, pady=10, columnspan=4, sticky="WE")
