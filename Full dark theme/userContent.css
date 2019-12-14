@@ -1537,7 +1537,7 @@ html, body {background-color: #202020 !important}
 	background: #303030 !important;
 	color: #ccc !important}
 
-.card, .firefox-family-services {
+.card, .firefox-family-services, .settings-child-view  {
 	background: #404040 !important;
 	color: #ccc !important}
 
@@ -1554,7 +1554,7 @@ a{color: #0d96ff !important}
 
 a:hover{color: #0080dd !important}
 
-form input, .show-password-label {
+form input:not([type="radio"]), .show-password-label {
 	background-color: #444 !important;
 	color: #ccc !important}
 }
