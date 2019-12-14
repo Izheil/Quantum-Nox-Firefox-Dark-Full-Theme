@@ -18,7 +18,7 @@
 </ul>
 
 <h2>Installation</h2>
-<p>You can patch your Firefox to use any of the files here using <a href="https://github.com/Izheil/Quantum-Nox-Firefox-Dark-Full-Theme/releases">the patcher</a>, which will also let you install some of the functions automatically. All you need to do is check that the profile folder found in the patcher is the one that you are currently using (you can check this in <code>about:profiles</code>), and then select the functions you want to install.</p>
+<p>You can patch your Firefox to use any of the files here using <a href="https://github.com/Izheil/Quantum-Nox-Firefox-Dark-Full-Theme/releases">the patcher</a>, which will also let you install some of the functions automatically. All you need to do is <b>check that the profile folder found in the patcher is the one that you are currently using</b> (you can check this in <code>about:profiles</code>), and then select the functions you want to install.</p>
 
 <p>You can also use the patcher to only copy the JS enabling part to your profile folder (unticking every function in the patcher so that it only applies the JS enabling part), and then copy the function files manually</p>.
 

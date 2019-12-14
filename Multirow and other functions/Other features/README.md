@@ -3,6 +3,8 @@
 
 <b>First make sure that you have patched Firefox with either <a href="https://github.com/Izheil/Quantum-Nox-Firefox-Dark-Full-Theme/releases">the patcher</a> (which also lets you install any of these files automatically along with the patch), or with the method explained in the <a href="https://github.com/Izheil/Quantum-Nox-Firefox-Dark-Full-Theme/tree/master/Multirow%20and%20other%20functions/JS%20Loader">JS Loader</a> folder to use any of these files.</b>
 
+<b>If using the patcher, make sure that the default profile found is the one you are currently using (you can check this in <code>about:profiles</code>).</b>
+
 <h3>Bookmarks-toggle.uc.js</h3>
 <p>Toggles visibility of the bookmarks toolbar when pressing F2 (you can change which keys in the file). You need to have the "fullscreen fix" disabled on userchrome.css if using any of the "CSS tweaks" versions from this repository.</p>
 
