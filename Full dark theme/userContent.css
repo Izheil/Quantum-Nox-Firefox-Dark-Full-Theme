@@ -1537,7 +1537,7 @@ html, body {background-color: #202020 !important}
 	background: #303030 !important;
 	color: #ccc !important}
 
-.card {
+.card, .firefox-family-services {
 	background: #404040 !important;
 	color: #ccc !important}
 
@@ -1547,6 +1547,8 @@ html, body {background-color: #202020 !important}
 h1, h2 {color: #fff !important}
 
 p, label {color: #ccc !important}
+
+form input::placeholder {color: #aaa !important}
 
 a{color: #0d96ff !important}
 

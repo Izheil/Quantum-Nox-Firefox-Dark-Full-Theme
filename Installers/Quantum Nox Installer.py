@@ -147,6 +147,31 @@ elif SystemOS() == "Mac":
 NProfile = "Not found"
 RProfile = "Not found"
 DefProfiles = readDefaults(MozPFolder)
+print(DefProfiles)
+
+def RPFinder():
+    for x in DefProfiles:
+        splitter = x.split(".")
+        ProfileName = splitter[-1]
+        if ProfileName == "default-release":
+            return x
+        elif ProfileName == "default":
+            return x
+        elif ProfileName[0:7] == "default":
+            return x
+        else:
+            return DefProfiles[0]
+
+def NPFinder():
+    for y in DefProfiles:
+        splitter = y.split(".")
+        ProfileName = splitter[-1]
+        if ProfileName == "default-nightly":
+            return y
+        elif ProfileName[0:15] == "default-nightly":
+            return y
+        else:
+            return DefProfiles[-1]
 
 if len(DefProfiles) == 1:
     if root != "Not found" and rootN == "Not found":
@@ -154,19 +179,10 @@ if len(DefProfiles) == 1:
     elif root == "Not found" and rootN != "Not found":
         NProfile = DefProfiles[0]
 
-elif len(DefProfiles) == 2:
+elif len(DefProfiles) >= 2:
     if root != "Not found" and rootN != "Not found":
-        RProfile = DefProfiles[0]
-        NProfile = DefProfiles[1]
-    elif root != "Not found" and rootN == "Not found":
-        RProfile = DefProfiles[0]
-    elif root == "Not found" and rootN != "Not found":
-        NProfile = DefProfiles[0]
-
-elif len(DefProfiles) > 2:
-    if root != "Not found" and rootN != "Not found":
-        RProfile = DefProfiles[0]
-        NProfile = DefProfiles[-1]
+        RProfile = RPFinder()
+        NProfile = NPFinder()
     elif root != "Not found" and rootN == "Not found":
         RProfile = DefProfiles[0]
     elif root == "Not found" and rootN != "Not found":
@@ -441,8 +457,12 @@ class patcherUI(Frame):
             elif CkMR.get() == 1:
                 fpCkMR1.config(state="normal")
                 fpCkMR2.config(state="normal")
-                fpCkMR1E.config(state="normal")
-                fpCkMR1C.config(state="disabled")
+                if RdMR.get() == 1:
+                    fpCkMR1E.config(state="disabled")
+                    fpCkMR1C.config(state="disabled")
+                elif RdMR.get() == 0:
+                    fpCkMR1E.config(state="normal")
+                    fpCkMR1C.config(state="normal")
 
         def updateMRSpinbox():
             if RdMR.get() == 1:
@@ -1063,17 +1083,17 @@ class patcherUI(Frame):
         CkMR1C = tkinter.IntVar()
         RdMR = tkinter.IntVar()
         fpCkMR = Checkbutton(FPLF, text="Multi-row Tabs", variable=CkMR, command=updateMRChildren)
-        fpCkMR.select()
         fpCkMR.grid(column=0, row=1, columnspan=4, sticky="W")
-        fpCkMR1 = Radiobutton(FPLF, text="Scrollable rows", value=0, variable=RdMR, command=updateMRSpinbox)
+        fpCkMR1 = Radiobutton(FPLF, text="Scrollable rows", value=0, variable=RdMR, command=updateMRSpinbox, state="disabled")
         fpCkMR1.grid(column=1, row=2, sticky="W")
         fpCkMR1E = Spinbox(FPLF, from_=2, to=10, textvariable=CkMR1E)
         fpCkMR1E.delete(0,"end")
         fpCkMR1E.insert(0, 3)
+        fpCkMR1E.config(state="disabled")
         fpCkMR1E.grid(column=2, row=2, columnspan=1, sticky="WE")
-        fpCkMR1C = Checkbutton(FPLF, text="Autohide", variable=CkMR1C)
+        fpCkMR1C = Checkbutton(FPLF, text="Autohide", variable=CkMR1C, state="disabled")
         fpCkMR1C.grid(column=1, row=3, columnspan=2, padx=20, sticky="W")
-        fpCkMR2 = Radiobutton(FPLF, text="All rows visible", value=1, variable=RdMR, command=updateMRSpinbox)
+        fpCkMR2 = Radiobutton(FPLF, text="All rows visible", value=1, variable=RdMR, command=updateMRSpinbox, state="disabled")
         fpCkMR2.grid(column=1, row=4, sticky="W")
 
         CkTB = tkinter.IntVar()
