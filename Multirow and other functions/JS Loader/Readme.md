@@ -15,6 +15,8 @@
   <li>Copy <code>utils</code> folder to your <a href="https://github.com/Izheil/Quantum-Nox-Firefox-Dark-Full-Theme/tree/master/Multirow%20and%20other%20functions/JS%20Loader#the-chrome-folder">chrome folder</a>.</li>
 </ol>
 
+<p>Next time you start up firefox, changes should take effect.</p>
+
 <p>If you did it right, the structure of firefox root folder should look like this:</p>
 <ul>
   <li>browser (folder)</li>
