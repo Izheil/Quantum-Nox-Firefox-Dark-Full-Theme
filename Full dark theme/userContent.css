@@ -1,6 +1,6 @@
 /* You can find an updated version here: https://github.com/Izheil/Quantum-Nox-Firefox-Dark-Full-Theme */
 /* Made by Izheil */
-/* Last updated: 05/12/2019 */
+/* Last updated: 14/12/2019 */
 
 /* This part imports the Addons file if there is one, so that you don't have to edit the dynamic URL
 from the addons rules every time we update anything here */
@@ -1563,7 +1563,7 @@ form input, .show-password-label {
 html, body {background-color: #202020 !important}
 
 h1, h2 {color: #fff !important}
-h3 {color: #ddd !important}
+h3, h4 {color: #ddd !important}
 p:not(.main-content) {color: #ccc !important}
 
 a:link {color: var(--in-content-link-color) !important}

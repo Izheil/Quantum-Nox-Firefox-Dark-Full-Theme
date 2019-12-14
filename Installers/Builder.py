@@ -356,8 +356,10 @@ class patcherUI(Frame):
         def updateFFPChildren():
             if CkFFP.get() == 0:
                 rpCkFFP1.config(state="disabled")
+                rpDetail.config(state="disabled")
             elif CkFFP.get() == 1:
                 rpCkFFP1.config(state="normal")
+                rpDetail.config(state="normal")
 
         def updateMRChildren():
             if CkMR.get() == 0:
@@ -932,7 +934,7 @@ class patcherUI(Frame):
         rpSpacer2 = Label(rootPatch, text=" ").grid(column=4, row=8)
 
         CkFFP = tkinter.IntVar()
-        rpCkFFP = Checkbutton(rootPatch, text="Profiles only", variable=CkFFP, command=updateFFPChildren)
+        rpCkFFP = Checkbutton(rootPatch, text="Profiles only* (Hold Ctrl or Shift to select more than one)", variable=CkFFP, command=updateFFPChildren)
         rpCkFFP.grid(column=0, row=9, columnspan=3, sticky="W")
 
         rpCkFFP1 = Listbox(rootPatch, selectmode="extended")
@@ -945,17 +947,21 @@ class patcherUI(Frame):
         LBScrollbar.grid(column=4, row=10, sticky="NSW")
 
         rpCkFFP1.grid(column=1, row=10, columnspan=3, sticky="WE")
-        rpSpacer3 = Label(rootPatch, text=" ").grid(column=0, row=11)
+        rpDetail = Label(rootPatch, 
+            text="* You need to have patched Firefox root folder first with the 'Firefox' or 'Firefox nightly'\nsections for these to work.", 
+            justify="left", state="disabled")
+        rpDetail.grid(column=1, row=11, columnspan=4, sticky="W")
+        rpSpacer3 = Label(rootPatch, text=" ").grid(column=0, row=12)
 
         rpReset = Button(rootPatch, text="Reset folders", padx=10, pady=5, command=EntryReset)
-        rpReset.grid(column=0, row=12, sticky="W", columnspan=2)
+        rpReset.grid(column=0, row=13, sticky="W", columnspan=2)
 
         # This other part covers the featurePatch frame
         FPLF = LabelFrame(featurePatch, padx=20, pady=20, text="Choose what functions you want to install/uninstall:", font=("", 10, "bold"))
         FPLF.grid(column=0, row=0, columnspan=4)
 
-        fpLb = Label(FPLF, text="You need to patch the Firefox version you are using for\nthese changes to take effect.\n")
-        fpLb.grid(column=0, row=0, columnspan=4, sticky="W")
+        fpLb = Label(FPLF, text="You need to patch the Firefox version you are using\n('Profiles only' just copies the functions)\nfor these changes to take effect.\n")
+        fpLb.grid(column=0, row=0, columnspan=5, sticky="WE")
 
         CkMR = tkinter.IntVar()
         CkMR1E = tkinter.IntVar()

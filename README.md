@@ -104,7 +104,7 @@ in <code>about:config</code> for userChrome and userContent to be loaded at all 
 <h2>Donations</h2>
 <p>If you want to support this project, consider buying me a coffee to motivate me keep this repository up and running.</p>
 ​
-<a href='https://ko-fi.com/K3K4TQ97' target='_blank'><img height='36' style='border:0px;height:36px;' src='https://az743702.vo.msecnd.net/cdn/kofi2.png?v=2' border='0' alt='Buy Me a Coffee at ko-fi.com' /></a>
+<a href="https://ko-fi.com/K3K4TQ97" target="_blank"><img height="36" style="border:0px;height:36px;" src="https://az743702.vo.msecnd.net/cdn/kofi2.png?v=2" border="0" alt="Buy Me a Coffee at ko-fi.com" /></a>
 
 <p>...or any other amount you see fit on paypal.</p>
 
