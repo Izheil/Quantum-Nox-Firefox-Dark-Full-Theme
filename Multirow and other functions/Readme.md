@@ -3,8 +3,6 @@
 <p>Mozilla finally removed all XBL bindings from firefox, so in advance of the removal of the posibility to inject JS scripts through <b>userchrome.xml</b>, I decided to update the patching method to another one that doesn't rely on this.</p>
 <p>If you are still using the old userchrome.xml method, you can keep using it until Mozilla decides to deprecate XUL completelly, in which case it will stop working and you will have to use the new one explained below.</p>
 
-<p>For this method, we use the files inside the <a href="https://github.com/Izheil/Quantum-Nox-Firefox-Dark-Full-Theme/tree/master/Multirow%20and%20other%20functions/JS%20Loader">JS Loader</a> folder.</p>
-
 <p>As with every other method, if some changes of your script aren't getting updated after changing it and restarting Firefox, <b>the first thing to try is to delete the start up cache files for the changes of any <i>*.uc.js</i> files (like the multi-row one, or the bookmarks toggler) to take effect</b>.</p>
 
 <p>To clear the start up cache you have to type <code>about:profiles</code> on firefox URL bar, go to that page, open the local profile directory through that page, and then delete all files inside the "startupCache" folder.</p>
@@ -20,7 +18,11 @@
 </ul>
 
 <h2>Installation</h2>
-<p>To install any of the files, just copy the file(s) you are interested on inside any of the folders here to your <a href="https://github.com/Izheil/Quantum-Nox-Firefox-Dark-Full-Theme/tree/master/Multirow%20and%20other%20functions#the-chrome-folder">chrome folder</a>. You also will need to have patched firefox using the files inside the <a href="https://github.com/Izheil/Quantum-Nox-Firefox-Dark-Full-Theme/tree/master/Multirow%20and%20other%20functions/JS%20Loader">JS Loader</a> folder.</p>
+<p>You can patch your Firefox to use any of the files here using <a href="https://github.com/Izheil/Quantum-Nox-Firefox-Dark-Full-Theme/releases">the patcher</a>, which will also let you install some of the functions automatically. All you need to do is check that the profile folder found in the patcher is the one that you are currently using (you can check this in <code>about:profiles</code>), and then select the functions you want to install.</p>
+
+<p>You can also use the patcher to only copy the JS enabling part to your profile folder (unticking every function in the patcher so that it only applies the JS enabling part), and then copy the function files manually</p>.
+
+<p>If you want to do everything manually, you will have to copy necesary files to enable the use of JS functions first following the method inside the <a href="https://github.com/Izheil/Quantum-Nox-Firefox-Dark-Full-Theme/tree/master/Multirow%20and%20other%20functions/JS%20Loader">JS Loader</a> folder. After that, to install any of the functions just copy the file(s) you are interested on inside any of the folders here to your <a href="https://github.com/Izheil/Quantum-Nox-Firefox-Dark-Full-Theme/tree/master/Multirow%20and%20other%20functions#the-chrome-folder">chrome folder</a>.</p>
 
 <h2>The chrome folder</h2>
 <p>This is where you have to place the files of this repository.</p>
