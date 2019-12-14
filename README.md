@@ -13,7 +13,7 @@ in <code>about:config</code> for userChrome and userContent to be loaded at all 
 <p>Files updated:</p>
 <ul>
 	<li><b>userContent.css</b>: Minor fix on support.mozilla.com page.</li>
-	<li><b>Multirow-Patcher-Quantum-Nox-Installer-1.3.0.exe</b>: The patcher should now guess the profile folders better (even for custom named profiles).</li>
+	<li><b>Multirow-Patcher-Quantum-Nox-Installer-1.3.1.exe</b>: The patcher should now guess the profile folders better (even for custom named profiles).</li>
 </ul>
 <h3>Pre-Last update: <b>08/12/2019</b></h3>
 <ul>

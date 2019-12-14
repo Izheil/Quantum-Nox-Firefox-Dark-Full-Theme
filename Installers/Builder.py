@@ -150,19 +150,27 @@ DefProfiles = readDefaults(MozPFolder)
 
 if len(DefProfiles) == 1:
     if root != "Not found" and rootN == "Not found":
-        NProfile = DefProfiles[0]
-    elif root == "Not found" and rootN != "Not found":
         RProfile = DefProfiles[0]
+    elif root == "Not found" and rootN != "Not found":
+        NProfile = DefProfiles[0]
 
 elif len(DefProfiles) == 2:
     if root != "Not found" and rootN != "Not found":
         RProfile = DefProfiles[0]
         NProfile = DefProfiles[1]
+    elif root != "Not found" and rootN == "Not found":
+        RProfile = DefProfiles[0]
+    elif root == "Not found" and rootN != "Not found":
+        NProfile = DefProfiles[0]
 
 elif len(DefProfiles) > 2:
     if root != "Not found" and rootN != "Not found":
         RProfile = DefProfiles[0]
         NProfile = DefProfiles[-1]
+    elif root != "Not found" and rootN == "Not found":
+        RProfile = DefProfiles[0]
+    elif root == "Not found" and rootN != "Not found":
+        NProfile = DefProfiles[0]
 
 elif DefProfiles == None:
     if root != "Not found" or rootN != "Not found":
@@ -460,7 +468,10 @@ class patcherUI(Frame):
 
         # We check the patch status with these methods
         def checkPatchFF():
-            PatchStatusFFr.config(text="Not Patched", fg="#cc0000")
+            if root == "Not found":
+               PatchStatusFFr.config(text="Not installed")
+            else:
+                PatchStatusFFr.config(text="Not Patched", fg="#cc0000")
             if os.access(os.path.normpath(rpCkFF12.get() + "/config.js"), os.F_OK) == True and \
                os.access(os.path.normpath(rpCkFF12.get() + "/defaults/pref/config-prefs.js"), os.F_OK):
                 if os.access(os.path.normpath(rpCkFF22.get() + "/chrome/utils"), os.F_OK) == True:
@@ -471,7 +482,10 @@ class patcherUI(Frame):
                 PatchStatusFFr.config(text="Root not patched", fg="#cc0000")
 
         def checkPatchFFN():
-            PatchStatusFFNr.config(text="Not Patched", fg="#cc0000")
+            if rootN == "Not found":
+               PatchStatusFFNr.config(text="Not installed")
+            else:
+                PatchStatusFFNr.config(text="Not Patched", fg="#cc0000")
             if os.access(os.path.normpath(rpCkFFN12.get() + "/config.js"), os.F_OK) == True and \
                os.access(os.path.normpath(rpCkFFN12.get() + "/defaults/pref/config-prefs.js"), os.F_OK):
                 if os.access(os.path.normpath(rpCkFFN22.get() + "/chrome/utils"), os.F_OK) == True:
@@ -949,25 +963,26 @@ class patcherUI(Frame):
 
         CkFF = tkinter.IntVar()
         rpCkFF = Checkbutton(rootPatch, text="Firefox", variable=CkFF, command=updateFFChildren)
-        rpCkFF.select()
         rpCkFF.grid(column=0, row=1, columnspan=3, sticky="W")
 
         rpCkFF01 = Label(rootPatch, text="        ").grid(column=0, row=2, sticky="w")
-        rpCkFF1 = Label(rootPatch, text="Root: ")
+        rpCkFF1 = Label(rootPatch, text="Root: ", state="disabled")
         rpCkFF1.grid(column=1, row=2, sticky="E")
         rpCkFF12 = Entry(rootPatch, width=60)
         rpCkFF12.insert(0, root)
+        rpCkFF12.config(state="disabled")
         rpCkFF12.grid(column=2, row=2, sticky="W")
-        rpCkFF13 = Button(rootPatch, text="Select", width=7, command=lambda:EntryUpdate("1"))
+        rpCkFF13 = Button(rootPatch, text="Select", width=7, command=lambda:EntryUpdate("1"), state="disabled")
         rpCkFF13.grid(column=3, row=2, sticky="W", padx=3)
 
         rpCkFF02 = Label(rootPatch, text="        ").grid(column=0, row=3, sticky="w")
-        rpCkFF2 = Label(rootPatch, text="Profile: ")
+        rpCkFF2 = Label(rootPatch, text="Profile: ", state="disabled")
         rpCkFF2.grid(column=1, row=3, sticky="E")
         rpCkFF22 = Entry(rootPatch)
         rpCkFF22.insert(0, RProfile)
+        rpCkFF22.config(state="disabled")
         rpCkFF22.grid(column=2, row=3, sticky="WE")
-        rpCkFF23 = Button(rootPatch, text="Select", command=lambda:EntryUpdate("2"))
+        rpCkFF23 = Button(rootPatch, text="Select", command=lambda:EntryUpdate("2"), state="disabled")
         rpCkFF23.grid(column=3, row=3, sticky="WE", padx=3)
         rpSpacer = Label(rootPatch, text=" ").grid(column=4, row=4)
 
@@ -996,6 +1011,23 @@ class patcherUI(Frame):
         rpCkFFN23.grid(column=3, row=7, sticky="WE", padx=3)
         rpSpacer2 = Label(rootPatch, text=" ").grid(column=4, row=8)
 
+        if root != "Not found":
+            rpCkFF.select()
+            rpCkFF1.config(state="normal")
+            rpCkFF12.config(state="normal")
+            rpCkFF13.config(state="normal")
+            rpCkFF2.config(state="normal")
+            rpCkFF22.config(state="normal")
+            rpCkFF23.config(state="normal")
+        if rootN != "Not found":
+            rpCkFFN.select()
+            rpCkFFN1.config(state="normal")
+            rpCkFFN12.config(state="normal")
+            rpCkFFN13.config(state="normal")
+            rpCkFFN2.config(state="normal")
+            rpCkFFN22.config(state="normal")
+            rpCkFFN23.config(state="normal")
+
         CkFFP = tkinter.IntVar()
         rpCkFFP = Checkbutton(rootPatch, text="Profiles only* (Hold Ctrl or Shift to select more than one)", variable=CkFFP, command=updateFFPChildren)
         rpCkFFP.grid(column=0, row=9, columnspan=3, sticky="W")
@@ -1020,11 +1052,11 @@ class patcherUI(Frame):
         rpReset.grid(column=0, row=13, sticky="W", columnspan=2)
 
         # This other part covers the featurePatch frame
-        FPLF = LabelFrame(featurePatch, padx=20, pady=20, text="Choose what functions you want to install/uninstall:", font=("", 10, "bold"))
+        FPLF = LabelFrame(featurePatch, padx=20, pady=20, text="Choose what functions you want to install/remove:", font=("", 10, "bold"))
         FPLF.grid(column=0, row=0, columnspan=4)
 
-        fpLb = Label(FPLF, text="You need to patch the Firefox version you are using\n('Profiles only' just copies the functions)\nfor these changes to take effect.\n")
-        fpLb.grid(column=0, row=0, columnspan=5, sticky="WE")
+        fpLb = Label(FPLF, text="You need to patch the Firefox version you have installed\nfor these changes to take effect.\n('Profiles only' just copies the functions)\n")
+        fpLb.grid(column=0, row=0, columnspan=4, sticky="WE")
 
         CkMR = tkinter.IntVar()
         CkMR1E = tkinter.IntVar()
@@ -1038,7 +1070,7 @@ class patcherUI(Frame):
         fpCkMR1E = Spinbox(FPLF, from_=2, to=10, textvariable=CkMR1E)
         fpCkMR1E.delete(0,"end")
         fpCkMR1E.insert(0, 3)
-        fpCkMR1E.grid(column=2, row=2, columnspan=2, sticky="WE")
+        fpCkMR1E.grid(column=2, row=2, columnspan=1, sticky="WE")
         fpCkMR1C = Checkbutton(FPLF, text="Autohide", variable=CkMR1C)
         fpCkMR1C.grid(column=1, row=3, columnspan=2, padx=20, sticky="W")
         fpCkMR2 = Radiobutton(FPLF, text="All rows visible", value=1, variable=RdMR, command=updateMRSpinbox)
@@ -1047,26 +1079,26 @@ class patcherUI(Frame):
         CkTB = tkinter.IntVar()
         CkTB1 = tkinter.IntVar()
         fpCkTB = Checkbutton(FPLF, text="Tabs below URL bar", variable=CkTB, command=updateTBCheck)
-        fpCkTB.grid(column=0, row=5, columnspan=4, sticky="W")
+        fpCkTB.grid(column=0, row=5, columnspan=3, sticky="W")
         fpCkTB1 = Checkbutton(FPLF, text="Menu right above tabs", variable=CkTB1, state="disabled")
-        fpCkTB1.grid(column=1, row=6, columnspan=2, padx=20, sticky="W")
+        fpCkTB1.grid(column=0, row=6, columnspan=3, padx=20, sticky="W")
 
         CkFT = tkinter.IntVar()
         CkFTDE = tkinter.IntVar()
         fpCkFT = Checkbutton(FPLF, text="Focus Tab on hover", variable=CkFT, command=updateFTChildren)
         fpCkFT.grid(column=0, row=7, columnspan=4, sticky="W")
-        fpCkFTD = Label(FPLF, text="Specify Delay (in ms)", state="disabled")
-        fpCkFTD.grid(column=0, row=8, columnspan=2, sticky="E")
+        fpCkFTD = Label(FPLF, text="    Specify Delay (in ms)", state="disabled")
+        fpCkFTD.grid(column=0, row=8, columnspan=2, sticky="E", padx=10)
         fpCkFTDE = Spinbox(FPLF, from_=0, to=2000, textvariable=CkFTDE)
         fpCkFTDE.delete(0,"end")
         fpCkFTDE.insert(0, 200)
         fpCkFTDE.config(state="disabled")
-        fpCkFTDE.grid(column=3, row=9, columnspan=2, sticky="W")
+        fpCkFTDE.grid(column=2, row=8, columnspan=2, sticky="W")
         fpspacer3 = Label(FPLF, text="").grid(column=0, row=10, sticky="w")
 
         fpfooter = Label(FPLF, text="For other functions:").grid(column=0, row=11, columnspan=4, sticky="w")
         fpfooterL = Button(FPLF, text="Visit repository", cursor="hand2", command=callhome)
-        fpfooterL.grid(column=0, row=12, columnspan=4, sticky="we")
+        fpfooterL.grid(column=0, row=12, columnspan=5, sticky="WE")
 
         PatchStats = LabelFrame(featurePatch, text="Patch status", padx=20)
         PatchStats.grid(column=0, row=1, pady=10, columnspan=4, sticky="WE")
