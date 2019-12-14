@@ -18,9 +18,9 @@
 </ul>
 
 <h2>Installation</h2>
-<p>You can patch your Firefox to use any of the files here using <a href="https://github.com/Izheil/Quantum-Nox-Firefox-Dark-Full-Theme/releases">the patcher</a>, which will also let you install some of the functions automatically. All you need to do is <b>check that the profile folder found in the patcher is the one that you are currently using</b> (you can check this in <code>about:profiles</code>), and then select the functions you want to install.</p>
+<p>The easiest way to install them is to use <a href="https://github.com/Izheil/Quantum-Nox-Firefox-Dark-Full-Theme/releases">the patcher</a> created to enable JS injection, which will also let you install some of the functions automatically. All you need to do is <b>check that the profile folder found in the patcher is the one that you are currently using</b> (you can check this in <code>about:profiles</code>), and then select the functions you want to install.</p>
 
-<p>You can also use the patcher to only copy the JS enabling part to your profile folder (unticking every function in the patcher so that it only applies the JS enabling part), and then copy the function files manually</p>.
+<p>You can also use the patcher to only copy the JS enabling part to your profile folder (unticking every function in the patcher so that it only applies the JS enabling part), and then copy the function files manually.</p>
 
 <p>If you want to do everything manually, you will have to copy necesary files to enable the use of JS functions first following the method inside the <a href="https://github.com/Izheil/Quantum-Nox-Firefox-Dark-Full-Theme/tree/master/Multirow%20and%20other%20functions/JS%20Loader">JS Loader</a> folder. After that, to install any of the functions just copy the file(s) you are interested on inside any of the folders here to your <a href="https://github.com/Izheil/Quantum-Nox-Firefox-Dark-Full-Theme/tree/master/Multirow%20and%20other%20functions#the-chrome-folder">chrome folder</a>.</p>
 

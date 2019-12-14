@@ -9,7 +9,11 @@
 <h3>Manual installation</h3>
 <p>To patch firefox with this method, you will have to locate both <a href="https://github.com/Izheil/Quantum-Nox-Firefox-Dark-Full-Theme/tree/master/Multirow%20and%20other%20functions/JS%20Loader#Firefox-root-folder">firefox root folder</a>, and your profile <a href="https://github.com/Izheil/Quantum-Nox-Firefox-Dark-Full-Theme/tree/master/Multirow%20and%20other%20functions/JS%20Loader#the-chrome-folder">chrome folder</a>.</p>
 
-<p>Copy the contents of the <code>root</code> folder here to firefox root folder.</p>
+<h4>Step by step:</h4>
+<ol>
+  <li>Copy <code>defaults</code> folder and <code>config.js</code> files inside <code>root</code> to <a href="https://github.com/Izheil/Quantum-Nox-Firefox-Dark-Full-Theme/tree/master/Multirow%20and%20other%20functions/JS%20Loader#Firefox-root-folder">firefox root folder</a>.</li>
+  <li>Copy <code>utils</code> folder to your <a href="https://github.com/Izheil/Quantum-Nox-Firefox-Dark-Full-Theme/tree/master/Multirow%20and%20other%20functions/JS%20Loader#the-chrome-folder">chrome folder</a>.</li>
+</ol>
 
 <p>If you did it right, the structure of firefox root folder should look like this:</p>
 <ul>
@@ -30,9 +34,7 @@
   <li>Other .dll files</li>
 </ul>
 
-<p>After that, copy the whole <code>utils</code> folder inside your <a href="https://github.com/Izheil/Quantum-Nox-Firefox-Dark-Full-Theme/tree/master/Multirow%20and%20other%20functions/JS%20Loader#the-chrome-folder">chrome folder</a>.</p>
-
-<p>If you did it right, the structure of the chrome folder should look like:</p>
+<p>And the structure of the chrome folder should look like:</p>
 <ul>
   <li>utils (folder)</li>
   <li>Any other optional file like userChrome.css, userContent.css, MultiRowTabLiteforFx.uc.js, etc...</li>
