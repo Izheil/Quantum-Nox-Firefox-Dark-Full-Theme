@@ -15,15 +15,20 @@
 <h2>The functions</h2>
 <p>You can find more explanations in the folders inside <a href="https://github.com/Izheil/Quantum-Nox-Firefox-Dark-Full-Theme/tree/master/Multirow%20and%20other%20functions">Multirow and other functions</a> folder in this repository.</p>
 
-<h3>Non scrollable multirow tabs</h3>
-<p>This version of multirow tabs shows all tabs you currently have open splitting them on rows, without any limit to the amount of rows to show. Choose this option if you want to always see all the tabs you have open without limits to the number of rows.</p>
-<img src="https://i.imgur.com/GWSgqD9.png">
+<h3>Multi-row Tabs</h3>
 
-<h3>Scrollable multirow tabs</h3>
+<h4>Scrollable rows</h4>
 <p>This version shows all tabs you currently have open splitting them on rows up to a max of 3 rows by default (can be changed using the variable inside the file). After the max number of rows has been reached, a scrollbar will be shown to be able to scroll around the extra tabs.</p>
 <img src="https://i.imgur.com/qqQn4Ky.png">
 
-<h3>Tabs below</h3>
+<h4>Autohide Scrollable rows</h4>
+<p>Same as scrollable multirow tabs, but it will autohide the scrollbar when not hovering over the tabs.</p>
+
+<h4>All rows visible</h4>
+<p>This version of multirow tabs shows all tabs you currently have open splitting them on rows, without any limit to the amount of rows to show. Choose this option if you want to always see all the tabs you have open without limits to the number of rows.</p>
+<img src="https://i.imgur.com/GWSgqD9.png">
+
+<h3>Tabs below URL bar</h3>
 <p>These will swap the tab bar position under the URL bar, while keeping the menu bar on top.</p>
 <img src="https://i.imgur.com/5vbG6mh.png">
 
