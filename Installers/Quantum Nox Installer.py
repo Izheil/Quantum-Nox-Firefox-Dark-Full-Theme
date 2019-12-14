@@ -31,21 +31,69 @@ if SystemOS() == "Linux":
         
 else: elevate.elevate()
 
+def readProfiles(profile):
+    "Fetches the profile folders"
+
+    ProfilesINI = os.path.normpath(profile + "/profiles.ini")
+    Paths = []
+    if not os.access(ProfilesINI, os.F_OK):
+        if SystemOS() == "Windows" or SystemOS() == "Mac":
+            profile = os.path.normpath(profile + "/Profiles")
+
+        profilenames = os.listdir(profile)
+        for x in profilenames:
+            Paths.append(os.path.normpath(profile + "/" + x))
+    else:
+        with open(ProfilesINI, 'r') as f:
+            for line in f.readlines():
+                profilepath = re.match("Path=(.*)", line, re.M|re.I)
+                if profilepath != None:
+                    rotationpath = profilepath.group(1)
+                    if (((SystemOS() == "Windows" or SystemOS() == "Mac") and
+                        rotationpath[0:9] == "Profiles/") or
+                        SystemOS() == "Linux" and rotationpath[0] != "/"):
+                        Paths.append(os.path.normpath(profile + "/" + profilepath.group(1)))
+                    else:
+                        Paths.append(os.path.normpath(profilepath.group(1)))
+
+    return Paths
+
+def readDefaults(profile):
+    "Fetches the default profile folders"
+
+    installsINI = os.path.normpath(profile + "/installs.ini")
+    Paths = []
+    if not os.access(installsINI, os.F_OK):
+        return None
+    else:
+        with open(installsINI, 'r') as f:
+            for line in f.readlines():
+                defaultspath = re.match("default=(.*)", line, re.M|re.I)
+                if defaultspath != None:
+                    defaultrotation = defaultspath.group(1)
+                    if (((SystemOS() == "Windows" or SystemOS() == "Mac") and
+                        defaultrotation[0:9] == "Profiles/") or
+                        SystemOS() == "Linux" and defaultrotation[0] != "/"):
+                        Paths.append(os.path.normpath(profile + "/" + defaultspath.group(1)))
+                    else:
+                        Paths.append(os.path.normpath(defaultspath.group(1)))
+        return Paths
+
 # We get the user folders here
 if SystemOS() == "Windows":
     home = os.environ['APPDATA']
-    MozPFolder = home + r"\Mozilla\Firefox\Profiles"
-    Profiles = os.listdir(MozPFolder)
+    MozPFolder = home + r"\Mozilla\Firefox"
+    Profiles = readProfiles(MozPFolder)
     SFolder = home + r'\Quantum Nox'
 elif SystemOS() == "Linux":
     home = "/home/" + os.getenv("SUDO_USER")
     MozPFolder = home + r"/.mozilla/firefox"
-    Profiles = os.listdir(MozPFolder)
+    Profiles = readProfiles(MozPFolder)
     SFolder = home + r"/.Quantum Nox"
 elif SystemOS() == "Mac":
     home = str(Path.home())
-    MozPFolder = home + r"/Library/Application Support/Firefox/Profiles"
-    Profiles = os.listdir(MozPFolder)
+    MozPFolder = home + r"/Library/Application Support/Firefox"
+    Profiles = readProfiles(MozPFolder)
     SFolder = home + r"/Quantum Nox"
 
 # We get the default folder where programs are installed here
@@ -95,35 +143,50 @@ elif SystemOS() == "Mac":
     if os.access(rootN, os.F_OK) == False:
             rootN = "Not found"
 
-PrFols = []
-for x in Profiles:
-    PrFols.append(os.path.normpath(MozPFolder + "/" + x))
-
 # We get the default user folders here
 NProfile = "Not found"
 RProfile = "Not found"
-if root != "Not found" or rootN != "Not found":
-    for x in PrFols:
-        splitter = x.split(".")
-        ProfileName = splitter[-1]
-        if ProfileName == "default-nightly":
-            NProfile = x
-        elif ProfileName == "default-release":
-            RProfile = x
-        elif ProfileName == "default":
-            RProfile = x
-        elif ProfileName[0:15] == "default-nightly":
-            NProfile = x
-        elif ProfileName[0:7] == "default":
-            RProfile = x
+DefProfiles = readDefaults(MozPFolder)
 
-    if RProfile == "Not found":
-        if len(PrFols) == 1 and root != "Not found" and rootN == "Not found":
-            RProfile = PrFols[0]
+if len(DefProfiles) == 1:
+    if root != "Not found" and rootN == "Not found":
+        NProfile = DefProfiles[0]
+    elif root == "Not found" and rootN != "Not found":
+        RProfile = DefProfiles[0]
 
-    if NProfile == "Not found":
-        if len(PrFols) == 1 and rootN != "Not found" and root == "Not found":
-            NProfile = PrFols[0]
+elif len(DefProfiles) == 2:
+    if root != "Not found" and rootN != "Not found":
+        RProfile = DefProfiles[0]
+        NProfile = DefProfiles[1]
+
+elif len(DefProfiles) > 2:
+    if root != "Not found" and rootN != "Not found":
+        RProfile = DefProfiles[0]
+        NProfile = DefProfiles[-1]
+
+elif DefProfiles == None:
+    if root != "Not found" or rootN != "Not found":
+        for x in Profiles:
+            splitter = x.split(".")
+            ProfileName = splitter[-1]
+            if ProfileName == "default-nightly":
+                NProfile = x
+            elif ProfileName == "default-release":
+                RProfile = x
+            elif ProfileName == "default":
+                RProfile = x
+            elif ProfileName[0:15] == "default-nightly":
+                NProfile = x
+            elif ProfileName[0:7] == "default":
+                RProfile = x
+
+        if RProfile == "Not found":
+            if len(Profiles) == 1 and root != "Not found" and rootN == "Not found":
+                RProfile = Profiles[0]
+
+        if NProfile == "Not found":
+            if len(Profiles) == 1 and rootN != "Not found" and root == "Not found":
+                NProfile = Profiles[0]
 
 def fullPatcher(FFversion, FFprofile):
     "This method patches both the root and profile folders"
@@ -939,8 +1002,8 @@ class patcherUI(Frame):
 
         rpCkFFP1 = Listbox(rootPatch, selectmode="extended")
 
-        for y in range(len(PrFols)):
-            rpCkFFP1.insert("end", PrFols[y])
+        for y in range(len(Profiles)):
+            rpCkFFP1.insert("end", Profiles[y])
 
         LBScrollbar = Scrollbar(rootPatch, orient="vertical", command=rpCkFFP1.yview)
         rpCkFFP1.config(yscrollcommand=LBScrollbar.set, state="disabled")
@@ -948,7 +1011,7 @@ class patcherUI(Frame):
 
         rpCkFFP1.grid(column=1, row=10, columnspan=3, sticky="WE")
         rpDetail = Label(rootPatch, 
-            text="* You need to have patched Firefox root folder first with the 'Firefox' or 'Firefox nightly'\nsections for these to work.", 
+            text="* You need to have patched Firefox root folder first with the 'Firefox' or 'Firefox nightly'\nsections. These only patch the profile folders.", 
             justify="left", state="disabled")
         rpDetail.grid(column=1, row=11, columnspan=4, sticky="W")
         rpSpacer3 = Label(rootPatch, text=" ").grid(column=0, row=12)

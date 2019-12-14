@@ -9,16 +9,17 @@ in <code>about:config</code> for userChrome and userContent to be loaded at all 
 
 <p>If you want to know how to change some colors of the theme, check the <a href="https://github.com/Izheil/Quantum-Nox-Firefox-Dark-Full-Theme/tree/master/Info#Editting CSS files">Info</a> section.</p>
 
-<h3>Last update: <b>08/12/2019</b></h3>
+<h3>Last update: <b>14/12/2019</b></h3>
 <p>Files updated:</p>
+<ul>
+	<li><b>userContent.css</b>: Minor fix on support.mozilla.com page.</li>
+	<li><b>Multirow-Patcher-Quantum-Nox-Installer-1.3.0.exe</b>: The patcher should now guess the profile folders better (even for custom named profiles).</li>
+</ul>
+<h3>Pre-Last update: <b>08/12/2019</b></h3>
 <ul>
 	<li><b>userChrome.css(dark theme + CSS tweaks)</b>: Fixed some missing elements from previous updates.</li>
 	<li><b>userChrome.css</b>: Fixed some missing elements. You can now also change the dialog button colors by uncommenting a variable on top of the file.</li>
 	<li><b>Tabs-below-Menu-overTabs.as.css</b>: Added the menu-over-tabs version again.</li>
-</ul>
-<h3>Pre-Last update: <b>05/12/2019</b></h3>
-<ul>
-	<li><b>Focus-tab-on-hover.uc.js</b>: Fixed some issue of hover over non-tab elements.</li>
 </ul>
 
 <h3>A note on people looking to replace some Tab Mix Plus features:</h3>
