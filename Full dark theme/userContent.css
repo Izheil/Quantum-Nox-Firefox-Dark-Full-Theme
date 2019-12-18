@@ -1,6 +1,6 @@
 /* You can find an updated version here: https://github.com/Izheil/Quantum-Nox-Firefox-Dark-Full-Theme */
 /* Made by Izheil */
-/* Last updated: 14/12/2019 */
+/* Last updated: 18/12/2019 */
 
 /* This part imports the Addons file if there is one, so that you don't have to edit the dynamic URL
 from the addons rules every time we update anything here */
@@ -253,6 +253,20 @@ only the images */
 .container.restore-chosen > .description-wrapper > * {filter: invert(98%) hue-rotate(-200deg)}
 
 #errorPageContainer #text-container h1 {color: #1C7BFF !important}
+
+#errorPageContainer .button-container button {
+	color: #ccc !important;
+	border: none !important}
+
+#errorPageContainer .button-container button:hover {
+	color: #fff !important}
+
+#errorDescriptionContainer .error-description {
+	background-color: #333 !important;
+	color: #ccc !important}
+
+#errorDescriptionContainer .error-description a{
+	color: #fff !important}
 
 #startPrivateBrowsing {
   -moz-appearance: none !important;
