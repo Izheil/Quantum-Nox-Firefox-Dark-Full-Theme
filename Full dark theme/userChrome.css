@@ -1,6 +1,6 @@
 /* You can find an updated version here: https://github.com/Izheil/Quantum-Nox-Firefox-Dark-Full-Theme */
 /* Made by Izheil */
-/* Last updated: 08/12/2019 */
+/* Last updated: 18/12/2019 */
 
 /* DO NOT DELETE THIS LINE */
 @namespace url("http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul");
@@ -188,9 +188,14 @@ findbar {
   color: #ddd !important;
   border-top: 1px solid #000 !important;}
 
+:root[lwtheme-image] findbar {
+  --lwt-toolbar-field-background-color: #222 !important;
+  --lwt-toolbar-field-color: #fff !important;
+}
+
 findbar .findbar-textbox {
-  background: #666 !important;
-  color: #fff !important;
+  background: var(--lwt-toolbar-field-background-color) !important;
+  color: var(--lwt-toolbar-field-color) !important;
   border: 1px solid #000 !important}
 
 findbar .findbar-textbox[focused="true"], findbar .findbar-textbox:hover {
