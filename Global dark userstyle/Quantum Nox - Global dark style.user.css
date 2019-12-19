@@ -405,8 +405,9 @@ if invMethod == "customSet" {
 	.probox input[type="search"], .rc-button.goog-inline-block, .mf_filecontainer a::after, .pages-nav.nav-icon {filter: invert(80%) hue-rotate(180deg)}
 	    
 	.p-sectionLinks, .navbar-brand, .site-navigation2__child-list, .site-navigation2__panel,
-    #item_detail_wrapper #correct_answer {background-color: rgba(0,0,0,0.8) !important}
-	.item.tooltipstered > div, .postbitlegacy .postdetails, .upgrade-panel.pn-flex.mb {background-color: rgba(0,0,0,0.5) !important}
+    #item_detail_wrapper #correct_answer, #ov6popup {background-color: rgba(0,0,0,0.8) !important}
+	.item.tooltipstered > div, .postbitlegacy .postdetails, .upgrade-panel.pn-flex.mb, 
+    #ov6popup .dllinks {background-color: rgba(0,0,0,0.5) !important}
 	    
 	.contentRow-fader {background: linear-gradient(transparent, bgColor) !important}
 	    
