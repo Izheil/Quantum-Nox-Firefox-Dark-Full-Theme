@@ -12,7 +12,7 @@ in <code>about:config</code> for userChrome and userContent to be loaded at all 
 <h3>Last update: <b>20/12/2019</b></h3>
 <p>Files updated:</p>
 <ul>
-	<li><b>userChrome.css</b>: Fixed some issue with the text-selection background color not showing on search boxes. In pair with the previous fix, text-selection background color now uses a variable for both the background and text colors.</li>
+	<li><b>userChrome.css</b>: Fixed some issue with the text-selection background color not showing on search boxes. In pair with the previous fix, text-selection background color now uses a variable for both the background and text colors. Also fixed some text colors on the main menu.</li>
 </ul>
 <h3>Pre-Last update: <b>19/12/2019</b></h3>
 <ul>

@@ -409,6 +409,10 @@ you aren't using the default dark theme of mozilla, that is) */
 .PanelUI-subView .subviewbutton-nav::after, 
 #appMenu-tp-category {color: #888 !important}
 
+/* Other header text in main menu */
+#fxa-menu-header-description, 
+.PanelUI-subView .subview-subheader {color: #999 !important}
+
 /* Zoom reset button on the main menu */
 #appMenu-zoomReset-button {background-color: #666 !important}
 #appMenu-zoomReset-button:hover {background-color: #333 !important}
