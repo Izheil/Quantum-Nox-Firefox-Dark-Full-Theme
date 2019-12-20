@@ -9,14 +9,14 @@ in <code>about:config</code> for userChrome and userContent to be loaded at all 
 
 <p>If you want to know how to change some colors of the theme, check the <a href="https://github.com/Izheil/Quantum-Nox-Firefox-Dark-Full-Theme/tree/master/Info#Editting CSS files">Info</a> section.</p>
 
-<h3>Last update: <b>19/12/2019</b></h3>
+<h3>Last update: <b>20/12/2019</b></h3>
 <p>Files updated:</p>
 <ul>
-	<li><b>userChrome.css</b>: Fixed the content-area search input box background color.</li>
+	<li><b>userChrome.css</b>: Fixed some issue with the text-selection background color not showing on search boxes. In pair with the previous fix, text-selection background color now uses a variable for both the background and text colors.</li>
 </ul>
-<h3>Pre-Last update: <b>18/12/2019</b></h3>
+<h3>Pre-Last update: <b>19/12/2019</b></h3>
 <ul>
-	<li><b>userContent.css</b>: Minor fix on for some error pages buttons and detail dialogs.</li>
+	<li><b>userChrome.css</b>: Fixed the content-area search input box background color.</li>
 </ul>
 
 <h3>A note on people looking to replace some Tab Mix Plus features:</h3>
