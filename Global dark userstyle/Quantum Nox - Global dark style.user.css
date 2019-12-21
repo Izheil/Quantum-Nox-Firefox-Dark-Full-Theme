@@ -531,7 +531,7 @@ if invMethod == "customSet" {
       }
         
     if divHide {
-        *:not(:empty):not(a):not(b):not(option):not(select):not(img):not(header):not(section):not(.s3dmBox):not(picture):not(button):not(p):not(td):not([class*="filetype"]):not(.Thumbnail):not([class*="thumb"]):not([id*="image"]):not([id*="Image"]), 
+        *:not(:empty):not(a):not(b):not(option):not(select):not(img):not(header):not(section):not(.s3dmBox):not(.image):not(picture):not(button):not(p):not(td):not([class*="filetype"]):not(.Thumbnail):not([class*="thumb"]):not([id*="image"]):not([id*="Image"]), 
         #page .bottom, #page .top {
           background-image: none !important}
         }
