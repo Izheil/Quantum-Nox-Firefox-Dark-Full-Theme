@@ -195,7 +195,7 @@ if invMethod == "customSet" {
         color: #fff !important}
 
     .anchor-list a.hoverable, div[class*="buttons"] a[onclick], [aria-selected="true"], 
-    button:not([class*="menu"]):not([id*="menu"]):not([role="switch"]):not([class*="ytp"]):not([class*="play"]):not([class*="mute"]):not([class*="fullscreen"]):not(.connect__button):not([class*="btn"]):not(.rc-button):not([aria-label="Play"]):not([aria-label="Mute"]):not([aria-label="Fullscreen"]):not(.vjs-control):not(.rb-new__button):not([class*="rating"]), 
+    button:not([class*="menu"]):not([id*="menu"]):not([role="switch"]):not([class*="ytp"]):not([class*="play"]):not([class*="mute"]):not([class*="fullscreen"]):not(.connect__button):not([class*="btn-link"]):not(.rc-button):not([aria-label="Play"]):not([aria-label="Mute"]):not([aria-label="Fullscreen"]):not(.vjs-control):not(.rb-new__button):not([class*="rating"]), 
     input[type="submit"]:not([id*="search"]):not([id*="Search"]):not(.searchsubmit), 
     [class*="menu-item"]:not([class*="footer"]):not([class*="Footer"]):hover, button#view-menu-btn, a.add-fav, #action-menu-btn, a.Button {
         -moz-appearance: none !important;
@@ -206,7 +206,7 @@ if invMethod == "customSet" {
         
     .anchor-list a.hoverable:hover, a[data-toggle="dropdown"]:not([class*="wrapper"]):not([role="menuitem"]):hover, div[class*="buttons"] a[onclick]:hover, 
     div[class*="dropdown"] a:hover, div[class*="drop-down"] a:hover, 
-    button:not([class*="menu"]):not([id*="menu"]):not([role="switch"]):not([class*="play"]):not([class*="mute"]):not([class*="fullscreen"]):not(.connect__button):not(.btn-link):not(.rc-button):not([aria-label="Play"]):not([aria-label="Mute"]):not([aria-label="Fullscreen"]):not(.vjs-control):hover, 
+    button:not([class*="menu"]):not([id*="menu"]):not([role="switch"]):not([class*="play"]):not([class*="mute"]):not([class*="fullscreen"]):not(.connect__button):not(.btn-link):not(.rc-button):not([aria-label="Play"]):not([aria-label="Mute"]):not([aria-label="Fullscreen"]):not(.vjs-control):not(.rb-new__button):not([class*="rating"]):hover, 
     input[type="submit"]:not([id*="search"]):not([id*="Search"]):not(.searchsubmit):hover, 
     span[role="button"]:hover, button#view-menu-btn:hover, a.add-fav:hover, #action-menu-btn:hover, a.Button:hover {
         background-color: #444 !important; 
