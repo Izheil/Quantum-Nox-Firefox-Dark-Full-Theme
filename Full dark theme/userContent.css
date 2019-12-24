@@ -15,9 +15,10 @@ auto = default OS size | thin = half the width (will be hidden in about: pages) 
     --scrollbars-thumb-color: #05a;
     --scrollbars-track-color: #252525;
 
-/* You can change the color of text boxes of most http pages here. Set as none for default color.
-Some neutral colors (can be seen on darkish and whiteish backgrounds) to use: #7f7f7f (graish) or #2066dd (bluish) */
-	--text-color-for-input-fields: none;
+/* You can change the color of text boxes of most http pages here. Use only if you have some trouble with textbox text visibility.
+Some neutral colors (can be seen on darkish and whiteish backgrounds) to use: #7f7f7f (graish) or #2066dd (bluish)
+You also need to enable the rule in lines 131-138, in the input text-box section */
+	--text-color-for-input-fields: #7f7f7f;
 
 /* You can put the url of an image that you want to be used as background for the about:home page.
 To use, instead of "none;", type: url("URL-OF-THE-IMAGE-GOES-HERE"); <- Don't forget the ending semicolon! */
@@ -127,7 +128,7 @@ td {color: #aaa !important}
 
 /*------ INPUT BOXES TEXT ------*/
 
-/* This changes the input fields text color (fix for custom OS themes) */
+/* This changes the input fields text color (fix for custom OS themes) *//*
 @-moz-document url-prefix(http){
 form select, input[type=text], input[type=email], input[type=password], input[type=date], 
 input[type=datetime-local], input[type=time], input[type=week], input[type=month], 
