@@ -2,7 +2,7 @@
 @name         Quantum nox - Global dark theme
 @description  Global dark style to use alongside Firefox full dark theme - Quantum nox.
 @namespace    https://github.com/Izheil/Quantum-Nox-Firefox-Dark-Full-Theme
-@version      2.5.19
+@version      2.5.20
 @author       Izheil
 @homepageURL  https://github.com/Izheil/Quantum-Nox-Firefox-Dark-Full-Theme/tree/master/Global%20dark%20userstyle
 @updateURL    https://raw.githubusercontent.com/Izheil/Quantum-Nox-Firefox-Dark-Full-Theme/master/Global%20dark%20userstyle/Quantum%20Nox%20-%20Global%20dark%20style.user.css
@@ -328,13 +328,15 @@ if invMethod == "customSet" {
     .video-time-bar::before, .XSlider .ProgressBar .SeekBar-buffered, .player .played, .drt-bar-processed, .drt-seeker, 
     .xp-progress-bar .filler, .xp-progress-bar .handle, .fluid_controls_currentprogress, .fluid_control_currentvolume, 
     .fluid_control_volume_currentpos, .bui-bar-normal, #videoPlayerProgressCurrentValue, #videoPlayerSoundValue,
-    #videoPlayerSpeedValue, .zkp-barContainer .zkp-time, .video-progress-bar-progress, .fp-progress {background-color: #fff !important}
+    #videoPlayerSpeedValue, .zkp-barContainer .zkp-time, .video-progress-bar-progress, .fp-progress, .progress_bar {
+        background-color: #fff !important}
         
     .jw-buffer, .jw-rail, .vjs-progress-holder::before, .video-progress-bar, .vjs-progress-holder, .vjs-load-progress, 
     .XSlider .ProgressBar, .player .buffered, .drt-bar-full, .drt-bar-buffered, .drt-volume-bar .drt-inner-bar, 
     .xp-progress-bar .buffer, .xp-progress-bar .seeker, .fluid_controls_progress, .fluid_controls_buffered, 
     .fluid_control_volume, .bui-bar-wrap, .bui-bar-buffer, .progress-track, #videoPlayerProgressBufferValue,
-    .sound-bar, .speed-bar, .zkp-barContainer, .zkp-buffer, .video-progress-bar-buffer, .fp-buffer, .fp-timeline::before {
+    .sound-bar, .speed-bar, .zkp-barContainer, .zkp-buffer, .video-progress-bar-buffer, .fp-buffer, .fp-timeline::before,
+    .progress_bar_container, .volume_slider, .progress_bar_background {
         background-color: rgba(255,255,255,0.2) !important}  
     
     #main_video_fluid_controls_container {background: linear-gradient(transparent, rgba(0,0,0,0.7)) !important}
