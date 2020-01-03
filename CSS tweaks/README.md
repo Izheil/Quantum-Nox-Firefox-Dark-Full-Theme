@@ -79,7 +79,11 @@
   <li><b>Tabs bar below</b> bookmarks or URL box.</li>
   <li>Give tabs rounded corners.</li>
   <li>Tab close button always visible.</li>
+  <li>Change tab colors depending on it's read/loaded state.</li>
 </ul>
+
+<p>For the unread state to take effect you need to also place the file <b>setAttribute_unread.uc.js</b> inside your <a href="https://github.com/Izheil/Quantum-Nox-Firefox-Dark-Full-Theme/tree/master/CSS%20tweaks#the-chrome-folder">chrome folder</a>.</p>
+<p>This file won't get loaded unless you patched your firefox with the multi-row installer, or with the method explained inside the <a href="https://github.com/Izheil/Quantum-Nox-Firefox-Dark-Full-Theme/tree/master/Multirow%20and%20other%20functions/JS%20Loader">Multirow and other functions\JS Loader</a> folder from this repository.</p>
 
 <b>Rounded tabs:</b>
   <img src="https://i.imgur.com/qoG4Iiy.png">
