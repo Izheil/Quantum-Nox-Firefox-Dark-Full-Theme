@@ -73,39 +73,39 @@ to autohide, so it's safest to just hide it on fullscreen */
 
 /* Selected (loaded) */
 .tabbrowser-tab[selected="true"] .tab-label {
-  color: var(--Loaded-and-selected-text) !important;
-  font-style: var(--Loaded-and-selected-italic) !important;
-  font-weight: var(--Loaded-and-selected-bold) !important}
+  color: #eee !important;
+  font-style: normal !important;
+  font-weight: normal !important}
 
 .tabbrowser-tab[selected="true"] .tab-content {
-  background-color: var(--Loaded-and-selected-background) !important;
+  background-color: transparent !important;
   clip-path: inset(3px 0 0 0);}
 
 /* Loaded but unread (not selected) */
 .tabbrowser-tab:not([selected="true"])[unread] .tab-label {
-  color: var(--Loaded-but-unread-text) !important;
-  font-style: var(--Loaded-but-unread-italic) !important;
-  font-weight: var(--Loaded-but-unread-bold) !important}
+  color: #fff !important;
+  font-style: italic !important;
+  font-weight: normal !important}
 
 .tabbrowser-tab:not([selected="true"])[unread] .tab-content {
-  background-color: var(--Loaded-but-unread-background) !important}
+  background-color: transparent !important}
 
 /* Not loaded yet (also visited) */
 .tabbrowser-tab:not([selected="true"])[pending] .tab-label,
 .tabbrowser-tab:not([selected="true"])[visited] .tab-label {
-  color: var(--Not-loaded-text) !important;
-  font-style: var(--Not-loaded-italic) !important;
-  font-weight: var(--Not-loaded-bold) !important}
+  color: #ccc !important;
+  font-style: italic !important;
+  font-weight: normal !important}
 
 .tabbrowser-tab:not([selected="true"])[pending] .tab-content,
 .tabbrowser-tab:not([selected="true"])[visited] .tab-content {
-  background-color: var(--Not-loaded-background) !important}
+  background-color: transparent !important}
 
 /* loading */
 .tabbrowser-tab[busy] .tab-text.tab-label {
-  color: var(--Loading-text) !important;
-  font-style: var(--Loading-italic) !important;
-  font-weight: var(--Loading-bold) !important}
+  color: #0088ff !important;
+  font-style: normal !important;
+  font-weight: normal !important}
 
 .tabbrowser-tab[busy] .tab-content {
-  background-color: var(--Loading-background) !important}
+  background-color: transparent !important}
