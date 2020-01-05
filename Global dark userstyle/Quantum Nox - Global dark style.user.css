@@ -52,7 +52,7 @@
 if invMethod == "customSet" {
     
     /* General elements background color */
-    html, iframe:not(#firefox-screenshots-selection-iframe):not(#firefox-screenshots-preselection-iframe), embed, footer:not([class*="comment"]), [id*="footer"] {
+    html, iframe:not(#firefox-screenshots-selection-iframe):not(#firefox-screenshots-preselection-iframe):not(#s3downbar_download_box_iframe), embed, footer:not([class*="comment"]), [id*="footer"] {
     	background: darkBg bgColor !important}
     body, html body, .body-content, .conversation-list-heading .inner, .content-block, .page-body, body.navless, 
     .container-fluid, .topic-body, .body_wrapper, .single_wrap .single_post, .comment, .container-entry, 
