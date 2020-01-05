@@ -1,6 +1,6 @@
 /* You can find an updated version here: https://github.com/Izheil/Quantum-Nox-Firefox-Dark-Full-Theme */
 /* Made by Izheil */
-/* Last updated: 20/12/2019 */
+/* Last updated: 05/01/2020 */
 
 /* DO NOT DELETE THIS LINE */
 @namespace url("http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul");
@@ -106,7 +106,11 @@ in the rule below) */
 }
 
 /* Highlight color on browser windows (url bar, library, search box, bookmarks properties...) */
-window *|*::selection {
+#urlbar *|*::selection, #infoBox *|*::selection, window *|*::selection,
+#editBMPanel_namePicker *|*::selection, #editBMPanel_tagsField *|*::selection,
+#editBMPanel_tagsSelector *|*::selection, #placesToolbar *|*::selection,
+#mainDeck *|*::selection, dialog *|*::selection, #certDetails *|*::selection,
+#SignonViewerDialog *|*::selection, #CookiesDialog *|*::selection {
   /* This is the background color */
   background: var(--Text-selection-bg-color) !important;
   /* This is the text color */
