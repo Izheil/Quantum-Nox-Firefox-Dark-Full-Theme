@@ -1,6 +1,6 @@
 /* You can find an updated version here: https://github.com/Izheil/Quantum-Nox-Firefox-Dark-Full-Theme */
 /* Made by Izheil */
-/* Last updated: 08/01/2019 */
+/* Last updated: 10/01/2019 */
 
 /* DO NOT DELETE THIS LINE */
 @namespace url("http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul");
@@ -103,6 +103,14 @@ in the rule below) */
   --Loading-italic: normal;
   --Loading-bold: normal;
   --Loading-background: transparent;
+}
+
+/* These change the scrollbar color inside dialogs (not pages) */
+scrollbar, *|*:root {
+  /* The first value changes the scrollbar thumb color, the other one the track */
+  scrollbar-color: #05a #252525 !important;
+  /* auto = default OS size | thin = half the width (will be hidden in about: pages) | none = hidden scrollbar */
+  scrollbar-width: auto !important;
 }
 
 /* Highlight color on browser windows (url bar, library, search box, bookmarks properties...) */
