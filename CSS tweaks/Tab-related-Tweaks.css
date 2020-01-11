@@ -22,7 +22,7 @@ Explanation of what each rule affects:
 #titlebar {-moz-box-ordinal-group: 3 !important}
 
 #toolbar-menubar .titlebar-buttonbox-container {
-  display: block !important;
+    display: block !important;
     float: right !important}
 
 /* You may need to change this to remove padding above tabs */
