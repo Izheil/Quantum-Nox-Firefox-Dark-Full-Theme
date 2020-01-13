@@ -186,7 +186,7 @@ gBrowser.tabContainer.ondragstart = function(){if(gBrowser.tabContainer.clientHe
                 if (!this._dragTime)
                     this._dragTime = Date.now();
                 if (!tab.hasAttribute("pendingicon") && // annoying fix
-                    Date.now() >= this._dragTime + this._dragOverDelay)
+                    Date.now() >= this._dragTime + this._dragOverDelay);
                     this.selectedItem = tab;
                 ind.hidden = true;
                 return;
@@ -204,24 +204,29 @@ gBrowser.tabContainer.ondragstart = function(){if(gBrowser.tabContainer.clientHe
         if (newIndex == tabs.length) {
             let tabRect = tabs[newIndex - 1].getBoundingClientRect();
             if (ltr)
-                newMarginX = tabRect.right - rect.left + ind.clientWidth / 2;
+                newMarginX = tabRect.right - rect.left;
             else
-                newMarginX = (rect.right - tabRect.left + ind.clientWidth / 2) * -1;
-            newMarginY = tabRect.top + tabRect.height - rect.top - rect.height // multirow fix
+                newMarginX = rect.right - tabRect.left;
+            newMarginY = tabRect.top + tabRect.height - rect.top - rect.height; // multirow fix
 
             if (FFVer >= 72) // Compatibility fix for FF72+
-            	newMarginY += (rect.height / 2 - tabRect.height / 2);
-        } else {
+            	newMarginY += rect.height / 2 - tabRect.height / 2;
+            
+        } else if (newIndex != null || newIndex != 0) {
             let tabRect = tabs[newIndex].getBoundingClientRect();
             if (ltr)
-                newMarginX = tabRect.left - rect.left + ind.clientWidth / 2;
+                newMarginX = tabRect.left - rect.left;
             else
-                newMarginX = (rect.right - tabRect.right + (ind.clientWidth / 2)) * -1;
-            newMarginY = tabRect.top + tabRect.height - rect.top - rect.height // multirow fix
+                newMarginX = rect.right - tabRect.right;
+            newMarginY = tabRect.top + tabRect.height - rect.top - rect.height; // multirow fix
 
             if (FFVer >= 72) // Compatibility fix for FF72+
-            	newMarginY += (rect.height / 2 - tabRect.height / 2);
+            	newMarginY += rect.height / 2 - tabRect.height / 2;
         }
+
+        newMarginX += ind.clientWidth / 2;
+        if (!ltr)
+            newMarginX *= -1;
 
         ind.hidden = false;
 
