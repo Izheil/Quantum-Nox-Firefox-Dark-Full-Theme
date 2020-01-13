@@ -194,7 +194,7 @@ gBrowser.tabContainer.ondragstart = function(){if(gBrowser.tabContainer.clientHe
                 if (!this._dragTime)
                     this._dragTime = Date.now();
                 if (!tab.hasAttribute("pendingicon") && // annoying fix
-                    Date.now() >= this._dragTime + this._dragOverDelay)
+                    Date.now() >= this._dragTime + this._dragOverDelay);
                     this.selectedItem = tab;
                 ind.hidden = true;
                 return;
