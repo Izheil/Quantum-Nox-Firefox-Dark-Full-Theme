@@ -3,8 +3,9 @@
 // @namespace      http://space.geocities.yahoo.co.jp/gl/alice0775
 // @description    Multi-row tabs draggability fix, Experimental CSS version
 // @include        main
-// @compatibility  Firefox 72
+// @compatibility  Firefox 74
 // @author         Alice0775, Endor8, TroudhuK, Izheil
+// @version        13/01/2020 05:01 Fixed the tab drop indicator on FF72+
 // @version        15/11/2019 15:45 Unified FF67+ and FF72 versions
 // @version        11/10/2019 18:32 Compatibility fix for FF71
 // @version        06/09/2019 23:37 Fixed issue with tabs when moving to another window
@@ -23,6 +24,11 @@
 // ==/UserScript==
     zzzz_MultiRowTabLite();
 function zzzz_MultiRowTabLite() {
+	// We check for Firefox version first
+	var match = window.navigator.userAgent.match(/Firefox\/([0-9]+)\./);
+	var FFVer = match ? parseInt(match[1]) : 0;
+
+	// We then apply the fixes
 	var css =`
     /* MULTIROW TABS CSS */
     /* You can set the max number of rows before the scrollbar appears here.
@@ -80,7 +86,7 @@ function zzzz_MultiRowTabLite() {
 	`;
 
     // Here the FF71+ changes
-	if (document.querySelector("#tabbrowser-tabs .tabbrowser-arrowscrollbox").shadowRoot) {
+	if (FFVer >= 71) {
 	    css +=`
 		
 		#tabbrowser-tabs .tabbrowser-arrowscrollbox {
@@ -206,24 +212,26 @@ gBrowser.tabContainer.ondragstart = function(){if(gBrowser.tabContainer.clientHe
         if (newIndex == tabs.length) {
             let tabRect = tabs[newIndex - 1].getBoundingClientRect();
             if (ltr)
-                newMarginX = tabRect.right - rect.left;
+                newMarginX = tabRect.right - rect.left + ind.clientWidth / 2;
             else
-                newMarginX = rect.right - tabRect.left;
-            newMarginY = tabRect.top + tabRect.height - rect.top - rect.height; // multirow fix
+                newMarginX = (rect.right - tabRect.left + ind.clientWidth / 2) * -1;
+            newMarginY = tabRect.top + tabRect.height - rect.top - rect.height // multirow fix
+
+            if (FFVer >= 72) // Compatibility fix for FF72+
+            	newMarginY += (rect.height / 2 - tabRect.height / 2);
         } else {
             let tabRect = tabs[newIndex].getBoundingClientRect();
             if (ltr)
-                newMarginX = tabRect.left - rect.left;
+                newMarginX = tabRect.left - rect.left + ind.clientWidth / 2;
             else
-                newMarginX = rect.right - tabRect.right;
-            newMarginY = tabRect.top + tabRect.height - rect.top - rect.height; // multirow fix
+                newMarginX = (rect.right - tabRect.right + (ind.clientWidth / 2)) * -1;
+            newMarginY = tabRect.top + tabRect.height - rect.top - rect.height // multirow fix
+
+            if (FFVer >= 72) // Compatibility fix for FF72+
+            	newMarginY += (rect.height / 2 - tabRect.height / 2);
         }
 
         ind.hidden = false;
-
-        newMarginX += ind.clientWidth / 2;
-        if (!ltr)
-            newMarginX *= -1;
 
         ind.style.transform = "translate(" + Math.round(newMarginX) + "px," + Math.round(newMarginY) + "px)"; // multirow fix
         ind.style.marginInlineStart = (-ind.clientWidth) + "px";
