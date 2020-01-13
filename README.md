@@ -12,7 +12,7 @@ in <code>about:config</code> for userChrome and userContent to be loaded at all 
 <h3>Last update: <b>13/01/2020</b></h3>
 <p>Files updated:</p>
 <ul>
-	<li><b>MultiRowTab-scrollable*.uc.js</b>: Fixed a problem with tab drop indicators on FF72+.</li>
+	<li><b>MultiRowTab*.uc.js</b>: Fixed a problem with tab drop indicators on FF72+.</li>
 </ul>
 <h3>Pre-Last update: <b>08/01/2019</b></h3>
 <ul>
