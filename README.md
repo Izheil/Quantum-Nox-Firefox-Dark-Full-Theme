@@ -9,14 +9,14 @@ in <code>about:config</code> for userChrome and userContent to be loaded at all 
 
 <p>If you want to know how to change some colors of the theme, check the <a href="https://github.com/Izheil/Quantum-Nox-Firefox-Dark-Full-Theme/tree/master/Info#Editting CSS files">Info</a> section.</p>
 
-<h3>Last update: <b>13/01/2020</b></h3>
+<h3>Last update: <b>17/01/2020</b></h3>
 <p>Files updated:</p>
 <ul>
-	<li><b>MultiRowTab*.uc.js</b>: Fixed a problem with tab drop indicators on FF72+.</li>
+	<li><b>Global dark userstyle</b>: Moved the userstyles to a <a href="https://github.com/Izheil/Dark-userstyles">new repository</a> to avoid confusions and better tracking.</li>
 </ul>
-<h3>Pre-Last update: <b>08/01/2019</b></h3>
+<h3>Pre-Last update: <b>13/01/2019</b></h3>
 <ul>
-	<li><b>userChrome.css</b>: Fixed the search box text colors.</li>
+	<li><b>MultiRowTab*.uc.js</b>: Fixed a problem with tab drop indicators on FF72+.</li>
 </ul>
 
 <h3>A note on people looking to replace some Tab Mix Plus features:</h3>
@@ -40,14 +40,10 @@ in <code>about:config</code> for userChrome and userContent to be loaded at all 
 <img src="https://i.imgur.com/OhKiBCI.png">
 
 <h2>General sites dark theme</h2>
-<p>You can apply the global dark userstyle found inside the <a href="https://github.com/Izheil/Quantum-Nox-Firefox-Dark-Full-Theme/tree/master/Global%20dark%20userstyle">Global dark userstyle</a> folder to theme general sites with an all-around CSS stylesheet. <b>You need stylus addon to use it</b>.</p>
+<p>You can find an all-around sites stylesheet that will paint every site you visit dark <a href="https://github.com/Izheil/Dark-userstyles">here</a>. <b>You need stylus addon to use it</b>.</p>
 
 <p>While it's not perfect (meaning that you should still use per-site styles for the sites you visit often), it can help to darken most sites when browsing around general sites that you don't visit often, and thus don't want/can't find a specific userstyle for them.</p>
 <img src="https://i.imgur.com/mbeHNQp.png">
-
-<a href="https://raw.githubusercontent.com/Izheil/Quantum-Nox-Firefox-Dark-Full-Theme/master/Global%20dark%20userstyle/Quantum%20Nox%20-%20Global%20dark%20style.user.css"><img src="https://img.shields.io/badge/Install%20directly%20with-Stylus-00adad.svg"></a>
-
-<p>It is recommended that you check the <a href="https://github.com/Izheil/Quantum-Nox-Firefox-Dark-Full-Theme/tree/master/Global%20dark%20userstyle">Global dark userstyle</a> readme to know how to add site exclusions to the global userstyle.</p>
 
 <h2>Addon dark themes</h2>
 <p>You can apply a dark theme to certain addons changing the UUID's of them inside the <code>addons.css</code> file inside the "Full dark theme" folder (more instructions on how to do that inside the addons file).</p>
