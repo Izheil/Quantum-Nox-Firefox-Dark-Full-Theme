@@ -40,7 +40,7 @@ in <code>about:config</code> for userChrome and userContent to be loaded at all 
 <img src="https://i.imgur.com/OhKiBCI.png">
 
 <h2>General sites dark theme</h2>
-<p>You can find an all-around sites stylesheet that will paint every site you visit dark <a href="https://github.com/Izheil/Dark-userstyles">here</a>. <b>You need stylus addon to use it</b>.</p>
+<p>You can find an all-around sites stylesheet that will paint every site you visit dark <a href="https://github.com/Izheil/Dark-userstyles/tree/master/Global%20dark%20userstyle">here</a>. <b>You need <a href="https://addons.mozilla.org/es/firefox/addon/styl-us/">Stylus addon</a> to use it</b>.</p>
 
 <p>While it's not perfect (meaning that you should still use per-site styles for the sites you visit often), it can help to darken most sites when browsing around general sites that you don't visit often, and thus don't want/can't find a specific userstyle for them.</p>
 <img src="https://i.imgur.com/mbeHNQp.png">
