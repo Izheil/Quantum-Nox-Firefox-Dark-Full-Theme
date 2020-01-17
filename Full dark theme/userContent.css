@@ -1,6 +1,6 @@
 /* You can find an updated version here: https://github.com/Izheil/Quantum-Nox-Firefox-Dark-Full-Theme */
 /* Made by Izheil */
-/* Last updated: 18/12/2019 */
+/* Last updated: 17/01/2020 */
 
 /* This part imports the Addons file if there is one, so that you don't have to edit the dynamic URL
 from the addons rules every time we update anything here */
@@ -599,7 +599,7 @@ a.button {color: #fff !important}
 }
 
 /*------  LOCKWISE PAGE ------*/
-@-moz-document url(about:logins) {
+@-moz-document url-prefix(about:logins) {
 :root {
 --in-content-page-background: #2A2A2E !important;
 --in-content-page-color: rgb(249, 249, 250) !important;
