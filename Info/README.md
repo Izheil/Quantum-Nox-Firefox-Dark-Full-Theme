@@ -29,6 +29,11 @@ basic css or <a href="https://www.w3schools.com/colors/colors_picker.asp">color 
 
 <p>If you find some problem that is <b>directly related</b> with any of the functions offered by any of the files in this repository, you can comment it inside the relevant commit that you think may have affected the function that is giving you trouble. If you can't tell which, comment in the last one. Comments about new functionability or things that aren't related to the actual functionability of the files will be ignored (You can already ask about problems you may have with firefox on <a href="https://www.reddit.com/r/firefox/">r/firefox</a> or <a href="https://www.reddit.com/r/firefoxcss/">r/firefoxCSS</a> subreddits, or on <a href="https://support.mozilla.org/">Firefox support</a> pages).</p>
 
+<h3>Why isn't there an installer for the full theme for Firefox?</h3>
+<p>The theme here was created back when the default dark theme didn't cover any <code>about:</code> page, nor any menu/sidebar, and when no other full theme existed. Since then, <b>Firefox default dark theme was updated to cover many of these elements (if still missing some dialogs), so there isn't much of a need for an external theme anymore</b>. If you are using Windows or any other OS that paints all program dialogs white, you can install any custom theme to paint them dark (there are plenty in deviantart), which will also affect Firefox dialogs.
+I made this theme for personal use since I didn't like how everything was flashing white, but now it's not really needed anymore, so I stopped working on upgrading it as often. This doesn't mean that I won't patch things in it (since I still use it myself), but <b>I won't be trying to make installers for the theme part</b>.</p>
+<p>Right now the focus is on the Javascript functions that can't be emulated with webextensions.</p>
+
 <h3>Why did you remove the <code>userchrome.xml</code> method?</h3>
 <p>Mozilla has finally removed all XBL bindings from Firefox, and it's only a matter of time until they remove support for this method (which depended on it), so I decided to switch to this new method as soon as possible to avoid the upcoming problems. If you still use the userchrome.xml method you can still use it until Mozilla removes support for it, in which case you will have to switch to the new one.</p>
 <p>You can find the new patching method in the <a href="https://github.com/Izheil/Quantum-Nox-Firefox-Dark-Full-Theme/tree/master/Multirow and other functions/JS Loader">JS Loader</a> folder.</p>
@@ -45,7 +50,10 @@ basic css or <a href="https://www.w3schools.com/colors/colors_picker.asp">color 
 <p>Since this only happens when not using a persona, either install a lightweight theme, or uncomment the rule in line 38 (#TabsToolbar one) on <code>userChrome.css</code>. To do so, just delete the ending "/*" in the line above it.</p>
 
 <h3>Some dialog buttons still appear as white.</h3>
-<p>After FF69+, it's not possible to change the color of hover buttons on these dialogs with CSS (seems to be a bug with Firefox), so the only way to do this without JS is to invert the colors. The problem is that people that have an OS that paints these buttons dark would get the colors inverted to white... So if you are experiencing this issue, delete the ending "/*" on <a href="https://github.com/Izheil/Quantum-Nox-Firefox-Dark-Full-Theme/commit/72e766b3be4e0bfcbaa122bb427248f1b1bef759">line 320 on userChrome.css</a></p>
+<p>After FF69+, it's not possible to change the color of hover buttons on these dialogs with CSS (seems to be a bug with Firefox), so the only way to do this without JS is to invert the colors. The problem is that people that have an OS that paints these buttons dark would get the colors inverted to white... So if you are experiencing this issue, delete the ending "/*" on line 22 on userChrome.css</a></p>
+<pre>/* This inverts the button color of dialog boxes. If using an OS that paints buttons white,
+uncomment this line (by deleting the ending /* ->) */
+  --dialog-buttons-fix: invert(80%) hue-rotate(190deg);</pre>
 
 <h3>The urlbar shows as white background with white text over it after installing the theme.</h3>
 <p>This only happens when using Firefox default theme, either use firefox built-in dark theme along with this one, or use any other lightweight theme you like.</p>
