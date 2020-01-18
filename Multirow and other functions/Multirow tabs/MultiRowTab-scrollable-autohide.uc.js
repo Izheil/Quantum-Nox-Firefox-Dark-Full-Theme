@@ -5,6 +5,7 @@
 // @include        main
 // @compatibility  Firefox 74
 // @author         Alice0775, Endor8, TroudhuK, Izheil
+// @version        18/01/2020 02:39 Added a fix for people who always spoof their useragent
 // @version        13/01/2020 05:01 Fixed the tab drop indicator on FF72+
 // @version        15/11/2019 15:45 Unified FF67+ and FF72 versions
 // @version        11/10/2019 18:32 Compatibility fix for FF71
@@ -25,11 +26,6 @@
 // ==/UserScript==
     zzzz_MultiRowTabLite();
 function zzzz_MultiRowTabLite() {
-    // We check for Firefox version first
-    var match = window.navigator.userAgent.match(/Firefox\/([0-9]+)\./);
-    var FFVer = match ? parseInt(match[1]) : 0;
-
-    // We then apply the fixes
 	var css =`
     /* MULTIROW TABS CSS */
     /* You can set the max number of rows before the scrollbar appears here.
@@ -87,7 +83,7 @@ function zzzz_MultiRowTabLite() {
 	`;
 
     // Here the FF71+ changes
-	if (FFVer >= 71) {
+	if (document.querySelector("#tabbrowser-tabs .tabbrowser-arrowscrollbox").shadowRoot) {
 	    css +=`
 		
 		#tabbrowser-tabs .tabbrowser-arrowscrollbox {
@@ -222,7 +218,7 @@ gBrowser.tabContainer.ondragstart = function(){if(gBrowser.tabContainer.clientHe
                 newMarginX = rect.right - tabRect.left;
             newMarginY = tabRect.top + tabRect.height - rect.top - rect.height; // multirow fix
 
-            if (FFVer >= 72) // Compatibility fix for FF72+
+            if (CSS.supports("offset-anchor", "left bottom")) // Compatibility fix for FF72+
                 newMarginY += rect.height / 2 - tabRect.height / 2;
             
         } else if (newIndex != null || newIndex != 0) {
@@ -233,7 +229,7 @@ gBrowser.tabContainer.ondragstart = function(){if(gBrowser.tabContainer.clientHe
                 newMarginX = rect.right - tabRect.right;
             newMarginY = tabRect.top + tabRect.height - rect.top - rect.height; // multirow fix
 
-            if (FFVer >= 72) // Compatibility fix for FF72+
+            if (CSS.supports("offset-anchor", "left bottom")) // Compatibility fix for FF72+
                 newMarginY += rect.height / 2 - tabRect.height / 2;
         }
 
