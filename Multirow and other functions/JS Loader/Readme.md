@@ -4,6 +4,8 @@
 <h2>Installation</h2>
 <p>You can patch your Firefox using the installer in the <a href="https://github.com/Izheil/Quantum-Nox-Firefox-Dark-Full-Theme/releases">releases</a> section. The patcher will choose the default profile folder, so if you have more than 1 profile you should go to <code>about:profiles</code> and make sure that the path the patcher selects is the same as the one of the profile that you are currently using.</p>
 
+<b>If you are using Firefox portable, you will need to change the default root and profile folders to the ones of portable Firefox, so check the <a href="https://github.com/Izheil/Quantum-Nox-Firefox-Dark-Full-Theme/tree/master/Multirow%20and%20other%20functions/JS%20Loader#Firefox-root-folder">firefox root folder</a> and <a href="https://github.com/Izheil/Quantum-Nox-Firefox-Dark-Full-Theme/tree/master/Multirow%20and%20other%20functions/JS%20Loader#the-chrome-folder">chrome folder</a> sections to locate them first.<b>
+
 <p>Alternatively you can follow the explanations below for the manual installation.</p>
 
 <h3>Manual installation</h3>
@@ -47,6 +49,14 @@
 
 <h2>Firefox root folder</h2>
 <p>The root folder is where both the executable and the "defaults" folder of your current installed firefox are located</p>
+
+<h4>For portable Firefox, you can find firefox root folder here:</h4>
+
+<pre>32bits Firefox -> C:\Path-to-Portable-Firefox-here\App\Firefox
+64bits Firefox -> C:\Path-to-Portable-Firefox-here\App\Firefox64</pre>
+
+<p>...Where you have to change <code>Path-to-Portable-Firefox-here</code> to the path where you placed your Firefox Portable.</p>
+
 <h4>For Windows, you can find firefox root folder here:</h4>
 
 <pre>32bits Firefox -> C:\Program Files (x86)\Mozilla Firefox\
@@ -72,8 +82,9 @@
 
 <h2>The chrome folder</h2>
 <p>This is where you have to place the files of this repository.</p>
+
 <p>The fastest way to find it is to just type <code>about:support</code> on the URL bar of your firefox, and then click the <b>open folder</b> button inside the "profile folder" section.</p>
-<p>After this, your profile folder will be open. You may or may not see the chrome folder. If you don't see it, just create it and place inside the <code>userContent.css</code> and <code>userChrome.css</code> files.</p>
+<p>After this, your profile folder will be open. You may or may not see the chrome folder. If you don't see it, just create it and place inside the files.</p>
 
 <p>If you want to know the exact location for profile folders (information taken from <a href="http://kb.mozillazine.org/Profile_folder_-_Firefox">here</a>):</p>
 
@@ -86,6 +97,12 @@
 <p>You can also use this path to find the profile folder, even when it is hidden:</p>
 
 <pre>%APPDATA%\Mozilla\Firefox\Profiles\(profile folder)</pre>
+
+<p>If you are using Firefox portable, it's path will depend on where you placed it:</p>
+
+<pre>C:\Path-to-Portable-Firefox-here\Data\profile</pre>
+
+<p>...Where you have to change <code>Path-to-Portable-Firefox-here</code> to the path where you placed your Firefox Portable.</p>
 
 <h4>On Linux, profile folders are located in this other location:</h4>
 
