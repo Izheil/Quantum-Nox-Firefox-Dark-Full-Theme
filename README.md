@@ -9,14 +9,14 @@ in <code>about:config</code> for userChrome and userContent to be loaded at all 
 
 <p>If you want to know how to change some colors of the theme, check the <a href="https://github.com/Izheil/Quantum-Nox-Firefox-Dark-Full-Theme/tree/master/Info#Editting CSS files">Info</a> section.</p>
 
-<h3>Last update: <b>17/01/2020</b></h3>
+<h3>Last update: <b>18/01/2020</b></h3>
 <p>Files updated:</p>
 <ul>
-	<li><b>Global dark userstyle</b>: Moved the userstyles to a <a href="https://github.com/Izheil/Dark-userstyles">new repository</a> to avoid confusions and better tracking.</li>
+	<li><b>UserChrome.css</b>: Removed some old code, and changed a few colors on the menus.</li>
 </ul>
-<h3>Pre-Last update: <b>13/01/2019</b></h3>
+<h3>Pre-Last update: <b>17/01/2019</b></h3>
 <ul>
-	<li><b>MultiRowTab*.uc.js</b>: Fixed a problem with tab drop indicators on FF72+.</li>
+	<li><b>Global dark userstyle</b>: Moved the userstyles to a <a href="https://github.com/Izheil/Dark-userstyles">new repository</a> to avoid confusions and better tracking.</li>
 </ul>
 
 <h3>A note on people looking to replace some Tab Mix Plus features:</h3>
