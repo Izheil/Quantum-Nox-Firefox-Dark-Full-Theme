@@ -1,6 +1,6 @@
 /* You can find an updated version here: https://github.com/Izheil/Quantum-Nox-Firefox-Dark-Full-Theme */
 /* Made by Izheil */
-/* Last updated: 18/01/2020 */
+/* Last updated: 21/01/2020 */
 
 /* DO NOT DELETE THIS LINE */
 @namespace url("http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul");
@@ -861,6 +861,14 @@ if necessary depending on if you are using a custom OS theme (which may mess up 
 /* This changes the autocomplete popup borders */
 #PopupAutoCompleteRichResult, #PopupSearchAutoComplete, #PopupAutoComplete {
   border: 1px solid #000 !important}
+
+/* Changes the logins autocomplete */
+#PopupAutoComplete .autocomplete-richlistbox {background-color: var(--Window-bg) !important}
+
+.line1-label {color: #ddd !important}
+.line2-label {color: #aaa !important}
+
+.ac-site-icon {fill: #ddd !important}
 
 /* Changes the "Search with" label on the autocomplete popup in the URL bar and search box */
 #urlbar .search-one-offs label, 
