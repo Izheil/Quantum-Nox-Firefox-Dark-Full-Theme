@@ -506,7 +506,7 @@ menuseparator {
 #identity-popup-popup-menulist .menulist-dropmarker {filter: brightness(300%) !important}
 
 /* Drop indicator that appears when moving a bookmark in a bookmark folder color */
-.menupopup-drop-indicator {background-color: #999 !important}
+menupopup::part(drop-indicator) {background-color: #5af !important}
 
 /* Color of default icons on bookmark bar and bookmark popup (folder icons mainly) */
 .bookmark-item > .toolbarbutton-icon[type="menu"], 
