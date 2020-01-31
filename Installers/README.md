@@ -6,7 +6,7 @@
 
 <p>In linux you might need to install pip (to install the elevate module) and tkinter after installing Python 3.7, which you can do with these commands respectively:</p>
 
-<pre>sudo apt install python3-pip</pre><br>
+<pre>sudo apt install python3-pip</pre>
 <pre>sudo apt-get install python3-tk</pre>
 
 <p>You will also need to install the required module after installing Python and pip (on any OS) using:</p>
