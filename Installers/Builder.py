@@ -1,4 +1,3 @@
-#!/usr/bin/python3.7
 import os
 import re
 import sys
@@ -27,7 +26,7 @@ def SystemOS():
 
 if SystemOS() == "Linux":
     if os.geteuid() != 0:
-        os.execvp("sudo", ["sudo"] + ["python3"] + sys.argv)
+        os.execvp("sudo", ["sudo"] + sys.argv)
         
 else: elevate.elevate()
 
@@ -1158,7 +1157,7 @@ def UIStart():
     if SystemOS() == "Windows":
         QNWindow.iconbitmap(os.path.normpath(sys._MEIPASS + '/icon.ico'))
     else:
-        logo = PhotoImage(file=os.path.normpath(sys._MEIPASS + 'icon.gif'))
+        logo = PhotoImage(file=os.path.normpath(sys._MEIPASS + '/icon.gif'))
         QNWindow.call('wm', 'iconphoto', QNWindow._w, logo)
     app = patcherUI()
     QNWindow.title("Quantum Nox - Firefox Patcher")

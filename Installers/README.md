@@ -2,16 +2,14 @@
 <p>If you don't want to copy the files manually to install multirow, tabs below, or focus tab on hover, you can do it with this installer.</p>
 <b>Make sure your Firefox is up to date, since the userscripts installed with this assume you have the lastest firefox version.</b>
 <p>This is the python version of the installer, which requires all files and folders in here to work. For the single file installer go to the <a href="https://github.com/Izheil/Quantum-Nox-Firefox-Dark-Full-Theme/releases">releases</a> page.</p>
-<p>You need <a href="https://www.python.org/downloads/release/python-375/">Python 3.7</a> installed to use these, along with the <b>elevate</b> module.</p>
+<p>You need <a href="https://www.python.org/downloads/release/python-375/">Python 3.6+</a> installed to use these, along with the <b>elevate</b> module.</p>
 
-<p>In linux you might need to install pip (to install the elevate module) after installing Python 3.7, which you can do with:</p>
+<p>In linux you might need to install pip (to install the elevate module) and tkinter after installing Python 3.7, which you can do with these commands respectively:</p>
 <code>sudo apt install python3-pip</code>
-
-<p>...As well as tkinter</p>
 <code>sudo apt-get install python3-tk</code>
 
 <p>You will also need to install the required module after installing Python and pip (on any OS) using:</p>
-<code>pip3 install elevate</code>
+<code>pip3 install elevate</code><br>
 
 <p>After that you can run <code>Quantum-Nox-Installer.py</code> to start the patcher.</p>
 

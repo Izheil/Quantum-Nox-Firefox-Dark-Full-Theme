@@ -2,7 +2,6 @@
 
 block_cipher = None
 
-
 a = Analysis(['Builder.py'],
              pathex=['.'],
              binaries=[],
@@ -15,6 +14,7 @@ a = Analysis(['Builder.py'],
              win_private_assemblies=False,
              cipher=block_cipher,
              noarchive=False)
+
 pyz = PYZ(a.pure, a.zipped_data,
              cipher=block_cipher)
 exe = EXE(pyz,
@@ -26,7 +26,7 @@ exe = EXE(pyz,
           a.zipfiles,
           a.datas,
           [],
-          name='Quantum Nox Installer',
+          name='Quantum-Nox-Installer',
           debug=False,
           bootloader_ignore_signals=False,
           strip=False,
