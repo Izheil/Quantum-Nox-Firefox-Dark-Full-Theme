@@ -7,10 +7,13 @@
 <p>In linux you might need to install pip (to install the elevate module) after installing Python 3.7, which you can do with:</p>
 <code>sudo apt install python3-pip</code>
 
-<p>You can install the required module after installing Python and pip using:</p>
+<p>...As well as tkinter</p>
+<code>sudo apt-get install python3-tk</code>
+
+<p>You will also need to install the required module after installing Python and pip (on any OS) using:</p>
 <code>pip3 install elevate</code>
 
-<p>After that you can run <code>Quantum Nox Installer.py</code> to start the patcher.</p>
+<p>After that you can run <code>Quantum-Nox-Installer.py</code> to start the patcher.</p>
 
 <h2>The functions</h2>
 <p>You can find more explanations in the folders inside <a href="https://github.com/Izheil/Quantum-Nox-Firefox-Dark-Full-Theme/tree/master/Multirow%20and%20other%20functions">Multirow and other functions</a> folder in this repository.</p>

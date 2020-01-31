@@ -1157,6 +1157,9 @@ def UIStart():
     QNWindow.resizable(False, False)
     if SystemOS() == "Windows":
         QNWindow.iconbitmap('icon.ico')
+    else:
+        logo = PhotoImage(file='icon.gif')
+        QNWindow.call('wm', 'iconphoto', QNWindow._w, logo)
     app = patcherUI()
     QNWindow.title("Quantum Nox - Firefox Patcher")
     QNWindow.mainloop()
