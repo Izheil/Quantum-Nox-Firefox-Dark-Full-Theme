@@ -50,23 +50,23 @@ in <code>about:config</code> for userChrome and userContent to be loaded at all 
 <img src="https://i.imgur.com/bEleqP7.png" title="Dark addons" />
 <p>Here is a list of the themed addons:</p>
 <ul>
-	<li><a href="https://addons.mozilla.org/es/firefox/addon/video-downloader-player/">Ant Video Downloader</a></li>
-	<li><a href="https://addons.mozilla.org/es/firefox/addon/cookie-autodelete/">Cookie autodelete</a></li>
-	<li><a href="https://addons.mozilla.org/es/firefox/addon/s3download-statusbar/">Download Manager (S3)</a></li>
-	<li><a href="https://addons.mozilla.org/es/firefox/addon/history-autodelete/">History autodelete</a></li>
-	<li><a href="https://addons.mozilla.org/es/firefox/addon/https-everywhere/">HTTPS Everywhere</a></li>
-	<li><a href="https://addons.mozilla.org/es/firefox/addon/noscript/">Noscript</a></li>
+	<li><a href="https://addons.mozilla.org/en-US/firefox/addon/video-downloader-player/">Ant Video Downloader</a></li>
+	<li><a href="https://addons.mozilla.org/en-US/firefox/addon/cookie-autodelete/">Cookie autodelete</a></li>
+	<li><a href="https://addons.mozilla.org/en-US/firefox/addon/s3download-statusbar/">Download Manager (S3)</a></li>
+	<li><a href="https://addons.mozilla.org/en-US/firefox/addon/history-autodelete/">History autodelete</a></li>
+	<li><a href="https://addons.mozilla.org/en-US/firefox/addon/https-everywhere/">HTTPS Everywhere</a></li>
+	<li><a href="https://addons.mozilla.org/en-US/firefox/addon/noscript/">Noscript</a></li>
 	<li><a href="https://addons.mozilla.org/en-US/firefox/addon/gmail-notifier-restartless/">Notifier for Gmail (restartless)</a></li>
-	<li><a href="https://addons.mozilla.org/es/firefox/addon/multi-account-containers/">Multi-accounts containers</a></li>
-	<li><a href="https://addons.mozilla.org/es/firefox/addon/onetab/">OneTab</a></li>
+	<li><a href="https://addons.mozilla.org/en-US/firefox/addon/multi-account-containers/">Multi-accounts containers</a></li>
+	<li><a href="https://addons.mozilla.org/en-US/firefox/addon/onetab/">OneTab</a></li>
 	<li><a href="https://addons.mozilla.org/en-US/firefox/addon/popup-blocker-ultimate/">Popup Blocker Ultimate</a></li>
-	<li><a href="https://addons.mozilla.org/es/firefox/addon/privacy-badger17/">Privacy badger</a></li>
-	<li><a href="https://addons.mozilla.org/es/firefox/addon/tab-session-manager/">Tab session manager</a></li>
-	<li><a href="https://addons.mozilla.org/es/firefox/addon/temporary-containers/">Temporary containers</a></li>
-	<li><a href="https://addons.mozilla.org/es/firefox/addon/ublock-origin/">Ublock Origin</a></li>
-	<li><a href="https://addons.mozilla.org/es/firefox/addon/undo-closed-tabs-revived/">Undo closed tabs button</a></li>
-	<li><a href="https://addons.mozilla.org/es/firefox/addon/video-downloadhelper/">Video Download Helper</a></li> 
-	<li><a href="https://addons.mozilla.org/es/firefox/addon/viewhance/">Viewhance</a></li>
+	<li><a href="https://addons.mozilla.org/en-US/firefox/addon/privacy-badger17/">Privacy badger</a></li>
+	<li><a href="https://addons.mozilla.org/en-US/firefox/addon/tab-session-manager/">Tab session manager</a></li>
+	<li><a href="https://addons.mozilla.org/en-US/firefox/addon/temporary-containers/">Temporary containers</a></li>
+	<li><a href="https://addons.mozilla.org/en-US/firefox/addon/ublock-origin/">Ublock Origin</a></li>
+	<li><s><a href="https://addons.mozilla.org/en-US/firefox/addon/undo-closed-tabs-revived/">Undo closed tabs button</a></s> -> You should use <a href="https://addons.mozilla.org/en-US/firefox/addon/undoclosetabbutton/">Undo close tab</a> instead (which requires no theming).</li>
+	<li><a href="https://addons.mozilla.org/en-US/firefox/addon/video-downloadhelper/">Video Download Helper</a></li> 
+	<li><a href="https://addons.mozilla.org/en-US/firefox/addon/viewhance/">Viewhance</a></li>
 </ul>
 
 <p>You might have noticed that we no longer have <a href="https://gist.github.com/Izheil/49db523ee66d88995401bb6844605763">Lastpass dark theme</a> inside <code>addons.css</code> anymore. This is because at the time that addon was themed, I didn't know much about it. After some research it seems like Lastpass has had a history of security issues (in 2011, 2015, 2016, and 2017), as well as there being other open source alternatives out there that seem to be more reliable, like <b>Bitwarden</b> (it also has a built-in dark mode) which is available for all major browsers.</p>
