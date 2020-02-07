@@ -1,6 +1,6 @@
 /* You can find an updated version here: https://github.com/Izheil/Quantum-Nox-Firefox-Dark-Full-Theme */
 /* Made by Izheil */
-/* Last updated: 17/01/2020 */
+/* Last updated: 08/02/2020 */
 
 /* This part imports the Addons file if there is one, so that you don't have to edit the dynamic URL
 from the addons rules every time we update anything here */
@@ -1471,6 +1471,8 @@ th.LanguageTools-header-cell {background-color: #101010 !important}
 
 .Home-SubjectShelf-link:link, .Home-SubjectShelf-link:visited 
 {color: #343a40 !important}
+
+.Notice.Notice-genericWarning {background-color: #664 !important}
 
 a.SearchResult-link h2, span, label *, p, a, h4, h2, blockquote, 
 li, .Guides-section-explore-more, .HomeHeroGuides-header-subtitle,
