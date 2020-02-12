@@ -3,8 +3,9 @@
 // @namespace      http://space.geocities.yahoo.co.jp/gl/alice0775
 // @description    Multi-row tabs draggability fix, Experimental CSS version
 // @include        main
-// @compatibility  Firefox 74
+// @compatibility  Firefox 75
 // @author         Alice0775, Endor8, TroudhuK, Izheil
+// @version        12/02/2020 03:30 Fixed some issue with the min/resize/close buttons
 // @version        18/01/2020 02:39 Added a fix for people who always spoof their useragent
 // @version        13/01/2020 05:01 Fixed the tab drop indicator on FF72+
 // @version        15/11/2019 15:45 Unified FF67+ and FF72 versions
@@ -75,7 +76,7 @@ function zzzz_MultiRowTabLite() {
         max-height: calc((var(--tab-min-height)*var(--max-tab-rows)))}
 
     @media (-moz-os-version: windows-win10) {
-        .titlebar-buttonbox, #titlebar-buttonbox {display: block !important; height:var(--tab-min-height) !important}}
+        .titlebar-buttonbox-container {display: block !important; height:var(--tab-min-height) !important}}
 
     #alltabs-button, :root:not([customizing]) #TabsToolbar #new-tab-button, .tabbrowser-tab::after
     {display: none}
