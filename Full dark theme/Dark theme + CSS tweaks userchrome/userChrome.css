@@ -23,13 +23,13 @@ without this change) */
   --urlbar-popup-url-color: #5ad !important;
   --urlbar-popup-action-color: #888 !important;
   --toolbar-field-focus-border-color: #444 !important;
-  --lwt-toolbar-field-background-color: #404046 !important;
-  --lwt-toolbar-field-focus: #373740 !important;
+  --lwt-toolbar-field-background-color: rgb(61,61,63) !important;
+  --lwt-toolbar-field-focus: rgb(71,71,73) !important;
   --lwt-toolbar-field-color: #aaa !important;
   --lwt-toolbar-field-focus-color: var(--lwt-toolbar-field-color) !important;
   --lwt-text-color: #ccc !important;
   --urlbar-separator-color: #88a !important;
-  --autocomplete-popup-highlight-background: rgba(100,100,120,0.4) !important;
+  --autocomplete-popup-highlight-background: rgba(100,100,100,0.4) !important;
   --autocomplete-popup-highlight-color: #ddd !important;
   --url-autocomplete-links-color: rgb(0,160,200);
   --Search-engine-choices-gradient: linear-gradient(90deg, rgba(4,34,74,1) 5%, rgba(22,52,132,1) 50%, rgba(4,34,74,1) 95%);}}
@@ -54,12 +54,12 @@ but is disabled by default in this theme (Disable for the default tab line color
 
 *|*:root {
   /* Main menu colors */
-  --panel-separator-color: rgba(100,100,105, .5) !important;
-  --arrowpanel-background: #383840 !important;
+  --panel-separator-color: rgba(95,95,95, .5)  !important;
+  --arrowpanel-background: #383838 !important;
   --arrowpanel-color: #ccc !important;
   --panel-disabled-color: #888 !important;
-  --in-content-box-background: #333336 !important;
-  --in-content-box-background-hover: #444447 !important;
+  --in-content-box-background: #333 !important;
+  --in-content-box-background-hover: #444 !important;
   --arrowpanel-dimmed: rgba(100,100,105, .25) !important;
   --arrowpanel-dimmed-further: rgba(100,100,105, .4) !important;
   --arrowpanel-dimmed-even-further: rgba(100,100,105, .6) !important;
@@ -70,7 +70,7 @@ but is disabled by default in this theme (Disable for the default tab line color
   --nav-bar-icons-color: var(--chrome-color); /* var(--chrome-color) for default color of the used theme */
   --Min-max-buttons-hover-bg: rgba(255,255,255,0.2);
   --Context-menu-highlight: #25a;
-  --Context-menu-background: rgba(56,56,60,0.9); /* The last number changes the opacity %. Change that 1 for 0.9 for semitransparent backgrounds */
+  --Context-menu-background: rgba(60,60,60, 1); /* The last number changes the opacity %. Change that 1 for 0.9 for semitransparent backgrounds */
   --Progress-bar-color: #3070dd;
   --Input-field-focus-shadow: 0 0 4px #0050ff;
   --Bookmark-folder-icon: #ffe793;
@@ -82,8 +82,8 @@ but is disabled by default in this theme (Disable for the default tab line color
   --Lists-treechildren-hover-border: 1px solid rgb(0,149,221);
   --Lists-treechildren-selected-bg: rgba(0,120,255,0.5);
   --Lists-treechildren-selected-border: 1px solid #0a84ff;
-  --Sidebar-header: #333338;
-  --Window-bg: #383840;
+  --Sidebar-header: #252525;
+  --Window-bg: #353535; /* Also applies to sidebar content */
 
   /* Customization page */
   --toolbar-bgcolor: #303030 !important;
@@ -333,7 +333,7 @@ dialog menulist .menulist-dropmarker {display: none}
   background-color: rgb(23,25,50) !important}
 
 /* This is aimed for notification popups */
-window:not(#main-window):not(#CookiesDialog):not(#SignonViewerDialog):not(.theme-dark):not(#aboutDialog) > * {
+window:not(#main-window):not(#CookiesDialog):not(#SignonViewerDialog):not(.theme-dark):not(#aboutDialog) > *:not(menupopup) {
   background-color: var(--Window-bg) !important; 
   color: #fff !important}
 

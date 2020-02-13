@@ -12,7 +12,7 @@ in <code>about:config</code> for userChrome and userContent to be loaded at all 
 <h3>Last update: <b>13/02/2020</b></h3>
 <p>Files updated:</p>
 <ul>
-	<li><b>userChrome</b>: Removed the "there.is.only.xul" line, which at this point does more harm than good (causes issues with navigator toolbox fixes, like with tabs below).</li>
+	<li><b>userChrome</b>: Removed the "there.is.only.xul" line, which at this point does more harm than good (causes issues with navigator toolbox fixes, like with tabs below). Changed the context menu and URL bar colors back to similar colors as how it was before.</li>
 </ul>
 <h3>Pre-Last update: <b>12/02/2019</b></h3>
 <ul>
