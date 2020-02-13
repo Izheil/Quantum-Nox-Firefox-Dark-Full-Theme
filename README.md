@@ -9,14 +9,14 @@ in <code>about:config</code> for userChrome and userContent to be loaded at all 
 
 <p>If you want to know how to change some colors of the theme, check the <a href="https://github.com/Izheil/Quantum-Nox-Firefox-Dark-Full-Theme/tree/master/Info#Editting CSS files">Info</a> section.</p>
 
-<h3>Last update: <b>12/02/2020</b></h3>
+<h3>Last update: <b>13/02/2020</b></h3>
 <p>Files updated:</p>
 <ul>
-	<li><b>Multirow files</b>: Fixed some minor issue with the min/resize/close buttons on nightly.</li>
+	<li><b>userChrome</b>: Removed the "there.is.only.xul" line, which at this point does more harm than good (causes issues with navigator toolbox fixes, like with tabs below).</li>
 </ul>
-<h3>Pre-Last update: <b>08/02/2019</b></h3>
+<h3>Pre-Last update: <b>12/02/2019</b></h3>
 <ul>
-	<li><b>UserContent.css</b>: Themed missing notices on firefox addons page.</li>
+	<li><b>Multirow files</b>: Fixed some minor issue with the min/resize/close buttons on nightly.</li>
 </ul>
 
 <h3>A note on people looking to replace some Tab Mix Plus features:</h3>
