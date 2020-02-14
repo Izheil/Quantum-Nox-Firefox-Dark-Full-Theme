@@ -1,6 +1,6 @@
 /* You can find an updated version here: https://github.com/Izheil/Quantum-Nox-Firefox-Dark-Full-Theme */
 /* Made by Izheil */
-/* Last updated: 13/02/2020 */
+/* Last updated: 14/02/2020 */
 
 /* COLORING PART STARTS HERE */
 
@@ -14,10 +14,6 @@ without this change) */
   /* You can change the lightweight theme header and footer images with this. 
   To use this, enable the "lightweight themes fix" below. Delete the final /* to use -> *//*
   --lwt-header-image: url("file:///") !important;
-
-  /* This inverts the button color of dialog boxes. If using an OS that paints buttons white,
-  uncomment this line (by deleting the ending /* ->) *//*
-  --dialog-buttons-fix: invert(80%) hue-rotate(190deg);
 
   /* Url and search bars */
   --urlbar-popup-url-color: #5ad !important;
@@ -51,7 +47,6 @@ but is disabled by default in this theme (Disable for the default tab line color
 /* This gives a more notizable color background on hover of the close tab button */
 .tab-close-button:hover {background: rgba(255,255,255,0.15) !important}
 
-
 *|*:root {
   /* Main menu colors */
   --panel-separator-color: rgba(95,95,95, .5)  !important;
@@ -82,8 +77,9 @@ but is disabled by default in this theme (Disable for the default tab line color
   --Lists-treechildren-hover-border: 1px solid rgb(0,149,221);
   --Lists-treechildren-selected-bg: rgba(0,120,255,0.5);
   --Lists-treechildren-selected-border: 1px solid #0a84ff;
-  --Sidebar-header: #252525;
-  --Window-bg: #353535; /* Also applies to sidebar content */
+  --Lists-treechildren-selected-txt: #fff;
+  --Sidebar-header: #333338;
+  --Window-bg: #383840;
 
   /* Customization page */
   --toolbar-bgcolor: #303030 !important;
@@ -150,7 +146,8 @@ treechildren::-moz-tree-row(hover), dialog richlistitem:hover {
 
 treechildren::-moz-tree-row(selected), dialog richlistitem[selected] {
   background: var(--Lists-treechildren-selected-bg) !important;
-  border: var(--Lists-treechildren-selected-border) !important}
+  border: var(--Lists-treechildren-selected-border) !important,
+  color: var(--Lists-treechildren-selected-txt) !important}
 
 dialog richlistitem[clear-site-data-cookies-with-data] {border: 1px solid red !important}
 
@@ -216,10 +213,10 @@ findbar {
   --lwt-toolbar-field-color: #fff !important;
 }
 
-html|input.findbar-textbox {
+findbar .findbar-textbox {
   background: var(--in-content-box-background-hover) !important;
   color: #fff !important;
-  border: 1px solid #000 !important}
+  border-color: #000 !important}
 
 findbar .findbar-textbox[focused="true"], findbar .findbar-textbox:hover {
   border-color: Highlight !important}
@@ -333,7 +330,7 @@ dialog menulist .menulist-dropmarker {display: none}
   background-color: rgb(23,25,50) !important}
 
 /* This is aimed for notification popups */
-window:not(#main-window):not(#CookiesDialog):not(#SignonViewerDialog):not(.theme-dark):not(#aboutDialog) > *:not(menupopup) {
+window:not(#main-window):not(#CookiesDialog):not(#SignonViewerDialog):not(.theme-dark):not(#aboutDialog) > * {
   background-color: var(--Window-bg) !important; 
   color: #fff !important}
 
@@ -349,10 +346,30 @@ dialog button:hover, toolbar[printpreview="true"] button:hover {
   background-color: #444 !important;
   color: #fff !important}
 
-/* After FF69, dialog buttons can't be colored with :hover, so we have to apply this fix depending on 
-the default colors of your OS. Enable if you have an OS that paints buttons white.
-To enable just delete the /* in there -> */
-.dialog-button-box button {filter: var(--dialog-buttons-fix)}
+/* This changes the missing dialog buttons */
+.dialog-button, .wizard-button {
+  -moz-appearance: none !important;
+  background: #444 !important;
+  color: #ccc !important;
+  padding: 2px 0px;
+  transition: all 0.15s ease-in-out}
+
+.dialog-button[disabled], .wizard-button[disabled] {
+  opacity: 0.7}
+
+.dialog-button:not([disabled]):hover, .wizard-button:not([disabled]):hover {
+  background: #555 !important;
+  color: #fff !important}
+
+.dialog-button:not([disabled]):active, .wizard-button:not([disabled]):active {
+  background: #222 !important;
+  color: #fff !important}
+
+/* Migration dialog header */
+.wizard-header {
+  background: #222 !important;
+  color: #fff !important;
+  border-color: #000 !important}
 
 /* Textboxes colors */
 dialog textbox, toolbar[printpreview="true"] textbox {
@@ -362,8 +379,7 @@ dialog textbox, toolbar[printpreview="true"] textbox {
   background-color: #444 !important;
   color: #aaa !important}
 
-dialog textbox[focused="true"], toolbar[printpreview="true"] textbox[focused="true"],
-#bookmarkproperties #editBMPanel_namePicker[focused="true"], #bookmarkproperties #editBMPanel_tagsField[focused="true"] {
+dialog textbox[focused="true"], toolbar[printpreview="true"] textbox[focused="true"] {
   box-shadow: var(--Input-field-focus-shadow) !important;
   background-color: #555 !important;
   color: #fff !important}
@@ -594,23 +610,9 @@ if necessary depending on if you are using a custom OS theme (which may mess up 
 #clearDownloadsButton {color: #aaa !important}
 #clearDownloadsButton[disabled] {color: #555 !important}
 
-/* This themes the search box */
-#searchFilter {
-  transition: all 0.25s ease-in-out !important;
-  -moz-appearance: none !important; 
-  border: 1px solid #666 !important;
-  background-color: #444 !important;
-  color: #aaa !important}
-
-/* This themes the search box on hover */
-#searchFilter[focused="true"] {
-  box-shadow: var(--input-field-focus-shadow) !important;
-  background-color: #555 !important;
-  color: #fff !important} 
-
 /* This themes the information box on the lower part of the library menu */
 #detailsDeck {
-  background-color: #444 !important; 
+  background-color: var(--Window-bg) !important; 
   color: #aaa !important;
   border-top: 1px solid #222 !important}
 
@@ -618,28 +620,32 @@ if necessary depending on if you are using a custom OS theme (which may mess up 
 #infoBox textbox, #infoBox listbox, 
 /* This changes the text boxes on the popup when bookmarking a page from the url box */
 #editBMPanel_namePicker, #editBMPanel_tagsField,
-#editBMPanel_tagsSelector {
+#editBMPanel_tagsSelector, #editBMPanel_locationField, 
+#editBMPanel_keywordField, #searchFilter {
   transition: all 0.25s ease-in-out !important;
   -moz-appearance: none !important; 
-  border: 1px solid #777 !important;
-  background-color: #555 !important;
+  border: 1px solid #555 !important;
+  background-color: #404040 !important;
   color: #ddd !important}
 
-/* A fix for bookmark preferences... so that some boxes won't appear brighter than others */
-#bookmarkproperties #editBMPanel_namePicker, 
-#bookmarkproperties #editBMPanel_tagsField,
-#bookmarkproperties #editBMPanel_tagsSelector {
-  background-color: #444 !important}
+#editBMPanel_tagsSelector richlistitem[selected="true"] {
+  background-color: var(--Lists-treechildren-selected-bg) !important;
+  color: var(--Lists-treechildren-selected-txt) !important}
 
-/* This changes the same text boxes on hover */
-#infoBox textbox[focused="true"], #infoBox listbox[focused="true"],
-/* This changes the same url bookmarking popup text boxes on hover */
-#editBMPanel_namePicker[focused="true"], #editBMPanel_tagsField[focused="true"],
-#infoBox #bookmarkproperties #editBMPanel_namePicker[focused="true"],
-#infoBox #bookmarkproperties #editBMPanel_tagsField[focused="true"] {
+#editBMPanel_tagsSelector richlistitem[checked="true"] image {
+  -moz-appearance: none !important;
+  background: transparent url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="13px" height="13px" viewBox="0 0 14 14" ><path fill="rgb(200,200,200)" d="M 13.09,2.87 C 13.09,2.87 6.00,11.00 6.00,11.00 6.00,11.00 2.00,9.00 2.00,9.00 4.25,12.81 7.00,14.00 7.00,14.00 9.24,10.42 12.04,7.39 13.09,2.87 Z" /></svg>') no-repeat center center !important;
+  border: none !important}
+
+/* This changes the input boxes of bookmark/library on focus */
+#editBMPanel_namePicker:not([readonly]):focus,
+#editBMPanel_tagsField:focus,
+#editBMPanel_keywordField:focus,
+#editBMPanel_locationField:not([readonly]):focus,
+#searchFilter[focused="true"] {
   box-shadow: var(--Input-field-focus-shadow) !important;
-  background-color: #666 !important;
-  color: #fff !important}
+  background-color: #555 !important;
+  color: #fff !important} 
 
 /* This changes the buttons inside the bookmarking popup at the url star */
 #editBMPanel_newFolderButton, #editBookmarkPanelDoneButton, 
@@ -677,6 +683,9 @@ if necessary depending on if you are using a custom OS theme (which may mess up 
 
 /* These change the downloads history list background */
 #downloadsRichListBox {background: #444 !important; color: #ccc !important}
+
+/* BOOKMARK PROPERTIES WINDOW */
+#bookmarkproperties {width: 55em}
 
 /* PAGE INFORMATION WINDOW */
 
@@ -737,7 +746,8 @@ if necessary depending on if you are using a custom OS theme (which may mess up 
 
 #removalList > listitem[selected="true"], #removalList > listitem[focused="true"] {
   background: var(--Lists-treechildren-selected-bg) !important;
-  border: var(--Lists-treechildren-selected-border) !important}
+  border: var(--Lists-treechildren-selected-border) !important;
+  color: var(--Lists-treechildren-selected-txt) !important}
 
 #mainDeck treechildren::-moz-tree-row(odd), #cookiesList treechildren::-moz-tree-row(odd),
 #certDetails treechildren::-moz-tree-row(odd), #signonsTree treechildren::-moz-tree-row(odd) {

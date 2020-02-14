@@ -9,14 +9,15 @@ in <code>about:config</code> for userChrome and userContent to be loaded at all 
 
 <p>If you want to know how to change some colors of the theme, check the <a href="https://github.com/Izheil/Quantum-Nox-Firefox-Dark-Full-Theme/tree/master/Info#Editting CSS files">Info</a> section.</p>
 
-<h3>Last update: <b>13/02/2020</b></h3>
+<h3>Last update: <b>14/02/2020</b></h3>
 <p>Files updated:</p>
 <ul>
-	<li><b>userChrome</b>: Removed the "there.is.only.xul" line, which at this point does more harm than good (causes issues with navigator toolbox fixes, like with tabs below). Changed the context menu and URL bar colors back to similar colors as how it was before.</li>
+	<li><b>userChrome</b>: Fixed the colors of bookmark and library dialogs input boxes, and fixed dialog buttons so that they don't require to switch a variable if you had an OS that painted buttons white. Also fixed some issue with the bookmark properties popup appearing as small.</li>
+	<li><b>userContent</b>: Changed the colors of the view source pages to resemble the ones of monokai.</li>
 </ul>
-<h3>Pre-Last update: <b>12/02/2019</b></h3>
+<h3>Pre-Last update: <b>13/02/2019</b></h3>
 <ul>
-	<li><b>Multirow files</b>: Fixed some minor issue with the min/resize/close buttons on nightly.</li>
+	<li><b>userChrome</b>: Removed the "there.is.only.xul" line, which at this point does more harm than good (causes issues with navigator toolbox fixes, like with tabs below). Changed the context menu and URL bar colors back to similar colors as how it was before.</li>
 </ul>
 
 <h3>A note on people looking to replace some Tab Mix Plus features:</h3>
