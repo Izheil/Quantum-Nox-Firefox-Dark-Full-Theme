@@ -31,7 +31,7 @@ The values are 1px 0 1px 0 by default (corresponding to Top, Right, Down, Left s
 /* ^ Don't change the margin to anything lower than 35px if you want to see the menu bar on top of all bars ^ */
 /* ^ Change to 10px to use menu-over-tabs instead ^ */
 
-/* v This changes the menu bar on top of the screen intead of over the tab bar. Delete or comment out 
+/* v This changes the menu bar on top of the screen instead of over the tab bar. Delete or comment out 
 if you want to use menu-over-tabs version */
 #toolbar-menubar {
   position: fixed !important; 
