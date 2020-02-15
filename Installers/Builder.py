@@ -146,7 +146,6 @@ elif SystemOS() == "Mac":
 NProfile = "Not found"
 RProfile = "Not found"
 DefProfiles = readDefaults(MozPFolder)
-print(DefProfiles)
 
 def RPFinder():
     for x in DefProfiles:
