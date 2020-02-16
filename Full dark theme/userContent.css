@@ -1,6 +1,6 @@
 /* You can find an updated version here: https://github.com/Izheil/Quantum-Nox-Firefox-Dark-Full-Theme */
 /* Made by Izheil */
-/* Last updated: 14/02/2020 */
+/* Last updated: 16/02/2020 */
 
 /* This part imports the Addons file if there is one, so that you don't have to edit the dynamic URL
 from the addons rules every time we update anything here */
@@ -769,7 +769,7 @@ url-prefix(about:crashes), url(about:rights), url(about:serviceworkers) {
 tbody > tr:hover {outline: 1px dotted #777 !important}}
 
 /*------ CONTEXT MENUS AND HIGHLIGHT COLORS FOR ALL ABOUT: PAGES ------*/
-@-moz-document url-prefix(about:), url-prefix(chrome://browser/content/places/places.xul) {
+@-moz-document url-prefix(about:), url-prefix(chrome://browser/content/places/places.xhtml) {
 
 /* This changes the color of the context menus */
 menuitem, menu:not(.menu-iconic) {
@@ -891,7 +891,7 @@ select {border: 1px solid #111 !important}
 }
 
 /*------ LIBRARY PAGE (In case you open it from a bookmark) ------*/
-@-moz-document url-prefix(chrome://browser/content/places/places.xul) {
+@-moz-document url-prefix(chrome://browser/content/places/places.xhtml) {
 /* This is a fix for treechildren that might look whiteish in linux */
 treechildren::-moz-tree-row {background: transparent !important}
 
@@ -916,13 +916,13 @@ treechildren::-moz-tree-row(selected){
 /* This one changes the urlbar star bookmarking folder tree backgrund color */
 #editBMPanel_folderTree {
   -moz-appearance: none !important; 
-  background: #555 !important; 
+  background: #404040 !important; 
   color: #ddd !important}
 
 /* These change the list header background and text colors */
 #placeContent treecol {
   -moz-appearance: none !important; 
-  background: #444 !important;
+  background: #222 !important;
   padding: 3px !important;
   color: #ddd !important;
   border-left: 1px solid #333 !important;
@@ -930,7 +930,8 @@ treechildren::-moz-tree-row(selected){
 
 #placeContent treecol:hover {
   -moz-appearance: none !important; 
-  background: rgba(255,255,255, 0.15) !important}
+  background: rgba(255,255,255, 0.10) !important;
+  color: #fff !important}
 
 /* This changes the right border on the left list panel */
 #placesView > splitter {border-inline-end: 1px solid #333 !important}
@@ -960,52 +961,40 @@ treechildren::-moz-tree-row(selected){
 #clearDownloadsButton {color: #aaa !important}
 #clearDownloadsButton[disabled] {color: #555 !important}
 
-/* This themes the search box */
-#searchFilter {
+/* This themes the information box on the lower part of the library menu */
+#detailsDeck {
+  background-color: var(--Window-bg) !important;
+  color: #aaa !important;
+  border-top: 1px solid #222 !important}
+
+/* This changes the text boxes on the popup when bookmarking a page from the url box */
+#editBMPanel_namePicker, #editBMPanel_tagsField,
+#editBMPanel_tagsSelector, #editBMPanel_locationField, 
+#editBMPanel_keywordField, #searchFilter {
   transition: all 0.25s ease-in-out !important;
   -moz-appearance: none !important; 
-  border: 1px solid #666 !important;
-  background-color: #444 !important;
-  color: #aaa !important}
+  border: 1px solid #555 !important;
+  background-color: #404040 !important;
+  color: #ddd !important}
 
-/* This themes the search box on hover */
+#editBMPanel_tagsSelector richlistitem[selected="true"] {
+  background-color: var(--Lists-treechildren-selected-bg) !important;
+  color: color: var(--Lists-treechildren-selected-txt) !important}
+
+#editBMPanel_tagsSelector richlistitem[checked="true"] image {
+  -moz-appearance: none !important;
+  background: transparent url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="13px" height="13px" viewBox="0 0 14 14" ><path fill="rgb(200,200,200)" d="M 13.09,2.87 C 13.09,2.87 6.00,11.00 6.00,11.00 6.00,11.00 2.00,9.00 2.00,9.00 4.25,12.81 7.00,14.00 7.00,14.00 9.24,10.42 12.04,7.39 13.09,2.87 Z" /></svg>') no-repeat center center !important;
+  border: none !important}
+
+/* This changes the input boxes of bookmark/library on focus */
+#editBMPanel_namePicker:not([readonly]):focus,
+#editBMPanel_tagsField:focus,
+#editBMPanel_keywordField:focus,
+#editBMPanel_locationField:not([readonly]):focus,
 #searchFilter[focused="true"] {
   box-shadow: var(--Input-field-focus-shadow) !important;
   background-color: #555 !important;
   color: #fff !important} 
-
-/* This themes the information box on the lower part of the library menu */
-#detailsDeck {
-  background-color: #444 !important; 
-  color: #aaa !important;
-  border-top: 1px solid #222 !important}
-
-/* This changes the text boxes inside the library bottom information box */
-#infoBox textbox, #infoBox listbox, 
-/* This changes the text boxes on the popup when bookmarking a page from the url box */
-#editBMPanel_namePicker, #editBMPanel_tagsField,
-#editBMPanel_tagsSelector {
-  transition: all 0.25s ease-in-out !important;
-  -moz-appearance: none !important; 
-  border: 1px solid #777 !important;
-  background-color: #555 !important;
-  color: #ddd !important}
-
-/* A fix for bookmark preferences... so that some boxes won't appear brighter than others */
-#bookmarkproperties #editBMPanel_namePicker, 
-#bookmarkproperties #editBMPanel_tagsField,
-#bookmarkproperties #editBMPanel_tagsSelector {
-  background-color: #444 !important}
-
-/* This changes the same text boxes on hover */
-#infoBox textbox[focused="true"], #infoBox listbox[focused="true"],
-/* This changes the same url bookmarking popup text boxes on hover */
-#editBMPanel_namePicker[focused="true"], #editBMPanel_tagsField[focused="true"],
-#infoBox #bookmarkproperties #editBMPanel_namePicker[focused="true"],
-#infoBox #bookmarkproperties #editBMPanel_tagsField[focused="true"] {
-  box-shadow: var(--Input-field-focus-shadow) !important;
-  background-color: #666 !important;
-  color: #fff !important}
 
 /* This changes the buttons inside the bookmarking popup at the url star */
 #editBMPanel_newFolderButton, #editBookmarkPanelDoneButton, 
@@ -1040,6 +1029,9 @@ treechildren::-moz-tree-row(selected){
   color: #fff !important}
 
 #editBMPanel_folderMenuList {padding: 1px !important; color: #ddd !important}
+
+/* These change the downloads history list background */
+#downloadsRichListBox {background: #444 !important; color: #ccc !important}
 
 #placesMenu > menu {color: #ccc !important}
 }
