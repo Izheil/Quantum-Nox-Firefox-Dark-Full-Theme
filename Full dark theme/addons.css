@@ -1117,13 +1117,17 @@ span[data-src="/"], span[data-src="."] {
 #extraTools span:hover {color: #888 !important}
 
 /* Advanced menu */
-#firewallContainer span {
+#firewallContainer > div:not(.isCname) > span, #firewallContainer > div.isCname > span:not(:first-of-type) {
   color: #ccc !important}
+
+#firewallContainer > div.isCname > span:first-of-type {color: #07f !important}
 
 #firewallContainer > div > span:not([data-i18n="popupAnyRulePrompt"]):not([data-i18n="popupTipGlobalRules"]):not([data-i18n="popupTipLocalRules"]) {
   border-top: 1px solid #000 !important}
 
 #firewallContainer span:hover {background-image: linear-gradient(rgba(255,255,255,0.2),rgba(255,255,255,0.2)) !important}
+
+#firewallContainer > div.isCname > span:first-of-type:hover {color: #2020dd !important}
 
 #firewallContainer span span, #firewallContainer span span:hover {
   background-image: none !important;
