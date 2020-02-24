@@ -1120,7 +1120,7 @@ span[data-src="/"], span[data-src="."] {
 #firewallContainer span {
   color: #ccc !important}
 
-#firewallContainer span:not([data-i18n="popupAnyRulePrompt"]):not([data-i18n="popupTipGlobalRules"]):not([data-i18n="popupTipLocalRules"]) {
+#firewallContainer > div > span:not([data-i18n="popupAnyRulePrompt"]):not([data-i18n="popupTipGlobalRules"]):not([data-i18n="popupTipLocalRules"]) {
   border-top: 1px solid #000 !important}
 
 #firewallContainer span:hover {background-image: linear-gradient(rgba(255,255,255,0.2),rgba(255,255,255,0.2)) !important}
@@ -1129,7 +1129,7 @@ span[data-src="/"], span[data-src="."] {
   background-image: none !important;
   border-bottom: 1px solid transparent !important}
 
-#firewallContainer > div > span {
+#firewallContainer > div > span:not(.blockRule):not(.noopRule):not(.allowRule) {
   background-color: #444 !important}
 
 #firewallContainer > div {border: none !important}
