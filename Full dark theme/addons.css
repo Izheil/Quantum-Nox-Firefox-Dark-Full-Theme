@@ -1145,9 +1145,9 @@ span[data-src="/"], span[data-src="."] {
 body, .permatoolbar, .vscrollable, table, html {background: #222 !important}
 
 .button, input, textarea, .preview span {
-	-moz-appearance: none !important;
-	background: #444 !important;
-	border: 1px solid #000 !important}
+  -moz-appearance: none !important;
+  background: #444 !important;
+  border: 1px solid #000 !important}
 
 #info .fa-icon_info-circle, #settings .fa-icon_cog, 
 #loggerExport .fa-icon_clipboard {fill: #000 !important}
@@ -1170,8 +1170,8 @@ body, .permatoolbar, .vscrollable, table, html {background: #222 !important}
 #loggerExportDialog .options span[data-i18n]:hover, .tools .fa-icon:hover {background-color: #555 !important}
 
 #filterExprPicker span[data-filtex]:not(.on):hover {
-	background-color: #666 !important; 
-	border-color: #888 !important}
+  background-color: #666 !important; 
+  border-color: #888 !important}
 
 #loggerExportDialog .options span.on[data-i18n], #filterExprPicker .on {background-color: #666 !important}
 
@@ -1187,25 +1187,25 @@ input, .logEntry, #modalOverlayContainer, textarea, #filterExprPicker {color: #d
 #modalOverlayContainer {background-color: #333 !important}
 
 #netInspector div#popupContainer {
-	background: #333 !important; 
-	border: 1px solid #111 !important}
+  background: #333 !important; 
+  border: 1px solid #111 !important}
 
 #popupContainer > div {background: #555 !important}
 
 .toolbar td, #filterExprPicker {
-	border: none !important;
-	background: #444 !important}
+  border: none !important;
+  background: #444 !important}
 
 .headers {border-bottom: 1px solid #000 !important}
 
-.toolbar span#saveRules {	
-	background-color: #444 !important; 
-	border: 1px solid #000 !important;
-	color: #eee !important}
+.toolbar span#saveRules { 
+  background-color: #444 !important; 
+  border: 1px solid #000 !important;
+  color: #eee !important}
 
-.toolbar span#saveRules:hover {	
-	background-color: #222 !important;
-	color: #fff !important}
+.toolbar span#saveRules:hover { 
+  background-color: #222 !important;
+  color: #fff !important}
 
 button.important {
   -moz-appearance: none !important;
@@ -1221,18 +1221,18 @@ button.important:hover {
 .action .noop:hover, .action.noop.own {background: #ddd !important}
 
 .header.dynamic, .header.static, .header.details {
-	background-color: #222 !important; 
-	color: #777 !important;
-	border: 1px solid black !important;
-	border-bottom: 1px solid transparent !important}
+  background-color: #222 !important; 
+  color: #777 !important;
+  border: 1px solid black !important;
+  border-bottom: 1px solid transparent !important}
 
 #netFilteringDialog[data-pane="dynamic"] .header.dynamic, 
 #netFilteringDialog[data-pane="static"] .header.static, 
 #netFilteringDialog[data-pane="details"] .header.details {
-	background-color: #333 !important; 
-	color: #ccc !important;
-	border: 1px solid black !important;
-	border-bottom: 1px solid transparent !important}
+  background-color: #333 !important; 
+  color: #ccc !important;
+  border: 1px solid black !important;
+  border-bottom: 1px solid transparent !important}
 
 #modalOverlayContainer a:link {color: #0084ff !important}
 #modalOverlayContainer a:hover {color: #0ff !important}
