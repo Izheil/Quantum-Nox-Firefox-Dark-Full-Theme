@@ -1117,9 +1117,11 @@ span[data-src="/"], span[data-src="."] {
 #extraTools span:hover {color: #888 !important}
 
 /* Advanced menu */
-#firewallContainer span:not([data-i18n="popupAnyRulePrompt"]):not([data-i18n="popupTipGlobalRules"]):not([data-i18n="popupTipLocalRules"]) {
-  border-top: 1px solid #000 !important;
+#firewallContainer span {
   color: #ccc !important}
+
+#firewallContainer span:not([data-i18n="popupAnyRulePrompt"]):not([data-i18n="popupTipGlobalRules"]):not([data-i18n="popupTipLocalRules"]) {
+  border-top: 1px solid #000 !important}
 
 #firewallContainer span:hover {background-image: linear-gradient(rgba(255,255,255,0.2),rgba(255,255,255,0.2)) !important}
 
