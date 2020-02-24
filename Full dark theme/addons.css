@@ -1153,7 +1153,7 @@ body, .permatoolbar, .vscrollable, table, html {background: #222 !important}
 #loggerExport .fa-icon_clipboard {fill: #000 !important}
 
 #info:hover .fa-icon_info-circle, #settings:hover .fa-icon_cog, 
-#loggerExport:hover .fa-icon_clipboard {fill: #ddd !important}
+#loggerExport:hover .fa-icon_clipboard, .button:not(.disabled):hover, .needdom:hover {fill: #ddd !important}
 
 #modalOverlayClose, .tools .fa-icon {background: transparent !important; fill: #ddd !important}
 #modalOverlayClose svg {stroke: #ddd !important}
@@ -1167,15 +1167,22 @@ body, .permatoolbar, .vscrollable, table, html {background: #222 !important}
 .logEntry:hover, .panes .entry.row:hover {background: rgba(255,255,255,0.2) !important}
 
 #loggerExportDialog .options span[data-i18n] {border-color: #888 !important}
-#loggerExportDialog .options span[data-i18n]:hover, .tools .fa-icon:hover {background-color: #666 !important}
+#loggerExportDialog .options span[data-i18n]:hover, .tools .fa-icon:hover {background-color: #555 !important}
 
 #filterExprPicker span[data-filtex]:not(.on):hover {
 	background-color: #666 !important; 
 	border-color: #888 !important}
 
-#loggerExportDialog .options span.on[data-i18n], #filterExprPicker .on {background-color: #888 !important}
+#loggerExportDialog .options span.on[data-i18n], #filterExprPicker .on {background-color: #666 !important}
 
 input, .logEntry, #modalOverlayContainer, textarea, #filterExprPicker {color: #ddd !important}
+
+#vwRenderer .logEntry > div[data-aliasid] {color: #07f !important}
+#vwRenderer .logEntry > div[data-aliasid]:hover {color: #02a !important}
+
+#netInspector #filterInput {border: none !important}
+
+.inspector {border-color: #666 !important}
 
 #modalOverlayContainer {background-color: #333 !important}
 
