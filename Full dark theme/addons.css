@@ -15,11 +15,15 @@ If you did everything right, next time you start (or restart) firefox, the addon
 html, .application--wrap, body, .application {background-color: #333 !important}
 
 a:not(.v-list__tile), #linkOpenFolder, #linkClearDownloads, 
-#linkClearDownloadsFinished, #linkClearDownloadsErrored, 
+#linkClearDownloadsFinished, #linkClearDownloadsErrored, #linkChangeDownloadsLocation,
+#linkDownloadsLocationResetToDefault, #linkOpenTempFolder, #linkOpenTempFolderThisSession,
+#linkChangeTemporaryFilesLocation, #linkTemporaryFilesLocationResetToDefault,
 .w3-tiny > button, .w3-small > button {color: #09f !important}
 
 a:not(.v-list__tile):hover, #linkOpenFolder:hover, #linkClearDownloads:hover, 
-#linkClearDownloadsFinished:hover, #linkClearDownloadsErrored:hover, 
+#linkClearDownloadsFinished:hover, #linkClearDownloadsErrored:hover, #linkChangeDownloadsLocation:hover,
+#linkDownloadsLocationResetToDefault, #linkOpenTempFolder:hover, #linkOpenTempFolderThisSession:hover,
+#linkChangeTemporaryFilesLocation:hover, #linkTemporaryFilesLocationResetToDefault:hover,
 .w3-tiny > button:hover, .w3-small > button:hover {color: #0ff !important}
 
 a:not(.v-list__tile):active {color: #0050dd !important}
