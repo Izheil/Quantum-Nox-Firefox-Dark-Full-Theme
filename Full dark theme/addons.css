@@ -1152,8 +1152,11 @@ body, .permatoolbar, .vscrollable, table, html {background: #222 !important}
 #info .fa-icon_info-circle, #settings .fa-icon_cog, 
 #loggerExport .fa-icon_clipboard {fill: #000 !important}
 
+#vwRenderer .logEntry > div[data-tabid="-1"] {text-shadow: 0 0.2em 0.4em #000 !important}
+
 #info:hover .fa-icon_info-circle, #settings:hover .fa-icon_cog, 
-#loggerExport:hover .fa-icon_clipboard, .button:not(.disabled):hover, .needdom:hover {fill: #ddd !important}
+#loggerExport:hover .fa-icon_clipboard, .button:not(.disabled):hover, 
+.needdom:hover {fill: #ddd !important}
 
 #modalOverlayClose, .tools .fa-icon {background: transparent !important; fill: #ddd !important}
 #modalOverlayClose svg {stroke: #ddd !important}
