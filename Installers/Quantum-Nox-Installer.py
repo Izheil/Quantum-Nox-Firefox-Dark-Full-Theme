@@ -2,6 +2,7 @@
 import os
 import re
 import sys
+import glob
 import ctypes
 import shutil
 import tkinter
@@ -253,6 +254,17 @@ def fullPatcher(FFversion, FFprofile):
             else: 
                 shutil.copytree(os.path.normpath(os.getcwd() + "/utils"), 
                                 os.path.normpath(FFprofile + "/chrome/utils"))
+
+            if SystemOS() == "Linux":
+                chrome = FFprofile + "/chrome"
+                utils = chrome + "/utils"
+                rootUser = os.getenv("SUDO_USER")
+                utilFiles = glob.glob(utils + "/*.*")
+                shutil.chown(chrome, user=rootUser, group=rootUser)
+                shutil.chown(utils, user=rootUser, group=rootUser)
+                for file in utilFiles:
+                    shutil.chown(file, user=rootUser, group=rootUser)
+
     except IOError:
         messagebox.showerror("Error", "You need higher privileges to apply the patch.")
 
@@ -826,6 +838,17 @@ class patcherUI(Frame):
             else:
                 messagebox.showinfo("Patching complete", 
                     "The patching is complete.\nRestart Firefox for changes to take effect.")
+
+            if SystemOS() == "Linux":
+                rootUser = os.getenv("SUDO_USER")
+                functionFiles = glob.glob(FFChrome + "/*.*")
+                functionFilesN = glob.glob(FFNChrome + "/*.*")
+                if os.access(FFChrome, os.F_OK) is True:
+                    for file in functionFiles:
+                        shutil.chown(file, user=rootUser, group=rootUser)
+                if os.access(FFNChrome, os.F_OK) is True:
+                    for file in functionFilesN:
+                        shutil.chown(file, user=rootUser, group=rootUser)
 
             checkPatchFF()
             checkPatchFFN()
