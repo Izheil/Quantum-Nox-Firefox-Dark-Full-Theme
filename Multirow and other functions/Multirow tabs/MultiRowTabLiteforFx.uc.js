@@ -95,12 +95,11 @@ function zzzz_MultiRowTabLite() {
     // Here the FF71+ changes
 	if (document.querySelector("#tabbrowser-tabs .tabbrowser-arrowscrollbox").shadowRoot) {
 	    css +=`
-
 		scrollbar {-moz-window-dragging: no-drag !important}
 	    `;
 
 	    // This is a fix for the shadow elements:
-	    var style = document.createElement( 'style' )
+	    var style = document.createElement('style');
 	    style.innerHTML = `
         scrollbox {
             display: flex;
@@ -111,7 +110,7 @@ function zzzz_MultiRowTabLite() {
 
 	    .scrollbutton-up, .scrollbutton-down, spacer {display: none !important}
 	    `
-	    document.querySelector("#tabbrowser-tabs .tabbrowser-arrowscrollbox").shadowRoot.appendChild( style )  
+	    document.querySelector("#tabbrowser-tabs .tabbrowser-arrowscrollbox").shadowRoot.appendChild(style);
 	} else {
         // Here the FF66-FF70 changes
 		css +=`
@@ -136,7 +135,7 @@ function zzzz_MultiRowTabLite() {
 	sss.loadAndRegisterSheet(uri, sss.AGENT_SHEET);
 
     gBrowser.tabContainer._getDropIndex = function(event, isLink) {
-        var tabs = document.getElementsByClassName("tabbrowser-tab")
+        var tabs = document.getElementsByClassName("tabbrowser-tab");
         var tab = this._getDragTargetTab(event, isLink);
         if (window.getComputedStyle(this).direction == "ltr") {
         	for (let i = tab ? tab._tPos : 0; i < tabs.length; i++) {
@@ -192,7 +191,7 @@ gBrowser.tabContainer.ondragstart = function(){if(gBrowser.tabContainer.clientHe
 
         var newIndex = this._getDropIndex(event, effects == "link");
         if (newIndex == null)
-            return
+            return;
 
         var tabs = document.getElementsByClassName("tabbrowser-tab");
         var ltr = (window.getComputedStyle(this).direction == "ltr");
@@ -229,7 +228,7 @@ gBrowser.tabContainer.ondragstart = function(){if(gBrowser.tabContainer.clientHe
 
         ind.style.transform = "translate(" + Math.round(newMarginX) + "px," + Math.round(newMarginY) + "px)"; // multirow fix
         ind.style.marginInlineStart = (-ind.clientWidth) + "px";
-        }
+        };
     }
 
     gBrowser.tabContainer.addEventListener("dragover", gBrowser.tabContainer._onDragOver, true);
@@ -257,7 +256,7 @@ gBrowser.tabContainer.ondragstart = function(){if(gBrowser.tabContainer.clientHe
         }
     };
     gBrowser.tabContainer.addEventListener("drop", function(event){this.onDrop(event);}, true);
-}};
+};}
 
 // copy of the original and overrided _getDropEffectForTabDrag method
 function orig_getDropEffectForTabDrag(event) {

@@ -94,7 +94,7 @@ function zzzz_MultiRowTabLite() {
 	    `;
 
 	    // This is a fix for the shadow elements:
-	    var style = document.createElement( 'style' );
+	    var style = document.createElement('style');
 	    style.innerHTML = `
 	    scrollbox {
 	        display: flex;
@@ -110,7 +110,7 @@ function zzzz_MultiRowTabLite() {
 
 	    .scrollbutton-up, .scrollbutton-down, spacer {display: none !important}
 	    `;
-	    document.querySelector("#tabbrowser-tabs .tabbrowser-arrowscrollbox").shadowRoot.appendChild( style );  
+	    document.querySelector("#tabbrowser-tabs .tabbrowser-arrowscrollbox").shadowRoot.appendChild(style);  
 	} else {
         // Here the FF66-FF70 changes
 		css +=`
