@@ -5,6 +5,7 @@
 // @include        main
 // @compatibility  Firefox 75
 // @author         Alice0775, Endor8, TroudhuK, Izheil
+// @version        05/02/2020 19:40 Removed redundant CSS code that is not necessary anymore
 // @version        12/02/2020 03:30 Fixed some issue with the min/resize/close buttons
 // @version        18/01/2020 02:39 Added a fix for people who always spoof their useragent
 // @version        13/01/2020 05:01 Fixed the tab drop indicator on FF72+
@@ -52,37 +53,14 @@ function zzzz_MultiRowTabLite() {
 
     :root:-moz-lwtheme[lwtheme-image] {background-repeat: repeat-y !important}
 
-    #tabbrowser-tabs .tab-background {
-        max-height: var(--tab-min-height) !important;
+    #tabbrowser-tabs .tab-background, #tabbrowser-tabs .tabbrowser-tab {
         min-height: var(--tab-min-height) !important}
-
-    @media (-moz-os-version: windows-win10) {
-        #tabbrowser-tabs .tab-background, #tabbrowser-tabs .tabbrowser-tab {
-            min-height: calc(var(--tab-min-height) + 1px) !important}
-    }
     
-    /* This fix is intended for some updates when the tab line gets chopped on top of screen */
-    #main-window[sizemode="normal"] .tabbrowser-tab .tab-line,
-    #main-window[sizemode="maximized"] .tabbrowser-tab .tab-line, 
-    #main-window[sizemode="fullscreen"] .tabbrowser-tab .tab-line,
-	:root[uidensity="touch"] .tabbrowser-tab .tab-line,
-	:root[uidensity="compact"] .tabbrowser-tab .tab-line {transform: translate(0,1px) !important}
-
 	.tab-stack {width: 100%}
 
     #tabbrowser-tabs .tabbrowser-arrowscrollbox {
         overflow: visible;
         display: block}
-
-	:root[uidensity="touch"] .tabbrowser-tab,
-    :root[uidensity="touch"] .tab-stack {   
-        min-height: calc(var(--tab-min-height) + 3px) !important;
-        max-height: calc(var(--tab-min-height) + 3px) !important;
-        margin-bottom: 0 !important}
-
-    :root[uidensity="touch"] #tabbrowser-tabs .arrowscrollbox-scrollbox {
-    	min-height: var(--tab-min-height) !important;
-    	max-height: calc((var(--tab-min-height)*var(--max-tab-rows)))}
 
     @media (-moz-os-version: windows-win10) {
         .titlebar-buttonbox-container {display: block !important; height:var(--tab-min-height) !important}}
