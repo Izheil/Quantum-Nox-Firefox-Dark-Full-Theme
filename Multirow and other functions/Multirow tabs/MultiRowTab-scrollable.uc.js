@@ -5,7 +5,7 @@
 // @include        main
 // @compatibility  Firefox 75
 // @author         Alice0775, Endor8, TroudhuK, Izheil
-// @version        05/02/2020 19:40 Removed redundant CSS code that is not necessary anymore
+// @version        05/03/2020 19:40 Removed redundant CSS code that is not necessary anymore
 // @version        12/02/2020 03:30 Fixed some issue with the min/resize/close buttons
 // @version        18/01/2020 02:39 Added a fix for people who always spoof their useragent
 // @version        13/01/2020 05:01 Fixed the tab drop indicator on FF72+

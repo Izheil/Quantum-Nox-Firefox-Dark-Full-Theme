@@ -9,14 +9,14 @@ in <code>about:config</code> for userChrome and userContent to be loaded at all 
 
 <p>If you want to know how to change some colors of the theme, check the <a href="https://github.com/Izheil/Quantum-Nox-Firefox-Dark-Full-Theme/tree/master/Info#Editting CSS files">Info</a> section.</p>
 
-<h3>Last update: <b>24/02/2020</b></h3>
+<h3>Last update: <b>05/03/2020</b></h3>
 <p>Files updated:</p>
 <ul>
-	<li><b>addons</b>: Fixed Ublock Origin theme for its lastest update.</li>
+	<li><b>MultirowTab*.uc.js</b>: Fixed some issue with tab lines.</li>
 </ul>
-<h3>Pre-Last update: <b>16/02/2019</b></h3>
+<h3>Pre-Last update: <b>24/02/2019</b></h3>
 <ul>
-	<li><b>userContent</b>: Fixed the bookmarked Library theming link and selectors.</li>
+	<li><b>addons</b>: Fixed Ublock Origin theme for its lastest update.</li>
 </ul>
 
 <h3>A note on people looking to replace some Tab Mix Plus features:</h3>
