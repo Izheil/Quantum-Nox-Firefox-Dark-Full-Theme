@@ -66,11 +66,11 @@
 
 <h4>For Linux, you can find the root folder by default in this path:</h4>
 
-<pre>/usr/lib/firefox/browser</pre>
+<pre>/usr/lib/firefox</pre>
 
 <p>In some cases you might find a difference between 32 and 64 bits program installation paths in Linux, in that case you'd find the path here:</p> 
 
-<pre>/usr/lib64/firefox/browser</pre>
+<pre>/usr/lib64/firefox</pre>
 
 <p>The installation directory path may also vary depending on the distribution, and if you use a package manager to install the application from their repository.</p>
 
