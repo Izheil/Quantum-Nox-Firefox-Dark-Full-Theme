@@ -215,9 +215,12 @@ def fullPatcher(FFversion, FFprofile):
     "This method patches both the root and profile folders"
     try:
         if FFversion != "None":
+            # We first define the location of the files
+            ConfPref = os.path.normpath(FFversion + "/defaults/pref/config-prefs.js")
+            ConfJS = os.path.normpath(FFversion + "/config.js")
+
             # We patch the root folder here
-            if os.access(os.path.normpath(FFversion + "/config.js"), os.F_OK) and \
-            os.access(os.path.normpath(FFversion + "/defaults/pref/config-prefs.js"), os.F_OK):
+            if os.access(ConfJS, os.F_OK) and os.access(ConfPref, os.F_OK):
 
                 distutils.file_util.copy_file(os.path.normpath(sys._MEIPASS + "/root/defaults/pref/config-prefs.js"), 
                                               os.path.normpath(FFversion + "/defaults/pref/"), update=True)
@@ -227,7 +230,7 @@ def fullPatcher(FFversion, FFprofile):
             elif os.access(os.path.normpath(FFversion + "/config.js"), os.F_OK) or \
             os.access(os.path.normpath(FFversion + "/defaults/pref/config-prefs.js"), os.F_OK):
 
-                if os.access(os.path.normpath(FFversion + "/config.js"), os.F_OK):
+                if os.access(ConfJS, os.F_OK):
                     shutil.copy2(os.path.normpath(sys._MEIPASS + "/root/defaults/pref/config-prefs.js"), 
                                  os.path.normpath(FFversion + "/defaults/pref/"))
 
@@ -237,6 +240,11 @@ def fullPatcher(FFversion, FFprofile):
                 shutil.copy2(os.path.normpath(sys._MEIPASS + "/root/config.js"), FFversion)
                 shutil.copy2(os.path.normpath(sys._MEIPASS + "/root/defaults/pref/config-prefs.js"), 
                              os.path.normpath(FFversion + "/defaults/pref/"))
+
+            if SystemOS() == "Linux":
+                rootUser = os.getenv("SUDO_USER")
+                shutil.chown(ConfPref, user=rootUser, group=rootUser)
+                shutil.chown(ConfJS, user=rootUser, group=rootUser)
 
         if FFprofile != "None":
 
@@ -543,7 +551,7 @@ class patcherUI(Frame):
 
         # This method will call the required functions to patch the root and profile folders
         def patchInstall():
-
+            Error = 0
             FFChrome = os.path.normpath(rpCkFF22.get() + "/chrome")
             FFNChrome = os.path.normpath(rpCkFFN22.get() + "/chrome")
 
@@ -564,6 +572,7 @@ class patcherUI(Frame):
 
             # We define the common multi-row choice patching here
             def MRpatch(FFversion):
+                Error = 0
                 try:
                     if FFversion == "Stable":
                         FFChrome = os.path.normpath(rpCkFF22.get() + "/chrome")
@@ -606,6 +615,7 @@ class patcherUI(Frame):
                                 writeMR(FFCMR)
 
                             except IOError:
+                                Error = 1
                                 messagebox.showwarning("Write access error", 
                                     "There was a problem while trying to write Multi-row scrollable.")
                                 if os.access(FFCMR, os.F_OK) == True:
@@ -620,6 +630,7 @@ class patcherUI(Frame):
                                 writeMR(FFCMRA)
 
                             except IOError:
+                                Error = 1
                                 messagebox.showwarning("Write access error", 
                                     "There was a problem while trying to write Multi-row autohide.")
                                 if os.access(FFCMRA, os.F_OK) == True:
@@ -647,6 +658,7 @@ class patcherUI(Frame):
                             writeMR(FFCMRL)
 
                         except IOError:
+                            Error = 1
                             messagebox.showwarning("Write access error", 
                                 "There was a problem while trying to write Multi-row unlimited.")
                             if os.access(FFCMRL, os.F_OK) == True:
@@ -665,6 +677,7 @@ class patcherUI(Frame):
                             os.remove(FFCMRA71)
 
                 except IOError:
+                    Error = 1
                     messagebox.showwarning("Warning", 
                         "Couldn't manage to install Multi-row Tabs function.")
 
@@ -674,6 +687,7 @@ class patcherUI(Frame):
                    os.access(os.path.normpath(rpCkFF12.get() + "/defaults/pref"), os.F_OK) == True:
                    fullPatcher(rpCkFF12.get(), "None")
                 else: 
+                    Error = 1
                     messagebox.showerror("Error", 
                         "Firefox root folder location is wrong.\nSelect a valid one and try again.")
                     return
@@ -702,6 +716,7 @@ class patcherUI(Frame):
                             if os.access(FFTBaA, os.F_OK):
                                 os.remove(FFTBaA)
                         except IOError:
+                            Error = 1
                             messagebox.showwarning("Warning", 
                                 "Couldn't manage to install Tabs Below function.")
 
@@ -712,10 +727,12 @@ class patcherUI(Frame):
                             FireFile = os.path.normpath(rpCkFF22.get() + "/chrome/Focus-tab-on-hover.uc.js")
                             writeFT(FireFile)
                         except IOError:
+                            Error = 1
                             messagebox.showwarning("Warning", 
                                 "Couldn't manage to install Focus Tab on hover function.")
 
                 else: 
+                    Error = 1
                     messagebox.showerror("Error", 
                         "Firefox profile folder location is wrong.\nSelect a valid one and try again.")
                     return
@@ -726,6 +743,7 @@ class patcherUI(Frame):
                    os.access(os.path.normpath(rpCkFFN12.get() + "/defaults/pref"), os.F_OK) == True:
                    fullPatcher(rpCkFFN12.get(), "None")
                 else: 
+                    Error = 1
                     messagebox.showerror("Error", 
                         "Nightly root folder location is wrong.\nSelect a valid one and try again.")
                     return
@@ -753,6 +771,7 @@ class patcherUI(Frame):
                             if os.access(FFNTBaA, os.F_OK):
                                 os.remove(FFNTBaA)
                         except IOError:
+                            Error = 1
                             messagebox.showwarning("Warning", 
                                 "Couldn't manage to install Tabs Below function.")
 
@@ -763,9 +782,11 @@ class patcherUI(Frame):
                             FireFile = os.path.normpath(rpCkFFN22.get() + "/chrome/Focus-tab-on-hover.uc.js")
                             writeFT(FireFile)
                         except IOError:
+                            Error = 1
                             messagebox.showwarning("Warning", 
                                 "Couldn't manage to install Focus Tab on hover function.")
                 else: 
+                    Error = 1
                     messagebox.showerror("Error", 
                         "Firefox profile folder location is wrong.\nSelect a valid one and try again.")
                     return
@@ -813,6 +834,7 @@ class patcherUI(Frame):
                                 if os.access(FFTBaA, os.F_OK):
                                         os.remove(FFTBaA)
                             except IOError:
+                                Error = 1
                                 messagebox.showwarning("Warning", 
                                     "Couldn't manage to install Tabs Below function.")
 
@@ -823,10 +845,12 @@ class patcherUI(Frame):
                                 FireFile = os.path.normpath(x + "/chrome/Focus-tab-on-hover.uc.js")
                                 writeFT(FireFile)
                             except IOError:
+                                Error = 1
                                 messagebox.showwarning("Warning", 
                                     "Couldn't manage to install Focus Tab on hover function.")
 
                     else: 
+                        Error = 1
                         messagebox.showerror("Error", 
                             "Couldn't access the selected profile.\nIt was either deleted or moved.")
             
@@ -834,7 +858,7 @@ class patcherUI(Frame):
                (CkFFP.get() == 1 and CkFFN.get() == 0 and CkFF.get() == 0 and values == []):
                 messagebox.showerror("Nothing happened", 
                     "You need to select at least one profile to patch.")
-            else:
+            elif Error != 1:
                 messagebox.showinfo("Patching complete", 
                     "The patching is complete.\nRestart Firefox for changes to take effect.")
 
