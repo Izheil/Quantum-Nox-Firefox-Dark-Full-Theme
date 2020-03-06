@@ -5,7 +5,7 @@
 // @include        main
 // @compatibility  Firefox 75
 // @author         Alice0775, Endor8, TroudhuK, Izheil
-// @version        06/03/2020 00:30 Fixed an issue with tab lines
+// @version        06/03/2020 09:25 Fixed an issue with tab lines and duplicated buttons
 // @version        12/02/2020 03:30 Fixed some issue with the min/resize/close buttons
 // @version        18/01/2020 02:39 Added a fix for people who always spoof their useragent
 // @version        13/01/2020 05:01 Fixed the tab drop indicator on FF72+
@@ -50,15 +50,19 @@ function zzzz_MultiRowTabLite() {
     #tabbrowser-tabs .tab-background, #tabbrowser-tabs .tabbrowser-tab {
         min-height: var(--tab-min-height) !important}
 
-    #main-window[sizemode="maximized"] #navigator-toolbox,
-    #main-window[sizemode="fullscreen"] #navigator-toolbox {transform: translate(0, -1px) !important}
+    #main-window[sizemode="maximized"] #TabsToolbar,
+    #main-window[sizemode="fullscreen"] #TabsToolbar {transform: translate(0, -1px) !important}
+
+    #main-window[sizemode="maximized"] #nav-bar,
+    #main-window[sizemode="fullscreen"] #nav-bar {margin-top: -1px !important}
 
     .toolbar-items {margin-top: 1px !important}
 
 	.tab-stack {width: 100%}
 
     @media (-moz-os-version: windows-win10) {
-        .titlebar-buttonbox-container {display: block !important; height:var(--tab-min-height) !important}}
+        .titlebar-buttonbox-container {height:var(--tab-min-height) !important}
+    }
 
     #alltabs-button, :root:not([customizing]) #TabsToolbar #new-tab-button, .tabbrowser-tab::after
     {display: none}
