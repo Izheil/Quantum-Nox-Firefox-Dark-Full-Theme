@@ -56,13 +56,12 @@ function zzzz_MultiRowTabLite() {
     #tabbrowser-tabs .tab-background, #tabbrowser-tabs .tabbrowser-tab {
         min-height: var(--tab-min-height) !important}
     
-    #main-window[sizemode="maximized"] #TabsToolbar,
-    #main-window[sizemode="fullscreen"] #TabsToolbar {transform: translate(0, -1px) !important}
-
-    #main-window[sizemode="maximized"] #nav-bar,
-    #main-window[sizemode="fullscreen"] #nav-bar {margin-top: -1px !important}
+    #main-window[sizemode="maximized"] #TabsToolbar, 
+    #main-window[sizemode="fullscreen"] #TabsToolbar {margin-top: -1px !important}
 
     .toolbar-items {margin-top: 1px !important}
+
+    #nav-bar {box-shadow: none !important}
     
 	.tab-stack {width: 100%}
 
@@ -71,7 +70,7 @@ function zzzz_MultiRowTabLite() {
         display: block}
 
     @media (-moz-os-version: windows-win10) {
-        .titlebar-buttonbox-container {height:var(--tab-min-height) !important}
+        #TabsToolbar .titlebar-buttonbox-container {display: block}
     }
 
     #alltabs-button, :root:not([customizing]) #TabsToolbar #new-tab-button, .tabbrowser-tab::after
