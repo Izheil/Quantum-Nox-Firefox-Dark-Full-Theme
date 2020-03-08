@@ -1,6 +1,6 @@
 /* You can find an updated version here: https://github.com/Izheil/Quantum-Nox-Firefox-Dark-Full-Theme */
 /* Made by Izheil */
-/* Last updated: 16/02/2020 */
+/* Last updated: 08/03/2020 */
 
 /* This part imports the Addons file if there is one, so that you don't have to edit the dynamic URL
 from the addons rules every time we update anything here */
@@ -552,6 +552,19 @@ input[type=text] {color: #aaa !important}
 
 .section-title span, .title span, .card-details p, .form-input-container label span,
 .modal-message span, .modal-message p {color: #ccc !important}
+
+.title {margin-top: 8px}
+
+.title span, .title {
+	height: 20px !important;
+	line-height: 20px !important}
+
+.title.pinned .icon-pin-small {top: 5px !important}
+
+.title span {
+	background-color: rgba(0,0,0,.6) !important;
+	border-radius: 15px !important;
+	box-shadow: 0 0 3px 3px rgba(0,0,0,.6)}
 
 .modal-message .icon {fill: #fff !important}
 

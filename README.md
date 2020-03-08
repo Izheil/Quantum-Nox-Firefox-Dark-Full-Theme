@@ -9,14 +9,14 @@ in <code>about:config</code> for userChrome and userContent to be loaded at all 
 
 <p>If you want to know how to change some colors of the theme, check the <a href="https://github.com/Izheil/Quantum-Nox-Firefox-Dark-Full-Theme/tree/master/Info#Editting CSS files">Info</a> section.</p>
 
-<h3>Last update: <b>06/03/2020</b></h3>
+<h3>Last update: <b>08/03/2020</b></h3>
 <p>Files updated:</p>
 <ul>
-	<li><b>userChrome.css</b>: Tabs should have a transparent background instead of the manually set background.</li>
+	<li><b>userContent.css</b>: Added a translucid black box on pinned sites for speed dial titles for better visibility when using a background image on <code>about:home</code>.</li>
 </ul>
-<h3>Pre-Last update: <b>05/03/2019</b></h3>
+<h3>Pre-Last update: <b>06/03/2019</b></h3>
 <ul>
-	<li><b>MultirowTab*.uc.js</b>: Fixed some issue with tab lines.</li>
+	<li><b>userChrome.css</b>: Tabs should have a transparent background instead of the manually set background.</li>
 </ul>
 
 <h3>A note on people looking to replace some Tab Mix Plus features:</h3>
