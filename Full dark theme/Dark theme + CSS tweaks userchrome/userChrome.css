@@ -1,6 +1,6 @@
 /* You can find an updated version here: https://github.com/Izheil/Quantum-Nox-Firefox-Dark-Full-Theme */
 /* Made by Izheil */
-/* Last updated: 06/03/2020 */
+/* Last updated: 10/03/2020 */
 
 /* COLORING PART STARTS HERE */
 
@@ -110,6 +110,10 @@ but is disabled by default in this theme (Disable for the default tab line color
   --Loading-italic: normal;
   --Loading-bold: normal;
   --Loading-background: transparent;
+
+  /* This sets the number of bookmark rows to show if using multi-row bookmarks 
+     (must be enabled on line 1103) */
+  --bookmark-max-rows: 3;
 }
 
 /* These change the scrollbar color inside dialogs (not pages) */
@@ -1104,15 +1108,17 @@ to autohide, so it's safest to just hide it on fullscreen */
   min-height: 21px !important;
   max-height: calc(23px*(var(--bookmark-max-rows))) !important}
 
-#PlacesToolbar, #PlacesToolbarItems {
+#PlacesToolbar > hbox {
   overflow: visible;
   display: block}
 
-#PlacesToolbarItems > .scrollbox-innerbox {
+#PlacesToolbarItems {
     display: flex;
     flex-wrap: wrap; 
     overflow: auto;
     max-height: calc(23px*(var(--bookmark-max-rows))) !important}
+
+#PlacesToolbarItems > .bookmark-item {padding: 3px !important}
 
 /* CONTEXT MENU COMMANDS */
 
