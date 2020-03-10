@@ -65,15 +65,17 @@ to autohide, so it's safest to just hide it on fullscreen */
   min-height: 21px !important;
   max-height: calc(23px*(var(--bookmark-max-rows))) !important}
 
-#PlacesToolbar > hbox {
+#PlacesToolbar > hbox:first-child {
   overflow: visible;
   display: block}
 
 #PlacesToolbarItems {
     display: flex;
-    flex-wrap: wrap; 
-    overflow: auto;
+    flex-wrap: wrap;
+    overflow: visible;
     max-height: calc(23px*(var(--bookmark-max-rows))) !important}
+
+#PlacesToolbarItems:hover {overflow: auto !important}
 
 #PlacesToolbarItems > .bookmark-item {padding: 3px !important}
 
