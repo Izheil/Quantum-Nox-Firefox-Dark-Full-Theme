@@ -73,7 +73,7 @@ to autohide, so it's safest to just hide it on fullscreen */
 
 /* Selected (loaded) */
 .tabbrowser-tab[selected="true"] .tab-label {
-  color: #eee !important;
+  color: #fff !important;
   font-style: normal !important;
   font-weight: normal !important}
 
@@ -83,7 +83,7 @@ to autohide, so it's safest to just hide it on fullscreen */
 
 /* Loaded but unread (not selected) */
 .tabbrowser-tab:not([selected="true"])[unread] .tab-label {
-  color: #fff !important;
+  color: #eee !important;
   font-style: italic !important;
   font-weight: normal !important}
 
