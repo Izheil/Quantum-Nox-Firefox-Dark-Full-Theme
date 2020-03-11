@@ -562,6 +562,7 @@ class patcherUI(Frame):
             FireTB = os.path.normpath(os.getcwd() + "/functions/Tabs-below.as.css")
             FireTBoT = os.path.normpath(os.getcwd() + "/functions/Tabs-below-Menu-overTabs.as.css")
             FireFT = os.path.normpath(os.getcwd() + "/functions/Focus-tab-on-hover.uc.js")
+            FireUT = os.path.normpath(os.getcwd() + "/functions/setAttribute_unread.uc.js")
 
             FFTB = os.path.normpath(rpCkFF22.get() + "/chrome/Tabs-below.as.css")
             FFTBoT = os.path.normpath(rpCkFF22.get() + "/chrome/Tabs-below-Menu-overTabs.as.css")
@@ -732,6 +733,14 @@ class patcherUI(Frame):
                             messagebox.showwarning("Warning", 
                                 "Couldn't manage to install Focus Tab on hover function.")
 
+                    if CkUT.get() == 1:
+                        try:
+                            distutils.file_util.copy_file(FireUT, FFChrome, update=True)
+                        except IOError:
+                            Error = 1
+                            messagebox.showwarning("Warning", 
+                                "Couldn't manage to enable unread state on tabs.")
+
                 else: 
                     Error = 1
                     messagebox.showerror("Error", 
@@ -786,6 +795,14 @@ class patcherUI(Frame):
                             Error = 1
                             messagebox.showwarning("Warning", 
                                 "Couldn't manage to install Focus Tab on hover function.")
+
+                    if CkUT.get() == 1:
+                        try:
+                            distutils.file_util.copy_file(FireUT, FFNChrome, update=True)
+                        except IOError:
+                            Error = 1
+                            messagebox.showwarning("Warning", 
+                                "Couldn't manage to enable unread state on tabs.")
                 else: 
                     Error = 1
                     messagebox.showerror("Error", 
@@ -849,6 +866,14 @@ class patcherUI(Frame):
                                 Error = 1
                                 messagebox.showwarning("Warning", 
                                     "Couldn't manage to install Focus Tab on hover function.")
+
+                        if CkUT.get() == 1:
+                            try:
+                                distutils.file_util.copy_file(FireUT, FFChrome, update=True)
+                            except IOError:
+                                Error = 1
+                                messagebox.showwarning("Warning", 
+                                    "Couldn't manage to enable unread state on tabs.")
 
                     else: 
                         Error = 1
@@ -935,6 +960,10 @@ class patcherUI(Frame):
                     if os.access(os.path.normpath(rpCkFF22.get() + "/chrome/Focus-tab-on-hover.uc.js"), os.F_OK) == True:
                         os.remove(os.path.normpath(rpCkFF22.get() + "/chrome/Focus-tab-on-hover.uc.js"))
 
+                if CkUT.get() == 1:
+                    if os.access(os.path.normpath(rpCkFF22.get() + "/chrome/setAttribute_unread.uc.js"), os.F_OK) == True:
+                        os.remove(os.path.normpath(rpCkFF22.get() + "/chrome/setAttribute_unread.uc.js"))
+
             if CkFFN.get() == 1:
                 if removeAll == True:
                     erasePatch(rpCkFFN12.get(), rpCkFFN22.get())
@@ -965,6 +994,10 @@ class patcherUI(Frame):
                 if CkFT.get() == 1:
                     if os.access(os.path.normpath(rpCkFFN22.get() + "/chrome/Focus-tab-on-hover.uc.js"), os.F_OK) == True:
                         os.remove(os.path.normpath(rpCkFFN22.get() + "/chrome/Focus-tab-on-hover.uc.js"))
+
+                if CkUT.get() == 1:
+                    if os.access(os.path.normpath(rpCkFFN22.get() + "/chrome/setAttribute_unread.uc.js"), os.F_OK) == True:
+                        os.remove(os.path.normpath(rpCkFFN22.get() + "/chrome/setAttribute_unread.uc.js"))
 
             if CkFFP.get() == 1:
                 values = []
@@ -1002,6 +1035,10 @@ class patcherUI(Frame):
                     if CkFT.get() == 1:
                         if os.access(os.path.normpath(x + "/chrome/Focus-tab-on-hover.uc.js"), os.F_OK) == True:
                             os.remove(os.path.normpath(x + "/chrome/Focus-tab-on-hover.uc.js"))
+
+                    if CkUT.get() == 1:
+                        if os.access(os.path.normpath(x + "/chrome/setAttribute_unread.uc.js"), os.F_OK) == True:
+                            os.remove(os.path.normpath(x + "/chrome/setAttribute_unread.uc.js"))
 
             if CkFFP.get() == 1 and CkFFN.get() == 0 and CkFF.get() == 0:
                 if values != []:
@@ -1160,11 +1197,17 @@ class patcherUI(Frame):
         fpCkFTDE.insert(0, 200)
         fpCkFTDE.config(state="disabled")
         fpCkFTDE.grid(column=2, row=8, columnspan=2, sticky="W")
-        fpspacer3 = Label(FPLF, text="").grid(column=0, row=10, sticky="w")
 
-        fpfooter = Label(FPLF, text="For other functions:").grid(column=0, row=11, columnspan=4, sticky="w")
+        CkUT = tkinter.IntVar()
+        fpCkUT = Checkbutton(FPLF, text="Enable unread state on tabs*", variable=CkUT)
+        fpCkUT.grid(column=0, row=10, columnspan=4, sticky="W")
+        fpCkUTD = Label(FPLF, text="* Allows you to customize unread tabs with userChrome.css\n using the [unread] attribute", state="disabled")
+        fpCkUTD.grid(column=0, row=11, columnspan=4, rowspan=2, sticky="E", padx=10)
+        fpspacer3 = Label(FPLF, text="").grid(column=0, row=13, sticky="w")
+
+        fpfooter = Label(FPLF, text="For other functions:").grid(column=0, row=14, columnspan=4, sticky="w")
         fpfooterL = Button(FPLF, text="Visit repository", cursor="hand2", command=callhome)
-        fpfooterL.grid(column=0, row=12, columnspan=5, sticky="WE")
+        fpfooterL.grid(column=0, row=15, columnspan=5, sticky="WE")
 
         PatchStats = LabelFrame(featurePatch, text="Patch status", padx=20)
         PatchStats.grid(column=0, row=1, pady=10, columnspan=4, sticky="WE")

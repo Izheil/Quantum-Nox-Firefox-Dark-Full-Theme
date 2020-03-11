@@ -7,7 +7,6 @@
 <p>If you are using the dark theme <code>userChrome.css</code> file, add the fixes from the files here in that one instead.</p>
 
 <p>To make it work, it's as simple as copying the function you want to apply at the bottom of <code>userChrome.css</code>, place it inside <a href="https://github.com/Izheil/Quantum-Nox-Firefox-Dark-Full-Theme/tree/master/CSS%20tweaks#the-chrome-folder">the chrome folder</a> if you hadn't yet, and restart Firefox.</p>
-<p>I describe what tweaks does each file contain below.</p>
 
 <h4>You can also keep some tweak inside your <code>userChrome.css</code> without it being enabled by encasing the lines you don't want to apply between "/*" and "*/" (without the quotation marks).</h4>
 
@@ -82,25 +81,27 @@
   <li>Change tab colors depending on it's read/loaded state.</li>
 </ul>
 
-<p>For the unread state to take effect you need to also place the file <b>setAttribute_unread.uc.js</b> inside your <a href="https://github.com/Izheil/Quantum-Nox-Firefox-Dark-Full-Theme/tree/master/CSS%20tweaks#the-chrome-folder">chrome folder</a>.</p>
-<p>This file won't get loaded unless you patched your firefox with the multi-row installer, or with the method explained inside the <a href="https://github.com/Izheil/Quantum-Nox-Firefox-Dark-Full-Theme/tree/master/Multirow%20and%20other%20functions/JS%20Loader">Multirow and other functions\JS Loader</a> folder from this repository.</p>
+<p>For the unread state to take effect you need to also patch your Firefox to label unread tabs as so (Firefox removed the unread state of tabs a few versions ago). You can do this using the patcher by choosing your Firefox version, and the "Enable unread state on tabs" option.</p>
+<p>This will add a "utils" folder and a "setAttribute_unread.uc.js" file to your chrome folder, which are required to customize unread tabs with userChrome.</p> 
+<p>Alternatively, if you use MacOS or something goes wrong with the patcher, you can always do the manual patching with the method explained in <a href="https://github.com/Izheil/Quantum-Nox-Firefox-Dark-Full-Theme/tree/master/Multirow%20and%20other%20functions/JS%20Loader">JS Loader</a> folder from this repository, and then copying the <a href="https://raw.githubusercontent.com/Izheil/Quantum-Nox-Firefox-Dark-Full-Theme/master/CSS%20tweaks/setAttribute_unread.uc.js">setAttribute_unread.uc.js</a> file to your <a href="https://github.com/Izheil/Quantum-Nox-Firefox-Dark-Full-Theme/tree/master/CSS%20tweaks#the-chrome-folder">chrome folder</a>.</p>
 
 <b>Rounded tabs:</b>
   <img src="https://i.imgur.com/qoG4Iiy.png">
 
-<p>If you instead want the old style (pre FF57) rounded tabs for firefox, you should add <a href="https://github.com/wilfredwee/photon-australis">australis</a> code to your userChrome instead.</p>
+<p>If you want the old style (pre FF57) rounded tabs for firefox, you should add <a href="https://github.com/wilfredwee/photon-australis">australis</a> code to your userChrome.css instead.</p>
 
 <h2>Installation</h2>
 
-<p>All you need to do is place the userChrome.css file inside <a href="https://github.com/Izheil/Quantum-Nox-Firefox-Dark-Full-Theme/tree/master/CSS%20tweaks#the-chrome-folder">the chrome folder</a> of your firefox profile.</p>
+<p>All you need to do is paste the tweaks you want to apply inside userChrome.css, and then place this file inside <a href="https://github.com/Izheil/Quantum-Nox-Firefox-Dark-Full-Theme/tree/master/CSS%20tweaks#the-chrome-folder">the chrome folder</a> of your Firefox profile.</p>
 
 <h4>Step by step:</h4>
 <ul>
+  <li>Create an empty userchrome.css file, or right click and "save link as..." <a href="https://raw.githubusercontent.com/Izheil/Quantum-Nox-Firefox-Dark-Full-Theme/master/CSS%20tweaks/userChrome.css">this</a>, naming it <code>userChrome.css</code>.</li>
   <li>Type <code>about:support</code> in your URL bar, then go to that page.</li>
   <li>Click the "open folder" button inside the "profile folder" section.</li>
   <li>Create a folder named "chrome" in your profile folder if it doesn't exist yet.</li>
   <li>Place "userChrome.css" inside <a href="https://github.com/Izheil/Quantum-Nox-Firefox-Dark-Full-Theme/tree/master/CSS%20tweaks#the-chrome-folder">the chrome folder</a>.</li>
-  <li>Edit userChrome.css to add the rules that are you interested in from the files "Context-menu-commands.css", "Bookmarks+URLbar+Sidebar.css", or "Tab-related-Tweaks.css" from this repository, or any other CSS rule you want to apply.</li>
+  <li>Edit userChrome.css with notepad or any code editor to add the rules that are you interested in from the files "Context-menu-commands.css", "Bookmarks+URLbar+Sidebar.css", or "Tab-related-Tweaks.css" from this repository, or any other CSS rule you want to apply.</li>
 </ul>
 
 <h2>The chrome folder</h2>
