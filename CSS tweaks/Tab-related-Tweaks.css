@@ -79,7 +79,7 @@ to autohide, so it's safest to just hide it on fullscreen */
 
 .tabbrowser-tab[selected="true"] .tab-content {
   background-color: transparent !important;
-  clip-path: inset(3px 0 0 0);}
+  clip-path: inset(2px 0 0 0);}
 
 /* Loaded but unread (not selected) */
 .tabbrowser-tab:not([selected="true"])[unread] .tab-label {
