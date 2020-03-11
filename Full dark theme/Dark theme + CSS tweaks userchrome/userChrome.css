@@ -110,10 +110,6 @@ but is disabled by default in this theme (Disable for the default tab line color
   --Loading-italic: normal;
   --Loading-bold: normal;
   --Loading-background: transparent;
-
-  /* This sets the number of bookmark rows to show if using multi-row bookmarks 
-     (must be enabled on line 1103) */
-  --bookmark-max-rows: 3;
 }
 
 /* These change the scrollbar color inside dialogs (not pages) */
@@ -1102,25 +1098,18 @@ to autohide, so it's safest to just hide it on fullscreen */
 
 /* MULTI-ROW BOOKMARKS TOOLBAR */
 
-/* To use the scrolling multirow bookmarks you have to delete the /* under this line */
+/* To use multirow bookmarks you have to delete the /* under this line */
 /*
 #PersonalToolbar {
   min-height: 21px !important;
-  max-height: calc(23px*(var(--bookmark-max-rows))) !important}
+  max-height: 100% !important}
 
 #PlacesToolbar > hbox:first-child {
-  overflow: visible;
   display: block}
 
 #PlacesToolbarItems {
     display: flex;
-    flex-wrap: wrap;
-    overflow: visible;
-    max-height: calc(23px*(var(--bookmark-max-rows))) !important}
-
-#PlacesToolbarItems:hover {overflow: auto !important}
-
-#PlacesToolbarItems > .bookmark-item {padding: 3px !important}
+    flex-wrap: wrap}
 
 /* CONTEXT MENU COMMANDS */
 
