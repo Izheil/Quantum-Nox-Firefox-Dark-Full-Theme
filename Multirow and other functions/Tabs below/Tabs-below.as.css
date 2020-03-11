@@ -1,6 +1,6 @@
 /* You can find an updated version here: https://github.com/Izheil/Quantum-Nox-Firefox-Dark-Full-Theme */
 /* Made by Izheil */
-/* Last updated: 08/12/2019 */
+/* Last updated: 11/03/2020 */
 
 /* TAB BAR BELOW
 You can set the order of each bar here. 1 for top, and 3 bottom.
@@ -17,7 +17,10 @@ Explanation of what each rule affects:
 
 #toolbar-menubar .titlebar-buttonbox-container {
 	display: block !important;
-    float: right !important}
+    float: right !important;
+    position: absolute !important;
+	top: 0;
+    right: 0}
 
 /* You may need to change this to remove padding above tabs */
 #titlebar {margin-top: -7px !important}

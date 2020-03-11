@@ -1,6 +1,6 @@
 /* You can find an updated version here: https://github.com/Izheil/Quantum-Nox-Firefox-Dark-Full-Theme */
 /* Made by Izheil */
-/* Last updated: 06/11/2019 */
+/* Last updated: 11/03/2019 */
 
 /* TAB RELATED TWEAKS */
 
@@ -23,7 +23,11 @@ Explanation of what each rule affects:
 
 #toolbar-menubar .titlebar-buttonbox-container {
     display: block !important;
-    float: right !important}
+    float: right !important;
+    position: absolute !important;
+	top: 0;
+    right: 0}
+/* ^ remove the "position", "top" and "right" rules if you want the menu-over-tabs instead */
 
 /* You may need to change this to remove padding above tabs */
 #titlebar {margin-top: -7px !important}
@@ -35,6 +39,7 @@ The values are 1px 0 1px 0 by default (corresponding to Top, Right, Down, Left s
 /* Don't change the #navigator-toolbox margin unless you want more margin on top */
 #main-window:not([sizemode="fullscreen"]) #navigator-toolbox {margin-top: 35px !important}
 /* ^ Don't change the margin to anything lower than 40px if you want to use the menu bar on top ^ */
+/* ^ Change to 10px to use menu-over-tabs instead ^ */
 
 /* v This changes the menu bar on top of the screen intead of over the tab bar */
 #toolbar-menubar {
