@@ -564,13 +564,22 @@ class patcherUI(Frame):
             FireFT = os.path.normpath(os.getcwd() + "/functions/Focus-tab-on-hover.uc.js")
             FireUT = os.path.normpath(os.getcwd() + "/functions/setAttribute_unread.uc.js")
 
+            FFUT = os.path.normpath(rpCkFF22.get() + "/chrome/setAttribute_unread.uc.js")
             FFTB = os.path.normpath(rpCkFF22.get() + "/chrome/Tabs-below.as.css")
+            FFFT = os.path.normpath(rpCkFF22.get() + "/chrome/Focus-tab-on-hover.uc.js")
             FFTBoT = os.path.normpath(rpCkFF22.get() + "/chrome/Tabs-below-Menu-overTabs.as.css")
             FFTBaA = os.path.normpath(rpCkFF22.get() + "/chrome/Tabs-below-Menu-onTop.as.css")
 
+            FFNUT = os.path.normpath(rpCkFFN22.get() + "/chrome/setAttribute_unread.uc.js")
             FFNTB = os.path.normpath(rpCkFFN22.get() + "/chrome/Tabs-below.as.css")
+            FFNFT = os.path.normpath(rpCkFFN22.get() + "/chrome/Focus-tab-on-hover.uc.js")
             FFNTBoT = os.path.normpath(rpCkFFN22.get() + "/chrome/Tabs-below-Menu-overTabs.as.css")
             FFNTBaA = os.path.normpath(rpCkFFN22.get() + "/chrome/Tabs-below-Menu-onTop.as.css")
+
+            if SystemOS() == "Linux":
+                rootUser = os.getenv("SUDO_USER")
+                functionFiles = glob.glob(FFChrome + "/*.*")
+                functionFilesN = glob.glob(FFNChrome + "/*.*")
 
             # We define the common multi-row choice patching here
             def MRpatch(FFversion):
@@ -615,6 +624,8 @@ class patcherUI(Frame):
                                 os.remove(FFCMRA)
                             try:
                                 writeMR(FFCMR)
+                                if SystemOS() == "Linux":
+                                    shutil.chown(FFCMR, user=rootUser, group=rootUser)
 
                             except IOError:
                                 Error = 1
@@ -630,6 +641,8 @@ class patcherUI(Frame):
                                 os.remove(FFCMR)
                             try:
                                 writeMR(FFCMRA)
+                                if SystemOS() == "Linux":
+                                    shutil.chown(FFCMRA, user=rootUser, group=rootUser)
 
                             except IOError:
                                 Error = 1
@@ -658,6 +671,8 @@ class patcherUI(Frame):
 
                         try:
                             writeMR(FFCMRL)
+                            if SystemOS() == "Linux":
+                                    shutil.chown(FFCMRL, user=rootUser, group=rootUser)
 
                         except IOError:
                             Error = 1
@@ -705,12 +720,16 @@ class patcherUI(Frame):
                         try: 
                             if CkTB1.get() == 1:
                                 distutils.file_util.copy_file(FireTBoT, FFChrome, update=True)
+                                if SystemOS() == "Linux":
+                                    shutil.chown(FFTBoT, user=rootUser, group=rootUser)
 
                                 if os.access(FFTB, os.F_OK):
                                     os.remove(FFTB)
 
                             else:
                                 distutils.file_util.copy_file(FireTB, FFChrome, update=True)
+                                if SystemOS() == "Linux":
+                                    shutil.chown(FFTB, user=rootUser, group=rootUser)
 
                                 if os.access(FFTBoT, os.F_OK):
                                     os.remove(FFTBoT)
@@ -726,8 +745,11 @@ class patcherUI(Frame):
                         try:
                             distutils.file_util.copy_file(FireFT, FFChrome, update=True)
 
-                            FireFile = os.path.normpath(rpCkFF22.get() + "/chrome/Focus-tab-on-hover.uc.js")
-                            writeFT(FireFile)
+                            writeFT(FFFT)
+
+                            if SystemOS() == "Linux":
+                                    shutil.chown(FFFT, user=rootUser, group=rootUser)
+
                         except IOError:
                             Error = 1
                             messagebox.showwarning("Warning", 
@@ -736,6 +758,9 @@ class patcherUI(Frame):
                     if CkUT.get() == 1:
                         try:
                             distutils.file_util.copy_file(FireUT, FFChrome, update=True)
+                            if SystemOS() == "Linux":
+                                    shutil.chown(FFUT, user=rootUser, group=rootUser)
+
                         except IOError:
                             Error = 1
                             messagebox.showwarning("Warning", 
@@ -769,11 +794,17 @@ class patcherUI(Frame):
                             if CkTB1.get() == 1:
                                 distutils.file_util.copy_file(FireTBoT, FFNChrome, update=True)
 
+                                if SystemOS() == "Linux":
+                                    shutil.chown(FFNTBoT, user=rootUser, group=rootUser)
+
                                 if os.access(FFNTB, os.F_OK):
                                     os.remove(FFNTB)
 
                             else:
                                 distutils.file_util.copy_file(FireTB, FFNChrome, update=True)
+
+                                if SystemOS() == "Linux":
+                                    shutil.chown(FFNTB, user=rootUser, group=rootUser)
 
                                 if os.access(FFNTBoT, os.F_OK):
                                     os.remove(FFNTBoT)
@@ -789,8 +820,11 @@ class patcherUI(Frame):
                         try:
                             distutils.file_util.copy_file(FireFT, FFNChrome, update=True)
 
-                            FireFile = os.path.normpath(rpCkFFN22.get() + "/chrome/Focus-tab-on-hover.uc.js")
-                            writeFT(FireFile)
+                            writeFT(FFNFT)
+
+                            if SystemOS() == "Linux":
+                                    shutil.chown(FFNFT, user=rootUser, group=rootUser)
+
                         except IOError:
                             Error = 1
                             messagebox.showwarning("Warning", 
@@ -799,6 +833,10 @@ class patcherUI(Frame):
                     if CkUT.get() == 1:
                         try:
                             distutils.file_util.copy_file(FireUT, FFNChrome, update=True)
+
+                            if SystemOS() == "Linux":
+                                    shutil.chown(FFNUT, user=rootUser, group=rootUser)
+
                         except IOError:
                             Error = 1
                             messagebox.showwarning("Warning", 
@@ -817,7 +855,9 @@ class patcherUI(Frame):
                 for x in values:
                     FFChrome = os.path.normpath(x + "/chrome")
 
+                    FFUT = os.path.normpath(x + "/chrome/setAttribute_unread.uc.css")
                     FFTB = os.path.normpath(x + "/chrome/Tabs-below.as.css")
+                    FFFT = os.path.normpath(x + "/chrome/Focus-tab-on-hover.uc.js")
                     FFTBoT = os.path.normpath(x + "/chrome/Tabs-below-Menu-overTabs.as.css")
                     FFTBaA = os.path.normpath(x + "/chrome/Tabs-below-Menu-onTop.as.css")
 
@@ -840,11 +880,17 @@ class patcherUI(Frame):
                                 if CkTB1.get() == 1:
                                     distutils.file_util.copy_file(FireTBoT, FFChrome, update=True)
 
+                                    if SystemOS() == "Linux":
+                                            shutil.chown(FFTBoT, user=rootUser, group=rootUser)
+
                                     if os.access(FFTB, os.F_OK):
                                         os.remove(FFTB)
 
                                 else:
                                     distutils.file_util.copy_file(FireTB, FFChrome, update=True)
+
+                                    if SystemOS() == "Linux":
+                                            shutil.chown(FFTB, user=rootUser, group=rootUser)
 
                                     if os.access(FFTBoT, os.F_OK):
                                         os.remove(FFTBoT)
@@ -860,8 +906,11 @@ class patcherUI(Frame):
                             try:
                                 distutils.file_util.copy_file(FireFT, FFChrome, update=True)
 
-                                FireFile = os.path.normpath(x + "/chrome/Focus-tab-on-hover.uc.js")
-                                writeFT(FireFile)
+                                writeFT(FFFT)
+
+                                if SystemOS() == "Linux":
+                                            shutil.chown(FFFT, user=rootUser, group=rootUser)
+
                             except IOError:
                                 Error = 1
                                 messagebox.showwarning("Warning", 
@@ -870,6 +919,10 @@ class patcherUI(Frame):
                         if CkUT.get() == 1:
                             try:
                                 distutils.file_util.copy_file(FireUT, FFChrome, update=True)
+
+                                if SystemOS() == "Linux":
+                                            shutil.chown(FFUT, user=rootUser, group=rootUser)
+
                             except IOError:
                                 Error = 1
                                 messagebox.showwarning("Warning", 
@@ -887,17 +940,6 @@ class patcherUI(Frame):
             elif Error != 1:
                 messagebox.showinfo("Patching complete", 
                     "The patching is complete.\nRestart Firefox for changes to take effect.")
-
-            if SystemOS() == "Linux":
-                rootUser = os.getenv("SUDO_USER")
-                functionFiles = glob.glob(FFChrome + "/*.*")
-                functionFilesN = glob.glob(FFNChrome + "/*.*")
-                if os.access(FFChrome, os.F_OK) is True:
-                    for file in functionFiles:
-                        shutil.chown(file, user=rootUser, group=rootUser)
-                if os.access(FFNChrome, os.F_OK) is True:
-                    for file in functionFilesN:
-                        shutil.chown(file, user=rootUser, group=rootUser)
 
             checkPatchFF()
             checkPatchFFN()
