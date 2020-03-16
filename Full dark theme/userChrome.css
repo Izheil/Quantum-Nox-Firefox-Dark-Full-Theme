@@ -1,6 +1,6 @@
 /* You can find an updated version here: https://github.com/Izheil/Quantum-Nox-Firefox-Dark-Full-Theme */
 /* Made by Izheil */
-/* Last updated: 11/03/2020 */
+/* Last updated: 16/03/2020 */
 
 /* COLORING PART STARTS HERE */
 
@@ -74,9 +74,9 @@ but is disabled by default in this theme (Disable for the default tab line color
   --Text-selection-color: #fff;
   --Searched-item-text-color: #0FF;
   --Lists-treechildren-hover-bg: rgba(0,149,221,0.25);
-  --Lists-treechildren-hover-border: 1px solid rgb(0,149,221);
+  --Lists-treechildren-hover-border: rgb(0,149,221);
   --Lists-treechildren-selected-bg: rgba(0,120,255,0.5);
-  --Lists-treechildren-selected-border: 1px solid #0a84ff;
+  --Lists-treechildren-selected-border: #0a84ff;
   --Lists-treechildren-selected-txt: #fff;
   --Sidebar-header: #333338;
   --Window-bg: #383840;
@@ -142,11 +142,11 @@ treechildren::-moz-tree-row, dialog richlistitem {background: transparent !impor
 /* This changes all treechildren elements highlights (list-like elements) */
 treechildren::-moz-tree-row(hover), dialog richlistitem:hover {
   background: var(--Lists-treechildren-hover-bg) !important;
-  border: var(--Lists-treechildren-hover-border) !important}
+  border: 1px solid var(--Lists-treechildren-hover-border) !important}
 
 treechildren::-moz-tree-row(selected), dialog richlistitem[selected] {
   background: var(--Lists-treechildren-selected-bg) !important;
-  border: var(--Lists-treechildren-selected-border) !important,
+  border: 1px solid var(--Lists-treechildren-selected-border) !important;
   color: var(--Lists-treechildren-selected-txt) !important}
 
 dialog richlistitem[clear-site-data-cookies-with-data] {border: 1px solid red !important}
@@ -947,6 +947,41 @@ if necessary depending on if you are using a custom OS theme (which may mess up 
 
 treechildren::-moz-tree-separator {
   border-color: #000 !important}
+
+/* Synced tabs sidebar */
+#template-container, .content-header {
+  background-color: var(--Window-bg) !important}
+
+.search-box {
+  -moz-appearance: none !important;
+  background-color: #222 !important;
+  color: #fff !important}
+
+.item.client > .item-title-container:first-child {
+  color: #fff !important}
+
+.item-tabs-list .item-title-container {
+  color: #ccc !important}
+
+.item-icon-container {fill: #fff !important}
+
+.item-title-container:hover > .item-icon-container {fill: #fff !important}
+
+.item-title-container:hover {
+  background: var(--Lists-treechildren-hover-bg) !important;
+  box-shadow: 0 0 0 1px var(--Lists-treechildren-hover-border) inset !important;
+  color: #fff !important}
+
+.item-title-container:active > .item-icon-container,
+.item.selected > .item-icon-container {fill: #fff !important}
+
+.item-title-container:active,
+.item.selected > .item-title-container {
+  background: var(--Lists-treechildren-selected-bg) !important;
+  box-shadow: 0 0 0 1px var(--Lists-treechildren-selected-border) inset !important;
+  color: var(--Lists-treechildren-selected-txt) !important}
+
+.instructions {color: #ccc !important}
 
 /* TAB READ/UNREAD COLORS */
 

@@ -32,11 +32,10 @@
 <p>If you have copied everything right, the folders structure should look something like this:</p>
 <p>Structure of <a href="https://github.com/Izheil/Quantum-Nox-Firefox-Dark-Full-Theme/tree/master/Full%20dark%20theme#the-chrome-folder">the chrome folder</a> files inside your profile folder:</p>
 <ul>
-  <li><b>utils (folder)</b></li>
+  <li><b>utils (folder) -> Only if you want to use the *.as.css and *.uc.js files.</b></li>
   <li>addons.css</li>
   <li>scrollbars.as.css</li>
   <li>setAttribute_unread.uc.js</li>
-  <li>Sync-tabs-sidebar.as.css</li>
   <li>tooltips.as.css</li>
   <li>userChrome.css</li>
   <li>userContent.css</li>
@@ -54,10 +53,9 @@
     </ul>
   </ul>
   <li>fonts (folder)</li>
-  <li>gmp-clearkey (folder)</li>
-  <li>META-INF (folder)</li>
   <li>uninstall (folder)</li>
-  <li>firefox.exe/firefox</li>
+  <li>(Other optional folders might appear here)</li>
+  <li>firefox.exe (or other Firefox executable depending on your OS)</li>
   <li><b>config.js</b></li>
   <li>Other .dll files</li>
 </ul>
