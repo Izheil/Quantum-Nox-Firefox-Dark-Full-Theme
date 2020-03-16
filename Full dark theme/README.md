@@ -21,7 +21,7 @@
   <li>Click the "open folder" button inside the "profile folder" section.</li>
   <li>Create a folder named "chrome" in your profile folder if it doesn't exist yet.</li>
   <li>Place all files (.css files) from this folder to the "chrome" folder.</li>
-  <li><b>Optional</b>: If you want to use the custom dark scrollbars, or dark tooltips, you will also have to enable JS injection through the method explained <a href="https://github.com/Izheil/Quantum-Nox-Firefox-Dark-Full-Theme/tree/master/Multirow%20and%20other%20functions/JS%20Loader">here</a>.</li>
+  <li><b>Optional</b>: If you want to use the custom dark scrollbars, or dark tooltips, you will also have to enable JS injection using the installer in <a href="https://github.com/Izheil/Quantum-Nox-Firefox-Dark-Full-Theme/releases">releases</a> (just don't select any function to install when patching if you don't need them), or patch your firefox manually with the method described <a href="https://github.com/Izheil/Quantum-Nox-Firefox-Dark-Full-Theme/tree/master/Multirow%20and%20other%20functions/JS%20Loader">here</a>.</li>
   <li><b>Optional</b>: Edit userChrome.css to change any style you aren't fully convinced with (or to give a different style to the unread tabs, etc...).</li>
   <li><b>Optional</b>: You can also edit userChrome.css to change the background of the <code>about:home</code> page.</li>
   <li><b>Optional</b>: If you want a different style for the scrollbars or the tooltips, use any of the alternatives on the <a href="https://github.com/Izheil/Quantum-Nox-Firefox-Dark-Full-Theme/tree/master/Full%20dark%20theme/Alternative%20scrollbars%20%26%20tooltips">Alternative scrollbars & tooltips</a> folder.</li>
