@@ -1,6 +1,6 @@
 /* You can find an updated version here: https://github.com/Izheil/Quantum-Nox-Firefox-Dark-Full-Theme */
 /* Made by Izheil */
-/* Last updated: 08/03/2020 */
+/* Last updated: 16/03/2020 */
 
 /* This part imports the Addons file if there is one, so that you don't have to edit the dynamic URL
 from the addons rules every time we update anything here */
@@ -1264,6 +1264,8 @@ input[type="checkbox"]:checked {
 
 /* These change the heading text colors to white */
 #isDefaultLabel, #updateBox, #heading-name, #legacy-extensions-heading {color: #FFF !important}
+
+h2 {color: #ddd !important}
 
 /* About:policies page */
 #sectionTitle {color: #fff !important}
