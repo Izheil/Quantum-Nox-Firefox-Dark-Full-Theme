@@ -1,10 +1,10 @@
 /* You can find an updated version here: https://github.com/Izheil/Quantum-Nox-Firefox-Dark-Full-Theme */
 /* Made by Izheil */
-/* Last updated: 11/03/2020 */
+/* Last updated: 16/03/2020 */
 
 /* TAB BAR BELOW
 You can set the order of each bar here. 1 for top, and 3 bottom.
-Don't use this one if you are using the multirow version of tabs below.
+Don't use this one if you already have the tabs below fix on your userChrome.
 
 Explanation of what each rule affects:
 - #nav-bar is the ID for the URL bar. 
@@ -17,32 +17,45 @@ Explanation of what each rule affects:
 
 #toolbar-menubar .titlebar-buttonbox-container {
 	display: block !important;
-    float: right !important;
     position: absolute !important;
 	top: 0;
     right: 0}
 
 /* You may need to change this to remove padding above tabs */
-#titlebar {margin-top: -7px !important}
+#main-window[sizemode="maximized"] #titlebar {margin-top: -8px !important}
+#main-window[sizemode="normal"] #titlebar {margin-top: -1px !important}
+
+/* We set the tabs to be exactly at the bottom */
+#main-window:not([customizing="true"]) #TabsToolbar {margin-bottom: -1px !important}
 
 /* Change the non 0 px values to any other to make the area of each menubar item bigger. 
 The values are 1px 0 1px 0 by default (corresponding to Top, Right, Down, Left sides) */
 #main-menubar > menu {padding: 5px 0 5px 0 !important}
 
-/* Don't change the #navigator-toolbox margin unless you want more margin on top */
-#main-window:not([sizemode="fullscreen"]) #navigator-toolbox {margin-top: 35px !important}
-/* ^ Don't change the margin to anything lower than 35px if you want to see the menu bar on top of all bars ^ */
-/* ^ Change to 10px to use menu-over-tabs instead ^ */
+/* Don't change the #navigator-toolbox margins unless you want more margin on top */
+#main-window[sizemode="maximized"] #navigator-toolbox {margin-top: 35px !important}
+#main-window[sizemode="normal"] #navigator-toolbox {margin-top: 28px !important}
+/* ^ Don't change the margin to anything lower than 35px on maximized window and 28px on normal window
+     if you want to see the menu bar on top of all bars ^ */
+/* ^ Change to 10px on maximized, and remove the normal one to use menu-over-tabs instead ^ */
 
-/* v This changes the menu bar on top of the screen instead of over the tab bar. Delete or comment out 
+/* This changes the menu bar on top of the screen instead of over the tab bar. Delete or comment out 
 if you want to use menu-over-tabs version */
 #toolbar-menubar {
-  position: fixed !important; 
+  display: flex !important;
+  position: fixed !important;
+  flex-wrap: nowrap;
   width: 100% !important;
-  top: 0 !important;
-  margin-top: 7px !important}
+  top: 0}
 
-#main-window[sizemode="fullscreen"] #toolbar-menubar {display: none !important}
-#main-window:not([sizemode="fullscreen"]) #toolbar-menubar {display: block !important}
-/* ^ There seems to be an issue with the "top:" rule inside #toolbar-menubar that would not allow fullscreen
+/* There seems to be an issue with the "top:" rule inside #toolbar-menubar that would not allow fullscreen
 to autohide, so it's safest to just hide it on fullscreen */
+#main-window[sizemode="fullscreen"] #toolbar-menubar {display: none !important}
+
+/* These are fixes for tabs-below only (some margin issues on titlebar. 
+Remove if using menu-over-tabs v */
+#main-window[sizemode="normal"] #toolbar-menubar {
+  margin-top: 0px}
+
+#main-window[sizemode="maximized"] #toolbar-menubar {
+  margin-top: 7px}

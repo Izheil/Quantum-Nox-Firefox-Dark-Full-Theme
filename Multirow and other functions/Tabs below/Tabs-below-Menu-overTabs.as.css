@@ -1,6 +1,6 @@
 /* You can find an updated version here: https://github.com/Izheil/Quantum-Nox-Firefox-Dark-Full-Theme */
 /* Made by Izheil */
-/* Last updated: 08/12/2019 */
+/* Last updated: 16/03/2020 */
 
 /* TAB BAR BELOW
 You can set the order of each bar here. 1 for top, and 3 bottom.
@@ -19,13 +19,19 @@ Explanation of what each rule affects:
 	display: block !important;
     float: right !important}
 
+#window-controls {display: none !important}
+
+/* We set the tabs to be exactly at the bottom */
+#main-window:not([customizing="true"]) #TabsToolbar {margin-bottom: -1px !important}
+
 /* You may need to change this to remove padding above tabs */
-#titlebar {margin-top: -7px !important}
+#main-window[sizemode="maximized"] #titlebar {margin-top: -7px !important}
 
 /* Change the non 0 px values to any other to make the area of each menubar item bigger. 
 The values are 1px 0 1px 0 by default (corresponding to Top, Right, Down, Left sides) */
 #main-menubar > menu {padding: 5px 0 5px 0 !important}
 
 /* Don't change the #navigator-toolbox margin unless you want more margin on top */
-#main-window:not([sizemode="fullscreen"]) #navigator-toolbox {margin-top: 10px !important}
+#main-window[sizemode="maximized"] #navigator-toolbox {margin-top: 8px !important}
+#main-window[sizemode="normal"] #navigator-toolbox {margin-top: 0 !important}
 /* ^ Change to lower than 10px if you want to have less space on top of the url bar ^ */

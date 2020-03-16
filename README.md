@@ -9,17 +9,17 @@ in <code>about:config</code> for userChrome and userContent to be loaded at all 
 
 <p>If you want to know how to change some colors of the theme, check the <a href="https://github.com/Izheil/Quantum-Nox-Firefox-Dark-Full-Theme/tree/master/Info#Editting CSS files">Info</a> section.</p>
 
-<h3>Last update: <b>11/03/2020</b></h3>
+<h3>Last update: <b>16/03/2020</b></h3>
 <p>Files updated:</p>
+<ul>
+	<li><b>Tab-related-Tweaks.css</b>: Some margin fixes, fullscreen issues, and addon placing in the titlebar.</li>
+	<li><b>tabs-below.as.css</b>: Some margin fixes, fullscreen issues, and addon placing in the titlebar.</li>
+</ul>
+<h3>Pre-Last update: <b>11/03/2019</b></h3>
 <ul>
 	<li><b>Tab-related-Tweaks.css</b>: Fixed tabs below for FF74.</li>
 	<li><b>tabs-below.as.css</b>: Fixed tabs below for FF74.</li>
 	<li><b>userChrome.css (CSS tweaks version)</b>: Fixed tabs below, and the titlebar min/max/close buttons transparency.</li>
-</ul>
-<h3>Pre-Last update: <b>10/03/2019</b></h3>
-<ul>
-	<li><b>CSS tweaks (bookmarks file)</b>: Fixed multi-row bookmarks.</li>
-	<li><b>userChrome.css (CSS tweaks version)</b>: Fixed multi-row bookmarks.</li>
 </ul>
 
 <h3>A note on people looking to replace some Tab Mix Plus features:</h3>
