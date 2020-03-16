@@ -948,14 +948,18 @@ if necessary depending on if you are using a custom OS theme (which may mess up 
 treechildren::-moz-tree-separator {
   border-color: #000 !important}
 
+/* Items inside the sidebar (treechildren) are located in the general colors section of this file now */
+
+/* This changes the sidebar searchbar */
+#sidebar-search-container #search-box, .search-box {
+  -moz-appearance: none !important;
+  background-color: #222 !important;
+  border: 1px solid #464646 !important;
+  color: #fff !important}
+
 /* Synced tabs sidebar */
 #template-container, .content-header {
   background-color: var(--Window-bg) !important}
-
-.search-box {
-  -moz-appearance: none !important;
-  background-color: #222 !important;
-  color: #fff !important}
 
 .item.client > .item-title-container:first-child {
   color: #fff !important}
