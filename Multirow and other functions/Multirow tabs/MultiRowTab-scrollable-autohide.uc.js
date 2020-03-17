@@ -5,6 +5,7 @@
 // @include        main
 // @compatibility  Firefox 75
 // @author         Alice0775, Endor8, TroudhuK, Izheil
+// @version        16/03/2020 05:15 Fixed some issue with tab transitions
 // @version        06/03/2020 21:56 Fixed an issue with tab lines and duplicated buttons
 // @version        12/02/2020 03:30 Fixed some issue with the min/resize/close buttons
 // @version        18/01/2020 02:39 Added a fix for people who always spoof their useragent
@@ -163,8 +164,12 @@ gBrowser.tabContainer.addEventListener('TabOpen', scrollToView, false);
 gBrowser.tabContainer.addEventListener("TabSelect", scrollToView, false);
 document.addEventListener("SSTabRestoring", scrollToView, false);
 
+// We set this to check if the listeners were added before
+var Listeners = false;
+
 // This sets when to apply the fix (by default a new row starts after the 23th open tab, unless you changed the min-size of tabs)
-gBrowser.tabContainer.ondragstart = function(){if(gBrowser.tabContainer.clientHeight > document.getElementsByClassName("tabbrowser-tab")[0].clientHeight) {
+gBrowser.tabContainer.ondragstart = function(){
+    if(gBrowser.tabContainer.clientHeight > document.getElementsByClassName("tabbrowser-tab")[0].clientHeight) {
 
     gBrowser.tabContainer._getDropEffectForTabDrag = function(event){return "";}; // multirow fix: to make the default "dragover" handler do nothing
     gBrowser.tabContainer._onDragOver = function(event) {
@@ -180,7 +185,7 @@ gBrowser.tabContainer.ondragstart = function(){if(gBrowser.tabContainer.clientHe
                 if (!this._dragTime)
                     this._dragTime = Date.now();
                 if (!tab.hasAttribute("pendingicon") && // annoying fix
-                    Date.now() >= this._dragTime + this._dragOverDelay)
+                    Date.now() >= this._dragTime + this._dragOverDelay);
                     this.selectedItem = tab;
                 ind.hidden = true;
                 return;
@@ -227,9 +232,6 @@ gBrowser.tabContainer.ondragstart = function(){if(gBrowser.tabContainer.clientHe
         ind.style.transform = "translate(" + Math.round(newMarginX) + "px," + Math.round(newMarginY) + "px)"; // multirow fix
         ind.style.marginInlineStart = (-ind.clientWidth) + "px";
         };
-    }
-
-    gBrowser.tabContainer.addEventListener("dragover", gBrowser.tabContainer._onDragOver, true);
 
     gBrowser.tabContainer.onDrop = function(event) {
         var newIndex;
@@ -251,9 +253,16 @@ gBrowser.tabContainer.ondragstart = function(){if(gBrowser.tabContainer.clientHe
             if (newIndex > draggedTab._tPos)
                 newIndex--;
             gBrowser.moveTabTo(draggedTab, newIndex);
+            }
+        };
+
+    // We then attach the event listeners for the new functionability to take effect
+    if (Listeners == false) {
+        gBrowser.tabContainer.addEventListener("dragover", gBrowser.tabContainer._onDragOver, true);
+        gBrowser.tabContainer.addEventListener("drop", function(event){this.onDrop(event);}, true);
+        Listeners = true;
         }
-    };
-    gBrowser.tabContainer.addEventListener("drop", function(event){this.onDrop(event);}, true);
+    }
 };}
 
 // copy of the original and overrided _getDropEffectForTabDrag method
