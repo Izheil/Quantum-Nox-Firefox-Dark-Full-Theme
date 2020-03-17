@@ -3,7 +3,7 @@
 // @namespace      http://space.geocities.yahoo.co.jp/gl/alice0775
 // @description    Multi-row tabs draggability fix, Experimental CSS version
 // @include        main
-// @compatibility  Firefox 75
+// @compatibility  Firefox 76
 // @author         Alice0775, Endor8, TroudhuK, Izheil
 // @version        16/03/2020 05:15 Fixed some issue with tab transitions
 // @version        06/03/2020 21:56 Fixed an issue with tab lines and duplicated buttons
