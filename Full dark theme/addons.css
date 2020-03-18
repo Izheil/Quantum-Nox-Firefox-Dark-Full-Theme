@@ -1,6 +1,6 @@
 /* You can find an updated version here: https://github.com/Izheil/Quantum-Nox-Firefox-Dark-Full-Theme */
 /* Made by Izheil */
-/* Last updated: 24/02/2020 */
+/* Last updated: 18/03/2020 */
 
 /*------ HOW TO MAKE THE ADDON THEMES WORK ------*/
 /* To use this part of the code, you will have to find the dynamic UUID of your extensions, and replace it where the 
@@ -107,8 +107,11 @@ label::before {filter: invert(90%)}
 .form-control, #formText {background: #26292e !important; color: #ccc !important}
 .form-control:not(focus), #formText:not(focus) {border-color: #37403f !important}
 
-.table-striped > tbody > tr:nth-of-type(2n+1) {background: #222 !important}
+.table-striped > tbody > tr:nth-of-type(2n+1) {background: rgba(0,0,0,0.4) !important}
 .table-striped > tbody > tr:hover {background: #26292e !important}
+.table, .table-hover tr:hover {color: #ccc !important}
+
+.pure-menu-selected, .pure-menu-item:hover {background: rgba(0,0,0,0.4) !important}
 
 .table-bordered, .table-bordered > tbody > tr > td, .table-bordered > tbody > tr > th, 
 .table-bordered > tfoot > tr > td, .table-bordered > tfoot > tr > th, .table-bordered > thead > tr > td, 
