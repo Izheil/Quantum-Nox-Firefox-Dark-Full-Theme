@@ -12,14 +12,11 @@ in <code>about:config</code> for userChrome and userContent to be loaded at all 
 <h3>Last update: <b>17/03/2020</b></h3>
 <p>Files updated:</p>
 <ul>
-	<li><b>MultirowTab*.uc.js</b>: Fixed some minor issue with tab animations on tab drop glitching before having more than 2 tab rows.</li>
+	<li><b>userContent.css</b>: Fixed the notices on firefox addons.</li>
 </ul>
-<h3>Pre-Last update: <b>16/03/2019</b></h3>
+<h3>Pre-Last update: <b>17/03/2019</b></h3>
 <ul>
-	<li><b>Sync-tabs-sidebar.as.css</b>: Removed this file, since it's not longer necessary.</li>
-	<li><b>userChrome.css</b>: Integrated the synced tabs sidebar into userChrome (since it's not necesary to load it as an agent sheet anymore).</li>
-	<li><b>Tab-related-Tweaks.css</b>: Some margin fixes, fullscreen issues, and addon placing in the titlebar.</li>
-	<li><b>tabs-below.as.css</b>: Some margin fixes, fullscreen issues, and addon placing in the titlebar.</li>
+	<li><b>MultirowTab*.uc.js</b>: Fixed some minor issue with tab animations on tab drop glitching before having more than 2 tab rows.</li>
 </ul>
 
 <h3>A note on people looking to replace some Tab Mix Plus features:</h3>
