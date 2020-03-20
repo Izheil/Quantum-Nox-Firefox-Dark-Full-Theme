@@ -256,7 +256,7 @@ only the images */
 #errorPageContainer #text-container h1 {color: #1C7BFF !important}
 
 #errorPageContainer .button-container button {
-	color: #ccc !important;
+	color: #ddd !important;
 	border: none !important}
 
 #errorPageContainer .button-container button:hover {
