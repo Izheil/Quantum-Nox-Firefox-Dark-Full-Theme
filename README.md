@@ -4,6 +4,8 @@
 <pre>Since Firefox 69, you have to enable <code>toolkit.legacyUserProfileCustomizations.stylesheets</code> 
 in <code>about:config</code> for userChrome and userContent to be loaded at all as per <a href="https://bugzilla.mozilla.org/show_bug.cgi?id=1541233#c35">bug #1541233</a>.</pre>
 
+<p>If you are on Windows or Linux and only want multirow or any other function that isn't related to the theme (like tabs below, or focus tab on hover), you can use the installers inside the <a href="https://github.com/Izheil/Quantum-Nox-Firefox-Dark-Full-Theme/releases">releases</a> section.</p>
+
 <p>This theme is mainly <b>intended to be used alongside a lightweight theme</b>, and for the stable release of Firefox (<b>This means that while it will most probably work with nightly and ESR for the most part, it may have less support for those versions</b>).</p>
 <p>You can use it to fully change the colors of most of firefox UI to dark-gray colors (with #222-#444 colors mostly), including scrollbars, tooltips, sidebar, as well as dialogs. With the files here you can also as remove some context menu options, enable multirow tabs, change the font of the url bar...</p>
 
@@ -22,11 +24,13 @@ in <code>about:config</code> for userChrome and userContent to be loaded at all 
 <h3>A note on people looking to replace some Tab Mix Plus features:</h3>
 <p>You can find some of the basic settings that can be simulated through <code>about:config</code>, some userscripts, and some addons <a href="https://github.com/Izheil/Quantum-Nox-Firefox-Dark-Full-Theme/tree/master/Info#Replacing-some-Tab-Mix-Plus-features">here</a>.</p>
 
+<h2>Multirow Tabs and other functions</h2>
+<p>You can enable multirow tabs as well as other functions using the installer in the <a href="https://github.com/Izheil/Quantum-Nox-Firefox-Dark-Full-Theme/releases">releases</a> section, or following the methods explained inside <a href="https://github.com/Izheil/Quantum-Nox-Firefox-Dark-Full-Theme/tree/master/Multirow%20and%20other%20functions">Multirow and other functions</a> folder.</p>
+<img src="https://i.imgur.com/2YUO9vq.png">
+
 <h2>Main browser UI</h2>
 <img src="https://i.imgur.com/zNKhEV6.png" title="Dark firefox UI with custom background" />
 <img src="https://i.imgur.com/q8MhDSX.png" title="Dark firefox Dialog" />
-
-<p>If you are on windows and only want the theme or multirow, you can use the batch file installers inside the <a href="https://github.com/Izheil/Quantum-Nox-Firefox-Dark-Full-Theme/tree/master/Installers">installers</a> folder.</p> 
 
 <p>If you are using Linux or Mac, or want to add some more functionability (like deleting some useless context menu commands), you will have to use the methods described inside one of the 3 main folders of this repository:</p>
 
