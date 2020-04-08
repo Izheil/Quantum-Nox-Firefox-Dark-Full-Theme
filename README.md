@@ -11,14 +11,15 @@ in <code>about:config</code> for userChrome and userContent to be loaded at all 
 
 <p>If you want to know how to change some colors of the theme, check the <a href="https://github.com/Izheil/Quantum-Nox-Firefox-Dark-Full-Theme/tree/master/Info#Editting CSS files">Info</a> section.</p>
 
-<h3>Last update: <b>18/03/2020</b></h3>
+<h3>Last update: <b>08/04/2020</b></h3>
 <p>Files updated:</p>
 <ul>
-	<li><b>addons.css</b>: Fixed the table text colors on <a href="https://addons.mozilla.org/en-US/firefox/addon/cookie-autodelete/">Cookie autodelete</a> addon.</li>
+	<li><b>userChrome.css</b>: Minor fixes on the URLbar colors. Also added a fix for the URLbar "puffing" on new tab opening (for the CSS tweaks userChrome only).</li>
+	<li><b></b>: Added a fix for the "puffing" URLbar so that it only adds padding when the autocomplete is open (so it won't resize when you open a new tab and the urlbar gets focus, or when you <code>Ctrl + L</code> and then press <code>Esc</code>).</li>
 </ul>
-<h3>Pre-Last update: <b>17/03/2019</b></h3>
+<h3>Pre-Last update: <b>18/03/2019</b></h3>
 <ul>
-	<li><b>userContent.css</b>: Fixed the notices on firefox addons.</li>
+	<li><b>addons.css</b>: Fixed the table text colors on <a href="https://addons.mozilla.org/en-US/firefox/addon/cookie-autodelete/">Cookie autodelete</a> addon.</li>
 </ul>
 
 <h3>A note on people looking to replace some Tab Mix Plus features:</h3>
