@@ -1,6 +1,6 @@
 /* You can find an updated version here: https://github.com/Izheil/Quantum-Nox-Firefox-Dark-Full-Theme */
 /* Made by Izheil */
-/* Last updated: 18/03/2020 */
+/* Last updated: 08/04/2020 */
 
 /* This part imports the Addons file if there is one, so that you don't have to edit the dynamic URL
 from the addons rules every time we update anything here */
@@ -96,6 +96,9 @@ To use, instead of "none;", type: url("URL-OF-THE-IMAGE-GOES-HERE"); <- Don't fo
 	--Lists-treechildren-hover-border: 1px solid rgb(0,149,221);
 	--Lists-treechildren-selected-bg: rgba(0,120,255,0.5);
 	--Lists-treechildren-selected-border: 1px solid #0a84ff}
+
+/* This changes about: categories sidebar */
+#full > #sidebar {background-color: #303030 !important}
 
 /*------ FILE BROWSING PAGE ------*/
 /* This was placed here for bug fixing of styles overriding when testing things, for the 
