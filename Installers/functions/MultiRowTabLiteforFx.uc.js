@@ -3,8 +3,9 @@
 // @namespace      http://space.geocities.yahoo.co.jp/gl/alice0775
 // @description    Multi-row tabs draggability fix, Experimental CSS version
 // @include        main
-// @compatibility  Firefox 76
+// @compatibility  Firefox 77
 // @author         Alice0775, Endor8, TroudhuK, Izheil
+// @version        08/04/2020 04:30 Compatibility fix for FF77
 // @version        16/03/2020 05:15 Fixed some issue with tab transitions
 // @version        06/03/2020 21:56 Fixed an issue with tab lines and duplicated buttons
 // @version        12/02/2020 03:30 Fixed some issue with the min/resize/close buttons
@@ -25,12 +26,8 @@
 // @version        23/11/2018 00:41 Firefox 65
 // @version        19/10/2018 07:34 Firefox 62
 // @version        11/05/2018 15:05 Firefox 60
-// @version        08/05/2017 00:00 Firefox 48
-// @version        05/01/2017 00:01 hide favicon if busy
-// @version        02/09/2016 00:01 Bug 1222490 - Actually remove panorama for Fx45+
-// @version        02/09/2016 00:01 workaround css for lwt
 // ==/UserScript==
-    zzzz_MultiRowTabLite();
+zzzz_MultiRowTabLite();
 function zzzz_MultiRowTabLite() {
 	var css =`
     /* MULTIROW TABS CSS */
@@ -55,17 +52,12 @@ function zzzz_MultiRowTabLite() {
 
     #tabbrowser-tabs .tab-background, #tabbrowser-tabs .tabbrowser-tab {
         min-height: var(--tab-min-height) !important}
-    
-    #main-window[sizemode="maximized"] #TabsToolbar, 
-    #main-window[sizemode="fullscreen"] #TabsToolbar {margin-top: -1px !important}
-
-    .toolbar-items {margin-top: 1px !important}
 
     #nav-bar {box-shadow: none !important}
     
 	.tab-stack {width: 100%}
 
-    #tabbrowser-tabs .tabbrowser-arrowscrollbox {
+    #tabbrowser-tabs > arrowscrollbox{
         overflow: visible;
         display: block}
 
@@ -79,7 +71,7 @@ function zzzz_MultiRowTabLite() {
 	`;
 
     // Here the FF71+ changes
-	if (document.querySelector("#tabbrowser-tabs .tabbrowser-arrowscrollbox").shadowRoot) {
+	if (document.querySelector("#tabbrowser-tabs > arrowscrollbox").shadowRoot) {
 	    css +=`
 		scrollbar {-moz-window-dragging: no-drag !important}
 	    `;
@@ -94,9 +86,10 @@ function zzzz_MultiRowTabLite() {
 	    .arrowscrollbox-overflow-start-indicator,
 	    .arrowscrollbox-overflow-end-indicator {position: fixed !important}
 
-	    .scrollbutton-up, .scrollbutton-down, spacer {display: none !important}
+	    .scrollbutton-up, .scrollbutton-down, spacer,
+        #scrollbutton-up, #scrollbutton-down {display: none !important}
 	    `
-	    document.querySelector("#tabbrowser-tabs .tabbrowser-arrowscrollbox").shadowRoot.appendChild(style);
+	    document.querySelector("#tabbrowser-tabs > arrowscrollbox").shadowRoot.appendChild(style);
 	} else {
         // Here the FF66-FF70 changes
 		css +=`
