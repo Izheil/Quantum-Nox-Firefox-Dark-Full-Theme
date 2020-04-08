@@ -1,6 +1,6 @@
 /* You can find an updated version here: https://github.com/Izheil/Quantum-Nox-Firefox-Dark-Full-Theme */
 /* Made by Izheil */
-/* Last updated: 16/03/2020 */
+/* Last updated: 08/04/2020 */
 
 /* COLORING PART STARTS HERE */
 
@@ -24,7 +24,7 @@ without this change) */
   --lwt-toolbar-field-color: #aaa !important;
   --lwt-toolbar-field-focus-color: var(--lwt-toolbar-field-color) !important;
   --lwt-text-color: #ccc !important;
-  --urlbar-separator-color: #88a !important;
+  --urlbar-separator-color: #666 !important;
   --autocomplete-popup-highlight-background: rgba(100,100,100,0.4) !important;
   --autocomplete-popup-highlight-color: #ddd !important;
   --url-autocomplete-links-color: rgb(0,160,200);
@@ -49,7 +49,7 @@ but is disabled by default in this theme (Disable for the default tab line color
 
 *|*:root {
   /* Main menu colors */
-  --panel-separator-color: rgba(95,95,95, .5)  !important;
+  --panel-separator-color: rgba(95,95,95, .6)  !important;
   --arrowpanel-background: #383838 !important;
   --arrowpanel-color: #ccc !important;
   --panel-disabled-color: #888 !important;
