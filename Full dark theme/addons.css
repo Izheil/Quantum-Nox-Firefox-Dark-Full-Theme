@@ -1123,7 +1123,7 @@ span[data-src="/"], span[data-src="."] {
 #firewallContainer > div:not(.isCname) > span, #firewallContainer > div.isCname > span:not(:first-of-type) {
   color: #ccc !important}
 
-#firewallContainer > div.isCname > span:first-of-type {color: #07f !important}
+#firewallContainer > div.isCname > span:first-of-type {color: #09f !important}
 
 #firewallContainer > div > span:not([data-i18n="popupAnyRulePrompt"]):not([data-i18n="popupTipGlobalRules"]):not([data-i18n="popupTipLocalRules"]) {
   border-top: 1px solid #000 !important}
