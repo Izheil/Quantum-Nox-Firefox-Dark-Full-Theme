@@ -5,6 +5,7 @@
 // @include        main
 // @compatibility  Firefox 77
 // @author         Alice0775, Endor8, TroudhuK, Izheil
+// @version        09/04/2020 08:14 Minor fixes for tab line when window is resized
 // @version        08/04/2020 04:30 Compatibility fix for FF77
 // @version        16/03/2020 05:15 Fixed some issue with tab transitions
 // @version        06/03/2020 21:56 Fixed an issue with tab lines and duplicated buttons
@@ -52,6 +53,8 @@ function zzzz_MultiRowTabLite() {
 
     #tabbrowser-tabs .tab-background, #tabbrowser-tabs .tabbrowser-tab {
         min-height: var(--tab-min-height) !important}
+
+    #main-window[sizemode="normal"] #TabsToolbar {margin-top: 1px !important}
 
     #nav-bar {box-shadow: none !important}
 
