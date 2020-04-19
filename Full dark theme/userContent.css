@@ -1,6 +1,6 @@
 /* You can find an updated version here: https://github.com/Izheil/Quantum-Nox-Firefox-Dark-Full-Theme */
 /* Made by Izheil */
-/* Last updated: 08/04/2020 */
+/* Last updated: 19/04/2020 */
 
 /* This part imports the Addons file if there is one, so that you don't have to edit the dynamic URL
 from the addons rules every time we update anything here */
@@ -1603,16 +1603,38 @@ form input:not([type="radio"]), .show-password-label {
 
 html, body {background-color: #202020 !important}
 
+:root {
+	--color-border: #666 !important;
+	--color-marketing-gray-07: #ccc !important;
+	--color-marketing-gray-03: #666 !important;
+	--color-heading: #ddd !important;
+}
+
 h1, h2 {color: #fff !important}
 h3, h4 {color: #ddd !important}
 p:not(.main-content) {color: #ccc !important}
 
-a:link {color: var(--in-content-link-color) !important}
-a:visited {color: var(--in-content-link-color) !important}
-a:hover {color: var(--in-content-link-color-hover) !important}
-a:active {color: var(--in-content-link-color-hover) !important}
+a:link:not(.sumo-button) {color: var(--in-content-link-color) !important}
+a:visited:not(.sumo-button) {color: var(--in-content-link-color) !important}
+a:hover:not(.sumo-button) {color: var(--in-content-link-color-hover) !important}
+a:active:not(.sumo-button) {
+	color: var(--in-content-link-color-hover) !important;
+	background-color: transparent !important}
 
-#announcements, #product-cards .icon {background: transparent !important}
+.pagination li:hover a, #product-filter .selected a {background-color: rgba(255,255,255, 0.1) !important}
+
+.selected a.btn-page, th {color: #fff !important}
+
+.note, .card--callout, .document-vote, .card, .sg-b-p, .mzp-c-menu-panel,
+.mzp-js-details-wrapper, .tag, #toc {
+	background-color: #333 !important;
+	border-color: #888 !important;
+	color: #ccc !important}
+
+.mzp-c-menu-item:hover {
+	box-shadow: none !important}
+
+#announcements, #product-cards .icon, {background: transparent !important}
 #announcements .announce-bar {background-color: #555 !important}
 
 body > header {
@@ -1621,118 +1643,48 @@ body > header {
 	border-bottom: none !important;
 	color: #ccc !important}
 
-a.btn, a.volunteer-button {color: #fff !important}
-.footer-logo {fill: #ddd !important}
+.sumo-page-section--lg, .shade-bg, .sidebar-nav.topics {background-color: #282828 !important}
 
-#aux-nav li a, .question-meta li, .asked-on, .asked-by,
-.footnote, #selected-product, .inner-wrap .legend li, #tagged,
-div {color: #ccc !important}
-#aux-nav li a:hover {background-color: rgba(0,0,0,0.5) !important}
+.sumo-nav--logo img, .search-button, #search-results img, .card:not(.is-inverse) .card--icon-sm,
+.mzp-c-menu-item-icon, .mzp-c-menu-button-close, .icon-button.is-summary > button,
+button[aria-controls="question-details"]::before, .card--topic .card--icon, .topic-article--icon {filter: invert(85%)}
 
-#main-breadcrumbs {background: #444 !important}
-#main-breadcrumbs li:not(a), .card-grid > li > a,
-.product-list .product a, .sidebar-header {color: #ccc !important}
+.sidebar-nav .related-document, .sidebar-nav .related-question {filter: invert(100%) hue-rotate(180deg)}
 
-.answers .notice, .karma-titles li, .warning, #toc, #doc-content .note, 
-.tag-list a, .wiki-doc .vote-wrap {
-	background-color: #333 !important; 
-	color: #ccc !important;
-	border: 1px solid #666 !important}
+.badges-list {filter: invert(100%)}
 
-.search-filter, .search-filter li, .questions-sidebar .sidebar-header {background-color: transparent !important}
+.sumo-l-two-col--one-half:not(.sumo-page-subheading),
+#doc-content li, td {color: #ccc !important}
 
-.search-filter img, .result::before, .questions-sidebar .collapse, .topic-icon {filter: invert(100%)}
+.is-solution {color: #333 !important}
 
-.main-content, #try-an-article, .grid_6 article, #pw-reset,
-#retrieve-username, .hero-bar, .row .content-box, .highlight-box, .wiki-doc {
-	background-color: #444 !important; 
-	border-radius: 6px !important; 
-	color: #ccc !important}
+li {color: #aaa !important}
+time {color: #888 !important}
+.answers, .solutions {color: #999 !important}
 
-#doc-content tr:nth-child(2n+1) {background: #333 !important}
+.ui-widget-content {background-color: transparent !important}
 
-.warning-box {
-	background: #775 !important;
-	border-color: #664 !important}
+.secondary-button {
+	border-color: transparent !important;
+	background-color: #333 !important;
+	color: #ddd !important}
 
-.main-content::before {filter: brightness(27%) !important}
-
-.sidebar-nav > li > span, .sidebar-nav .sidebar-nav > li > span, 
-.sidebar-nav .sidebar-nav > li > a, .sidebar-nav .sidebox, .sidebar-nav > li > a,
-#email-subscribe-kbox, #showfor-panel,
-#register-form, .subtopics > li > a {background-color: #444 !important; color: #ccc !important}
-.sidebar-nav > li > span:hover, .sidebar-nav .sidebar-nav > li > a:hover {color: var(--in-content-link-color) !important}
-
-.button-wrapper .btn, .button-wrapper .btn, .help-title-prefix, .help-title,
-.help-link.cf {color: #fff !important}
-
-.sidebar-nav a, #products-and-services li, .card-grid li {border-color: #666 !important}
-
-#products-and-services li, .card-grid li {box-shadow: inset 0 -2px 0 0 #666 !important} 
-
-.cf::before, #document-list > ul > li > a::before, .submit-button {filter: invert(50%)}
-
-.topic-list, #search-results-list .content-box {
+.secondary-button:hover {
 	background-color: #444 !important;
-	border: 1px dotted #666 !important;
-	padding: 10px !important}
+	color: #fff !important}
 
-#doc-content .key, #doc-content .button {
-	background: linear-gradient(to bottom,#333,#222) !important;
-	border-color: #555 !important;
+.primary-button {color: #fff !important}
+
+input[type="search"], input[type="text"], textarea {
+	background-color: #333 !important;
 	color: #ccc !important}
 
-span.menu {background-color: #222 !important; color: #ddd !important}
+input[type="search"]:not(:focus):not(:hover),
+input[type="text"]:not(:focus):not(:hover) {border-color: #666 !important}
 
-.sidebox.condensed {border-color: #373737 !important}
+.pick-a-way a:hover, .sidebar-nav .selected  {background-color: rgba(255,255,255,0.05) !important}
 
-.card-grid > li, .card-grid > li::before, .bullet, .feature-box .inner-wrap, .product-list .product,
-.sidebar-header, .questions > section, #top-contributors .feature-box {background: #444 !important}
-
-.questions > section .thread-meta {background: #555 !important; border: none !important}
-
-.feature-box .inner-wrap {border: none !important}
-
-.sidebar-nav.sidebar-folding > li.selected > span, .feature-box, .sidebar-nav .selected:not(.subtopic) a {border-color: #822 !important}
-.sidebar-nav.sidebar-folding > li.selected > span::before, .sidebar-nav .selected a::before {filter: brightness(25%) !important}
-
-.sidebar-nav a:hover {background-color: #404040 !important; color: var(--in-content-link-color) !important}
-
-.sidebar-nav > li.selected {border-bottom: #373737 !important}
-
-input[type="text"], input[type="password"], input[type="email"], input[type="url"], input[type="date"], 
-textarea {
-	background: #333 !important; 
-	color: #ccc !important; 
-	box-shadow: 0 0 0 1px #333 !important;
-	border-color: #555 !important}
-
-input[type="text"]:focus, input[type="password"]:focus {border-color: #1494FB !important}
-
-#search-q {border: 2px solid #333 !important}
-
-.simple-search-form .searchbox {
-	background: #444 !important}
-
-.simple-search-form input {color: #ccc !important}
-
-#email-subscribe-kbox input[type="submit"], #retrieve-username input[type="submit"], 
-#pw-reset input[type="submit"], .btn, span.button, .volunteer-button, button.btn {
-	background: #2050AA !important;
-    color: #FFF !important;
-    padding: 0.5em;
-	border: none !important;
-	box-shadow: none !important}
-
-#email-subscribe-kbox input[type="submit"]:hover, #retrieve-username input[type="submit"]:hover, 
-#pw-reset input[type="submit"]:hover, .btn:hover, .volunteer-button:hover, button.btn:hover {
-	background: #203050 !important}
-
-.questions #owner-tabs a.selected, .questions #owner-tabs a:hover.selected {background: #444 !important}
-
-.questions #filter-section {background: linear-gradient(to bottom, #444,rgba(70,70,70,0.01)) !important}
-
-footer {background: #111 !important}
+.is-callout-bg {background-color: #570 !important}
 
 /* Select boxes coloring */
 select {

@@ -14,14 +14,14 @@ in <code>about:config</code> for userChrome and userContent to be loaded at all 
 <h3>Last update: <b>08/04/2020</b></h3>
 <p>Files updated:</p>
 <ul>
-	<li><b>MultiRowTab*.uc.js</b>: Compatibility fix for FF77.0a1 (Nightly).</li>
-	<li><b>userChrome.css</b>: Minor fixes on the URLbar colors. Also added a fix for the URLbar "puffing" on new tab opening (for the CSS tweaks userChrome only).</li>
-	<li><b>userChrome.css</b>: Minor fixes in <code>about:addons</code> on Nightly.</li>
-	<li><b>Bookmarks+URLbar+Sidebar.css</b>: Added a fix for the "puffing" URLbar so that it only adds padding when the autocomplete is open (so it won't resize when you open a new tab and the urlbar gets focus, or when you <code>Ctrl + L</code> and then press <code>Esc</code>).</li>
+	<li><b>userContent.css</b>: Fixes for the new layout of Mozilla support page.</li>
 </ul>
 <h3>Pre-Last update: <b>18/03/2019</b></h3>
 <ul>
-	<li><b>addons.css</b>: Fixed the table text colors on <a href="https://addons.mozilla.org/en-US/firefox/addon/cookie-autodelete/">Cookie autodelete</a> addon.</li>
+	<li><b>MultiRowTab*.uc.js</b>: Compatibility fix for FF77.0a1 (Nightly).</li>
+	<li><b>userChrome.css</b>: Minor fixes on the URLbar colors. Also added a fix for the URLbar "puffing" on new tab opening (for the CSS tweaks userChrome only).</li>
+	<li><b>userContent.css</b>: Minor fixes in <code>about:addons</code> on Nightly.</li>
+	<li><b>Bookmarks+URLbar+Sidebar.css</b>: Added a fix for the "puffing" URLbar so that it only adds padding when the autocomplete is open (so it won't resize when you open a new tab and the urlbar gets focus, or when you <code>Ctrl + L</code> and then press <code>Esc</code>).</li>
 </ul>
 
 <h3>A note on people looking to replace some Tab Mix Plus features:</h3>
