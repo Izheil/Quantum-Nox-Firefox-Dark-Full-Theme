@@ -1,9 +1,8 @@
 <img src="https://i.imgur.com/F7qziom.png" title="Quantum Nox"/>
 
-## Firefox customizations for a full dark theme, multi-row tabs, custom scrollbar, and more.
+### Firefox customizations for a full dark theme, multi-row tabs, custom scrollbar, and other functions.
 
-### Since Firefox 69, you have to enable `toolkit.legacyUserProfileCustomizations.stylesheets`
-in `about:config` for userChrome and userContent to be loaded at all as per [bug #1541233](https://bugzilla.mozilla.org/show_bug.cgi?id=1541233#c35).
+#### Since Firefox 69, you have to enable `toolkit.legacyUserProfileCustomizations.stylesheets` in `about:config` for userChrome and userContent to be loaded at all as per [bug #1541233](https://bugzilla.mozilla.org/show_bug.cgi?id=1541233#c35).
 
 If you are on Windows or Linux and only want multirow or any other function that isn't related to the theme (like tabs below, or focus tab on hover), you can use the installers inside the [releases](https://github.com/Izheil/Quantum-Nox-Firefox-Dark-Full-Theme/releases) section.
 
@@ -20,7 +19,7 @@ Files updated:
 ### Pre-Last update: 18/03/2019
 
 Files updated:
-* **MultiRowTab*.uc.js**: Compatibility fix for FF77.0a1 (Nightly).
+* __MultiRowTab*.uc.js__: Compatibility fix for FF77.0a1 (Nightly).
 * **userChrome.css**: Minor fixes on the URLbar colors. Also added a fix for the URLbar "puffing" on new tab opening (for the CSS tweaks userChrome only).
 * **userContent.css**: Minor fixes in `about:addons` on Nightly.
 * **Bookmarks+URLbar+Sidebar.css**: Added a fix for the "puffing" URLbar so that it only adds padding when the autocomplete is open (so it won't resize when you open a new tab and the urlbar gets focus, or when you `Ctrl + L` and then press `Esc`).
@@ -89,7 +88,6 @@ If instead you just **don't want scrollbars to show at all but keep scrollabilit
 
 If you aren't using the userContent provided here for some reason, you can always just add this code to your self-created `userContent.css`:
 `*|* {scrollbar-width: none !important}`
-<br /><br />
 
 ### F.A.Q.
 You can find the frequently asked questions in [here](https://github.com/Izheil/Quantum-Nox-Firefox-Dark-Full-Theme/wiki/Frequently-Asked-Questions).
@@ -111,7 +109,7 @@ Also thanks to **532910**, **BelladonnavGF**, **DallasBelt**, **Demir-delic**, *
 
 ## Donations
 If you want to support this project, consider buying me a coffee to motivate me keep this repository up and running.
-​
+​<br>
 <a href="https://ko-fi.com/K3K4TQ97" target="_blank"><img height="36" style="border:0px;height:36px;" src="https://az743702.vo.msecnd.net/cdn/kofi2.png?v=2" border="0" alt="Buy Me a Coffee at ko-fi.com" /></a>
 
 ...or any other amount you see fit on paypal.
