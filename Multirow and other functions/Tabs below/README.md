@@ -1,9 +1,9 @@
 <h2>Tabs below standalones</h2>
-<p>If you have the rules to change the tabs toolbar below the urlbar added to your userChrome, you don't need these. These are just a convenient way to toggle tabs below tweak by copying a single file to your <a href="https://github.com/Izheil/Quantum-Nox-Firefox-Dark-Full-Theme/tree/master/Multirow%20and%20other%20functions#the-chrome-folder">chrome folder</a></p>.
+<p>If you have the rules to change the tabs toolbar below the urlbar added to your userChrome, you don't need these. These are just a convenient way to toggle tabs below tweak by copying a single file to your <a href="https://github.com/Izheil/Quantum-Nox-Firefox-Dark-Full-Theme/wiki/Chrome-and-Root-folders#the-chrome-folder">chrome folder</a></p>.
 
 <b>If you use any of these files, delete any code you had on userChrome.css to change the tabs position to avoid any conflict.</b>
 
-<b>First make sure that you have patched Firefox with the method explained in the <a href="https://github.com/Izheil/Quantum-Nox-Firefox-Dark-Full-Theme/tree/master/Multirow%20and%20other%20functions/JS%20Loader">JS Loader</a> folder to use any of these files.</b>
+<b>First make sure that you have patched Firefox with either the <a href="https://github.com/Izheil/Quantum-Nox-Firefox-Dark-Full-Theme/releases">patcher</a>, or manually with the method explained in the <a href="https://github.com/Izheil/Quantum-Nox-Firefox-Dark-Full-Theme/tree/master/Multirow%20and%20other%20functions/JS%20Loader">JS Loader</a> folder to use any of these files.</b>
 
 <p>Alternatively, if you don't want to apply the patch from above and only want the tabs below fix, you could just copy the code of the file you want to apply here to your <code>userChrome.css</code> file.</p>
 

@@ -28,7 +28,7 @@ without this change) */
   --autocomplete-popup-highlight-background: rgba(100,100,100,0.4) !important;
   --autocomplete-popup-highlight-color: #ddd !important;
   --url-autocomplete-links-color: rgb(0,160,200);
-  --Search-engine-choices-gradient: linear-gradient(90deg, rgba(4,34,74,1) 5%, rgba(22,52,132,1) 50%, rgba(4,34,74,1) 95%);}}
+  --Search-engine-choices-gradient: linear-gradient(90deg, rgba(4,34,74,1) 5%, rgba(22,52,132,1) 50%, rgba(4,34,74,1) 95%);}
 
 /* Fix for some lightweight themes not working properly when set manually here (appearing with a lot of padding to the left) *//*
 :root:-moz-lwtheme[lwtheme-image], #tabbrowser-tabs:not([movingtab]) > .tabbrowser-tab > 

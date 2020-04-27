@@ -30,7 +30,7 @@
 </ul>
 
 <p>If you have copied everything right, the folders structure should look something like this:</p>
-<p>Structure of <a href="https://github.com/Izheil/Quantum-Nox-Firefox-Dark-Full-Theme/tree/master/Full%20dark%20theme#the-chrome-folder">the chrome folder</a> files inside your profile folder:</p>
+<p>Structure of <a href="https://github.com/Izheil/Quantum-Nox-Firefox-Dark-Full-Theme/wiki/Chrome-and-Root-folders#the-chrome-folder">the chrome folder</a> files inside your profile folder:</p>
 <ul>
   <li><b>utils (folder) -> Only if you want to use the *.as.css and *.uc.js files.</b></li>
   <li>addons.css</li>
@@ -41,7 +41,7 @@
   <li>userContent.css</li>
 </ul>
 
-<p>Structure of <a href="https://github.com/Izheil/Quantum-Nox-Firefox-Dark-Full-Theme/tree/master/Full%20dark%20theme#Firefox-root-folder">firefox root folder</a> files (where your firefox is installed):</p>
+<p>Structure of <a href="https://github.com/Izheil/Quantum-Nox-Firefox-Dark-Full-Theme/wiki/Chrome-and-Root-folders#firefox-root-folder">firefox root folder</a> files (where your firefox is installed):</p>
 <ul>
   <li>browser (folder)</li>
   <li>defaults (folder)</li>
@@ -76,84 +76,5 @@ It will, although, not turn dark the extension popups you may have. <p>
 <p>The userContent file will turn dark all the <code>about:about</code> pages.</p>
 <img src="https://i.imgur.com/mKWPUSk.png" title="Dark firefox about: pages" />
 <img src="https://i.imgur.com/97ebC1x.png" title="Dark addons page" />
-
-<h2>Firefox root folder</h2>
-<p>The root folder is where both the executable and the "defaults" folder of your current installed firefox are located</p>
-<h4>For Windows, you can find firefox root folder here:</h4>
-
-<pre>32bits Firefox -> C:\Program Files (x86)\Mozilla Firefox\
-64bits Firefox -> C:\Program Files\Mozilla Firefox\</pre>
-
-<p>If you have a 32-bits Windows, you will only see the 64-bits path.</p>
-
-<h4>For Linux, you can find the root folder by default in this path:</h4>
-
-<pre>/usr/lib/firefox/browser</pre>
-
-<p>In some cases you might find a difference between 32 and 64 bits program installation paths in Linux, in that case you'd find the path here:</p> 
-
-<pre>/usr/lib64/firefox/browser</pre>
-
-<p>The installation directory path may also vary depending on the distribution, and if you use a package manager to install the application from their repository.</p>
-
-<h4>For Mac, you can find the root folder in this path:</h4>
-
-<pre>/Applications/Firefox.app/Contents/resources</pre>
-
-<p>To open "Firefox.app", Ctrl-click it and select Show Package Contents. If you simply click it, you will start the application.</p>
-
-<h2>The chrome folder</h2>
-<p>The fastest way to find it is to just type <code>about:support</code> on the URL bar of your firefox, and then click the <b>open folder</b> button inside the "profile folder" section. After this, your profile folder will be open.</p>
-
-<p><i>You may or may not see the chrome folder. If you don't see it, just create it and place inside the userContent.css and userChrome.css files.</i></p>
-
-<p>If you want to know the exact location for profile folders (information taken from <a href="http://kb.mozillazine.org/Profile_folder_-_Firefox">here</a>):</p>
-
-<h4>On Windows 7 and above, profile folders are in this location, by default:</h4>
-
-<pre>C:\Users\(Windows login/user name)\AppData\Roaming\Mozilla\Firefox\Profiles\(profile folder)</pre>
-
-<p><i>If you have never used userChrome.css or userContent.css before, you will have to create a folder named "chrome" inside the profile folder, which is where you will have to place these files.</i></p>
-
-<p>This is where you would have to place the files once you have created the chrome folder:</p>
-
-<pre>C:\Users\(Windows login/user name)\AppData\Roaming\Mozilla\Firefox\Profiles\(profile folder)\chrome\</pre>
-  
-<p>The AppData folder is a hidden folder; to show hidden folders, open a Windows Explorer window and choose "Tools → Folder Options → View (tab) → Show hidden files and folders".</p>
-
-<p>You can also use this path to find the profile folder, even when it is hidden:</p>
-
-<pre>%APPDATA%\Mozilla\Firefox\Profiles\(profile folder)</pre>
-
-<h4>On Linux, profile folders are located in this other location:</h4>
-
-<pre>/home/(Your-username)/.mozilla/firefox/(profile folder)</pre>
-
-<p><i>If you have never used userChrome.css or userContent.css before, you will have to create a folder named "chrome" inside the profile folder, which is where you will have to place these files.</i></p>
-
-<p>This is where you would have to place the files once you have created the chrome folder:</p>
-
-<pre>/home/(Your-username)/.mozilla/firefox/(profile folder)/chrome/</pre>
-
-<p>The ".mozilla" folder is a hidden folder. To show hidden files in Nautilus (Gnome desktop's default file browser), choose "View -> Show Hidden Files". On others such as Dolphin (Kubuntu's default file browser), you'd have to choose "Control -> Hidden files"</p>
-
-<h4>On Mac, profile folders are in one of these locations:</h4>
-
-<pre>~/Library/Application Support/Firefox/Profiles/(profile folder)
-~/Library/Mozilla/Firefox/Profiles/(profile folder)</pre>
-
-<p><i>If you have never used userChrome.css or userContent.css before, you will have to create a folder named "chrome" inside the profile folder, which is where you will have to place these files.</i></p>
-
-<p>This is where you would have to place the files once you have created the chrome folder:</p>
-
-<pre>~/Library/Application Support/Firefox/Profiles/(profile folder)/chrome
-~/Library/Mozilla/Firefox/Profiles/(profile folder)/chrome/</pre>
-
-<p>The tilde character (~) refers to the current user's Home folder, so ~/Library is the /Macintosh HD/Users/(username)/Library folder. For OS X 10.7 Lion and above, the ~/Library folder is hidden by default.</p>
-
-<p>You can make them visible by typing the following in a terminal window.</p>
-<pre>defaults write com.apple.finder AppleShowAllFiles TRUE
-killall Finder</pre>
-<p>This will also cause any file icons to take on a hazy, 50% alpha look. To restore the old settings (hide the files and make the icons look normal) issue the same commands again, but enter FALSE instead of TRUE.<p>
 
 <p>It will also turn dark the <a href="https://addons.mozilla.org">Mozilla addons page</a>, both the old and the new, the file explorer inside firefox, and the "view source of page" page.</p>

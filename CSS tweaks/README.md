@@ -6,7 +6,7 @@
 
 <p>If you are using the dark theme <code>userChrome.css</code> file, add the fixes from the files here in that one instead.</p>
 
-<p>To make it work, it's as simple as copying the function you want to apply at the bottom of <code>userChrome.css</code>, place it inside <a href="https://github.com/Izheil/Quantum-Nox-Firefox-Dark-Full-Theme/tree/master/CSS%20tweaks#the-chrome-folder">the chrome folder</a> if you hadn't yet, and restart Firefox.</p>
+<p>To make it work, it's as simple as copying the function you want to apply at the bottom of <code>userChrome.css</code>, place it inside <a href="https://github.com/Izheil/Quantum-Nox-Firefox-Dark-Full-Theme/wiki/Chrome-and-Root-folders#the-chrome-folder">the chrome folder</a> if you hadn't yet, and restart Firefox.</p>
 
 <h4>You can also keep some tweak inside your <code>userChrome.css</code> without it being enabled by encasing the lines you don't want to apply between "/*" and "*/" (without the quotation marks).</h4>
 
@@ -83,7 +83,7 @@
 
 <p>For the unread state to take effect you need to also patch your Firefox to label unread tabs as so (Firefox removed the unread state of tabs a few versions ago). You can do this using the patcher by choosing your Firefox version, and the "Enable unread state on tabs" option.</p>
 <p>This will add a "utils" folder and a "setAttribute_unread.uc.js" file to your chrome folder, which are required to customize unread tabs with userChrome.</p> 
-<p>Alternatively, if you use MacOS or something goes wrong with the patcher, you can always do the manual patching with the method explained in <a href="https://github.com/Izheil/Quantum-Nox-Firefox-Dark-Full-Theme/tree/master/Multirow%20and%20other%20functions/JS%20Loader">JS Loader</a> folder from this repository, and then copying the <a href="https://raw.githubusercontent.com/Izheil/Quantum-Nox-Firefox-Dark-Full-Theme/master/CSS%20tweaks/setAttribute_unread.uc.js">setAttribute_unread.uc.js</a> file to your <a href="https://github.com/Izheil/Quantum-Nox-Firefox-Dark-Full-Theme/tree/master/CSS%20tweaks#the-chrome-folder">chrome folder</a>.</p>
+<p>Alternatively, if you use MacOS or something goes wrong with the patcher, you can always do the manual patching with the method explained in <a href="https://github.com/Izheil/Quantum-Nox-Firefox-Dark-Full-Theme/tree/master/Multirow%20and%20other%20functions/JS%20Loader">JS Loader</a> folder from this repository, and then copying the <a href="https://raw.githubusercontent.com/Izheil/Quantum-Nox-Firefox-Dark-Full-Theme/master/CSS%20tweaks/setAttribute_unread.uc.js">setAttribute_unread.uc.js</a> file to your <a href="https://github.com/Izheil/Quantum-Nox-Firefox-Dark-Full-Theme/wiki/Chrome-and-Root-folders#the-chrome-folder">chrome folder</a>.</p>
 
 <b>Rounded tabs:</b>
   <img src="https://i.imgur.com/qoG4Iiy.png">
@@ -92,7 +92,7 @@
 
 <h2>Installation</h2>
 
-<p>All you need to do is paste the tweaks you want to apply inside userChrome.css, and then place this file inside <a href="https://github.com/Izheil/Quantum-Nox-Firefox-Dark-Full-Theme/tree/master/CSS%20tweaks#the-chrome-folder">the chrome folder</a> of your Firefox profile.</p>
+<p>All you need to do is paste the tweaks you want to apply inside userChrome.css, and then place this file inside <a href="https://github.com/Izheil/Quantum-Nox-Firefox-Dark-Full-Theme/wiki/Chrome-and-Root-folders#the-chrome-folder">the chrome folder</a> of your Firefox profile.</p>
 
 <h4>Step by step:</h4>
 <ul>
@@ -100,61 +100,6 @@
   <li>Type <code>about:support</code> in your URL bar, then go to that page.</li>
   <li>Click the "open folder" button inside the "profile folder" section.</li>
   <li>Create a folder named "chrome" in your profile folder if it doesn't exist yet.</li>
-  <li>Place "userChrome.css" inside <a href="https://github.com/Izheil/Quantum-Nox-Firefox-Dark-Full-Theme/tree/master/CSS%20tweaks#the-chrome-folder">the chrome folder</a>.</li>
+  <li>Place "userChrome.css" inside <a href="https://github.com/Izheil/Quantum-Nox-Firefox-Dark-Full-Theme/wiki/Chrome-and-Root-folders#the-chrome-folder">the chrome folder</a>.</li>
   <li>Edit userChrome.css with notepad or any code editor to add the rules that are you interested in from the files "Context-menu-commands.css", "Bookmarks+URLbar+Sidebar.css", or "Tab-related-Tweaks.css" from this repository, or any other CSS rule you want to apply.</li>
 </ul>
-
-<h2>The chrome folder</h2>
-
-<p>The fastest way to find it is to just type <code>about:support</code> on the URL bar of your firefox, and then click the <b>open folder</b> button inside the "profile folder" section. After this, your profile folder will be open.</p>
-
-<p><i>You may or may not see the chrome folder. If you don't see it, just create it and place inside the userContent.css and userChrome.css files.</i></p>
-
-<p>If you want to know the exact location for profile folders (information taken from <a href="http://kb.mozillazine.org/Profile_folder_-_Firefox">here</a>):</p>
-
-<h4>On Windows 7 and above, profile folders are in this location, by default:</h4>
-
-<pre>C:\Users\(Windows login/user name)\AppData\Roaming\Mozilla\Firefox\Profiles\(profile folder)</pre>
-
-<p><i>If you have never used userChrome.css or userContent.css before, you will have to create a folder named "chrome" inside the profile folder, which is where you will have to place these files.</i></p>
-
-<p>This is where you would have to place the files once you have created the chrome folder:</p>
-
-<pre>C:\Users\(Windows login/user name)\AppData\Roaming\Mozilla\Firefox\Profiles\(profile folder)\chrome\</pre>
-  
-<p>The AppData folder is a hidden folder; to show hidden folders, open a Windows Explorer window and choose "Tools → Folder Options → View (tab) → Show hidden files and folders".</p>
-
-<p>You can also use this path to find the profile folder, even when it is hidden:</p>
-
-<pre>%APPDATA%\Mozilla\Firefox\Profiles\(profile folder)</pre>
-
-<h4>On Linux, profile folders are located in this other location:</h4>
-
-<pre>/home/(Your-username)/.mozilla/firefox/(profile folder)</pre>
-
-<p><i>If you have never used userChrome.css or userContent.css before, you will have to create a folder named "chrome" inside the profile folder, which is where you will have to place these files.</i></p>
-
-<p>This is where you would have to place the files once you have created the chrome folder:</p>
-
-<pre>/home/(Your-username)/.mozilla/firefox/(profile folder)/chrome/</pre>
-
-<p>The ".mozilla" folder is a hidden folder. To show hidden files in Nautilus (Gnome desktop's default file browser), choose "View -> Show Hidden Files". On others such as Dolphin (Kubuntu's default file browser), you'd have to choose "Control -> Hidden files"</p>
-
-<h4>On Mac, profile folders are in one of these locations:</h4>
-
-<pre>~/Library/Application Support/Firefox/Profiles/(profile folder)
-~/Library/Mozilla/Firefox/Profiles/(profile folder)</pre>
-
-<p><i>If you have never used userChrome.css or userContent.css before, you will have to create a folder named "chrome" inside the profile folder, which is where you will have to place these files.</i></p>
-
-<p>This is where you would have to place the files once you have created the chrome folder:</p>
-
-<pre>~/Library/Application Support/Firefox/Profiles/(profile folder)/chrome
-~/Library/Mozilla/Firefox/Profiles/(profile folder)/chrome/</pre>
-
-<p>The tilde character (~) refers to the current user's Home folder, so ~/Library is the /Macintosh HD/Users/(username)/Library folder. For OS X 10.7 Lion and above, the ~/Library folder is hidden by default.</p>
-
-<p>You can make them visible by typing the following in a terminal window.</p>
-<pre>defaults write com.apple.finder AppleShowAllFiles TRUE
-killall Finder</pre>
-<p>This will also cause any file icons to take on a hazy, 50% alpha look. To restore the old settings (hide the files and make the icons look normal) issue the same commands again, but enter FALSE instead of TRUE.<p>

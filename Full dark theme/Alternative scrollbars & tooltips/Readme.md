@@ -1,6 +1,6 @@
 <h1>Alternative Scrollbars and tooltips</h1>
 <img src="https://i.imgur.com/qe6tGJW.png" title="Dark blue scrollbar">
-<h3>If you only want scrollbars, or the tooltips, you need to patch firefox with the method detailed in <a href="https://github.com/Izheil/Quantum-Nox-Firefox-Dark-Full-Theme/tree/master/Multirow%20and%20other%20functions/JS%20Loader">JS Loader</a> to enable it.</h3>
+<h3>If you only want scrollbars, or the tooltips, you need to patch firefox with either the <a href="https://github.com/Izheil/Quantum-Nox-Firefox-Dark-Full-Theme/releases">patcher</a>, or following the manual method detailed in <a href="https://github.com/Izheil/Quantum-Nox-Firefox-Dark-Full-Theme/tree/master/Multirow%20and%20other%20functions/JS%20Loader">JS Loader</a> to enable it.</h3>
   
 <h2>Installation</h2>
 <ul>
