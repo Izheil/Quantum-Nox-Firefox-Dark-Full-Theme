@@ -4,7 +4,7 @@
 <h2>Installation</h2>
 <p>You can patch your Firefox using the installer in the <a href="https://github.com/Izheil/Quantum-Nox-Firefox-Dark-Full-Theme/releases">releases</a> section. The patcher will choose the default profile folder, so if you have more than 1 profile you should go to <code>about:profiles</code> and make sure that the path the patcher selects is the same as the one of the profile that you are currently using.</p>
 
-<b>If you are using Firefox portable, you will need to change the default root and profile folders to the ones of portable Firefox, so check the <a href="https://github.com/Izheil/Quantum-Nox-Firefox-Dark-Full-Theme/wiki/Chrome-and-Root-folders#firefox-root-folder">firefox root folder</a> and <a href="https://github.com/Izheil/Quantum-Nox-Firefox-Dark-Full-Theme/wiki/Chrome-and-Root-folders#the-chrome-folder">chrome folder</a> sections to locate them first.<b>
+<b>If you are using Firefox portable, you will need to change the default root and profile folders to the ones of portable Firefox, so check the <a href="https://github.com/Izheil/Quantum-Nox-Firefox-Dark-Full-Theme/wiki/Chrome-and-Root-folders#firefox-root-folder">firefox root folder</a> and <a href="https://github.com/Izheil/Quantum-Nox-Firefox-Dark-Full-Theme/wiki/Chrome-and-Root-folders#the-chrome-folder">chrome folder</a> sections to locate them first.</b>
 
 <p>Alternatively you can follow the explanations below for the manual installation.</p>
 
