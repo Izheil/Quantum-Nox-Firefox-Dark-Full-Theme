@@ -20,23 +20,61 @@
 <p>Next time you start up firefox, changes should take effect.</p>
 
 <p>If you did it right, the structure of firefox root folder should look like this:</p>
-<ul>
-  <li>browser (folder)</li>
-  <li>defaults (folder)</li>
-  <ul>
-    <li>pref (folder)</li>
-    <ul>
-      <li>channel-prefs.js</li>
-      <li>config-prefs.js</li>
-    </ul>
-  </ul>
-  <li>fonts (folder)</li>
-  <li>gmp-clearkey (folder)</li>
-  <li>uninstall (folder)</li>
-  <li>firefox.exe/firefox</li>
-  <li>config.js</li>
-  <li>Other .dll files</li>
-</ul>
+
+<table>
+  <tr>
+    <th class="tg-nm3v">Firefox installed</th>
+    <th class="tg-nm3v">Firefox portable</th>
+  </tr>
+  <tr>
+    <td></td>
+    <td><code>\App\</code></td>
+  </tr>
+  <tr>
+    <td><code>\browser\</td>
+    <td><code>\Data\</td>
+  </tr>
+  <tr>
+    <td><code>\defaults\</td>
+    <td><code>\defaults\</td>
+  </tr>
+  <tr>
+    <td><code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;\pref\</td>
+    <td><code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;\pref\</td>
+  </tr>
+  <tr>
+    <td><code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;channel-prefs.js</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td><code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;config-prefs.js</td>
+    <td><code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;config-prefs.js</td>
+  </tr>
+  <tr>
+    <td><code>\fonts\</td>
+    <td><code>\Other\</td>
+  </tr>
+  <tr>
+    <td><code>\gmp-clearkey\</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td><code>\uninstall\</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td><code>config.js</td>
+    <td><code>config.js</td>
+  </tr>
+  <tr>
+    <td><code>firefox.exe</code> or <code>firefox</td>
+    <td><code>FirefoxPortable.exe</td>
+  </tr>
+  <tr>
+    <td>other *.dll-files</td>
+    <td><code>Help.html</td>
+  </tr>
+</table>
 
 <p>And the structure of the chrome folder should look like:</p>
 <ul>
