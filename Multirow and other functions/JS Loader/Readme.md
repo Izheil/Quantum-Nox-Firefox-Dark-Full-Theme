@@ -4,12 +4,19 @@
 <h2>Installation</h2>
 <p>You can patch your Firefox using the installer in the <a href="https://github.com/Izheil/Quantum-Nox-Firefox-Dark-Full-Theme/releases">releases</a> section. The patcher will choose the default profile folder, so if you have more than 1 profile you should go to <code>about:profiles</code> and make sure that the path the patcher selects is the same as the one of the profile that you are currently using.</p>
 
-<b>If you are using Firefox portable, you will need to change the default root and profile folders to the ones of portable Firefox, so check the <a href="https://github.com/Izheil/Quantum-Nox-Firefox-Dark-Full-Theme/wiki/Chrome-and-Root-folders#firefox-root-folder">firefox root folder</a> and <a href="https://github.com/Izheil/Quantum-Nox-Firefox-Dark-Full-Theme/wiki/Chrome-and-Root-folders#the-chrome-folder">chrome folder</a> sections to locate them first.</b>
+If you are using <b>Firefox portable</b>, you will need to change the default root and profile folders to the ones of portable Firefox, so check the <a href="https://github.com/Izheil/Quantum-Nox-Firefox-Dark-Full-Theme/wiki/Chrome-and-Root-folders#firefox-root-folder">firefox root folder</a> and <a href="https://github.com/Izheil/Quantum-Nox-Firefox-Dark-Full-Theme/wiki/Chrome-and-Root-folders#the-chrome-folder">chrome folder</a> sections to locate them first.</b>
 
 <p>Alternatively you can follow the explanations below for the manual installation.</p>
 
 <h3>Manual installation</h3>
 <p>To patch firefox with this method, you will have to locate both <a href="https://github.com/Izheil/Quantum-Nox-Firefox-Dark-Full-Theme/wiki/Chrome-and-Root-folders#firefox-root-folder">firefox root folder</a>, and your profile <a href="https://github.com/Izheil/Quantum-Nox-Firefox-Dark-Full-Theme/wiki/Chrome-and-Root-folders#the-chrome-folder">chrome folder</a>.</p>
+
+If you are using <b>Firefox portable</b>, note that the <a href="https://github.com/Izheil/Quantum-Nox-Firefox-Dark-Full-Theme/wiki/Chrome-and-Root-folders#firefox-root-folder">firefox root folder</a> is *not* the install path (such as `c:\myPortablePgms\Firefox`), but 
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`{install path}` + `\App\Firefox` (Example: `c:\myPortablePgms\Firefox\App\Firefox`) or
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`{install path}` + `\App\Firefox64` (Example: `c:\myPortablePgms\Firefox\App\Firefox64` 
+
 
 <h4>Step by step:</h4>
 <ol>
@@ -23,56 +30,40 @@
 
 <table>
   <tr>
-    <th class="tg-nm3v">Firefox installed</th>
-    <th class="tg-nm3v">Firefox portable</th>
-  </tr>
-  <tr>
-    <td></td>
-    <td><code>\App\</code></td>
-  </tr>
-  <tr>
     <td><code>\browser\</td>
-    <td><code>\Data\</td>
   </tr>
   <tr>
     <td><code>\defaults\</td>
-    <td><code>\defaults\</td>
   </tr>
   <tr>
-    <td><code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;\pref\</td>
     <td><code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;\pref\</td>
   </tr>
   <tr>
     <td><code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;channel-prefs.js</td>
-    <td></td>
   </tr>
   <tr>
-    <td><code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;config-prefs.js</td>
     <td><code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;config-prefs.js</td>
   </tr>
   <tr>
     <td><code>\fonts\</td>
-    <td><code>\Other\</td>
   </tr>
   <tr>
     <td><code>\gmp-clearkey\</td>
-    <td></td>
+  </tr>
+  <tr>
+    <td><code>\META-INF\</td>
   </tr>
   <tr>
     <td><code>\uninstall\</td>
-    <td></td>
   </tr>
   <tr>
-    <td><code>config.js</td>
     <td><code>config.js</td>
   </tr>
   <tr>
     <td><code>firefox.exe</code> or <code>firefox</td>
-    <td><code>FirefoxPortable.exe</td>
   </tr>
   <tr>
-    <td>other *.dll-files</td>
-    <td><code>Help.html</td>
+    <td>many other files</td>
   </tr>
 </table>
 
