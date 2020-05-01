@@ -11,11 +11,11 @@ If you are using <b>Firefox portable</b>, you will need to change the default ro
 <h3>Manual installation</h3>
 <p>To patch firefox with this method, you will have to locate both <a href="https://github.com/Izheil/Quantum-Nox-Firefox-Dark-Full-Theme/wiki/Chrome-and-Root-folders#firefox-root-folder">firefox root folder</a>, and your profile <a href="https://github.com/Izheil/Quantum-Nox-Firefox-Dark-Full-Theme/wiki/Chrome-and-Root-folders#the-chrome-folder">chrome folder</a>.</p>
 
-If you are using <b>Firefox portable</b>, note that the <a href="https://github.com/Izheil/Quantum-Nox-Firefox-Dark-Full-Theme/wiki/Chrome-and-Root-folders#firefox-root-folder">firefox root folder</a> is *not* the install path (such as `c:\myPortablePgms\Firefox`), but 
+If you are using <b>Firefox portable</b>, note that the <a href="https://github.com/Izheil/Quantum-Nox-Firefox-Dark-Full-Theme/wiki/Chrome-and-Root-folders#firefox-portable-1">firefox root folder</a> is *not* the install path (such as `C:\FirefoxPortable\Firefox`), but 
 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`{install path}` + `\App\Firefox` (Example: `c:\myPortablePgms\Firefox\App\Firefox`) or
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`{install path}` + `\App\Firefox` (Example: `C:\FirefoxPortable\Firefox\App\Firefox`) or
 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`{install path}` + `\App\Firefox64` (Example: `c:\myPortablePgms\Firefox\App\Firefox64` 
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`{install path}` + `\App\Firefox64` (Example: `C:\FirefoxPortable\Firefox\App\Firefox64`)
 
 
 <h4>Step by step:</h4>
@@ -30,40 +30,40 @@ If you are using <b>Firefox portable</b>, note that the <a href="https://github.
 
 <table>
   <tr>
-    <td><code>\browser\</td>
+    <td><code>\browser\</code></td>
   </tr>
   <tr>
-    <td><code>\defaults\</td>
+    <td><code>\defaults\</code></td>
   </tr>
   <tr>
-    <td><code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;\pref\</td>
+    <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<code>\pref\</code></td>
   </tr>
   <tr>
-    <td><code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;channel-prefs.js</td>
+    <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<code>channel-prefs.js</code></td>
   </tr>
   <tr>
-    <td><code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;config-prefs.js</td>
+    <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<code>config-prefs.js</code></td>
   </tr>
   <tr>
-    <td><code>\fonts\</td>
+    <td><code>\fonts\</code></td>
   </tr>
   <tr>
-    <td><code>\gmp-clearkey\</td>
+    <td><code>\gmp-clearkey\</code></td>
   </tr>
   <tr>
-    <td><code>\META-INF\</td>
+    <td><code>\META-INF\</code></td>
   </tr>
   <tr>
-    <td><code>\uninstall\</td>
+    <td><code>\uninstall\</code></td>
   </tr>
   <tr>
-    <td><code>config.js</td>
+    <td><code>config.js</code></td>
   </tr>
   <tr>
-    <td><code>firefox.exe</code> or <code>firefox</td>
+    <td><code>firefox.exe</code> or <code>firefox</code></td>
   </tr>
   <tr>
-    <td>many other files</td>
+    <td>Many other files</td>
   </tr>
 </table>
 
