@@ -29,7 +29,6 @@ def SystemOS():
 if SystemOS() == "Linux":
     if os.geteuid() != 0:
         os.execvp("sudo", ["sudo"] + ["python3"] + sys.argv)
-        
 else: elevate.elevate()
 
 def readProfiles(profile):
@@ -69,7 +68,7 @@ def readDefaults(profile):
     else:
         with open(installsINI, 'r') as f:
             for line in f.readlines():
-                defaultspath = re.match("default=(.*)", line, re.M|re.I)
+                defaultspath = re.match("Default=(.*)", line, re.M|re.I)
                 if defaultspath != None:
                     defaultrotation = defaultspath.group(1)
                     if (((SystemOS() == "Windows" or SystemOS() == "Mac") and
@@ -82,20 +81,25 @@ def readDefaults(profile):
 
 # We get the user folders here
 if SystemOS() == "Windows":
-    home = os.environ['APPDATA']
+    nonRootUser = r"C:\Users\Public\QNUsername.txt"
+    if os.access(nonRootUser, os.F_OK):
+        with open(nonRootUser, "r") as f:
+            logUsername = f.read()
+        logUsername = logUsername.rstrip(" \n")
+        home = logUsername
+        os.remove(nonRootUser)
+    else:
+        home = os.getenv('APPDATA')
     MozPFolder = home + r"\Mozilla\Firefox"
     Profiles = readProfiles(MozPFolder)
-    SFolder = home + r'\Quantum Nox'
 elif SystemOS() == "Linux":
     home = "/home/" + os.getenv("SUDO_USER")
     MozPFolder = home + r"/.mozilla/firefox"
     Profiles = readProfiles(MozPFolder)
-    SFolder = home + r"/.Quantum Nox"
 elif SystemOS() == "Mac":
     home = str(Path.home())
     MozPFolder = home + r"/Library/Application Support/Firefox"
     Profiles = readProfiles(MozPFolder)
-    SFolder = home + r"/Quantum Nox"
 
 # We get the default folder where programs are installed here
 if SystemOS() == "Windows":
@@ -160,35 +164,25 @@ def RPFinder():
         elif ProfileName[0:7] == "default":
             return x
         else:
-            return DefProfiles[0]
+            continue
+    return "Not found"
 
 def NPFinder():
     for y in DefProfiles:
-        splitter = y.split(".")
-        ProfileName = splitter[-1]
+        Nsplitter = y.split(".")
+        ProfileName = Nsplitter[-1]
         if ProfileName == "default-nightly":
             return y
         elif ProfileName[0:15] == "default-nightly":
             return y
         else:
-            return DefProfiles[-1]
+            continue
+    return "Not found"
 
-if len(DefProfiles) == 1:
-    if root != "Not found" and rootN == "Not found":
-        RProfile = DefProfiles[0]
-    elif root == "Not found" and rootN != "Not found":
-        NProfile = DefProfiles[0]
+RProfile = RPFinder()
+NProfile = NPFinder()
 
-elif len(DefProfiles) >= 2:
-    if root != "Not found" and rootN != "Not found":
-        RProfile = RPFinder()
-        NProfile = NPFinder()
-    elif root != "Not found" and rootN == "Not found":
-        RProfile = DefProfiles[0]
-    elif root == "Not found" and rootN != "Not found":
-        NProfile = DefProfiles[0]
-
-elif DefProfiles == None:
+if DefProfiles is None:
     if root != "Not found" or rootN != "Not found":
         for x in Profiles:
             splitter = x.split(".")
