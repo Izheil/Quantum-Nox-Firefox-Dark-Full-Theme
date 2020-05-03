@@ -79,7 +79,7 @@ def readDefaults(profile):
 
 # We get the user folders here
 if SystemOS() == "Windows":
-    nonRootUser = os.path.normpath("C:\\Users\\Public\\QNUsername.txt")
+    nonRootUser = os.path.join(os.getenv('PUBLIC') + "\\QNUsername.txt")
     if os.access(nonRootUser, os.F_OK):
         with open(nonRootUser, "r") as f:
             logUsername = f.read()

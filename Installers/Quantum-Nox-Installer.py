@@ -16,7 +16,6 @@ from tkinter import (LabelFrame, Checkbutton, Frame, Label, Entry,
 
 def SystemOS():
     "Identifies the OS"
-
     if sys.platform.startswith('win'):
         SystemOS = "Windows"
     elif sys.platform.startswith('linux'):
@@ -81,7 +80,7 @@ def readDefaults(profile):
 
 # We get the user folders here
 if SystemOS() == "Windows":
-    nonRootUser = r"C:\Users\Public\QNUsername.txt"
+    nonRootUser = os.path.join(os.getenv('PUBLIC') + "\\QNUsername.txt")
     if os.access(nonRootUser, os.F_OK):
         with open(nonRootUser, "r") as f:
             logUsername = f.read()
