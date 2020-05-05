@@ -12,18 +12,22 @@ To avoid problems using multiple files with the tabs below fixes, I split the ta
 
 ### MultiRowTabLiteforFx.uc.js
 Shows all tabs you currently have open splitting them on rows, without any limit to the amount of rows to show. Choose this option if you want to always see all the tabs you have open without limits to the number of rows. When dragging tabs around, an arrow will show where the dragged tab will be placed.
-<img src="https://i.imgur.com/GWSgqD9.png">
+
+![Multirow unlimited](https://i.imgur.com/GWSgqD9.png)
 
 ### MultiRowTab-scrollable.uc.js
 Shows all tabs you currently have open splitting them on rows up to a max of 3 rows by default (can be changed using the variable inside the file). After the max number of rows has been reached, a scrollbar will be shown to be able to scroll around the extra tabs. When dragging tabs around, an arrow will show where the dragged tab will be placed.
-<img src="https://i.imgur.com/2YUO9vq.png">
+
+![Multirow scrollable animation](https://i.imgur.com/2YUO9vq.png)
 
 ### MultiRowTab-scrollable-autohide.uc.js
 This version is the same as scrollable multirow, except the scrollbars are only shown when you hover over the tabs area. It fixes some very specific issue when loading a session restore and loading a long page with a lot of content, which sometimes would make some webarea scrollbars get "stuck".
 
 ## Tab sizing
 The size of tabs in the last row is by default resizable, (like in the pictures above, which is the default Firefox behaviour) which will make them shrink as more tabs are fit inside the row. If you want to make all the tabs have a fixed width (so that tabs in the last row won't resize depending on how many tabs are open in that row), you will have to edit the file and change the variable `--tab-growth` to 0 (which will use the value of `browser.tabs.tabMinWidth` in **about:config** as their fixed width).
-<img src="https://i.imgur.com/twzsQ6V.png">
+
+![Tab sizing example](https://i.imgur.com/twzsQ6V.png)
 
 It's also possible to keep tab resizability but change the min-width of tabs through `browser.tabs.tabMinWidth` as well.
+
 As for tab max size, it can't be changed without causing issues with tab session managers (The issue made tab session managers to save the last 3 closed tabs when they were not suposed to), which is the reason why there isn't an option to change this inside here anymore.
