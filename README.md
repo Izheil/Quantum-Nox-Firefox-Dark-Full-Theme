@@ -11,18 +11,15 @@ You can use it to fully change the colors of most of firefox UI to dark-gray col
 
 If you want to know how to change some colors of the theme, check the [wiki](https://github.com/Izheil/Quantum-Nox-Firefox-Dark-Full-Theme/wiki/Editting-CSS-files).
 
-### Last update: 08/04/2020
+### Last update: 05/05/2020
+
+Files updated:
+* **userChrome.css**: Fixed the restore button transparency on nightly.
+
+### Pre-Last update: 08/04/2019
 
 Files updated:
 * **userContent.css**: Fixes for the new layout of Mozilla support page.
-
-### Pre-Last update: 18/03/2019
-
-Files updated:
-* __MultiRowTab*.uc.js__: Compatibility fix for FF77.0a1 (Nightly).
-* **userChrome.css**: Minor fixes on the URLbar colors. Also added a fix for the URLbar "puffing" on new tab opening (for the CSS tweaks userChrome only).
-* **userContent.css**: Minor fixes in `about:addons` on Nightly.
-* **Bookmarks+URLbar+Sidebar.css**: Added a fix for the "puffing" URLbar so that it only adds padding when the autocomplete is open (so it won't resize when you open a new tab and the urlbar gets focus, or when you `Ctrl + L` and then press `Esc`).
 
 ### A note on people looking to replace some Tab Mix Plus features:
 You can find some of the basic settings that can be simulated through `about:config`, some userscripts, and some addons [here](https://github.com/Izheil/Quantum-Nox-Firefox-Dark-Full-Theme/wiki/Useful-about:config-settings#some-tab-mix-plus-features).
