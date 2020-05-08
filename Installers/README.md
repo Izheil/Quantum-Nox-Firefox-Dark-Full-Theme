@@ -1,39 +1,71 @@
-<h1>JS function installers</h1>
-<p>If you don't want to copy the files manually to install multirow, tabs below, or focus tab on hover, you can do it with this installer.</p>
-<b>Make sure your Firefox is up to date, since the userscripts installed with this assume you have the lastest firefox version.</b>
-<p>This is the python version of the installer, which requires all files and folders in here to work. For the single file installer go to the <a href="https://github.com/Izheil/Quantum-Nox-Firefox-Dark-Full-Theme/releases">releases</a> page.</p>
-<p>You need <a href="https://www.python.org/downloads/release/python-375/">Python 3.6+</a> installed to use these, along with the <b>elevate</b> module.</p>
+# JS function installers
+If you don't want to copy the files manually to install multirow, tabs below, or focus tab on hover, you can do it with this installer.
+**Make sure your Firefox is up to date, since the userscripts installed with this assume you have the lastest firefox version.**
+This is the python version of the installer, which requires all files and folders in here to work. For the single file installer go to the [releases](https://github.com/Izheil/Quantum-Nox-Firefox-Dark-Full-Theme/releases) page.
 
-<p>In linux you might need to install pip (to install the elevate module) and tkinter after installing Python 3.7, which you can do with these commands respectively:</p>
+#### Pre-requisites 
+You need [Python 3.6+](https://www.python.org/downloads/release/python-375/) installed to use these, along with the **elevate** module.
 
-<pre>sudo apt install python3-pip</pre>
-<pre>sudo apt-get install python3-tk</pre>
+In **linux** you might need to install pip (to install the elevate module) and tkinter after installing Python 3.7+, which you can do with these commands respectively:
 
-<p>You will also need to install the required module after installing Python and pip (on any OS) using:</p>
+```
+sudo apt install python3-pip
+sudo apt-get install python3-tk
+```
 
-<pre>pip3 install elevate</pre>
+You will also need to install the required module after installing Python and pip **(on any OS)** using:
 
-<p>After that you can run <code>Quantum-Nox-Installer.py</code> to start the patcher.</p>
+```
+pip3 install elevate
+```
 
-<h2>The functions</h2>
-<p>You can find more explanations in the folders inside <a href="https://github.com/Izheil/Quantum-Nox-Firefox-Dark-Full-Theme/tree/master/Multirow%20and%20other%20functions">Multirow and other functions</a> folder in this repository.</p>
+After that you can run `Quantum-Nox-Installer.py` to start the patcher.
 
-<h3>Multi-row Tabs</h3>
+### Windows
 
-<h4>Scrollable rows</h4>
-<p>This version shows all tabs you currently have open splitting them on rows up to a max of 3 rows by default (can be changed using the variable inside the file). After the max number of rows has been reached, a scrollbar will be shown to be able to scroll around the extra tabs.</p>
-<img src="https://i.imgur.com/qqQn4Ky.png">
+On Windows you will only have to type (asuming you opened the console where the .py file is):
 
-<h4>Autohide Scrollable rows</h4>
-<p>Same as scrollable multirow tabs, but it will autohide the scrollbar when not hovering over the tabs.</p>
+```
+python3 Quantum-Nox-Installer.py
+```
 
-<h4>All rows visible</h4>
-<p>This version of multirow tabs shows all tabs you currently have open splitting them on rows, without any limit to the amount of rows to show. Choose this option if you want to always see all the tabs you have open without limits to the number of rows.</p>
-<img src="https://i.imgur.com/GWSgqD9.png">
+### Linux
 
-<h3>Tabs below URL bar</h3>
-<p>These will swap the tab bar position under the URL bar, while keeping the menu bar on top.</p>
-<img src="https://i.imgur.com/5vbG6mh.png">
+On Linux, you can run it in the same way as Windows (asuming you opened the console where the .py file is):
 
-<h3>Focus tab on hover</h3>
-<p>This will activate the tab you hover over with your mouse after the delay you specify.</p>
+
+```
+python3 ./Quantum-Nox-Installer.py
+```
+
+### Mac
+
+On Mac you only need to run the file with elevated privileges (asuming you opened the console where the .py file is):
+
+```
+sudo python3 Quantum-Nox-Installer.py
+```
+
+
+## The functions
+You can find more explanations in the folders inside [Multirow and other functions](https://github.com/Izheil/Quantum-Nox-Firefox-Dark-Full-Theme/tree/master/Multirow%20and%20other%20functions) folder in this repository.
+
+### Multi-row Tabs
+
+#### Scrollable rows
+This version shows all tabs you currently have open splitting them on rows up to a max of 3 rows by default (can be changed using the variable inside the file). After the max number of rows has been reached, a scrollbar will be shown to be able to scroll around the extra tabs.
+![Scrollable rows preview](https://i.imgur.com/qqQn4Ky.png)
+
+#### Autohide Scrollable rows
+Same as scrollable multirow tabs, but it will autohide the scrollbar when not hovering over the tabs.
+
+#### All rows visible
+This version of multirow tabs shows all tabs you currently have open splitting them on rows, without any limit to the amount of rows to show. Choose this option if you want to always see all the tabs you have open without limits to the number of rows.
+![Unlimited rows preview](https://i.imgur.com/GWSgqD9.png)
+
+### Tabs below URL bar
+These will swap the tab bar position under the URL bar, while keeping the menu bar on top.
+![Tabs below preview](https://i.imgur.com/5vbG6mh.png)
+
+### Focus tab on hover
+This will activate the tab you hover over with your mouse after the delay you specify.
