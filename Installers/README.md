@@ -6,7 +6,7 @@ This is the python version of the installer, which requires all files and folder
 #### Pre-requisites 
 You need [Python 3.6+](https://www.python.org/downloads/release/python-375/) installed to use these, along with the **elevate** module.
 
-In **linux** you might need to install pip (to install the elevate module) and tkinter after installing Python 3.7+, which you can do with these commands respectively:
+In **linux** you might need to install pip (to install the elevate module) and tkinter after installing Python 3.6+, which you can do with these commands respectively:
 
 ```
 sudo apt install python3-pip
