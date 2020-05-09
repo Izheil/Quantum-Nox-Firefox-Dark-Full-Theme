@@ -26,44 +26,20 @@ Next time you start up firefox, changes should take effect.
 
 If you did it right, the structure of firefox root folder should look like this:
 
-<table>
-  <tr>
-    <td>`\browser\`</td>
-  </tr>
-  <tr>
-    <td>`\defaults\`</td>
-  </tr>
-  <tr>
-    <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`\pref\`</td>
-  </tr>
-  <tr>
-    <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`channel-prefs.js`</td>
-  </tr>
-  <tr>
-    <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`config-prefs.js`</td>
-  </tr>
-  <tr>
-    <td>`\fonts\`</td>
-  </tr>
-  <tr>
-    <td>`\gmp-clearkey\`</td>
-  </tr>
-  <tr>
-    <td>`\META-INF\`</td>
-  </tr>
-  <tr>
-    <td>`\uninstall\`</td>
-  </tr>
-  <tr>
-    <td>`config.js`</td>
-  </tr>
-  <tr>
-    <td>`firefox.exe` or `firefox`</td>
-  </tr>
-  <tr>
-    <td>Many other files</td>
-  </tr>
-</table>
+| Root folder      |
+| ---------------- |
+| `\browser\`      |
+| `\defaults\`     |
+|      `\pref\`    |
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`channel-prefs.js` |
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`config-prefs.js` |
+| `\fonts\`        |
+| `\gmp-clearkey\` |
+| `\META-INF\`     |
+| `\uninstall\`    |
+| `config.js`      |
+| `firefox.exe` or `firefox` |
+| Many other files |
 
 And the structure of the chrome folder should look like:
 
