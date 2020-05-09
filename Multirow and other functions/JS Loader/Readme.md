@@ -30,7 +30,7 @@ If you did it right, the structure of firefox root folder should look like this:
 | ---------------- |
 | `\browser\`      |
 | `\defaults\`     |
-|      `\pref\`    |
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`\pref\` |
 | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`channel-prefs.js` |
 | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`config-prefs.js` |
 | `\fonts\`        |
@@ -45,7 +45,6 @@ And the structure of the chrome folder should look like:
 
   * utils (folder)
   * Any other optional file like userChrome.css, userContent.css, MultiRowTabLiteforFx.uc.js, etc...
-
 
 The files inside the "utils" folder will enable both `*.uc.js` and `*.as.css` files inside your chrome folder.
 
