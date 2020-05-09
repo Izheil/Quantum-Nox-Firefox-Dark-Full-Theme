@@ -19,8 +19,8 @@ If you are using **Firefox portable**, note that the [firefox root folder](https
 
 
 #### Step by step:
-  * Copy `defaults` folder and `config.js` files inside `root` to [firefox root folder](https://github.com/Izheil/Quantum-Nox-Firefox-Dark-Full-Theme/wiki/Chrome-and-Root-folders#firefox-root-folder).
-  * Copy `utils` folder to your [chrome folder](https://github.com/Izheil/Quantum-Nox-Firefox-Dark-Full-Theme/wiki/Chrome-and-Root-folders#the-chrome-folder).
+  1. Copy `defaults` folder and `config.js` files inside `root` to [firefox root folder](https://github.com/Izheil/Quantum-Nox-Firefox-Dark-Full-Theme/wiki/Chrome-and-Root-folders#firefox-root-folder).
+  2. Copy `utils` folder to your [chrome folder](https://github.com/Izheil/Quantum-Nox-Firefox-Dark-Full-Theme/wiki/Chrome-and-Root-folders#the-chrome-folder).
 
 Next time you start up firefox, changes should take effect.
 
