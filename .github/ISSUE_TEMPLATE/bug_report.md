@@ -1,7 +1,6 @@
 ---
 name: Bug report
-about: Any problem with the theme or functions that persists after following the [basic troubleshooting steps](https://github.com/Izheil/Quantum-Nox-Firefox-Dark-Full-Theme/wiki/Troubleshooting), such as some part of
-  the UI not themed, or some functionability not working as explained in the documentation.
+about: Any problem with the theme or functions, such as some part of the UI not themed, or some functionability that isn't fixed following the steps from the [troubleshooting wiki page](https://github.com/Izheil/Quantum-Nox-Firefox-Dark-Full-Theme/wiki/Troubleshooting).
 title: "[BUG]"
 labels: ''
 assignees: ''
