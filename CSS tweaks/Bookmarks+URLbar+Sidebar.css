@@ -1,6 +1,6 @@
 /* You can find an updated version here: https://github.com/Izheil/Quantum-Nox-Firefox-Dark-Full-Theme */
 /* Made by Izheil */
-/* Last updated: 09/04/2020 */
+/* Last updated: 10/05/2020 */
 
 /* SIDEBAR */
 
@@ -93,11 +93,7 @@ You can set the order of each bar here. 1 for top, and 3 bottom) */
 /* ^ There seems to be an issue with the "top:" rule inside #toolbar-menubar that would not allow fullscreen
 to autohide, so it's safest to just hide it on fullscreen */
 
-/* MULTI-ROW BOOKMARKS TOOLBAR */
-
-/* Add this variable to the variables section of your userchrome to change the rows */
-:root {
-  --bookmark-max-rows: 3}
+/* MULTIROW BOOKMARKS TOOLBAR */
 
 /* To use multirow bookmarks you have to delete the /* under this line */
 #PersonalToolbar {
