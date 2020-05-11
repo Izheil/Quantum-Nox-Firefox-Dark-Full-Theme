@@ -1252,7 +1252,7 @@ class patcherUI(Frame):
         fpCkMR1E.insert(0, 3)
         fpCkMR1E.config(state="disabled")
         fpCkMR1E.grid(column=2, row=2, columnspan=1, sticky="WE")
-        fpCkMR1C = Checkbutton(FPLF, text="Autohide", variable=CkMR1C, state="disabled")
+        fpCkMR1C = Checkbutton(FPLF, text="Autohide scrollbars", variable=CkMR1C, state="disabled")
         fpCkMR1C.grid(column=1, row=3, columnspan=2, padx=20, sticky="W")
         fpCkMR2 = Radiobutton(FPLF, text="All rows visible", value=1, variable=RdMR, command=updateMRSpinbox, state="disabled")
         fpCkMR2.grid(column=1, row=4, sticky="W")
