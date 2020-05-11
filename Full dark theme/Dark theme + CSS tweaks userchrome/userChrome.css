@@ -1,6 +1,6 @@
 /* You can find an updated version here: https://github.com/Izheil/Quantum-Nox-Firefox-Dark-Full-Theme */
 /* Made by Izheil */
-/* Last updated: 05/05/2020 */
+/* Last updated: 11/05/2020 */
 
 /* COLORING PART STARTS HERE */
 
@@ -10,25 +10,33 @@
 without this change) */
 *|*:root:-moz-lwtheme {
   --toolbar-bgcolor: rgba(0,0,0,.6) !important;
+  /* This changes the text color of all outside elements of all toolbars */
+  --lwt-text-color: #ccc !important;
   
   /* You can change the lightweight theme header and footer images with this. 
   To use this, enable the "lightweight themes fix" below. Delete the final /* to use -> *//*
   --lwt-header-image: url("file:///") !important;
+  
+/* v Don't delete this ending bracket */
+}
 
-  /* Url and search bars */
-  --urlbar-popup-url-color: #5ad !important;
-  --urlbar-popup-action-color: #888 !important;
-  --toolbar-field-focus-border-color: #444 !important;
+/* Url and search bars */
+#nav-bar, #searchbar {
   --lwt-toolbar-field-background-color: rgb(61,61,63) !important;
   --lwt-toolbar-field-focus: rgb(71,71,73) !important;
   --lwt-toolbar-field-color: #aaa !important;
   --lwt-toolbar-field-focus-color: var(--lwt-toolbar-field-color) !important;
-  --lwt-text-color: #ccc !important;
+  --lwt-toolbar-field-border-color: #333 !important;
+  --toolbar-field-focus-border-color: #666 !important;
+  --urlbar-popup-url-color: rgb(90,170,230) !important;
+  --urlbar-popup-action-color: var(--urlbar-popup-url-color) !important;
   --urlbar-separator-color: #666 !important;
   --autocomplete-popup-highlight-background: rgba(100,100,100,0.4) !important;
-  --autocomplete-popup-highlight-color: #ddd !important;
-  --url-autocomplete-links-color: rgb(0,160,200);
-  --Search-engine-choices-gradient: linear-gradient(90deg, rgba(4,34,74,1) 5%, rgba(22,52,132,1) 50%, rgba(4,34,74,1) 95%);}}
+  --autocomplete-popup-highlight-color: #ddd !important}
+
+/* Search panel background gradient*/
+.search-panel-one-offs-container {
+  --Search-engine-choices-gradient: linear-gradient(90deg, rgba(4,34,74,1) 5%, rgba(22,52,132,1) 50%, rgba(4,34,74,1) 95%);}
 
 /* Fix for some lightweight themes not working properly when set manually here (appearing with a lot of padding to the left) *//*
 :root:-moz-lwtheme[lwtheme-image], #tabbrowser-tabs:not([movingtab]) > .tabbrowser-tab > 
