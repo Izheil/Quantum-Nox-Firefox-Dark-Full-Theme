@@ -1,4 +1,4 @@
-#!/usr/bin/python3.7
+#!/usr/bin/python3
 import os
 import re
 import sys
@@ -7,6 +7,7 @@ import ctypes
 import shutil
 import tkinter
 import elevate
+import subprocess
 import webbrowser
 import distutils.core
 from pathlib import Path
@@ -16,6 +17,7 @@ from tkinter import (LabelFrame, Checkbutton, Frame, Label, Entry,
 
 def SystemOS():
     "Identifies the OS"
+
     if sys.platform.startswith('win'):
         SystemOS = "Windows"
     elif sys.platform.startswith('linux'):
@@ -80,13 +82,52 @@ def readDefaults(profile):
 
 # We get the user folders here
 if SystemOS() == "Windows":
-    nonRootUser = os.path.join(os.getenv('PUBLIC') + "\\QNUsername.txt")
-    if os.access(nonRootUser, os.F_OK):
-        with open(nonRootUser, "r") as f:
-            logUsername = f.read()
-        logUsername = logUsername.rstrip(" \n")
-        home = logUsername
-        os.remove(nonRootUser)
+    # This is a workaround to find the current logged in user
+    # in case they are not using an administrator account,
+    # since otherwise it's not possible to find it on Windows
+    tmp_file = os.getcwd() + '\\tempData.txt'
+    try:
+        with open(tmp_file, 'w+') as w:
+            args = ['C:\\Windows\\Sysnative\\query.exe', 'user']
+            findCurrentUser = subprocess.Popen(args, stdout=w, stderr=subprocess.STDOUT,
+                            stdin=subprocess.PIPE,
+                            universal_newlines=True,
+                            shell=False)
+            findCurrentUser.wait()
+
+        with open(tmp_file, 'r') as r:
+            output = r.readlines()
+
+        users = []
+        for line in output:
+            if line == output[0]:
+                continue
+            else:
+                userRead = re.match(">(.*?) console *", line, re.M | re.I)
+                if userRead is not None:
+                    users.append(str(userRead.group(1)).rstrip())
+
+    except Exception as err:
+        print("Couldn't locate login user, backing to default profile path.")
+        users = [os.getenv('USERNAME')]
+
+    if os.access(tmp_file, os.F_OK):
+        os.remove(tmp_file)
+
+    adminProfile = os.getenv('USERPROFILE')
+    adminName = os.getenv('USERNAME')
+
+    appdataPath = (adminProfile[0:-(len(adminName))] 
+                  + users[0].capitalize() 
+                  + "\\AppData\\Roaming")
+
+    altPath = os.path.join("C:\\Users\\", users[0].capitalize() 
+                           + "\\AppData\\Roaming")
+
+    if os.access(appdataPath, os.F_OK):
+        home = appdataPath
+    elif os.access(altPath, os.F_OK):
+        home = altPath
     else:
         home = os.getenv('APPDATA')
     MozPFolder = home + r"\Mozilla\Firefox"
