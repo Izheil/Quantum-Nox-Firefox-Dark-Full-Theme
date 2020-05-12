@@ -5,6 +5,7 @@
 // @include        main
 // @compatibility  Firefox 78.0a1 (2020-05-04)
 // @author         Alice0775, Endor8, TroudhuK, Izheil
+// @version        12/05/2020 13:09 Removed unnecesary selector
 // @version        09/04/2020 08:14 Minor fixes for tab line when window is resized
 // @version        08/04/2020 04:30 Compatibility fix for FF77
 // @version        16/03/2020 05:15 Fixed some issue with tab transitions
@@ -68,7 +69,7 @@ function zzzz_MultiRowTabLite() {
         #TabsToolbar .titlebar-buttonbox-container {display: block}
     }
 
-    #alltabs-button, :root:not([customizing]) #TabsToolbar #new-tab-button, .tabbrowser-tab::after
+    #alltabs-button, .tabbrowser-tab::after
     {display: none}
 
 	`;
