@@ -11,15 +11,15 @@ You can use it to fully change the colors of most of firefox UI to dark-gray col
 
 If you want to know how to change some colors of the theme, check the [wiki](https://github.com/Izheil/Quantum-Nox-Firefox-Dark-Full-Theme/wiki/Editting-CSS-files).
 
-### Last update: 05/05/2020
+### Last update: 12/05/2020
+
+Files updated:
+* **userChrome.css**: Made bookmarks toolbar thinner.
+
+### Pre-Last update: 05/05/2019
 
 Files updated:
 * **userChrome.css**: Fixed the restore button transparency on nightly.
-
-### Pre-Last update: 08/04/2019
-
-Files updated:
-* **userContent.css**: Fixes for the new layout of Mozilla support page.
 
 ### A note on people looking to replace some Tab Mix Plus features:
 You can find some of the basic settings that can be simulated through `about:config`, some userscripts, and some addons [here](https://github.com/Izheil/Quantum-Nox-Firefox-Dark-Full-Theme/wiki/Useful-about:config-settings#some-tab-mix-plus-features).
