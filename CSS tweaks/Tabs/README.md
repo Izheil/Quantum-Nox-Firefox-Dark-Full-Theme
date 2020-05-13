@@ -24,7 +24,7 @@ The code is optimized for `1920x1080` resolutions, so if your screen resolution 
 /* ^ Change to -1px in the "maximized" rule if the tabs are overlapping the toolbar above them ^ */
 ```
 
-Usually changing the first one to `-1` as stated in the comment of the code works for most people if the problem only happens when Firefox is on the maximized state.
+Usually changing the first one to `-1px` as stated in the comment of the code works for most people if the problem only happens when Firefox is on the maximized state.
 
 ### Tabs-below-Menu-onTop.as.css
 Changes the order of the toolbars inside the navigation box. This one sets the position of the tab bar below the url bar, and the menu bar (the one with file, edit, etc...) to be below the Url bar, but above the Tabs bar. You won't need to toggle the menu bar as always visible.
@@ -37,7 +37,7 @@ This will change the tabs text color when the state of tabs is unread, loading, 
 
 By default it's not possible to change the unread state of tabs since they are not labeled as unread (Firefox removed the unread state of tabs a few versions ago), so if you want to change that state read below, otherwise, you can just use the code without patching your firefox.
 
-You can patch your Firefox using the patcher by choosing your Firefox version, and the "Enable unread state on tabs" option.
+You can patch your Firefox using the [patcher](https://github.com/Izheil/Quantum-Nox-Firefox-Dark-Full-Theme/releases) by choosing your Firefox version, and the "Enable unread state on tabs" option.
 This will add a "utils" folder and a "setAttribute_unread.uc.js" file to your chrome folder, which are required to customize unread tabs with userChrome.
 
 Alternatively, if you use MacOS or something goes wrong with the patcher, you can always do the manual patching with the method explained in [JS Loader](https://github.com/Izheil/Quantum-Nox-Firefox-Dark-Full-Theme/tree/master/Multirow%20and%20other%20functions/JS%20Loader) folder from this repository, and then copying the [setAttribute_unread.uc.js](https://raw.githubusercontent.com/Izheil/Quantum-Nox-Firefox-Dark-Full-Theme/master/CSS%20tweaks/Tabs/setAttribute_unread.uc.js) file to your [chrome folder](https://github.com/Izheil/Quantum-Nox-Firefox-Dark-Full-Theme/wiki/Chrome-and-Root-folders#the-chrome-folder).
