@@ -23,43 +23,13 @@ After that you can run `Quantum-Nox-Installer.py` to start the patcher.
 
 ### Windows
 
-**To use**:
-
-On Windows you will only have to type (asuming you opened the console where the .py file is):
+On Windows you can run it double clicking the file when having python installed, or through the console (asuming you opened the console where the .py file is):
 
 ```
 python3 Quantum-Nox-Installer.py
 ```
 
-**To create an executable** you will need to do 2 steps for windows:
-
-First, you need to create the base patcher:
-
-```
-pyinstaller windows.spec
-```
-
-After that, if you want to enable support for users that are not using an administrator account when patching (You could just run the created executable with the previous command if you don't need this), you need to bundle `FindNonRootID.bat` along with the `Firefox-patcher.exe`file that will have been created in `dist` folder with the previous command.
-
-To do this, you can use **iexpress**, which is a bat-to-exe conversor that comes built-in into Windows.
-By default it's located in `C:\Windows\System32\iexpress.exe`.
-
-Run iexpress as admin, and bundle the bat and the exe into an installer. **Do NOT use the `.sed` file inside the repo when it asks you to use one, unless you change the paths to wherever you placed the repository files**
-
-For the installer to be created properly you will need to **enable long filenames**, and you will need to **add some commands before each file** when it asks you to select them.
-So when it asks for the files, select each file and type "cmd /c " before the name of each:
-
-```
-cmd /c FindNonRootID.bat
-```
-
-```
-cmd /c Firefox-patcher.exe
-```
-
 ### Linux
-
-**To use**:
 
 On Linux, you can run it in the same way as Windows (asuming you opened the console where the .py file is):
 
@@ -67,15 +37,7 @@ On Linux, you can run it in the same way as Windows (asuming you opened the cons
 python3 ./Quantum-Nox-Installer.py
 ```
 
-**To create an executable**:
-
-```
-pyinstaller "Linux.spec"
-```
-
 ### Mac
-
-**To use**:
 
 On Mac you only need to run the file with elevated privileges (asuming you opened the console where the .py file is):
 
@@ -83,10 +45,21 @@ On Mac you only need to run the file with elevated privileges (asuming you opene
 sudo python3 Quantum-Nox-Installer.py
 ```
 
-**To create an executable** you would use this, but pyinstaller doesn't bundle tkinter correctly with the executable, so you will need to wait for the rewrite of the installer to use this:
+### To create an executable:
+
+To create an executable you only need to use **pyinstaller** with one of the `.spec` files provided here for each major operative system.
+
+To do this first install pyinstaller module if you don't have it yet:
 
 ```
-pyinstaller "Mac.spec"
+pip3 install pyinstaller
+```
+
+After that you will be able to use it to create an executable with the correct `.spec` file that applies. 
+For example, for windows, you'll have to use `Windows.spec` file to create the installer:
+
+```
+pyinstaller Windows.spec
 ```
 
 ## The functions
