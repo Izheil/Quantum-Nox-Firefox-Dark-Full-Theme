@@ -33,7 +33,7 @@ Same design than the squared one, but less width (12px instead of 16px).
 ### Scrollbars-old.as.css
 ![Old scrollbars](https://i.imgur.com/2WBVmxY.png)
 
-This is the old default scrollbar of this theme. It's the similar to the current one, except it has a 3 colors gradient as background.
+This is the old default scrollbar of this theme. It has flat colors and has a 3 colors gradient as background.
 
 ### Scrollbars-flat-colors.as.css
 ![Flat colors scrollbar](https://i.imgur.com/s668zt7.png)
