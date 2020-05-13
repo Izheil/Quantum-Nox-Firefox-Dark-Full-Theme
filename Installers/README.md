@@ -62,6 +62,8 @@ For example, for windows, you'll have to use `Windows.spec` file to create the i
 pyinstaller Windows.spec
 ```
 
+Note that Mac won't allow you to create an executable because pyinstaller doesn't get tkinter dependencies correctly.
+
 ## The functions
 You can find more explanations in the folders inside [Multirow and other functions](https://github.com/Izheil/Quantum-Nox-Firefox-Dark-Full-Theme/tree/master/Multirow%20and%20other%20functions) folder in this repository.
 
