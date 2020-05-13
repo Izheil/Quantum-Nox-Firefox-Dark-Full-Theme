@@ -1,48 +1,48 @@
-<h1>Alternative scrollbar styles</h1>
-<p>You can find other scrollbar styles in here with some screenshots. You should only use 1 at a time, and each time you change the style, you'll have to clear the "startupcache" folder on the local folder inside <code>about:profiles</code> for changes to take effect.</p></p>
+# Alternative scrollbar styles
+You can find other scrollbar styles in here with some screenshots. You should only use 1 at a time, and each time you change the style, you'll have to clear the "startupcache" folder on the local folder inside `about:profiles` for changes to take effect.
 
-<h2>Files outside the colored scrollbar folders</h2>
+## Files outside the colored scrollbar folders
 
-<h3>Scrollbars-minimal.as.css</h3>
-<img src="https://i.imgur.com/eWYEmiU.png">
-<p>A semi-transparent slim scrollbar with no background. It widens by 1 px when you click it.</p>
+### Scrollbars-minimal.as.css### 
+![Minimal scrollbar](https://i.imgur.com/eWYEmiU.png)
+A semi-transparent slim scrollbar with no background. It widens by 1 px when you click it.
 
-<h2>Files inside the colored scrollbar folders</h2>
+## Files inside the colored scrollbar folders
 
-<h3>Scrollbars-default-(color).as.css</h3>
+### Scrollbars-default-(color).as.css### 
 
-<p>These will be the same as the default scrollbar for this theme (the one inside the profile folder in this repository), but in a different color. It won't appear inside the blue scrollbars folder (since that's the default scrollbar that we are making reference to).</p>
+These will be the same as the default scrollbar for this theme (the one inside the profile folder in this repository), but in a different color. It won't appear inside the blue scrollbars folder (since that's the default scrollbar that we are making reference to).
 
-<h3>Scrollbars-rail-bg-flat.as.css</h3>
-<img src="https://i.imgur.com/EFHFpRk.png">
-<p>Grey thumb scrollbar with a semi-transparent white line as background (rail-like). This emulates the <a href="https://gist.github.com/Arty2/fdf19aea2c601032410516f059d58eb1">original design</a> that Arty2 had for the code of these scrollbars.</p>
+### Scrollbars-rail-bg-flat.as.css### 
+![Rail background scrollbars](https://i.imgur.com/EFHFpRk.png)
+Grey thumb scrollbar with a semi-transparent white line as background (rail-like). This emulates the [original design](https://gist.github.com/Arty2/fdf19aea2c601032410516f059d58eb1) that Arty2 had for the code of these scrollbars.
 
-<h3>Scrollbars-rail-bg.as.css</h3>
-<p>Same as the one above, but has gradient colors instead of flat ones for the thumb.</p>
+### Scrollbars-rail-bg.as.css### 
+Same as the one above, but has gradient colors instead of flat ones for the thumb.
 
-<h3>Scrollbars-squared.as.css</h3>
-<img src="https://i.imgur.com/JfopQbb.png">
-<p>This scrollbar resembles the default firefox one, except it's darkish, and has a gradient background.</p>
+### Scrollbars-squared.as.css### 
+![Default square scrollbars](https://i.imgur.com/JfopQbb.png)
+This scrollbar resembles the default firefox one, except it's darkish, and has a gradient background.
 
-<h3>Scrollbars-squared-slim.as.css</h3>
-<p>Same design than the squared one, but less width (12px instead of 16px).</p>
+### Scrollbars-squared-slim.as.css### 
+Same design than the squared one, but less width (12px instead of 16px).
 
-<h3>Scrollbars-old.as.css</h3>
-<img src="https://i.imgur.com/2WBVmxY.png?1">
-<p>This is the old default scrollbar of this theme. It's the same as the current one, except it has a 3 colors gradient as background.</p>
+### Scrollbars-old.as.css### 
+![Old scrollbars](https://i.imgur.com/2WBVmxY.png)
+This is the old default scrollbar of this theme. It's the similar to the current one, except it has a 3 colors gradient as background.
 
-<h3>Scrollbars-flat-colors.as.css</h3>
-<img src="https://i.imgur.com/s668zt7.png">
-<p>This one is like the default scrollbar, but has flat colors with a transition effect when hovering over it.</p>
+### Scrollbars-flat-colors.as.css### 
+![Flat colors scrollbar](https://i.imgur.com/s668zt7.png)
+This one is like the default scrollbar, but has flat colors with a transition effect when hovering over it.
 
-<h3>Scrollbars-slim.as.css</h3>
-<p>Same design than the default one from this theme, but less width (12px instead of 16px).</p>
+### Scrollbars-slim.as.css### 
+Same design than the default one from this theme, but less width (12px instead of 16px).
 
-<h3>Scrollbars-no-transitions.as.css</h3>
-<p>Same design as the default one from this theme, but these won't have transitions.</p>
+### Scrollbars-no-transitions.as.css### 
+Same design as the default one from this theme, but these won't have transitions.
 
-<h3>Scrollbars-shrink.as.css</h3>
-<p>Same design as the default one from this theme, but this one shrinks when active, instead of getting wider.</p>
+### Scrollbars-shrink.as.css### 
+Same design as the default one from this theme, but this one shrinks when active, instead of getting wider.
 
-<h3>(Any other combination of the above).as.css</h3>
-<p>Those shouldn't need an explanation.</p>
+### (Any other combination of the above).as.css### 
+Those shouldn't need an explanation.
