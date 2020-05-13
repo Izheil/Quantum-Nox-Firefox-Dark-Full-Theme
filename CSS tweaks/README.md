@@ -8,7 +8,7 @@ If you are using the `userChrome.css` from the dark theme of this repository, ad
 
 To make it work, it's as simple as copying the function you want to apply at the bottom of `userChrome.css`, place it inside [the chrome folder](https://github.com/Izheil/Quantum-Nox-Firefox-Dark-Full-Theme/wiki/Chrome-and-Root-folders#the-chrome-folder) if you hadn't yet, and restart Firefox.
 
-**You can also keep some tweak inside your `userChrome.css` without it being enabled by encasing the lines you don't want to apply between "/*" and "*/" (without the quotation marks).**
+**You can also keep some tweak inside your `userChrome.css` without it being enabled by encasing the lines you don't want to apply between `/*` and `*/`.**
 
 You can find an explanation of what each files does in each folder.
 
