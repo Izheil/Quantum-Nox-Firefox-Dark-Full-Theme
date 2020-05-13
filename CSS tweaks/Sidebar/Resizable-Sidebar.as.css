@@ -1,0 +1,13 @@
+/* You can find an updated version here: https://github.com/Izheil/Quantum-Nox-Firefox-Dark-Full-Theme */
+/* Made by Izheil */
+/* Last updated: 10/05/2020 */
+
+/* SIDEBAR */
+
+/* Allow sidebar to be closed completely using the slider */
+#sidebar-box {overflow-x: hidden !important}
+
+#sidebar {
+  min-width: 0px !important;
+  max-width: none !important;
+  overflow-x: hidden !important}

@@ -1,0 +1,14 @@
+/* You can find an updated version here: https://github.com/Izheil/Quantum-Nox-Firefox-Dark-Full-Theme */
+/* Made by Izheil */
+/* Last updated: 10/05/2020 */
+
+/* Multirow bookmarks toolbar */
+#PersonalToolbar {
+  max-height: unset !important}
+
+#PlacesToolbar > hbox:first-child {
+  display: block}
+
+#PlacesToolbarItems {
+    display: flex;
+    flex-wrap: wrap}

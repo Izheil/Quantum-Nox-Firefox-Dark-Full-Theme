@@ -1,0 +1,47 @@
+/* You can find an updated version here: https://github.com/Izheil/Quantum-Nox-Firefox-Dark-Full-Theme */
+/* Made by Izheil */
+/* Last updated: 16/03/2020 */
+
+/* TAB READ/UNREAD COLORS */
+
+/* You need to have setAttribute_unread.uc.js inside your chrome folder for the "loaded but unread" setting to work */
+/* You can bold the text of any tab adding "font-weight: bold !important" after their last rule, but before the "}"  */
+
+/* Selected (loaded) */
+.tabbrowser-tab[selected="true"] .tab-label {
+  color: #fff !important;
+  font-style: normal !important;
+  font-weight: normal !important}
+
+.tabbrowser-tab[selected="true"] .tab-content {
+  background-color: transparent !important;
+  clip-path: inset(2px 0 0 0);}
+
+/* Loaded but unread (not selected) */
+.tabbrowser-tab:not([selected="true"])[unread] .tab-label {
+  color: #eee !important;
+  font-style: italic !important;
+  font-weight: normal !important}
+
+.tabbrowser-tab:not([selected="true"])[unread] .tab-content {
+  background-color: transparent !important}
+
+/* Not loaded yet (also visited) */
+.tabbrowser-tab:not([selected="true"])[pending] .tab-label,
+.tabbrowser-tab:not([selected="true"])[visited] .tab-label {
+  color: #ccc !important;
+  font-style: italic !important;
+  font-weight: normal !important}
+
+.tabbrowser-tab:not([selected="true"])[pending] .tab-content,
+.tabbrowser-tab:not([selected="true"])[visited] .tab-content {
+  background-color: transparent !important}
+
+/* loading */
+.tabbrowser-tab[busy] .tab-text.tab-label {
+  color: #0088ff !important;
+  font-style: normal !important;
+  font-weight: normal !important}
+
+.tabbrowser-tab[busy] .tab-content {
+  background-color: transparent !important}
