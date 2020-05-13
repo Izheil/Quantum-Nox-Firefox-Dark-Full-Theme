@@ -10,8 +10,8 @@ Following the method described here, you will be able to give dark colors to fir
 **Note: As of Firefox 69, you will need to enable the use of these files through a configuration setting.** The preference in question is `toolkit.legacyUserProfileCustomizations.stylesheets`. Here is how you change its value:
 
 1. Load `about:config` in the Firefox address bar.
-  1a. Confirm that you will be careful.
-  1b. Search for `toolkit.legacyUserProfileCustomizations.stylesheets` using the search at the top.
+  1. Confirm that you will be careful.
+  2. Search for `toolkit.legacyUserProfileCustomizations.stylesheets` using the search at the top.
 2. Toggle the preference. `True` means Firefox supports the CSS files, `False` that it ignores them.
 
 #### Step by step:
@@ -29,13 +29,13 @@ Following the method described here, you will be able to give dark colors to fir
 If you have copied everything right, the folders structure should look something like this:
 Structure of [the chrome folder](https://github.com/Izheil/Quantum-Nox-Firefox-Dark-Full-Theme/wiki/Chrome-and-Root-folders#the-chrome-folder) files inside your profile folder:
 
-  * __utils (folder) -> Only if you want to use the `*.as.css` and `*.uc.js` files.__
-  * addons.css
-  * scrollbars.as.css
-  * setAttribute_unread.uc.js
-  * tooltips.as.css
-  * userChrome.css
-  * userContent.css
+* __utils (folder) -> Only if you want to use the `*.as.css` and `*.uc.js` files.__
+* addons.css
+* scrollbars.as.css
+* setAttribute_unread.uc.js
+* tooltips.as.css
+* userChrome.css
+* userContent.css
 
 Structure of [firefox root folder](https://github.com/Izheil/Quantum-Nox-Firefox-Dark-Full-Theme/wiki/Chrome-and-Root-folders#firefox-root-folder) files (where your firefox is installed):
 
@@ -50,7 +50,6 @@ Structure of [firefox root folder](https://github.com/Izheil/Quantum-Nox-Firefox
 * firefox.exe (or other Firefox executable depending on your OS)
 * **config.js**
 * Other .dll files
-
 
 Bolded files or folders mark the required things to enable JS injection.
 
