@@ -3,10 +3,9 @@ import os
 import re
 import sys
 import glob
-import ctypes
 import shutil
-import tkinter
 import elevate
+import tkinter
 import subprocess
 import webbrowser
 import distutils.core
@@ -279,9 +278,9 @@ def fullPatcher(FFversion, FFprofile):
             if SystemOS() == "Linux":
                 rootUser = os.getenv("SUDO_USER")
                 shutil.chown(ConfPref, user=rootUser, group=rootUser)
-                shutil.chmod(ConfPref, 0o775)
+                os.chmod(ConfPref, 0o775)
                 shutil.chown(ConfJS, user=rootUser, group=rootUser)
-                shutil.chmod(ConfJS, 0o775)
+                os.chmod(ConfJS, 0o775)
 
         if FFprofile != "None":
 
@@ -305,12 +304,12 @@ def fullPatcher(FFversion, FFprofile):
                 rootUser = os.getenv("SUDO_USER")
                 utilFiles = glob.glob(utils + "/*.*")
                 shutil.chown(chrome, user=rootUser, group=rootUser)
-                shutil.chmod(chrome, 0o775)
+                os.chmod(chrome, 0o775)
                 shutil.chown(utils, user=rootUser, group=rootUser)
-                shutil.chmod(utils, 0o775)
+                os.chmod(utils, 0o775)
                 for file in utilFiles:
                     shutil.chown(file, user=rootUser, group=rootUser)
-                    shutil.chmod(file, 0o775)
+                    os.chmod(file, 0o775)
 
     except IOError:
         messagebox.showerror("Error", "You need higher privileges to apply the patch.")
@@ -665,7 +664,7 @@ class patcherUI(Frame):
                                 writeMR(FFCMR)
                                 if SystemOS() == "Linux":
                                     shutil.chown(FFCMR, user=rootUser, group=rootUser)
-                                    shutil.chmod(FFCMR, 0o775)
+                                    os.chmod(FFCMR, 0o775)
 
                             except IOError:
                                 Error = 1
@@ -683,7 +682,7 @@ class patcherUI(Frame):
                                 writeMR(FFCMRA)
                                 if SystemOS() == "Linux":
                                     shutil.chown(FFCMRA, user=rootUser, group=rootUser)
-                                    shutil.chmod(FFCMRA, 0o775)
+                                    os.chmod(FFCMRA, 0o775)
 
                             except IOError:
                                 Error = 1
@@ -714,7 +713,7 @@ class patcherUI(Frame):
                             writeMR(FFCMRL)
                             if SystemOS() == "Linux":
                                     shutil.chown(FFCMRL, user=rootUser, group=rootUser)
-                                    shutil.chmod(FFCMRL, 0o775)
+                                    os.chmod(FFCMRL, 0o775)
 
                         except IOError:
                             Error = 1
@@ -764,7 +763,7 @@ class patcherUI(Frame):
                                 distutils.file_util.copy_file(FireTBoT, FFChrome, update=True)
                                 if SystemOS() == "Linux":
                                     shutil.chown(FFTBoT, user=rootUser, group=rootUser)
-                                    shutil.chmod(FFTBoT, 0o775)
+                                    os.chmod(FFTBoT, 0o775)
 
                                 if os.access(FFTB, os.F_OK):
                                     os.remove(FFTB)
@@ -773,7 +772,7 @@ class patcherUI(Frame):
                                 distutils.file_util.copy_file(FireTB, FFChrome, update=True)
                                 if SystemOS() == "Linux":
                                     shutil.chown(FFTB, user=rootUser, group=rootUser)
-                                    shutil.chmod(FFTB, 0o775)
+                                    os.chmod(FFTB, 0o775)
 
                                 if os.access(FFTBoT, os.F_OK):
                                     os.remove(FFTBoT)
@@ -793,7 +792,7 @@ class patcherUI(Frame):
 
                             if SystemOS() == "Linux":
                                     shutil.chown(FFFT, user=rootUser, group=rootUser)
-                                    shutil.chmod(FFFT, 0o775)
+                                    os.chmod(FFFT, 0o775)
 
                         except IOError:
                             Error = 1
@@ -805,7 +804,7 @@ class patcherUI(Frame):
                             distutils.file_util.copy_file(FireUT, FFChrome, update=True)
                             if SystemOS() == "Linux":
                                     shutil.chown(FFUT, user=rootUser, group=rootUser)
-                                    shutil.chmod(FFUT, 0o775)
+                                    os.chmod(FFUT, 0o775)
 
                         except IOError:
                             Error = 1
@@ -842,7 +841,7 @@ class patcherUI(Frame):
 
                                 if SystemOS() == "Linux":
                                     shutil.chown(FFNTBoT, user=rootUser, group=rootUser)
-                                    shutil.chmod(FFNTBoT, 0o775)
+                                    os.chmod(FFNTBoT, 0o775)
 
                                 if os.access(FFNTB, os.F_OK):
                                     os.remove(FFNTB)
@@ -852,7 +851,7 @@ class patcherUI(Frame):
 
                                 if SystemOS() == "Linux":
                                     shutil.chown(FFNTB, user=rootUser, group=rootUser)
-                                    shutil.chmod(FFNTB, 0o775)
+                                    os.chmod(FFNTB, 0o775)
 
                                 if os.access(FFNTBoT, os.F_OK):
                                     os.remove(FFNTBoT)
@@ -872,7 +871,7 @@ class patcherUI(Frame):
 
                             if SystemOS() == "Linux":
                                     shutil.chown(FFNFT, user=rootUser, group=rootUser)
-                                    shutil.chmod(FFNFT, 0o775)
+                                    os.chmod(FFNFT, 0o775)
 
                         except IOError:
                             Error = 1
@@ -885,7 +884,7 @@ class patcherUI(Frame):
 
                             if SystemOS() == "Linux":
                                     shutil.chown(FFNUT, user=rootUser, group=rootUser)
-                                    shutil.chmod(FFNUT, 0o775)
+                                    os.chmod(FFNUT, 0o775)
 
                         except IOError:
                             Error = 1
@@ -932,7 +931,7 @@ class patcherUI(Frame):
 
                                     if SystemOS() == "Linux":
                                             shutil.chown(FFTBoT, user=rootUser, group=rootUser)
-                                            shutil.chmod(FFTBoT, 0o775)
+                                            os.chmod(FFTBoT, 0o775)
 
                                     if os.access(FFTB, os.F_OK):
                                         os.remove(FFTB)
@@ -942,7 +941,7 @@ class patcherUI(Frame):
 
                                     if SystemOS() == "Linux":
                                             shutil.chown(FFTB, user=rootUser, group=rootUser)
-                                            shutil.chmod(FFTB, 0o775)
+                                            os.chmod(FFTB, 0o775)
 
                                     if os.access(FFTBoT, os.F_OK):
                                         os.remove(FFTBoT)
@@ -962,7 +961,7 @@ class patcherUI(Frame):
 
                                 if SystemOS() == "Linux":
                                             shutil.chown(FFFT, user=rootUser, group=rootUser)
-                                            shutil.chmod(FFFT, 0o775)
+                                            os.chmod(FFFT, 0o775)
 
                             except IOError:
                                 Error = 1
@@ -975,7 +974,7 @@ class patcherUI(Frame):
 
                                 if SystemOS() == "Linux":
                                             shutil.chown(FFUT, user=rootUser, group=rootUser)
-                                            shutil.chmod(FFUT, 0o775)
+                                            os.chmod(FFUT, 0o775)
 
                             except IOError:
                                 Error = 1
