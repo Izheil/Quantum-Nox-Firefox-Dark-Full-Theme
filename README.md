@@ -1,4 +1,4 @@
-<img src="https://i.imgur.com/F7qziom.png" title="Quantum Nox"/>
+![Quantum Nox Logo](https://i.imgur.com/F7qziom.png)
 
 ### Firefox customizations for a full dark theme, multi-row tabs, custom scrollbar, and other functions.
 
@@ -26,11 +26,13 @@ You can find some of the basic settings that can be simulated through `about:con
 
 ## Multirow Tabs and other functions
 You can enable multirow tabs as well as other functions using the installer in the [releases](https://github.com/Izheil/Quantum-Nox-Firefox-Dark-Full-Theme/releases) section, or following the methods explained inside [Multirow and other functions](https://github.com/Izheil/Quantum-Nox-Firefox-Dark-Full-Theme/tree/master/Multirow%20and%20other%20functions) folder.
-<img src="https://i.imgur.com/2YUO9vq.png">
+
+![Multirow apng](https://i.imgur.com/2YUO9vq.png)
 
 ## Main browser UI
-<img src="https://i.imgur.com/zNKhEV6.png" title="Dark firefox UI with custom background" />
-<img src="https://i.imgur.com/q8MhDSX.png" title="Dark firefox Dialog" />
+![Dark firefox UI with custom background](https://i.imgur.com/zNKhEV6.png)
+
+![Dark firefox Dialog](https://i.imgur.com/q8MhDSX.png)
 
 If you are using Linux or Mac, or want to add some more functionability (like deleting some useless context menu commands), you will have to use the methods described inside one of the 3 main folders of this repository:
 
@@ -40,17 +42,20 @@ If you are using Linux or Mac, or want to add some more functionability (like de
 * [Full dark theme](https://github.com/Izheil/Quantum-Nox-Firefox-Dark-Full-Theme/tree/master/Full%20dark%20theme): Gives dark colors to firefox UI, including the scrollbars and the tooltips. Can also change the background image of `about:home` and the header image used as a persona.
 * [Multirow and other functions](https://github.com/Izheil/Quantum-Nox-Firefox-Dark-Full-Theme/tree/master/Multirow%20and%20other%20functions): You can find the JS files that add extra functionability to Firefox that couldn't be done with CSS alone.
 
-<img src="https://i.imgur.com/OhKiBCI.png">
+![Custom Firefox home page](https://i.imgur.com/OhKiBCI.png)
 
 ## General sites dark theme
 You can find an all-around sites stylesheet that will paint every site you visit dark [here](https://github.com/Izheil/Dark-userstyles/tree/master/Global%20dark%20userstyle). **You need [Stylus addon](https://addons.mozilla.org/es/firefox/addon/styl-us/) to use it**.
 
 While it's not perfect (meaning that you should still use per-site styles for the sites you visit often), it can help to darken most sites when browsing around general sites that you don't visit often, and thus don't want/can't find a specific userstyle for them.
-<img src="https://i.imgur.com/mbeHNQp.png">
+
+![Global Dark theme](https://i.imgur.com/mbeHNQp.png)
 
 ## Addon dark themes
 You can apply a dark theme to certain addons changing the UUID's of them inside the `addons.css` file inside the "Full dark theme" folder (more instructions on how to do that inside the addons file).
-<img src="https://i.imgur.com/bEleqP7.png" title="Dark addons" />
+
+![Dark addons](https://i.imgur.com/bEleqP7.png)
+
 Here is a list of the themed addons:
 * [Ant Video Downloader](https://addons.mozilla.org/en-US/firefox/addon/video-downloader-player/)
 * [Cookie autodelete](https://addons.mozilla.org/en-US/firefox/addon/cookie-autodelete/)
@@ -76,10 +81,12 @@ You might have noticed that we no longer have [Lastpass dark theme](https://gist
 ## The scrollbars
 
 This theme colors scrollbars using `userContent.css` to give them a basic re-color.
-<img src="https://i.imgur.com/hqwoq9n.png" title="Re-colored dark scrollbar" />
+
+![Re-colored dark scrollbar](https://i.imgur.com/hqwoq9n.png)
 
 If you **want a different style on the scrollbars**, you can try using the `scrollbars.as.css` file inside the [Alternative scrollbars](https://github.com/Izheil/Quantum-Nox-Firefox-Dark-Full-Theme/tree/master/Full%20dark%20theme/Alternative%20scrollbars%20%26%20tooltips/Alternative%20scrollbars) folder, which will make the scrollbars look more rounded and will have some sort of "puffy" effect when clicking them.
-<img src="https://i.imgur.com/sOHN1ds.gif" title="Custom dark blue scrollbar" />
+
+![Custom dark blue scrollbar](https://i.imgur.com/sOHN1ds.gif)
 
 If instead you just **don't want scrollbars to show at all but keep scrollability**, you can do this through `userContent.css` setting the variable `--scrollbars-width` to none (should be the first rule on the `:root` section (almost at the start)), and deleting `scrollbars.as.css`.
 

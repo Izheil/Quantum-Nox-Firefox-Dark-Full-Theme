@@ -1,20 +1,20 @@
-<h1>Alternative tooltip designs</h1>
-<p>You can find alternative tooltip designs here. You should only use 1 at a time, and each time you change the style,
-you'll have to clear the "startupcache" folder on the local folder inside <code>about:profiles</code>.</p>
+# Alternative tooltip designs
+You can find alternative tooltip designs here. You should only use 1 at a time, and each time you change the style,
+you'll have to clear the "startupcache" folder on the local folder inside `about:profiles`.
 
-<h3>tooltips-compact.as.css</h3>
-<p>This file will make the tooltips look the same as the default tooltips file of this theme, except with less padding, 
-which makes them have more compact.</p>
+### tooltips-compact.as.css
+This file will make the tooltips look the same as the default tooltips file of this theme, except with less padding, 
+which makes them have more compact.
 
-<h3>tooltips-gray.as.css</h3>
-<p>This design will make the tooltips background color grayish.</p>
+### tooltips-gray.as.css
+This design will make the tooltips background color grayish.
 
-<h3>tooltips-dark.as.css</h3>
-<p>This design will make the tooltips background color almost black with a gray border.</p>
+### tooltips-dark.as.css
+This design will make the tooltips background color almost black with a gray border.
 
-<h3>tooltips-translucid.as.css</h3>
-<p>This file will make the tooltips background be semi-transparent (at 80% opacity), so you can see through the tooltips a 
-bit.</p>
+### tooltips-translucid.as.css
+This file will make the tooltips background be semi-transparent (at 80% opacity), so you can see through the tooltips a 
+bit.
 
-<h3>Other variants</h3>
-<p>As you can probably tell, any of the other ones not commented here is just a combination of the ones above.</p>
+### Other variants
+As you can probably tell, any of the other ones not commented here is just a combination of the ones above.
