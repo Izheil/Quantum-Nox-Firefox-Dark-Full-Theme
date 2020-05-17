@@ -15,6 +15,7 @@ If you want to know how to change some colors of the theme, check the [wiki](htt
 
 Files updated:
 * **Addons.css**: Updated [Ublock Origin](https://addons.mozilla.org/en-US/firefox/addon/ublock-origin/)'s theme.
+* **userContent.css**: Fixed some colors in `about:home` search suggestions box.
 
 ### Pre-Last update: 12/05/2019
 
