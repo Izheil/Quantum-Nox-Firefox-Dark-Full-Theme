@@ -1,6 +1,6 @@
 /* You can find an updated version here: https://github.com/Izheil/Quantum-Nox-Firefox-Dark-Full-Theme */
 /* Made by Izheil */
-/* Last updated: 18/03/2020 */
+/* Last updated: 17/05/2020 */
 
 /*------ HOW TO MAKE THE ADDON THEMES WORK ------*/
 /* To use this part of the code, you will have to find the dynamic UUID of your extensions, and replace it where the 
@@ -925,7 +925,7 @@ label::before, .ui.popup {filter: invert(75%)}
 /*------ UBLOCK ORIGIN BLOCKING PAGE ------*/
 @-moz-document url-prefix(moz-extension://TYPE-UUID-OF-UBLOCK-ORIGIN-HERE/document-blocked.html){
 
-html, body {background-color: #222 !important}
+html, body, .code {background-color: #222 !important}
 
 body {margin-top: 10em}
 
@@ -952,63 +952,64 @@ button:hover {
 /*------ UBLOCK ORIGIN CONTROL PANEL TOP BUTTONS ------*/
 @-moz-document url-prefix(moz-extension://TYPE-UUID-OF-UBLOCK-ORIGIN-HERE/dashboard.html) {
 
-#dashboard-nav-widgets {background: #222 !important; border-bottom: 1px solid black !important}
+#dashboard-nav {background: #222 !important; border-bottom: 1px solid black !important}
 
-#dashboard-nav-widgets span {color: #ccc !important}
+#dashboard-nav span {color: #ccc !important}
 
-a {
-	background-color: #444 !important; 
-	color: #777 !important;
-	border: 1px solid black !important;
-	border-bottom: 1px solid transparent !important}
-
-a.tabButton.selected {
-	background-color: #333 !important; 
-	color: #ccc !important;
-	border: 1px solid black !important;
-	border-bottom: 1px solid transparent !important}
+.tabButton:not(.selected):hover {
+  background-color: #444 !important; 
+  color: #ddd !important;
+  border-bottom-color: #555 !important}
 }
 
 /*------ UBLOCK ORIGIN CONTROL PANEL CONTENT PAGES ------*/
-@-moz-document url-prefix(moz-extension://TYPE-UUID-OF-UBLOCK-ORIGIN-HERE/){
-body, html {
-	background: #333 !important;
-	color: #ccc !important;
+@-moz-document url-prefix(moz-extension://TYPE-UUID-OF-UBLOCK-ORIGIN-HERE/) {
+body, html, #actions {
+  background: #333 !important;
+  color: #ccc !important;
 }
 
-a:not(.tabButton):link {color: #09f !important}
-a:not(.tabButton):visited {color: #0070aa !important}
-a:not(.tabButton):hover {color: #0ff !important}
-a:not(.tabButton):active {color: #0050aa !important}
+:root {
+  --ink-20: #666 !important;
+  --ink-50: #fff !important;
+  --fg-0-40: #aaa !important;
+  --fg-0-50: #999 !important;
+  --fg-0-60: #888 !important;
+  --fg-icon-info-lvl-1-dimmed: #09f !important;
+  --fg-icon-info-lvl-1: #0bf !important;
+  --fg-icon-info-lvl-4-dimmed: #920 !important;
+  --hor-separator-color: #666 !important;
+  --bg-1: #222 !important;
+}
 
-a.fa.info, a.fa.mustread, a.fa.support, 
-.fa.status.cache, .fa.status.updating {color: #bbb !important}
+a:link {color: #09f !important}
+a:visited {color: #0070aa !important}
+a:hover {color: #0bf !important}
+a:active {color: #0050aa !important}
 
-button:not(.whatisthis):not(#buttonUpdate) {
-  -moz-appearance: none !important;
-  border-radius: 3px !important;
+.fa.info:hover, .fa-icon.info:hover,
+.listEntry .fa-icon.content:hover,
+.listEntry .fa-icon.support:hover,
+.listEntry .fa-icon.status.cache:hover
+ {fill: #fff !important}
+
+button:not(#buttonUpdate) {
   background: #555 !important;
   color: #ddd !important;
-  border: none !important}
+    fill: #ddd !important}
 
-button:not(.whatisthis):not(#buttonUpdate):hover {
-  background: #111 !important;
-  color: #ddd !important}
+button:not(#buttonUpdate):hover {
+    background: #444 !important;
+    color: #fff !important}
 
-button.whatisthis {filter: brightness(200%) !important}
+button[disabled] {opacity: 0.7 !important}
 
-button[disabled] {opacity: 0.5 !important}
-
-#buttonUpdate, button.important {
-  -moz-appearance: none !important;
-  border-radius: 3px !important;
+#buttonUpdate {
   background: #ffbb33 !important;
-  color: #000 !important;
-  border: none !important}
+  color: #000 !important}
 
-#buttonUpdate:hover, button.important:hover {
-  background: #cc8800 !important;
-  color: #ddd !important}
+#buttonUpdate:hover{
+  background: #cc8800 !important}
 
 .cm-search-widget, .CodeMirror-gutters, 
 .CodeMirror-merge-gap {background: #222 !important; border: none !important}
@@ -1016,41 +1017,42 @@ button[disabled] {opacity: 0.5 !important}
 .cm-search-widget {border-bottom: 1px solid #000 !important;}
 
 .CodeMirror, .CodeMirror-merge, .cm-search-widget input {
-	-moz-appearance: none !important;
-	background: #444 !important; 
-	color: #aaa !important; 
-	border: none !important}
+  -moz-appearance: none !important;
+  background: #444 !important; 
+  color: #aaa !important; 
+  border: none !important}
 
 .CodeMirror-activeline-background {background: #033 !important}
 
 .cm-staticext {color: #0aa !important}
 .cm-builtin {color: #07F !important}
+.cm-keyword {color: rgb(250, 40, 100) !important}
 
-.CodeMirror-line  *|*::selection {background: #055 !important}
+.CodeMirror-selected, .CodeMirror-line *::selection {background: #055 !important}
 
 .cm-comment {color: #aaa !important}
+.CodeMirror-cursor {border-left-color: #aaa !important}
 .cm-staticnetBlock {color: #f62 !important}
+.cm-staticOpt {background-color: #111 !important}
 
-a.fa.info.important {color: #fa0 !important}
-
-.fa.status.unsecure, a.fa.remove {color: #f33 !important}
-
-textarea, .whatisthis-expanded {
-	-moz-appearance: none !important; 
-	background-color: #222 !important; 
-	color: #aaa !important;
-	border: 2px solid #000 !important}
+textarea {
+  -moz-appearance: none !important; 
+  background-color: #222 !important; 
+  color: #aaa !important;
+  border: 1px solid #555 !important}
 
 code {background-color: #222 !important}
 
-.rulesContainer li:nth-child(odd) {background-color: #222 !important}
-.rulesContainer li:nth-child(even) {background-color: #444 !important}
+.CodeMirror-code > div:nth-child(odd),
+.CodeMirror-code > pre:nth-child(odd) {background-color: #383838 !important}
+.CodeMirror-code > div:nth-child(even),
+.CodeMirror-code > pre:nth-child(even) {background-color: #444 !important}
 
 input[type=number], input[type="text"] {
-	-moz-appearance: none !important;
-	background: #222 !important;
-	border: 1px solid #000 !important;
-	color: #ccc !important}
+  -moz-appearance: none !important;
+  background: #222 !important;
+  border: 1px solid #000 !important;
+  color: #ccc !important}
 
 /* Checkbox coloring */
 input[type="checkbox"] {
@@ -1094,39 +1096,39 @@ select .menulist-dropmarker {display: none}
 /* Basic menu */
 .tooltipContainer, #panes {background-color: #333 !important}
 
-.tool.enabled:hover {color: #fff !important}
+.tool.enabled:hover, .hnSwitch.fa-icon.fa-icon-badged:hover {fill: #fff !important}
+
+body:not(.off) #switch .fa-icon {fill: var(--blue-60) !important}
 
 p {color: #ccc !important}
 .statValue {color: #888 !important}
 
 h2 {
-	background-color: #222 !important; 
-	color: #ddd !important}
+  background-color: #222 !important; 
+  color: #ddd !important}
 
 div:not(.tooltipContainer):not(#panes):not(#rulesetTools):not(#refresh) {
-	background-image: linear-gradient(rgba(0,0,0,0.7),rgba(0,0,0,0.7)) !important}
+  background-image: linear-gradient(rgba(0,0,0,0.7),rgba(0,0,0,0.7)) !important}
 
 span[data-i18n-tip="popupTipRevertRules"], span[data-i18n-tip="popupTipSaveRules"] {
-	background: #222 !important;
-	border: 1px solid black !important}
-
-span[data-src="/"], span[data-src="."] {
-	border-left: 1px solid #000 !important}
+  background: #222 !important;
+  border: 1px solid black !important}
 
 #extraTools, #tooltip {
-	background: #ddd !important;
-	color: #ccc !important}
+  background: #ddd !important;
+  color: #ccc !important}
 
 #extraTools span:hover {color: #888 !important}
 
 /* Advanced menu */
-#firewallContainer > div:not(.isCname) > span, #firewallContainer > div.isCname > span:not(:first-of-type) {
+#actionSelector {filter: brightness(70%) !important}
+
+#firewallContainer > div:not(.isCname) > span:not([data-src="."]) {
   color: #ccc !important}
 
-#firewallContainer > div.isCname > span:first-of-type {color: #09f !important}
+#firewallContainer span[data-src="."] {color: #fff !important}
 
-#firewallContainer > div > span:not([data-i18n="popupAnyRulePrompt"]):not([data-i18n="popupTipGlobalRules"]):not([data-i18n="popupTipLocalRules"]) {
-  border-top: 1px solid #000 !important}
+#firewallContainer > div.isCname > span:first-of-type {color: #09f !important}
 
 #firewallContainer span:hover {background-image: linear-gradient(rgba(255,255,255,0.2),rgba(255,255,255,0.2)) !important}
 
@@ -1142,6 +1144,54 @@ span[data-src="/"], span[data-src="."] {
 #firewallContainer > div {border: none !important}
 }
 
+@-moz-document url-prefix(moz-extension://TYPE-UUID-OF-UBLOCK-ORIGIN-HERE/popup-fenix.html) {
+#sticky {
+  background: #333 !important}
+
+hr {border-color: #666 !important}
+
+.toolRibbon .fa-icon, #moreButton .fa-icon, 
+#lessButton .fa-icon, .rulesetTools .fa-icon {
+  fill: #ccc !important}
+
+.rulesetTools .fa-icon {
+  background: #222 !important;
+  border-color: #555 !important}
+
+body:not(.off) #switch .fa-icon {fill: #0250CC}
+body.off #switch .fa-icon {fill: #222}
+
+#switch:hover {background: transparent !important}
+
+.tool:hover {
+  background-color: #555 !important;
+  fill: #fff !important}
+
+#moreButton:hover, #lessButton:hover {
+  background-color: #555 !important}
+
+/* Advanced menu */
+#actionSelector {filter: brightness(70%) !important}
+
+#firewall > div:not(.isCname) > span:not([data-src="."]) {
+  color: #ccc !important}
+
+#firewall span[data-src="."] {color: #fff !important}
+
+#firewall > div.isCname > span:first-of-type {color: #09f !important}
+#firewall > div.isCname:hover > span > span {background: transparent !important}
+
+#firewall span:hover {background-image: linear-gradient(rgba(255,255,255,0.2),rgba(255,255,255,0.2)) !important}
+
+#firewall > div.isCname > span:first-of-type:hover {color: #2020dd !important}
+
+#firewall span span, #firewall span span:hover {
+  background-image: none !important;
+  border-bottom: 1px solid transparent !important}
+
+#firewall > div > span:not(.blockRule):not(.noopRule):not(.allowRule) {
+  background-color: #444 !important}
+}
 /*------ UBLOCK ORIGIN UI LOGGER ------*/
 @-moz-document url-prefix(moz-extension://TYPE-UUID-OF-UBLOCK-ORIGIN-HERE/logger-ui.html) {
 
@@ -1152,14 +1202,13 @@ body, .permatoolbar, .vscrollable, table, html {background: #222 !important}
   background: #444 !important;
   border: 1px solid #000 !important}
 
-#info .fa-icon_info-circle, #settings .fa-icon_cog, 
-#loggerExport .fa-icon_clipboard {fill: #000 !important}
+.button.fa-icon, .button.ubo-icon {fill: #ccc !important}
+.button.fa-icon:hover, .button.ubo-icon:hover {fill: #fff !important}
+
+select {background: #444 !important}
+select:hover {background: #666 !important}
 
 #vwRenderer .logEntry > div[data-tabid="-1"] {text-shadow: 0 0.2em 0.4em #000 !important}
-
-#info:hover .fa-icon_info-circle, #settings:hover .fa-icon_cog, 
-#loggerExport:hover .fa-icon_clipboard, .button:not(.disabled):hover, 
-.needdom:hover {fill: #ddd !important}
 
 #modalOverlayClose, .tools .fa-icon {background: transparent !important; fill: #ddd !important}
 #modalOverlayClose svg {stroke: #ddd !important}
@@ -1183,7 +1232,7 @@ body, .permatoolbar, .vscrollable, table, html {background: #222 !important}
 
 input, .logEntry, #modalOverlayContainer, textarea, #filterExprPicker {color: #ddd !important}
 
-#vwRenderer .logEntry > div[data-aliasid] {color: #07f !important}
+#vwRenderer .logEntry > div[data-aliasid] {color: #09f !important}
 #vwRenderer .logEntry > div[data-aliasid]:hover {color: #02a !important}
 
 #netInspector #filterInput {border: none !important}
