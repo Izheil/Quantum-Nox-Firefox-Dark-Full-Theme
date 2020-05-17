@@ -1,6 +1,6 @@
 /* You can find an updated version here: https://github.com/Izheil/Quantum-Nox-Firefox-Dark-Full-Theme */
 /* Made by Izheil */
-/* Last updated: 12/05/2020 */
+/* Last updated: 17/05/2020 */
 
 /* COLORING PART STARTS HERE */
 
@@ -86,8 +86,8 @@ but is disabled by default in this theme (Disable for the default tab line color
   --Lists-treechildren-selected-bg: rgba(0,120,255,0.5);
   --Lists-treechildren-selected-border: #0a84ff;
   --Lists-treechildren-selected-txt: #fff;
-  --Sidebar-header: #333338;
-  --Window-bg: #383840;
+  --Sidebar-header: #252525;
+  --Window-bg: #353535;
 
   /* Customization page */
   --toolbar-bgcolor: #303030 !important;

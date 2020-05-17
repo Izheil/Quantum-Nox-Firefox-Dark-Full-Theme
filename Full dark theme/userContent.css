@@ -1,6 +1,6 @@
 /* You can find an updated version here: https://github.com/Izheil/Quantum-Nox-Firefox-Dark-Full-Theme */
 /* Made by Izheil */
-/* Last updated: 19/04/2020 */
+/* Last updated: 17/05/2020 */
 
 /* This part imports the Addons file if there is one, so that you don't have to edit the dynamic URL
 from the addons rules every time we update anything here */
@@ -443,7 +443,7 @@ input[data-l10n-id="onboarding-join-form-email"] {color: #ddd !important}
 	background-color: #505050 !important;
     color: #ccc !important}
 
-.contentSearchOneOffsTable {border-top: 1px solid #000 !important}
+.contentSearchOneOffsTable {border-top: 1px solid #666 !important}
 
 .contentSearchSuggestionTable .contentSearchOneOffsTable .contentSearchSuggestionsContainer {
 	background: var(--home-search-engine-choices) !important}
@@ -451,11 +451,14 @@ input[data-l10n-id="onboarding-join-form-email"] {color: #ddd !important}
 .contentSearchSuggestionsList .contentSearchSuggestionRow:hover,
 .contentSearchSuggestionsList .contentSearchSuggestionRow.formHistory.selected {background: rgba(255,255,255,0.1) !important; color: #fff !important}
 
-.contentSearchSuggestionTable .contentSearchHeader, .contentSearchSuggestionTable .contentSearchSettingsButton {border-color: #000 !important}
+.contentSearchSuggestionTable .contentSearchHeader {border-color: #000 !important}
 
-.contentSearchOneOffItem:not(.last-row) {border-bottom: 1px solid #000 !important}
+.contentSearchOneOffItem:not(.last-row), .contentSearchHeaderRow,
+.contentSearchHeaderRow .contentSearchHeader {border-bottom: 1px solid #666 !important}
 
 .contentSearchSuggestionsContainer button:hover {background: rgba(255,255,255, 0.25) !important}
+
+.contentSearchOneOffItem, #contentSearchSearchWithHeader {border: none !important}
 
 .contentSearchHeader {
  	background: #333 !important;
@@ -465,15 +468,23 @@ input[data-l10n-id="onboarding-join-form-email"] {color: #ddd !important}
 .contentSearchSearchWithHeaderSearchText {
 	color: var(--Home-search-item-text-color) !important}
 
-.contentSearchSettingsButton {
-    background: linear-gradient(#333,#111) !important;
-    color: #777 !important}
+#contentSearchSettingsButton {
+	background: #222 !important;
+	color: #777 !important;
+	border-top: 3px solid #333 !important;
+	border-left: 3px solid #333;
+	border-right: 3px solid #111;
+	border-bottom: 3px solid #111;}
 
 .contentSearchSettingsButton.selected {
     color: #555 !important}
 
-.contentSearchSettingsButton:active {
-    background: linear-gradient(#111,#333) !important}
+#contentSearchSettingsButton:hover {
+	background: #111 !important;
+	border-top: 3px solid #111 !important;
+	border-left: 3px solid #111;
+	border-right: 3px solid #333;
+	border-bottom: 3px solid #333;}
 
 .search-button {
 	fill: var(--in-content-border-focus) !important}

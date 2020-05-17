@@ -1,7 +1,7 @@
 # Full dark theme for firefox
 Following the method described here, you will be able to give dark colors to firefox as shown in the following picture:
 
-![Dark firefox UI with custom background](https://i.imgur.com/zNKhEV6.png)
+![Dark firefox UI](https://i.imgur.com/I4x1a8w.png)
 
 ![Dark addons](https://i.imgur.com/t1Nf65V.png)
 
@@ -58,7 +58,7 @@ Bolded files or folders mark the required things to enable JS injection.
 The userChrome file turns dark all context menus, bookmarks, the url bar, the search bar, the main menu, and the toolbar. 
 It will, although, not turn dark the extension popups you may have.
 
-![Dark search menu (spanish)](https://i.imgur.com/wWjBcqz.png)
+![Dark search menu (spanish)](https://i.imgur.com/E7iG7az.png)
 
 ![Dark context menu (spanish)](https://i.imgur.com/7zj3SSq.png)
 
