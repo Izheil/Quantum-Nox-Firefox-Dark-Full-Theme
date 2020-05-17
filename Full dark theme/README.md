@@ -3,7 +3,7 @@ Following the method described here, you will be able to give dark colors to fir
 
 ![Dark firefox UI with custom background](https://i.imgur.com/zNKhEV6.png)
 
-![Dark addons](https://i.imgur.com/bEleqP7.png)
+![Dark addons](https://i.imgur.com/t1Nf65V.png)
 
 ## Installation
 

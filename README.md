@@ -54,7 +54,7 @@ While it's not perfect (meaning that you should still use per-site styles for th
 ## Addon dark themes
 You can apply a dark theme to certain addons changing the UUID's of them inside the `addons.css` file inside the "Full dark theme" folder (more instructions on how to do that inside the addons file).
 
-![Dark addons](https://i.imgur.com/bEleqP7.png)
+![Dark addons](https://i.imgur.com/t1Nf65V.png)
 
 Here is a list of the themed addons:
 * [Ant Video Downloader](https://addons.mozilla.org/en-US/firefox/addon/video-downloader-player/)
