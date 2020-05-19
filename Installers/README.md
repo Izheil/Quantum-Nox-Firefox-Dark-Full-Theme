@@ -42,7 +42,7 @@ python3 ./Quantum-Nox-Installer.py
 On Mac you only need to run the file with elevated privileges (asuming you opened the console where the .py file is):
 
 ```
-sudo python3 Quantum-Nox-Installer.py
+python3 Quantum-Nox-Installer.py
 ```
 
 ### To create an executable:
