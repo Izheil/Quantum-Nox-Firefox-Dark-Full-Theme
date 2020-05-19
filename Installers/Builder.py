@@ -26,7 +26,7 @@ def SystemOS():
     else: SystemOS = "Unknown"
     return SystemOS
 
-if SystemOS() == "Linux":
+if SystemOS() != "Windows":
     if os.geteuid() != 0:
         os.execvp("sudo", ["sudo"] + sys.argv)
 else: elevate.elevate()
