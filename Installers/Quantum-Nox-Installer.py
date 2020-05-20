@@ -193,15 +193,15 @@ elif SystemOS() == "Linux" or SystemOS() == "Unknown":
         if not os.access(rootD, os.F_OK):
             rootD = "Not found"
 elif SystemOS() == "Mac":
-    root = r"/Applications/Firefox.app/contents/resources"
-    rootN = r"/Applications/Firefox Nightly.app/contents/resources"
-    rootD = r"/Applications/Firefox Developer Edition.app/contents/resources"
+    root = r"/Applications/Firefox.app/Contents/Resources"
+    rootN = r"/Applications/Firefox Nightly.app/Contents/Resources"
+    rootD = r"/Applications/Firefox Developer Edition.app/Contents/Resources"
     if not os.access(root, os.F_OK):
         root = "Not found"
     if not os.access(rootN, os.F_OK):
         rootN = "Not found"
     if not os.access(rootD, os.F_OK):
-        rootN = "Not found"
+        rootD = "Not found"
 
 # We get the default user folders here
 NProfile = "Not found"
