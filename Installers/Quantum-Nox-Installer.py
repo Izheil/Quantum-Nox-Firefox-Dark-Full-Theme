@@ -1620,7 +1620,7 @@ if CLArgs.root:
     elif CLArgs.root.capitalize() == "Nightly":
         CLArgs.root = rootN
     if not os.access(CLArgs.root, os.F_OK) and argumentsInUse:
-        print("The path " + CLArgs.root + " was incorrect.")
+        print("The root path " + CLArgs.root + " was incorrect.")
         sys.exit()
     if not CLArgs.silent and argumentsInUse:
         print("Using " + CLArgs.root + " as root path.")
@@ -1632,7 +1632,7 @@ if CLArgs.profile:
     elif CLArgs.root.capitalize() == "Nightly":
         CLArgs.profile = NProfile
     if not os.access(CLArgs.profile, os.F_OK) and argumentsInUse:
-        print("The path " + CLArgs.profile + " was incorrect.")
+        print("The profile path " + CLArgs.profile + " was incorrect.")
         sys.exit()
     if not CLArgs.silent and argumentsInUse:
         print("Using " + CLArgs.profile + " as profile path.")
