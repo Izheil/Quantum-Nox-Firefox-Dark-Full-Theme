@@ -203,22 +203,14 @@ elif SystemOS() == "Mac":
     if not os.access(rootD, os.F_OK):
         rootD = "Not found"
 
-# We get the default user folders here
-NProfile = "Not found"
-RProfile = "Not found"
-DProfile = "Not found"
-DefProfiles = readDefaults(MozPFolder)
-
-
+# We get the default folders here
 def RPFinder():
-    for x in DefProfiles:
+    for x in Profiles:
         splitter = x.split(".")
         ProfileName = splitter[-1]
         if ProfileName == "default-release":
             return x
         elif ProfileName == "default":
-            return x
-        elif ProfileName[0:7] == "default":
             return x
         else:
             continue
@@ -226,7 +218,7 @@ def RPFinder():
 
 
 def NPFinder():
-    for y in DefProfiles:
+    for y in Profiles:
         Nsplitter = y.split(".")
         ProfileName = Nsplitter[-1]
         if ProfileName == "default-nightly":
@@ -239,9 +231,9 @@ def NPFinder():
 
 
 def DPFinder():
-    for y in DefProfiles:
-        Nsplitter = y.split(".")
-        ProfileName = Nsplitter[-1]
+    for y in Profiles:
+        Dsplitter = y.split(".")
+        ProfileName = Dsplitter[-1]
         if ProfileName == "dev-edition-default":
             return y
         elif ProfileName[0:19] == "dev-edition-default":
@@ -250,47 +242,34 @@ def DPFinder():
             continue
     return "Not found"
 
-
-# We get the profiles here
+# We call the default profile finders
 RProfile = RPFinder()
 NProfile = NPFinder()
 DProfile = DPFinder()
 
-if DefProfiles is None:
-    if root != "Not found" or rootN != "Not found" or rootD != "Not found":
-        for x in Profiles:
-            splitter = x.split(".")
-            ProfileName = splitter[-1]
-            if ProfileName == "default-nightly":
-                NProfile = x
-            elif ProfileName == "default-release":
-                RProfile = x
-            elif ProfileName == "dev-edition-default":
-                DProfile = x
-            elif ProfileName == "default":
-                RProfile = x
-            elif ProfileName[0:15] == "default-nightly":
-                NProfile = x
-            elif ProfileName[0:7] == "default":
-                RProfile = x
+# Check if only 1 profile exists and only 1 installation exists
+# so that if not using the default profile names, it will get
+# selected.
+if Profiles is not None:
+    # First we check if only 1 firefox is installed
+    onlyStable = (root != "Not found"
+        and rootN == "Not found"
+        and rootD == "Not found")
+    onlyDev = (rootD != "Not found"
+        and root == "Not found"
+        and rootN == "Not found")
+    onlyNightly = (rootN != "Not found"
+        and root == "Not found"
+        and rootD == "Not found")
 
-        if RProfile == "Not found":
-            if (len(Profiles) == 1 and root != "Not found"
-            and rootN == "Not found"
-            and rootD == "Not found"):
-                RProfile = Profiles[0]
+    if RProfile == "Not found" and onlyStable:
+        RProfile = Profiles[0]
 
-        if NProfile == "Not found":
-            if (len(Profiles) == 1 and rootN != "Not found"
-            and root == "Not found"
-            and rootD == "Not found"):
-                NProfile = Profiles[0]
+    if DProfile == "Not found" and onlyDev:
+        DProfile = Profiles[0]
 
-        if DProfile == "Not found":
-            if (len(Profiles) == 1 and rootD != "Not found"
-            and root == "Not found"
-            and rootN == "Not found"):
-                DProfile = Profiles[0]
+    if NProfile == "Not found" and onlyNightly:
+        NProfile = Profiles[0]
 
 # This applies the basic patch for the functions to work
 def fullPatcher(FFversion, FFprofile):
