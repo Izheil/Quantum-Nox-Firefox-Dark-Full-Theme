@@ -2,8 +2,8 @@ import os
 import re
 import sys
 import glob
+import ctypes
 import shutil
-import elevate
 import tkinter
 import argparse
 import subprocess
@@ -26,10 +26,14 @@ def SystemOS():
     else: SystemOS = "Unknown"
     return SystemOS
 
-if SystemOS() != "Windows":
+OSinUse = SystemOS()
+
+if OSinUse != "Windows":
     if os.geteuid() != 0:
         os.execvp("sudo", ["sudo"] + sys.argv)
-else: elevate.elevate()
+elif ctypes.windll.shell32.IsUserAnAdmin() == 0:
+    ctypes.windll.shell32.ShellExecuteW(None, "runas", sys.executable, __file__, None, 1)
+    sys.exit()
 
 def readProfiles(profile):
     "Fetches the profile folders"
@@ -37,7 +41,7 @@ def readProfiles(profile):
     ProfilesINI = os.path.normpath(profile + "/profiles.ini")
     Paths = []
     if not os.access(ProfilesINI, os.F_OK):
-        if SystemOS() == "Windows" or SystemOS() == "Mac":
+        if OSinUse == "Windows" or OSinUse == "Mac":
             profile = os.path.normpath(profile + "/Profiles")
 
         profilenames = os.listdir(profile)
@@ -49,9 +53,9 @@ def readProfiles(profile):
                 profilepath = re.match("Path=(.*)", line, re.M|re.I)
                 if profilepath != None:
                     rotationpath = profilepath.group(1)
-                    if (((SystemOS() == "Windows" or SystemOS() == "Mac") and
+                    if (((OSinUse == "Windows" or OSinUse == "Mac") and
                         rotationpath[0:9] == "Profiles/") or
-                        SystemOS() == "Linux" and rotationpath[0] != "/"):
+                        OSinUse == "Linux" and rotationpath[0] != "/"):
                         Paths.append(os.path.normpath(profile + "/" + profilepath.group(1)))
                     else:
                         Paths.append(os.path.normpath(profilepath.group(1)))
@@ -71,16 +75,16 @@ def readDefaults(profile):
                 defaultspath = re.match("Default=(.*)", line, re.M|re.I)
                 if defaultspath != None:
                     defaultrotation = defaultspath.group(1)
-                    if (((SystemOS() == "Windows" or SystemOS() == "Mac") and
+                    if (((OSinUse == "Windows" or OSinUse == "Mac") and
                         defaultrotation[0:9] == "Profiles/") or
-                        SystemOS() == "Linux" and defaultrotation[0] != "/"):
+                        OSinUse == "Linux" and defaultrotation[0] != "/"):
                         Paths.append(os.path.normpath(profile + "/" + defaultspath.group(1)))
                     else:
                         Paths.append(os.path.normpath(defaultspath.group(1)))
         return Paths
 
 # We get the user folders here
-if SystemOS() == "Windows":
+if OSinUse == "Windows":
     # This is a workaround to find the current logged in user
     # in case they are not using an administrator account,
     # since otherwise it's not possible to find it on Windows
@@ -131,31 +135,31 @@ if SystemOS() == "Windows":
         home = os.getenv('APPDATA')
     MozPFolder = home + r"\Mozilla\Firefox"
     Profiles = readProfiles(MozPFolder)
-elif SystemOS() == "Linux":
+elif OSinUse == "Linux":
     home = "/home/" + os.getenv("SUDO_USER")
     MozPFolder = home + r"/.mozilla/firefox"
     Profiles = readProfiles(MozPFolder)
-elif SystemOS() == "Mac":
+elif OSinUse == "Mac":
     home = str(Path.home())
     MozPFolder = home + r"/Library/Application Support/Firefox"
     Profiles = readProfiles(MozPFolder)
 
 # We get the default folder where programs are installed here
-if SystemOS() == "Windows":
+if OSinUse == "Windows":
     PFolder = r"C:\Program Files"
     if os.access(PFolder, os.F_OK) == False:
         PFolder = ""
-elif SystemOS() == "Linux" or SystemOS() == "Unknown":
+elif OSinUse == "Linux" or OSinUse == "Unknown":
     PFolder = r"/usr/lib"
     if os.access(PFolder, os.F_OK) == False:
         PFolder = ""
-elif SystemOS() == "Mac":
+elif OSinUse == "Mac":
     PFolder = r"/Applications/"
     if os.access(PFolder, os.F_OK) == False:
         PFolder = ""
 
 # We get the default folders for each installation here
-if SystemOS() == "Windows":
+if OSinUse == "Windows":
     root = r"C:\Program Files (x86)\Mozilla Firefox"
     rootN = r"C:\Program Files (x86)\Firefox Nightly"
     rootD = r"C:\Program Files (x86)\Firefox Developer Edition"
@@ -175,7 +179,7 @@ if SystemOS() == "Windows":
             rootD = r"C:\Program Files\Firefox Developer Edition"
             if not os.access(rootD, os.F_OK):
                 rootD = "Not found"
-elif SystemOS() == "Linux" or SystemOS() == "Unknown":
+elif OSinUse == "Linux" or OSinUse == "Unknown":
     root = r"/usr/lib/firefox/"
     rootN = r"/opt/nightly"
     rootD = r"/opt/developer"
@@ -191,7 +195,7 @@ elif SystemOS() == "Linux" or SystemOS() == "Unknown":
         rootD = r"/opt/firefox"
         if not os.access(rootD, os.F_OK):
             rootD = "Not found"
-elif SystemOS() == "Mac":
+elif OSinUse == "Mac":
     root = r"/Applications/Firefox.app/contents/resources"
     rootN = r"/Applications/Firefox Nightly.app/contents/resources"
     rootD = r"/Applications/Firefox Developer Edition.app/contents/resources"
@@ -271,6 +275,24 @@ if Profiles is not None:
     if NProfile == "Not found" and onlyNightly:
         NProfile = Profiles[0]
 
+# We try to get the folder where profiles are located to show
+# as the default to open in the "select profile" buttons.
+# If it doesn't exist we go back to the default mozilla folder.
+defPLocation = os.path.join(MozPFolder, "Profiles")
+
+if not os.access(defPLocation, os.F_OK):
+    if Profiles is not None:
+        if OSinUse == "Windows":
+            profileSplitter = Profiles[0].split("\\")
+        else:
+            profileSplitter = Profiles[0].split("/")
+        removeLast = len(profileSplitter[-1])
+        defPLocation = Profiles[0][0:-removeLast]
+        del removeLast
+        del profileSplitter
+    else:
+        defPLocation = MozPFolder
+
 # This applies the basic patch for the functions to work
 def fullPatcher(FFversion, FFprofile):
     "This method patches both the root and profile folders"
@@ -302,7 +324,7 @@ def fullPatcher(FFversion, FFprofile):
                 shutil.copy2(os.path.normpath(sys._MEIPASS + "/root/defaults/pref/config-prefs.js"), 
                              os.path.normpath(FFversion + "/defaults/pref/"))
 
-            if SystemOS() == "Linux":
+            if OSinUse == "Linux":
                 rootUser = os.getenv("SUDO_USER")
                 shutil.chown(ConfPref, user=rootUser, group=rootUser)
                 os.chmod(ConfPref, 0o775)
@@ -325,7 +347,7 @@ def fullPatcher(FFversion, FFprofile):
                 shutil.copytree(os.path.normpath(sys._MEIPASS + "/utils"), 
                                 os.path.normpath(FFprofile + "/chrome/utils"))
 
-            if SystemOS() == "Linux":
+            if OSinUse == "Linux":
                 chrome = FFprofile + "/chrome"
                 utils = chrome + "/utils"
                 rootUser = os.getenv("SUDO_USER")
@@ -466,7 +488,7 @@ def functionInstall(FFprofile, Func2Inst, FuncSettings="0"):
             if Func2Inst.startswith("Multirow") or Func2Inst == "Focus-tab":
                 writeSettings(InstFunct)
 
-            if SystemOS() == "Linux":
+            if OSinUse == "Linux":
                 fileOwn(InstFunct)
 
             # We remove the alternative versions on those functions
@@ -696,7 +718,7 @@ class patcherUI(Frame):
 
             elif SelButton == "2" or SelButton == "4" or SelButton == "6":
                 SelDir = os.path.normpath(
-                         filedialog.askdirectory(initialdir=MozPFolder))
+                         filedialog.askdirectory(initialdir=defPLocation))
 
             if SelDir != "" and SelDir != ".":
                 if SelButton == "1":
@@ -1047,7 +1069,7 @@ class patcherUI(Frame):
                 for x in values:
                     FFPprofile = x
                     # We get the name of the profile here
-                    if SystemOS() == "Windows":
+                    if OSinUse == "Windows":
                         splitter = x.split("\\")
                         FFPVersion = splitter[-1].split(".")[-1]
 
@@ -1472,7 +1494,7 @@ def UIStart():
 
     QNWindow = tkinter.Tk()
     QNWindow.resizable(False, False)
-    if SystemOS() == "Windows":
+    if OSinUse == "Windows":
         QNWindow.iconbitmap(os.path.normpath(sys._MEIPASS + '/icon.ico'))
     else:
         logo = PhotoImage(file=os.path.normpath(sys._MEIPASS + '/icon.gif'))
