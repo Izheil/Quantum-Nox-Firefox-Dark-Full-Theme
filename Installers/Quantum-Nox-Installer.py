@@ -401,6 +401,12 @@ def functionInstall(FFprofile, Func2Inst, FuncSettings="0"):
         FFTB = os.path.normpath(FFprofile 
                     + "/chrome/Tabs-below.as.css")
 
+    elif Func2Inst.startswith('Megabar'):
+        FFMB = os.path.normpath(FFprofile 
+                    + "/chrome/Megabar-disabled-until-focus.as.css")
+        FFMBAR = os.path.normpath(FFprofile 
+                    + "/chrome/Megabar-disabled-all-resizing.as.css")
+
     # These write the settings to the files
     def writeSettings(InstFunct):
         with open(InstFunct, "r+") as f:
@@ -443,6 +449,14 @@ def functionInstall(FFprofile, Func2Inst, FuncSettings="0"):
         if os.access(FFTBaA, os.F_OK):
             os.remove(FFTBaA)
 
+    def remDupMB(Func2Inst):
+        if os.access(FFMB, os.F_OK) \
+                and Func2Inst != "Megabar-until-focus":
+            os.remove(FFMB)
+        if os.access(FFMBAR, os.F_OK) \
+                and Func2Inst != "Megabar-all-resizing":
+            os.remove(FFMBAR)
+
     # This is the function to change ownership on Linux
     def fileOwn(profInstFile):
         rootUser = os.getenv('SUDO_USER')
@@ -471,6 +485,14 @@ def functionInstall(FFprofile, Func2Inst, FuncSettings="0"):
             FireFunct = os.path.normpath(os.getcwd()
                         + "/functions/Tabs-below-Menu-overTabs.as.css")
             InstFunct = FFTBoT
+        elif Func2Inst == "Megabar-until-focus":
+            FireFunct = os.path.normpath(os.getcwd()
+                        + "/functions/Megabar-disabled-until-focus.as.css")
+            InstFunct = FFMB
+        elif Func2Inst == "Megabar-all-resizing":
+            FireFunct = os.path.normpath(os.getcwd()
+                        + "/functions/Megabar-disabled-all-resizing.as.css")
+            InstFunct = FFMBAR
         elif Func2Inst == "Focus-tab":
             FireFunct = os.path.normpath(os.getcwd()
                         + "/functions/Focus-tab-on-hover.uc.js")
@@ -497,6 +519,8 @@ def functionInstall(FFprofile, Func2Inst, FuncSettings="0"):
                 remDupMR(Func2Inst)
             elif Func2Inst.startswith("Tabs-below"):
                 remDupTB(Func2Inst)
+            elif Func2Inst.startswith("Megabar"):
+                remDupMB(Func2Inst)
             return 0
 
         except IOError:
@@ -505,6 +529,8 @@ def functionInstall(FFprofile, Func2Inst, FuncSettings="0"):
                 errorMessage += "Multirow."
             elif Func2Inst.startswith("Tabs-below"):
                 errorMessage += "Tabs Below."
+            elif Func2Inst.startswith("Megabar"):
+                errorMessage += "Megabar resizing disabler."
             elif Func2Inst == "Focus-tab":
                 errorMessage = "Focus tabs on hover."
             elif Func2Inst == "Unread-state":
@@ -650,6 +676,21 @@ def functionRemove(FFprofile, Func2Remove):
 
         except IOError:
             errorMessage += "Tabs below."
+            displayError(errorMessage)
+            return 1
+
+    elif Func2Remove == "Megabar":
+        MB = os.path.normpath(FFprofile + "/chrome/Megabar-disabled-until-focus.as.css")
+        MBAR = os.path.normpath(FFprofile
+                                + "/chrome/Megabar-disabled-all-resizing.as.css")
+        try:
+            if os.access(MB, os.F_OK):
+                os.remove(MB)
+            if os.access(MBAR, os.F_OK):
+                os.remove(MBAR)
+
+        except IOError:
+            errorMessage += "Megabar resizing disabler."
             displayError(errorMessage)
             return 1
 
@@ -910,6 +951,12 @@ class patcherUI(Frame):
                 fpCkFTD.config(state="normal")
                 fpCkFTDE.config(state="normal")
 
+        def updateMBCheck():
+            if CkMB.get() == 0:
+                fpCkMB1.config(state="disabled")
+            elif CkMB.get() == 1:
+                fpCkMB1.config(state="normal")
+
         def updateTBCheck():
             if CkTB.get() == 0:
                 fpCkTB1.config(state="disabled")
@@ -1015,6 +1062,15 @@ class patcherUI(Frame):
                             Error += functionInstall(FFprofile,
                                                      "Tabs-below")
 
+                    # Disable megabar resizing
+                    if CkMB.get() == 1:
+                        if CkMB1.get() == 1:
+                            Error += functionInstall(FFprofile,
+                                            "Megabar-all-resizing")
+                        else:
+                            Error += functionInstall(FFprofile,
+                                            "Megabar-until-focus")
+
                     # Focus tabs on hover
                     if CkFT.get() == 1:
                         Error += functionInstall(FFprofile,
@@ -1118,81 +1174,61 @@ class patcherUI(Frame):
                     "Do you want to only remove the functions?.")
                     if removeFunctions == False:
                         return
+            elif CkFFP.get() == 1 and CkFF.get() == 0 and CkFFN.get() == 0 \
+            and CkFFD.get() == 0:
+                removeAll = False
             elif CkFFP.get() == 0 and not rpCkFFP1.curselection():
                 messagebox.showerror("No option selected", 
                     "You need to select at least one Firefox installation"
                     + "\nor profile folder to remove it's installed patch.")
                 return
 
+            # We define some arrays to specify which ones will be deleted
+            remRoot = []
+            remProf = []
+
             if CkFF.get() == 1:
-                if removeAll:
-                    erasePatch(rpCkFF12.get(), rpCkFF22.get())
-
-                if CkMR.get() == 1:
-                    functionRemove(rpCkFF22.get(), "Multirow")
-
-                if CkTB.get() == 1:
-                    functionRemove(rpCkFF22.get(), "Tabs-below")
-
-                if CkFT.get() == 1:
-                    functionRemove(rpCkFF22.get(), "Focus-tab")
-
-                if CkUT.get() == 1:
-                    functionRemove(rpCkFF22.get(), "Unread-state")
+                remRoot.append(rpCkFF12.get())
+                remProf.append(rpCkFF22.get())
 
             if CkFFD.get() == 1:
-                if removeAll:
-                    erasePatch(rpCkFFD12.get(), rpCkFFD22.get())
-
-                if CkMR.get() == 1:
-                    functionRemove(rpCkFFD22.get(), "Multirow")
-
-                if CkTB.get() == 1:
-                    functionRemove(rpCkFFD22.get(), "Tabs-below")
-
-                if CkFT.get() == 1:
-                    functionRemove(rpCkFFD22.get(), "Focus-tab")
-
-                if CkUT.get() == 1:
-                    functionRemove(rpCkFFD22.get(), "Unread-state")
+                remRoot.append(rpCkFFD12.get())
+                remProf.append(rpCkFFD22.get())
 
             if CkFFN.get() == 1:
-                if removeAll:
-                    erasePatch(rpCkFFN12.get(), rpCkFFN22.get())
-
-                if CkMR.get() == 1:
-                    functionRemove(rpCkFFN22.get(), "Multirow")
-
-                if CkTB.get() == 1:
-                    functionRemove(rpCkFFN22.get(), "Tabs-below")
-
-                if CkFT.get() == 1:
-                    functionRemove(rpCkFFN22.get(), "Focus-tab")
-
-                if CkUT.get() == 1:
-                    functionRemove(rpCkFFN22.get(), "Unread-state")
+                remRoot.append(rpCkFFN12.get())
+                remProf.append(rpCkFFN22.get())
 
             if CkFFP.get() == 1:
-                values = []
                 for y in rpCkFFP1.curselection():
-                    values.append(rpCkFFP1.get(y))
+                    remProf.append(rpCkFFP1.get(y))
 
-                for x in values:
+            if removeAll:
+                for x in remRoot:
+                    erasePatch(x, None)
+
+                for z in remProf:
+                    erasePatch(None, z)
+            else:
+                for z in remProf:
                     if CkMR.get() == 1:
-                        functionRemove(x, "Multirow")
+                        functionRemove(z, "Multirow")
 
                     if CkTB.get() == 1:
-                        functionRemove(x, "Tabs-below")
+                        functionRemove(z, "Tabs-below")
+
+                    if CkMB.get() == 1:
+                        functionRemove(z, "Megabar")
 
                     if CkFT.get() == 1:
-                        functionRemove(x, "Focus-tab")
+                        functionRemove(z, "Focus-tab")
 
                     if CkUT.get() == 1:
-                        functionRemove(x, "Unread-state")
+                        functionRemove(z, "Unread-state")
 
             if CkFFP.get() == 1 and CkFFN.get() == 0 \
             and CkFF.get() == 0 and CkFFD.get() == 0:
-                if values != []:
+                if remProf != []:
                     messagebox.showinfo("Unpatch complete", 
                         "Functions removed successfully.\n"
                         + "Restart firefox for changes to take effect.")
@@ -1346,7 +1382,7 @@ class patcherUI(Frame):
         rpCkFFP1.grid(column=1, row=14, columnspan=3, sticky="WE")
         rpDetail = Label(rootPatch,
             text="* You need to have patched Firefox root folder first "
-                 + "with the 'Firefox' or 'Firefox nightly'\nsections. "
+                 + "with the 'Firefox', 'Firefox Developer' or\n'Firefox nightly' sections. "
                  + "These only patch the profile folders.",
             justify="left", state="disabled")
         rpDetail.grid(column=1, row=15, columnspan=4, sticky="W")
@@ -1401,40 +1437,49 @@ class patcherUI(Frame):
                               variable=CkTB1, state="disabled")
         fpCkTB1.grid(column=0, row=6, columnspan=3, padx=20, sticky="W")
 
+        CkMB = tkinter.IntVar()
+        CkMB1 = tkinter.IntVar()
+        fpCkMB = Checkbutton(FPLF, text="Disable Megabar resize until focus",
+                             variable=CkMB, command=updateMBCheck)
+        fpCkMB.grid(column=0, row=7, columnspan=3, sticky="W")
+        fpCkMB1 = Checkbutton(FPLF, text="Disable Megabar resize completelly",
+                              variable=CkMB1, state="disabled")
+        fpCkMB1.grid(column=0, row=8, columnspan=3, padx=20, sticky="W")
+
         CkFT = tkinter.IntVar()
         CkFTDE = tkinter.IntVar()
         fpCkFT = Checkbutton(FPLF, text="Focus Tab on hover",
                              variable=CkFT, command=updateFTChildren)
-        fpCkFT.grid(column=0, row=7, columnspan=4, sticky="W")
+        fpCkFT.grid(column=0, row=9, columnspan=4, sticky="W")
         fpCkFTD = Label(FPLF, text="    Specify Delay (in ms)",
                         state="disabled")
-        fpCkFTD.grid(column=0, row=8, columnspan=2, sticky="E", padx=10)
+        fpCkFTD.grid(column=0, row=10, columnspan=2, sticky="E", padx=10)
         fpCkFTDE = Spinbox(FPLF, from_=0, to=2000, textvariable=CkFTDE)
         fpCkFTDE.delete(0,"end")
         fpCkFTDE.insert(0, 200)
         fpCkFTDE.config(state="disabled")
-        fpCkFTDE.grid(column=2, row=8, columnspan=2, sticky="W")
+        fpCkFTDE.grid(column=2, row=10, columnspan=2, sticky="W")
 
         CkUT = tkinter.IntVar()
         fpCkUT = Checkbutton(FPLF, text="Enable unread state on tabs*", 
                              variable=CkUT)
-        fpCkUT.grid(column=0, row=10, columnspan=4, sticky="W")
+        fpCkUT.grid(column=0, row=11, columnspan=4, sticky="W")
         fpCkUTD = Label(FPLF, text="* Allows you to customize unread tabs"
                                    + " with userChrome.css\n"
                                    + "using the [unread] attribute",
                                    state="disabled")
-        fpCkUTD.grid(column=0, row=11, columnspan=4, rowspan=2, 
+        fpCkUTD.grid(column=0, row=12, columnspan=4, rowspan=2, 
                      sticky="E", padx=10)
-        fpspacer3 = Label(FPLF, text="").grid(column=0, row=13, 
+        fpspacer3 = Label(FPLF, text="").grid(column=0, row=14, 
                                               sticky="w")
 
         fpfooter = Label(FPLF, text="For other functions:").grid(column=0, 
-                                                                 row=14,
+                                                                 row=15,
                                                                  columnspan=4,
                                                                  sticky="w")
         fpfooterL = Button(FPLF, text="Visit repository", cursor="hand2", 
                            command=callhome)
-        fpfooterL.grid(column=0, row=15, columnspan=5, sticky="WE")
+        fpfooterL.grid(column=0, row=16, columnspan=5, sticky="WE")
 
         PatchStats = LabelFrame(featurePatch, text="Patch status", padx=20)
         PatchStats.grid(column=0, row=1, pady=10, columnspan=4, sticky="WE")
@@ -1567,6 +1612,17 @@ parser.add_argument("-tbv", "--tabs-below-version",
                     + "1 (titlebar on top), 2 (titlebar above tabs).",
                     type=int, choices=[1, 2], default=1)
 
+# Megabar resize disabler arguments
+parser.add_argument("-mb", "--megabar",
+                    help="Installs the megabar resize disabler function "
+                    + "(Disables the resizing until focusing the megabar by default).",
+                    action="store_true")
+parser.add_argument("-mbv", "--megabar-version",
+                    help="Changes the options of megabar resize disabler. "
+                    + "Acceptable values: "
+                    + "1 (Disable resize until focus), 2 (Disable resizing completelly).",
+                    type=int, choices=[1, 2], default=1)
+
 # Focus tab on hover arguments
 parser.add_argument("-ft", "--focus-tab",
                     help="Enables focusing tabs on mouseover "
@@ -1610,7 +1666,8 @@ CLArgs = parser.parse_args()
 # We check if any installing or removal argument was given
 argumentsInUse = (CLArgs.multirow or CLArgs.unread_state
                   or CLArgs.focus_tab or CLArgs.tabs_below
-                  or CLArgs.remove or CLArgs.remove_all)
+                  or CLArgs.megabar or CLArgs.remove
+                  or CLArgs.remove_all)
 
 # We set the actions for command line arguments here
 if CLArgs.root:
@@ -1646,6 +1703,7 @@ if CLArgs.remove_all:
     CLError += erasePatch(CLArgs.root, CLArgs.profile)
     CLError += functionRemove(CLArgs.profile, "Multirow")
     CLError += functionRemove(CLArgs.profile, "Tabs-below")
+    CLError += functionRemove(CLArgs.profile, "Megabar")
     CLError += functionRemove(CLArgs.profile, "Focus-tab")
     CLError += functionRemove(CLArgs.profile, "Unread-state")
     if not CLArgs.silent and CLError == 0:
@@ -1659,6 +1717,10 @@ elif CLArgs.remove:
         CLError += functionRemove(CLArgs.profile, "Tabs-below")
         if not CLArgs.silent and CLError == 0:
             print("Tabs below uninstalled.")
+    if CLArgs.megabar:
+        CLError += functionRemove(CLArgs.profile, "Megabar")
+        if not CLArgs.silent and CLError == 0:
+            print("Megabar resize disabler uninstalled.")
     if CLArgs.focus_tab:
         CLError += functionRemove(CLArgs.profile, "Focus-tab")
         if not CLArgs.silent and CLError == 0:
@@ -1694,8 +1756,7 @@ else:
 
     if CLArgs.tabs_below:
         CLError = 0
-        CLTBVersion = CLArgs.tabs_below_version
-        if CLArgs.multirow_version == 1:
+        if CLArgs.tabs_below_version == 1:
             CLTBVersion = "Tabs-below"
         else:
             CLTBVersion = "Tabs-below-menu-over-tabs"
@@ -1703,6 +1764,17 @@ else:
                                    CLTBVersion)
         if not CLArgs.silent and CLError == 0:
             print("Tabs below installed.")
+
+    if CLArgs.megabar:
+        CLError = 0
+        if CLArgs.megabar_version == 1:
+            CLTBVersion = "Megabar-until-focus"
+        else:
+            CLTBVersion = "Megabar-all-resizing"
+        CLError += functionInstall(CLArgs.profile,
+                                   CLTBVersion)
+        if not CLArgs.silent and CLError == 0:
+            print("Megabar resize disabler installed.")
 
     if CLArgs.focus_tab:
         CLError = 0
