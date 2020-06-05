@@ -1424,7 +1424,6 @@ class patcherUI(Frame):
                               state="disabled")
         fpCkMR1.grid(column=1, row=2, sticky="W")
         fpCkMR1E = Spinbox(FPLF, from_=2, to=10, textvariable=CkMR1E)
-        print(CkMR1E)
         fpCkMR1E.delete(0,"end")
         fpCkMR1E.insert(0, 3)
         fpCkMR1E.config(state="disabled")
