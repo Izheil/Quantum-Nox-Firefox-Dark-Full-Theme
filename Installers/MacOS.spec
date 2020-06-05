@@ -27,7 +27,7 @@ exe = EXE(pyz,
           a.zipfiles,
           a.datas,
           [],
-          name='QNI',
+          name='Multirow-Patcher-Quantum-Nox-Installer-Windows-x.y.z.app',
           debug=False,
           bootloader_ignore_signals=False,
           strip=False,
@@ -38,5 +38,5 @@ exe = EXE(pyz,
           icon="icon.gif")
 
 App = BUNDLE(exe,
-	  name="QNI.app",
+	  name="Multirow-Patcher-Quantum-Nox-Installer-Windows-x.y.z.app",
 	  icon="icon.gif")
