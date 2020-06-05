@@ -505,7 +505,7 @@ def functionInstall(FFprofile, Func2Inst, FuncSettings="0"):
                         + "/chrome/setAttribute_unread.uc.js")
 
         try:
-            distutils.file_util.copy_file(FireFunct, FFChrome, update=True)
+            shutil.copy2(FireFunct, FFChrome)
 
             if Func2Inst.startswith("Multirow") or Func2Inst == "Focus-tab":
                 writeSettings(InstFunct)
@@ -1037,21 +1037,23 @@ class patcherUI(Frame):
 
                     # We then check for function selections
 
-                    # Multirow scrollable
-                    if RdMR.get() == 0:
-                        if CkMR1C.get() == 0:
-                            Error += functionInstall(FFprofile,
-                                                     "Multirow-scrollable",
-                                                     MRSettings)
-                        # Multirow autohide
+                    # Multirow check
+                    if CkMR.get() == 1:
+                        # Multirow scrollable
+                        if RdMR.get() == 0:
+                            if CkMR1C.get() == 0:
+                                Error += functionInstall(FFprofile,
+                                                         "Multirow-scrollable",
+                                                         MRSettings)
+                            # Multirow autohide
+                            else:
+                                Error += functionInstall(FFprofile,
+                                                         "Multirow-autohide",
+                                                         MRSettings)
+                        # If not scrollable, then unlimited
                         else:
                             Error += functionInstall(FFprofile,
-                                                     "Multirow-autohide",
-                                                     MRSettings)
-                    # If not scrollable, then unlimited
-                    else:
-                        Error += functionInstall(FFprofile,
-                                                 "Multirow-unlimited")
+                                                     "Multirow-unlimited")
 
                     # Tabs below
                     if CkTB.get() == 1:
@@ -1122,6 +1124,12 @@ class patcherUI(Frame):
                 for y in rpCkFFP1.curselection():
                     values.append(rpCkFFP1.get(y))
 
+                if CkMR.get() == 0 and CkTB.get() == 0 and CkMB.get() == 0 \
+                and CkFT.get() == 0 and CkUT.get() == 0:
+                    messagebox.showerror("Nothing happened",
+                                     "You need to select at least "
+                                     + "one function to install.")
+
                 for x in values:
                     FFPprofile = x
                     # We get the name of the profile here
@@ -1139,7 +1147,7 @@ class patcherUI(Frame):
                 and CkFF.get() == 0) or \
                 (CkFFP.get() == 1 and CkFFN.get() == 0 and CkFF.get() == 0
                 and CkFFD.get() == 0 and values == []):
-                messagebox.showerror("Nothing happened",
+                messagebox.showerror("No profile selected",
                                      "You need to select at least "
                                      + "one profile to patch.")
             elif Error == 0:
@@ -1416,6 +1424,7 @@ class patcherUI(Frame):
                               state="disabled")
         fpCkMR1.grid(column=1, row=2, sticky="W")
         fpCkMR1E = Spinbox(FPLF, from_=2, to=10, textvariable=CkMR1E)
+        print(CkMR1E)
         fpCkMR1E.delete(0,"end")
         fpCkMR1E.insert(0, 3)
         fpCkMR1E.config(state="disabled")
