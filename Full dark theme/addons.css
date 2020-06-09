@@ -1,6 +1,6 @@
 /* You can find an updated version here: https://github.com/Izheil/Quantum-Nox-Firefox-Dark-Full-Theme */
 /* Made by Izheil */
-/* Last updated: 17/05/2020 */
+/* Last updated: 09/06/2020 */
 
 /*------ HOW TO MAKE THE ADDON THEMES WORK ------*/
 /* To use this part of the code, you will have to find the dynamic UUID of your extensions, and replace it where the 
@@ -329,6 +329,83 @@ input[type="checkbox"]:checked {
 #s3downbar_download_tooltip_timeEnd, #s3downbar_download_tooltip_speed {color: #aaa !important}
 
 #s3downbar_download_tooltip_data_box input, #s3downbar_download_tooltip_from {background-color: #333 !important; color: #0af !important}
+}
+
+
+/*------ FORGET ME NOT ADDON ------*/
+@-moz-document url-prefix(moz-extension://TYPE-UUID-OF-FORGET-ME-NOT-ADDON-HERE/) {
+body, html, .tabs_list, .tabs_pages {
+  background: #333 !important;
+  color: #ccc !important}
+
+a:link, a {color: #09f !important}
+a:visited {color: #0070aa !important}
+a:hover {color: #0ff !important}
+a:active {color: #0050aa !important}
+
+#help_button {color: #fff !important}
+
+tbody tr:nth-child(odd) td[data-i18n], .rules_table tr:nth-child(odd) td {
+  background-color: #444 !important;
+}
+
+.tabs_list div {background-color: transparent !important}
+
+.tabs_list div:not(.active), #toolbar button {
+  filter: invert(.7) !important;
+  color: #000 !important}
+
+.tabs_list .active, #toolbar button:hover {
+  filter: invert(1) !important;
+  color: #000 !important}
+
+.tabs_list div:not(.active) {border-color: #fff !important}
+.tabs_list .active {border-color: #aaa !important}
+.tabs_list .active {border-bottom: 3px solid #222 !important}
+
+.hover_bubble.is-active, .hover_bubble_arrow, input[placeholder], input[type="checkbox"]+span::before,
+.rules_input_wrapper input[value], code, input[type="number"] {
+  background-color: #222 !important;
+  border-color: #444 !important}
+
+input[placeholder], .rules_input_wrapper input[value], input[type="number"] {color: #ccc !important}
+
+.tabs_pages button:not(.cleanup_type_never):not(.cleanup_type_startup):not(.cleanup_type_leave):not(.cleanup_type_instantly):not(.log_add_rule),
+.dialog button:not(.cleanup_type_never):not(.cleanup_type_startup):not(.cleanup_type_leave):not(.cleanup_type_instantly) {
+  background-color: #555 !important;
+  color: #ccc !important;
+}
+
+.tabs_pages button:not(.cleanup_type_never):not(.cleanup_type_startup):not(.cleanup_type_leave):not(.cleanup_type_instantly):not(.log_add_rule):hover,
+.dialog button:not(.cleanup_type_never):not(.cleanup_type_startup):not(.cleanup_type_leave):not(.cleanup_type_instantly):hover {
+  background-color: #666 !important;
+  color: #fff !important;
+}
+
+button.cleanup_type_never:hover, button.cleanup_type_startup:hover, 
+button.cleanup_type_leave:hover, button.cleanup_type_instantly:hover {
+  background-color: #222 !important;
+  color: #fff !important;
+}
+
+button.log_add_rule {background-color: #264597 !important}
+button.log_add_rule:hover {
+  background-color: #3655aa !important;
+  color: #fff !important}
+
+.tabs_pages, .settings_table *, .settings_table {border-color: #444 !important}
+
+/* Select boxes coloring */
+select {
+  -moz-appearance: none !important;
+  background: #555 url("data:image/svg+xml;charset=utf-8,%3Csvg width='11' height='7' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M434.574 488L430.5 492.147 426.428 488 425 489.399 430.5 494.999 436 489.399z' transform='translate(-425 -488)' fill='%23cccccc' fill-rule='evenodd'/%3E%3C/svg%3E") no-repeat calc(100% - 5px) 50% !important;
+  border: none !important;
+  padding: 3px 20px 3px 3px;
+  color: #ccc !important}
+
+select:hover {
+  background: #666 url("data:image/svg+xml;charset=utf-8,%3Csvg width='11' height='7' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M434.574 488L430.5 492.147 426.428 488 425 489.399 430.5 494.999 436 489.399z' transform='translate(-425 -488)' fill='%23cccccc' fill-rule='evenodd'/%3E%3C/svg%3E") no-repeat calc(100% - 5px) 50% !important;
+  color: #fff !important}
 }
 
 /*------ HTTPS EVERYWHERE ADDON ------*/
@@ -993,6 +1070,8 @@ a:active {color: #0050aa !important}
 .listEntry .fa-icon.status.cache:hover
  {fill: #fff !important}
 
+#diff {border-color: #555 !important}
+
 button:not(#buttonUpdate) {
   background: #555 !important;
   color: #ddd !important;
@@ -1035,7 +1114,7 @@ button[disabled] {opacity: 0.7 !important}
 .cm-staticnetBlock {color: #f62 !important}
 .cm-staticOpt {background-color: #111 !important}
 
-textarea {
+textarea, input[type="text"], input[type="search"] {
   -moz-appearance: none !important; 
   background-color: #222 !important; 
   color: #aaa !important;
@@ -1048,7 +1127,7 @@ code {background-color: #222 !important}
 .CodeMirror-code > div:nth-child(even),
 .CodeMirror-code > pre:nth-child(even) {background-color: #444 !important}
 
-input[type=number], input[type="text"] {
+input[type=number] {
   -moz-appearance: none !important;
   background: #222 !important;
   border: 1px solid #000 !important;
@@ -1060,8 +1139,8 @@ input[type="checkbox"] {
   border: 1px solid #666 !important;
   background-color: #444 !important;
   transition: color 0.3s;
-  min-width: 16px;
-  min-height: 16px;
+  min-width: 12px;
+  min-height: 12px;
   margin-bottom: 0 !important}
 
 input[type="checkbox"]:not([disabled]):hover {
@@ -1069,14 +1148,14 @@ input[type="checkbox"]:not([disabled]):hover {
   border-color: #0084ff !important}
 
 input[type="checkbox"]:checked {
-  background: #444 url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="15px" height="15px" viewBox="0 0 16 16" ><path fill="rgb(200,200,200)" d="M 13.09,2.87 C 13.09,2.87 6.00,11.00 6.00,11.00 6.00,11.00 2.00,9.00 2.00,9.00 4.25,12.81 7.00,14.00 7.00,14.00 9.24,10.42 12.04,7.39 13.09,2.87 Z" /></svg>') no-repeat center center !important}
+  background: #444 url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="10px" height="10px" viewBox="1 3 12 12" ><path fill="rgb(200,200,200)" d="M 13.09,2.87 C 13.09,2.87 6.00,11.00 6.00,11.00 6.00,11.00 2.00,9.00 2.00,9.00 4.25,12.81 7.00,14.00 7.00,14.00 9.24,10.42 12.04,7.39 13.09,2.87 Z" /></svg>') no-repeat center center !important}
 
 /* Select boxes coloring */
 select {
   -moz-appearance: none !important;
   background: #555 url("data:image/svg+xml;charset=utf-8,%3Csvg width='11' height='7' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M434.574 488L430.5 492.147 426.428 488 425 489.399 430.5 494.999 436 489.399z' transform='translate(-425 -488)' fill='%23cccccc' fill-rule='evenodd'/%3E%3C/svg%3E") no-repeat calc(100% - 5px) 50% !important;
   border: none !important;
-  padding: 3px;
+  padding: 3px 20px 3px 3px;
   color: #ccc !important}
 
 select:hover {
@@ -1298,6 +1377,197 @@ button.important:hover {
 #domTree, #domTree ul {background: #222 !important}
 
 #domTree .isCosmeticHide, #domTree .isCosmeticHide li {background: rgba(255, 150, 150, 0.2) !important}
+}
+
+/*------ UMATRIX ADDON COMMON SECTION ------*/
+@-moz-document url-prefix(moz-extension://TYPE-UUID-OF-UMATRIX-HERE/) {
+body, html, .paneHead {
+  background: #333 !important;
+  color: #ccc !important;
+}
+
+#dashboard-nav-widgets {
+  background-color: #222 !important;
+  border-bottom-color: #666 !important}
+
+#dashboard-nav-widgets .tabButton {
+  color: #aaa !important;
+  background-color: #292929 !important;
+  border-color: #666 !important}
+
+#dashboard-nav-widgets .tabButton.selected {
+  color: #fff !important;
+  background-color: #333 !important;
+  border-bottom-color: #333 !important}
+
+a:not(.tabButton):not(#gotoDashboard):link {color: #09f !important}
+a:not(.tabButton):not(#gotoDashboard):visited {color: #0070aa !important}
+a:not(.tabButton):not(#gotoDashboard):hover {color: #0bf !important}
+a:not(.tabButton):not(#gotoDashboard):active {color: #0050aa !important}
+
+.fa-icon:not(#mtxSwitch_matrix-off) {fill: #ccc !important}
+
+.fa-icon:hover {background-color: transparent !important}
+
+#warningSign .fa-icon {fill: #f2a500 !important}
+
+#mtxSwitch_matrix-off:not(.switchTrue) {fill: #09f !important}
+
+.dropdown-menu ul {
+  background-color: #333 !important;
+  border-color: #555 !important}
+
+.dropdown-menu li:hover {background-color: rgba(255,255,255,0.15) !important} 
+
+.dropdown-menu li.switchTrue {color: #fff !important}
+.dropdown-menu li:not(.switchTrue) {color: #aaa !important}
+
+#mtxSwitches .off ellipse[style] {fill: #777 !important}
+
+button:not(#buttonUpdate) {
+  background: #555 !important;
+  border-color: transparent !important;
+  border-radius: 3px;
+  color: #ddd !important;
+    fill: #ddd !important}
+
+button:not(#buttonUpdate):hover, #domainOnly:hover {
+    background: #444 !important;
+    color: #fff !important}
+
+button[disabled] {opacity: 0.7 !important}
+
+#buttonUpdate {
+  background: #ffbb33 !important;
+  border-color: transparent !important;
+  color: #000 !important}
+
+#buttonUpdate:hover{
+  background: #cc8800 !important}
+
+button[type="button"] {-moz-appearance: none !important}
+
+.assets {border-color: #444 !important}
+
+div[data-i18n="assetsRecipesSection"],
+div[data-i18n="assetsHostsSection"] {background-color: #444 !important}
+
+.cm-search-widget, .CodeMirror-gutters, 
+.CodeMirror-merge-gap {background: #222 !important; border: none !important}
+
+.cm-search-widget {border-bottom: 1px solid #000 !important;}
+
+.CodeMirror, .CodeMirror-merge, .cm-search-widget input {
+  -moz-appearance: none !important;
+  background: #444 !important; 
+  color: #aaa !important; 
+  border: none !important}
+
+.CodeMirror-activeline-background {background: #033 !important}
+
+.cm-staticext {color: #0aa !important}
+.cm-builtin {color: #07F !important}
+.cm-keyword {color: rgb(250, 40, 100) !important}
+
+.CodeMirror-selected, .CodeMirror-line *::selection {background: #055 !important}
+
+.cm-comment {color: #aaa !important}
+.CodeMirror-cursor {border-left-color: #aaa !important}
+.cm-staticnetBlock {color: #f62 !important}
+.cm-staticOpt {background-color: #111 !important}
+
+textarea, input[type="text"], input[type="search"] {
+  -moz-appearance: none !important; 
+  background-color: #222 !important; 
+  color: #aaa !important;
+  border: 1px solid #555 !important}
+
+code, .fa-icon-badge {
+  background-color: #222 !important;
+  color: #fff !important}
+
+.CodeMirror-code > div:nth-child(odd),
+.CodeMirror-code > pre:nth-child(odd) {background-color: #383838 !important}
+.CodeMirror-code > div:nth-child(even),
+.CodeMirror-code > pre:nth-child(even) {background-color: #444 !important}
+
+#specificScope span[data-scope]:not(.on), #globalScope:not(.on), 
+#specificScope.scope:not(.on) {background-color: #222 !important}
+#specificScope span[data-scope].on, #globalScope.on {background-color: #2244cc !important}
+#globalScope:not(.on), #specificScope.scope:not(.on) {border-color: #555 !important}
+
+#buttonReload:hover, #buttonRevertAll:hover, .scopeRel:hover, .toolbar span[data-extension-url="logger-ui.html"]:hover {
+  background-color: rgba(255,255,255,0.15) !important}
+
+body:not(.colorblind) .t82 {background-color: #307430 !important}
+body:not(.colorblind) .t2 {background-color: #667766 !important}
+
+body.colorblind .t2, body.colorblind .t1 {color: #ccc !important}
+
+body:not(.colorblind) .t81 {background-color: #7c1616 !important}
+body:not(.colorblind) .t1 {background-color: #776666 !important}
+
+[data-i18n-tip]::after {
+  background-color: #222 !important;
+  border-color: #555 !important;
+  color: #ccc !important;
+  box-shadow: 5px 7px 15px 2px #000 !important}
+
+input[type=number] {
+  -moz-appearance: none !important;
+  background: #222 !important;
+  border: 1px solid #000 !important;
+  color: #ccc !important}
+
+/* Checkbox coloring */
+input[type="checkbox"] {
+  -moz-appearance: none !important;
+  border: 1px solid #666 !important;
+  background-color: #444 !important;
+  transition: color 0.3s;
+  min-width: 12px;
+  min-height: 12px;
+  margin-bottom: 0 !important}
+
+input[type="checkbox"]:not([disabled]):hover {
+    box-shadow: 0 0 4px #0084ff !important;
+    border-color: #0084ff !important}
+
+input[type="checkbox"]:checked {
+    background: #444 url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="10px" height="10px" viewBox="1 3 12 12" ><path fill="rgb(200,200,200)" d="M 13.09,2.87 C 13.09,2.87 6.00,11.00 6.00,11.00 6.00,11.00 2.00,9.00 2.00,9.00 4.25,12.81 7.00,14.00 7.00,14.00 9.24,10.42 12.04,7.39 13.09,2.87 Z" /></svg>') no-repeat center center !important}
+
+/* Select boxes coloring */
+select {
+    -moz-appearance: none !important;
+    background: #555 url("data:image/svg+xml;charset=utf-8,%3Csvg width='11' height='7' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M434.574 488L430.5 492.147 426.428 488 425 489.399 430.5 494.999 436 489.399z' transform='translate(-425 -488)' fill='%23cccccc' fill-rule='evenodd'/%3E%3C/svg%3E") no-repeat calc(100% - 5px) 50% !important;
+    border: none !important;
+    padding: 3px 20px 3px 3px !important;
+    color: #ccc !important}
+
+select:hover {
+    background: #444 url("data:image/svg+xml;charset=utf-8,%3Csvg width='11' height='7' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M434.574 488L430.5 492.147 426.428 488 425 489.399 430.5 494.999 436 489.399z' transform='translate(-425 -488)' fill='%23cccccc' fill-rule='evenodd'/%3E%3C/svg%3E") no-repeat calc(100% - 5px) 50% !important;
+    color: #fff !important}
+}
+
+/*------ UMATRIX ADDON UI LOGGER PAGE ------*/
+@-moz-document url-prefix(moz-extension://TYPE-UUID-OF-UMATRIX-HERE/logger-ui.html) {
+  #toolbar, #content, .dialog, #popupPanelContainer {
+    background-color: #333 !important;
+    border-color: #555 !important}
+
+  table td, #content table tr[data-tabid="-1"] td:nth-of-type(3)::before {border-color: #555 !important}
+  table tr:nth-child(odd) {background-color: #252525 !important}
+  table tr:nth-child(even) {background-color: #383838 !important}
+
+  tr.cat_info td {color: #09f !important}
+
+  .fa-icon:hover {background-color: rgba(255,255,255,0.15) !important}
+
+  #ruleEditor:not(.colorblind) .ruleCell[data-tcolor="130"] {background-color: #307430 !important}
+  #ruleEditor:not(.colorblind) .ruleCell[data-tcolor="2"] {background-color: #667766 !important}
+
+  #ruleEditor:not(.colorblind) .ruleCell[data-tcolor="129"] {background-color: #7c1616 !important}
+  #ruleEditor:not(.colorblind) .ruleCell[data-tcolor="1"] {background-color: #776666 !important}
 }
 
 /*------ UNDO LAST TAB BUTTON (REVIVED) ADDON ------*/

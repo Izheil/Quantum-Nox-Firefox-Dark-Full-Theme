@@ -14,13 +14,13 @@ If you want to know how to change some colors of the theme, check the [wiki](htt
 ### Last update: 17/05/2020
 
 Files updated:
-* **Addons.css**: Updated [Ublock Origin](https://addons.mozilla.org/en-US/firefox/addon/ublock-origin/)'s theme.
-* **userContent.css**: Fixed some colors in `about:home` search suggestions box.
+* **Addons.css**: Added a dark theme for [uMatrix](https://addons.mozilla.org/en-US/firefox/addon/umatrix/) and [Forget Me Not](https://addons.mozilla.org/en-US/firefox/addon/forget_me_not/) addons.
 
 ### Pre-Last update: 12/05/2019
 
 Files updated:
-* **userChrome.css**: Made bookmarks toolbar thinner.
+* **Addons.css**: Updated [Ublock Origin](https://addons.mozilla.org/en-US/firefox/addon/ublock-origin/)'s theme.
+* **userContent.css**: Fixed some colors in `about:home` search suggestions box.
 
 ### A note on people looking to replace some Tab Mix Plus features:
 You can find some of the basic settings that can be simulated through `about:config`, some userscripts, and some addons [here](https://github.com/Izheil/Quantum-Nox-Firefox-Dark-Full-Theme/wiki/Useful-about:config-settings#some-tab-mix-plus-features).
@@ -61,6 +61,7 @@ Here is a list of the themed addons:
 * [Ant Video Downloader](https://addons.mozilla.org/en-US/firefox/addon/video-downloader-player/)
 * [Cookie autodelete](https://addons.mozilla.org/en-US/firefox/addon/cookie-autodelete/)
 * [Download Manager (S3)](https://addons.mozilla.org/en-US/firefox/addon/s3download-statusbar/)
+* [Forget Me Not](https://addons.mozilla.org/en-US/firefox/addon/forget_me_not/)
 * [History autodelete](https://addons.mozilla.org/en-US/firefox/addon/history-autodelete/)
 * [HTTPS Everywhere](https://addons.mozilla.org/en-US/firefox/addon/https-everywhere/)
 * [Noscript](https://addons.mozilla.org/en-US/firefox/addon/noscript/)
@@ -72,6 +73,7 @@ Here is a list of the themed addons:
 * [Tab session manager](https://addons.mozilla.org/en-US/firefox/addon/tab-session-manager/)
 * [Temporary containers](https://addons.mozilla.org/en-US/firefox/addon/temporary-containers/)
 * [Ublock Origin](https://addons.mozilla.org/en-US/firefox/addon/ublock-origin/)
+* [uMatrix](https://addons.mozilla.org/en-US/firefox/addon/umatrix/)
 * ~~[Undo closed tabs button](https://addons.mozilla.org/en-US/firefox/addon/undo-closed-tabs-revived/)~~ -> You should use [Undo close tab](https://addons.mozilla.org/en-US/firefox/addon/undoclosetabbutton/) instead (which requires no theming).
 * [Video Download Helper](https://addons.mozilla.org/en-US/firefox/addon/video-downloadhelper/)
 * [Viewhance](https://addons.mozilla.org/en-US/firefox/addon/viewhance/)
