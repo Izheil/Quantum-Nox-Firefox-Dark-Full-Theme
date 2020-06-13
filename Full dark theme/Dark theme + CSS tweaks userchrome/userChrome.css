@@ -1,6 +1,6 @@
 /* You can find an updated version here: https://github.com/Izheil/Quantum-Nox-Firefox-Dark-Full-Theme */
 /* Made by Izheil */
-/* Last updated: 17/05/2020 */
+/* Last updated: 12/06/2020 */
 
 /* COLORING PART STARTS HERE */
 
@@ -74,6 +74,7 @@ but is disabled by default in this theme (Disable for the default tab line color
   --Min-max-buttons-hover-bg: rgba(255,255,255,0.2);
   --Context-menu-highlight: #25a;
   --Context-menu-background: rgba(60,60,60, 1); /* The last number changes the opacity %. Change that 1 for 0.9 for semitransparent backgrounds */
+  --Context-menu-text-color: #ccc;
   --Progress-bar-color: #3070dd;
   --Input-field-focus-shadow: 0 0 4px #0050ff;
   --Bookmark-folder-icon: #ffe793;
@@ -463,7 +464,7 @@ you aren't using the default dark theme of mozilla, that is) */
 
 /* This one changes the letters color of all context menus */
 menu, menuitem, window menuitem {
-  color: #ccc !important;
+  color: var(--Context-menu-text-color) !important;
   -moz-appearance: none !important}
 
 /* Padding for all menu items (do NOT change unless you want an spaced or indented upon 
