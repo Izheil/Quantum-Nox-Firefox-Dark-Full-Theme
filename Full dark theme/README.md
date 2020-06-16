@@ -19,7 +19,7 @@ Following the method described here, you will be able to give dark colors to fir
 * Click the "open folder" button inside the "profile folder" section.
 * Create a folder named "chrome" in your profile folder if it doesn't exist yet.
 * [Download the repository files](https://github.com/Izheil/Quantum-Nox-Firefox-Dark-Full-Theme/archive/master.zip) and uncompress them anywhere you like.
-* Place all files (.css files) from the "Full dark theme" folder to the "chrome" folder.
+* Place all files (.css files) from the "Full dark theme" folder to your "chrome" folder.
 * **Optional**: If you want to use the custom dark scrollbars, or dark tooltips, you will also have to enable JS injection using the installer in [releases](https://github.com/Izheil/Quantum-Nox-Firefox-Dark-Full-Theme/releases) (just don't select any function to install when patching if you don't need them), or patch your firefox manually with the method described [here](https://github.com/Izheil/Quantum-Nox-Firefox-Dark-Full-Theme/tree/master/Multirow%20and%20other%20functions/JS%20Loader).
 * **Optional**: Edit userChrome.css to change any style you aren't fully convinced with (or to give a different style to the unread tabs, etc...).
 * **Optional**: You can also edit userChrome.css to change the background of the `about:home` page.
