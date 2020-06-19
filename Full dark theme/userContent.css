@@ -1636,7 +1636,7 @@ a:active:not(.sumo-button) {
 
 .selected a.btn-page, th {color: #fff !important}
 
-.note, .card--callout, .document-vote, .card, .sg-b-p, .mzp-c-menu-panel,
+.note, .card--callout, .card, .sg-b-p, .mzp-c-menu-panel,
 .mzp-js-details-wrapper, .tag, #toc {
 	background-color: #333 !important;
 	border-color: #888 !important;
