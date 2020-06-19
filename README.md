@@ -11,16 +11,15 @@ You can use it to fully change the colors of most of firefox UI to dark-gray col
 
 If you want to know how to change some colors of the theme, check the [wiki](https://github.com/Izheil/Quantum-Nox-Firefox-Dark-Full-Theme/wiki/Editting-CSS-files).
 
-### Last update: 17/05/2020
+### Last update: 19/06/2020
+
+Files updated:
+* **userContent.css**: Fixed some banner color on Mozilla support page.
+
+### Pre-Last update: 17/05/2019
 
 Files updated:
 * **Addons.css**: Added a dark theme for [uMatrix](https://addons.mozilla.org/en-US/firefox/addon/umatrix/) and [Forget Me Not](https://addons.mozilla.org/en-US/firefox/addon/forget_me_not/) addons.
-
-### Pre-Last update: 12/05/2019
-
-Files updated:
-* **Addons.css**: Updated [Ublock Origin](https://addons.mozilla.org/en-US/firefox/addon/ublock-origin/)'s theme.
-* **userContent.css**: Fixed some colors in `about:home` search suggestions box.
 
 ### A note on people looking to replace some Tab Mix Plus features:
 You can find some of the basic settings that can be simulated through `about:config`, some userscripts, and some addons [here](https://github.com/Izheil/Quantum-Nox-Firefox-Dark-Full-Theme/wiki/Useful-about:config-settings#some-tab-mix-plus-features).

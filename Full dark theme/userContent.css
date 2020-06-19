@@ -1,6 +1,6 @@
 /* You can find an updated version here: https://github.com/Izheil/Quantum-Nox-Firefox-Dark-Full-Theme */
 /* Made by Izheil */
-/* Last updated: 17/05/2020 */
+/* Last updated: 19/06/2020 */
 
 /* This part imports the Addons file if there is one, so that you don't have to edit the dynamic URL
 from the addons rules every time we update anything here */
@@ -1696,6 +1696,8 @@ input[type="text"]:not(:focus):not(:hover) {border-color: #666 !important}
 .pick-a-way a:hover, .sidebar-nav .selected  {background-color: rgba(255,255,255,0.05) !important}
 
 .is-callout-bg {background-color: #570 !important}
+
+.sumo-scam-alert--content {background-color: #650 !important}
 
 /* Select boxes coloring */
 select {
