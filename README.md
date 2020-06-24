@@ -11,15 +11,15 @@ You can use it to fully change the colors of most of firefox UI to dark-gray col
 
 If you want to know how to change some colors of the theme, check the [wiki](https://github.com/Izheil/Quantum-Nox-Firefox-Dark-Full-Theme/wiki/Editting-CSS-files).
 
-### Last update: 23/06/2020
+### Last update: 24/06/2020
+
+Files updated:
+* **Addons.css**: Removed Popup Ultimate Blocker theme from addons.css, since the same functionability is already available on Ublock.
+
+### Pre-Last update: 23/06/2019
 
 Files updated:
 * **Addons.css**: Fixed some popup color on [Ant Video Downloader](https://addons.mozilla.org/en-US/firefox/addon/video-downloader-player/) addon theme.
-
-### Pre-Last update: 19/06/2019
-
-Files updated:
-* **userContent.css**: Fixed some banner color on Mozilla support page.
 
 
 ### A note on people looking to replace some Tab Mix Plus features:
@@ -68,7 +68,6 @@ Here is a list of the themed addons:
 * [Notifier for Gmail (restartless)](https://addons.mozilla.org/en-US/firefox/addon/gmail-notifier-restartless/)
 * [Multi-accounts containers](https://addons.mozilla.org/en-US/firefox/addon/multi-account-containers/)
 * [OneTab](https://addons.mozilla.org/en-US/firefox/addon/onetab/)
-* [Popup Blocker Ultimate](https://addons.mozilla.org/en-US/firefox/addon/popup-blocker-ultimate/)
 * [Privacy badger](https://addons.mozilla.org/en-US/firefox/addon/privacy-badger17/)
 * [Tab session manager](https://addons.mozilla.org/en-US/firefox/addon/tab-session-manager/)
 * [Temporary containers](https://addons.mozilla.org/en-US/firefox/addon/temporary-containers/)
