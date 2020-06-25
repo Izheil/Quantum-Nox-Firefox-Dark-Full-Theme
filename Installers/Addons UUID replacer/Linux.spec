@@ -2,7 +2,7 @@
 
 block_cipher = None
 
-a = Analysis(['Addons UUID replacer.py'],
+a = Analysis(['Addons-UUID-replacer.py'],
              pathex=['.'],
              binaries=[],
              hiddenimports=[],
