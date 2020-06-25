@@ -589,11 +589,33 @@ if themeArray[0] != "x":
             if UUIDDict[idArrays[y]]:
                 del UUIDDict[idArrays[y]]
 
+addonFile = os.path.normpath(SelProfile + "/chrome/addons.css")
+
+# We patch the addons.css file here
+if os.access(addonFile, os.F_OK):
+    print("Would you like to overwrite your current addons.css version with the lastest from the repository?")
+    print("1. Yes")
+    print("2. No\n")
+
+    ovrwAdd = int(input("Choice: "))
+
+    if ovrwAdd == 1:
+        print("\nFetching addons.css from repo...")
+        getAddons = requests.get(r'https://raw.githubusercontent.com/Izheil/Quantum-Nox-Firefox-Dark-Full-Theme/master/Full%20dark%20theme/addons.css')
+        if getAddons.status_code == 200:
+            print("File fetched successfully.\n")
+            with open(addonFile, "w") as f:
+                f.write(getAddons.text)
+                f.truncate()
+            print("File finished downloading to " + addonFile)
+        else:
+            print("There was an error while trying to download the file.\n")
+
 # We call the replacement function for the addons file here
 errorCatch = addonsPatcher(SelProfile, UUIDDict)
 
 if errorCatch == 0:
-    print("UUID's replaced successfully.")
+    print("\nUUID's replaced successfully.\n\nRemember to place the \"@import 'addons.css'\" rule at the top of your userContent.css file if you created your own userContent.css,\nor aren't using the one provided in the repository.")
 else:
     print("The UUIDs couldn't be replaced correctly. Try again when you are connected to the internet, or when you have a local copy of addons.css file.")
-input("Press enter to exit.")
+input("\nPress enter to exit.")
