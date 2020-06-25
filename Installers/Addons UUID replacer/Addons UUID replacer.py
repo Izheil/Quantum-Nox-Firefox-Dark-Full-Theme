@@ -478,7 +478,7 @@ else:
 print("This program will replace all the UUID placeholder strings in 'addons.css' file for their corresponding identifiers.")
 print("First choose the profile folder where the file will be installed:\n")
 
-print("The current default profile in use is " + defaultCLProfile + ".\n")
+print("The current default profile is " + defaultCLProfile + ".\n")
 
 for x in range(len(Profiles)):
     profName = Profiles[x].split(char2Esc)
