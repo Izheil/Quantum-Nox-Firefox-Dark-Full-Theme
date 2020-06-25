@@ -2,10 +2,11 @@
 
 block_cipher = None
 
-a = Analysis(['Addons UUID replacer.py'],
+
+a = Analysis(['addons uuid replacer.py'],
              pathex=['.'],
-             binaries=[],
-             datas=[("icon.gif", ".")],
+             binaries=[('/System/Library/Frameworks/Tk.framework/Tk', 'tk'), ('/System/Library/Frameworks/Tcl.framework/Tcl', 'tcl')],
+             datas=[],
              hiddenimports=[],
              hookspath=[],
              runtime_hooks=[],
@@ -14,26 +15,19 @@ a = Analysis(['Addons UUID replacer.py'],
              win_private_assemblies=False,
              cipher=block_cipher,
              noarchive=False)
-
 pyz = PYZ(a.pure, a.zipped_data,
              cipher=block_cipher)
-             
 exe = EXE(pyz,
           a.scripts,
           a.binaries,
           a.zipfiles,
           a.datas,
           [],
-          name='Addons-UUID-replacer-Mac.app',
+          name='Addons-UUID-replacer-Mac',
           debug=False,
           bootloader_ignore_signals=False,
           strip=False,
           upx=True,
           upx_exclude=[],
           runtime_tmpdir=None,
-          console=True,
-          icon="icon.gif")
-
-App = BUNDLE(exe,
-	  name="Addons-UUID-replacer-Mac.app",
-	  icon="icon.gif")
+          console=True )
