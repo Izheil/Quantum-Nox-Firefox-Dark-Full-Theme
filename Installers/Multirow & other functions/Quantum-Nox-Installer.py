@@ -135,15 +135,15 @@ if OSinUse == "Windows":
     else:
         home = os.getenv('APPDATA')
     MozPFolder = home + r"\Mozilla\Firefox"
-    Profiles = readProfiles(MozPFolder)
 elif OSinUse == "Linux":
     home = "/home/" + os.getenv("SUDO_USER")
     MozPFolder = home + r"/.mozilla/firefox"
-    Profiles = readProfiles(MozPFolder)
 elif OSinUse == "Mac":
     home = str(Path.home())
     MozPFolder = home + r"/Library/Application Support/Firefox"
-    Profiles = readProfiles(MozPFolder)
+
+Profiles = readProfiles(MozPFolder)
+defaultProf = readDefaults(MozPFolder)
 
 # We get the default folder where programs are installed here
 if OSinUse == "Windows":
@@ -209,6 +209,15 @@ elif OSinUse == "Mac":
 
 # We get the default folders here
 def RPFinder():
+    for x in defaultProf:
+        splitter = x.split(".")
+        ProfileName = splitter[-1]
+        if ProfileName == "default-release":
+            return x
+        elif ProfileName == "default":
+            return x
+        else:
+            continue
     for x in Profiles:
         splitter = x.split(".")
         ProfileName = splitter[-1]
@@ -222,6 +231,15 @@ def RPFinder():
 
 
 def NPFinder():
+    for y in defaultProf:
+        Nsplitter = y.split(".")
+        ProfileName = Nsplitter[-1]
+        if ProfileName == "default-nightly":
+            return y
+        elif ProfileName[0:15] == "default-nightly":
+            return y
+        else:
+            continue
     for y in Profiles:
         Nsplitter = y.split(".")
         ProfileName = Nsplitter[-1]
@@ -235,6 +253,15 @@ def NPFinder():
 
 
 def DPFinder():
+    for y in defaultProf:
+        Dsplitter = y.split(".")
+        ProfileName = Dsplitter[-1]
+        if ProfileName == "dev-edition-default":
+            return y
+        elif ProfileName[0:19] == "dev-edition-default":
+            return y
+        else:
+            continue
     for y in Profiles:
         Dsplitter = y.split(".")
         ProfileName = Dsplitter[-1]
