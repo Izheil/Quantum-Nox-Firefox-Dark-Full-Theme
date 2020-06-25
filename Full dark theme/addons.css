@@ -1563,25 +1563,6 @@ select:hover {
   #ruleEditor:not(.colorblind) .ruleCell[data-tcolor="1"] {background-color: #776666 !important}
 }
 
-/*------ UNDO LAST TAB BUTTON (REVIVED) ADDON ------*/
-@-moz-document url-prefix(moz-extension://TYPE-UUID-OF-UNDO-LAST-TAB-ADDON-HERE/data/popup/index.html) {
-body, html {background: #333 !important}
-
-li {color: #aaa !important}
-li:hover {background-color: rgba(255,255,255, 0.1) !important}
-
-li span {
-	border-left: 1px solid #222 !important;
-	box-shadow: inset 1px 0 0 0 #000 !important}
-
-li[data-disabled="true"] {color: #666 !important}
-li[data-disabled="true"]:hover {background-color: rgba(0,0,0, 0.2) !important}
-
-.separator {
-	border-top: 1px solid #222 !important;
-	box-shadow: inset 1px 1px 0 #000 !important}
-}
-
 /*------ VIDEO DOWNLOAD HELPER ADDON COMMON PART ------*/
 @-moz-document url-prefix(moz-extension://TYPE-UUID-OF-VIDEO-DOWNLOAD-HELPER-ADDON-HERE/) {
 main, .top-line, .files-list.headercontainer, .current-directory {background: #333 !important; color: #ccc !important}
