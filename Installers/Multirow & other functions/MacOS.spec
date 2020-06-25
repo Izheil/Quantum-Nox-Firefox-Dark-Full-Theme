@@ -4,7 +4,7 @@ block_cipher = None
 
 a = Analysis(['Builder.py'],
              pathex=['.'],
-             binaries=[],
+             binaries=[('/System/Library/Frameworks/Tk.framework/Tk', 'tk'), ('/System/Library/Frameworks/Tcl.framework/Tcl', 'tcl')],
              datas=[("icon.gif", ".")],
              hiddenimports=[],
              hookspath=[],
@@ -27,7 +27,7 @@ exe = EXE(pyz,
           a.zipfiles,
           a.datas,
           [],
-          name='Multirow-Patcher-Quantum-Nox-Installer-Windows-x.y.z.app',
+          name='Multirow-Patcher-Quantum-Nox-Installer-Mac',
           debug=False,
           bootloader_ignore_signals=False,
           strip=False,
@@ -36,7 +36,3 @@ exe = EXE(pyz,
           runtime_tmpdir=None,
           console=False,
           icon="icon.gif")
-
-App = BUNDLE(exe,
-	  name="Multirow-Patcher-Quantum-Nox-Installer-Windows-x.y.z.app",
-	  icon="icon.gif")
