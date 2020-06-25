@@ -25,7 +25,7 @@ Following the method described here, you will be able to give dark colors to fir
 * **Optional**: You can also edit userChrome.css to change the background of the `about:home` page.
 * **Optional**: If you want a different style for the scrollbars or the tooltips, use any of the alternatives on the [Alternative scrollbars & tooltips](https://github.com/Izheil/Quantum-Nox-Firefox-Dark-Full-Theme/tree/master/Full%20dark%20theme/Alternative%20scrollbars%20%26%20tooltips) folder.
 * **Optional**: If you want the default scrollbar style (userChrome still paints it dark), or white tooltips, don't copy the relevant CSS files for them.
-* **Optional**: If you want a dark version of either of the addons mentioned in the [addons dark themes section](https://github.com/Izheil/Quantum-Nox-Firefox-Dark-Full-Theme#addon-dark-themes) in the front page of this repository, change the UUID's of them inside `addons.css`. You can use the `Addons-UUID-replacer-*` executable to automate this.
+* **Optional**: If you want a dark version of either of the addons mentioned in the [addons dark themes section](https://github.com/Izheil/Quantum-Nox-Firefox-Dark-Full-Theme#addon-dark-themes) in the front page of this repository, change the UUID's of them inside `addons.css`. You can use the `Addons-UUID-replacer-*` executable to automate this (unless you are on Mac, where you will have to install python and run the python file inside `installers/Addons UUID replacer` to get the same result).
 
 If you have copied everything right, the folders structure should look something like this:
 Structure of [the chrome folder](https://github.com/Izheil/Quantum-Nox-Firefox-Dark-Full-Theme/wiki/Chrome-and-Root-folders#the-chrome-folder) files inside your profile folder:
