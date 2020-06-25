@@ -679,7 +679,7 @@ html, body {background: #222 !important}
 
 h3, legend {color: #fff !important}
 span:not(#current-container), #container-info-movetabs,
-.container-info-tab-title, .truncate-text {color: #ccc !important}
+.container-info-tab-title, .truncate-text, form label, form p {color: #ccc !important}
 
 #sort-containers-link, .userContext-wrapper, .show-tabs:not(.pop-button-image-small), 
 #edit-containers-link, #container-add-link, #edit-container-cancel-link, .panel-back-arrow,

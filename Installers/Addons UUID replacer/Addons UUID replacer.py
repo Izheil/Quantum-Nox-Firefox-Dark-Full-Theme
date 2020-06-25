@@ -131,7 +131,7 @@ elif OSinUse == "Mac":
 
 # We get the profiles here
 Profiles = readProfiles(MozPFolder)
-defaultProf = readProfiles(MozPFolder)
+defaultProf = readDefaults(MozPFolder)
 
 # We get the default folder where programs are installed here
 if OSinUse == "Windows":
