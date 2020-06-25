@@ -124,7 +124,7 @@ if OSinUse == "Windows":
     MozPFolder = home + r"\Mozilla\Firefox"
     Profiles = readProfiles(MozPFolder)
 elif OSinUse == "Linux":
-    home = "/home/" + os.getenv("SUDO_USER")
+    home = "/home/" + os.getenv("USER")
     MozPFolder = home + r"/.mozilla/firefox"
     Profiles = readProfiles(MozPFolder)
 elif OSinUse == "Mac":
@@ -428,11 +428,6 @@ def addonsPatcher(FFprofile, UUIDDict):
                     writeSettings(addonFile, UUIDDict)
                 else:
                     print("There was an error while trying to download the file.\n")
-
-            if OSinUse == "Linux":
-                rootUser = os.getenv("SUDO_USER")
-                shutil.chown(addonFile, user=rootUser, group=rootUser)
-                os.chmod(addFile, 0o775)
 
     except IOError:
         print("There was a problem while trying to write to addons.css file.")

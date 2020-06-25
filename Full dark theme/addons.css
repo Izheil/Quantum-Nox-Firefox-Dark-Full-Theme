@@ -1,6 +1,6 @@
 /* You can find an updated version here: https://github.com/Izheil/Quantum-Nox-Firefox-Dark-Full-Theme */
 /* Made by Izheil */
-/* Last updated: 24/06/2020 */
+/* Last updated: 25/06/2020 */
 
 /*------ HOW TO MAKE THE ADDON THEMES WORK ------*/
 /* To use this part of the code, you will have to find the dynamic UUID of your extensions, and replace it where the 
@@ -721,6 +721,11 @@ url-prefix(https://www.one-tab.com/page/) {
 html, body {background: #303030 !important}
 
 #settingsDiv {background: #444 !important; border: 1px solid #666 !important}
+
+#contentAreaDiv .clickable div[style^="box-shadow"] {
+  box-shadow: none !important;
+  background-color: #444 !important;
+  border: 1px solid #666 !important}
 
 div {color: #ccc !important}
 
