@@ -486,9 +486,13 @@ menupopup > menu {
   padding-bottom: 2px !important}
 
 /* This removes the unnecesary padding from the bookmark items */
-.bookmark-item menuitem {
+.bookmark-item menupopup:not([emptyplacesresult="true"]) menuitem {
   padding-top: 0px !important;
   padding-bottom: 0px !important}
+
+.bookmark-item menupopup[emptyplacesresult="true"] menuitem {
+  min-height: 25px !important;
+}
 
 /* This changes the color on hover of the context-menu items */
 menubar > menu[_moz-menuactive="true"],
@@ -516,7 +520,7 @@ menupopup:not(.PanelUI-subView) {background-color: var(--Context-menu-background
 as well as ignoring the bookmark menu context menu */
 menupopup:not(.PanelUI-subView) {
   -moz-appearance: none !important;
-  border: 1px solid #111 !important}
+  border: 1px solid #555 !important}
 
 /* Context menu separator color override */
 menuseparator {
@@ -524,7 +528,7 @@ menuseparator {
   margin: 1px 0 1px 2.3em !important;
   height: 1px !important;
   border: none !important;
-  background: #222 !important;
+  background: #555 !important;
   padding: 0 !important}
 
 /* Context menu navigation tools (back, forward, reload) background color */
