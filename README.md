@@ -11,16 +11,16 @@ You can use it to fully change the colors of most of firefox UI to dark-gray col
 
 If you want to know how to change some colors of the theme, check the [wiki](https://github.com/Izheil/Quantum-Nox-Firefox-Dark-Full-Theme/wiki/Editting-CSS-files).
 
-### Last update: 24/06/2020
+### Last update: 28/06/2020
+
+Files updated:
+* **userChrome.css**: Fixed some issues on nightly.
+
+### Pre-Last update: 24/06/2019
 
 Files updated:
 * **Addons.css**: Removed Popup Ultimate Blocker theme from addons.css, since the same functionability is already available on [Ublock Origin](https://addons.mozilla.org/en-US/firefox/addon/ublock-origin/), as well as undo closed tab (revived) button, since a better alternative ([Undo close tab](https://addons.mozilla.org/en-US/firefox/addon/undoclosetabbutton/)) already exists.
 * __Addons-UUID-replacer-*__ Added a UUID automatic replacer for the `addons.css` file. You can find it inside the `Full dark theme` folder.
-
-### Pre-Last update: 23/06/2019
-
-Files updated:
-* **Addons.css**: Fixed some popup color on [Ant Video Downloader](https://addons.mozilla.org/en-US/firefox/addon/video-downloader-player/) addon theme.
 
 
 ### A note on people looking to replace some Tab Mix Plus features:

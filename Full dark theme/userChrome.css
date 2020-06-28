@@ -16,6 +16,7 @@ without this change) */
   /* You can change the lightweight theme header and footer images with this. 
   To use this, enable the "lightweight themes fix" below. Delete the final /* to use -> *//*
   --lwt-header-image: url("file:///") !important;
+  --lwt-additional-images: var(--lwt-header-image) !important;
   
 /* v Don't delete this ending bracket */
 }
@@ -165,6 +166,9 @@ dialog richlistitem[clear-site-data-cookies-with-data] {border: 1px solid red !i
 
 /* Tabs border color */
 .tabbrowser-tab {border-right: 1px solid rgba(255,255,255, .15) !important}
+
+/* Tabs close icon color always whiteish */
+.tabbrowser-tab[selected="true"] .close-icon {fill: #ddd !important}
 
 /* GLOW EFFECT ON TAB ICON */
 /* toolbarbutton.bookmark-item:not([container=true]) .toolbarbutton-icon

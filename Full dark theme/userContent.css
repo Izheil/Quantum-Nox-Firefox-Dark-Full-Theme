@@ -590,6 +590,20 @@ input[type=text] {color: #aaa !important}
 
 .form-wrapper input:hover {border: 1px solid #0084ff !important}
 
+/* Empty top sites section */
+.section-empty-state {
+	border-color: rgba(60,60,60,0.5) !important;
+}
+
+.empty-state-message {
+	background-color: rgba(0,0,0,0.7);
+	padding: 1em;
+	border-radius: 12px;
+	color: #ddd !important;
+}
+
+.empty-state-icon {fill: rgba(255,255,255,0.5) !important}
+
 /* This adds a background image of your choice in the main area 
 Delete the final /* to use -> */
 body {
