@@ -1315,6 +1315,9 @@ Make sure to NOT leave a comma before your last selector and the {display: none 
 /* Search X on your default search engine */
 #context-searchselect, 
 
+/* Add a keyword for this search... */
+#context-keywordfield,
+
 /* Open link in a new tab */
 #context-openlinkintab,
 /* Open link in a new window */

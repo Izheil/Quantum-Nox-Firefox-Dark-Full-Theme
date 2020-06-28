@@ -139,6 +139,9 @@ Make sure to only do line breaks after a comma if you really need to (like in th
 /* Search X on your default search engine */
 #context-searchselect,
 
+/* Add a keyword for this search... */
+#context-keywordfield,
+
 /* Open link in a new tab */
 #context-openlinkintab,
 /* Open link in a new window */
