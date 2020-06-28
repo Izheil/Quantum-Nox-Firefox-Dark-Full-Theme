@@ -14,7 +14,7 @@ If you want to know how to change some colors of the theme, check the [wiki](htt
 ### Last update: 28/06/2020
 
 Files updated:
-* **userChrome.css**: Fixed some issues on nightly.
+* **userChrome.css**: Fixed some issues on nightly. Also changed context menu borders and separators to gray.
 
 ### Pre-Last update: 24/06/2019
 

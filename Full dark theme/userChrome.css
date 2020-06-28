@@ -514,7 +514,9 @@ menupopup > menu[disabled="true"], menubar > menu[disabled="true"]{color: #777 !
 
 /* This one applies to all context menus (If you want to theme the browser this one is better instead 
 of going one by one) */
-menupopup:not(.PanelUI-subView) {background-color: var(--Context-menu-background) !important}
+menupopup:not(.PanelUI-subView) {
+  background-color: var(--Context-menu-background) !important;
+  backdrop-filter: blur(6px);}
 
 /* The following code changes the borders of all the context menus (except the ones above mentioned),
 as well as ignoring the bookmark menu context menu */
@@ -535,7 +537,8 @@ menuseparator {
 #context-navigation {
   -moz-appearance: none !important;
   background-color: var(--Context-menu-background) !important;
-  padding-bottom: 0px !important}
+  padding-bottom: 0px !important;
+  backdrop-filter: blur(6px);}
 
 /* This removes the borders for the bookmark menu button next to the url bar */
 #BMB_bookmarksPopup, #BMB_bookmarksPopup menupopup {border: none !important}
