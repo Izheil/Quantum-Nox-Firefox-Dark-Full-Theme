@@ -2,7 +2,7 @@
 You can have multi-row tabs using any of these javascript files.
 There are 2 versions, one that creates infinite rows of bars as you keep opening tabs, and another that shows a max number of rows that you can specify before showing a scrollbar to show the rest of rows.
 
-These versions have been tested with FF70+ up to FF79.0a1 (2020-06-02)
+These versions have been tested with FF70+ up to FF80.0a1 (2020-07-01)
 
 **First make sure that you have patched Firefox with either [the patcher](https://github.com/Izheil/Quantum-Nox-Firefox-Dark-Full-Theme/releases) (which also lets you install any of these files automatically along with the patch), or with the method explained in the [JS Loader](https://github.com/Izheil/Quantum-Nox-Firefox-Dark-Full-Theme/tree/master/Multirow%20and%20other%20functions/JS%20Loader) folder to use any of these files.**
 

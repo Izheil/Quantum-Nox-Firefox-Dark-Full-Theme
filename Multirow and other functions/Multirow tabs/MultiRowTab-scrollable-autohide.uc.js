@@ -1,9 +1,9 @@
 // ==UserScript==
 // @name           MultiRowTab-scrollable-autohide.uc.js
 // @namespace      http://space.geocities.yahoo.co.jp/gl/alice0775
-// @description    Multi-row tabs draggability fix, Experimental CSS version
+// @description    Multi-row tabs draggability fix with autohiding scrollbar
 // @include        main
-// @compatibility  Firefox 70 to Firefox 79.0a1 (2020-06-02)
+// @compatibility  Firefox 70 to Firefox 80.0a1 (2020-07-01) 
 // @author         Alice0775, Endor8, TroudhuK, Izheil
 // @version        12/05/2020 13:09 Removed unnecesary selector
 // @version        09/04/2020 08:14 Minor fixes for tab line when window is resized
