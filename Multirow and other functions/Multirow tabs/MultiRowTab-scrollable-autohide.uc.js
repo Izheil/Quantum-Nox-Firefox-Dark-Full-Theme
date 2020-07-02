@@ -5,6 +5,7 @@
 // @include        main
 // @compatibility  Firefox 70 to Firefox 80.0a1 (2020-07-01) 
 // @author         Alice0775, Endor8, TroudhuK, Izheil
+// @version        03/07/2020 00:34 Fixed an issue with the new tab button overflowing the scrollbar
 // @version        12/05/2020 13:09 Removed unnecesary selector
 // @version        09/04/2020 08:14 Minor fixes for tab line when window is resized
 // @version        08/04/2020 04:30 Compatibility fix for FF77
@@ -158,7 +159,11 @@ function zzzz_MultiRowTabLite() {
 // This scrolls down to the current tab when you open a new one, or restore a session.
 function scrollToView() {
 	var selTab = document.querySelectorAll(".tabbrowser-tab[selected='true']")[0];
+    var overFlow = document.querySelector('#tabbrowser-tabs[overflow="true"]');
 	selTab.scrollIntoView({behavior: "smooth", block: "nearest", inline: "nearest"});
+    if (overFlow) {
+        overFlow.removeAttribute("overflow");
+    }
 }
 
 gBrowser.tabContainer.addEventListener('TabOpen', scrollToView, false);
