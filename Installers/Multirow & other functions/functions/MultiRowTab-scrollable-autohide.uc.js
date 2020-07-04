@@ -40,13 +40,24 @@ function zzzz_MultiRowTabLite() {
      - For tab minimum width, you have to go to about:config and modify [browser.tabs.tabMinWidth] 
        to the value you want.
 
+     - For tab minimum height, change the "inherit" value in #TabsToolbar --tab-min-height variable 
+       to the value you want.
+
      - For tab growth v 
         Value of 1 -> Tab grows. Fixed max width of 226px.
         Value of 0 -> Tab doesn't grow. Uses tab min width as fixed width. */
 
+    /* Editable variables */
     :root {
         --max-tab-rows: TABROWS;
-        --tab-growth: 1}
+        --tab-growth: 1;
+    }
+
+    #TabsToolbar {
+        --tab-min-height: inherit !important;
+    }
+
+    /*-------- Don't edit past here unless you know what you are doing --------*/
 
     .tabbrowser-tab:not([pinned]) {
         flex-grow: var(--tab-growth)}

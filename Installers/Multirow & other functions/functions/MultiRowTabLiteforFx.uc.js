@@ -1,10 +1,11 @@
 // ==UserScript==
 // @name           MultiRowTabLiteforFx.uc.js
 // @namespace      http://space.geocities.yahoo.co.jp/gl/alice0775
-// @description    Multi-row tabs draggability fix, Experimental CSS version
+// @description    Multi-row tabs draggability fix with unlimited rows
 // @include        main
-// @compatibility  Firefox 78.0a1 (2020-05-04)
+// @compatibility  Firefox 70 to Firefox 80.0a1 (2020-07-01)
 // @author         Alice0775, Endor8, TroudhuK, Izheil
+// @version        04/07/2020 18:20 Added the option to change tab height
 // @version        12/05/2020 13:09 Removed unnecesary selector
 // @version        09/04/2020 08:14 Minor fixes for tab line when window is resized
 // @version        08/04/2020 04:30 Compatibility fix for FF77
@@ -38,12 +39,23 @@ function zzzz_MultiRowTabLite() {
      - For tab minimum width, you have to go to about:config and modify [browser.tabs.tabMinWidth] 
        to the value you want.
 
+     - For tab minimum height, change the "inherit" value in #TabsToolbar --tab-min-height variable 
+       to the value you want.
+
      - For tab growth v 
         Value of 1 -> Tab grows. Fixed max width of 226px.
         Value of 0 -> Tab doesn't grow. Uses tab min width as fixed width. */
 
+    /* Editable variables */
     :root {
-        --tab-growth: 1}
+        --tab-growth: 1;
+    }
+
+    #TabsToolbar {
+        --tab-min-height: inherit !important;
+    }
+
+    /*-------- Don't edit past here unless you know what you are doing --------*/
 
     .tabbrowser-tab:not([pinned]) {
         flex-grow: var(--tab-growth)}
