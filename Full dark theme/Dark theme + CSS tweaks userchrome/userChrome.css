@@ -1,6 +1,6 @@
 /* You can find an updated version here: https://github.com/Izheil/Quantum-Nox-Firefox-Dark-Full-Theme */
 /* Made by Izheil */
-/* Last updated: 29/06/2020 */
+/* Last updated: 05/07/2020 */
 
 /* COLORING PART STARTS HERE */
 
@@ -76,6 +76,8 @@ but is disabled by default in this theme (Disable for the default tab line color
   --Context-menu-highlight: #25a;
   --Context-menu-background: rgba(60,60,60, 1); /* The last number changes the opacity %. Change that 1 for 0.9 for semitransparent backgrounds */
   --Context-menu-text-color: #ccc;
+  --Autocomplete-popup-background: rgb(60,60,60);
+  --Autocomplete-popup-text-color: #ccc;
   --Progress-bar-color: #3070dd;
   --Input-field-focus-shadow: 0 0 4px #0050ff;
   --Bookmark-folder-icon: #ffe793;
@@ -193,7 +195,7 @@ for icons on the bookmarks bar under the url bar */
 of the minimize, maximize and close buttons */
 #titlebar .titlebar-min:not(:hover), #titlebar .titlebar-max:not(:hover), 
 #main-window[sizemode="maximized"] #titlebar .titlebar-max:not(:hover),
-#titlebar .titlebar-close:not(:hover), #titlebar .titlebar-restore:not(:hover) 
+#titlebar .titlebar-close:not(:hover), #titlebar .titlebar-restore:not(:hover)
 {background-color: transparent !important}
 
 /* This changes the color on hover of the minimize and maximize buttons */
@@ -898,10 +900,20 @@ if necessary depending on if you are using a custom OS theme (which may mess up 
 
 /* This changes the autocomplete popup borders */
 #PopupAutoCompleteRichResult, #PopupSearchAutoComplete, #PopupAutoComplete {
-  border: 1px solid #000 !important}
+  border: 1px solid #666 !important}
 
-/* Changes the logins autocomplete */
-#PopupAutoComplete .autocomplete-richlistbox {background-color: var(--Window-bg) !important}
+/* Changes all autocomplete popups */
+#PopupAutoComplete .autocomplete-richlistbox {
+  background-color: var(--Autocomplete-popup-background) !important;
+  color: var(--Autocomplete-popup-text-color) !important}
+
+#PopupAutoComplete > richlistbox > richlistitem[originaltype="loginsFooter"] {
+  background-color: rgba(255,255,255,0.2) !important;
+  color: #ddd !important}
+
+#PopupAutoComplete > richlistbox > richlistitem[originaltype="loginsFooter"]:hover {
+  background-color: rgba(255,255,255,0.3) !important;
+  color: #fff !important}
 
 .line1-label {color: #ddd !important}
 .line2-label {color: #aaa !important}
@@ -1260,10 +1272,13 @@ Make sure to NOT leave a comma before your last selector and the {display: none 
 /* Move tab */
 #context_moveTabOptions,
 
-/* Close all tabs to the right */
+/* Close multiple tabs *//*
+#context_closeTabOptions,
+
+/* Close all tabs to the right *//*
 #context_closeTabsToTheEnd,
 
-/* Close all other tabs */
+/* Close all other tabs *//*
 #context_closeOtherTabs,
 
 /* Close tab *//*

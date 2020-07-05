@@ -11,15 +11,16 @@ You can use it to fully change the colors of most of firefox UI to dark-gray col
 
 If you want to know how to change some colors of the theme, check the [wiki](https://github.com/Izheil/Quantum-Nox-Firefox-Dark-Full-Theme/wiki/Editting-CSS-files).
 
-### Last update: 04/07/2020
+### Last update: 05/07/2020
+
+Files updated:
+* **userChrome.css**: Fixed some issue on autocomplete popups not displaying text right.
+* **Context-menu-commands.as.css**: Added the new "Close multiple tabs" entry.
+
+### Pre-Last update: 04/07/2019
 
 Files updated:
 * __MultiRowTab*.uc.js__: Added the option to change tab height inside the script.
-
-### Pre-Last update: 28/06/2019
-
-Files updated:
-* **userChrome.css**: Fixed some issues on nightly. Also changed context menu borders and separators to gray.
 
 
 ### A note on people looking to replace some Tab Mix Plus features:

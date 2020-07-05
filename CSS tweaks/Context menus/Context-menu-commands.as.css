@@ -1,6 +1,6 @@
 /* You can find an updated version here: https://github.com/Izheil/Quantum-Nox-Firefox-Dark-Full-Theme */
 /* Made by Izheil */
-/* Last updated: 03/06/2019 */
+/* Last updated: 05/07/2019 */
 
 /* CONTEXT MENU COMMANDS */
 
@@ -75,6 +75,9 @@ Make sure to only do line breaks after a comma if you really need to (like in th
 
 /* Move tab */
 #context_moveTabOptions,
+
+/* Close multiple tabs */
+#context_closeTabOptions,
 
 /* Close all tabs to the right */
 #context_closeTabsToTheEnd,

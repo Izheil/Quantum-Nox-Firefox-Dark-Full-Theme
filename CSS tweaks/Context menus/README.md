@@ -33,6 +33,7 @@ You can hide the following commands from context menus:
   * Bookmark selected tabs.
   * Reopen tab in container.
   * Move tab.
+  * Close multiple tabs.
   * Close all tabs to the right.
   * Close all other tabs.
   * Close tab.
