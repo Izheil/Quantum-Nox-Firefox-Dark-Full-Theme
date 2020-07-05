@@ -14,7 +14,7 @@ If you want to know how to change some colors of the theme, check the [wiki](htt
 ### Last update: 05/07/2020
 
 Files updated:
-* **userChrome.css**: Fixed some issue on autocomplete popups not displaying text right.
+* **userChrome.css**: Fixed some issue on autocomplete popups not displaying text right, and certain buttons not being themed on dialogs.
 * **Context-menu-commands.as.css**: Added the new "Close multiple tabs" entry.
 
 ### Pre-Last update: 04/07/2019

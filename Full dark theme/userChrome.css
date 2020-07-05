@@ -271,6 +271,8 @@ dialog, dialog caption, dialog select, .tabmodalprompt-buttonContainer  {
   background-color: #333 !important;
   color: #ccc !important}
 
+fieldset {border-color: #666 !important}
+
 #printPageSetupDialog caption, .tabmodalprompt-mainContainer {background-color: #444 !important}
 
 .tabmodalprompt-mainContainer {color: #ccc !important}
@@ -285,10 +287,6 @@ dialog, dialog caption, dialog select, .tabmodalprompt-buttonContainer  {
 .tabmodalprompt-mainContainer button:hover {
   background: linear-gradient(var(--in-content-box-background), var(--in-content-box-background-hover)) !important;
   color: #fff !important}
-
-dialog groupbox {
-  -moz-appearance: none !important; 
-  border: 1px solid #666 !important}
 
 /* Dialog Icons */
 #infoIcon, .message-icon,
@@ -322,36 +320,42 @@ checkbox[checked] .checkbox-check {
 }
 
 /* Radio button coloring */
-radio .radio-check {
+radio .radio-check, #printPageSetupDialog radio .radio-check {
   -moz-appearance: none !important;
   border: 1px solid #666 !important;
+  list-style-image: none !important;
   border-radius: 10em;
   background-color: #444 !important;
   transition: color 0.3s;
   min-width: 12px;
   min-height: 12px;}
 
-radio:not([disabled]):hover .radio-check {
+radio:not([disabled]):hover .radio-check, 
+#printPageSetupDialog radio:not([disabled]):hover .radio-check {
   box-shadow: 0 0 4px #0084ff !important;
   border-color: #0084ff !important}
 
-radio[selected] .radio-check {
+radio[selected] .radio-check, #printPageSetupDialog radio[selected] .radio-check {
   background: #444 url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="10px" height="10px" viewBox="0 0 16 16" ><path fill="rgb(200,200,200)" d="M 6.17,3.01 C -0.84,6.78 4.35,15.22 9.89,13.22 15.68,11.20 13.99,1.10 6.17,3.01 Z" /></svg>') no-repeat center center !important}
 
 radio[disabled], checkbox[disabled] {opacity: 0.8}
 
 /* Select boxes coloring */
-dialog menulist {
+dialog menulist, #print-preview-scale, #printPageSetupDialog menulist {
   -moz-appearance: none !important;
   background: #444 url("data:image/svg+xml;charset=utf-8,%3Csvg width='11' height='7' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M434.574 488L430.5 492.147 426.428 488 425 489.399 430.5 494.999 436 489.399z' transform='translate(-425 -488)' fill='%23cccccc' fill-rule='evenodd'/%3E%3C/svg%3E") no-repeat calc(100% - 5px) 50% !important;
   padding: 3px;
   color: #ccc !important}
 
-dialog menulist:hover {
+dialog menulist:hover, #print-preview-scale:hover, #printPageSetupDialog menulist:hover {
   background: #252525 url("data:image/svg+xml;charset=utf-8,%3Csvg width='11' height='7' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M434.574 488L430.5 492.147 426.428 488 425 489.399 430.5 494.999 436 489.399z' transform='translate(-425 -488)' fill='%23cccccc' fill-rule='evenodd'/%3E%3C/svg%3E") no-repeat calc(100% - 5px) 50% !important;
   color: #fff !important}
 
-dialog menulist .menulist-dropmarker {display: none}
+#printPageSetupDialog menulist {background-color: #555 !important}
+#printPageSetupDialog menulist:hover {background-color: #666 !important}
+
+dropmarker[exportparts="icon: dropmarker-icon"] {
+  -moz-appearance: none !important}
 
 /* Release version dialog */
 #aboutDialog {
@@ -363,15 +367,17 @@ window:not(#main-window):not(#CookiesDialog):not(#SignonViewerDialog):not(.theme
   color: #fff !important}
 
 /* Color for most buttons */
-dialog button, toolbar[printpreview="true"] button {
+dialog button, toolbar[printpreview="true"] button, 
+#print-preview-toolbar button, .dialog-button-box button{
   -moz-appearance: none !important;
   border-radius: 3px !important;
   background-color: #555 !important;
   color: #ddd !important;
   padding: 2px !important}
 
-dialog button:hover, toolbar[printpreview="true"] button:hover {
-  background-color: #444 !important;
+dialog button:hover, toolbar[printpreview="true"] button:hover,
+#print-preview-toolbar button:hover, .dialog-button-box button:hover {
+  background-color: #222 !important;
   color: #fff !important}
 
 /* This changes the missing dialog buttons */
@@ -400,16 +406,17 @@ dialog button:hover, toolbar[printpreview="true"] button:hover {
   border-color: #000 !important}
 
 /* Textboxes colors */
-dialog textbox, toolbar[printpreview="true"] textbox {
+dialog textbox, toolbar[printpreview="true"] textbox, #printPageSetupDialog input {
   transition: all 0.25s ease-in-out !important;
-  -moz-appearance: none !important; 
+  -moz-appearance: none !important;
   border: 1px solid #666 !important;
-  background-color: #444 !important;
-  color: #aaa !important}
-
-dialog textbox[focused="true"], toolbar[printpreview="true"] textbox[focused="true"] {
-  box-shadow: var(--Input-field-focus-shadow) !important;
   background-color: #555 !important;
+  color: #ccc !important}
+
+dialog textbox[focused="true"], toolbar[printpreview="true"] textbox[focused="true"], 
+#printPageSetupDialog input:focus {
+  box-shadow: var(--Input-field-focus-shadow) !important;
+  background-color: #666 !important;
   color: #fff !important}
 
 /* CUSTOMIZATION PAGE */
@@ -904,16 +911,16 @@ if necessary depending on if you are using a custom OS theme (which may mess up 
 
 /* Changes all autocomplete popups */
 #PopupAutoComplete .autocomplete-richlistbox {
-	background-color: var(--Autocomplete-popup-background) !important;
-	color: var(--Autocomplete-popup-text-color) !important}
+  background-color: var(--Autocomplete-popup-background) !important;
+  color: var(--Autocomplete-popup-text-color) !important}
 
 #PopupAutoComplete > richlistbox > richlistitem[originaltype="loginsFooter"] {
-	background-color: rgba(255,255,255,0.2) !important;
-	color: #ddd !important}
+  background-color: rgba(255,255,255,0.2) !important;
+  color: #ddd !important}
 
 #PopupAutoComplete > richlistbox > richlistitem[originaltype="loginsFooter"]:hover {
-	background-color: rgba(255,255,255,0.3) !important;
-	color: #fff !important}
+  background-color: rgba(255,255,255,0.3) !important;
+  color: #fff !important}
 
 .line1-label {color: #ddd !important}
 .line2-label {color: #aaa !important}
