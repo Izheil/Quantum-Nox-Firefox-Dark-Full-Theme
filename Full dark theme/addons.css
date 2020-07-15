@@ -1,6 +1,6 @@
 /* You can find an updated version here: https://github.com/Izheil/Quantum-Nox-Firefox-Dark-Full-Theme */
 /* Made by Izheil */
-/* Last updated: 25/06/2020 */
+/* Last updated: 15/07/2020 */
 
 /*------ HOW TO MAKE THE ADDON THEMES WORK ------*/
 /* To use this part of the code, you will have to find the dynamic UUID of your extensions, and replace it where the 
@@ -1107,6 +1107,8 @@ button[disabled] {opacity: 0.7 !important}
 .cm-staticext {color: #0aa !important}
 .cm-builtin {color: #07F !important}
 .cm-keyword {color: rgb(250, 40, 100) !important}
+.cm-value {color: #d90 !important}
+.cm-def {color: #0cd !important}
 
 .CodeMirror-selected, .CodeMirror-line *::selection {background: #055 !important}
 
