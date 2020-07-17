@@ -4,23 +4,22 @@
 
 #### Since Firefox 69, you have to enable `toolkit.legacyUserProfileCustomizations.stylesheets` in `about:config` for userChrome and userContent to be loaded at all as per [bug #1541233](https://bugzilla.mozilla.org/show_bug.cgi?id=1541233#c35).
 
-If you are on Windows or Linux and only want multirow or any other function that isn't related to the theme (like tabs below, or focus tab on hover), you can use the installers inside the [releases](https://github.com/Izheil/Quantum-Nox-Firefox-Dark-Full-Theme/releases) section.
+If you only want multirow or any other function that isn't related to the theme (like tabs below, or focus tab on hover), you can use the installers inside the [releases](https://github.com/Izheil/Quantum-Nox-Firefox-Dark-Full-Theme/releases) section.
 
 This theme is mainly **intended to be used alongside a lightweight theme**, and for the stable release of Firefox (**This means that while it will most probably work with nightly and ESR for the most part, it may have less support for those versions**).
 You can use it to fully change the colors of most of firefox UI to dark-gray colors (with #222-#444 colors mostly), including scrollbars, tooltips, sidebar, as well as dialogs. With the files here you can also as remove some context menu options, enable multirow tabs, change the font of the url bar...
 
 If you want to know how to change some colors of the theme, check the [wiki](https://github.com/Izheil/Quantum-Nox-Firefox-Dark-Full-Theme/wiki/Editting-CSS-files).
 
-### Last update: 15/07/2020
+### Last update: 17/07/2020
+
+Files updated:
+* **addons.css**: Fixed some issue on the popup and settings of multi-account containers addon.
+
+### Pre-Last update: 15/07/2019
 
 Files updated:
 * **addons.css**: Fixed some issue on "my lists" of Ublock Origin addon.
-
-### Pre-Last update: 05/07/2019
-
-Files updated:
-* **userChrome.css**: Fixed some issue on autocomplete popups not displaying text right, and certain buttons not being themed on dialogs.
-* **Context-menu-commands.as.css**: Added the new "Close multiple tabs" entry.
 
 
 ### A note on people looking to replace some Tab Mix Plus features:

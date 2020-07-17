@@ -1,6 +1,6 @@
 /* You can find an updated version here: https://github.com/Izheil/Quantum-Nox-Firefox-Dark-Full-Theme */
 /* Made by Izheil */
-/* Last updated: 15/07/2020 */
+/* Last updated: 17/07/2020 */
 
 /*------ HOW TO MAKE THE ADDON THEMES WORK ------*/
 /* To use this part of the code, you will have to find the dynamic UUID of your extensions, and replace it where the 
@@ -675,47 +675,91 @@ select .menulist-dropmarker {display: none}
 
 /*------ MULTI-ACCOUNTS CONTAINER ADDON ------*/
 @-moz-document url-prefix(moz-extension://TYPE-THE-UUID-OF-MULTI-ACCOUNTS-CONTAINER-ADDON-HERE/) {
-html, body {background: #222 !important}
+html, body {background-color: #333 !important}
 
 h3, legend {color: #fff !important}
 span:not(#current-container), #container-info-movetabs,
-.container-info-tab-title, .truncate-text, form label, form p {color: #ccc !important}
+.container-info-tab-title, .truncate-text {color: #ccc !important}
 
-#sort-containers-link, .userContext-wrapper, .show-tabs:not(.pop-button-image-small), 
-#edit-containers-link, #container-add-link, #edit-container-cancel-link, .panel-back-arrow,
-.container-panel-row {
-	background-color: #333 !important;
-	color: #ccc !important}
+hr, #manage-containers-link, #edit-container-panel-name-input {border-color: #555 !important}
 
-#sort-containers-link:hover, .userContext-wrapper:hover, .show-tabs:hover, 
-#edit-containers-link:hover, #container-add-link:hover, #edit-container-cancel-link:hover,
-.panel-back-arrow:hover, .clickable:hover, .pop-button:hover {
-	background-color: #444 !important;
-	color: #fff !important}
+#manage-containers-link, .cancel-button, #deny {
+  background-color: #444 !important;
+  color: #ccc !important}
 
-.pop-button-image-small {fill: #fff !important}
+#manage-containers-link:hover, .cancel-button:hover, .hover-highlight:focus, #deny:hover {
+  background-color: #555 !important;
+  color: #fff !important}
 
-#container-page-assigned {filter: invert(80%)}
+.menu-item:hover {
+  background-color: #444 !important;
+  color: #fff !important;
+}
 
-#sort-containers-link, .container-panel-row {border-color: #666 !important}
-#edit-containers-link {border: 1px solid #666 !important}
+.onboarding-title {color: #fff !important}
 
-#container-add-link {
-	border-top: 1px solid #666 !important;
-	border-right: 1px solid #666 !important;
-	border-bottom: 1px solid #666 !important}
+.achievement-panel p, .onboarding p {color: #ccc !important}
 
-.edit-containers-text {border-inline-end: transparent !important}
-.scrollable {border-block-start: 1px solid #666 !important}
-.panel-footer {border-block-end: transparent !important}
+.radio-choice > .radio-container > [type="radio"]:checked + label {
+  background-color: #222 !important}
 
-#redirect-url {background-color: #333 !important}
+.btn-return.arrow-left {background-color: transparent !important}
+
+.info-icon, .menu:not(#identities-list):not(#picker-identities-list) .menu-icon, 
+.menu-arrow > img, .btn-return.arrow-left {filter: invert(80%)}
+}
+
+@-moz-document url-prefix(moz-extension://TYPE-THE-UUID-OF-MULTI-ACCOUNTS-CONTAINER-ADDON-HERE/options.html) {
+body, html {background-color: #444 !important}
+
+/* Checkbox coloring */
+input[type="checkbox"] {
+  -moz-appearance: none !important;
+  border: 1px solid #666 !important;
+  background-color: #444 !important;
+  transition: color 0.3s;
+  width: 12px;
+  height: 12px;
+  vertical-align: bottom !important;}
+
+input[type="checkbox"]:not([disabled]):hover {
+  box-shadow: 0 0 4px #0084ff !important;
+  border-color: #0084ff !important}
+
+input[type="checkbox"]:checked {
+  background: #444 url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="12px" height="12px" viewBox="2 3 12 12" ><path fill="rgb(200,200,200)" d="M 13.09,2.87 C 13.09,2.87 6.00,11.00 6.00,11.00 6.00,11.00 2.00,9.00 2.00,9.00 4.25,12.81 7.00,14.00 7.00,14.00 9.24,10.42 12.04,7.39 13.09,2.87 Z" /></svg>') no-repeat center center !important}
+
+/* Select boxes coloring */
+select {
+  -moz-appearance: none !important;
+  background: #555 url("data:image/svg+xml;charset=utf-8,%3Csvg width='11' height='7' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M434.574 488L430.5 492.147 426.428 488 425 489.399 430.5 494.999 436 489.399z' transform='translate(-425 -488)' fill='%23cccccc' fill-rule='evenodd'/%3E%3C/svg%3E") no-repeat calc(100% - 5px) 50% !important;
+  border: none !important;
+  padding: 3px 15px 3px 3px;
+  margin: 0 5px !important;
+  color: #ccc !important}
+
+select:hover {
+  background: #333 url("data:image/svg+xml;charset=utf-8,%3Csvg width='11' height='7' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M434.574 488L430.5 492.147 426.428 488 425 489.399 430.5 494.999 436 489.399z' transform='translate(-425 -488)' fill='%23cccccc' fill-rule='evenodd'/%3E%3C/svg%3E") no-repeat calc(100% - 5px) 50% !important;
+  color: #fff !important}
+
+select .menulist-dropmarker {display: none}
+
+button {
+  -moz-appearance: none !important;
+  background-color: #555;
+  padding: 3px 6px;
+  color: #ccc;
+  border-color: transparent !important}
+
+button:hover {
+  background-color: #333;
+  color: #fff}
 }
 
 @-moz-document url-prefix(http){
 .container-notification {
-	background-color: rgba(50,50,50,0.7) !important;
-	color: #0c0 !important}
+  background-color: rgba(50,50,50,0.7) !important;
+  color: #0c0 !important}
 }
 
 /*------ ONETAB ADDON ------*/
