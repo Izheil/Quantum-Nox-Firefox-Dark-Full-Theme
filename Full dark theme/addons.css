@@ -130,6 +130,11 @@ label:hover {background: rgba(255,255,255,0.1) !important}
   color: #fff3cd !important;
   border-color: #c80 !important}
 
+.alert-danger {
+  background-color: #533 !important;
+  color: #f33 !important;
+  border-color: #c33 !important}
+
 select, .form-control {
   background-color: #101218 !important;
   color: #ccc !important;
