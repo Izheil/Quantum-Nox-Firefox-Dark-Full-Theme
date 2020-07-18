@@ -14,6 +14,7 @@ If you want to know how to change some colors of the theme, check the [wiki](htt
 ### Last update: 18/07/2020
 
 Files updated:
+* **userContent.css**: Minor fixes for Mozilla support page alert banners.
 * **addons.css**: Minor fixes for **multi-account containers**, **cookie autodeleter** and **temporary container** addons.
 
 ### Pre-Last update: 17/07/2019
