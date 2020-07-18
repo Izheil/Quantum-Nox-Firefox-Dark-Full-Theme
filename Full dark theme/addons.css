@@ -1,6 +1,6 @@
 /* You can find an updated version here: https://github.com/Izheil/Quantum-Nox-Firefox-Dark-Full-Theme */
 /* Made by Izheil */
-/* Last updated: 17/07/2020 */
+/* Last updated: 18/07/2020 */
 
 /*------ HOW TO MAKE THE ADDON THEMES WORK ------*/
 /* To use this part of the code, you will have to find the dynamic UUID of your extensions, and replace it where the 
@@ -108,7 +108,7 @@ label::before {filter: invert(90%)}
 
 .row.nav.nav-tabs {border-color: #20252c !important}
 
-.form-control, #formText {background: #26292e !important; color: #ccc !important}
+#formText {background: #26292e !important; color: #ccc !important}
 .form-control:not(focus), #formText:not(focus) {border-color: #37403f !important}
 
 .table-striped > tbody > tr:nth-of-type(2n+1) {background: rgba(0,0,0,0.4) !important}
@@ -124,6 +124,16 @@ label::before {filter: invert(90%)}
 .card {background-color: #20252c !important}
 
 label:hover {background: rgba(255,255,255,0.1) !important}
+
+.alert-warning {
+  background-color: #403000 !important;
+  color: #fff3cd !important;
+  border-color: #c80 !important}
+
+select, .form-control {
+  background-color: #101218 !important;
+  color: #ccc !important;
+  border-color: #37403f !important}
 }
 
 /*------ DOWNLOAD MANAGER (S3) ADDON CONFIGURATION PAGE ------*/
@@ -675,19 +685,20 @@ select .menulist-dropmarker {display: none}
 
 /*------ MULTI-ACCOUNTS CONTAINER ADDON ------*/
 @-moz-document url-prefix(moz-extension://TYPE-THE-UUID-OF-MULTI-ACCOUNTS-CONTAINER-ADDON-HERE/) {
-html, body {background-color: #333 !important}
+html, body, .delete-container {background-color: #333 !important}
 
 h3, legend {color: #fff !important}
 span:not(#current-container), #container-info-movetabs,
 .container-info-tab-title, .truncate-text {color: #ccc !important}
 
-hr, #manage-containers-link, #edit-container-panel-name-input {border-color: #555 !important}
+hr, #manage-containers-link, #edit-container-panel-name-input, .delete-container {border-color: #555 !important}
 
-#manage-containers-link, .cancel-button, #deny {
+#manage-containers-link, .cancel-button, #deny, #delete-container-button {
   background-color: #444 !important;
   color: #ccc !important}
 
-#manage-containers-link:hover, .cancel-button:hover, .hover-highlight:focus, #deny:hover {
+#manage-containers-link:hover, .cancel-button:hover, .hover-highlight:focus, #deny:hover,
+#delete-container-button:hover {
   background-color: #555 !important;
   color: #fff !important}
 
@@ -698,14 +709,14 @@ hr, #manage-containers-link, #edit-container-panel-name-input {border-color: #55
 
 .onboarding-title {color: #fff !important}
 
-.achievement-panel p, .onboarding p {color: #ccc !important}
+.achievement-panel p, .onboarding p, .container-options .options-label {color: #ccc !important}
 
 .radio-choice > .radio-container > [type="radio"]:checked + label {
   background-color: #222 !important}
 
 .btn-return.arrow-left {background-color: transparent !important}
 
-.info-icon, .menu:not(#identities-list):not(#picker-identities-list) .menu-icon, 
+.info-icon, .menu:not(#identities-list):not(#picker-identities-list):not(#edit-sites-assigned) .menu-icon, 
 .menu-arrow > img, .btn-return.arrow-left {filter: invert(80%)}
 }
 
@@ -1005,16 +1016,16 @@ textarea, input[type="number"], input[type="text"] {background: #303030 !importa
 @-moz-document url-prefix(moz-extension://TYPE-THE-UUID-OF-TEMPORARY-CONTAINERS-ADDON-HERE/) {
 html, body, .dropdown.selection, .menu .item, .ui.menu {background: #222 !important}
 
-input[type="text"]{
-	background-color: #444 !important; 
-	border: 1px solid #666 !important;
-	color: #fff !important}
+input[type="text"], #scriptCode {
+  background-color: #444 !important; 
+  border: 1px solid #666 !important;
+  color: #fff !important}
 
-input[type="text"]:focus{border: 1px solid #0a84ff !important}
+input[type="text"]:focus, #scriptCode:focus {border: 1px solid #0a84ff !important}
 
 .ui.segment, .pusher  {
-	background: #303030 !important;
-	color: #ccc !important}
+  background: #303030 !important;
+  color: #ccc !important}
 
 .ui.segment.active, .item.active {background: #353535 !important}
 .item, label, h4, h3 {color: #ccc !important}
@@ -1026,13 +1037,19 @@ input[type="text"]:focus{border: 1px solid #0a84ff !important}
 .item.active, .ui.popup, .ui.segment {border-color: #666 !important}
 
 .ui.negative.message {
-	background-color: #533 !important;
-	color: #f33 !important}
+  background-color: #533 !important;
+  color: #f33 !important;
+  box-shadow: 0 0 0 1px #c33 inset,0 0 0 0 transparent !important}
 
-.ui.notice.message{
-	background-color: #555 !important;
-	color: #fff !important;
-	border-color: #ccc !important}
+.ui.notice.message, .ui.tiny.button {
+  background-color: #555 !important;
+  color: #fff !important;
+  border-color: #ccc !important}
+
+.ui.tiny.button:hover {
+  background-color: #666 !important;
+  color: #fff !important;
+}
 
 .ui.notice.message a:link, .ui.notice.message a {color: #09f !important}
 .ui.notice.message a:visited {color: #0070aa !important}
