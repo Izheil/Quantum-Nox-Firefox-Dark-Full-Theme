@@ -1,7 +1,7 @@
 # Addon UUID replacer
 If you don't want to manually change every UUID of the addon files, you should use this installer.
 **Make sure your addons are up to date, since addons.css file assume you have the lastest versions.**
-This is the python version of the installer, for the executables [Full dark theme](https://github.com/Izheil/Quantum-Nox-Firefox-Dark-Full-Theme/tree/master/Full%20dark%20theme) folder.
+This is the python version of the installer, for the executables go to the [releases](https://github.com/Izheil/Quantum-Nox-Firefox-Dark-Full-Theme/releases/tag/1.0.0) page.
 
 #### Pre-requisites 
 You need [Python 3.6+](https://www.python.org/downloads/release/python-375/) installed to use the python version, along with the **requests** module.
