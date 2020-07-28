@@ -1,11 +1,11 @@
 // ==UserScript==
-// @name           MultiRowTab-scrollable.uc.js
+// @name           Scrollable Multirow Tabs
 // @namespace      http://space.geocities.yahoo.co.jp/gl/alice0775
 // @description    Multi-row tabs draggability fix with scrollable rows
 // @include        main
-// @compatibility  Firefox 70 to Firefox 80.0a1 (2020-07-01) 
+// @compatibility  Firefox 70 to Firefox 81.0a1 (2020-07-28)
 // @author         Alice0775, Endor8, TroudhuK, Izheil
-// @version        04/07/2020 18:20 Added the option to change tab height
+// @version        28/07/2020 23:28 Compatibility fix for FF81 
 // @version        03/07/2020 00:34 Fixed an issue with the new tab button overflowing the scrollbar
 // @version        12/05/2020 13:09 Removed unnecesary selector
 // @version        09/04/2020 08:14 Minor fixes for tab line when window is resized
@@ -89,13 +89,18 @@ function zzzz_MultiRowTabLite() {
           overflow: visible;
           display: block;
         }
-
+        
         scrollbar {-moz-window-dragging: no-drag !important}
         `;
 
         // This is a fix for the shadow elements:
         var style = document.createElement('style');
         style.innerHTML = `
+        .scrollbox-clip {
+            overflow: visible;
+            display: block;
+        }
+
         scrollbox {
             display: flex;
             flex-wrap: wrap; 
@@ -114,7 +119,7 @@ function zzzz_MultiRowTabLite() {
 
         document.querySelector("#tabbrowser-tabs > arrowscrollbox").shadowRoot.appendChild(style);
 	} else {
-        // Here the FF66-FF70 changes
+        // Here the FF69-FF70 changes
 		css +=`
         #tabbrowser-tabs .scrollbutton-up, #tabbrowser-tabs .scrollbutton-down {
             display: none !important}

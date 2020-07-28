@@ -1,10 +1,11 @@
 // ==UserScript==
-// @name           MultiRowTabLiteforFx.uc.js
+// @name           Unlimited rows of tabs
 // @namespace      http://space.geocities.yahoo.co.jp/gl/alice0775
 // @description    Multi-row tabs draggability fix with unlimited rows
 // @include        main
-// @compatibility  Firefox 70 to Firefox 80.0a1 (2020-07-01)
+// @compatibility  Firefox 70 to Firefox 81.0a1 (2020-07-28)
 // @author         Alice0775, Endor8, TroudhuK, Izheil
+// @version        28/07/2020 23:28 Compatibility fix for FF81
 // @version        04/07/2020 18:20 Added the option to change tab height
 // @version        12/05/2020 13:09 Removed unnecesary selector
 // @version        09/04/2020 08:14 Minor fixes for tab line when window is resized
@@ -95,6 +96,10 @@ function zzzz_MultiRowTabLite() {
 	    // This is a fix for the shadow elements:
 	    var style = document.createElement('style');
 	    style.innerHTML = `
+        .scrollbox-clip {
+            overflow: visible;
+            display: block}
+
         scrollbox {
             display: flex;
             flex-wrap: wrap}
@@ -107,7 +112,7 @@ function zzzz_MultiRowTabLite() {
 	    `
 	    document.querySelector("#tabbrowser-tabs > arrowscrollbox").shadowRoot.appendChild(style);
 	} else {
-        // Here the FF66-FF70 changes
+        // Here the FF69-FF70 changes
 		css +=`
 
         #tabbrowser-tabs .scrollbutton-up, #tabbrowser-tabs .scrollbutton-down {
