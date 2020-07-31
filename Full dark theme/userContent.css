@@ -1468,7 +1468,7 @@ a.Addon-all-reviews-link, .MetadataCard, .Card-contents ul li, .LandingPage-head
 .ShowMoreCard-contents::after 
 {background: linear-gradient(rgba(48, 48, 48, 0.3), #303030) !important}
 
-.Notice-warning {background-color: #963 !important}
+.Notice-warning, .Notice-warningInfo {background-color: #963 !important}
 
 .HeroSection-content {color: #fff !important}
 
