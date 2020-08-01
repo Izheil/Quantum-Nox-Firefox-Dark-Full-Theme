@@ -1,6 +1,6 @@
 /* You can find an updated version here: https://github.com/Izheil/Quantum-Nox-Firefox-Dark-Full-Theme */
 /* Made by Izheil */
-/* Last updated: 05/07/2019 */
+/* Last updated: 29/07/2019 */
 
 /* CONTEXT MENU COMMANDS */
 
@@ -132,6 +132,9 @@ Make sure to only do line breaks after a comma if you really need to (like in th
 
 /* Frame selector separator */
 #frame-sep,
+
+/* Inspect accessibility properties */
+#context-inspect-a11y,
 
 /* Bookmark this link */ 
 #context-bookmarklink,

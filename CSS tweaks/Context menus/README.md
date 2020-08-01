@@ -50,6 +50,7 @@ You can hide the following commands from context menus:
   * Send video... (same as with send page).
   * Save video capture.
   * Frame selector separator (You can hide it to avoid double separators).
+  * Inspect accessibility content.
   * Bookmark this link (same as bookmark this page).
   * Send link... (same as send image).
   * Search highlighted word on your default search engine.
