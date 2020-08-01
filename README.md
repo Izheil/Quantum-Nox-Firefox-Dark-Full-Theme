@@ -17,10 +17,12 @@ Files updated:
 * **userContent.css**: Fixes for **addons.mozilla.org** front page.
 * __Tabs-below*.as.css__: They should now adapt correctly to all resolutions.
 
-### Pre-Last update: 18/07/2019
+### Pre-Last update: 29/07/2019
 
 Files updated:
-* **userContent.css**: Fixes for **addons.mozilla.org** warnings.
+* __MultirowTabs*.uc.js__: Compatibility fix for Nightly (FF81).
+* **Context-menu-commands.as.css**: Added the new "inspect accessibility content" context menu entry.
+* **Dark theme + CSS tweaks userchrome/userChrome.css**: Removed the new "inspect accessibility content" menu by default.
 
 
 ### A note on people looking to replace some Tab Mix Plus features:
