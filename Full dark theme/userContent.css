@@ -1433,8 +1433,7 @@ span, .statsBoxSection-header {color: #fff !important}
 /*------ MOZILLA ADDONS PAGE ------*/
 @-moz-document url-prefix(https://addons.mozilla.org) {
 html, .App-content, tr.LanguageTools-table-row:nth-child(even), 
-.Paginate, section.scheme-light, section.scheme-default, .Page-content,
-.Addon-overall-rating .Card-footer 
+.Paginate, section.scheme-light, section.scheme-default, .Page-content
 {background: #202020 !important}
 
 .scheme-medium {background-color: #1d3770 !important}
@@ -1445,7 +1444,7 @@ footer h4 {color: #ddd !important}
 
 tr.LanguageTools-table-row:nth-child(odd) {background-color: #252525 !important}
 
-#react-autowhatever-1 * {background-color: #303030 !important}
+#react-autowhatever-1 *, .Addon-overall-rating .Card-footer {background-color: #303030 !important}
 
 .Hero, .Card-contents, .Home-SubjectShelf .Card-contents,
 .CardList .Card-header, .CardList .Card-contents, a.SearchResult-link, 
