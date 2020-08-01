@@ -1,6 +1,6 @@
 /* You can find an updated version here: https://github.com/Izheil/Quantum-Nox-Firefox-Dark-Full-Theme */
 /* Made by Izheil */
-/* Last updated: 16/03/2020 */
+/* Last updated: 01/08/2020 */
 
 /* TAB BAR BELOW
 You can set the order of each bar here. 1 for top, and 3 bottom.
@@ -21,16 +21,21 @@ Explanation of what each rule affects:
   top: 0;
   right: 0}
 
-/* You may need to change this to remove padding above tabs */
-#main-window[sizemode="maximized"] #titlebar {margin-top: -8px !important} 
-#main-window[sizemode="normal"] #titlebar {margin-top: -1px !important}
-/* ^ Change to -1px in the "maximized" rule if the tabs are overlapping the toolbar above them ^ */
+/* This enforces the size of the tabs+menu container to only be as big as the tabs container */
+#main-window #titlebar {
+  -moz-appearance: none !important;
+  height: var(--tab-min-height) !important;
+  box-sizing: border-box !important}
 
-/* We set the tabs to be exactly at the bottom */
-#main-window:not([customizing="true"]) #TabsToolbar {margin-bottom: -1px !important}
+/* This makes sure that the min/max/close buttons are as big as the tab bar */
+#TabsToolbar .titlebar-buttonbox .titlebar-button {
+  height: var(--tab-min-height) !important}
+
+/* Makes sure no duplicated min/max/close buttons show up */
+#main-window:not([sizemode="fullscreen"]) #window-controls {display: none !important}
 
 /* Change the non 0 px values to any other to make the area of each menubar item bigger. 
-The values are 1px 0 1px 0 by default (corresponding to Top, Right, Down, Left sides) */
+The values are 5px 0 by default (corresponding to Top, Right, Down, Left sides) */
 #main-menubar > menu {padding: 5px 0 !important}
 
 /* These control the space to leave on top of the window for the menu toolbar.

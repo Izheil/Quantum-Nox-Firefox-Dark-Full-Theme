@@ -15,6 +15,7 @@ If you want to know how to change some colors of the theme, check the [wiki](htt
 
 Files updated:
 * **userContent.css**: Fixes for **addons.mozilla.org** front page.
+* __Tabs-below*.as.css__: They should now adapt correctly to all resolutions.
 
 ### Pre-Last update: 18/07/2019
 
