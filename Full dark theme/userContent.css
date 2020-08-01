@@ -1433,7 +1433,7 @@ span, .statsBoxSection-header {color: #fff !important}
 /*------ MOZILLA ADDONS PAGE ------*/
 @-moz-document url-prefix(https://addons.mozilla.org) {
 html, .App-content, tr.LanguageTools-table-row:nth-child(even), 
-.Card-footer, .Paginate, section.scheme-light, section.scheme-default, .Page-content
+.Paginate, section.scheme-light, section.scheme-default, .Page-content
 {background: #202020 !important}
 
 .scheme-medium {background-color: #1d3770 !important}
@@ -1450,7 +1450,7 @@ tr.LanguageTools-table-row:nth-child(odd) {background-color: #252525 !important}
 .CardList .Card-header, .CardList .Card-contents, a.SearchResult-link, 
 .Card-contents, .Card-header, ul.AddonsCard-list li.SearchResult, ul.AddonsCard-list,
 .ExpandableCard .Card-header, span .Paginate-item.disabled.Paginate-previous, 
-.Card-footer-text, .Card-footer-link, a.ShowMoreCard-expand-link,
+.Card-footer-text, a.ShowMoreCard-expand-link,
 a.Addon-all-reviews-link, .MetadataCard, .Card-contents ul li, .LandingPage-header,
 .highlight, .AutoSearchInput-query, .Search .SearchResults-message, .DevHub-callout-box,
 .SecondaryHero-module {
@@ -1529,7 +1529,8 @@ li, .Guides-section-explore-more, .HomeHeroGuides-header-subtitle,
 {color: #ccc !important}
 
 a.SectionLinks-dropdownlink:not(:hover), 
-a.SectionLinks-clientApp-android:not(:hover) {color: #aaa !important}
+a.SectionLinks-clientApp-android:not(:hover),
+.SecondaryHero-message-description {color: #aaa !important}
 
 .Paginate .Paginate-item, li.p-popular {background-color: #303030 !important}
 .Paginate a.Paginate-item:hover {background-color: #151515 !important}
@@ -1537,7 +1538,9 @@ a.SectionLinks-clientApp-android:not(:hover) {color: #aaa !important}
 .Paginate .Paginate-item {margin-left: 3px !important; margin-right: 3px !important}
 
 a.SearchResult-link:hover h2, a:not(.Button):hover,
-.SearchResult-wrapper:hover .SearchResult-link {color: #1494FB !important}
+.SearchResult-wrapper:hover .SearchResult-link,
+.SecondaryHero-message-linkText, .SecondaryHero-module-linkText,
+.Card-footer-link {color: #1494FB !important}
 
 h2.Home-SubjectShelf-subheading, .CardList h2.Card-header, 
 h1, .Paginate-page-number, .Badge, a.Button.Categories-link,
