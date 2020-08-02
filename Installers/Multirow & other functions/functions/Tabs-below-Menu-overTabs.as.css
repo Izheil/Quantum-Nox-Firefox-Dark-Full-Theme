@@ -30,7 +30,7 @@ Explanation of what each rule affects:
 	height: var(--tab-min-height) !important}
 
 /* Make sure that tabs stay right at the border of the webarea and not floating 1px above*/
-#TabsToolbar {margin-bottom: -1px !important}
+#main-window[sizemode="maximized"] #TabsToolbar {margin-bottom: -1px !important}
 
 /* Makes sure no duplicated min/max/close buttons show up */
 #main-window:not([sizemode="fullscreen"]) #window-controls {display: none !important}
@@ -39,7 +39,7 @@ Explanation of what each rule affects:
 #main-menubar > menu {height: 28px !important}
 
 /* Makes sure that there is enough margin for the expanded "megabar" to show it's borders */
-#nav-bar {padding-top: 2px !important}
+#nav-bar {padding-top: 4px !important}
 /* ^ Set to 0 if you disabled the megabar enlarging ^ */
 
 /* Windows-only fixes. */

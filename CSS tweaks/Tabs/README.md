@@ -13,20 +13,13 @@ If you want the old style (pre FF57) rounded tabs for firefox, you should add [a
 The close button at the right side of each tab will always be visible.
 
 ### Tabs-below.as.css
+If using Mac, use the `Tabs-below-Menu-onTop.as.css` version instead, since this will display an empty margin that is not usable for Mac users.
+
 Changes the order of the toolbars inside the navigation box. This one sets the position of the tab bar below the url bar, and the menu bar (the one with file, edit, etc...) to be on top of all the other bars (you need to have the menu bar toggled as always visible, which can be toggled in the context menu that opens right clicking a blank space in the tabs bar). If you don't know which one to use, use this one.
 
-The code is optimized for `1920x1080` resolutions, so if your screen resolution is different you may have to change the value of these to a higher number:
-
-``` CSS
-/* You may need to change this to remove padding above tabs */
-#main-window[sizemode="maximized"] #titlebar {margin-top: -8px !important} 
-#main-window[sizemode="normal"] #titlebar {margin-top: -1px !important}
-/* ^ Change to -1px in the "maximized" rule if the tabs are overlapping the toolbar above them ^ */
-```
-
-Usually changing the first one to `-1px` as stated in the comment of the code works for most people if the problem only happens when Firefox is on the maximized state.
-
 ### Tabs-below-Menu-onTop.as.css
+This is the only version of tabs below that Mac users should use.
+
 Changes the order of the toolbars inside the navigation box. This one sets the position of the tab bar below the url bar, and the menu bar (the one with file, edit, etc...) to be below the Url bar, but above the Tabs bar. You won't need to toggle the menu bar as always visible.
 
 As with the `Tabs-below.as.css` file, the code is optimized for `1920x1080` resolutions, so see above for fixes if you have issues with the tabs overlapping the bookmarks toolbar.
