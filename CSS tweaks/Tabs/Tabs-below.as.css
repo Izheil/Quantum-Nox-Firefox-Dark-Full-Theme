@@ -31,22 +31,21 @@ Explanation of what each rule affects:
 #TabsToolbar .titlebar-buttonbox .titlebar-button {
   height: var(--tab-min-height) !important}
 
+/* Make sure that tabs stay right at the border of the webarea and not floating 1px above*/
+#TabsToolbar {margin-bottom: -1px !important}
+
 /* Makes sure no duplicated min/max/close buttons show up */
 #main-window:not([sizemode="fullscreen"]) #window-controls {display: none !important}
 
-/* Change the non 0 px values to any other to make the area of each menubar item bigger. 
-The values are 5px 0 by default (corresponding to Top, Right, Down, Left sides) */
-#main-menubar > menu {padding: 5px 0 !important}
+/* Default height of the menu bar */
+#main-menubar > menu {height: 28px !important}
 
 /* These control the space to leave on top of the window for the menu toolbar.
-   Don't change the #navigator-toolbox margins to anything lower than 35px on maximized window
-   and 28px on normal window if you want to see the menu bar 
+   Don't change the #navigator-toolbox margins to anything lower than 28px if you want to see the menu bar 
    on top of all bars */
-#main-window[sizemode="maximized"] #navigator-toolbox {margin-top: 35px !important}
-#main-window[sizemode="normal"] #navigator-toolbox {margin-top: 28px !important}
-/* ^ Change the "normal" one to 35px or more if there is not enough space for the menu bar to 
+#main-window:not([sizemode="fullscreen"]) #navigator-toolbox {margin-top: 28px !important}
+/* ^ Change this to 35px or more if there is not enough space for the menu bar to 
      fit in a resized window ^ */
-/* ^ For menu-over-tabs instead, change to 10px on maximized, and remove the normal one ^ */
 
 /* This changes the menu bar on top of the screen instead of over the tab bar. Delete or comment out 
 if you want to use menu-over-tabs version */
@@ -58,13 +57,19 @@ if you want to use menu-over-tabs version */
   top: 0}
 
 /* There seems to be an issue with the "top:" rule inside #toolbar-menubar that would not allow fullscreen
-to autohide, so it's safest to just hide it on fullscreen. Delete if using menu-over-tabs instead. */
+to autohide, so it's safest to just hide it on fullscreen. Not necessary for menu-over-tabs. */
 #main-window[sizemode="fullscreen"] #toolbar-menubar {display: none !important}
 
-/* These add spacing above the menu bar. Remove if using menu-over-tabs v */
-#main-window[sizemode="normal"] #toolbar-menubar {
-  margin-top: 0px}
+/* Windows-only fixes. Not necesary for menu-over-tabs. */
+@media (-moz-os-version: windows-win10), (-moz-os-version: windows-win8), (-moz-os-version: windows-win7) {
+  /* Windows requires more padding on top of the window for some reason */
+  #main-window[sizemode="maximized"] #navigator-toolbox {margin-top: 35px !important}
 
-#main-window[sizemode="maximized"] #toolbar-menubar {
-  margin-top: 7px}
-/* ^ Change to 0px if there is empty space above the menu bar when on maximized mode ^ */
+  /* These add spacing above the menu bar v */
+  #main-window[sizemode="normal"] #toolbar-menubar {
+    margin-top: 0px}
+
+  #main-window[sizemode="maximized"] #toolbar-menubar {
+    margin-top: 7px}
+  /* ^ Change to 0px if there is empty space above the menu bar when on maximized mode ^ */
+}

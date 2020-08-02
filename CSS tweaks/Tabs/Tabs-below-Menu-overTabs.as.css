@@ -29,14 +29,22 @@ Explanation of what each rule affects:
 #TabsToolbar .titlebar-buttonbox .titlebar-button {
 	height: var(--tab-min-height) !important}
 
+/* Make sure that tabs stay right at the border of the webarea and not floating 1px above*/
+#TabsToolbar {margin-bottom: -1px !important}
+
 /* Makes sure no duplicated min/max/close buttons show up */
 #main-window:not([sizemode="fullscreen"]) #window-controls {display: none !important}
 
-/* Change the non 0 px values to any other to make the area of each menubar item bigger. 
-The values are 1px 0 1px 0 by default (corresponding to Top, Right, Down, Left sides) */
-#main-menubar > menu {padding: 5px 0 5px 0 !important}
+/* Default height of the menu bar */
+#main-menubar > menu {height: 28px !important}
 
-/* Don't change the #navigator-toolbox margin unless you want more margin on top */
-#main-window[sizemode="maximized"] #navigator-toolbox {margin-top: 8px !important}
-#main-window[sizemode="normal"] #navigator-toolbox {margin-top: 0 !important}
-/* ^ Change to lower than 10px if you want to have less space on top of the url bar ^ */
+/* Makes sure that there is enough margin for the expanded "megabar" to show it's borders */
+#nav-bar {padding-top: 2px !important}
+/* ^ Set to 0 if you disabled the megabar enlarging ^ */
+
+/* Windows-only fixes. */
+@media (-moz-os-version: windows-win10), (-moz-os-version: windows-win8), (-moz-os-version: windows-win7) {
+	/* Don't change the #navigator-toolbox margin unless you want more margin on top */
+	#main-window[sizemode="maximized"] #nav-bar {margin-top: 10px !important}
+	/* ^ Change to lower than 10px if you want to have less space on top of the url bar ^ */
+}
