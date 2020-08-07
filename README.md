@@ -11,18 +11,16 @@ You can use it to fully change the colors of most of firefox UI to dark-gray col
 
 If you want to know how to change some colors of the theme, check the [wiki](https://github.com/Izheil/Quantum-Nox-Firefox-Dark-Full-Theme/wiki/Editting-CSS-files).
 
-### Last update: 01/08/2020
+### Last update: 07/08/2020
+
+Files updated:
+* **userChrome.css**: Fixes for tabs close button hover color on nightly.
+
+### Pre-Last update: 01/08/2019
 
 Files updated:
 * **userContent.css**: Fixes for **addons.mozilla.org** front page.
 * __Tabs-below*.as.css__: They should now adapt correctly to all resolutions and better adjust to all OS (Mac users should still use the *menu above tabs* version, since it won't leave empty spaces on top of the window).
-
-### Pre-Last update: 29/07/2019
-
-Files updated:
-* __MultirowTabs*.uc.js__: Compatibility fix for Nightly (FF81).
-* **Context-menu-commands.as.css**: Added the new "inspect accessibility content" context menu entry.
-* **Dark theme + CSS tweaks userchrome/userChrome.css**: Removed the new "inspect accessibility content" menu by default.
 
 
 ### A note on people looking to replace some Tab Mix Plus features:

@@ -1,6 +1,6 @@
 /* You can find an updated version here: https://github.com/Izheil/Quantum-Nox-Firefox-Dark-Full-Theme */
 /* Made by Izheil */
-/* Last updated: 05/07/2020 */
+/* Last updated: 07/08/2020 */
 
 /* COLORING PART STARTS HERE */
 
@@ -54,6 +54,10 @@ but is disabled by default in this theme (Disable for the default tab line color
   --tab-line-color: #25a !important}
 
 /* This gives a more notizable color background on hover of the close tab button */
+.tab-close-button {
+  padding: 0 !important;
+  margin: auto !important}
+
 .tab-close-button:hover {background: rgba(255,255,255,0.15) !important}
 
 *|*:root {
