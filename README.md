@@ -4,6 +4,8 @@
 
 #### Since Firefox 69, you have to enable `toolkit.legacyUserProfileCustomizations.stylesheets` in `about:config` for userChrome and userContent to be loaded at all as per [bug #1541233](https://bugzilla.mozilla.org/show_bug.cgi?id=1541233#c35).
 
+For updates on the development of the extension that will bring all features from this repo to a more user-friendly interface, you can go [here](https://ko-fi.com/Blog/Post/Extension-development-D1D7221P5)
+
 If you only want multirow or any other function that isn't related to the theme (like tabs below, or focus tab on hover), you can use the installers inside the [releases](https://github.com/Izheil/Quantum-Nox-Firefox-Dark-Full-Theme/releases) section.
 
 This theme is mainly **intended to be used alongside a lightweight theme**, and for the stable release of Firefox (**This means that while it will most probably work with nightly and ESR for the most part, it may have less support for those versions**).
