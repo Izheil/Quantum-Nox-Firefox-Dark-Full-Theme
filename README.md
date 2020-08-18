@@ -16,13 +16,12 @@ If you want to know how to change some colors of the theme, check the [wiki](htt
 ### Last update: 07/08/2020
 
 Files updated:
-* **userChrome.css**: Fixes for tabs close button hover color on nightly.
+* **addons.css**: Fixes for Tab Session Manager theme.
 
 ### Pre-Last update: 01/08/2019
 
 Files updated:
-* **userContent.css**: Fixes for **addons.mozilla.org** front page.
-* __Tabs-below*.as.css__: They should now adapt correctly to all resolutions and better adjust to all OS (Mac users should still use the *menu above tabs* version, since it won't leave empty spaces on top of the window).
+* **userChrome.css**: Fixes for tabs close button hover color on nightly.
 
 
 ### A note on people looking to replace some Tab Mix Plus features:
