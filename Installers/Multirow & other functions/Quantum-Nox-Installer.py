@@ -44,10 +44,12 @@ def readProfiles(profile):
     if not os.access(ProfilesINI, os.F_OK):
         if OSinUse == "Windows" or OSinUse == "Mac":
             profile = os.path.normpath(profile + "/Profiles")
-
-        profilenames = os.listdir(profile)
-        for x in profilenames:
-            Paths.append(os.path.normpath(profile + "/" + x))
+        if os.access(profile, os.F_OK):
+            profilenames = os.listdir(profile)
+            for x in profilenames:
+                Paths.append(os.path.normpath(profile + "/" + x))
+        else:
+            Paths.append("None")
     else:
         with open(ProfilesINI, 'r') as f:
             for line in f.readlines():
@@ -60,7 +62,6 @@ def readProfiles(profile):
                         Paths.append(os.path.normpath(profile + "/" + profilepath.group(1)))
                     else:
                         Paths.append(os.path.normpath(profilepath.group(1)))
-
     return Paths
 
 def readDefaults(profile):
@@ -69,7 +70,7 @@ def readDefaults(profile):
     installsINI = os.path.normpath(profile + "/installs.ini")
     Paths = []
     if not os.access(installsINI, os.F_OK):
-        return None
+        Paths.append("None")
     else:
         with open(installsINI, 'r') as f:
             for line in f.readlines():
@@ -82,7 +83,7 @@ def readDefaults(profile):
                         Paths.append(os.path.normpath(profile + "/" + defaultspath.group(1)))
                     else:
                         Paths.append(os.path.normpath(defaultspath.group(1)))
-        return Paths
+    return Paths
 
 # We get the user folders here
 if OSinUse == "Windows":
