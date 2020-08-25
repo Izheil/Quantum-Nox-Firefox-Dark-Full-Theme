@@ -10,10 +10,14 @@ let _uc = {
   BROWSERCHROME: 'chrome://browser/content/browser.xhtml',
   PREF_ENABLED: 'userChromeJS.enabled',
   PREF_SCRIPTSDISABLED: 'userChromeJS.scriptsDisabled',
+  BASE_FILEURI: Services.io.getProtocolHandler('file').QueryInterface(Ci.nsIFileProtocolHandler).getURLSpecFromDir(Services.dirsvc.get('UChrm', Ci.nsIFile)),
+
+  chromedir: Services.dirsvc.get('UChrm', Ci.nsIFile),
+  sss: Cc["@mozilla.org/content/style-sheet-service;1"].getService(Ci.nsIStyleSheetService),
 
   getScripts: function () {
     this.scripts = {};
-    let files = Services.dirsvc.get('UChrm', Ci.nsIFile).directoryEntries.QueryInterface(Ci.nsISimpleEnumerator);
+    let files = this.chromedir.directoryEntries.QueryInterface(Ci.nsISimpleEnumerator);
     let sss = Cc['@mozilla.org/content/style-sheet-service;1'].getService(Ci.nsIStyleSheetService);
     while (files.hasMoreElements()) {
       let file = files.getNext().QueryInterface(Ci.nsIFile);
@@ -51,7 +55,7 @@ let _uc = {
     return this.scripts[filename] = {
       filename: filename,
       file: aFile,
-      url: Services.io.getProtocolHandler('file').QueryInterface(Ci.nsIFileProtocolHandler).getURLSpecFromFile(aFile),
+      url: this.BASE_FILEURI + filename,
       name: (header.match(/\/\/ @name\s+(.+)\s*$/im) || def)[1],
       charset: (header.match(/\/\/ @charset\s+(.+)\s*$/im) || def)[1],
       description: (header.match(/\/\/ @description\s+(.+)\s*$/im) || def)[1],
@@ -79,7 +83,7 @@ let _uc = {
     let cvstream = Cc['@mozilla.org/intl/converter-input-stream;1'].createInstance(Ci.nsIConverterInputStream);
     cvstream.init(stream, 'UTF-8', 1024, Ci.nsIConverterInputStream.DEFAULT_REPLACEMENT_CHARACTER);
     let content = '',
-      data = {};
+        data = {};
     while (cvstream.readString(4096, data)) {
       content += data.value;
       if (metaOnly && content.indexOf('// ==/UserScript==') > 0) {
@@ -128,11 +132,30 @@ let _uc = {
       let win = windows.getNext();
       if (!win._uc)
         continue;
-      let doc = win.document;
-      let loc = win.location;
-      if (fun(doc, win, loc))
-        break;
+      if (!onlyBrowsers) {
+        let frames = win.docShell.getAllDocShellsInSubtree(Ci.nsIDocShellTreeItem.typeAll, Ci.nsIDocShell.ENUMERATE_FORWARDS);
+        let res = frames.some(frame => {
+          let fWin = frame.domWindow;
+          let {document, location} = fWin;
+          if (fun(document, fWin, location))
+            return true;
+        });
+        if (res)
+          break;
+      } else {
+        let {document, location} = win;
+        if (fun(document, win, location))
+          break;
+      }
     }
+  },
+
+  createElement: function (doc, tag, atts, XUL = true) {
+    let el = XUL ? doc.createXULElement(tag) : doc.createElement(tag);
+    for (let att in atts) {
+      el.setAttribute(att, atts[att]);
+    }
+    return el
   },
 
   error: function (aMsg, err) {
@@ -156,23 +179,22 @@ if (xPref.get(_uc.PREF_SCRIPTSDISABLED) === undefined) {
 
 function UserChrome_js() {
   _uc.getScripts();
-  Services.obs.addObserver(this, 'domwindowopened', false);
+  Services.obs.addObserver(this, 'chrome-document-global-created', false);
 }
 
 UserChrome_js.prototype = {
-  observe: function (aSubject, aTopic, aData) {
-      aSubject.addEventListener('DOMContentLoaded', this, true);
+  observe: function (aSubject) {
+    aSubject.addEventListener('DOMContentLoaded', this, {once: true});
   },
 
   handleEvent: function (aEvent) {
     let document = aEvent.originalTarget;
     let window = document.defaultView;
     let location = window.location;
-    if (/^(chrome:(?!\/\/global\/content\/commonDialog\.xul)|about:(?!blank))/i.test(location.href)) {
+    if (/^(chrome:(?!\/\/(global\/content\/commonDialog|browser\/content\/webext-panels)\.x?html)|about:(?!blank))/i.test(location.href)) {
       window.UC = UC;
       window._uc = _uc;
       window.xPref = xPref;
-      document.allowUnsafeHTML = true; // https://bugzilla.mozilla.org/show_bug.cgi?id=1432966
       if (window._gBrowser) // bug 1443849
         window.gBrowser = window._gBrowser;
 
@@ -187,5 +209,5 @@ UserChrome_js.prototype = {
   }
 };
 
-if (!Services.appinfo.inSafeMode && Services.dirsvc.get('UChrm', Ci.nsIFile).exists())
+if (!Services.appinfo.inSafeMode)
   new UserChrome_js();
