@@ -13,15 +13,15 @@ You can use it to fully change the colors of most of firefox UI to dark-gray col
 
 If you want to know how to change some colors of the theme, check the [wiki](https://github.com/Izheil/Quantum-Nox-Firefox-Dark-Full-Theme/wiki/Editting-CSS-files).
 
-### Last update: 07/08/2020
+### Last update: 30/08/2020
+
+Files updated:
+* **userChrome.css**: Fixes sidebar panel tooltips.
+
+### Pre-Last update: 07/08/2019
 
 Files updated:
 * **addons.css**: Fixes for Tab Session Manager theme.
-
-### Pre-Last update: 01/08/2019
-
-Files updated:
-* **userChrome.css**: Fixes for tabs close button hover color on nightly.
 
 
 ### A note on people looking to replace some Tab Mix Plus features:
