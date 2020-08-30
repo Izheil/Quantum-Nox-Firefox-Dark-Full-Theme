@@ -17,6 +17,7 @@ If you want to know how to change some colors of the theme, check the [wiki](htt
 
 Files updated:
 * **userChrome.css**: Fixes sidebar panel tooltips.
+* **userContent.css**: Fixes for `about:protections` subscribe button.
 
 ### Pre-Last update: 07/08/2019
 
