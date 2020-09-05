@@ -681,9 +681,9 @@ h1[data-l10n-id="page-title"], body > h1, h1#plugs {color: var(--about-title-col
 h2 {color: #ddd !important}
 h3 {color: #ddd !important}
 
-a, a:link {color: var(--in-content-link-color) !important}
-a:hover {color: var(--in-content-link-color-hover) !important}
-a:active {color: var(--in-content-link-color-active) !important}
+a:not(#sign-up-for-monitor-link), a:not(#sign-up-for-monitor-link):link {color: var(--in-content-link-color) !important}
+a:not(#sign-up-for-monitor-link):hover {color: var(--in-content-link-color-hover) !important}
+a:not(#sign-up-for-monitor-link):active {color: var(--in-content-link-color-active) !important}
 
 button {
   -moz-appearance: none !important;

@@ -1,6 +1,6 @@
 /* You can find an updated version here: https://github.com/Izheil/Quantum-Nox-Firefox-Dark-Full-Theme */
 /* Made by Izheil */
-/* Last updated: 07/08/2020 */
+/* Last updated: 04/09/2020 */
 
 /* COLORING PART STARTS HERE */
 
@@ -136,13 +136,21 @@ scrollbar, *|*:root {
   scrollbar-width: auto !important;
 }
 
+/* This changes some of the tooltip colors */
+tooltip, #statuspanel-label {
+  -moz-appearance: none !important;
+  background: #111 !important;
+  color: #eee !important;
+  border: 1px solid #333 !important;
+}
+
 /* Highlight color on browser windows (url bar, library, search box, bookmarks properties...) */
 #urlbar *|*::selection, #infoBox *|*::selection, window *|*::selection,
 #editBMPanel_namePicker *|*::selection, #editBMPanel_tagsField *|*::selection,
 #editBMPanel_tagsSelector *|*::selection, #placesToolbar *|*::selection,
 #mainDeck *|*::selection, dialog *|*::selection, #certDetails *|*::selection,
 #SignonViewerDialog *|*::selection, #CookiesDialog *|*::selection,
-#searchbar *|*::selection {
+#searchbar *|*::selection, .findbar-textbox::selection {
   /* This is the background color */
   background: var(--Text-selection-bg-color) !important;
   /* This is the text color */
@@ -366,7 +374,7 @@ dropmarker[exportparts="icon: dropmarker-icon"] {
   background-color: rgb(23,25,50) !important}
 
 /* This is aimed for notification popups */
-window:not(#main-window):not(#CookiesDialog):not(#SignonViewerDialog):not(.theme-dark):not(#aboutDialog) > * {
+window:not(#main-window):not(#CookiesDialog):not(#SignonViewerDialog):not(.theme-dark):not(#aboutDialog):not(.sidebar-panel) > * {
   background-color: var(--Window-bg) !important; 
   color: #fff !important}
 
