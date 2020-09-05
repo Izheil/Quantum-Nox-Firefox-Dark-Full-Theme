@@ -61,7 +61,7 @@ scrollbar:hover thumb {
 	box-shadow: 0 0 0 8px #aaa inset !important}
 
 scrollbar thumb:active {
-	box-shadow: 0 0 0 8px #666 inset !important}
+	box-shadow: 0 0 0 8px #666 inset !important;
 	background: #666 !important;
 }
 
