@@ -1,0 +1,162 @@
+/* You can find an updated version here: https://github.com/Izheil/Quantum-Nox-Firefox-Dark-Full-Theme */
+/* Adapted by Izheil from original Australis project at https://github.com/wilfredwee/photon-australis */
+/* Last updated: 06/09/2020 */
+
+/* Change color of tabs to match the toolbar here */
+#tab-background-fill, .tabbrowser-tab[selected] .tab-background {
+  background-color: rgba(0,0,0,0.6) !important;
+}
+
+#tab-hover-background-fill, .tabbrowser-tab:hover:not([selected=true]) .tab-background {
+  background-color: rgba(255,255,255,0.12) !important;
+}
+
+/* You can hide the tab line changing this value to transparent */
+.tab-line[selected="true"] {
+  background-color: var(--tab-line-color) !important}
+
+/* Removes additional tab color */
+.tab-background {
+  background-image: none !important;
+}
+
+/* Close button roundness */
+.close-icon:hover {
+  border-radius: 50% !important;
+}
+
+/* Overlap the tab curves */
+.tab-stack, #tabs-newtab-button {
+  margin: 0 -20px !important;
+}
+
+.tabbrowser-tab::before, .tabbrowser-tab::after, 
+#tabs-newtab-button::after, #tabs-newtab-button::before {
+  border: none;
+  content: "";
+  width: 30px !important;
+  max-height: var(--tab-min-height);
+  display: inline-flex;
+  background-repeat: no-repeat;
+  opacity: 1 !important;
+  margin-block: 0 !important;
+  border-left: none !important;
+}
+
+.tabbrowser-tab::before, .tabbrowser-tab::after {
+  pointer-events: none;
+}
+
+#tabs-newtab-button::after, #tabs-newtab-button::before {
+  height: var(--tab-min-height) !important;
+}
+
+#tabs-newtab-button:hover image {
+  background-color: transparent !important;
+}
+
+/* Fixes for round element position */
+#tabs-newtab-button::after {
+  transform: translateX(-14px);
+}
+
+#tabs-newtab-button::before {
+  transform: translateX(14px);
+}
+
+.tabbrowser-tab::before{
+  transform: translateX(-20px);
+}
+
+.tabbrowser-tab::after {
+  transform: translateX(20px);
+}
+
+/* When the window is maximized, the first pinned tab is properly displayed. */
+.tabbrowser-tab[first-visible-tab="true"] {
+  padding-left: 30px !important;
+}
+
+/* Styles to account for when window is resized small, and margin-inline-start kicks in */
+.tabbrowser-tab[pinned="true"][style^="margin-inline-start"] {
+  padding-left: 30px !important;
+}
+
+/* We make tab rounded borders to overlap a little */
+.tabbrowser-tab {
+  border-right: none !important;
+}
+
+/* We define the svgs to use for the rounded parts here */
+#TabsToolbar {
+  --svg-before-normal-density: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' xmlns:svg='http://www.w3.org/2000/svg' width='30px' height='33px' preserveAspectRatio='none'><defs><svg:clipPath id='tab-curve-clip-path-start' clipPathUnits='objectBoundingBox'><svg:path d='m 1,0.065 0.05,0 0,0.938 -1,0 0,-0.028 C 0.32082458,0.95840561 0.4353096,0.81970962 0.48499998,0.5625 0.51819998,0.3905 0.535,0.0659 1,0.065 z'/></svg:clipPath><svg:clipPath id='tab-curve-clip-path-end' clipPathUnits='objectBoundingBox'><svg:path d='m 0,0.065 -0.05,0 0,0.938 1,0 0,-0.028 C 0.67917542,0.95840561 0.56569036,0.81970962 0.51599998,0.5625 0.48279998,0.3905 0.465,0.0659 0,0.065 z'/></svg:clipPath><svg:clipPath id='tab-hover-clip-path' clipPathUnits='objectBoundingBox'><svg:path d='M 0,0.2 0,1 1,1, 1,0.2 z'/></svg:clipPath></defs><foreignObject width='30' height='33' clip-path='url(%23tab-curve-clip-path-start)'><div id='tab-background-fill' style='background-color: rgba(0, 0, 0, .6);background-repeat:no-repeat;height:100%;width:100%;' xmlns='http://www.w3.org/1999/xhtml'></div></foreignObject></svg>");
+  --svg-before-compact-density: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' xmlns:svg='http://www.w3.org/2000/svg' width='30px' height='29px' preserveAspectRatio='none'><defs><svg:clipPath id='tab-curve-clip-path-start' clipPathUnits='objectBoundingBox'><svg:path d='m 1,0.065 0.05,0 0,0.938 -1,0 0,-0.028 C 0.32082458,0.95840561 0.4353096,0.81970962 0.48499998,0.5625 0.51819998,0.3905 0.535,0.0659 1,0.065 z'/></svg:clipPath><svg:clipPath id='tab-curve-clip-path-end' clipPathUnits='objectBoundingBox'><svg:path d='m 0,0.065 -0.05,0 0,0.938 1,0 0,-0.028 C 0.67917542,0.95840561 0.56569036,0.81970962 0.51599998,0.5625 0.48279998,0.3905 0.465,0.0659 0,0.065 z'/></svg:clipPath><svg:clipPath id='tab-hover-clip-path' clipPathUnits='objectBoundingBox'><svg:path d='M 0,0.2 0,1 1,1, 1,0.2 z'/></svg:clipPath></defs><foreignObject width='30' height='29' clip-path='url(%23tab-curve-clip-path-start)'><div id='tab-background-fill' style='background-color: rgba(0, 0, 0, .6);background-repeat:no-repeat;height:100%;width:100%;' xmlns='http://www.w3.org/1999/xhtml'></div></foreignObject></svg>");
+  --svg-before-touch-density: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' xmlns:svg='http://www.w3.org/2000/svg' width='30px' height='41px' preserveAspectRatio='none'><defs><svg:clipPath id='tab-curve-clip-path-start' clipPathUnits='objectBoundingBox'><svg:path d='m 1,0.065 0.05,0 0,0.938 -1,0 0,-0.028 C 0.32082458,0.95840561 0.4353096,0.81970962 0.48499998,0.5625 0.51819998,0.3905 0.535,0.0659 1,0.065 z'/></svg:clipPath><svg:clipPath id='tab-curve-clip-path-end' clipPathUnits='objectBoundingBox'><svg:path d='m 0,0.065 -0.05,0 0,0.938 1,0 0,-0.028 C 0.67917542,0.95840561 0.56569036,0.81970962 0.51599998,0.5625 0.48279998,0.3905 0.465,0.0659 0,0.065 z'/></svg:clipPath><svg:clipPath id='tab-hover-clip-path' clipPathUnits='objectBoundingBox'><svg:path d='M 0,0.2 0,1 1,1, 1,0.2 z'/></svg:clipPath></defs><foreignObject width='30' height='41' clip-path='url(%23tab-curve-clip-path-start)'><div id='tab-background-fill' style='background-color: rgba(0, 0, 0, .6);background-repeat:no-repeat;height:100%;width:100%;' xmlns='http://www.w3.org/1999/xhtml'></div></foreignObject></svg>");
+  --svg-after-normal-density: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' xmlns:svg='http://www.w3.org/2000/svg' width='30px' height='33px' preserveAspectRatio='none'><defs><svg:clipPath id='tab-curve-clip-path-start' clipPathUnits='objectBoundingBox'><svg:path d='m 1,0.065 0.05,0 0,0.938 -1,0 0,-0.028 C 0.32082458,0.95840561 0.4353096,0.81970962 0.48499998,0.5625 0.51819998,0.3905 0.535,0.0659 1,0.065 z'/></svg:clipPath><svg:clipPath id='tab-curve-clip-path-end' clipPathUnits='objectBoundingBox'><svg:path d='m 0,0.065 -0.05,0 0,0.938 1,0 0,-0.028 C 0.67917542,0.95840561 0.56569036,0.81970962 0.51599998,0.5625 0.48279998,0.3905 0.465,0.0659 0,0.065 z'/></svg:clipPath><svg:clipPath id='tab-hover-clip-path' clipPathUnits='objectBoundingBox'><svg:path d='M 0,0.2 0,1 1,1, 1,0.2 z'/></svg:clipPath></defs><foreignObject width='30' height='33' clip-path='url(%23tab-curve-clip-path-end)'><div id='tab-background-fill' style='background-color: rgba(0, 0, 0, .6);background-repeat:no-repeat;height:100%;width:100%;' xmlns='http://www.w3.org/1999/xhtml'></div></foreignObject></svg>");
+  --svg-after-compact-density: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' xmlns:svg='http://www.w3.org/2000/svg' width='30px' height='29px' preserveAspectRatio='none'><defs><svg:clipPath id='tab-curve-clip-path-start' clipPathUnits='objectBoundingBox'><svg:path d='m 1,0.065 0.05,0 0,0.938 -1,0 0,-0.028 C 0.32082458,0.95840561 0.4353096,0.81970962 0.48499998,0.5625 0.51819998,0.3905 0.535,0.0659 1,0.065 z'/></svg:clipPath><svg:clipPath id='tab-curve-clip-path-end' clipPathUnits='objectBoundingBox'><svg:path d='m 0,0.065 -0.05,0 0,0.938 1,0 0,-0.028 C 0.67917542,0.95840561 0.56569036,0.81970962 0.51599998,0.5625 0.48279998,0.3905 0.465,0.0659 0,0.065 z'/></svg:clipPath><svg:clipPath id='tab-hover-clip-path' clipPathUnits='objectBoundingBox'><svg:path d='M 0,0.2 0,1 1,1, 1,0.2 z'/></svg:clipPath></defs><foreignObject width='30' height='29' clip-path='url(%23tab-curve-clip-path-end)'><div id='tab-background-fill' style='background-color: rgba(0, 0, 0, .6);background-repeat:no-repeat;height:100%;width:100%;' xmlns='http://www.w3.org/1999/xhtml'></div></foreignObject></svg>");
+  --svg-after-touch-density: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' xmlns:svg='http://www.w3.org/2000/svg' width='30px' height='41px' preserveAspectRatio='none'><defs><svg:clipPath id='tab-curve-clip-path-start' clipPathUnits='objectBoundingBox'><svg:path d='m 1,0.065 0.05,0 0,0.938 -1,0 0,-0.028 C 0.32082458,0.95840561 0.4353096,0.81970962 0.48499998,0.5625 0.51819998,0.3905 0.535,0.0659 1,0.065 z'/></svg:clipPath><svg:clipPath id='tab-curve-clip-path-end' clipPathUnits='objectBoundingBox'><svg:path d='m 0,0.065 -0.05,0 0,0.938 1,0 0,-0.028 C 0.67917542,0.95840561 0.56569036,0.81970962 0.51599998,0.5625 0.48279998,0.3905 0.465,0.0659 0,0.065 z'/></svg:clipPath><svg:clipPath id='tab-hover-clip-path' clipPathUnits='objectBoundingBox'><svg:path d='M 0,0.2 0,1 1,1, 1,0.2 z'/></svg:clipPath></defs><foreignObject width='30' height='41' clip-path='url(%23tab-curve-clip-path-end)'><div id='tab-background-fill' style='background-color: rgba(0, 0, 0, .6);background-repeat:no-repeat;height:100%;width:100%;' xmlns='http://www.w3.org/1999/xhtml'></div></foreignObject></svg>");
+  --svg-before-normal-density-hover: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' xmlns:svg='http://www.w3.org/2000/svg' width='30px' height='33px' preserveAspectRatio='none'><defs><svg:clipPath id='tab-curve-clip-path-start' clipPathUnits='objectBoundingBox'><svg:path d='m 1,0.065 0.05,0 0,0.938 -1,0 0,-0.028 C 0.32082458,0.95840561 0.4353096,0.81970962 0.48499998,0.5625 0.51819998,0.3905 0.535,0.0659 1,0.065 z'/></svg:clipPath><svg:clipPath id='tab-curve-clip-path-end' clipPathUnits='objectBoundingBox'><svg:path d='m 0,0.065 -0.05,0 0,0.938 1,0 0,-0.028 C 0.67917542,0.95840561 0.56569036,0.81970962 0.51599998,0.5625 0.48279998,0.3905 0.465,0.0659 0,0.065 z'/></svg:clipPath><svg:clipPath id='tab-hover-clip-path' clipPathUnits='objectBoundingBox'><svg:path d='M 0,0.2 0,1 1,1, 1,0.2 z'/></svg:clipPath></defs><foreignObject width='30' height='33' clip-path='url(%23tab-curve-clip-path-start)'><div id='tab-hover-background-fill' style='background-color:rgba(255, 255, 255, .1) !important;background-repeat:no-repeat;height:100%;width:100%;' xmlns='http://www.w3.org/1999/xhtml'></div></foreignObject></svg>");
+  --svg-before-compact-density-hover: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' xmlns:svg='http://www.w3.org/2000/svg' width='30px' height='29px' preserveAspectRatio='none'><defs><svg:clipPath id='tab-curve-clip-path-start' clipPathUnits='objectBoundingBox'><svg:path d='m 1,0.065 0.05,0 0,0.938 -1,0 0,-0.028 C 0.32082458,0.95840561 0.4353096,0.81970962 0.48499998,0.5625 0.51819998,0.3905 0.535,0.0659 1,0.065 z'/></svg:clipPath><svg:clipPath id='tab-curve-clip-path-end' clipPathUnits='objectBoundingBox'><svg:path d='m 0,0.065 -0.05,0 0,0.938 1,0 0,-0.028 C 0.67917542,0.95840561 0.56569036,0.81970962 0.51599998,0.5625 0.48279998,0.3905 0.465,0.0659 0,0.065 z'/></svg:clipPath><svg:clipPath id='tab-hover-clip-path' clipPathUnits='objectBoundingBox'><svg:path d='M 0,0.2 0,1 1,1, 1,0.2 z'/></svg:clipPath></defs><foreignObject width='30' height='29' clip-path='url(%23tab-curve-clip-path-start)'><div id='tab-hover-background-fill' style='background-color:rgba(255, 255, 255, .1) !important;background-repeat:no-repeat;height:100%;width:100%;' xmlns='http://www.w3.org/1999/xhtml'></div></foreignObject></svg>");
+  --svg-before-touch-density-hover: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' xmlns:svg='http://www.w3.org/2000/svg' width='30px' height='41px' preserveAspectRatio='none'><defs><svg:clipPath id='tab-curve-clip-path-start' clipPathUnits='objectBoundingBox'><svg:path d='m 1,0.065 0.05,0 0,0.938 -1,0 0,-0.028 C 0.32082458,0.95840561 0.4353096,0.81970962 0.48499998,0.5625 0.51819998,0.3905 0.535,0.0659 1,0.065 z'/></svg:clipPath><svg:clipPath id='tab-curve-clip-path-end' clipPathUnits='objectBoundingBox'><svg:path d='m 0,0.065 -0.05,0 0,0.938 1,0 0,-0.028 C 0.67917542,0.95840561 0.56569036,0.81970962 0.51599998,0.5625 0.48279998,0.3905 0.465,0.0659 0,0.065 z'/></svg:clipPath><svg:clipPath id='tab-hover-clip-path' clipPathUnits='objectBoundingBox'><svg:path d='M 0,0.2 0,1 1,1, 1,0.2 z'/></svg:clipPath></defs><foreignObject width='30' height='41' clip-path='url(%23tab-curve-clip-path-start)'><div id='tab-hover-background-fill' style='background-color:rgba(255, 255, 255, .1) !important;background-repeat:no-repeat;height:100%;width:100%;' xmlns='http://www.w3.org/1999/xhtml'></div></foreignObject></svg>");
+  --svg-after-normal-density-hover: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' xmlns:svg='http://www.w3.org/2000/svg' width='30px' height='33px' preserveAspectRatio='none'><defs><svg:clipPath id='tab-curve-clip-path-start' clipPathUnits='objectBoundingBox'><svg:path d='m 1,0.065 0.05,0 0,0.938 -1,0 0,-0.028 C 0.32082458,0.95840561 0.4353096,0.81970962 0.48499998,0.5625 0.51819998,0.3905 0.535,0.0659 1,0.065 z'/></svg:clipPath><svg:clipPath id='tab-curve-clip-path-end' clipPathUnits='objectBoundingBox'><svg:path d='m 0,0.065 -0.05,0 0,0.938 1,0 0,-0.028 C 0.67917542,0.95840561 0.56569036,0.81970962 0.51599998,0.5625 0.48279998,0.3905 0.465,0.0659 0,0.065 z'/></svg:clipPath><svg:clipPath id='tab-hover-clip-path' clipPathUnits='objectBoundingBox'><svg:path d='M 0,0.2 0,1 1,1, 1,0.2 z'/></svg:clipPath></defs><foreignObject width='30' height='33' clip-path='url(%23tab-curve-clip-path-end)'><div id='tab-hover-background-fill' style='background-color:rgba(255, 255, 255, .1) !important;background-repeat:no-repeat;height:100%;width:100%;' xmlns='http://www.w3.org/1999/xhtml'></div></foreignObject></svg>");
+  --svg-after-compact-density-hover: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' xmlns:svg='http://www.w3.org/2000/svg' width='30px' height='29px' preserveAspectRatio='none'><defs><svg:clipPath id='tab-curve-clip-path-start' clipPathUnits='objectBoundingBox'><svg:path d='m 1,0.065 0.05,0 0,0.938 -1,0 0,-0.028 C 0.32082458,0.95840561 0.4353096,0.81970962 0.48499998,0.5625 0.51819998,0.3905 0.535,0.0659 1,0.065 z'/></svg:clipPath><svg:clipPath id='tab-curve-clip-path-end' clipPathUnits='objectBoundingBox'><svg:path d='m 0,0.065 -0.05,0 0,0.938 1,0 0,-0.028 C 0.67917542,0.95840561 0.56569036,0.81970962 0.51599998,0.5625 0.48279998,0.3905 0.465,0.0659 0,0.065 z'/></svg:clipPath><svg:clipPath id='tab-hover-clip-path' clipPathUnits='objectBoundingBox'><svg:path d='M 0,0.2 0,1 1,1, 1,0.2 z'/></svg:clipPath></defs><foreignObject width='30' height='29' clip-path='url(%23tab-curve-clip-path-end)'><div id='tab-hover-background-fill' style='background-color:rgba(255, 255, 255, .1) !important;background-repeat:no-repeat;height:100%;width:100%;' xmlns='http://www.w3.org/1999/xhtml'></div></foreignObject></svg>");
+  --svg-after-touch-density-hover: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' xmlns:svg='http://www.w3.org/2000/svg' width='30px' height='41px' preserveAspectRatio='none'><defs><svg:clipPath id='tab-curve-clip-path-start' clipPathUnits='objectBoundingBox'><svg:path d='m 1,0.065 0.05,0 0,0.938 -1,0 0,-0.028 C 0.32082458,0.95840561 0.4353096,0.81970962 0.48499998,0.5625 0.51819998,0.3905 0.535,0.0659 1,0.065 z'/></svg:clipPath><svg:clipPath id='tab-curve-clip-path-end' clipPathUnits='objectBoundingBox'><svg:path d='m 0,0.065 -0.05,0 0,0.938 1,0 0,-0.028 C 0.67917542,0.95840561 0.56569036,0.81970962 0.51599998,0.5625 0.48279998,0.3905 0.465,0.0659 0,0.065 z'/></svg:clipPath><svg:clipPath id='tab-hover-clip-path' clipPathUnits='objectBoundingBox'><svg:path d='M 0,0.2 0,1 1,1, 1,0.2 z'/></svg:clipPath></defs><foreignObject width='30' height='41' clip-path='url(%23tab-curve-clip-path-end)'><div id='tab-hover-background-fill' style='background-color:rgba(255, 255, 255, .1) !important;background-repeat:no-repeat;height:100%;width:100%;' xmlns='http://www.w3.org/1999/xhtml'></div></foreignObject></svg>");
+}
+
+/* We set the svg's for each density here */
+
+/* Selected tabs */
+:root[uidensity="compact"] .tabbrowser-tab[selected="true"]::before {
+  background-image: var(--svg-before-compact-density);
+}
+
+:root:not([uidensity="compact"]):not([uidensity="touch"]) .tabbrowser-tab[selected="true"]::before {
+  background-image: var(--svg-before-normal-density);
+}
+
+:root[uidensity="touch"] .tabbrowser-tab[selected="true"]::before {
+  background-image: var(--svg-before-touch-density);
+}
+
+:root[uidensity="compact"] .tabbrowser-tab[selected="true"]::after {
+  background-image: var(--svg-after-compact-density);
+}
+
+:root:not([uidensity="compact"]):not([uidensity="touch"]) .tabbrowser-tab[selected="true"]::after {
+  background-image: var(--svg-after-normal-density);
+}
+
+:root[uidensity="touch"] .tabbrowser-tab[selected="true"]::after {
+  background-image: var(--svg-after-touch-density);
+}
+
+/* Hover tabs + new tab button hover */
+:root[uidensity="compact"] .tabbrowser-tab:hover:not([selected=true])::before,
+:root[uidensity="compact"] #tabs-newtab-button:hover::before {
+  background-image: var(--svg-before-compact-density-hover) !important;
+}
+
+:root:not([uidensity="compact"]):not([uidensity="touch"]) .tabbrowser-tab:hover:not([selected=true])::before,
+:root:not([uidensity="compact"]):not([uidensity="touch"]) #tabs-newtab-button:hover::before {
+  background-image: var(--svg-before-normal-density-hover);
+}
+
+:root[uidensity="touch"] .tabbrowser-tab:hover:not([selected=true])::before, 
+:root[uidensity="touch"] #tabs-newtab-button:hover::before {
+  background-image: var(--svg-after-touch-density-hover) !important;
+}
+
+:root[uidensity="compact"] .tabbrowser-tab:hover:not([selected=true])::after, 
+:root[uidensity="compact"] #tabs-newtab-button:hover::after {
+  background-image: var(--svg-after-compact-density-hover);
+}
+
+:root:not([uidensity="compact"]):not([uidensity="touch"]) .tabbrowser-tab:hover:not([selected=true])::after,
+:root:not([uidensity="compact"]):not([uidensity="touch"]) #tabs-newtab-button:hover::after {
+  background-image: var(--svg-after-normal-density-hover);
+}
+
+:root[uidensity="touch"] .tabbrowser-tab:hover:not([selected=true])::after,
+:root[uidensity="touch"] #tabs-newtab-button:hover::after {
+  background-image: var(--svg-after-touch-density-hover);
+}

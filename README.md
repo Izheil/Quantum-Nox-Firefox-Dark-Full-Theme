@@ -13,16 +13,15 @@ You can use it to fully change the colors of most of firefox UI to dark-gray col
 
 If you want to know how to change some colors of the theme, check the [wiki](https://github.com/Izheil/Quantum-Nox-Firefox-Dark-Full-Theme/wiki/Editting-CSS-files).
 
-### Last update: 04/09/2020
+### Last update: 06/09/2020
+
+Files updated:
+* **Rounded-tabs-australis.as.css**: Added a modified version of Australis rounded tabs based on the version of [Photon Australis](https://github.com/wilfredwee/photon-australis).
+
+### Pre-Last update: 04/09/2019
 
 Files updated:
 * **userChrome.css**: The `--Text-selection-bg-color` variable now affects the quick find bar in the webarea.
-
-### Pre-Last update: 30/08/2019
-
-Files updated:
-* **userChrome.css**: Fixes sidebar panel tooltips.
-* **userContent.css**: Fixes for `about:protections` subscribe button.
 
 
 ### A note on people looking to replace some Tab Mix Plus features:

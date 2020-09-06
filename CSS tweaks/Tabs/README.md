@@ -4,10 +4,16 @@
 This makes the space that comes before the min/max/close button (space where you can place addons), but
 after the tabs section thinner. You will still be able to place addons here, this only modifies the unused space before those addons in that space.
 
-### Rounded-tabs.as.css
-![Rounded Tabs](https://i.imgur.com/qoG4Iiy.png)
+### Rounded-tabs-basic.as.css
+![Rounded Tabs Basic](https://i.imgur.com/qoG4Iiy.png)
 
-If you want the old style (pre FF57) rounded tabs for firefox, you should add [australis](https://github.com/wilfredwee/photon-australis) code to your `userChrome.css` instead.
+If you want the old style (pre FF57) rounded tabs for firefox, you should add the **australis** version one to your `userChrome.css` instead.
+
+### Rounded-tabs-australis.as.css
+![Rounded Tabs Australis](https://i.imgur.com/7UPopgX.png)
+
+This will try to imitate pre FF57 tabs. You can find the original version from which this one was derived [here](https://github.com/wilfredwee/photon-australis).
+This modified version allows you to change the colors more easily, and has better support for multirow tabs.
 
 ### Tab-close-button-always-visible.as.css
 The close button at the right side of each tab will always be visible.

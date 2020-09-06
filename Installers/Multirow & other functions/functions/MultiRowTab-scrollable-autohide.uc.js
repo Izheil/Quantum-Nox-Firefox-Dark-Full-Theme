@@ -3,8 +3,9 @@
 // @namespace      http://space.geocities.yahoo.co.jp/gl/alice0775
 // @description    Multi-row tabs draggability fix with autohiding scrollbar
 // @include        main
-// @compatibility  Firefox 70 to Firefox 81.0a1 (2020-07-28)
+// @compatibility  Firefox 70 to Firefox 82.0a1 (2020-09-06)
 // @author         Alice0775, Endor8, TroudhuK, Izheil
+// @version        06/09/2020 18:29 Compatibility fix for Australis
 // @version        28/07/2020 23:28 Compatibility fix for FF81 
 // @version        03/07/2020 00:34 Fixed an issue with the new tab button overflowing the scrollbar
 // @version        12/05/2020 13:09 Removed unnecesary selector
@@ -83,8 +84,18 @@ function zzzz_MultiRowTabLite() {
 
 	`;
 
+    // We check if using australis here
+    var australisElement = getComputedStyle(document.getElementsByClassName("tabbrowser-tab")[0])
+                           .getPropertyValue('--svg-before-normal-density');
+
+    if (australisElement == null) {
+        australisElement = getComputedStyle(document.querySelector(":root"))
+                           .getPropertyValue('--svg-selected-after');
+    }
+    
     // Here the FF71+ changes
 	if (document.querySelector("#tabbrowser-tabs > arrowscrollbox").shadowRoot) {
+
 	    css +=`
 		#tabbrowser-tabs > arrowscrollbox {
 		  overflow: visible; 
@@ -119,6 +130,21 @@ function zzzz_MultiRowTabLite() {
 	    .scrollbutton-up, .scrollbutton-down, spacer,
         #scrollbutton-up, #scrollbutton-down {display: none !important}
 	    `;
+
+        if (australisElement) {
+            css += `
+            .tabbrowser-tab[first-visible-tab="true"] {
+              padding-left: 0 !important;
+            }
+            `;
+
+            style.innerHTML += `
+            scrollbox {
+                padding: 0 30px;
+            }
+            `;
+        }
+
 	    document.querySelector("#tabbrowser-tabs > arrowscrollbox").shadowRoot.appendChild(style);
 	} else {
         // Here the FF69-FF70 changes
@@ -146,6 +172,18 @@ function zzzz_MultiRowTabLite() {
 	    #main-window[tabsintitlebar] #tabbrowser-tabs scrollbar {
 	        -moz-window-dragging: no-drag}
 	    `;
+
+        if (australisElement) {
+            css += `
+            .tabbrowser-tab[first-visible-tab="true"] {
+                padding-left: 0 !important;
+            }
+
+            #tabbrowser-tabs .arrowscrollbox-scrollbox {
+                padding: 0 30px;
+            }
+            `;
+        }
 	}
 
 	var sss = Cc['@mozilla.org/content/style-sheet-service;1'].getService(Ci.nsIStyleSheetService);
