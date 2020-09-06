@@ -5,7 +5,7 @@
 // @include        main
 // @compatibility  Firefox 70 to Firefox 82.0a1 (2020-09-06)
 // @author         Alice0775, Endor8, TroudhuK, Izheil
-// @version        06/09/2020 18:29 Compatibility fix for Australis
+// @version        06/09/2020 18:29 Compatibility fix for Australis and fix for pinned tabs glitch
 // @version        28/07/2020 23:28 Compatibility fix for FF81 
 // @version        03/07/2020 00:34 Fixed an issue with the new tab button overflowing the scrollbar
 // @version        12/05/2020 13:09 Removed unnecesary selector
@@ -62,7 +62,7 @@ function zzzz_MultiRowTabLite() {
     
     .tabbrowser-tab:not([pinned]) {
         flex-grow: var(--tab-growth)}
-        
+
     .tabbrowser-tab::after {border: none !important}
 
     #tabbrowser-tabs .tab-background, #tabbrowser-tabs .tabbrowser-tab {
@@ -212,7 +212,7 @@ function scrollToView() {
     var overFlow = document.querySelector('#tabbrowser-tabs[overflow="true"]');
 	selTab.scrollIntoView({behavior: "smooth", block: "nearest", inline: "nearest"});
     if (overFlow) {
-        overFlow.removeAttribute("overflow");
+        overFlow.setAttribute("overflow", "false");
     }
 }
 
