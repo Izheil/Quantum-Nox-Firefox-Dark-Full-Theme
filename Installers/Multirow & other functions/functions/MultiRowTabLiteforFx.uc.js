@@ -90,7 +90,7 @@ function zzzz_MultiRowTabLite() {
     }
 
     #alltabs-button, .tabbrowser-tab::after, 
-    #TabsToolbar:not([customizing="true"]) #tabbrowser-tabs[hasadjacentnewtabbutton]:not([overflow="true"]) ~ #new-tab-button, 
+    #TabsToolbar:not([customizing="true"]) #tabbrowser-tabs[hasadjacentnewtabbutton] ~ #new-tab-button, 
     #tabs-newtab-button .new-tab-popup
     {display: none}
 
