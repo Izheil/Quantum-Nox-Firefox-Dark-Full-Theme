@@ -39,7 +39,8 @@ function zzzz_MultiRowTabLite() {
     /* You can set the max number of rows before the scrollbar appears here.
 
      - For tab minimum width, you have to go to about:config and modify [browser.tabs.tabMinWidth] 
-       to the value you want.
+       to the value you want. You shouldn't use values lower than 58 for this setting or tabs will
+       start to overlap, and scrolling with the wheel will stop working.
 
      - For tab minimum height, change the "inherit" value in #TabsToolbar --tab-min-height variable 
        to the value you want.
@@ -85,7 +86,7 @@ function zzzz_MultiRowTabLite() {
     }
 
     #alltabs-button, .tabbrowser-tab::after, 
-    #TabsToolbar:not([customizing="true"]) #tabbrowser-tabs[hasadjacentnewtabbutton]:not([overflow="true"]) ~ #new-tab-button, 
+    #TabsToolbar:not([customizing="true"]) #tabbrowser-tabs[hasadjacentnewtabbutton] ~ #new-tab-button, 
     #tabs-newtab-button .new-tab-popup
     {display: none}
 
