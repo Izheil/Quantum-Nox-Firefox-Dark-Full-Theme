@@ -5,7 +5,7 @@
 // @include        main
 // @compatibility  Firefox 70 to Firefox 82.0a1 (2020-09-06)
 // @author         Alice0775, Endor8, TroudhuK, Izheil
-// @version        06/09/2020 18:29 Compatibility fix for Australis
+// @version        06/09/2020 18:29 Compatibility fix for Australis and fix for pinned tabs glitch
 // @version        28/07/2020 23:28 Compatibility fix for FF81
 // @version        04/07/2020 18:20 Added the option to change tab height
 // @version        12/05/2020 13:09 Removed unnecesary selector
@@ -83,8 +83,32 @@ function zzzz_MultiRowTabLite() {
         #TabsToolbar .titlebar-buttonbox-container {display: block}
     }
 
-    #alltabs-button, .tabbrowser-tab::after
+    /* These fix issues with pinned tabs on the overflow status */
+    #tabbrowser-tabs[overflow="true"] > #tabbrowser-arrowscrollbox > #tabs-newtab-button,
+    #TabsToolbar:not([customizing="true"]) #tabbrowser-tabs[hasadjacentnewtabbutton] > #tabbrowser-arrowscrollbox > #tabs-newtab-button {
+        display: inline-flex !important;
+    }
+
+    #alltabs-button, .tabbrowser-tab::after, 
+    #TabsToolbar:not([customizing="true"]) #tabbrowser-tabs[hasadjacentnewtabbutton]:not([overflow="true"]) ~ #new-tab-button, 
+    #tabs-newtab-button .new-tab-popup
     {display: none}
+
+    #tabbrowser-tabs .tab-background, #tabbrowser-tabs .tabbrowser-tab {
+        min-height: var(--tab-min-height) !important}
+
+    #tabbrowser-tabs, #tabbrowser-arrowscrollbox, .tabbrowser-tab[style^="margin-inline-start"], 
+    #tabbrowser-tabs[positionpinnedtabs] > #tabbrowser-arrowscrollbox > .tabbrowser-tab[pinned] {
+        margin-inline-start: 0 !important;
+    }
+
+    #tabbrowser-tabs[positionpinnedtabs] > #tabbrowser-arrowscrollbox > .tabbrowser-tab[pinned] {
+        position: initial !important;
+    }
+
+    #tabbrowser-tabs[positionpinnedtabs] {
+        padding-inline-start: 0 !important;
+    }
 
 	`;
 
@@ -195,7 +219,13 @@ function zzzz_MultiRowTabLite() {
 // This scrolls down to the current tab when you open a new one, or restore a session.
 function scrollToView() {
 	var selTab = document.querySelectorAll(".tabbrowser-tab[selected='true']")[0];
-	selTab.scrollIntoView({behavior: "smooth", block: "nearest", inline: "nearest"});
+    var wrongTab = document.querySelectorAll('.tabbrowser-tab[style^="margin-inline-start"]');
+    selTab.scrollIntoView({behavior: "smooth", block: "nearest", inline: "nearest"});
+    if (wrongTab[0]) {
+        for(let i = 0; i < wrongTab.length; i++) {
+            wrongTab[i].removeAttribute("style");
+        }
+    }
 }
 
 gBrowser.tabContainer.addEventListener('TabOpen', scrollToView, false);
