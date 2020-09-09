@@ -8,7 +8,7 @@
 
 /* This root class will modify the colors of toolbar background color (by default is transparent white 
 without this change) */
-*|*:root:-moz-lwtheme {
+#main-window:not([lwt-toolbar-field-focus-brighttext]) {
   --toolbar-bgcolor: rgba(0,0,0,.6) !important;
   /* This changes the text color of all outside elements of all toolbars */
   --lwt-text-color: #ccc !important;
