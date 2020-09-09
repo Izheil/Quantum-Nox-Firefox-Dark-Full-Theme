@@ -1,6 +1,6 @@
 /* You can find an updated version here: https://github.com/Izheil/Quantum-Nox-Firefox-Dark-Full-Theme */
 /* Made by Izheil */
-/* Last updated: 04/09/2020 */
+/* Last updated: 09/09/2020 */
 
 /* COLORING PART STARTS HERE */
 
@@ -1191,8 +1191,8 @@ to autohide, so it's safest to just hide it on fullscreen */
 /* ROUNDED TABS */ 
 /* v Delete the "/*" after this comment to use it */ 
   /*
-.tab-background {
-  border-radius: 15px 15px 0px 0px !important;
+.tab-content {
+  border-radius: 20px 20px 0px 0px !important;
   border-image: none !important}
 
 .tab-line {
