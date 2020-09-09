@@ -44,9 +44,14 @@ without this change) */
 .tab-stack > .tab-background[selected="true"]:-moz-lwtheme {
   background-position: left top !important}
 
-/* This changes the background color of the tabs background toolbar for those using the default dark theme on Windows 7. 
-You may need to change the --toolbar-bgcolor in the rules above for the tab contrast color to be less dark if using this *//*
-#TabsToolbar {background-color: #222 !important}
+/* This changes the background color behind tabs and the menu bar for those using the default dark theme on Windows 7. *//*
+#titlebar, #main-menubar > menu  {
+    background-color: #222 !important
+}
+
+#main-menubar label {
+    color: #fff !important
+}
 
 /* Tab line color. Using -moz-win-accentcolor as the color value changes it to the current window color (on Windows)
 but is disabled by default in this theme (Disable for the default tab line color). *//*
