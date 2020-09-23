@@ -3,7 +3,7 @@
 // @namespace      http://space.geocities.yahoo.co.jp/gl/alice0775
 // @description    Multi-row tabs draggability fix with scrollable rows
 // @include        main
-// @compatibility  Firefox 70 to Firefox 82.0a1 (2020-09-06)
+// @compatibility  Firefox 70 to Firefox 83.0a1 (2020-09-22)
 // @author         Alice0775, Endor8, TroudhuK, Izheil
 // @version        06/09/2020 18:29 Compatibility fix for Australis and fix for pinned tabs glitch
 // @version        28/07/2020 23:28 Compatibility fix for FF81 
