@@ -1197,7 +1197,7 @@ class patcherUI(Frame):
                     + "(both the patch and the functions)?")
                 if removeAll == False:
                     removeFunctions = messagebox.askyesno("Function removal", 
-                    "Do you want to remove only the functions?.")
+                    "Do you only want to remove the selected functions?")
                     if removeFunctions == False:
                         return
             elif CkFF.get() == 1 and (CkFFN.get() == 1 or CkFFD.get() == 1):
@@ -1206,7 +1206,7 @@ class patcherUI(Frame):
                     + "Firefox installations.\nIs that okay?")
                 if removeAll == False:
                     removeFunctions = messagebox.askyesno("Function removal", 
-                    "Do you want to only remove the functions?.")
+                    "Do you only want to remove the selected functions?")
                     if removeFunctions == False:
                         return
             elif CkFFP.get() == 1 and CkFF.get() == 0 and CkFFN.get() == 0 \
@@ -1244,6 +1244,11 @@ class patcherUI(Frame):
 
                 for z in remProf:
                     erasePatch(None, z)
+                    functionRemove(z, "Multirow")
+                    functionRemove(z, "Tabs-below")
+                    functionRemove(z, "Megabar")
+                    functionRemove(z, "Focus-tab")
+                    functionRemove(z, "Unread-state")
             else:
                 for z in remProf:
                     if CkMR.get() == 1:
