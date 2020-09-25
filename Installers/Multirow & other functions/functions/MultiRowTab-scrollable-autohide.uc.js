@@ -1,10 +1,11 @@
 // ==UserScript==
-// @name           MultiRowTab-scrollable-autohide.uc.js
-// @namespace      http://space.geocities.yahoo.co.jp/gl/alice0775
+// @name           MultiRow Tabs with autohiding scrollbars
+// @namespace      https://github.com/Izheil/Quantum-Nox-Firefox-Dark-Full-Theme
 // @description    Multi-row tabs draggability fix with autohiding scrollbar
 // @include        main
 // @compatibility  Firefox 70 to Firefox 83.0a1 (2020-09-22)
 // @author         Alice0775, Endor8, TroudhuK, Izheil
+// @version        25/09/2020 23:26 Fixed glitch on opening tabs in the background while on fullscreen
 // @version        06/09/2020 18:29 Compatibility fix for Australis and fix for pinned tabs glitch
 // @version        28/07/2020 23:28 Compatibility fix for FF81 
 // @version        03/07/2020 00:34 Fixed an issue with the new tab button overflowing the scrollbar
@@ -78,6 +79,15 @@ function zzzz_MultiRowTabLite() {
 
     @media (-moz-os-version: windows-win10) {
         #TabsToolbar .titlebar-buttonbox-container {display: block}
+        
+        #window-controls > toolbarbutton {
+            max-height: var(--tab-min-height);
+            display: inline;
+        }
+
+        #main-window[sizemode="fullscreen"] #window-controls {
+            display: flex;
+        }
     }
 
     /* These fix issues with pinned tabs on the overflow status */
@@ -87,7 +97,7 @@ function zzzz_MultiRowTabLite() {
     }
 
     #alltabs-button, .tabbrowser-tab::after, 
-    #TabsToolbar:not([customizing="true"]) #tabbrowser-tabs[hasadjacentnewtabbutton] ~ #new-tab-button,  
+    #TabsToolbar:not([customizing="true"]) #tabbrowser-tabs[hasadjacentnewtabbutton] ~ #new-tab-button, 
     #tabs-newtab-button .new-tab-popup
     {display: none}
 
@@ -238,13 +248,23 @@ function zzzz_MultiRowTabLite() {
 
 // This scrolls down to the current tab when you open a new one, or restore a session.
 function scrollToView() {
-	var selTab = document.querySelectorAll(".tabbrowser-tab[selected='true']")[0];
-    var wrongTab = document.querySelectorAll('.tabbrowser-tab[style^="margin-inline-start"]');
+    let selTab = document.querySelectorAll(".tabbrowser-tab[selected='true']")[0];
+    let wrongTab = document.querySelectorAll('.tabbrowser-tab[style^="margin-inline-start"]');
+    let hiddenToolbox = document.querySelector('#navigator-toolbox[style^="margin-top"]');
+    let fullScreen = document.querySelector('#main-window[sizemode="fullscreen"]');
     selTab.scrollIntoView({behavior: "smooth", block: "nearest", inline: "nearest"});
     if (wrongTab[0]) {
         for(let i = 0; i < wrongTab.length; i++) {
             wrongTab[i].removeAttribute("style");
         }
+    }
+
+    // If in fullscreen we also make sure to keep the toolbar hidden when a new row is created
+    // when opening a new tab in the background
+    if (fullScreen && hiddenToolbox) {
+        let toolboxHeight = hiddenToolbox.getBoundingClientRect().height;
+        let tabsHeight = selTab.getBoundingClientRect().height;
+        hiddenToolbox.style.marginTop = ((toolboxHeight + tabsHeight) * -1) + "px";
     }
 }
 
