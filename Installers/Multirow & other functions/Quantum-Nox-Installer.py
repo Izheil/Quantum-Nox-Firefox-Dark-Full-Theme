@@ -1,6 +1,8 @@
 #!/usr/bin/python3
 import os
 import re
+import grp
+import pwd
 import sys
 import glob
 import ctypes
@@ -32,6 +34,12 @@ OSinUse = SystemOS()
 if OSinUse != "Windows":
     if os.geteuid() != 0:
         os.execvp("sudo", ["sudo"] + ["python3"] + sys.argv)
+    if OSinUse == "Linux":
+        # We get the non-root username and group here
+        rootUser = os.getenv("SUDO_USER")
+        gid = pwd.getpwnam(rootUser).pw_gid
+        rootGroup = grp.getgrgid(gid).gr_name
+
 elif ctypes.windll.shell32.IsUserAnAdmin() == 0:
     ctypes.windll.shell32.ShellExecuteW(None, "runas", sys.executable, __file__, None, 1)
     sys.exit()
@@ -353,10 +361,9 @@ def fullPatcher(FFversion, FFprofile):
                              os.path.normpath(FFversion + "/defaults/pref/"))
 
             if OSinUse == "Linux":
-                rootUser = os.getenv("SUDO_USER")
-                shutil.chown(ConfPref, user=rootUser, group=rootUser)
+                shutil.chown(ConfPref, rootUser, rootGroup)
                 os.chmod(ConfPref, 0o775)
-                shutil.chown(ConfJS, user=rootUser, group=rootUser)
+                shutil.chown(ConfJS, rootUser, rootGroup)
                 os.chmod(ConfJS, 0o775)
 
         if FFprofile != None:
@@ -378,14 +385,13 @@ def fullPatcher(FFversion, FFprofile):
             if OSinUse == "Linux":
                 chrome = FFprofile + "/chrome"
                 utils = chrome + "/utils"
-                rootUser = os.getenv("SUDO_USER")
                 utilFiles = glob.glob(utils + "/*.*")
-                shutil.chown(chrome, user=rootUser, group=rootUser)
+                shutil.chown(chrome, rootUser, rootGroup)
                 os.chmod(chrome, 0o775)
-                shutil.chown(utils, user=rootUser, group=rootUser)
+                shutil.chown(utils, rootUser, rootGroup)
                 os.chmod(utils, 0o775)
                 for file in utilFiles:
-                    shutil.chown(file, user=rootUser, group=rootUser)
+                    shutil.chown(file, rootUser, rootGroup)
                     os.chmod(file, 0o775)
 
     except IOError:
@@ -487,8 +493,7 @@ def functionInstall(FFprofile, Func2Inst, FuncSettings="0"):
 
     # This is the function to change ownership on Linux
     def fileOwn(profInstFile):
-        rootUser = os.getenv('SUDO_USER')
-        shutil.chown(profInstFile, user=rootUser, group=rootUser)
+        shutil.chown(profInstFile, rootUser, rootGroup)
         os.chmod(profInstFile, 0o775)
 
     # Functions installation here
