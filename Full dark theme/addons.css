@@ -1,6 +1,6 @@
 /* You can find an updated version here: https://github.com/Izheil/Quantum-Nox-Firefox-Dark-Full-Theme */
 /* Made by Izheil */
-/* Last updated: 18/08/2020 */
+/* Last updated: 01/10/2020 */
 
 /*------ HOW TO MAKE THE ADDON THEMES WORK ------*/
 /* To use this part of the code, you will have to find the dynamic UUID of your extensions, and replace it where the 
@@ -1110,7 +1110,7 @@ button:hover {
 
 /*------ UBLOCK ORIGIN CONTROL PANEL CONTENT PAGES ------*/
 @-moz-document url-prefix(moz-extension://TYPE-UUID-OF-UBLOCK-ORIGIN-ADDON-HERE/) {
-body, html, #actions {
+html:not(#ublock0-epicker) > body, html:not(#ublock0-epicker), #actions {
   background: #333 !important;
   color: #ccc !important;
 }
@@ -1138,6 +1138,15 @@ a:active {color: #0050aa !important}
 .listEntry .fa-icon.support:hover,
 .listEntry .fa-icon.status.cache:hover
  {fill: #fff !important}
+
+.resultsetModifier > span > span:nth-of-type(1),
+.resultsetModifier > span > span:nth-of-type(2) {
+  background-color: #07c !important;
+}
+
+.resultsetModifier > span {
+  border-color: #999 !important;
+}
 
 #diff {border-color: #555 !important}
 
