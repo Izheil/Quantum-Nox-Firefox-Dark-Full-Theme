@@ -1465,7 +1465,7 @@ a.Addon-all-reviews-link, .MetadataCard, .Card-contents ul li, .LandingPage-head
 	background-color: #303030 !important;
 	color: #ccc !important}
 
-.SearchResult-wrapper:hover, .Card-footer-link {background-color: transparent !important}
+.SearchResult-wrapper:hover, .Card-footer-link, .Card-footer {background-color: transparent !important}
 
 .DevHub-callout-box {border: 8px solid #963 !important}
 
