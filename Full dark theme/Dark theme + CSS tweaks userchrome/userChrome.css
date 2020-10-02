@@ -1,6 +1,6 @@
 /* You can find an updated version here: https://github.com/Izheil/Quantum-Nox-Firefox-Dark-Full-Theme */
 /* Made by Izheil */
-/* Last updated: 09/09/2020 */
+/* Last updated: 02/10/2020 */
 
 /* COLORING PART STARTS HERE */
 
@@ -1241,14 +1241,29 @@ Make sure to NOT leave a comma before your last selector and the {display: none 
 
 /* -----TABS CONTEXT MENU----- */
 
+/* RELOAD TABS */
+
 /* Reload tab *//*
 #context_reloadTab,
 
-/* Mute tab *//*
+/* Reload selected tabs *//*
+#context_reloadSelectedTabs, 
+
+/* Reload selected tabs (title bar context menu) */
+#toolbar-context-reloadSelectedTabs,
+#toolbar-context-reloadSelectedTab,
+
+
+/* MUTE TABS */
+
+/* Mute tab */
 #context_toggleMuteTab,
 
 /* Mute selected tabs *//*
 #context_toggleMuteSelectedTabs,
+
+
+/* SELECT TABS */
 
 /* Select all tabs */
 #context_selectAllTabs,
@@ -1256,30 +1271,38 @@ Make sure to NOT leave a comma before your last selector and the {display: none 
 /* Select all tabs (title bar context menu) *//*
 #toolbar-context-selectAllTabs
 
+
+/* PIN/UNPIN TABS */
+
 /* Pin tab *//*
 #context_pinTab,
 
 /* Pin selected tabs *//*
 #context_pinSelectedTabs,
 
+/* Unpin tab *//*
+#context_unpinTab,
+
+/* Unpin selected tabs *//*
+#context_unpinSelectedTabs,
+
+
+/* OPEN/DUPLICATE/RE-OPEN TABS */
+
 /* Duplicate tab *//*
 #context_duplicateTab,
+
+/* Duplicate selected tabs *//*
+#context_duplicateTabs,
 
 /* Open tab in new window */
 #context_openTabInWindow,
 
-/* Separator from send tab to device *//*
-#context_sendTabToDevice_separator,
+/* Reopen in container *//*
+#context_reopenInContainer,
 
-/* Separator after the previous command *//*
-#tabContextMenu menuseparator:nth-child(17),
 
-/* Reload selected tabs */
-#context_reloadSelectedTabs, 
-
-/* Reload selected tabs (title bar context menu) *//*
-#toolbar-context-reloadSelectedTabs,*/
-#toolbar-context-reloadSelectedTab,
+/* BOOKMARK TABS */
 
 /* Bookmark tab */
 #context_bookmarkTab,
@@ -1290,11 +1313,8 @@ Make sure to NOT leave a comma before your last selector and the {display: none 
 /* Bookmark selected tabs (title bar context menu) */
 #toolbar-context-bookmarkSelectedTab,
 
-/* Reopen in container *//*
-#context_reopenInContainer,
 
-/* Move tab */
-#context_moveTabOptions,
+/* CLOSE/UNDO-CLOSE TABS */
 
 /* Close multiple tabs *//*
 #context_closeTabOptions,
@@ -1308,7 +1328,34 @@ Make sure to NOT leave a comma before your last selector and the {display: none 
 /* Close tab *//*
 #context_closeTab,
 
+/* Undo tab closing *//*
+#context_undoCloseTab, 
+
+
+/* SEPARATORS */
+
+/* Separator after "Duplicate tab" *//*
+#context_duplicateTabs + menuseparator,
+
+/* Separator after "Close tab" *//*
+#context_closeTab + menuseparator,
+
+/* Separator after "Send tab to device" */
+#context_sendTabToDevice + menuseparator,
+
+
+/* OTHER */
+
+/* Move tab */
+#context_moveTabOptions,
+
+/* Send tab to device */
+#context_sendTabToDevice,
+
+
 /* -----BOOKMARK ITEMS CONTEXT MENU----- */
+
+/* OPEN BOOKMARKS */
 
 /* Open bookmark */
 #placesContext_open,
@@ -1316,31 +1363,131 @@ Make sure to NOT leave a comma before your last selector and the {display: none 
 /* Open bookmark in new tab *//*
 #placesContext_open\:newtab,
 
-/* Open bookmark in new window *//*
+/* Open bookmark in new window */
 #placesContext_open\:newwindow,
 
-/* Open bookmark in new private window *//*
+/* Open bookmark in new private window */
 #placesContext_open\:newprivatewindow,
 
 /* Open all tabs in a bookmark folder & it's separator */
 #placesContext_openContainer\:tabs, 
 #placesContext_open\:newprivatewindow[disabled="true"],
 
-/* #placesContext_openSeparator, */
+/* NEW ELEMENT */
+
+/* Create new bookmark *//*
+#placesContext_new\:bookmark,
+
+/* Create new folder *//*
+#placesContext_new\:folder,
+
+/* Create new separator *//*
+#placesContext_new\:separator,
+
+
+/* EDIT ACTIONS */
+
+/* Cut *//*
+#placesContext_cut,
+
+/* Copy *//*
+#placesContext_copy,
+
+/* Paste *//*
+#placesContext_paste,
+
+/* Delete & it's separator *//*
+#placesContext_delete, #placesContext_deleteSeparator,
+
+/* SEPARATORS (Only those with more than 1 element in their section) */
+
+/* Separator after "Open in a new private window" */
+#placesContext_openSeparator,
+
+/* Separator after "Create new separator" *//*
+#placesContext_newSeparator,
+
+/* Separator after "Paste" *//*
+#placesContext_editSeparator,
+
+
+/* OTHER */
+
+/* Sort by name & it's separator *//*
+#placesContext_sortBy\:name, #placesContext_sortSeparator
+
+/* Properties & it's separator *//*
+#placesContext_show\:info, #placesContext_show\:info + menuseparator,
+
 
 /* -----WEBAREA CONTEXT MENU----- */
 
-/* Navigation buttons (Back, forward and reload buttons) & it's separator */
+/* NAVIGATION BUTTONS (individual) */
+
+/* Navigation back arrow *//*
+#context-back,
+/* Navigation forward arrow *//*
+#context-forward,
+/* Navigation reload *//*
+#context-reload,
+/* Navigation stop reloading *//*
+#context-stop,
+/* Navigation bookmark this page *//*
+#context-bookmarkpage,
+
+/* NAVIGATION BUTTONS CONTAINER (All navigation buttons & it's separator) */
 #context-navigation, #context-sep-navigation,
 
-/* Send image... */ 
-#context-sendimage,
 
-/* Set image as desktop background... */
-#context-setDesktopBackground, 
+/* SAVE ELEMENT AS... */
 
-/* Bookmark this page */ 
-#context-bookmarkpage,
+/* Save Page As... *//*
+#context-savepage,
+
+/* Save Link As... *//*
+#context-savelink,
+
+/* Save Page to Pocket */
+#context-pocket,
+
+/* Save Link to Pocket */
+#context-savelinktopocket,
+
+/* Save image as... *//*
+#context-saveimage,
+
+/* Save video as... *//*
+#context-savevideo,
+
+/* Save video screenshot *//*
+#context-video-saveimage,
+
+/* Save audio as... *//*
+#context-saveaudio, 
+
+
+/* COPY ELEMENT */
+
+/* Copy link *//*
+#context-copylink,
+
+/* Copy email *//*
+#context-copyemail,
+
+/* Copy image *//*
+#context-copyimage-contents,
+
+/* Copy image location *//*
+#context-copyimage, 
+
+/* Copy video location *//*
+#context-copyvideourl, 
+
+/* Copy audio location *//*
+#context-copyaudiourl,
+
+
+/* SEND ELEMENT (via email) */
 
 /* Send page... */ 
 #context-sendpage,
@@ -1348,26 +1495,68 @@ Make sure to NOT leave a comma before your last selector and the {display: none 
 /* Send video... */
 #context-sendvideo,
 
-/* Save video screenshot *//*
-#context-video-saveimage,
-
-/* Frame selector separator */
-#frame-sep,
-
-/* Inspect accessibility properties */
-#context-inspect-a11y,
-
-/* Bookmark this link */ 
-#context-bookmarklink,
+/* Send image... */ 
+#context-sendimage,
 
 /* Send link... */ 
 #context-sendlink,
 
-/* Search X on your default search engine */
-#context-searchselect, 
+
+/* SEND TAB TO DEVICE */
+
+/* Send page to device... (including it's separator) */ 
+#context-sendpagetodevice, #context-sep-sendpagetodevice,
+
+/* Send link to device... (including it's separator) */ 
+#context-sendlinktodevice, #context-sep-sendlinktodevice,
+
+
+/* SEARCH ENGINE */
+
+/* Search X on your default search engine *//*
+#context-searchselect,
+
+/* Search X on your default search engine privately */
+#context-searchselect-private,
 
 /* Add a keyword for this search... */
 #context-keywordfield,
+
+
+/* IMAGE RELATED */
+
+/* Set image as desktop background... */
+#context-setDesktopBackground, 
+
+/* View image Info */
+#context-viewimageinfo,
+
+/* View background image *//*
+#context-viewbgimage,
+
+
+/* INSPECT */
+
+/* Inspect Element *//*
+#context-inspect,
+
+/* Inspect accessibility properties */
+#context-inspect-a11y,
+
+/* Inspect separator *//*
+#inspect-separator,
+
+/* View source code *//*
+#context-viewsource,
+
+/* View selected source code *//*
+#context-viewpartialsource-selection,
+
+/* View page info *//*
+#context-viewinfo,
+
+
+/* OPEN LINK IN *
 
 /* Open link in a new tab */
 #context-openlinkintab,
@@ -1375,19 +1564,106 @@ Make sure to NOT leave a comma before your last selector and the {display: none 
 #context-openlink,
 /* Open link in a new private window */
 #context-openlinkprivate,
-/* Open link commands separator (should only disable if you don't use any of the "open link..." commands) */
+/* Open Link in New Container Tab *//*
+#context-openlinkinusercontext-menu,
+
+/* EDIT ACTIONS */
+
+/* Undo *//*
+#context-undo, 
+
+/* Cut *//*
+#context-cut,
+
+/* Copy *//*
+#context-copy,
+
+/* Paste *//*
+#context-paste,
+
+/* Delete *//*
+#context-delete,
+
+
+/* IFRAME CONTEXT MENU */
+
+/* This frame *//*
+#contentAreaContextMenu #frame,
+
+/* Show only this frame *//*
+#context-showonlythisframe,
+
+/* Open frame in a new window */
+#context-openframe,
+
+/* Reload frame & it's separator *//*
+#context-reloadframe, #context-reloadframe + menuseparator,
+
+/* Bookmark this frame */
+#context-bookmarkframe,
+
+/* Save frame as... */
+#context-saveframe,
+
+/* Separator after "Open this frame in..." actions */
+#open-frame-sep,
+
+/* Separator after "Save frame as..." */
+#context-saveframe + menuseparator,
+
+/* Print frame & it's separator */
+#context-printframe, #context-printframe + menuseparator,
+
+/* View frame source code *//*
+#context-viewframesource,
+
+/* View frame info *//*
+#context-viewframeinfo,
+
+
+/* SEPARATORS (Special context menus or sections with only 1 element not included here) */
+
+/* Separator after navigation buttons *//*
+#context-sep-navigation,
+
+/* Separator after "Open link in..." commands  *//*
 #context-sep-open,
 
+/* Separator after link manipulation (add to bookmarks, save link, copy link...) commands *//*
+#context-sep-copylink,
+
+/* Separator after "Copy media" section *//*
+#context-sep-copyimage,
+
+/* Separator after "Fill login" section *//*
+#fill-login-and-generated-password-separator, 
+
+/* Separator afte edit actions section *//*
+#context-sep-paste,
+
+/* Separator after "Select all" *//*
+#context-sep-selectall, 
+
+/* Separator before "This frame" *//*
+#frame-sep,
+
+
+/* MISC */
+
+/* Bookmark this link */
+#context-bookmarklink,
+
+/* Select everything *//*
+#context-selectall,
+
+/* Fill login info *//*
+#fill-login,
+
+/* Use generated password *//*
+#fill-login-generated-password, 
+
 /* Take a screenshot & it's separator *//*
-#screenshots_mozilla_org-menuitem-_create-screenshot,*/ #_context-media-eme-separator,
+#screenshots_mozilla_org-menuitem-_create-screenshot, #_context-media-eme-separator 
 
-/* Send tab to device... (including it's separator) */
-#context_sendTabToDevice, #context_sendTabToDevice_separator,
-
-/* Send page to device... (including it's separator)*/ 
-#context-sendpagetodevice, #context-sep-sendpagetodevice,
-
-/* Send link to device... (including it's separator)*/ 
-#contentAreaContextMenu #context-sendlinktodevice, 
-#contentAreaContextMenu #context-sep-sendlinktodevice 
+/* Don't delete this last line */
 {display: none !important}

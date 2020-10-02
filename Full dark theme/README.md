@@ -66,6 +66,8 @@ It will, although, not turn dark the extension popups you may have.
 It will also turn dark the autocomplete popups (mostly a side-effect)
 userChrome.css is also the file that enables loading of external (placed in the chrome folder) .css and .js files through the use of `userChrome.xml` (such as `scrollbars.as.css` or `MultiRowTabLiteforFx.uc.js`).
 
+The userChrome file inside `Dark theme + CSS tweaks userchrome` just adds a few CSS changes to make the megabar stop resizing, hide some context menu items that I personally don't use or see much use to them (like send tab to device). **It's not suposed to be used if you aren't going to edit it to suit your workflow**.
+
 ## The userContent.css file
 
 The userContent file will turn dark all the `about:about` pages.
