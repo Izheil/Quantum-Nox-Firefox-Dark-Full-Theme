@@ -5,7 +5,7 @@
 // @include        main
 // @compatibility  Firefox 70 to Firefox 83.0a1 (2020-09-22)
 // @author         Izheil
-// @version        03/10/2020 03:48 Initial release
+// @version        03/10/2020 05:32 Initial release
 // ==/UserScript==
 
 // Start of editable area
@@ -90,7 +90,7 @@ bottomFSTogglr.onmouseover = function() {
 }
 
 browserContent.onmouseover = function() {
-	tabsParent.style.marginBottom = "calc(var(--tab-min-height) * -1)";
+	tabsParent.style.marginBottom = tabsParent.getBoundingClientRect().height * -1 + "px";
 	tabsParent.style.transition = "margin 300ms";
 	navToolbox.style.transition = "margin 300ms";
 }
@@ -111,10 +111,6 @@ var css = `
 
 #main-window:not([sizemode="fullscreen"]) #fullscr-toggler-bottom {
 	display: none;
-}
-
-#main-window[sizemode="fullscreen"] #TabsToolbar {
-	margin-bottom: calc(var(--tab-min-height) * -1);
 }
 
 #main-window[sizemode="fullscreen"] #TabsToolbar, 
