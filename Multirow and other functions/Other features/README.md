@@ -18,7 +18,10 @@ Forces autohide of the toolbar in fullscreen mode to fix a common issue on Mac d
 Toggles visibility of the whole navigation toolbox as if you were on fullscreen, so that it's only visible when you have the mouse over it, or when hovering the mouse to the top of the screen when it's hidden. You can also maker bigger the hitbox to trigger the visibility of the toolbox changing the height of `fsToggler.style.height`at the bottom of the script from 10px to anything you want (just note that the bigger you make it, the more web area content will be unclickable on top).
 
 ### Navigator-toolbox-hide-by-keypress.uc.js
-Hides the navigation toolbox when pressing a key (F1 by default) when NOT in fullscreen mode. You can change the binded key through the variables inside the file..
+Hides the navigation toolbox when pressing a key (F1 by default) when NOT in fullscreen mode. You can change the binded key through the variables inside the file.
+
+### Tabs-on-bottom.uc.js
+Changes the position of tabs to be below the web content area (at the bottom of the browser).
 
 ### Test.as.css
 This is a test file to check that both external non-userchrome css files and js files are loaded through `userchrome.xml`. It draws a red border around all editable elements inside firefox UI.

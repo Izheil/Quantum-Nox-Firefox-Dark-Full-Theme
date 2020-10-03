@@ -1,6 +1,6 @@
 /* You can find an updated version here: https://github.com/Izheil/Quantum-Nox-Firefox-Dark-Full-Theme */
 /* Made by Izheil */
-/* Last updated: 02/10/2020 */
+/* Last updated: 03/10/2020 */
 
 /* COLORING PART STARTS HERE */
 
@@ -210,19 +210,19 @@ for icons on the bookmarks bar under the url bar */
 
 /* This prevents any custom windows theme to change the background color
 of the minimize, maximize and close buttons */
-#titlebar .titlebar-min:not(:hover), #titlebar .titlebar-max:not(:hover), 
-#main-window[sizemode="maximized"] #titlebar .titlebar-max:not(:hover),
-#titlebar .titlebar-close:not(:hover), #titlebar .titlebar-restore:not(:hover)
+.titlebar-min:not(:hover), .titlebar-max:not(:hover), 
+#main-window[sizemode="maximized"] .titlebar-max:not(:hover),
+.titlebar-close:not(:hover), .titlebar-restore:not(:hover)
 {background-color: transparent !important}
 
 /* This changes the color on hover of the minimize and maximize buttons */
-#titlebar .titlebar-min:hover, #titlebar .titlebar-max:hover, 
-#main-window[sizemode="maximized"] #titlebar .titlebar-max:hover,
-#titlebar .titlebar-restore:hover
+.titlebar-min:hover, .titlebar-max:hover, 
+#main-window[sizemode="maximized"] .titlebar-max:hover,
+.titlebar-restore:hover
 {background-color: var(--Min-max-buttons-hover-bg) !important}
 
 /* This changes the close button hover color */
-#titlebar .titlebar-close:hover {background-color: #d00 !important}
+.titlebar-close:hover {background-color: #d00 !important}
 
 /* Make tab background transparent */
 #tabbrowser-tabs:not([movingtab]) > .tabbrowser-arrowscrollbox > .tabbrowser-tab 

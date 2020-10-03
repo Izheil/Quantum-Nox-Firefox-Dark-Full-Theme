@@ -16,12 +16,13 @@ If you want to know how to change some colors of the theme, check the [wiki](htt
 ### Last update: 01/10/2020
 
 Files updated:
-* **addons.css**: Fixed an issue Ublock Origin element picker with the lastest theme update.
+* **userChrome.css**: Some fixes for min/max/close buttons when using `Tabs-on-bottom.uc.js` file.
+* **Tabs-on-bottom.uc.js**: Added a new function to place tabs at the bottom of the screen (below the web area content). You can find it inside 
 
 ### Pre-Last update: 26/09/2019
 
 Files updated:
-* __Multirow*.uc.js__: Fixed an issue that happened when opening tabs in the background while on fullscreen.
+* **addons.css**: Fixed an issue Ublock Origin element picker with the lastest theme update.
 
 
 ### A note on people looking to replace some Tab Mix Plus features:
