@@ -5,6 +5,7 @@
 // @include        main
 // @compatibility  Firefox 70 to Firefox 83.0a1 (2020-09-22)
 // @author         Izheil
+// @version        05/10/2020 01:10 Added the option to hide tabs on fullscreen completelly until keypress
 // @version        03/10/2020 05:32 Initial release
 // ==/UserScript==
 
@@ -12,6 +13,14 @@
 
 // You can set if the min/max/resize buttons are visible from the tabs toolbar here
 var hideResButtons = true; // Set to false to show the buttons
+
+// You can choose to always hide tabs in fullscreen here to avoid some issues
+var hideFSTabs = false; // Set to false to show the tabs on fullscreen
+
+// Choose key combination to show tabs on fullscreen (a max of 2 is allowed, and the first must be Ctrl, Alt, or Shift).
+// The first letter of each key must be capital.
+// This only makes sense if tabs are hidden on fullscreen (if hideFSTabs == true).
+var keysForFSTabs = ["Shift", "T"]; // The default is ["Shift", "T"]
 
 // End of editable area
 
@@ -25,6 +34,18 @@ var menuElement = document.getElementById("toolbar-menubar");
 var resizeButtons = document.querySelector("#TabsToolbar > .titlebar-buttonbox-container");
 var browserContent = document.getElementById("browser");
 var navToolbox = document.getElementById("navigator-toolbox");
+var modKeyToggleTabs;
+var keyToggleTabs;
+
+
+if (keysForFSTabs.length == 2) {
+	modKeyToggleTabs = keysForFSTabs[0];
+	keyToggleTabs = keysForFSTabs[1];
+} else {
+	keyToggleTabs = keysForFSTabs[0];
+}
+
+
 
 // We move the elements here
 bottomBox.appendChild(tabsParent);
@@ -84,14 +105,62 @@ topFSTogglr.onmouseover = function() {
 	navToolbox.style.transition = "none";
 }
 
-bottomFSTogglr.onmouseover = function() {
+// Function to show tabs when they are hidden
+function showTabs() {
 	tabsParent.style.marginBottom = "0";
 	tabsParent.style.transition = "none";
 }
 
-browserContent.onmouseover = function() {
+// Function to hide tabs when they are shown
+function hideTabs() {
 	tabsParent.style.marginBottom = tabsParent.getBoundingClientRect().height * -1 + "px";
 	tabsParent.style.transition = "margin 300ms";
+}
+
+// We choose to show tabs on fullscreen if the user enabled that option
+if (hideFSTabs) {
+	// Event listener for keypresses
+	window.addEventListener("keydown", tabsToggle, false);
+
+	// Key shortcut toggler
+	function tabsToggle(e) {
+		// We define the modifiers here
+		if (keysForFSTabs.length == 2) {
+			switch(keysForFSTabs[0]) {
+				case "Shift":
+					modKeyToggleTabs = e.shiftKey;
+					break;
+				case "Ctrl":
+					modKeyToggleTabs = e.ctrlKey;
+					break;
+				case "Alt":
+					modKeyToggleTabs = e.altKey;
+					break;
+				case "Cmd":
+					modKeyToggleTabs = e.metaKey;
+					break;
+			};
+		};
+
+		if (window.fullScreen && modKeyToggleTabs && e.key == keyToggleTabs) {
+			console.log(tabsParent.style.marginBottom)
+			if (tabsParent.style.marginBottom == "0px") {
+				hideTabs();
+			} else {
+				showTabs();
+			}
+		};
+	};
+
+// If we don't hide tabs completelly by default
+} else {
+	// Event listener for tabs area
+	bottomFSTogglr.addEventListener("mouseover", showTabs, false);
+
+}
+
+browserContent.onmouseover = function() {
+	hideTabs();
 	navToolbox.style.transition = "margin 300ms";
 }
 
