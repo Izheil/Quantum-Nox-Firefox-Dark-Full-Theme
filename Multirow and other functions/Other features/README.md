@@ -22,7 +22,7 @@ Hides the navigation toolbox when pressing a key (F1 by default) when NOT in ful
 
 ### Tabs-on-bottom.uc.js
 Changes the position of tabs to be below the web content area (at the bottom of the browser).
-You can also choose if you want to hide the tabs below by default on fullscreen until pressing a shortcut (`Shift + T` by default) by changing the variables on top of the screen.
+The tabs will be hidden on fullscreen until pressing a key shortcut combination (`Shift + T` by default). If you'd prefer them to show as soon as you hover over the bottom of the browser, you can change the `hideFSTabs` variable inside the script to `false`.
 
 ### Test.as.css
 This is a test file to check that both external non-userchrome css files and js files are loaded through `userchrome.xml`. It draws a red border around all editable elements inside firefox UI.

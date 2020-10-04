@@ -15,7 +15,7 @@
 var hideResButtons = true; // Set to false to show the buttons
 
 // You can choose to always hide tabs in fullscreen here to avoid some issues
-var hideFSTabs = false; // Set to false to show the tabs on fullscreen
+var hideFSTabs = true; // Set to false to show the tabs on fullscreen
 
 // Choose key combination to show tabs on fullscreen (a max of 2 is allowed, and the first must be Ctrl, Alt, or Shift).
 // The first letter of each key must be capital.
