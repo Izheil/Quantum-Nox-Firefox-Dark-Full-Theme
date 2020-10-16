@@ -13,16 +13,15 @@ You can use it to fully change the colors of most of firefox UI to dark-gray col
 
 If you want to know how to change some colors of the theme, check the [wiki](https://github.com/Izheil/Quantum-Nox-Firefox-Dark-Full-Theme/wiki/Editting-CSS-files).
 
-### Last update: 05/10/2020
+### Last update: 16/10/2020
+
+Files updated:
+* **addons.css**: Fixes for Ublock Origin filters text color. 
+
+### Pre-Last update: 05/10/2019
 
 Files updated:
 * **Tabs-on-bottom.uc.js**: Fixes for tabs getting in the way on fullscreen videos. 
-
-### Pre-Last update: 01/10/2019
-
-Files updated:
-* **userChrome.css**: Some fixes for min/max/close buttons when using `Tabs-on-bottom.uc.js` file.
-* **Tabs-on-bottom.uc.js**: Added a new function to place tabs at the bottom of the screen (below the web area content). You can find it inside.
 
 
 ### A note on people looking to replace some Tab Mix Plus features:
