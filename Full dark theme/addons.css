@@ -1303,6 +1303,7 @@ span[data-i18n-tip="popupTipRevertRules"], span[data-i18n-tip="popupTipSaveRules
 #firewallContainer > div {border: none !important}
 }
 
+/* The new Ublock Origin popup layout */
 @-moz-document url-prefix(moz-extension://TYPE-UUID-OF-UBLOCK-ORIGIN-ADDON-HERE/popup-fenix.html) {
 #sticky {
   background: #333 !important}
