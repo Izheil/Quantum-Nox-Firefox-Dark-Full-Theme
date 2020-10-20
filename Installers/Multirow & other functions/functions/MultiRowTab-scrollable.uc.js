@@ -3,7 +3,7 @@
 // @namespace      https://github.com/Izheil/Quantum-Nox-Firefox-Dark-Full-Theme
 // @description    Multi-row tabs draggability fix with scrollable rows
 // @include        main
-// @compatibility  Firefox 70 to Firefox 83.0a1 (2020-09-22)
+// @compatibility  Firefox 70 to Firefox 84.0a1 (2020-10-20)
 // @author         Alice0775, Endor8, TroudhuK, Izheil
 // @version        25/09/2020 23:26 Fixed glitch on opening tabs in the background while on fullscreen
 // @version        06/09/2020 18:29 Compatibility fix for Australis and fix for pinned tabs glitch
@@ -61,6 +61,10 @@ function zzzz_MultiRowTabLite() {
     }
 
     /*-------- Don't edit past here unless you know what you are doing --------*/
+    
+    #navigator-toolbox:-moz-lwtheme {
+        background-repeat: repeat-y !important;
+    }
     
     .tabbrowser-tab:not([pinned]) {
         flex-grow: var(--tab-growth)}
