@@ -300,10 +300,23 @@ message-bar:not(.alert) .container, message-bar:not(.alert) {background: #444 !i
 #permissionsBox > richlistitem[selected="true"],
 #sitesList > richlistitem[selected="true"] {background-color: rgba(255,255,255,0.2) !important}
 
-/*------ BLOCKED PAGES BACKGROUND ------ */
+/*------ BLOCKED PAGES BACKGROUND (about:blocked) ------ */
 @-moz-document url-prefix(about:blocked) {
-	body {background-color: #500 !important}
+	html {background-color: #500 !important}
+
+	button.primary {
+		background-color: #a33 !important}
+
+	button.primary:hover {
+		background-color: #a44 !important}
+
+	button:not(.primary), #errorDescriptionContainer .error-description {
+		background-color: rgba(255,255,255,0.2) !important}
+
+	button:not(.primary):hover {
+		background-color: rgba(255,255,255,0.3) !important}
 }
+
 /*------ LOG BROWSING PAGE (about:sync-log) ------*/
 @-moz-document url-prefix(about:sync-log) {
 html {background-color: #202020 !important}
