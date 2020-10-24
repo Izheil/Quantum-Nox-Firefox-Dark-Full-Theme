@@ -1,5 +1,6 @@
 /* You can find an updated version here: https://github.com/Izheil/Quantum-Nox-Firefox-Dark-Full-Theme */
 /* Made by Izheil */
+
 /* Last updated: 24/10/2020 */
 
 /* This part imports the Addons file if there is one, so that you don't have to edit the dynamic URL
@@ -299,6 +300,23 @@ message-bar:not(.alert) .container, message-bar:not(.alert) {background: #444 !i
 #sitesList > richlistitem:hover {background-color: rgba(255,255,255,0.1) !important}
 #permissionsBox > richlistitem[selected="true"],
 #sitesList > richlistitem[selected="true"] {background-color: rgba(255,255,255,0.2) !important}
+
+/*------ BLOCKED PAGES BACKGROUND (about:blocked) ------ */
+@-moz-document url-prefix(about:blocked) {
+	html {background-color: #500 !important}
+
+	button.primary {
+		background-color: #a33 !important}
+
+	button.primary:hover {
+		background-color: #a44 !important}
+
+	button:not(.primary), #errorDescriptionContainer .error-description {
+		background-color: rgba(255,255,255,0.2) !important}
+
+	button:not(.primary):hover {
+		background-color: rgba(255,255,255,0.3) !important}
+}
 
 /*------ LOG BROWSING PAGE (about:sync-log) ------*/
 @-moz-document url-prefix(about:sync-log) {
