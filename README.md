@@ -16,12 +16,12 @@ If you want to know how to change some colors of the theme, check the [wiki](htt
 ### Last update: 16/10/2020
 
 Files updated:
-* **addons.css**: Fixes for Ublock Origin filters text color. 
+* **userContent.css**: Fixes Mozilla support page warning menus. 
 
 ### Pre-Last update: 05/10/2019
 
 Files updated:
-* **Tabs-on-bottom.uc.js**: Fixes for tabs getting in the way on fullscreen videos. 
+* **addons.css**: Fixes for Ublock Origin filters text color.  
 
 
 ### A note on people looking to replace some Tab Mix Plus features:
