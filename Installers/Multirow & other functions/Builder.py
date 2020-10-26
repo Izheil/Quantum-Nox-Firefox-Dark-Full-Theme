@@ -1,7 +1,5 @@
 import os
 import re
-import grp
-import pwd
 import sys
 import glob
 import ctypes
@@ -31,6 +29,11 @@ def SystemOS():
 OSinUse = SystemOS()
 
 if OSinUse != "Windows":
+    # We import the modules that are UNIX-only
+    import grp
+    import pwd
+
+    # We check for root
     if os.geteuid() != 0:
         os.execvp("sudo", ["sudo"] + sys.argv)
     if OSinUse == "Linux":
