@@ -979,6 +979,8 @@ body, html {background: #333 !important; color: #fff !important}
 label, span, .origin.tooltip {color: #ddd !important}
 span.i18n_name {color: #fff !important}
 
+#privacyBadgerHeader > a > img {filter: invert(75%)}
+
 button {
   -moz-appearance: none !important;
   border-radius: 3px !important;
