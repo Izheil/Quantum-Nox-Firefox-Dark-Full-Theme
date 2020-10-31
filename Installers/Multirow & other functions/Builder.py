@@ -1851,6 +1851,7 @@ if CLArgs.print_defaults:
     print("\nFirefox Nightly:")
     print(" - Root: " + rootN)
     print(" - Profile: " + NProfile)
+    input("Press enter to exit.")
     sys.exit()
 
 # GUI initializator

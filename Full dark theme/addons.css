@@ -1,6 +1,6 @@
 /* You can find an updated version here: https://github.com/Izheil/Quantum-Nox-Firefox-Dark-Full-Theme */
 /* Made by Izheil */
-/* Last updated: 01/10/2020 */
+/* Last updated: 31/10/2020 */
 
 /*------ HOW TO MAKE THE ADDON THEMES WORK ------*/
 /* To use this part of the code, you will have to find the dynamic UUID of your extensions, and replace it where the 
@@ -828,52 +828,70 @@ input[type="checkbox"]:checked {
 
 /*------ PRIVACY BADGER ADDON SETTINGS PAGE ------*/
 @-moz-document url-prefix(moz-extension://TYPE-UUID-OF-PRIVACY-BADGER-ADDON-HERE/skin/options.html) {
-body, html {background: #222 !important; color: #fff !important}
+body, html {
+  background: #222 !important; 
+  color: #fff !important}
 
-#tabs {background: #444 !important; color: #ccc !important; border: 1px solid #666 !important}
+#tabs {
+  background: #444 !important; 
+  color: #ccc !important; 
+  border: 1px solid #666 !important}
 
-#tabs > ul {background-image: linear-gradient(#333, #222) !important; border: 1px solid #666 !important}
+#tabs > ul {
+  background-image: linear-gradient(#333, #222) !important; 
+  border: 1px solid #666 !important}
 
-label, p, span.i18n_show_tracking_domains_acknowledgement, .origin.tooltip {color: #ddd !important}
+label, p, span.i18n_show_tracking_domains_acknowledgement, 
+.origin.tooltip {
+  color: #ddd !important}
 
-.i18n_options_webrtc_warning, .i18n_options_incognito_warning {color: #aaa !important}
+.i18n_options_webrtc_warning, .i18n_options_incognito_warning {
+  color: #aaa !important}
 
-span.i18n_import_user_data, span.i18n_export_user_data, h3, h3 span {color: #fff !important}
+span.i18n_import_user_data, span.i18n_export_user_data, h3, h3 span {
+  color: #fff !important}
 
 #tabs > ul > li {
-	background: #252525 !important; 
-	border: 1px solid #555 !important}
+  background: #252525 !important; 
+  border: 1px solid #555 !important}
 
-#tabs > ul > li span {color: #ccc !important}
+#tabs > ul > li span, .origin-inner {
+  color: #ccc !important}
 
 #tabs > ul > li.ui-state-hover {
-	background: #333 !important; 
-	border: 1px solid #606060 !important}
+  background: #333 !important; 
+  border: 1px solid #606060 !important}
 
-#tabs > ul > li.ui-state-hover span {color: #ddd !important}
+#tabs > ul > li.ui-state-hover span {
+  color: #ddd !important}
 
 #tabs > ul > li.ui-state-active {
-	background: #444 !important; 
-	color: #fff !important; 
-	border: 1px solid #666 !important}
+  background: #444 !important; 
+  color: #fff !important; 
+  border: 1px solid #666 !important}
 
-#tabs > ul > li.ui-state-active span {color: #fff !important}
+#tabs > ul > li.ui-state-active span, h4 {
+  color: #fff !important}
 
-#newWhitelistDomain, #excludedDomainsBox, #trackingDomainSearch {
-	-moz-appearance: none !important;
-	color: #ddd !important;
-	background: #303030 !important;
-	border: 1px solid #666 !important}
+#tracking-domains-filters {
+  border-color: #888 !important}
 
-#trackingDomainSearch:hover, #newWhitelistDomain:hover {
-	border: 1px solid #db7924 !important}
+input[type="text"] {
+  -moz-appearance: none !important;
+  color: #ddd !important;
+  background: #303030 !important;
+  border: 1px solid #666 !important}
+ 
+input[type="text"]:hover, input[type="text"]:focus {
+  border: 1px solid #db7924 !important}
 
-#blockedResources > .keyContainer > .key {background: none !important}
+#blockedResources > .keyContainer > .key {
+  background: none !important}
 
 #blockedResourcesInner > div {
-	background: #444 !important; 
-	color: #ccc !important;
-	border-top: 1px solid #666 !important}
+  background: #444 !important; 
+  color: #ccc !important;
+  border-top: 1px solid #666 !important}
 
 button {
   -moz-appearance: none !important;
@@ -883,8 +901,12 @@ button {
   border: none !important}
 
 button:hover {
-	background: #555 !important;
-	color: #fff !important}
+  background: #555 !important;
+  color: #fff !important}
+
+.userset .honeybadgerPowered {
+  filter: invert(80%);
+}
 
 a:link, a {color: #0bb !important}
 a:visited, a:active {color: #088 !important}
@@ -896,9 +918,9 @@ input[type="checkbox"] {
   border: 1px solid #666 !important;
   background-color: #444 !important;
   transition: color 0.3s;
-  min-width: 16px;
-  min-height: 16px;
-  max-height: 16px !important;
+  min-width: 12px;
+  min-height: 12px;
+  max-height: 12px !important;
   margin-bottom: 0 !important}
 
 input[type="checkbox"]:not([disabled]):hover {
@@ -906,23 +928,48 @@ input[type="checkbox"]:not([disabled]):hover {
   border-color: #0084ff !important}
 
 input[type="checkbox"]:checked {
-  background: #444 url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="15px" height="15px" viewBox="0 0 16 16" ><path fill="rgb(200,200,200)" d="M 13.09,2.87 C 13.09,2.87 6.00,11.00 6.00,11.00 6.00,11.00 2.00,9.00 2.00,9.00 4.25,12.81 7.00,14.00 7.00,14.00 9.24,10.42 12.04,7.39 13.09,2.87 Z" /></svg>') no-repeat center center !important}
+  background: #444 url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="12px" height="12px" viewBox="2 3 12 12" ><path fill="rgb(200,200,200)" d="M 13.09,2.87 C 13.09,2.87 6.00,11.00 6.00,11.00 6.00,11.00 2.00,9.00 2.00,9.00 4.25,12.81 7.00,14.00 7.00,14.00 9.24,10.42 12.04,7.39 13.09,2.87 Z" /></svg>') no-repeat center center !important}
 
 input[type="checkbox"]:disabled + span, input[type="checkbox"]:disabled {opacity: 0.5 !important}
 
 /* Select boxes coloring */
-select {
+select:not(#allowlist-select), .select2-container--default .select2-selection--multiple {
   -moz-appearance: none !important;
   background: #555 url("data:image/svg+xml;charset=utf-8,%3Csvg width='11' height='7' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M434.574 488L430.5 492.147 426.428 488 425 489.399 430.5 494.999 436 489.399z' transform='translate(-425 -488)' fill='%23cccccc' fill-rule='evenodd'/%3E%3C/svg%3E") no-repeat calc(100% - 5px) 50% !important;
   border: none !important;
   padding: 3px;
   color: #ccc !important}
 
-select:hover {
+.select2-results__options {
+  background-color: #555 !important;
+  color: #ccc !important}
+
+.select2-dropdown {border-color: #666 !important}
+
+.select2-results__option[aria-selected="true"], .select2-selection__choice {
+  background-color: #222 !important}
+
+.select2-selection__choice__remove:hover {
+  color: #fff !important;
+}
+
+.select2-results__option--highlighted {
+  background-color: rgba(255,255,255,0.2) !important;
+}
+
+select:not(#allowlist-select):hover {
   background: #333 url("data:image/svg+xml;charset=utf-8,%3Csvg width='11' height='7' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M434.574 488L430.5 492.147 426.428 488 425 489.399 430.5 494.999 436 489.399z' transform='translate(-425 -488)' fill='%23cccccc' fill-rule='evenodd'/%3E%3C/svg%3E") no-repeat calc(100% - 5px) 50% !important;
   color: #fff !important}
 
 select .menulist-dropmarker {display: none}
+
+#allowlist-select {
+  background-color: #333 !important;
+  color: #ccc !important;
+  border: 1px solid #666 !important}
+
+#allowlist-select > option:hover, #allowlist-select > option:focus {
+  background-color: #555 !important}
 }
 
 /*------ PRIVACY BADGER ADDON POPUP ------*/
