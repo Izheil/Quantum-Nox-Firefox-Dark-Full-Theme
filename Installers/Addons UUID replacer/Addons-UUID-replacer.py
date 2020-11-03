@@ -419,11 +419,6 @@ def addonsPatcher(FFprofile, UUIDDict):
                    s = s.replace("TYPE-UUID-OF-UMATRIX-ADDON-HERE", 
                                   UUIDDict['uMatrix@raymondhill.net'])
 
-                # Video Download Helper
-                if isAddonInstalled[x] == "{b9db16a4-6edc-47ec-a1f4-b86292ed211d}":
-                   s = s.replace("TYPE-UUID-OF-VIDEO-DOWNLOAD-HELPER-ADDON-HERE", 
-                                  UUIDDict['{b9db16a4-6edc-47ec-a1f4-b86292ed211d}'])
-
                 # Viewhance
                 if isAddonInstalled[x] == "{00000c4c-fcfd-49bc-9f0d-78db44456c9c}":
                    s = s.replace("TYPE-THE-UUID-OF-VIEWHANCE-ADDON-HERE", 
