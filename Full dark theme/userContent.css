@@ -1502,7 +1502,7 @@ a.Addon-all-reviews-link, .MetadataCard, .Card-contents ul li, .LandingPage-head
 
 .PermissionsCard-list .Icon {filter: brightness(700%) !important}
 
-.AddonReviewCard-reply .ShowMoreCard-contents {
+.AddonReviewCard-reply .ShowMoreCard-contents, .RatingManager .ShowMoreCard-contents  {
 	background-color: rgba(10,132,255,.05) !important;
 }
 
