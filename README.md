@@ -76,7 +76,6 @@ Here is a list of the themed addons:
 * [Ublock Origin](https://addons.mozilla.org/en-US/firefox/addon/ublock-origin/)
 * [uMatrix](https://addons.mozilla.org/en-US/firefox/addon/umatrix/)
 * ~~Undo closed tabs button~~ -> Use [Undo close tab](https://addons.mozilla.org/en-US/firefox/addon/undoclosetabbutton/) instead (which is more updated and requires no theming).
-* [Video Download Helper](https://addons.mozilla.org/en-US/firefox/addon/video-downloadhelper/)
 * [Viewhance](https://addons.mozilla.org/en-US/firefox/addon/viewhance/)
 
 
