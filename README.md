@@ -16,12 +16,12 @@ If you want to know how to change some colors of the theme, check the [wiki](htt
 ### Last update: 31/10/2020
 
 Files updated:
-* **addons.css**: Updated Privacy Badger addon settings page theme. 
+* **userContent**: Small fix on AMO review answer boxes. 
 
-### Pre-Last update: 16/10/2019
+### Pre-Last update: 31/10/2020
 
 Files updated:
-* **userContent.css**: Fixes Mozilla support page warning menus.   
+* **addons.css**: Updated Privacy Badger addon settings page theme.  
 
 
 ### A note on people looking to replace some Tab Mix Plus features:
