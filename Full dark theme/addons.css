@@ -1,6 +1,6 @@
 /* You can find an updated version here: https://github.com/Izheil/Quantum-Nox-Firefox-Dark-Full-Theme */
 /* Made by Izheil */
-/* Last updated: 31/10/2020 */
+/* Last updated: 03/11/2020 */
 
 /*------ HOW TO MAKE THE ADDON THEMES WORK ------*/
 /* To use this part of the code, you will have to find the dynamic UUID of your extensions, and replace it where the 
@@ -1710,15 +1710,15 @@ select:hover {
 @-moz-document url-prefix(moz-extension://TYPE-UUID-OF-VIDEO-DOWNLOAD-HELPER-ADDON-HERE/) {
 main, .top-line, .files-list.headercontainer, .current-directory {background: #333 !important; color: #ccc !important}
 
-.tablecontainer, select.form-control {
-	background: #555 !important; 
-	color: #ccc !important; 
-	border: 1px solid #777 !important}
+.tablecontainer {
+  background: #555 !important; 
+  color: #ccc !important; 
+  border: 1px solid #666 !important}
 
 .dir-entry, .file-prompt .tablecontainer td, 
 .file-prompt th {background: none !important; border: none !important}
 
-.dropdown-toggle {background: #333 !important; border-bottom: 1px solid #fff !important}
+.dropdown-toggle {background: #333 !important; border-bottom: 1px solid #666 !important}
 
 a[aria-expanded="true"] {background: #444 !important; color: #0ff !important}
 
@@ -1728,9 +1728,9 @@ a[aria-expanded="true"] {background: #444 !important; color: #0ff !important}
 .btn-toolbar {background: #333 !important; color: #ccc !important}
 
 header {
-	background: linear-gradient(#333,#111) !important; 
-	color: #ddd !important;
-	border: 1px solid #000 !important}
+  background: linear-gradient(#333,#111) !important; 
+  color: #ddd !important;
+  border: 1px solid #000 !important}
 
 .btn-outline-secondary, .btn-secondary, 
 .input-group-btn .btn, .list li {
@@ -1741,6 +1741,22 @@ header {
   outline: none !important;
   box-shadow: none !important}
 
+.collapsible-section, .section-header, .card, 
+.active.nav-link, .nav-tabs, .nav-item:hover a {
+  border-color: #666 !important;
+}
+
+.nav-link:not(.active) {
+  color: #ccc !important;
+}
+
+.active.nav-link {
+  color: #fff !important;
+  background: #444 !important;
+}
+
+.nav-link {cursor: pointer !important}
+
 .btn-outline-primary {
   -moz-appearance: none !important;
   border-radius: 3px !important;
@@ -1749,38 +1765,35 @@ header {
   border: 1px solid #0040aa !important}
 
 .btn-outline-primary:not[disabled]:hover {
-	background: #003080 !important;
+  background: #003080 !important;
     color: #dff !important}
 
 .btn-outline-secondary:hover, .btn-secondary:hover, .btn-success:hover {
-	background: #111 !important;
-	color: #fff !important}
+  background: #111 !important;
+  color: #fff !important}
 
 .btn-success  {
-	-moz-appearance: none !important;
-	background: #00b300 !important; 
-	color: #ddd !important;
-	border: 1px solid #030 !important}
+  -moz-appearance: none !important;
+  background: #00b300 !important; 
+  color: #ddd !important;
+  border: 1px solid #030 !important}
 
 .btn-success:active {background: #008000 !important}
 
 input, .input-license input, textarea {
-	-moz-appearance: none !important;
-	background: #555 !important;
-	color: #fff !important;
-	border: none !important}
+  -moz-appearance: none !important;
+  background: #555 !important;
+  color: #fff !important;
+  border: none !important}
 
 .section-header, .dropdown-item:hover {background: #555 !important; color: #fff !important}
-.card-body, .dropdown-menu.show, .dropdown-item {background: #444 !important; color: #ccc !important}
+.card-body, .dropdown-menu.show, .dropdown-item, .card {background: #444 !important; color: #ccc !important}
 
 .modal-content, .list-column, footer, .weh-shf {background: #333 !important}
 .modal-header, .param {background: #222 !important; color: #fff !important; border-bottom: 1px solid #000 !important}
 .modal-body {color: #ddd !important}
 .modal-footer {border-top: 1px solid #888 !important}
 .close {color: #fff !important}
-
-.active.nav-link {background: #444 !important; color: #0ff !important}
-.nav-link {cursor: pointer !important}
 
 /* Checkbox coloring */
 input[type="checkbox"] {
@@ -1789,9 +1802,8 @@ input[type="checkbox"] {
   border: 1px solid #666 !important;
   background-color: #444 !important;
   transition: color 0.3s;
-  min-width: 16px;
-  max-width: 16px !important;
-  min-height: 16px;
+  max-width: 14px !important;
+  max-height: 14px !important;
   margin-bottom: 0 !important}
 
 input[type="checkbox"]:not([disabled]):hover {
@@ -1799,7 +1811,19 @@ input[type="checkbox"]:not([disabled]):hover {
   border-color: #0084ff !important}
 
 input[type="checkbox"]:checked {
-  background: #444 url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="15px" height="15px" viewBox="0 0 16 16" ><path fill="rgb(200,200,200)" d="M 13.09,2.87 C 13.09,2.87 6.00,11.00 6.00,11.00 6.00,11.00 2.00,9.00 2.00,9.00 4.25,12.81 7.00,14.00 7.00,14.00 9.24,10.42 12.04,7.39 13.09,2.87 Z" /></svg>') no-repeat center center !important}
+  background: #444 url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="12px" height="12px" viewBox="2 3 12 12" ><path fill="rgb(200,200,200)" d="M 13.09,2.87 C 13.09,2.87 6.00,11.00 6.00,11.00 6.00,11.00 2.00,9.00 2.00,9.00 4.25,12.81 7.00,14.00 7.00,14.00 9.24,10.42 12.04,7.39 13.09,2.87 Z" /></svg>') no-repeat center center !important}
+
+/* Select boxes coloring */
+select {
+  -moz-appearance: none !important;
+  background: #555 url("data:image/svg+xml;charset=utf-8,%3Csvg width='11' height='7' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M434.574 488L430.5 492.147 426.428 488 425 489.399 430.5 494.999 436 489.399z' transform='translate(-425 -488)' fill='%23cccccc' fill-rule='evenodd'/%3E%3C/svg%3E") no-repeat calc(100% - 5px) 50% !important;
+  border: none !important;
+  padding: 3px 30px 3px 3px !important;
+  color: #ccc !important}
+
+select:hover {
+  background: #222 url("data:image/svg+xml;charset=utf-8,%3Csvg width='11' height='7' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M434.574 488L430.5 492.147 426.428 488 425 489.399 430.5 494.999 436 489.399z' transform='translate(-425 -488)' fill='%23cccccc' fill-rule='evenodd'/%3E%3C/svg%3E") no-repeat calc(100% - 5px) 50% !important;
+  color: #fff !important}
 }
 
 /*------ VIDEO DOWNLOAD HELPER ADDON POPUP ------*/
