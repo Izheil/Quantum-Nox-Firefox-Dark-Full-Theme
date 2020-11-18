@@ -40,8 +40,15 @@ if OSinUse != "Windows":
     if OSinUse == "Linux":
         # We get the non-root username and group here
         rootUser = os.getenv("SUDO_USER")
-        gid = pwd.getpwnam(rootUser).pw_gid
-        rootGroup = grp.getgrgid(gid).gr_name
+
+        # If the non-root username exists, we assume a regular user 
+        # with root privileges is using it, otherwise a pure root user is.
+        if (rootUser): 
+            accRoot = False
+            gid = pwd.getpwnam(rootUser).pw_gid
+            rootGroup = grp.getgrgid(gid).gr_name
+        else:
+            accRoot = True
 
 elif ctypes.windll.shell32.IsUserAnAdmin() == 0:
     ctypes.windll.shell32.ShellExecuteW(None, "runas", sys.executable, __file__, None, 1)
@@ -148,8 +155,12 @@ if OSinUse == "Windows":
         home = os.getenv('APPDATA')
     MozPFolder = home + r"\Mozilla\Firefox"
 elif OSinUse == "Linux":
-    home = "/home/" + os.getenv("SUDO_USER")
-    MozPFolder = home + r"/.mozilla/firefox"
+    if (accRoot):
+        home = "/root"
+        MozPFolder = home + r"/.mozilla/firefox"
+    else:
+        home = "/home/" + os.getenv("SUDO_USER")
+        MozPFolder = home + r"/.mozilla/firefox"
 elif OSinUse == "Mac":
     home = str(Path.home())
     MozPFolder = home + r"/Library/Application Support/Firefox"
