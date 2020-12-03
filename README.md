@@ -13,15 +13,15 @@ You can use it to fully change the colors of most of firefox UI to dark-gray col
 
 If you want to know how to change some colors of the theme, check the [wiki](https://github.com/Izheil/Quantum-Nox-Firefox-Dark-Full-Theme/wiki/Editting-CSS-files).
 
-### Last update: 31/10/2020
+### Last update: 03/12/2020
+
+Files updated:
+* **userContent**: Small fix on for containers back button on `about:preferences`. 
+
+### Pre-Last update: 03/11/2020
 
 Files updated:
 * **userContent**: Small fix on AMO review answer boxes. 
-
-### Pre-Last update: 31/10/2020
-
-Files updated:
-* **addons.css**: Updated Privacy Badger addon settings page theme.  
 
 
 ### A note on people looking to replace some Tab Mix Plus features:

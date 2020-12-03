@@ -1,7 +1,7 @@
 /* You can find an updated version here: https://github.com/Izheil/Quantum-Nox-Firefox-Dark-Full-Theme */
 /* Made by Izheil */
 
-/* Last updated: 03/11/2020 */
+/* Last updated: 03/12/2020 */
 
 /* This part imports the Addons file if there is one, so that you don't have to edit the dynamic URL
 from the addons rules every time we update anything here */
@@ -1366,14 +1366,14 @@ menulist[sizetopopup="pref"] .menulist-label-box {background: transparent !impor
 image.searchBarImage {filter: contrast(150%)}
 
 /* This changes some of the buttons color */
-.accessory-button, button:not([data-l10n-id="content-blocking-expand-section"]):not(.dialogClose) {
+.accessory-button, button:not([data-l10n-id="content-blocking-expand-section"]):not(.dialogClose):not(#backContainersButton) {
   -moz-appearance: none !important;
   border-radius: 3px !important;
   background: var(--button-background) !important;
   color: #ddd !important;
   border: 1px solid var(--button-border) !important}
 
-.accessory-button:hover, button:not([data-l10n-id="content-blocking-expand-section"]):not(.dialogClose):hover {
+.accessory-button:hover, button:not([data-l10n-id="content-blocking-expand-section"]):not(.dialogClose):not(#backContainersButton):hover {
 	background: var(--button-background-hover) !important;
     color: #FFF !important}
 
