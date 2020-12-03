@@ -1,6 +1,6 @@
 /* You can find an updated version here: https://github.com/Izheil/Quantum-Nox-Firefox-Dark-Full-Theme */
 /* Made by Izheil */
-/* Last updated: 03/10/2020 */
+/* Last updated: 03/12/2020 */
 
 /* COLORING PART STARTS HERE */
 
@@ -724,19 +724,32 @@ if necessary depending on if you are using a custom OS theme (which may mess up 
   color: #fff !important}
 
 /* These change the expander buttons on the library and bookmarking popup */
-#editBMPanel_folderMenuList, #editBMPanel_tagsSelectorExpander,
+#editBMPanel_tagsSelectorExpander,
 #editBMPanel_foldersExpander, #detailsDeck button {
   -moz-appearance: none !important;
   border: 1px solid #222 !important;
   background: linear-gradient(#555,#333) !important;
   color: #ddd !important}
 
-#editBMPanel_folderMenuList:hover, #editBMPanel_tagsSelectorExpander:hover, 
+#editBMPanel_tagsSelectorExpander:hover, 
 #editBMPanel_foldersExpander:hover, #detailsDeck button:hover {
   background: linear-gradient(#333,#555) !important;
   color: #fff !important}
 
-#editBMPanel_folderMenuList {padding: 1px !important; color: #ddd !important}
+#editBMPanel_folderMenuList {
+  -moz-appearance: none !important;
+  border: none !important;
+  background: #484848 !important;
+  color: #ddd !important;
+  padding: 3px;}
+
+#editBMPanel_folderMenuList:hover, #editBMPanel_folderMenuList:focus {
+  background: #555 !important;
+  color: #fff !important}
+
+dropmarker {
+  background-color: transparent !important;
+}
 
 /* These change the downloads history list background */
 #downloadsRichListBox {background: #444 !important; color: #ccc !important}

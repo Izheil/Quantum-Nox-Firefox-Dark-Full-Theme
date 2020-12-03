@@ -16,6 +16,7 @@ If you want to know how to change some colors of the theme, check the [wiki](htt
 ### Last update: 03/12/2020
 
 Files updated:
+* **userChrome**: Removed the gradient from the bookmarking popup select box. 
 * **userContent**: Small fix on for containers back button on `about:preferences`. 
 
 ### Pre-Last update: 03/11/2020
