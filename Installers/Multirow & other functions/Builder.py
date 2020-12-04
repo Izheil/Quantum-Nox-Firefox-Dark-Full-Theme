@@ -108,6 +108,7 @@ if OSinUse == "Windows":
     # in case they are not using an administrator account,
     # since otherwise it's not possible to find it on Windows
     tmp_file = sys._MEIPASS + '\\tempData.txt'
+    users = []
     try:
         with open(tmp_file, 'w+') as w:
             args = ['C:\\Windows\\Sysnative\\query.exe', 'user']
@@ -131,11 +132,16 @@ if OSinUse == "Windows":
 
     except Exception as err:
         print("Couldn't locate login user, backing to default profile path.")
+
+    # Make sure the user array isn't empty
+    if users == []:
         users = [os.getenv('USERNAME')]
 
+    # Remove traces of the temporary file to fetch non-root user
     if os.access(tmp_file, os.F_OK):
         os.remove(tmp_file)
 
+    # Create default Firefox profile installations folder
     adminProfile = os.getenv('USERPROFILE')
     adminName = os.getenv('USERNAME')
 
@@ -143,7 +149,7 @@ if OSinUse == "Windows":
                   + users[0].capitalize() 
                   + "\\AppData\\Roaming")
 
-    altPath = os.path.join("C:\\Users\\", users[0].capitalize() 
+    altPath = os.path.join("C:\\Users\\", users[0].capitalize()
                            + "\\AppData\\Roaming")
 
     if os.access(appdataPath, os.F_OK):
@@ -164,8 +170,17 @@ elif OSinUse == "Mac":
     home = str(Path.home())
     MozPFolder = home + r"/Library/Application Support/Firefox"
 
-Profiles = readProfiles(MozPFolder)
-defaultProf = readDefaults(MozPFolder)
+# Make sure that the default Firefox folder exists or that it's correctly fetched
+if os.access(MozPFolder, os.F_OK):
+    Profiles = readProfiles(MozPFolder)
+    defaultProf = readDefaults(MozPFolder)
+    if Profiles == []:
+        Profiles = ["None"]
+    if defaultProf == []:
+        defaultProf = ["None"]
+else:
+    Profiles = ["None"]
+    defaultProf = ["None"]
 
 # We get the default folder where programs are installed here
 if OSinUse == "Windows":
@@ -231,68 +246,74 @@ elif OSinUse == "Mac":
 
 # We get the default folders here
 def RPFinder():
-    for x in defaultProf:
-        splitter = x.split(".")
-        ProfileName = splitter[-1]
-        if ProfileName == "default-release":
-            return x
-        elif ProfileName == "default":
-            return x
-        else:
-            continue
-    for x in Profiles:
-        splitter = x.split(".")
-        ProfileName = splitter[-1]
-        if ProfileName == "default-release":
-            return x
-        elif ProfileName == "default":
-            return x
-        else:
-            continue
+    if defaultProf != ["None"] and len(defaultProf) >= 1:
+        for x in defaultProf:
+            splitter = x.split(".")
+            ProfileName = splitter[-1]
+            if ProfileName == "default-release":
+                return x
+            elif ProfileName == "default":
+                return x
+            else:
+                continue
+    if Profiles != ["None"] and len(Profiles) >= 1:
+        for x in Profiles:
+            splitter = x.split(".")
+            ProfileName = splitter[-1]
+            if ProfileName == "default-release":
+                return x
+            elif ProfileName == "default":
+                return x
+            else:
+                continue
     return "Not found"
 
 
 def NPFinder():
-    for y in defaultProf:
-        Nsplitter = y.split(".")
-        ProfileName = Nsplitter[-1]
-        if ProfileName == "default-nightly":
-            return y
-        elif ProfileName[0:15] == "default-nightly":
-            return y
-        else:
-            continue
-    for y in Profiles:
-        Nsplitter = y.split(".")
-        ProfileName = Nsplitter[-1]
-        if ProfileName == "default-nightly":
-            return y
-        elif ProfileName[0:15] == "default-nightly":
-            return y
-        else:
-            continue
+    if defaultProf != ["None"] and len(defaultProf) >= 1:
+        for y in defaultProf:
+            Nsplitter = y.split(".")
+            ProfileName = Nsplitter[-1]
+            if ProfileName == "default-nightly":
+                return y
+            elif ProfileName[0:15] == "default-nightly":
+                return y
+            else:
+                continue
+    if Profiles != ["None"] and len(Profiles) >= 1:
+        for y in Profiles:
+            Nsplitter = y.split(".")
+            ProfileName = Nsplitter[-1]
+            if ProfileName == "default-nightly":
+                return y
+            elif ProfileName[0:15] == "default-nightly":
+                return y
+            else:
+                continue
     return "Not found"
 
 
 def DPFinder():
-    for y in defaultProf:
-        Dsplitter = y.split(".")
-        ProfileName = Dsplitter[-1]
-        if ProfileName == "dev-edition-default":
-            return y
-        elif ProfileName[0:19] == "dev-edition-default":
-            return y
-        else:
-            continue
-    for y in Profiles:
-        Dsplitter = y.split(".")
-        ProfileName = Dsplitter[-1]
-        if ProfileName == "dev-edition-default":
-            return y
-        elif ProfileName[0:19] == "dev-edition-default":
-            return y
-        else:
-            continue
+    if defaultProf != ["None"] and len(defaultProf) >= 1:
+        for y in defaultProf:
+            Dsplitter = y.split(".")
+            ProfileName = Dsplitter[-1]
+            if ProfileName == "dev-edition-default":
+                return y
+            elif ProfileName[0:19] == "dev-edition-default":
+                return y
+            else:
+                continue
+    if Profiles != ["None"] and len(Profiles) >= 1:
+        for y in Profiles:
+            Dsplitter = y.split(".")
+            ProfileName = Dsplitter[-1]
+            if ProfileName == "dev-edition-default":
+                return y
+            elif ProfileName[0:19] == "dev-edition-default":
+                return y
+            else:
+                continue
     return "Not found"
 
 # We call the default profile finders
