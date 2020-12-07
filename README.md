@@ -13,16 +13,17 @@ You can use it to fully change the colors of most of firefox UI to dark-gray col
 
 If you want to know how to change some colors of the theme, check the [wiki](https://github.com/Izheil/Quantum-Nox-Firefox-Dark-Full-Theme/wiki/Editting-CSS-files).
 
-### Last update: 03/12/2020
+### Last update: 07/12/2020
+
+Files updated:
+* **userChrome**: Tab separators are now replaced here as they should have from the beggining.
+* __MultirowTab*.uc.js__: Now tab separators aren't hidden in this file anymore, as it was suposed to be. If you want to hide them, the corresponding lines in `userChrome.css`.
+
+### Pre-Last update: 03/12/2020
 
 Files updated:
 * **userChrome**: Removed the gradient from the bookmarking popup select box. 
 * **userContent**: Small fix on for containers back button on `about:preferences`. 
-
-### Pre-Last update: 03/11/2020
-
-Files updated:
-* **userContent**: Small fix on AMO review answer boxes. 
 
 
 ### A note on people looking to replace some Tab Mix Plus features:

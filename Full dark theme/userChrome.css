@@ -1,6 +1,6 @@
 /* You can find an updated version here: https://github.com/Izheil/Quantum-Nox-Firefox-Dark-Full-Theme */
 /* Made by Izheil */
-/* Last updated: 03/12/2020 */
+/* Last updated: 07/12/2020 */
 
 /* COLORING PART STARTS HERE */
 
@@ -184,7 +184,9 @@ dialog richlistitem[clear-site-data-cookies-with-data] {border: 1px solid red !i
 #tabbrowser-tabpanels {background-color: #202025 !important}
 
 /* Tabs border color */
-.tabbrowser-tab {border-right: 1px solid rgba(255,255,255, .15) !important}
+.tabbrowser-tab::after {
+  opacity: 1 !important;
+  border-left: 1px solid rgba(255,255,255, .15) !important}
 
 /* Tabs close icon color always whiteish */
 .tabbrowser-tab[selected="true"] .close-icon {fill: #ddd !important}

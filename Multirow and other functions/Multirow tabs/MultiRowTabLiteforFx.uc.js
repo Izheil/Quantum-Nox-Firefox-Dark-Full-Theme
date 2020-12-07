@@ -3,8 +3,9 @@
 // @namespace      https://github.com/Izheil/Quantum-Nox-Firefox-Dark-Full-Theme
 // @description    Multi-row tabs draggability fix with unlimited rows
 // @include        main
-// @compatibility  Firefox 70 to Firefox 84.0a1 (2020-10-20)
+// @compatibility  Firefox 70 to Firefox 85.0a1 (2020-12-06)
 // @author         Alice0775, Endor8, TroudhuK, Izheil
+// @version        07/12/2020 01:21 Stopped hidding tab right borders since it's not related to multirow
 // @version        25/09/2020 23:26 Fixed glitch on opening tabs in the background while on fullscreen
 // @version        06/09/2020 18:29 Compatibility fix for Australis and fix for pinned tabs glitch
 // @version        28/07/2020 23:28 Compatibility fix for FF81
@@ -67,8 +68,6 @@ function zzzz_MultiRowTabLite() {
     .tabbrowser-tab:not([pinned]) {
         flex-grow: var(--tab-growth)}
 
-    .tabbrowser-tab::after {border: none !important}
-
     :root:-moz-lwtheme[lwtheme-image] {background-repeat: repeat-y !important}
 
     #tabbrowser-tabs .tab-background, #tabbrowser-tabs .tabbrowser-tab {
@@ -103,9 +102,8 @@ function zzzz_MultiRowTabLite() {
         display: inline-flex !important;
     }
 
-    #alltabs-button, .tabbrowser-tab::after, 
-    #TabsToolbar:not([customizing="true"]) #tabbrowser-tabs[hasadjacentnewtabbutton] ~ #new-tab-button, 
-    #tabs-newtab-button .new-tab-popup
+    #alltabs-button, #tabs-newtab-button .new-tab-popup, 
+    #TabsToolbar:not([customizing="true"]) #tabbrowser-tabs[hasadjacentnewtabbutton] ~ #new-tab-button 
     {display: none}
 
     #tabbrowser-tabs .tab-background, #tabbrowser-tabs .tabbrowser-tab {
