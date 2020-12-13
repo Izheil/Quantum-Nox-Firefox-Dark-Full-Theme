@@ -16,14 +16,13 @@ If you want to know how to change some colors of the theme, check the [wiki](htt
 ### Last update: 07/12/2020
 
 Files updated:
-* **userChrome**: Tab separators are now replaced here as they should have from the beggining.
-* __MultirowTab*.uc.js__: Now tab separators aren't hidden in this file anymore, as it was suposed to be. If you want to hide them, the corresponding lines in `userChrome.css`.
+* __addons.css__: Updated Umatrix addon theme for better text visibility.
 
-### Pre-Last update: 03/12/2020
+### Pre-Last update: 07/12/2020
 
 Files updated:
-* **userChrome**: Removed the gradient from the bookmarking popup select box. 
-* **userContent**: Small fix on for containers back button on `about:preferences`. 
+* **userChrome.css**: Tab separators are now replaced here as they should have from the beggining.
+* __MultirowTab*.uc.js__: Now tab separators aren't hidden in this file anymore, as it was suposed to be. If you want to hide them, the corresponding lines in `userChrome.css`.
 
 
 ### A note on people looking to replace some Tab Mix Plus features:
