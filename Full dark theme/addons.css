@@ -1536,6 +1536,15 @@ body, html, .paneHead {
   background-color: #333 !important;
   border-bottom-color: #333 !important}
 
+#domainOnly {
+  background-color: #444 !important;
+  border: none !important;
+}
+
+#domainOnly:not(:hover) {
+  opacity: 0.7 !important;
+}
+
 a:not(.tabButton):not(#gotoDashboard):link {color: #09f !important}
 a:not(.tabButton):not(#gotoDashboard):visited {color: #0070aa !important}
 a:not(.tabButton):not(#gotoDashboard):hover {color: #0bf !important}
@@ -1557,15 +1566,18 @@ a:not(.tabButton):not(#gotoDashboard):active {color: #0050aa !important}
 
 .dropdown-menu li.switchTrue {color: #fff !important}
 .dropdown-menu li:not(.switchTrue) {color: #aaa !important}
+.dropdown-menu span {color: #ccc !important}
 
 #mtxSwitches .off ellipse[style] {fill: #777 !important}
+
+.matrix .g4Meta {filter: invert(100%)}
 
 button:not(#buttonUpdate) {
   background: #555 !important;
   border-color: transparent !important;
   border-radius: 3px;
   color: #ddd !important;
-    fill: #ddd !important}
+  fill: #ddd !important}
 
 button:not(#buttonUpdate):hover, #domainOnly:hover {
     background: #444 !important;
@@ -1636,12 +1648,17 @@ code, .fa-icon-badge {
   background-color: rgba(255,255,255,0.15) !important}
 
 body:not(.colorblind) .t82 {background-color: #307430 !important}
-body:not(.colorblind) .t2 {background-color: #667766 !important}
+body:not(.colorblind) .t2 {background-color: #173617 !important}
 
-body.colorblind .t2, body.colorblind .t1 {color: #ccc !important}
+.t2, .t1 {color: #ccc !important}
+
+#matHead {border-top: 1px solid #555 !important}
+.matCell {border: 1px solid #484848 !important}
 
 body:not(.colorblind) .t81 {background-color: #7c1616 !important}
-body:not(.colorblind) .t1 {background-color: #776666 !important}
+body:not(.colorblind) .t1 {background-color: #4d0000 !important}
+
+#whitelist, #blacklist {opacity: 0.5 !important}
 
 [data-i18n-tip]::after {
   background-color: #222 !important;
