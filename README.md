@@ -13,16 +13,15 @@ You can use it to fully change the colors of most of firefox UI to dark-gray col
 
 If you want to know how to change some colors of the theme, check the [wiki](https://github.com/Izheil/Quantum-Nox-Firefox-Dark-Full-Theme/wiki/Editting-CSS-files).
 
-### Last update: 07/12/2020
+### Last update: 18/12/2020
+
+Files updated:
+* __addons.css__: Minor fix for tab session manager theme.
+
+### Pre-Last update: 13/12/2020
 
 Files updated:
 * __addons.css__: Updated Umatrix addon theme for better text visibility.
-
-### Pre-Last update: 07/12/2020
-
-Files updated:
-* **userChrome.css**: Tab separators are now replaced here as they should have from the beggining.
-* __MultirowTab*.uc.js__: Now tab separators aren't hidden in this file anymore, as it was suposed to be. If you want to hide them, the corresponding lines in `userChrome.css`.
 
 
 ### A note on people looking to replace some Tab Mix Plus features:
