@@ -5,9 +5,6 @@ Here go any other feature that isn't the main focus of the theme and their descr
 
 **If using the patcher, make sure that the default profile found is the one you are currently using (you can check this in `about:profiles`).**
 
-### Bookmarks-toggle.uc.js
-Toggles visibility of the bookmarks toolbar when pressing F2 (you can change which keys in the file). You need to have the "fullscreen fix" disabled on userchrome.css if using any of the "CSS tweaks" versions from this repository.
-
 ### Focus-tab-on-hover.uc.js
 Lets you switch to another tab just by hovering over it. You can specify a delay to wait before switching to the hovered tab inside the file (the variable on top of the file).
 
