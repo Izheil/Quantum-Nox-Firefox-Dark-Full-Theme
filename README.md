@@ -13,15 +13,15 @@ You can use it to fully change the colors of most of firefox UI to dark-gray col
 
 If you want to know how to change some colors of the theme, check the [wiki](https://github.com/Izheil/Quantum-Nox-Firefox-Dark-Full-Theme/wiki/Editting-CSS-files).
 
-### Last update: 18/12/2020
+### Last update: 19/12/2020
+
+Files updated:
+* __Tab-close-always-visible.css__: Tabs shouldn't appear displaced when the sound icon is in any of them and the tabs are in minimal size.
+
+### Pre-Last update: 18/12/2020
 
 Files updated:
 * __addons.css__: Minor fix for tab session manager theme.
-
-### Pre-Last update: 13/12/2020
-
-Files updated:
-* __addons.css__: Updated Umatrix addon theme for better text visibility.
 
 
 ### A note on people looking to replace some Tab Mix Plus features:

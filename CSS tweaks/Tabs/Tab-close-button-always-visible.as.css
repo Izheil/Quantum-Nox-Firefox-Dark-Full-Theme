@@ -1,12 +1,15 @@
 /* You can find an updated version here: https://github.com/Izheil/Quantum-Nox-Firefox-Dark-Full-Theme */
 /* Made by Izheil */
-/* Last updated: 16/03/2020 */
+/* Last updated: 19/12/2020 */
 
 /* Tab close button always visible */
-#TabsToolbar #tabbrowser-tabs .tabbrowser-tab:not([pinned]) .tab-close-button {
+#tabbrowser-tabs .tabbrowser-tab:not([pinned]) .tab-close-button {
   	visibility: visible !important;
   	display: block !important}
 
-#TabsToolbar #tabbrowser-tabs .tabbrowser-tab:not([pinned])[faviconized="true"] .tab-close-button {
+#tabbrowser-tabs .tabbrowser-tab:not([pinned])[faviconized="true"] .tab-close-button {
   	visibility: collapse !important;
   	display: none !important}
+
+#tabbrowser-tabs .tabbrowser-tab[soundplaying="true"] {
+  min-width: calc(var(--tab-min-width) + 18px) !important}

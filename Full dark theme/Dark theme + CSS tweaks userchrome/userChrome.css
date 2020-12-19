@@ -1220,13 +1220,16 @@ to autohide, so it's safest to just hide it on fullscreen */
   margin-right: 12px} 
 
 /* TAB CLOSE BUTTON ALWAYS VISIBLE */
-#TabsToolbar #tabbrowser-tabs .tabbrowser-tab:not([pinned]) .tab-close-button {
+#tabbrowser-tabs .tabbrowser-tab:not([pinned]) .tab-close-button {
     visibility: visible !important;
     display: block !important}
 
-#TabsToolbar #tabbrowser-tabs .tabbrowser-tab:not([pinned])[faviconized="true"] .tab-close-button {
+#tabbrowser-tabs .tabbrowser-tab:not([pinned])[faviconized="true"] .tab-close-button {
     visibility: collapse !important;
     display: none !important}
+
+#tabbrowser-tabs .tabbrowser-tab[soundplaying="true"] {
+  min-width: calc(var(--tab-min-width) + 18px) !important}
 
 /* MULTI-ROW BOOKMARKS TOOLBAR */
 
