@@ -31,10 +31,12 @@ def readProfiles(profile):
     if not os.access(ProfilesINI, os.F_OK):
         if OSinUse == "Windows" or OSinUse == "Mac":
             profile = os.path.normpath(profile + "/Profiles")
-
-        profilenames = os.listdir(profile)
-        for x in profilenames:
-            Paths.append(os.path.normpath(profile + "/" + x))
+        if os.access(profile, os.F_OK):
+            profilenames = os.listdir(profile)
+            for x in profilenames:
+                Paths.append(os.path.normpath(profile + "/" + x))
+        else:
+            Paths.append("None")
     else:
         with open(ProfilesINI, 'r') as f:
             for line in f.readlines():
@@ -47,7 +49,6 @@ def readProfiles(profile):
                         Paths.append(os.path.normpath(profile + "/" + profilepath.group(1)))
                     else:
                         Paths.append(os.path.normpath(profilepath.group(1)))
-
     return Paths
 
 def readDefaults(profile):
@@ -77,6 +78,7 @@ if OSinUse == "Windows":
     # in case they are not using an administrator account,
     # since otherwise it's not possible to find it on Windows
     tmp_file = os.getcwd() + '\\tempData.txt'
+    users = []
     try:
         with open(tmp_file, 'w+') as w:
             args = ['C:\\Windows\\Sysnative\\query.exe', 'user']
@@ -100,11 +102,16 @@ if OSinUse == "Windows":
 
     except Exception as err:
         print("Couldn't locate login user, backing to default profile path.")
+
+    # Make sure the user array isn't empty
+    if users == []:
         users = [os.getenv('USERNAME')]
 
+    # Remove traces of the temporary file to fetch non-root user
     if os.access(tmp_file, os.F_OK):
         os.remove(tmp_file)
 
+    # Create default Firefox profile installations folder
     adminProfile = os.getenv('USERPROFILE')
     adminName = os.getenv('USERNAME')
 
@@ -129,9 +136,17 @@ elif OSinUse == "Mac":
     home = str(Path.home())
     MozPFolder = home + r"/Library/Application Support/Firefox"
 
-# We get the profiles here
-Profiles = readProfiles(MozPFolder)
-defaultProf = readDefaults(MozPFolder)
+# Make sure that the default Firefox folder exists or that it's correctly fetched
+if os.access(MozPFolder, os.F_OK):
+    Profiles = readProfiles(MozPFolder)
+    defaultProf = readDefaults(MozPFolder)
+    if Profiles == []:
+        Profiles = ["None"]
+    if defaultProf == []:
+        defaultProf = ["None"]
+else:
+    Profiles = ["None"]
+    defaultProf = ["None"]
 
 # We get the default folder where programs are installed here
 if OSinUse == "Windows":
@@ -197,68 +212,74 @@ elif OSinUse == "Mac":
 
 # We get the default folders here
 def RPFinder():
-    for x in defaultProf:
-        splitter = x.split(".")
-        ProfileName = splitter[-1]
-        if ProfileName == "default-release":
-            return x
-        elif ProfileName == "default":
-            return x
-        else:
-            continue
-    for x in Profiles:
-        splitter = x.split(".")
-        ProfileName = splitter[-1]
-        if ProfileName == "default-release":
-            return x
-        elif ProfileName == "default":
-            return x
-        else:
-            continue
+    if defaultProf != ["None"] and len(defaultProf) >= 1:
+        for x in defaultProf:
+            splitter = x.split(".")
+            ProfileName = splitter[-1]
+            if ProfileName == "default-release":
+                return x
+            elif ProfileName == "default":
+                return x
+            else:
+                continue
+    if Profiles != ["None"] and len(Profiles) >= 1:
+        for x in Profiles:
+            splitter = x.split(".")
+            ProfileName = splitter[-1]
+            if ProfileName == "default-release":
+                return x
+            elif ProfileName == "default":
+                return x
+            else:
+                continue
     return "Not found"
 
 
 def NPFinder():
-    for y in defaultProf:
-        Nsplitter = y.split(".")
-        ProfileName = Nsplitter[-1]
-        if ProfileName == "default-nightly":
-            return y
-        elif ProfileName[0:15] == "default-nightly":
-            return y
-        else:
-            continue
-    for y in Profiles:
-        Nsplitter = y.split(".")
-        ProfileName = Nsplitter[-1]
-        if ProfileName == "default-nightly":
-            return y
-        elif ProfileName[0:15] == "default-nightly":
-            return y
-        else:
-            continue
+    if defaultProf != ["None"] and len(defaultProf) >= 1:
+        for y in defaultProf:
+            Nsplitter = y.split(".")
+            ProfileName = Nsplitter[-1]
+            if ProfileName == "default-nightly":
+                return y
+            elif ProfileName[0:15] == "default-nightly":
+                return y
+            else:
+                continue
+    if Profiles != ["None"] and len(Profiles) >= 1:
+        for y in Profiles:
+            Nsplitter = y.split(".")
+            ProfileName = Nsplitter[-1]
+            if ProfileName == "default-nightly":
+                return y
+            elif ProfileName[0:15] == "default-nightly":
+                return y
+            else:
+                continue
     return "Not found"
 
 
 def DPFinder():
-    for y in defaultProf:
-        Dsplitter = y.split(".")
-        ProfileName = Dsplitter[-1]
-        if ProfileName == "dev-edition-default":
-            return y
-        elif ProfileName[0:19] == "dev-edition-default":
-            return y
-        else:
-            continue
-    for y in Profiles:
-        Dsplitter = y.split(".")
-        ProfileName = Dsplitter[-1]
-        if ProfileName == "dev-edition-default":
-            return y
-        elif ProfileName[0:19] == "dev-edition-default":
-            return y
-        else:
-            continue
+    if defaultProf != ["None"] and len(defaultProf) >= 1:
+        for y in defaultProf:
+            Dsplitter = y.split(".")
+            ProfileName = Dsplitter[-1]
+            if ProfileName == "dev-edition-default":
+                return y
+            elif ProfileName[0:19] == "dev-edition-default":
+                return y
+            else:
+                continue
+    if Profiles != ["None"] and len(Profiles) >= 1:
+        for y in Profiles:
+            Dsplitter = y.split(".")
+            ProfileName = Dsplitter[-1]
+            if ProfileName == "dev-edition-default":
+                return y
+            elif ProfileName[0:19] == "dev-edition-default":
+                return y
+            else:
+                continue
     return "Not found"
 
 # We call the default profile finders
@@ -315,7 +336,7 @@ def parseUUIDS(selectedProfile):
 
     with open(PrefsFile, 'r') as f:
         for line in f.readlines():
-            PrefString = re.search('"extensions.webextensions.uuids", "{(.*)}"\);', line, re.M|re.I)
+            PrefString = re.search('"extensions.webextensions.uuids", "{(.*)}"\\);', line, re.M | re.I)
             if PrefString != None:
                 UUIDString = PrefString.group(1)
                 break
@@ -335,9 +356,9 @@ def parseUUIDS(selectedProfile):
             "https-everywhere@eff.org", "{73a6fe31-595d-460b-a920-fcc0f8843232}",
             "jid0-GjwrPchS3Ugt7xydvqVK4DQk8Ls@jetpack", "@testpilot-containers",
             "extension@one-tab.com", "jid1-MnnxcxisBPnSXQ@jetpack",
-            "Tab-Session-Manager@sienori", "{c607c8df-14a7-4f28-894f-29e8722976af}",
-            "uBlock0@raymondhill.net", "uMatrix@raymondhill.net",
-            "{b9db16a4-6edc-47ec-a1f4-b86292ed211d}",
+            "woop-NoopscooPsnSXQ@jetpack", "Tab-Session-Manager@sienori",
+            "{c607c8df-14a7-4f28-894f-29e8722976af}", "uBlock0@raymondhill.net", 
+            "uMatrix@raymondhill.net", "{b9db16a4-6edc-47ec-a1f4-b86292ed211d}",
             "{00000c4c-fcfd-49bc-9f0d-78db44456c9c}"]
 
     for x in range(len(UUIDArray)):
@@ -380,7 +401,7 @@ def addonsPatcher(FFprofile, UUIDDict):
                                   UUIDDict['forget-me-not@lusito.info'])
                 # HTTPS everywhere
                 if isAddonInstalled[x] == "https-everywhere@eff.org":
-                   s = s.replace("TYPE-THE-UUID-OF-HTTPS-EVERYWHERE-ADDON-HERE", 
+                   s = s.replace("TYPE-UUID-OF-HTTPS-EVERYWHERE-ADDON-HERE", 
                                   UUIDDict['https-everywhere@eff.org'])
                 # Noscript
                 if isAddonInstalled[x] == "{73a6fe31-595d-460b-a920-fcc0f8843232}":
@@ -388,27 +409,31 @@ def addonsPatcher(FFprofile, UUIDDict):
                                   UUIDDict['{73a6fe31-595d-460b-a920-fcc0f8843232}'])
                 # Notifier for Gmail (restartless)
                 if isAddonInstalled[x] == "jid0-GjwrPchS3Ugt7xydvqVK4DQk8Ls@jetpack":
-                   s = s.replace("TYPE-THE-UUID-OF-NOTIFIER-FOR-GMAIL-ADDON-HERE", 
+                   s = s.replace("TYPE-UUID-OF-NOTIFIER-FOR-GMAIL-ADDON-HERE", 
                                   UUIDDict['jid0-GjwrPchS3Ugt7xydvqVK4DQk8Ls@jetpack'])
                 # Multi-accounts container
                 if isAddonInstalled[x] == "@testpilot-containers":
-                   s = s.replace("TYPE-THE-UUID-OF-MULTI-ACCOUNTS-CONTAINER-ADDON-HERE", 
+                   s = s.replace("TYPE-UUID-OF-MULTI-ACCOUNTS-CONTAINER-ADDON-HERE", 
                                   UUIDDict['@testpilot-containers'])
                 # Onetab
                 if isAddonInstalled[x] == "extension@one-tab.com":
-                   s = s.replace("TYPE-THE-UUID-OF-ONETAB-ADDON-HERE", 
+                   s = s.replace("TYPE-UUID-OF-ONETAB-ADDON-HERE", 
                                   UUIDDict['extension@one-tab.com'])
                 # Privacy Badger
                 if isAddonInstalled[x] == "jid1-MnnxcxisBPnSXQ@jetpack":
                    s = s.replace("TYPE-UUID-OF-PRIVACY-BADGER-ADDON-HERE", 
                                   UUIDDict['jid1-MnnxcxisBPnSXQ@jetpack'])
+                # Privacy Possum
+                if isAddonInstalled[x] == "woop-NoopscooPsnSXQ@jetpack":
+                   s = s.replace("TYPE-UUID-OF-PRIVACY-POSSUM-ADDON-HERE", 
+                                  UUIDDict['{00000c4c-fcfd-49bc-9f0d-78db44456c9c}'])
                 # Tab Session Manager
                 if isAddonInstalled[x] == "Tab-Session-Manager@sienori":
                    s = s.replace("TYPE-UUID-OF-TAB-SESSION-MANAGER-ADDON-HERE", 
                                   UUIDDict['Tab-Session-Manager@sienori'])
                 # Temporary Containers
                 if isAddonInstalled[x] == "{c607c8df-14a7-4f28-894f-29e8722976af}":
-                   s = s.replace("TYPE-THE-UUID-OF-TEMPORARY-CONTAINERS-ADDON-HERE", 
+                   s = s.replace("TYPE-UUID-OF-TEMPORARY-CONTAINERS-ADDON-HERE", 
                                   UUIDDict['{c607c8df-14a7-4f28-894f-29e8722976af}'])
                 # uBlock Origin
                 if isAddonInstalled[x] == "uBlock0@raymondhill.net":
@@ -418,10 +443,9 @@ def addonsPatcher(FFprofile, UUIDDict):
                 if isAddonInstalled[x] == "uMatrix@raymondhill.net":
                    s = s.replace("TYPE-UUID-OF-UMATRIX-ADDON-HERE", 
                                   UUIDDict['uMatrix@raymondhill.net'])
-
                 # Viewhance
                 if isAddonInstalled[x] == "{00000c4c-fcfd-49bc-9f0d-78db44456c9c}":
-                   s = s.replace("TYPE-THE-UUID-OF-VIEWHANCE-ADDON-HERE", 
+                   s = s.replace("TYPE-UUID-OF-VIEWHANCE-ADDON-HERE", 
                                   UUIDDict['{00000c4c-fcfd-49bc-9f0d-78db44456c9c}'])
 
             f.seek(0, 0)
@@ -530,11 +554,12 @@ while SelChoice2 != 0:
     print("10. ["  + themeArray[9] + "] Multi-accounts container")
     print("11. ["  + themeArray[10] + "] Onetab")
     print("12. ["  + themeArray[11] + "] Privacy Badger")
-    print("13. ["  + themeArray[12] + "] Tab Session Manager")
-    print("14. ["  + themeArray[13] + "] Temporary Containers")
-    print("15. ["  + themeArray[14] + "] Ublock Origin")
-    print("16. ["  + themeArray[15] + "] Umatrix")
-    print("17. ["  + themeArray[16] + "] Viewhance")
+    print("13. ["  + themeArray[12] + "] Privacy Possum")
+    print("14. ["  + themeArray[13] + "] Tab Session Manager")
+    print("15. ["  + themeArray[15] + "] Temporary Containers")
+    print("16. ["  + themeArray[16] + "] Ublock Origin")
+    print("17. ["  + themeArray[16] + "] Umatrix")
+    print("18. ["  + themeArray[17] + "] Viewhance")
     print("0. Continue\n")
 
     SelChoice2 = int(input("Choice: "))
@@ -567,15 +592,15 @@ UUIDDict = parseUUIDS(SelProfile)
 
 if themeArray[0] != "x":
     idArrays = ["All", "anttoolbar@ant.com", "CookieAutoDelete@kennydo.com",
-                "{7e79d10d-9667-4d38-838d-471281c568c3}",
-                "s3download@statusbar", "forget-me-not@lusito.info",
-                "https-everywhere@eff.org", "{73a6fe31-595d-460b-a920-fcc0f8843232}",
-                "jid0-GjwrPchS3Ugt7xydvqVK4DQk8Ls@jetpack", "@testpilot-containers",
-                "extension@one-tab.com", "jid1-MnnxcxisBPnSXQ@jetpack",
-                "Tab-Session-Manager@sienori", "{c607c8df-14a7-4f28-894f-29e8722976af}",
-                "uBlock0@raymondhill.net", "uMatrix@raymondhill.net",
-                "{b9db16a4-6edc-47ec-a1f4-b86292ed211d}",
-                "{00000c4c-fcfd-49bc-9f0d-78db44456c9c}"]
+            "{7e79d10d-9667-4d38-838d-471281c568c3}",
+            "s3download@statusbar", "forget-me-not@lusito.info",
+            "https-everywhere@eff.org", "{73a6fe31-595d-460b-a920-fcc0f8843232}",
+            "jid0-GjwrPchS3Ugt7xydvqVK4DQk8Ls@jetpack", "@testpilot-containers",
+            "extension@one-tab.com", "jid1-MnnxcxisBPnSXQ@jetpack",
+            "woop-NoopscooPsnSXQ@jetpack", "Tab-Session-Manager@sienori",
+            "{c607c8df-14a7-4f28-894f-29e8722976af}", "uBlock0@raymondhill.net", 
+            "uMatrix@raymondhill.net", "{b9db16a4-6edc-47ec-a1f4-b86292ed211d}",
+            "{00000c4c-fcfd-49bc-9f0d-78db44456c9c}"]
 
     for y in range(len(themeArray)):
         if y == 0:

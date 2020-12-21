@@ -1,6 +1,6 @@
 /* You can find an updated version here: https://github.com/Izheil/Quantum-Nox-Firefox-Dark-Full-Theme */
 /* Made by Izheil */
-/* Last updated: 18/12/2020 */
+/* Last updated: 21/12/2020 */
 
 /*------ HOW TO MAKE THE ADDON THEMES WORK ------*/
 /* To use this part of the code, you will have to find the dynamic UUID of your extensions, and replace it where the 
@@ -428,7 +428,7 @@ select:hover {
 }
 
 /*------ HTTPS EVERYWHERE ADDON ------*/
-@-moz-document url-prefix(moz-extension://TYPE-THE-UUID-OF-HTTPS-EVERYWHERE-ADDON-HERE/) {
+@-moz-document url-prefix(moz-extension://TYPE-UUID-OF-HTTPS-EVERYWHERE-ADDON-HERE/) {
 html, body {background: #444 !important; color: #ccc !important}
 
 h1, h2, h3 {color: #fff !important}
@@ -626,7 +626,7 @@ input[type="checkbox"]:disabled + span, input[type="checkbox"]:disabled {opacity
 }
 
 /*------ NOTIFIER FOR GMAIL (RESTARTLESS) ADDON ------*/
-@-moz-document url-prefix(moz-extension://TYPE-THE-UUID-OF-NOTIFIER-FOR-GMAIL-ADDON-HERE/) {
+@-moz-document url-prefix(moz-extension://TYPE-UUID-OF-NOTIFIER-FOR-GMAIL-ADDON-HERE/) {
 html, #content {background: #303030 !important; color: #ccc !important}
 
 * {border-color: #555 !important}
@@ -689,7 +689,7 @@ select .menulist-dropmarker {display: none}
 }
 
 /*------ MULTI-ACCOUNTS CONTAINER ADDON ------*/
-@-moz-document url-prefix(moz-extension://TYPE-THE-UUID-OF-MULTI-ACCOUNTS-CONTAINER-ADDON-HERE/) {
+@-moz-document url-prefix(moz-extension://TYPE-UUID-OF-MULTI-ACCOUNTS-CONTAINER-ADDON-HERE/) {
 html, body, .delete-container {background-color: #333 !important}
 
 h3, legend {color: #fff !important}
@@ -725,7 +725,7 @@ hr, #manage-containers-link, #edit-container-panel-name-input, .delete-container
 .menu-arrow > img, .btn-return.arrow-left {filter: invert(80%)}
 }
 
-@-moz-document url-prefix(moz-extension://TYPE-THE-UUID-OF-MULTI-ACCOUNTS-CONTAINER-ADDON-HERE/options.html) {
+@-moz-document url-prefix(moz-extension://TYPE-UUID-OF-MULTI-ACCOUNTS-CONTAINER-ADDON-HERE/options.html) {
 body, html {background-color: #444 !important}
 
 /* Checkbox coloring */
@@ -779,7 +779,7 @@ button:hover {
 }
 
 /*------ ONETAB ADDON ------*/
-@-moz-document url-prefix(moz-extension://TYPE-THE-UUID-OF-ONETAB-ADDON-HERE/),
+@-moz-document url-prefix(moz-extension://TYPE-UUID-OF-ONETAB-ADDON-HERE/),
 url-prefix(https://www.one-tab.com/page/) {
 html, body {background: #303030 !important}
 
@@ -1005,6 +1005,45 @@ a:hover {color: #f0a15c !important}
 	border-top: 1px solid #555 !important}
 }
 
+/*------ PRIVACY POSSUM ADDON POPUP ------*/
+@-moz-document url-prefix(moz-extension://TYPE-UUID-OF-PRIVACY-POSSUM-ADDON-HERE/skin/popup.html) {
+
+html, body {
+  background-color: #333 !important;
+  color: #ccc !important;
+}
+
+span, li {color: #ccc !important}
+
+.grey {color: #aaa !important}
+
+code {background: rgba(0,0,0, 0.3) !important}
+
+header, footer {border-color: #666 !important}
+
+a:link, a {color: #0bb !important}
+a:active {color: #088 !important}
+a:hover {color: #0dd !important}
+
+/* Checkbox coloring */
+input[type="checkbox"] {
+  -moz-appearance: none !important;
+  border: 1px solid #666 !important;
+  background-color: #444 !important;
+  transition: color 0.3s;
+  min-width: 12px;
+  min-height: 12px;
+  margin-bottom: 0 !important}
+
+input[type="checkbox"]:not([disabled]):hover {
+  box-shadow: 0 0 4px #0084ff !important;
+  border-color: #0084ff !important}
+
+input[type="checkbox"]:checked {
+  background: #444 url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="10px" height="10px" viewBox="1 3 12 12" ><path fill="rgb(200,200,200)" d="M 13.09,2.87 C 13.09,2.87 6.00,11.00 6.00,11.00 6.00,11.00 2.00,9.00 2.00,9.00 4.25,12.81 7.00,14.00 7.00,14.00 9.24,10.42 12.04,7.39 13.09,2.87 Z" /></svg>') no-repeat center center !important}
+
+}
+
 /*------ TAB SESSION MANAGER ------*/
 @-moz-document url-prefix(moz-extension://TYPE-UUID-OF-TAB-SESSION-MANAGER-ADDON-HERE/options/index.html),
 url-prefix(moz-extension://TYPE-UUID-OF-TAB-SESSION-MANAGER-ADDON-HERE/popup/index.html),
@@ -1073,7 +1112,7 @@ textarea, input[type="number"], input[type="text"] {background: #303030 !importa
 }
 
 /*------ TEMPORARY CONTAINERS ADDON ------*/
-@-moz-document url-prefix(moz-extension://TYPE-THE-UUID-OF-TEMPORARY-CONTAINERS-ADDON-HERE/) {
+@-moz-document url-prefix(moz-extension://TYPE-UUID-OF-TEMPORARY-CONTAINERS-ADDON-HERE/) {
 html, body, .dropdown.selection, .menu .item, .ui.menu {background: #222 !important}
 
 input[type="text"], #scriptCode {
@@ -1728,7 +1767,7 @@ select:hover {
 }
 
 /*------ VIEWHANCE ADDON ------*/
-@-moz-document url-prefix(moz-extension://TYPE-THE-UUID-OF-VIEWHANCE-ADDON-HERE/options.html) {
+@-moz-document url-prefix(moz-extension://TYPE-UUID-OF-VIEWHANCE-ADDON-HERE/options.html) {
 html {background: #222 !important}
 
 body, aside, .tip:hover {

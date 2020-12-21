@@ -13,15 +13,15 @@ You can use it to fully change the colors of most of firefox UI to dark-gray col
 
 If you want to know how to change some colors of the theme, check the [wiki](https://github.com/Izheil/Quantum-Nox-Firefox-Dark-Full-Theme/wiki/Editting-CSS-files).
 
-### Last update: 19/12/2020
+### Last update: 21/12/2020
+
+Files updated:
+* __addons.css__: Added a dark theme for [privacy possum](https://addons.mozilla.org/en-US/firefox/addon/privacy-possum/) addon.
+
+### Pre-Last update: 19/12/2020
 
 Files updated:
 * __Tab-close-always-visible.css__: Tabs shouldn't appear displaced when the sound icon is in any of them and the tabs are in minimal size.
-
-### Pre-Last update: 18/12/2020
-
-Files updated:
-* __addons.css__: Minor fix for tab session manager theme.
 
 
 ### A note on people looking to replace some Tab Mix Plus features:
@@ -71,6 +71,7 @@ Here is a list of the themed addons:
 * [Multi-accounts containers](https://addons.mozilla.org/en-US/firefox/addon/multi-account-containers/)
 * [OneTab](https://addons.mozilla.org/en-US/firefox/addon/onetab/)
 * [Privacy badger](https://addons.mozilla.org/en-US/firefox/addon/privacy-badger17/)
+* [Privacy possum](https://addons.mozilla.org/en-US/firefox/addon/privacy-possum/)
 * [Tab session manager](https://addons.mozilla.org/en-US/firefox/addon/tab-session-manager/)
 * [Temporary containers](https://addons.mozilla.org/en-US/firefox/addon/temporary-containers/)
 * [Ublock Origin](https://addons.mozilla.org/en-US/firefox/addon/ublock-origin/)
