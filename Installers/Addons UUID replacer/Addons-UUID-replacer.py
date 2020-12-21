@@ -77,7 +77,7 @@ if OSinUse == "Windows":
     # This is a workaround to find the current logged in user
     # in case they are not using an administrator account,
     # since otherwise it's not possible to find it on Windows
-    tmp_file = os.getcwd() + '\\tempData.txt'
+    tmp_file = sys._MEIPASS + '\\tempData.txt'
     users = []
     try:
         with open(tmp_file, 'w+') as w:
