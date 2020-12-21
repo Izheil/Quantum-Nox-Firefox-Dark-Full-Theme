@@ -1,4 +1,3 @@
-#!/usr/bin/python3
 import os
 import re
 import sys
@@ -22,6 +21,18 @@ def SystemOS():
     return SystemOS
 
 OSinUse = SystemOS()
+
+# Define the addon ID's here
+idArrays = ["All", "anttoolbar@ant.com", "CookieAutoDelete@kennydo.com",
+            "{7e79d10d-9667-4d38-838d-471281c568c3}",
+            "s3download@statusbar", "forget-me-not@lusito.info",
+            "https-everywhere@eff.org", "{73a6fe31-595d-460b-a920-fcc0f8843232}",
+            "jid0-GjwrPchS3Ugt7xydvqVK4DQk8Ls@jetpack", "@testpilot-containers",
+            "extension@one-tab.com", "jid1-MnnxcxisBPnSXQ@jetpack",
+            "woop-NoopscooPsnSXQ@jetpack", "Tab-Session-Manager@sienori",
+            "{c607c8df-14a7-4f28-894f-29e8722976af}", "uBlock0@raymondhill.net", 
+            "uMatrix@raymondhill.net", "{b9db16a4-6edc-47ec-a1f4-b86292ed211d}",
+            "{00000c4c-fcfd-49bc-9f0d-78db44456c9c}"]
 
 def readProfiles(profile):
     "Fetches the profile folders"
@@ -350,17 +361,6 @@ def parseUUIDS(selectedProfile):
 
     UUIDDict = {}
 
-    idArrays = ["anttoolbar@ant.com", "CookieAutoDelete@kennydo.com",
-            "{7e79d10d-9667-4d38-838d-471281c568c3}",
-            "s3download@statusbar", "forget-me-not@lusito.info",
-            "https-everywhere@eff.org", "{73a6fe31-595d-460b-a920-fcc0f8843232}",
-            "jid0-GjwrPchS3Ugt7xydvqVK4DQk8Ls@jetpack", "@testpilot-containers",
-            "extension@one-tab.com", "jid1-MnnxcxisBPnSXQ@jetpack",
-            "woop-NoopscooPsnSXQ@jetpack", "Tab-Session-Manager@sienori",
-            "{c607c8df-14a7-4f28-894f-29e8722976af}", "uBlock0@raymondhill.net", 
-            "uMatrix@raymondhill.net", "{b9db16a4-6edc-47ec-a1f4-b86292ed211d}",
-            "{00000c4c-fcfd-49bc-9f0d-78db44456c9c}"]
-
     for x in range(len(UUIDArray)):
         keyPair = UUIDArray[x].split(":")
         for x in range(len(idArrays)):
@@ -426,7 +426,7 @@ def addonsPatcher(FFprofile, UUIDDict):
                 # Privacy Possum
                 if isAddonInstalled[x] == "woop-NoopscooPsnSXQ@jetpack":
                    s = s.replace("TYPE-UUID-OF-PRIVACY-POSSUM-ADDON-HERE", 
-                                  UUIDDict['{00000c4c-fcfd-49bc-9f0d-78db44456c9c}'])
+                                  UUIDDict['woop-NoopscooPsnSXQ@jetpack'])
                 # Tab Session Manager
                 if isAddonInstalled[x] == "Tab-Session-Manager@sienori":
                    s = s.replace("TYPE-UUID-OF-TAB-SESSION-MANAGER-ADDON-HERE", 
@@ -539,7 +539,11 @@ SelProfile = Profiles[SelChoice - 1]
 print("\nSelect the addons you want to theme:\n")
 
 SelChoice2 = None
-themeArray = ["x", "x", "x", "x", "x", "x", "x", "x", "x", "x", "x", "x", "x", "x", "x", "x", "x"]
+
+themeArray = []
+
+for x in idArrays:
+    themeArray.append("x")
 
 while SelChoice2 != 0:
     print("1. [" + themeArray[0] + "] All")
@@ -591,17 +595,6 @@ while SelChoice2 != 0:
 UUIDDict = parseUUIDS(SelProfile)
 
 if themeArray[0] != "x":
-    idArrays = ["All", "anttoolbar@ant.com", "CookieAutoDelete@kennydo.com",
-            "{7e79d10d-9667-4d38-838d-471281c568c3}",
-            "s3download@statusbar", "forget-me-not@lusito.info",
-            "https-everywhere@eff.org", "{73a6fe31-595d-460b-a920-fcc0f8843232}",
-            "jid0-GjwrPchS3Ugt7xydvqVK4DQk8Ls@jetpack", "@testpilot-containers",
-            "extension@one-tab.com", "jid1-MnnxcxisBPnSXQ@jetpack",
-            "woop-NoopscooPsnSXQ@jetpack", "Tab-Session-Manager@sienori",
-            "{c607c8df-14a7-4f28-894f-29e8722976af}", "uBlock0@raymondhill.net", 
-            "uMatrix@raymondhill.net", "{b9db16a4-6edc-47ec-a1f4-b86292ed211d}",
-            "{00000c4c-fcfd-49bc-9f0d-78db44456c9c}"]
-
     for y in range(len(themeArray)):
         if y == 0:
             continue
@@ -637,5 +630,5 @@ errorCatch = addonsPatcher(SelProfile, UUIDDict)
 if errorCatch == 0:
     print("\nUUID's replaced successfully.\n\nRemember to place the \"@import 'addons.css'\" rule at the top of your userContent.css file if you created your own userContent.css,\nor aren't using the one provided in the repository.")
 else:
-    print("The UUIDs couldn't be replaced correctly. Try again when you are connected to the internet, or when you have a local copy of addons.css file.")
+    print("The UUIDs couldn't be replaced correctly.\nTry again when you are connected to the internet, or when you have a local copy of addons.css file.")
 input("\nPress enter to exit.")
