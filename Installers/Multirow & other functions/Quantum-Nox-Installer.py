@@ -55,7 +55,8 @@ if OSinUse != "Windows":
 
 elif ctypes.windll.shell32.IsUserAnAdmin() == 0:
     ctypes.windll.shell32.ShellExecuteW(None, "runas", sys.executable, __file__, None, 1)
-    sys.exit()
+    # Only required to prevent double windows on build
+    # sys.exit()
 
 def readProfiles(profile):
     "Fetches the profile folders"
