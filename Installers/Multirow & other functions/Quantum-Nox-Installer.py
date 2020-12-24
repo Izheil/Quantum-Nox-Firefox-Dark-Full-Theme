@@ -11,9 +11,10 @@ import subprocess
 import webbrowser
 import distutils.core
 from pathlib import Path
-from tkinter import (LabelFrame, Checkbutton, Frame, Label, Entry, 
-                    filedialog, Button, Listbox, Radiobutton, Spinbox, 
-                    Scrollbar, messagebox, PhotoImage)
+from tkinter import (LabelFrame, Checkbutton, Frame, Label, Entry,
+                     filedialog, Button, Listbox, Radiobutton, Spinbox,
+                     Scrollbar, messagebox, PhotoImage)
+
 
 def SystemOS():
     "Identifies the OS"
@@ -24,8 +25,10 @@ def SystemOS():
         SystemOS = "Linux"
     elif sys.platform.startswith('darwin'):
         SystemOS = "Mac"
-    else: SystemOS = "Unknown"
+    else:
+        SystemOS = "Unknown"
     return SystemOS
+
 
 OSinUse = SystemOS()
 
@@ -41,9 +44,9 @@ if OSinUse != "Windows":
         # We get the non-root username and group here
         rootUser = os.getenv("SUDO_USER")
 
-        # If the non-root username exists, we assume a regular user 
+        # If the non-root username exists, we assume a regular user
         # with root privileges is using it, otherwise a pure root user is.
-        if (rootUser): 
+        if (rootUser):
             accRoot = False
             gid = pwd.getpwnam(rootUser).pw_gid
             rootGroup = grp.getgrgid(gid).gr_name
@@ -131,7 +134,7 @@ if OSinUse == "Windows":
                 if userRead is not None:
                     users.append(str(userRead.group(1)).rstrip())
 
-    except Exception as err:
+    except Exception:
         print("Couldn't locate login user, backing to default profile path.")
 
     # Make sure the user array isn't empty
@@ -146,11 +149,11 @@ if OSinUse == "Windows":
     adminProfile = os.getenv('USERPROFILE')
     adminName = os.getenv('USERNAME')
 
-    appdataPath = (adminProfile[0:-(len(adminName))] 
-                  + users[0].capitalize() 
-                  + "\\AppData\\Roaming")
+    appdataPath = (adminProfile[0:-(len(adminName))]
+                   + users[0].capitalize()
+                   + "\\AppData\\Roaming")
 
-    altPath = os.path.join("C:\\Users\\", users[0].capitalize() 
+    altPath = os.path.join("C:\\Users\\", users[0].capitalize()
                            + "\\AppData\\Roaming")
 
     if os.access(appdataPath, os.F_OK):
@@ -368,7 +371,7 @@ if not os.access(defPLocation, os.F_OK):
 def fullPatcher(FFversion, FFprofile):
     "This method patches both the root and profile folders"
     try:
-        if FFversion != None:
+        if FFversion is not None:
             # We first define the location of the files
             ConfPref = os.path.normpath(FFversion + "/defaults/pref/config-prefs.js")
             ConfJS = os.path.normpath(FFversion + "/config.js")
@@ -376,23 +379,23 @@ def fullPatcher(FFversion, FFprofile):
             # We patch the root folder here
             if os.access(ConfJS, os.F_OK) and os.access(ConfPref, os.F_OK):
 
-                distutils.file_util.copy_file(os.path.normpath(os.getcwd() + "/root/defaults/pref/config-prefs.js"), 
+                distutils.file_util.copy_file(os.path.normpath(os.getcwd() + "/root/defaults/pref/config-prefs.js"),
                                               os.path.normpath(FFversion + "/defaults/pref/"), update=True)
-                distutils.file_util.copy_file(os.path.normpath(os.getcwd() + "/root/config.js"), 
+                distutils.file_util.copy_file(os.path.normpath(os.getcwd() + "/root/config.js"),
                                               FFversion, update=True)
 
             elif os.access(os.path.normpath(FFversion + "/config.js"), os.F_OK) or \
             os.access(os.path.normpath(FFversion + "/defaults/pref/config-prefs.js"), os.F_OK):
 
                 if os.access(ConfJS, os.F_OK):
-                    shutil.copy2(os.path.normpath(os.getcwd() + "/root/defaults/pref/config-prefs.js"), 
+                    shutil.copy2(os.path.normpath(os.getcwd() + "/root/defaults/pref/config-prefs.js"),
                                  os.path.normpath(FFversion + "/defaults/pref/"))
 
                 else: shutil.copy2(os.path.normpath(os.getcwd() + "/root/config.js"), FFversion)
 
-            else: 
+            else:
                 shutil.copy2(os.path.normpath(os.getcwd() + "/root/config.js"), FFversion)
-                shutil.copy2(os.path.normpath(os.getcwd() + "/root/defaults/pref/config-prefs.js"), 
+                shutil.copy2(os.path.normpath(os.getcwd() + "/root/defaults/pref/config-prefs.js"),
                              os.path.normpath(FFversion + "/defaults/pref/"))
 
             if OSinUse == "Linux":
@@ -410,11 +413,11 @@ def fullPatcher(FFversion, FFprofile):
                     for file in f:
                             utilFiles.append(os.path.join(r, file))
                 for file in utilFiles:
-                    distutils.file_util.copy_file(file, 
+                    distutils.file_util.copy_file(file,
                         os.path.normpath(FFprofile + "/chrome/utils"), update=True)
 
-            else: 
-                shutil.copytree(os.path.normpath(os.getcwd() + "/utils"), 
+            else:
+                shutil.copytree(os.path.normpath(os.getcwd() + "/utils"),
                                 os.path.normpath(FFprofile + "/chrome/utils"))
 
             if OSinUse == "Linux":
@@ -449,31 +452,31 @@ def functionInstall(FFprofile, Func2Inst, FuncSettings="0"):
 
     # We define the common variables used for each function next
     if Func2Inst.startswith('Multirow'):
-        FFCMR = os.path.normpath(FFprofile 
+        FFCMR = os.path.normpath(FFprofile
                     + "/chrome/MultiRowTab-scrollable.uc.js")
-        FFCMRL = os.path.normpath(FFprofile 
+        FFCMRL = os.path.normpath(FFprofile
                     + "/chrome/MultiRowTabLiteforFx.uc.js")
-        FFCMRA = os.path.normpath(FFprofile 
+        FFCMRA = os.path.normpath(FFprofile
                     + "/chrome/MultiRowTab-scrollable-autohide.uc.js")
-        FFCMR71 = os.path.normpath(FFprofile 
+        FFCMR71 = os.path.normpath(FFprofile
                     + "/chrome/MultiRowTab-scrollableFF71.uc.js")
-        FFCMRL71 = os.path.normpath(FFprofile 
+        FFCMRL71 = os.path.normpath(FFprofile
                     + "/chrome/MultiRowTabLiteforFF71.uc.js")
-        FFCMRA71 = os.path.normpath(FFprofile 
+        FFCMRA71 = os.path.normpath(FFprofile
                     + "/chrome/MultiRowTab-scrollable-autohideFF71.uc.js")
 
     elif Func2Inst.startswith('Tabs-below'):
-        FFTBoT = os.path.normpath(FFprofile 
+        FFTBoT = os.path.normpath(FFprofile
                     + "/chrome/Tabs-below-Menu-overTabs.as.css")
-        FFTBaA = os.path.normpath(FFprofile 
+        FFTBaA = os.path.normpath(FFprofile
                     + "/chrome/Tabs-below-Menu-onTop.as.css")
-        FFTB = os.path.normpath(FFprofile 
+        FFTB = os.path.normpath(FFprofile
                     + "/chrome/Tabs-below.as.css")
 
     elif Func2Inst.startswith('Megabar'):
-        FFMB = os.path.normpath(FFprofile 
+        FFMB = os.path.normpath(FFprofile
                     + "/chrome/Megabar-disabled-until-focus.as.css")
-        FFMBAR = os.path.normpath(FFprofile 
+        FFMBAR = os.path.normpath(FFprofile
                     + "/chrome/Megabar-disabled-all-resizing.as.css")
 
     # These write the settings to the files
@@ -501,7 +504,7 @@ def functionInstall(FFprofile, Func2Inst, FuncSettings="0"):
             os.remove(FFCMRL)
 
         if os.access(FFCMRA71, os.F_OK):
-            os.remove(FFCMRA71)    
+            os.remove(FFCMRA71)
         if os.access(FFCMR71, os.F_OK):
             os.remove(FFCMR71)
         if os.access(FFCMRL71, os.F_OK):
@@ -564,12 +567,12 @@ def functionInstall(FFprofile, Func2Inst, FuncSettings="0"):
         elif Func2Inst == "Focus-tab":
             FireFunct = os.path.normpath(os.getcwd()
                         + "/functions/Focus-tab-on-hover.uc.js")
-            InstFunct = os.path.normpath(FFprofile 
+            InstFunct = os.path.normpath(FFprofile
                         + "/chrome/Focus-tab-on-hover.uc.js")
         elif Func2Inst == "Unread-state":
             FireFunct = os.path.normpath(os.getcwd()
                         + "/functions/setAttribute_unread.uc.js")
-            InstFunct = os.path.normpath(FFprofile 
+            InstFunct = os.path.normpath(FFprofile
                         + "/chrome/setAttribute_unread.uc.js")
 
         try:
@@ -631,7 +634,7 @@ def erasePatch(FFversion, FFprofile):
                 if os.access(os.path.normpath(FFversion + "/config.js"), os.F_OK):
                     os.remove(os.path.normpath(FFversion + "/config.js"))
 
-                else: os.remove(os.path.normpath(FFversion 
+                else: os.remove(os.path.normpath(FFversion
                                 + "/defaults/pref/config-prefs.js"))
 
         if FFprofile is not None:
@@ -801,7 +804,7 @@ def openProfile(profileFolder):
             messagebox.showerror("Error",
             "Couldn't locate the profile chrome folder."
             + "\nSelect a valid one and try again.")
-    else: 
+    else:
         messagebox.showerror("Error",
         "Couldn't locate the profile folder."
         + "\nSelect a valid one and try again.")
@@ -1041,7 +1044,7 @@ class patcherUI(Frame):
                os.access(os.path.normpath(rpCkFF12.get() + "/defaults/pref/config-prefs.js"), os.F_OK):
                 if os.access(os.path.normpath(rpCkFF22.get() + "/chrome/utils"), os.F_OK):
                     PatchStatusFFr.config(text="Patched", fg="#339900")
-                else: 
+                else:
                     PatchStatusFFr.config(text="Profile not patched", fg="#cc0000")
             elif os.access(os.path.normpath(rpCkFF22.get() + "/chrome/utils"), os.F_OK):
                 PatchStatusFFr.config(text="Root not patched", fg="#cc0000")
