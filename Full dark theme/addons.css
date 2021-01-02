@@ -1061,7 +1061,7 @@ url-prefix(moz-extension://TYPE-UUID-OF-TAB-SESSION-MANAGER-ADDON-HERE/replaced/
 
 html {background: #333 !important}
 
-#header .title, #undoButton > div, #redoButton > div  {color: #333 !important}
+#header .title, #undoButton > div, #redoButton > div, .syncStatus span {color: #333 !important}
 
 #undoButton > svg, #redoButton > svg, #header svg  {fill: #333 !important}
 
