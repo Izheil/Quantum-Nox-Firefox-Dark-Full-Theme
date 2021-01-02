@@ -16,12 +16,12 @@ If you want to know how to change some colors of the theme, check the [wiki](htt
 ### Last update: 21/12/2020
 
 Files updated:
-* __addons.css__: Added a dark theme for [privacy possum](https://addons.mozilla.org/en-US/firefox/addon/privacy-possum/) addon.
+* __addons.css__: Minor fixes for [Tab session manager](https://addons.mozilla.org/en-US/firefox/addon/tab-session-manager/) addon theme.
 
 ### Pre-Last update: 19/12/2020
 
 Files updated:
-* __Tab-close-always-visible.css__: Tabs shouldn't appear displaced when the sound icon is in any of them and the tabs are in minimal size.
+* __addons.css__: Added a dark theme for [privacy possum](https://addons.mozilla.org/en-US/firefox/addon/privacy-possum/) addon.
 
 
 ### A note on people looking to replace some Tab Mix Plus features:
