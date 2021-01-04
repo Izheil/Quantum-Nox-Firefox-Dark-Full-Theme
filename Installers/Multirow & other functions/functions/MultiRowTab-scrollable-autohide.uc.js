@@ -3,8 +3,9 @@
 // @namespace      https://github.com/Izheil/Quantum-Nox-Firefox-Dark-Full-Theme
 // @description    Multi-row tabs draggability fix with autohiding scrollbar
 // @include        main
-// @compatibility  Firefox 70 to Firefox 85.0a1 (2020-12-06)
+// @compatibility  Firefox 70 to Firefox 86.0a1 (2021-01-04)
 // @author         Alice0775, Endor8, TroudhuK, Izheil
+// @version        04/01/2021 22:45 Added an optional tab rows resizer that you can toggle with "useResizer" var
 // @version        07/12/2020 01:21 Stopped hidding tab right borders since it's not related to multirow
 // @version        25/09/2020 23:26 Fixed glitch on opening tabs in the background while on fullscreen
 // @version        06/09/2020 18:29 Compatibility fix for Australis and fix for pinned tabs glitch
@@ -37,6 +38,10 @@
 // ==/UserScript==
 zzzz_MultiRowTabLite();
 function zzzz_MultiRowTabLite() {
+    // Editable javascript variables
+    var useResizer = true;
+
+    // CSS section
 	var css =`
     /* MULTIROW TABS CSS */
     /* You can set the max number of rows before the scrollbar appears here.
@@ -50,12 +55,19 @@ function zzzz_MultiRowTabLite() {
 
      - For tab growth v 
         Value of 1 -> Tab grows. Fixed max width of 226px.
-        Value of 0 -> Tab doesn't grow. Uses tab min width as fixed width. */
+        Value of 0 -> Tab doesn't grow. Uses tab min width as fixed width.
 
+     - To change the color or width of the resizer, change the --resizer-* variables to any other 
+       value you want. (like #666 for color or 5px for width)
+       By default, the resizer uses the color of the other text elements in the toolbar that your 
+       lightweight theme uses. */
+ 
     /* Editable variables */
     :root {
         --max-tab-rows: TABROWS;
         --tab-growth: 1;
+        --resizer-color: var(--lwt-text-color);
+        --resizer-width: 10px;
     }
 
     #TabsToolbar {
@@ -80,6 +92,12 @@ function zzzz_MultiRowTabLite() {
 
     .tab-stack {width: 100%}
 
+    #tab-scrollbox-resizer {
+        width: var(--resizer-width);
+        border-bottom: 5px double var(--resizer-color);
+        cursor: n-resize;
+    }
+
     @media (-moz-os-version: windows-win10) {
         #TabsToolbar .titlebar-buttonbox-container {display: block}
         
@@ -99,7 +117,7 @@ function zzzz_MultiRowTabLite() {
         display: inline-flex !important;
     }
 
-    #alltabs-button, #tabs-newtab-button .new-tab-popup, 
+    #alltabs-button, #tabs-newtab-button .new-tab-popup,
     #TabsToolbar:not([customizing="true"]) #tabbrowser-tabs[hasadjacentnewtabbutton] ~ #new-tab-button
     {display: none}
 
@@ -139,7 +157,7 @@ function zzzz_MultiRowTabLite() {
 		  display: block;
 		}
 
-		scrollbar {-moz-window-dragging: no-drag !important}
+		scrollbar, #tab-scrollbox-resizer {-moz-window-dragging: no-drag !important}
 	    `;
 
 	    // This is a fix for the shadow elements:
@@ -206,7 +224,7 @@ function zzzz_MultiRowTabLite() {
 	    .arrowscrollbox-overflow-start-indicator,
     	.arrowscrollbox-overflow-end-indicator {position: fixed !important}
 
-	    #main-window[tabsintitlebar] #tabbrowser-tabs scrollbar {
+	    #main-window[tabsintitlebar] #tabbrowser-tabs scrollbar, #tab-scrollbox-resizer {
 	        -moz-window-dragging: no-drag}
 	    `;
 
@@ -273,6 +291,47 @@ function scrollToView() {
 gBrowser.tabContainer.addEventListener('TabOpen', scrollToView, false);
 gBrowser.tabContainer.addEventListener("TabSelect", scrollToView, false);
 document.addEventListener("SSTabRestoring", scrollToView, false);
+
+// Handles resizing of rows when enabled
+if (useResizer) {
+    var tabsScrollbox;
+    // FF71+
+    if (document.querySelector("#tabbrowser-tabs > arrowscrollbox").shadowRoot) {
+        tabsScrollbox = document.querySelector("#tabbrowser-tabs > arrowscrollbox").shadowRoot.querySelector(".scrollbox-clip > scrollbox");
+    // FF70-
+    } else {
+        tabsScrollbox = document.querySelector("#tabbrowser-tabs .arrowscrollbox-scrollbox");
+    }
+    
+    var tabsContainer = document.getElementById("TabsToolbar-customization-target");
+    var mainWindow = document.getElementById("main-window");
+
+    // Adds the resizer element to tabsContainer
+    var tabsResizer = document.createElement("div");
+    tabsResizer.setAttribute('id', "tab-scrollbox-resizer");
+    tabsContainer.appendChild(tabsResizer);
+    console.log("Potato")
+
+    // Removes the listeners for tab rows resizing
+    function finishRowsResizing(event) {
+        tabsScrollbox.style.maxHeight = event.clientY + "px";
+        mainWindow.style.cursor = "default";
+        document.removeEventListener("mouseup", finishRowsResizing, false);
+        document.removeEventListener("mousemove", updateRowsSize, false);
+    }
+
+    // Updates the max-height of the tabs when the mouse moves
+    function updateRowsSize(event) {
+        tabsScrollbox.style.maxHeight = event.clientY + "px";
+    }
+
+    // Starts changing the tab max-height when you click the resizer element
+    tabsResizer.onmousedown = function(event) {
+        mainWindow.style.cursor = "n-resize";
+        document.addEventListener("mouseup", finishRowsResizing, false);
+        document.addEventListener("mousemove", updateRowsSize, false);
+    }
+}
 
 // We set this to check if the listeners were added before
 var Listeners = false;
