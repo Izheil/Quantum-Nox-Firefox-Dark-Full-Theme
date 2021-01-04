@@ -1048,7 +1048,7 @@ treechildren::-moz-tree-row(selected){
 
 #editBMPanel_tagsSelector richlistitem[selected="true"] {
   background-color: var(--Lists-treechildren-selected-bg) !important;
-  color: color: var(--Lists-treechildren-selected-txt) !important}
+  color: var(--Lists-treechildren-selected-txt) !important}
 
 #editBMPanel_tagsSelector richlistitem[checked="true"] image {
   -moz-appearance: none !important;
@@ -1701,7 +1701,7 @@ a:active:not(.sumo-button) {
 .mzp-c-menu-item:hover {
 	box-shadow: none !important}
 
-#announcements, #product-cards .icon, {background: transparent !important}
+#announcements, #product-cards .icon {background: transparent !important}
 #announcements .announce-bar {background-color: #555 !important}
 
 body > header {
