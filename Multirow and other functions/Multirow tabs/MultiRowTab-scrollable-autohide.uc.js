@@ -39,7 +39,7 @@
 zzzz_MultiRowTabLite();
 function zzzz_MultiRowTabLite() {
     // Editable javascript variables
-    var useResizer = true;
+    var useResizer = false;
 
     // CSS section
 	var css =`
