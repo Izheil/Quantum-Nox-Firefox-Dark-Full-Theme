@@ -1,6 +1,6 @@
 /* You can find an updated version here: https://github.com/Izheil/Quantum-Nox-Firefox-Dark-Full-Theme */
 /* Made by Izheil */
-/* Last updated: 02/01/2021 */
+/* Last updated: 07/01/2021 */
 
 /*------ HOW TO MAKE THE ADDON THEMES WORK ------*/
 /* To use this part of the code, you will have to find the dynamic UUID of your extensions, and replace it where the 
@@ -1061,7 +1061,7 @@ url-prefix(moz-extension://TYPE-UUID-OF-TAB-SESSION-MANAGER-ADDON-HERE/replaced/
 
 html {background: #333 !important}
 
-#header .title, #undoButton > div, #redoButton > div, .syncStatus span {color: #333 !important}
+#header .title, #undoButton > div, #redoButton > div, .syncStatus span, #header .count {color: #333 !important}
 
 #undoButton > svg, #redoButton > svg, #header svg  {fill: #333 !important}
 
