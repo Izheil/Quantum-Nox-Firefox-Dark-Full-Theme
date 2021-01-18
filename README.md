@@ -13,16 +13,16 @@ You can use it to fully change the colors of most of firefox UI to dark-gray col
 
 If you want to know how to change some colors of the theme, check the [wiki](https://github.com/Izheil/Quantum-Nox-Firefox-Dark-Full-Theme/wiki/Editting-CSS-files).
 
-### Last update: 04/01/2021
+### Last update: 18/01/2021
 
 Files updated:
 
+* __addons.css__: Fixed some dark text on Ublock Origin's element picker theme.
+
+### Pre-Last update: 04/01/2021
+
+Files updated:
 * __MultiRowTab-scrollable*.uc.js__: Added an optional feature to resize rows. You have to enable it on the script changing the variable at the start of the script named useResizer to `true` instead of `false`.
-
-### Pre-Last update: 21/12/2020
-
-Files updated:
-* __addons.css__: Minor fixes for [Tab session manager](https://addons.mozilla.org/en-US/firefox/addon/tab-session-manager/) addon theme.
 
 
 ### A note on people looking to replace some Tab Mix Plus features:
