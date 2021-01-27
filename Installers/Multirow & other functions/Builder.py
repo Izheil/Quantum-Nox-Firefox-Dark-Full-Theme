@@ -28,7 +28,7 @@ def SystemOS():
 
 OSinUse = SystemOS()
 
-if OSinUse != "Windows":
+if OSinUse == "Linux":
     # We import the modules that are UNIX-only
     import grp
     import pwd
@@ -49,7 +49,7 @@ if OSinUse != "Windows":
         else:
             accRoot = True
 
-elif ctypes.windll.shell32.IsUserAnAdmin() == 0:
+elif OSinUse == "Windows" and ctypes.windll.shell32.IsUserAnAdmin() == 0:
     ctypes.windll.shell32.ShellExecuteW(None, "runas", sys.executable, __file__, None, 1)
     sys.exit()
 
