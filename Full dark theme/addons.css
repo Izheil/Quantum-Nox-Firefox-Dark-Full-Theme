@@ -1,6 +1,6 @@
 /* You can find an updated version here: https://github.com/Izheil/Quantum-Nox-Firefox-Dark-Full-Theme */
 /* Made by Izheil */
-/* Last updated: 18/01/2021 */
+/* Last updated: 27/01/2021 */
 
 /*------ HOW TO MAKE THE ADDON THEMES WORK ------*/
 /* To use this part of the code, you will have to find the dynamic UUID of your extensions, and replace it where the 
@@ -1230,7 +1230,7 @@ a:active {color: #0050aa !important}
 .listEntry .fa-icon.content:hover,
 .listEntry .fa-icon.support:hover,
 .listEntry .fa-icon.status.cache:hover
- {fill: #fff !important}
+  {fill: #fff !important}
 
 #ruleFilter .fa-icon svg {fill: #ccc !important}
 
@@ -1402,7 +1402,6 @@ span[data-i18n-tip="popupTipRevertRules"], span[data-i18n-tip="popupTipSaveRules
 #firewallContainer > div {border: none !important}
 }
 
-/* The new Ublock Origin popup layout */
 @-moz-document url-prefix(moz-extension://TYPE-UUID-OF-UBLOCK-ORIGIN-ADDON-HERE/popup-fenix.html) {
 #sticky {
   background: #333 !important}
@@ -1451,6 +1450,7 @@ body.off #switch .fa-icon {fill: #222}
 #firewall > div > span:not(.blockRule):not(.noopRule):not(.allowRule) {
   background-color: #444 !important}
 }
+
 /*------ UBLOCK ORIGIN UI LOGGER ------*/
 @-moz-document url-prefix(moz-extension://TYPE-UUID-OF-UBLOCK-ORIGIN-ADDON-HERE/logger-ui.html) {
 
