@@ -72,8 +72,7 @@ function zzzz_MultiRowTabLite() {
     :root:-moz-lwtheme[lwtheme-image] {background-repeat: repeat-y !important}
 
     #tabbrowser-tabs .tab-background, #tabbrowser-tabs .tabbrowser-tab {
-        min-height: var(--tab-min-height) !important;
-        height: var(--tab-min-height)}
+        min-height: var(--tab-min-height) !important}
 
     #nav-bar {box-shadow: none !important}
     
@@ -94,6 +93,11 @@ function zzzz_MultiRowTabLite() {
         #main-window[sizemode="fullscreen"] #window-controls {
             display: flex;
         }
+    }
+
+    @media (-moz-os-version: windows-win7), (-moz-os-version: windows-win8) {
+        #tabbrowser-tabs .tabbrowser-tab {
+            border-top: none !important}
     }
 
     /* This fixes the new tab button overflowing to the new row alone */
