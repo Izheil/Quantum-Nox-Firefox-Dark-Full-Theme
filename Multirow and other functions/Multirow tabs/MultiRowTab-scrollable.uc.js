@@ -5,6 +5,7 @@
 // @include        main
 // @compatibility  Firefox 70 to Firefox 87.0a1 (2021-02-10)
 // @author         Alice0775, Endor8, TroudhuK, Izheil, Merci-chao
+// @version        12/02/2021 06:23 Added the option to make the scrollbar thin and change its color
 // @version        12/02/2021 02:18 The new tab button now wont start a new row by itself, and multiple tab selection fixed
 // @version        04/01/2021 22:45 Added an optional tab rows resizer that you can toggle with "useResizer" var
 // @version        07/12/2020 01:21 Stopped hidding tab right borders since it's not related to multirow
@@ -38,8 +39,13 @@
 // ==/UserScript==
 zzzz_MultiRowTabLite();
 function zzzz_MultiRowTabLite() {
-    // Editable javascript variables
+    // EDITABLE JAVASCRIPT VARIABLES
+
+    // Enables the use of the rows resizer
     var useResizer = false;
+
+    // Use thin scrollbar for tabs
+    var useThinScrollbar = false;
 
     // CSS section
 	var css =`
@@ -60,14 +66,22 @@ function zzzz_MultiRowTabLite() {
      - To change the color or width of the resizer, change the --resizer-* variables to any other 
        value you want. (like #666 for color or 5px for width)
        By default, the resizer uses the color of the other text elements in the toolbar that your 
-       lightweight theme uses. */
+       lightweight theme uses. 
 
-    /* Editable variables */
+     - You can change the scrollbar color using the --tabs-scrollbar-color variable if you enabled
+       "useThinScrollbar" (setting it as true) JavaScript variable above. If you want to color the 
+       scrollbar but keep it as normal size, use userContent.css or any of the .as.css scrollbar 
+       files available.
+
+    */
+
+    /* EDITABLE CSS VARIABLES */
     :root {
         --max-tab-rows: 3;
         --tab-growth: 1;
         --resizer-color: var(--lwt-text-color);
         --resizer-width: 10px;
+        --tabs-scrollbar-color: #05a; /* Only applicable if "useThinScrollbar" JS variable is set as true */
     }
 
     #TabsToolbar {
@@ -195,6 +209,15 @@ function zzzz_MultiRowTabLite() {
         #scrollbutton-up, #scrollbutton-down {display: none !important}
         `;
 
+        if (useThinScrollbar == true) {
+            style.innerHTML += `
+            scrollbox {
+                scrollbar-color: var(--tabs-scrollbar-color) transparent;
+                scrollbar-width: thin;
+            }
+            `
+        }
+
         if (australisElement) {
             css += `
             .tabbrowser-tab[first-visible-tab="true"] {
@@ -234,6 +257,15 @@ function zzzz_MultiRowTabLite() {
 	    #main-window[tabsintitlebar] #tabbrowser-tabs scrollbar, #tab-scrollbox-resizer {
 	        -moz-window-dragging: no-drag}
 	    `;
+
+        if (useThinScrollbar == true) {
+            style.innerHTML += `
+            #tabbrowser-tabs .arrowscrollbox-scrollbox {
+                scrollbar-color: var(--tabs-scrollbar-color) transparent;
+                scrollbar-width: thin;
+            }
+            `
+        }
 
         if (australisElement) {
             css += `
