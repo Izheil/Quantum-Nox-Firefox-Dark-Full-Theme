@@ -110,7 +110,7 @@ The original code for the multirow bookmarks toolbar belongs to the original cre
 
 The fix to be able to theme unread tabs again after FF61 (see [bug #1453957](https://bugzilla.mozilla.org/show_bug.cgi?format=default&id=1453957) on bugzilla) as mentioned in [this reddit thread](https://www.reddit.com/r/FirefoxCSS/comments/8yruy8/tabbrowsertabunread_backgroundimage/), was made by **moko1960** to use in Firefox 61+.
 
-A fix for multiple tab reordering and other fixes on multirow by **Merci-chao**.
+A fix for multiple tab reordering and another fix for the new tab button to not start a row on its own without a tab on multirow was made by **Merci-chao**.
 
 The code to be able to edit anonymous content (in our case the scrollbars and tooltips) was created thanks to the efforts of [Zeniko](http://mozilla.zeniko.ch/userchrome.js.html), [Nichu](https://github.com/nuchi/firefox-quantum-userchromejs), and [Sporif](https://github.com/Sporif/firefox-quantum-userchromejs) in the old versions, and [Xiaoxiaoflood](https://github.com/xiaoxiaoflood/firefox-scripts) for the current one.
 
