@@ -72,9 +72,8 @@ function zzzz_MultiRowTabLite() {
     :root:-moz-lwtheme[lwtheme-image] {background-repeat: repeat-y !important}
 
     #tabbrowser-tabs .tab-background, #tabbrowser-tabs .tabbrowser-tab {
-        min-height: var(--tab-min-height) !important}
-
-    #main-window[sizemode="normal"] #TabsToolbar {margin-top: 1px !important}
+        min-height: var(--tab-min-height) !important;
+        height: var(--tab-min-height)}
 
     #nav-bar {box-shadow: none !important}
     

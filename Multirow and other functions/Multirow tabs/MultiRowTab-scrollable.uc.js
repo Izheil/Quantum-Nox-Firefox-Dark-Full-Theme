@@ -84,9 +84,8 @@ function zzzz_MultiRowTabLite() {
         flex-grow: var(--tab-growth)}
 
     #tabbrowser-tabs .tab-background, #tabbrowser-tabs .tabbrowser-tab {
-        min-height: var(--tab-min-height) !important}
-
-    #main-window[sizemode="normal"] #TabsToolbar {margin-top: 1px !important}
+        min-height: var(--tab-min-height) !important;
+        height: var(--tab-min-height)}
 
     #nav-bar {box-shadow: none !important}
 
