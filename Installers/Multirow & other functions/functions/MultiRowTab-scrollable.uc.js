@@ -110,6 +110,13 @@ function zzzz_MultiRowTabLite() {
         }
     }
 
+    /* This fixes the new tab button overflowing to the new row alone */
+    #tabs-newtab-button {
+        margin-left: -32px !important} 
+        
+    .tabbrowser-tab:last-of-type { 
+        margin-right: 32px !important}
+
     /* These fix issues with pinned tabs on the overflow status */
     #tabbrowser-tabs[overflow="true"] > #tabbrowser-arrowscrollbox > #tabs-newtab-button,
     #TabsToolbar:not([customizing="true"]) #tabbrowser-tabs[hasadjacentnewtabbutton] > #tabbrowser-arrowscrollbox > #tabs-newtab-button {

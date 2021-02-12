@@ -114,7 +114,7 @@ The code to be able to edit anonymous content (in our case the scrollbars and to
 
 Special thanks to **Messna** for noting the class turning into an ID on FF58, and **Snwflake** for fixing Firefox root folder location on MacOS.
 
-Also thanks to **532910**, **BelladonnavGF**, **DallasBelt**, **Demir-delic**, **Gitut2007**, **Hakerdefo**, **Tkhquang** and **YiannisNi** for noting some issues with the theme, and the requests for new features that extended this project.
+Also thanks to **532910**, **BelladonnavGF**, **DallasBelt**, **Demir-delic**, **Gitut2007**, **Hakerdefo**, **Merci-chao**, **Tkhquang** and **YiannisNi** for noting some issues with the theme, and the requests for new features that extended this project.
 
 ## Donations
 If you want to support this project, consider buying me a coffee to motivate me keep this repository up and running.
