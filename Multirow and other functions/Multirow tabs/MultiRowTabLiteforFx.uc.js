@@ -3,7 +3,7 @@
 // @namespace      https://github.com/Izheil/Quantum-Nox-Firefox-Dark-Full-Theme
 // @description    Multi-row tabs draggability fix with unlimited rows
 // @include        main
-// @compatibility  Firefox 70 to Firefox 85.0a1 (2020-12-06)
+// @compatibility  Firefox 70 to Firefox 87.0a1 (2021-02-10)
 // @author         Alice0775, Endor8, TroudhuK, Izheil, Merci-chao
 // @version        12/02/2021 02:18 The new tab button now wont start a new row by itself
 // @version        07/12/2020 01:21 Stopped hidding tab right borders since it's not related to multirow
