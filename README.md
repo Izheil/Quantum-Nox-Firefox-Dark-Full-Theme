@@ -13,13 +13,13 @@ You can use it to fully change the colors of most of firefox UI to dark-gray col
 
 If you want to know how to change some colors of the theme, check the [wiki](https://github.com/Izheil/Quantum-Nox-Firefox-Dark-Full-Theme/wiki/Editting-CSS-files).
 
-### Last update: 18/01/2021
+### Last update: 04/03/2021
 
 Files updated:
 
-* __addons.css__: Updated Tab Session Manager addon dark theme. TSM added a built-in dark theme now, but it still has some minor problems (like the buttons that appear on hover of a session, or the flashing of the options window), this update assumes you are already using the built-in dark theme and fixes only the issues with that mode activated.
+* __addons.css__: Updated [Tab session manager](https://addons.mozilla.org/en-US/firefox/addon/tab-session-manager/) addon dark theme. TSM added a built-in dark theme now, but it still has some minor problems (like the buttons that appear on hover of a session, or the flashing of the options window), this update assumes you are already using the built-in dark theme and fixes only the issues with that mode activated.
 
-### Pre-Last update: 04/01/2021
+### Pre-Last update: 18/01/2021
 
 Files updated:
 * __addons.css__: Fixed some dark text on Ublock Origin's element picker theme.
