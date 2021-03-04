@@ -1062,6 +1062,12 @@ url-prefix(moz-extension://TYPE-UUID-OF-TAB-SESSION-MANAGER-ADDON-HERE/replaced/
   body[data-theme="dark"] .sessionItem .buttonsContainer button:hover {
     background-color: #303030 !important}
 
+  body[data-theme="dark"] #sessionDetailArea .tabTitle {
+    color: #ccc !important}
+
+  body[data-theme="dark"] #sessionDetailArea .favIcon[src="/icons/favicon.png"] {
+    filter: invert(85%)}
+
   body:not([data-theme="light"]) header {
     background-color: #373737 !important}
 
