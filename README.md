@@ -17,12 +17,12 @@ If you want to know how to change some colors of the theme, check the [wiki](htt
 
 Files updated:
 
-* __addons.css__: Fixed some dark text on Ublock Origin's element picker theme.
+* __addons.css__: Updated Tab Session Manager addon dark theme. TSM added a built-in dark theme now, but it still has some minor problems (like the buttons that appear on hover of a session, or the flashing of the options window), this update assumes you are already using the built-in dark theme and fixes only the issues with that mode activated.
 
 ### Pre-Last update: 04/01/2021
 
 Files updated:
-* __MultiRowTab-scrollable*.uc.js__: Added an optional feature to resize rows. You have to enable it on the script changing the variable at the start of the script named useResizer to `true` instead of `false`.
+* __addons.css__: Fixed some dark text on Ublock Origin's element picker theme.
 
 
 ### A note on people looking to replace some Tab Mix Plus features:

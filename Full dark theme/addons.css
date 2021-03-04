@@ -1,6 +1,6 @@
 /* You can find an updated version here: https://github.com/Izheil/Quantum-Nox-Firefox-Dark-Full-Theme */
 /* Made by Izheil */
-/* Last updated: 27/01/2021 */
+/* Last updated: 04/03/2021 */
 
 /*------ HOW TO MAKE THE ADDON THEMES WORK ------*/
 /* To use this part of the code, you will have to find the dynamic UUID of your extensions, and replace it where the 
@@ -1049,66 +1049,32 @@ input[type="checkbox"]:checked {
 url-prefix(moz-extension://TYPE-UUID-OF-TAB-SESSION-MANAGER-ADDON-HERE/popup/index.html),
 url-prefix(moz-extension://TYPE-UUID-OF-TAB-SESSION-MANAGER-ADDON-HERE/replaced/index.html) {
 
-:root {
-    --main-text: #ddd !important;
-    --sub-text: #aaa !important;
-    --line: #36b2b2 !important;
-    --button: #444 !important;
-    --highlight: #36b2b2 !important;
-    --main-bg: #333 !important;
-    --new: #ff4f4f !important;
-	--confirm: #ff4f4f !important}
+  body[data-theme="dark"], html, body:not([data-theme="light"]) #root {
+    background-color: #181818 !important;
+    color: #ccc !important}
 
-html {background: #333 !important}
+  body[data-theme="light"] {
+    background-color: #fff !important}
 
-#header .title, #undoButton > div, #redoButton > div, .syncStatus span {color: #333 !important}
+  body[data-theme="dark"] .sessionItem .buttonsContainer {
+    background-color: rgba(25,25,25,0.8) !important}
 
-#undoButton > svg, #redoButton > svg, #header svg  {fill: #333 !important}
+  body[data-theme="dark"] .sessionItem .buttonsContainer button:hover {
+    background-color: #303030 !important}
 
-.button, input[type="button"] {background: #444 !important}
-.button:hover, input[type="button"]:hover {background: #222 !important}
+  body:not([data-theme="light"]) header {
+    background-color: #373737 !important}
 
-li.saveOnlyCurrentWindow {color: #ddd !important}
-li.saveOnlyCurrentWindow:hover {color: #000 !important}
+  body:not([data-theme="light"]) input:not([type="button"]), body:not([data-theme="light"]) textarea {
+    background-color: #252525 !important;
+    border-color: #666 !important}
 
-span.checkbox::before, #saveName {background: #303030 !important; border: 1px solid #666 !important}
-span.checkbox:hover::before, #saveName:hover {border: 1px solid #36b2b2 !important}
+  body:not([data-theme="light"]) input[type="button"]:not(:hover) {
+    background-color: #303030 !important;
+    border-color: #444 !important}
 
-#setting svg, .removeTagButton svg {fill: #000 !important}
-
-#sessionsArea, .sessionName span {color: #fff !important}
-
-textarea, input[type="number"], input[type="text"] {background: #303030 !important; color: #ddd !important}
-
-#saveButton, #saveOptionButton {background: #555 !important}
-
-#saveButton:not(:hover) {color: #ddd !important}
-
-.settingsButton svg, .heartButton:not(:hover) svg, .openInTabButton svg {
-    fill: #333 !important;
-    stroke: #333 !important;
-    transition: color 3s}
-
-.openInTabButton:hover svg {stroke: #888 !important}
-
-.sessionItem:hover, #menu > ul > li > button:hover {background-color: #444 !important}
-
-.sessionItem.isSelected {background-color: #555 !important}
-
-#sessionsArea .buttonsContainer {background-color: rgba(40,40,40,0.8) !important}
-#sessionsArea .buttonsContainer button:hover, #sessionDetailArea .tabContainer:hover, 
-#sessionDetailArea .windowInfo:hover, #sessionDetailArea .tabContainer:focus,
-#sessionDetailArea .windowInfo:focus {background-color: rgba(255,255,255,0.1) !important}
-
-.tag span {color: #000 !important}
-
-.tabTitle a {color: #09f !important}
-.tabTitle a:hover {color: #0ff !important}
-.tabTitle a:active {color: #0050aa !important}
-
-.tagsContainer .tag {color: #000 !important}
-.tagIcon, .tagsContainer .tag svg {fill: #000 !important}
-.collapseButton svg path {stroke: #ccc !important}
+  body:not([data-theme="light"]) input[type="button"]:hover {
+    background-color: #404040 !important}
 }
 
 /*------ TEMPORARY CONTAINERS ADDON ------*/
