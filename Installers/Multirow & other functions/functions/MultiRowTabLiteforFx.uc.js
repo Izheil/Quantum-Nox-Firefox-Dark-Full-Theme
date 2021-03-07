@@ -5,6 +5,7 @@
 // @include        main
 // @compatibility  Firefox 70 to Firefox 87.0a1 (2021-02-10)
 // @author         Alice0775, Endor8, TroudhuK, Izheil, Merci-chao
+// @version        07/03/2021 23:24 Compatibility fix with Simple Tab Groups addon
 // @version        12/02/2021 02:18 The new tab button now wont start a new row by itself, and multiple tab selection fixed
 // @version        07/12/2020 01:21 Stopped hidding tab right borders since it's not related to multirow
 // @version        25/09/2020 23:26 Fixed glitch on opening tabs in the background while on fullscreen
@@ -104,7 +105,7 @@ function zzzz_MultiRowTabLite() {
     #tabs-newtab-button {
         margin-left: -32px !important} 
         
-    .tabbrowser-tab:last-of-type { 
+    .tabbrowser-tab[last-visible-tab="true"] { 
         margin-right: 32px !important}
 
     /* These fix issues with pinned tabs on the overflow status */
