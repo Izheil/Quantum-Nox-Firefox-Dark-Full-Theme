@@ -1,6 +1,6 @@
 /* You can find an updated version here: https://github.com/Izheil/Quantum-Nox-Firefox-Dark-Full-Theme */
 /* Made by Izheil */
-/* Last updated: 07/12/2020 */
+/* Last updated: 26/03/2021 */
 
 /* COLORING PART STARTS HERE */
 
@@ -1546,6 +1546,9 @@ Make sure to NOT leave a comma before your last selector and the {display: none 
 /* Set image as desktop background... */
 #context-setDesktopBackground, 
 
+/* Separator before "Set image as background" */
+#context-sep-setbackground,
+
 /* View image Info */
 #context-viewimageinfo,
 
@@ -1669,7 +1672,7 @@ Make sure to NOT leave a comma before your last selector and the {display: none 
 /* MISC */
 
 /* Bookmark this link */
-#context-bookmarklink,
+#context-bookmarklink
 
 /* Select everything *//*
 #context-selectall,

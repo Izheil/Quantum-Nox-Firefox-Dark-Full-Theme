@@ -1,6 +1,6 @@
 /* You can find an updated version here: https://github.com/Izheil/Quantum-Nox-Firefox-Dark-Full-Theme */
 /* Made by Izheil */
-/* Last updated: 02/10/2019 */
+/* Last updated: 26/03/2021 */
 
 /* CONTEXT MENU COMMANDS */
 
@@ -307,6 +307,9 @@ Make sure to only do line breaks after a comma if you really need to (like in th
 
 /* Set image as desktop background... */
 #context-setDesktopBackground, 
+
+/* Separator before "Set image as background" */
+#context-sep-setbackground,
 
 /* View image Info */
 #context-viewimageinfo,
