@@ -5,6 +5,8 @@ Following the method described here, you will be able to give dark colors to fir
 
 ![Dark addons](https://i.imgur.com/t1Nf65V.png)
 
+** As of Firefox 89 (Nightly), Proton will be introducing changes to the interface, so the theme will not look too great on it, and it won't be updated for Nightly until it stabilizes and Proton is released fully.**
+
 ## Installation
 
 **Note: As of Firefox 69, you will need to enable the use of these files through a configuration setting.** The preference in question is `toolkit.legacyUserProfileCustomizations.stylesheets`. Here is how you change its value:
