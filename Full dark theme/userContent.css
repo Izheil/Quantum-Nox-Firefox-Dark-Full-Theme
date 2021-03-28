@@ -1418,6 +1418,15 @@ menulist:hover {background: rgba(255,255,255,0.3) !important; color: #fff !impor
 	background-color: #202020 !important;
 }
 
+/* Recommended extension buttons */
+button.primary {
+	color: #eee !important;
+}
+
+button.primary:hover, button.primary:active {
+	color: #fff !important;
+}
+
 /* Should be self explanatory... but this is the alert message that goes over the addons list */
 .alert, .message-bar {
 	border: 1px solid #444 !important;
