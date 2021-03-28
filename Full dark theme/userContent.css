@@ -1,7 +1,7 @@
 /* You can find an updated version here: https://github.com/Izheil/Quantum-Nox-Firefox-Dark-Full-Theme */
 /* Made by Izheil */
 
-/* Last updated: 03/12/2020 */
+/* Last updated: 29/03/2021 */
 
 /* This part imports the Addons file if there is one, so that you don't have to edit the dynamic URL
 from the addons rules every time we update anything here */
@@ -1031,7 +1031,7 @@ treechildren::-moz-tree-row(selected){
 #clearDownloadsButton[disabled] {color: #555 !important}
 
 /* This themes the information box on the lower part of the library menu */
-#detailsDeck {
+#detailsPane {
   background-color: var(--Window-bg) !important;
   color: #aaa !important;
   border-top: 1px solid #222 !important}
@@ -1413,20 +1413,10 @@ menulist:hover {background: rgba(255,255,255,0.3) !important; color: #fff !impor
 #header-utils-btn .scrollbox-innerbox,
 .arrowscrollbox-scrollbox {background-color: #444 !important}
 
-/* This changes some of the buttons color */
-.accessory-button, button, #header-utils-btn {
-  -moz-appearance: none !important;
-  border-radius: 3px !important;
-  background: #555 !important;
-  color: #eee !important;
-  border: none !important}
-
-#header-utils-btn {fill: black !important}
-
-.accessory-button:hover, button:hover, 
-#header-utils-btn:hover {
-	background: #303030 !important;
-    color: #FFF !important}
+/* Changes the color of the addons section background */
+#content {
+	background-color: #202020 !important;
+}
 
 /* Should be self explanatory... but this is the alert message that goes over the addons list */
 .alert, .message-bar {

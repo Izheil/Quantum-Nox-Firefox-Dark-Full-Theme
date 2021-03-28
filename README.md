@@ -13,16 +13,17 @@ You can use it to fully change the colors of most of firefox UI to dark-gray col
 
 If you want to know how to change some colors of the theme, check the [wiki](https://github.com/Izheil/Quantum-Nox-Firefox-Dark-Full-Theme/wiki/Editting-CSS-files).
 
-### Last update: 26/03/2021
+### Last update: 29/03/2021
 
 Files updated:
 
+* __userChrome.css__: Fixed a new selector on the "library" window.
+* __userContent.css__: Fixed an issue with buttons on `about:addons`, and fixed the new selector on the "library" when you open it as bookmark.
+
+### Pre-Last update: 26/03/2021
+
+Files updated:
 * __Context-menu-commands.as.css__: Added the new missing separator included before "set image as desktop background" option in the context menu.
-
-### Pre-Last update: 04/03/2021
-
-Files updated:
-* __addons.css__: Updated [Tab session manager](https://addons.mozilla.org/en-US/firefox/addon/tab-session-manager/) addon dark theme. TSM added a built-in dark theme now, but it still has some minor problems (like the buttons that appear on hover of a session, or the flashing of the options window), this update assumes you are already using the built-in dark theme and fixes only the issues with that mode activated.
 
 
 ### A note on people looking to replace some Tab Mix Plus features:
