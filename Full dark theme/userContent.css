@@ -1404,6 +1404,12 @@ menulist:hover {background: rgba(255,255,255,0.3) !important; color: #fff !impor
 #engineList > treechildren::-moz-tree-image(engineShown, checked) {fill: #aaa !important}
 
 .no-results-image, .checkbox-icon {filter: invert(85%)}
+
+.radio-check[selected], .checkbox-check[checked] {
+	border: 1px solid #666 !important;}
+
+checkbox:not([disabled]):hover > .checkbox-check {background-color: #333 !important}
+radio:not([disabled]):hover > .radio-check {background-color: #333 !important}
 }
 
 /*------ EXTENSIONS PAGE (about:addons) ------*/
