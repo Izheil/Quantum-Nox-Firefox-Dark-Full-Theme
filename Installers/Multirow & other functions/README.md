@@ -4,7 +4,7 @@ If you don't want to copy the files manually to install multirow, tabs below, or
 This is the python version of the installer, which requires all files and folders in here to work. For the single file installer go to the [releases](https://github.com/Izheil/Quantum-Nox-Firefox-Dark-Full-Theme/releases) page.
 
 #### Pre-requisites 
-You need [Python 3.6+](https://www.python.org/downloads/release/python-375/) installed to use these, along with the **elevate** module.
+You need [Python 3.6+](https://www.python.org/downloads/release/python-375/) installed to use these.
 
 In **linux** you might need to install pip (to install the elevate module) and tkinter after installing Python 3.6+, which you can do with these commands respectively:
 
@@ -54,6 +54,8 @@ To do this first install pyinstaller module if you don't have it yet:
 ```
 pip3 install pyinstaller
 ```
+
+If you want to paliate AV's detecting the installer as malware, you will have to [rebuild the bootloader](https://pyinstaller.readthedocs.io/en/stable/bootloader-building.html) for Pyinstaller.
 
 After that you will be able to use it to create an executable with the correct `.spec` file that applies. 
 For example, for windows, you'll have to use `Windows.spec` file to create the installer:
