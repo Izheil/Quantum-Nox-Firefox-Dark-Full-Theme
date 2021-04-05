@@ -415,6 +415,21 @@ input[data-l10n-id="onboarding-join-form-email"] {color: #ddd !important}
 
 .icon.icon-clear-input {fill: #ccc !important}
 
+/* Pocket stories */
+.ds-card-grid .ds-card {background-color: #252525 !important;}
+
+.ds-card .ds-card-link:hover header {color: #0060DF !important;}
+
+.outer-wrapper:not(.newtab-experience) .ds-card .ds-card-link:hover {box-shadow: 0 0 0 5px var(--in-content-box-border-color) !important;}
+
+.ds-card header, .ds-card p {color: #ccc !important;}
+
+.ds-card .meta .source {color: #888 !important;}
+
+ds-hero-item .context-menu-button, .ds-list-item .context-menu-button, .ds-card .context-menu-button, .ds-signup .context-menu-button {
+	background-color: var(--in-content-box-background) !important;
+	border-color: var(--in-content-box-border-color) !important;}
+
 /* The cards borders part starts here */
 .card-outer .context-menu-button, .top-sites-list .top-site-outer .context-menu-button {
     background-color: #555 !important;
