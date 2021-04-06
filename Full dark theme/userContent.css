@@ -1,7 +1,7 @@
 /* You can find an updated version here: https://github.com/Izheil/Quantum-Nox-Firefox-Dark-Full-Theme */
 /* Made by Izheil */
 
-/* Last updated: 29/03/2021 */
+/* Last updated: 06/04/2021 */
 
 /* This part imports the Addons file if there is one, so that you don't have to edit the dynamic URL
 from the addons rules every time we update anything here */
@@ -415,23 +415,9 @@ input[data-l10n-id="onboarding-join-form-email"] {color: #ddd !important}
 
 .icon.icon-clear-input {fill: #ccc !important}
 
-/* Pocket stories */
-.ds-card-grid .ds-card {background-color: #252525 !important;}
-
-.ds-card .ds-card-link:hover header {color: #0060DF !important;}
-
-.outer-wrapper:not(.newtab-experience) .ds-card .ds-card-link:hover {box-shadow: 0 0 0 5px var(--in-content-box-border-color) !important;}
-
-.ds-card header, .ds-card p {color: #ccc !important;}
-
-.ds-card .meta .source {color: #888 !important;}
-
-ds-hero-item .context-menu-button, .ds-list-item .context-menu-button, .ds-card .context-menu-button, .ds-signup .context-menu-button {
-	background-color: var(--in-content-box-background) !important;
-	border-color: var(--in-content-box-border-color) !important;}
-
 /* The cards borders part starts here */
-.card-outer .context-menu-button, .top-sites-list .top-site-outer .context-menu-button {
+.card-outer .context-menu-button, .top-sites-list .top-site-outer .context-menu-button,
+.ds-card .context-menu-button {
     background-color: #555 !important;
     border: 1px solid #333 !important;
     fill: rgba(170, 170, 170, 0.8) !important}
@@ -442,7 +428,7 @@ ds-hero-item .context-menu-button, .ds-list-item .context-menu-button, .ds-card 
 
 .top-sites-list .top-site-outer:hover .tile, .top-sites-list .top-site-outer:focus .tile, 
 .top-sites-list .top-site-outer.active .tile, .card-outer:-moz-any(:hover, :focus, 
-.active):not(.placeholder) 
+.active):not(.placeholder), .ds-card .ds-card-link:hover
 {box-shadow: inset 0 0 0 1px rgba(0, 0, 0, 0.1), 0 0 0 5px #555 !important}
 
 .top-site-icon.rich-icon, .top-site-outer .tile {box-shadow: none !important}
@@ -532,14 +518,26 @@ ds-hero-item .context-menu-button, .ds-list-item .context-menu-button, .ds-card 
 .search-button {
 	fill: var(--in-content-border-focus) !important}
 
-/* Firefox news at the bottom of the screen snippets */
+/* Firefox news at the bottom of the screen snippets & card items */
 input {
 	background-color: #151515 !important}
 
 .SnippetBaseContainer, .SnippetBaseContainer .footer, 
-.fixed-search .search-wrapper {
+.fixed-search .search-wrapper, .compact-cards .card-outer .card-context,
+.ds-card-grid .ds-card, .card-outer, #snippets-container, 
+.collapsible-section.active, .ds-layout .learn-more-link {
 	background: rgba(0,0,0,0.7) !important; 
 	border: none !important}
+
+.ds-card .meta p:not(.source),
+.ds-card:not(:hover) .meta header {
+	color: #ccc !important}
+
+.ds-layout .learn-more-link {
+	padding-left: 5px;
+	padding-right: 5px;
+	padding-bottom: 2px;
+	border-radius: 10px}
 
 .SnippetBaseContainer p, .SnippetBaseContainer h3, 
 .SnippetBaseContainer .footer-content {
@@ -612,7 +610,7 @@ input[type=text] {color: #aaa !important}
 
 .title {margin-top: 8px}
 
-.title span, .title {
+.title span, .title, .title .icon.icon-pin-small {
 	height: 20px !important;
 	line-height: 20px !important}
 
@@ -651,11 +649,6 @@ body {
   background-image: var(--home-background-image) !important;
   background-size: cover !important;
   background-position: center !important}
-
-.prefs-pane .sidebar, .card-outer, .prefs-pane .prefs-modal-inner-wrapper .options, 
-.sidebar .actions, #snippets-container, .collapsible-section.top-sites.animation-enabled.active,
-.collapsible-section.section.animation-enabled.active {
-	background: rgba(0,0,0,0.6) !important}
 
 .context-menu-button.icon {fill: #aaa !important}
 
