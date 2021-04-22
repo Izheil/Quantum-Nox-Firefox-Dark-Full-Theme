@@ -1669,7 +1669,10 @@ Make sure to NOT leave a comma before your last selector and the {display: none 
 /* Separator after "Select all" *//*
 #context-sep-selectall, 
 
-/* Separator before "This frame" *//*
+/* Separator after "take screenshot" */
+#spell-separator,
+
+/* Separator before "This frame" */
 #frame-sep,
 
 
@@ -1692,3 +1695,6 @@ Make sure to NOT leave a comma before your last selector and the {display: none 
 
 /* Don't delete this last line */
 {display: none !important}
+
+/* Add some separators that are required after removing items */
+#inspect-separator {display: block !important}

@@ -431,6 +431,9 @@ Make sure to only do line breaks after a comma if you really need to (like in th
 /* Separator after "Select all" */
 #context-sep-selectall, 
 
+/* Separator after "take screenshot" */
+#spell-separator,
+
 /* Separator before "This frame" */
 #frame-sep,
 
