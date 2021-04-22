@@ -293,8 +293,9 @@ Make sure to only do line breaks after a comma if you really need to (like in th
 
 /* SEARCH ENGINE */
 
-/* Search X on your default search engine */
+/* Search X on your default search engine & it's separator */
 #context-searchselect,
+#context-sep-selectall,
 
 /* Search X on your default search engine privately */
 #context-searchselect-private,

@@ -1531,8 +1531,9 @@ Make sure to NOT leave a comma before your last selector and the {display: none 
 
 /* SEARCH ENGINE */
 
-/* Search X on your default search engine *//*
+/* Search X on your default search engine & it's separator *//*
 #context-searchselect,
+#context-sep-selectall,
 
 /* Search X on your default search engine privately */
 #context-searchselect-private,
