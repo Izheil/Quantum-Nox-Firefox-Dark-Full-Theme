@@ -425,7 +425,7 @@ Make sure to only do line breaks after a comma if you really need to (like in th
 #context-sep-paste,
 
 /* Separator after "set image as desktop background" */
-#context-sep-ctp
+#context-sep-ctp,
 
 /* Separator after "Select all" */
 #context-sep-selectall, 
