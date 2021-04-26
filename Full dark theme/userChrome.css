@@ -546,12 +546,12 @@ menupopup > menu[disabled="true"], menubar > menu[disabled="true"]{color: #777 !
 
 /* This one applies to all context menus (If you want to theme the browser this one is better instead 
 of going one by one) */
-menupopup:not(.PanelUI-subView) {
+menupopup:not(.PanelUI-subView):not([placespopup="true"]) {
   background-color: var(--Context-menu-background) !important}
 
 /* The following code changes the borders of all the context menus (except the ones above mentioned),
 as well as ignoring the bookmark menu context menu */
-menupopup:not(.PanelUI-subView) {
+menupopup:not(.PanelUI-subView):not([placespopup="true"]) {
   -moz-appearance: none !important;
   border: 1px solid #555 !important}
 
