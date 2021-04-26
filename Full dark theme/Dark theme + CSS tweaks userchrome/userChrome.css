@@ -1,6 +1,6 @@
 /* You can find an updated version here: https://github.com/Izheil/Quantum-Nox-Firefox-Dark-Full-Theme */
 /* Made by Izheil */
-/* Last updated: 22/04/2021 */
+/* Last updated: 26/04/2021 */
 
 /* COLORING PART STARTS HERE */
 
@@ -8,7 +8,7 @@
 
 /* This root class will modify the colors of toolbar background color (by default is transparent white 
 without this change) */
-#main-window:not([lwt-toolbar-field-focus-brighttext]) {
+#main-window:not([lwt-toolbar-field-focus-brighttext]){
   --toolbar-bgcolor: rgba(0,0,0,.6) !important;
   /* This changes the text color of all outside elements of all toolbars */
   --lwt-text-color: #ccc !important;
@@ -285,9 +285,10 @@ findbar .findbar-find-previous:active, findbar .findbar-find-next:active {
   background: linear-gradient(var(--in-content-box-background), var(--in-content-box-background-hover)) !important}
 
 /* Color for most dialogs */
-dialog, dialog caption, dialog select, .tabmodalprompt-buttonContainer  {
+dialog .dialogBox, dialog caption, dialog select, .tabmodalprompt-buttonContainer, 
+#SiteDataRemoveSelectedDialog, wizardpage, #importSource, wizardpage * {
   -moz-appearance: none !important;
-  background-color: #333 !important;
+  background-color: #353535 !important;
   color: #ccc !important}
 
 fieldset {border-color: #666 !important}
@@ -311,12 +312,13 @@ fieldset {border-color: #666 !important}
 #infoIcon, .message-icon,
 .alert-icon,
 .error-icon,
-.question-icon {filter: invert(80%)}
+.question-icon {filter: brightness(500%)}
 
 /* Checkbox coloring */
 checkbox .checkbox-check {
   -moz-appearance: none !important;
   border: 1px solid #666 !important;
+  border-radius: 2px;
   background-color: #444 !important;
   transition: color 0.3s;
   min-width: 12px;
@@ -327,7 +329,9 @@ checkbox:not([disabled]):hover .checkbox-check {
   border-color: #0084ff !important}
 
 checkbox[checked] .checkbox-check {
-  background: #444 url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="15px" height="15px" viewBox="0 0 16 16" ><path fill="rgb(200,200,200)" d="M 13.09,2.87 C 13.09,2.87 6.00,11.00 6.00,11.00 6.00,11.00 2.00,9.00 2.00,9.00 4.25,12.81 7.00,14.00 7.00,14.00 9.24,10.42 12.04,7.39 13.09,2.87 Z" /></svg>') no-repeat center center !important}
+  background: #444 url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="15px" height="15px" viewBox="1 1 15 15" ><path fill="rgb(200,200,200)" d="M 13.09,2.87 C 13.09,2.87 6.00,11.00 6.00,11.00 6.00,11.00 2.00,9.00 2.00,9.00 4.25,12.81 7.00,14.00 7.00,14.00 9.24,10.42 12.04,7.39 13.09,2.87 Z" /></svg>') no-repeat center center !important;
+  border: 1px solid #0084ff !important;
+  background-color: transparent !important}
 
 #main-menubar .menu-iconic-left, #toolbar-context-menu .menu-iconic-left {
   -moz-appearance: none !important; 
@@ -335,7 +339,7 @@ checkbox[checked] .checkbox-check {
   height: 16px !important}
 
 #main-menubar .menu-iconic-left[checked="true"], #toolbar-context-menu .menu-iconic-left[checked="true"] {
-  background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="15px" height="15px" viewBox="0 0 16 16" ><path fill="rgb(200,200,200)" d="M 13.09,2.87 C 13.09,2.87 6.00,11.00 6.00,11.00 6.00,11.00 2.00,9.00 2.00,9.00 4.25,12.81 7.00,14.00 7.00,14.00 9.24,10.42 12.04,7.39 13.09,2.87 Z" /></svg>') no-repeat center center !important;
+  background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="15px" height="15px" viewBox="1 1 15 15" ><path fill="rgb(200,200,200)" d="M 13.09,2.87 C 13.09,2.87 6.00,11.00 6.00,11.00 6.00,11.00 2.00,9.00 2.00,9.00 4.25,12.81 7.00,14.00 7.00,14.00 9.24,10.42 12.04,7.39 13.09,2.87 Z" /></svg>') no-repeat center center !important;
 }
 
 /* Radio button coloring */
@@ -729,13 +733,12 @@ if necessary depending on if you are using a custom OS theme (which may mess up 
 #editBMPanel_tagsSelectorExpander,
 #editBMPanel_foldersExpander, #detailsDeck button {
   -moz-appearance: none !important;
-  border: 1px solid #222 !important;
-  background: linear-gradient(#555,#333) !important;
+  background: #444 !important;
   color: #ddd !important}
 
 #editBMPanel_tagsSelectorExpander:hover, 
 #editBMPanel_foldersExpander:hover, #detailsDeck button:hover {
-  background: linear-gradient(#333,#555) !important;
+  background: #555 !important;
   color: #fff !important}
 
 #editBMPanel_folderMenuList {
@@ -783,7 +786,8 @@ dropmarker {
   background: #444 !important; 
   color: #ddd !important}
 
-#mainDeck textbox, #cookieInfoBox textbox {color: #aaa !important}
+#mainDeck textbox, #cookieInfoBox textbox, 
+#mainDeck td input, #hostText {color: #aaa !important}
 
 #mainDeck groupbox, #cookieInfoBox {
   -moz-appearance: none !important; 
