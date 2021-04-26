@@ -329,7 +329,7 @@ checkbox:not([disabled]):hover .checkbox-check {
   border-color: #0084ff !important}
 
 checkbox[checked] .checkbox-check {
-  background: #444 url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="15px" height="15px" viewBox="1 1 15 15" ><path fill="rgb(200,200,200)" d="M 13.09,2.87 C 13.09,2.87 6.00,11.00 6.00,11.00 6.00,11.00 2.00,9.00 2.00,9.00 4.25,12.81 7.00,14.00 7.00,14.00 9.24,10.42 12.04,7.39 13.09,2.87 Z" /></svg>') no-repeat center center !important;
+  background: #444 url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="15px" height="15px" viewBox="0 0 16 16" ><path fill="rgb(200,200,200)" d="M 13.09,2.87 C 13.09,2.87 6.00,11.00 6.00,11.00 6.00,11.00 2.00,9.00 2.00,9.00 4.25,12.81 7.00,14.00 7.00,14.00 9.24,10.42 12.04,7.39 13.09,2.87 Z" /></svg>') no-repeat center center !important;
   border: 1px solid #0084ff !important;
   background-color: transparent !important}
 
@@ -339,7 +339,7 @@ checkbox[checked] .checkbox-check {
   height: 16px !important}
 
 #main-menubar .menu-iconic-left[checked="true"], #toolbar-context-menu .menu-iconic-left[checked="true"] {
-  background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="15px" height="15px" viewBox="1 1 15 15" ><path fill="rgb(200,200,200)" d="M 13.09,2.87 C 13.09,2.87 6.00,11.00 6.00,11.00 6.00,11.00 2.00,9.00 2.00,9.00 4.25,12.81 7.00,14.00 7.00,14.00 9.24,10.42 12.04,7.39 13.09,2.87 Z" /></svg>') no-repeat center center !important;
+  background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="15px" height="15px" viewBox="0 0 16 16" ><path fill="rgb(200,200,200)" d="M 13.09,2.87 C 13.09,2.87 6.00,11.00 6.00,11.00 6.00,11.00 2.00,9.00 2.00,9.00 4.25,12.81 7.00,14.00 7.00,14.00 9.24,10.42 12.04,7.39 13.09,2.87 Z" /></svg>') no-repeat center center !important;
 }
 
 /* Radio button coloring */
@@ -364,13 +364,13 @@ radio[selected] .radio-check, #printPageSetupDialog radio[selected] .radio-check
 radio[disabled], checkbox[disabled] {opacity: 0.8}
 
 /* Select boxes coloring */
-dialog menulist, #print-preview-scale, #printPageSetupDialog menulist {
+dialog menulist, #print-preview-scale, #printPageSetupDialog menulist, #permission-popup-mainView menulist {
   -moz-appearance: none !important;
   background: #444 url("data:image/svg+xml;charset=utf-8,%3Csvg width='11' height='7' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M434.574 488L430.5 492.147 426.428 488 425 489.399 430.5 494.999 436 489.399z' transform='translate(-425 -488)' fill='%23cccccc' fill-rule='evenodd'/%3E%3C/svg%3E") no-repeat calc(100% - 5px) 50% !important;
   padding: 3px;
   color: #ccc !important}
 
-dialog menulist:hover, #print-preview-scale:hover, #printPageSetupDialog menulist:hover {
+dialog menulist:hover, #print-preview-scale:hover, #printPageSetupDialog menulist:hover, #permission-popup-mainView menulist:hover {
   background: #252525 url("data:image/svg+xml;charset=utf-8,%3Csvg width='11' height='7' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M434.574 488L430.5 492.147 426.428 488 425 489.399 430.5 494.999 436 489.399z' transform='translate(-425 -488)' fill='%23cccccc' fill-rule='evenodd'/%3E%3C/svg%3E") no-repeat calc(100% - 5px) 50% !important;
   color: #fff !important}
 
@@ -1129,6 +1129,7 @@ Enable this if you are having issues with some addon popup texts and you are not
 #customizationui-widget-panel[viewId="PanelUI-webext-tab-session-manager_sienori-browser-action-view"] .panel-arrow {
   fill: #36b2b2 !important}
 */
+
 /* ^ COLORING PART ENDS HERE - FEATURES PART STARTS HERE v */
 
 /* This deletes the space that comes before the min/max/close button (space where you can place addons), but
