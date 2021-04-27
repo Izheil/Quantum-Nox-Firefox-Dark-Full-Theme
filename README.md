@@ -13,12 +13,12 @@ You can use it to fully change the colors of most of firefox UI to dark-gray col
 
 If you want to know how to change some colors of the theme, check the [wiki](https://github.com/Izheil/Quantum-Nox-Firefox-Dark-Full-Theme/wiki/Editting-CSS-files).
 
-### Last update: 26/04/2021
+### Last update: 27/04/2021
 
 Files updated:
 
 * __userChrome.css__: Last update aimed at Photon layout. Fixed some white dialogs.
-* __userContent.css__: Last update aimed at Photon layout. Fixed some issues with `about:` category colors and checkboxes on `about:preferences`.
+* __userContent.css__: Last update aimed at Photon layout. Fixed some issues with `about:` pages.
 
 ### Pre-Last update: 22/04/2021
 
