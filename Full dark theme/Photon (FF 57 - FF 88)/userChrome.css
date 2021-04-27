@@ -540,14 +540,31 @@ popup > menu[_moz-menuactive="true"][disabled="true"],
 menuitem[_moz-menuactive="true"][disabled="true"] 
 {background-color: rgba(0,0,0,0.3) !important} 
 
+/* These are required for custom OS themes */
+menupopup:not([placespopup="true"]) > menuitem,
+menubar > menu, popup > menu,
+menupopup > menu {
+  -moz-appearance: none !important;
+  padding-top: 3px;
+  padding-bottom: 3px;
+}
+
+menuitem {
+  -moz-appearance: none !important}
+
 /* This changes the text color of the greyed out actions on the context menus */
 menuitem[disabled="true"], popup > menu[disabled="true"],
 menupopup > menu[disabled="true"], menubar > menu[disabled="true"]{color: #777 !important}
 
-/* This one applies to all context menus (If you want to theme the browser this one is better instead 
+/* These apply to all context menus (If you want to theme the browser this one is better instead 
 of going one by one) */
 menupopup:not(.PanelUI-subView):not([placespopup="true"]) {
   background-color: var(--Context-menu-background) !important}
+
+#PlacesToolbarItems menupopup, #main-menubar menupopup {
+  -moz-appearance: none !important;
+  background-color: var(--Context-menu-background) !important;
+  border: 1px solid #555 !important}
 
 /* The following code changes the borders of all the context menus (except the ones above mentioned),
 as well as ignoring the bookmark menu context menu */
