@@ -540,18 +540,6 @@ popup > menu[_moz-menuactive="true"][disabled="true"],
 menuitem[_moz-menuactive="true"][disabled="true"] 
 {background-color: rgba(0,0,0,0.3) !important} 
 
-/* These are required for custom OS themes */
-menupopup:not([placespopup="true"]) > menuitem,
-menubar > menu, popup > menu,
-menupopup > menu {
-  -moz-appearance: none !important;
-  padding-top: 3px;
-  padding-bottom: 3px;
-}
-
-menuitem {
-  -moz-appearance: none !important}
-
 /* This changes the text color of the greyed out actions on the context menus */
 menuitem[disabled="true"], popup > menu[disabled="true"],
 menupopup > menu[disabled="true"], menubar > menu[disabled="true"]{color: #777 !important}

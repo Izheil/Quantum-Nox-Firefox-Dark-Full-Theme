@@ -624,6 +624,26 @@ popup > menu[_moz-menuactive="true"][disabled="true"],
 menuitem[_moz-menuactive="true"][disabled="true"] 
 {background-color: rgba(0,0,0,0.3) !important} 
 
+/* These are required for custom OS themes */
+menupopup:not([placespopup="true"]) > menuitem,
+#main-menubar menuitem,
+menubar > menu, popup > menu,
+menupopup > menu,
+.openintabs-menuitem {
+  -moz-appearance: none !important;
+  padding-top: 3px;
+  padding-bottom: 3px}
+
+.bookmark-item menupopup[emptyplacesresult="true"] menuitem {
+  min-height: 25px !important;
+}
+
+menuitem {
+  -moz-appearance: none !important}
+
+menupopup {
+  overflow: clip;
+  border-radius: 8px !important}
 
 /* This changes the text color of the greyed out actions on the context menus */
 menuitem[disabled="true"], menu[disabled="true"], 
@@ -631,11 +651,16 @@ menuitem[disabled="true"] label, menu[disabled="true"] label {
   color: #666 !important;
 }
 
-/* This one applies to all context menus (If you want to theme the browser this one is better instead 
+/* These apply to all context menus (If you want to theme the browser this one is better instead 
 of going one by one) */
 menupopup:not(.PanelUI-subView):not([placespopup="true"]), .menupopup-arrowscrollbox {
   background-color: var(--Context-menu-background) !important;
   border-color: #555 !important}
+
+#PlacesToolbarItems menupopup, #main-menubar menupopup {
+  -moz-appearance: none !important;
+  background-color: var(--Context-menu-background) !important;
+  border: 1px solid #555 !important}
 
 /* The following code changes the borders of all the context menus (except the ones above mentioned),
 as well as ignoring the bookmark menu context menu */
