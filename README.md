@@ -36,7 +36,12 @@ You can enable multirow tabs as well as other functions using the installer in t
 ![Multirow apng](https://i.imgur.com/2YUO9vq.png)
 
 ## Main browser UI
-![Dark firefox UI](https://i.imgur.com/I4x1a8w.png)
+
+### Proton:
+![Dark firefox UI (Proton)](https://i.imgur.com/vOHJn1D.png)
+
+### Photon:
+![Dark firefox UI (Photon)](https://i.imgur.com/I4x1a8w.png)
 
 ![Dark firefox Dialog](https://i.imgur.com/q8MhDSX.png)
 
