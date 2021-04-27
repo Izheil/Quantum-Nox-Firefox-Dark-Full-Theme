@@ -1,6 +1,6 @@
 /* You can find an updated version here: https://github.com/Izheil/Quantum-Nox-Firefox-Dark-Full-Theme */
 /* Made by Izheil */
-/* Last updated: 07/12/2020 */
+/* Last updated: 27/04/2021 */
 
 /* COLORING PART STARTS HERE */
 
@@ -8,53 +8,60 @@
 
 /* This root class will modify the colors of toolbar background color (by default is transparent white 
 without this change) */
-*|*:root:-moz-lwtheme {
+#main-window:not([lwt-default-theme-in-dark-mode]){
   --toolbar-bgcolor: rgba(0,0,0,.6) !important;
+  --lwt-selected-tab-background-color: var(--toolbar-bgcolor) !important;
+  --tabs-toolbar-bgcolor: transparent !important;
   /* This changes the text color of all outside elements of all toolbars */
   --lwt-text-color: #ccc !important;
+  --toolbar-color: #ccc !important;
   
-  /* You can change the lightweight theme header and footer images with this. 
-  To use this, enable the "lightweight themes fix" below. Delete the final /* to use -> */
-  --lwt-header-image: url("file:///C:/Users/Israel/AppData/Roaming/Mozilla/Firefox/Profiles/i6o6l754.default/chrome/Backgrounds/Cubes-header.png") !important;
+  /* You can change the lightweight theme header and footer images with this, but it will only change when using a persona. 
+  To use this, enable the "Fix for some lightweight themes" below. Delete the final /* to use -> *//*
+  --lwt-header-image: url("file:///") !important;
   --lwt-additional-images: var(--lwt-header-image) !important;
-  
+
 /* v Don't delete this ending bracket */
 }
-
-/* Url and search bars */
-#nav-bar, #searchbar {
-  --lwt-toolbar-field-background-color: rgb(61,61,63) !important;
-  --lwt-toolbar-field-focus: rgb(71,71,73) !important;
-  --lwt-toolbar-field-color: #ccc !important;
-  --lwt-toolbar-field-focus-color: var(--lwt-toolbar-field-color) !important;
-  --lwt-toolbar-field-border-color: #d00 !important;
-  --toolbar-field-focus-border-color: #d00 !important;
-  --urlbar-popup-url-color: rgb(90,170,230) !important;
-  --urlbar-popup-action-color: var(--urlbar-popup-url-color) !important;
-  --urlbar-separator-color: #666 !important;
-  --autocomplete-popup-highlight-background: rgba(100,100,100,0.4) !important;
-  --autocomplete-popup-highlight-color: #ddd !important}
-
-/* Search panel background gradient*/
-.search-panel-one-offs-container {
-  --Search-engine-choices-gradient: linear-gradient(90deg, rgba(74,4,4,1) 5%, rgba(122,22,22,1) 50%, rgba(74,4,4,1) 95%);}
 
 /* Fix for some lightweight themes not working properly when set manually here (appearing with a lot of padding to the left) *//*
 :root:-moz-lwtheme[lwtheme-image], #tabbrowser-tabs:not([movingtab]) > .tabbrowser-tab > 
 .tab-stack > .tab-background[selected="true"]:-moz-lwtheme {
   background-position: left top !important}
 
-/* This changes the background color of the tabs background toolbar for those using the default dark theme on Windows 7. 
-You may need to change the --toolbar-bgcolor in the rules above for the tab contrast color to be less dark if using this *//*
-#TabsToolbar {background-color: #222 !important}
+/* Url and search bars */
+#nav-bar, #mainPopupSet {
+  --lwt-toolbar-field-background-color: rgb(61,61,61) !important;
+  --lwt-toolbar-field-focus: rgb(71,71,71) !important;
+  --lwt-toolbar-field-color: #ccc !important;
+  --lwt-toolbar-field-focus-color: var(--lwt-toolbar-field-color) !important;
+  --lwt-toolbar-field-border-color: #333 !important;
+  --toolbar-field-focus-border-color: #666 !important;
+  --urlbar-popup-url-color: rgb(90,170,230) !important;
+  --urlbar-popup-action-color: var(--urlbar-popup-url-color) !important;
+  --urlbar-separator-color: #666 !important;
+  --autocomplete-popup-highlight-background: rgba(100,100,100,0.4) !important;
+  --autocomplete-popup-highlight-color: #ddd !important;}
+
+/* Search panel background gradient */
+.search-panel-one-offs-container {
+  --Search-engine-choices-gradient: linear-gradient(90deg, rgba(4,34,74,1) 5%, rgba(22,52,132,1) 50%, rgba(4,34,74,1) 95%);}
+
+#main-menubar menu:not([disabled="true"])label {
+    color: #ccc !important}
 
 /* Tab line color. Using -moz-win-accentcolor as the color value changes it to the current window color (on Windows)
-but is disabled by default in this theme (Disable for the default tab line color). */
-#tabbrowser-tabs {
-  --tab-line-color: #a22 !important}
+but is disabled by default in this theme (Disable for the default tab line color). *//*
+.tabbrowser-tab {
+  --tab-line-color: #2af}
 
-/* This gives a more notizable color background on hover of the close tab button */
-.tab-close-button:hover {background: rgba(255,255,255,0.15) !important}
+/* This removes the tab shadowing for lightweight themes */
+.tab-background {
+  box-shadow: none !important}
+
+/* Sets the hover color of some buttons */
+.tab-close-button:hover, toolbarbutton:hover > .toolbarbutton-badge-stack, #PlacesToolbarItems > .bookmark-item:hover,
+toolbarbutton:not([disabled]):not(.subviewbutton-back):hover > .toolbarbutton-icon {background: rgba(255,255,255,0.15) !important}
 
 *|*:root {
   /* Main menu colors */
@@ -73,36 +80,40 @@ but is disabled by default in this theme (Disable for the default tab line color
   --bookmark-toolbar-text: var(--lwt-text-color); /* var(--lwt-text-color) for default color of the used theme */
   --nav-bar-icons-color: var(--chrome-color); /* var(--chrome-color) for default color of the used theme */
   --Min-max-buttons-hover-bg: rgba(255,255,255,0.2);
-  --Context-menu-highlight: #a00;
-  --Context-menu-background: rgba(60,60,60, 0.9); /* The last number changes the opacity %. Change that 1 for 0.9 for semitransparent backgrounds */
+  --Context-menu-highlight: #25a;
+  --Context-menu-background: rgba(60,60,60, 1); /* The last number changes the opacity %. Change that 1 for 0.9 for semitransparent backgrounds */
   --Context-menu-text-color: #ccc;
   --Autocomplete-popup-background: rgb(60,60,60);
   --Autocomplete-popup-text-color: #ccc;
-  --Progress-bar-color: #dd3131;
-  --Input-field-focus-shadow: 0 0 4px #dd3131;
+  --Progress-bar-color: #3070dd;
+  --Input-field-focus-shadow: 0 0 4px #0050ff;
   --Bookmark-folder-icon: #ffe793;
   --Bookmark-favicon-icon: #ddd;
-  --Text-selection-bg-color: #a22;
+  --Text-selection-bg-color: #0565af;
   --Text-selection-color: #fff;
   --Searched-item-text-color: #0FF;
-  --Lists-treechildren-hover-bg: rgb(150,20,20);
-  --Lists-treechildren-hover-border: rgb(160,40,40);
-  --Lists-treechildren-selected-bg: rgb(180,20,20);
-  --Lists-treechildren-selected-border: rgb(190,40,40);
+  --Lists-treechildren-hover-bg: rgba(0,149,221,0.25);
+  --Lists-treechildren-hover-border: rgb(0,149,221);
+  --Lists-treechildren-selected-bg: rgba(0,120,255,0.5);
+  --Lists-treechildren-selected-border: #0a84ff;
   --Lists-treechildren-selected-txt: #fff;
   --Sidebar-header: #252525;
   --Window-bg: #353535;
 
-  /* Customization page */
+  /* Customization page & Toolbar on non-persona themes */
   --toolbar-bgcolor: #303030 !important;
+  --tabs-toolbar-bgcolor: #202020 !important;
   --toolbar-non-lwt-bgcolor: #303030 !important;
   --toolbar-non-lwt-textcolor: #fff !important;
+  --tab-selected-bgcolor: var(--toolbar-bgcolor) !important;
 
   /* These ones are used for the read/unread tabs styling. For italic rules use 
   either "normal" or "italic" without the quotes for either no italics or using italics, 
   and for bold, use either "bold" or "normal" in the same way. You'll want to use semi-transparent
   colors (if any) for background colors, otherwise it will show as too bright opaque colors.
   Requires the use of setAttribute_unread.uc.js for unread tabs editting. */
+  --lwt-selected-tab-background-color: transparent !important;
+
   --Loaded-and-selected-text: #eee;
   --Loaded-and-selected-italic: normal;
   --Loaded-and-selected-bold: normal;
@@ -118,10 +129,83 @@ but is disabled by default in this theme (Disable for the default tab line color
   --Not-loaded-bold: normal;
   --Not-loaded-background: transparent;
 
-  --Loading-text: #f40;
+  --Loading-text: #0088ff;
   --Loading-italic: normal;
   --Loading-bold: normal;
   --Loading-background: transparent;
+
+  --button-bgcolor: rgb(43, 43, 43) !important;
+  --button-hover-bgcolor: rgb(82, 82, 82) !important;
+  --button-active-bgcolor: rgb(34, 34, 34) !important;
+  --buttons-primary-button-bgcolor: rgb(5, 103, 184) !important;
+  --in-content-buttons-primary-button-bgcolor: rgb(5, 103, 184) !important;
+  --buttons-primary-button-hover-bgcolor: rgb(49, 139, 212) !important;
+  --buttons-primary-button-active-bgcolor: rgb(0, 68, 124) !important;
+  --buttons-primary-button-color: #fff !important;
+  --panelview-toolbarbutton-hover-bgcolor: rgba(255,255,255,0.1) !important;
+  --checkbox-checked-bgcolor: rgb(5, 103, 184) !important;
+  --checkbox-checked-color: rgb(43, 43, 43);
+  --checkbox-checked-hover-bgcolor: rgb(49, 139, 212) !important;
+  --checkbox-checked-active-bgcolor: rgb(0, 68, 124) !important;
+  --input-bgcolor: rgb(41, 41, 41) !important;
+  --input-color: rgb(191, 191, 201) !important;
+  --input-border-color: rgb(73, 73, 73) !important;
+  --zoom-controls-bgcolor: rgb(74, 74, 74) !important;
+
+  --panel-separator-zap-gradient: linear-gradient(90deg, rgb(1, 71, 114) 1%, #2af 50%, rgb(115, 199, 252) 99%) !important;
+}
+
+/* Tabs bar background color */
+#TabsToolbar, #toolbar-menubar {background-color: var(--tabs-toolbar-bgcolor) !important}
+
+/* Alert banner */
+.container.infobar {
+  background-color: #303030 !important}
+  
+/* Selected tab lines */ 
+.tabbrowser-tab[visuallyselected]::before {
+  border-radius: 5px;
+  content: '';
+  background-color: var(--tab-line-color);
+  background-image: linear-gradient(90deg, rgba(0,0,0,0.6) 1%, transparent 50%, rgba(0,0,0,0.6) 99%);
+  clip-path: polygon(0 0, 100% 0%, 100% 100%, 0% 100%, 0% 88%, 2% 95%, 98% 95%, 100% 85%, 100% 20%, 98.5% 6%, 1.5% 6%, 0% 20%);
+  top: 2px;
+  left: 2px;
+  bottom: 3px;
+  right: 2px;
+  position: absolute;
+  z-index: -1;
+}
+
+.tabbrowser-tab[multiselected="true"]:not([visuallyselected]) .tab-background {
+  border-image: linear-gradient(90deg, color-mix(in srgb, var(--tab-line-color) 40%, black) 1%, 
+                              var(--tab-line-color) 50%, 
+                              color-mix(in srgb, var(--tab-line-color) 40%, black) 99%) 1 !important;
+  border-style: dotted !important;
+  border-width: 1px !important;
+  border-left: 0 !important;
+  border-right: 0 !important;
+  margin-top: 3px !important;
+  margin-bottom: 3px !important;
+}
+
+/* Tab separators */
+.tabbrowser-tab:not([visuallyselected]) .tab-background {
+  border-right: 1px solid rgba(60,60,60,0.6) !important}
+
+.tabbrowser-tab[beforeselected-visible] .tab-background {
+  border-right: none !important}
+
+/* Tabs background color when using a lightweight theme */
+#main-window:not([lwt-default-theme-in-dark-mode]) #tabbrowser-tabs:not([movingtab]) .tab-background[selected="true"]:-moz-lwtheme {
+  background-image: none !important;
+  background-color: var(--lwt-selected-tab-background-color) !important;
+}
+
+/* Tabs container line */
+.tabbrowser-tab .tab-context-line {
+  height: var(--tab-min-height) !important;
+  clip-path: polygon(5% 95%, 95% 95%, 95% 100%, 5% 100%)
 }
 
 /* These change the scrollbar color inside dialogs (not pages) */
@@ -203,19 +287,19 @@ for icons on the bookmarks bar under the url bar */
 
 /* This prevents any custom windows theme to change the background color
 of the minimize, maximize and close buttons */
-#titlebar .titlebar-min:not(:hover), #titlebar .titlebar-max:not(:hover), 
-#main-window[sizemode="maximized"] #titlebar .titlebar-max:not(:hover),
-#titlebar .titlebar-close:not(:hover), #titlebar .titlebar-restore:not(:hover)
+.titlebar-min:not(:hover), .titlebar-max:not(:hover), 
+#main-window[sizemode="maximized"] .titlebar-max:not(:hover),
+.titlebar-close:not(:hover), .titlebar-restore:not(:hover)
 {background-color: transparent !important}
 
 /* This changes the color on hover of the minimize and maximize buttons */
-#titlebar .titlebar-min:hover, #titlebar .titlebar-max:hover, 
-#main-window[sizemode="maximized"] #titlebar .titlebar-max:hover,
-#titlebar .titlebar-restore:hover
+.titlebar-min:hover, .titlebar-max:hover, 
+#main-window[sizemode="maximized"] .titlebar-max:hover,
+.titlebar-restore:hover
 {background-color: var(--Min-max-buttons-hover-bg) !important}
 
 /* This changes the close button hover color */
-#titlebar .titlebar-close:hover {background-color: #d00 !important}
+.titlebar-close:hover {background-color: #d00 !important}
 
 /* Make tab background transparent */
 #tabbrowser-tabs:not([movingtab]) > .tabbrowser-arrowscrollbox > .tabbrowser-tab 
@@ -309,6 +393,7 @@ fieldset {border-color: #666 !important}
 checkbox .checkbox-check {
   -moz-appearance: none !important;
   border: 1px solid #666 !important;
+  border-radius: 2px;
   background-color: #444 !important;
   transition: color 0.3s;
   min-width: 12px;
@@ -318,18 +403,13 @@ checkbox:not([disabled]):hover .checkbox-check {
   box-shadow: 0 0 4px #0084ff !important;
   border-color: #0084ff !important}
 
-checkbox[checked] .checkbox-check {
-  background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="15px" height="15px" viewBox="0 0 16 16" ><path fill="rgb(200,200,200)" d="M 13.09,2.87 C 13.09,2.87 6.00,11.00 6.00,11.00 6.00,11.00 2.00,9.00 2.00,9.00 4.25,12.81 7.00,14.00 7.00,14.00 9.24,10.42 12.04,7.39 13.09,2.87 Z" /></svg>') no-repeat center center !important;
+checkbox[checked] .checkbox-check, menuitem[type="checkbox"] .menu-iconic-left[checked="true"] {
+  background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="15px" height="15px" viewBox="1 1 15 15" ><path fill="rgb(200,200,200)" d="M 13.09,2.87 C 13.09,2.87 6.00,11.00 6.00,11.00 6.00,11.00 2.00,9.00 2.00,9.00 4.25,12.81 7.00,14.00 7.00,14.00 9.24,10.42 12.04,7.39 13.09,2.87 Z" /></svg>') no-repeat center center !important;
   border: 1px solid #0084ff !important;
   background-color: transparent !important}
 
-#main-menubar .menu-iconic-left, #toolbar-context-menu .menu-iconic-left {
-  -moz-appearance: none !important; 
-  width: 28px !important;
-  height: 16px !important}
-
 #main-menubar .menu-iconic-left[checked="true"], #toolbar-context-menu .menu-iconic-left[checked="true"] {
-  background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="15px" height="15px" viewBox="0 0 16 16" ><path fill="rgb(200,200,200)" d="M 13.09,2.87 C 13.09,2.87 6.00,11.00 6.00,11.00 6.00,11.00 2.00,9.00 2.00,9.00 4.25,12.81 7.00,14.00 7.00,14.00 9.24,10.42 12.04,7.39 13.09,2.87 Z" /></svg>') no-repeat center center !important;
+  background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="15px" height="15px" viewBox="1 1 15 15" ><path fill="rgb(200,200,200)" d="M 13.09,2.87 C 13.09,2.87 6.00,11.00 6.00,11.00 6.00,11.00 2.00,9.00 2.00,9.00 4.25,12.81 7.00,14.00 7.00,14.00 9.24,10.42 12.04,7.39 13.09,2.87 Z" /></svg>') no-repeat center center !important;
 }
 
 /* Radio button coloring */
@@ -368,7 +448,7 @@ dialog menulist:hover, #print-preview-scale:hover, #printPageSetupDialog menulis
 #printPageSetupDialog menulist:hover {background-color: #666 !important}
 
 dropmarker[exportparts="icon: dropmarker-icon"] {
-	-moz-appearance: none !important}
+  -moz-appearance: none !important}
 
 /* Release version dialog */
 #aboutDialog {
@@ -381,7 +461,7 @@ window:not(#main-window):not(#CookiesDialog):not(#SignonViewerDialog):not(.theme
 
 /* Color for most buttons */
 dialog button, toolbar[printpreview="true"] button, 
-#print-preview-toolbar button, .dialog-button-box button{
+#print-preview-toolbar button{
   -moz-appearance: none !important;
   border-radius: 3px !important;
   background-color: #555 !important;
@@ -389,9 +469,42 @@ dialog button, toolbar[printpreview="true"] button,
   padding: 2px !important}
 
 dialog button:hover, toolbar[printpreview="true"] button:hover,
-#print-preview-toolbar button:hover, .dialog-button-box button:hover {
+#print-preview-toolbar button:hover {
   background-color: #222 !important;
   color: #fff !important}
+
+.dialog-button-box button {
+  -moz-appearance: none !important;
+  border-radius: 3px !important;
+  padding: 2px 8px !important;
+  background-color: #444 !important;
+  color: #ccc !important
+}
+
+.dialog-button-box button:hover {
+  background-color: #555 !important;
+  color: #fff !important;
+}
+
+.dialog-button-box button:focus {
+  background-color: #222 !important;
+  color: #fff !important;
+}
+
+.dialog-button-box button[dlgtype="accept"] {
+  background-color: var(--buttons-primary-button-bgcolor) !important;
+  color: var(--buttons-primary-button-color) !important;
+}
+
+.dialog-button-box button[dlgtype="accept"]:hover {
+  background-color: var(--buttons-primary-button-hover-bgcolor) !important;
+  color: var(--buttons-primary-button-color) !important;
+}
+
+.dialog-button-box button[dlgtype="accept"]:active {
+  background-color: var(--buttons-primary-button-active-bgcolor) !important;
+  color: var(--buttons-primary-button-color) !important;
+}
 
 /* This changes the missing dialog buttons */
 .dialog-button, .wizard-button {
@@ -436,6 +549,10 @@ dialog textbox[focused="true"], toolbar[printpreview="true"] textbox[focused="tr
 
 /* The windows default theme colors will mainly affect the customizing page (when
 you aren't using the default dark theme of mozilla, that is) */
+
+/* Required for the degradation on top of the window */ 
+#main-window:not([lwt-default-theme-in-dark-mode]) #customization-container {
+  background-color: var(--toolbar-non-lwt-bgcolor) !important}
 
 /* The customization page button colors */
 .customizationmode-button {
@@ -490,38 +607,15 @@ you aren't using the default dark theme of mozilla, that is) */
 
 /* This one changes the letters color of all context menus */
 menu, menuitem, window menuitem {
-  color: var(--Context-menu-text-color) !important;
-  -moz-appearance: none !important}
-
-/* Padding for all menu items (do NOT change unless you want an spaced or indented upon 
-selection effect). The open in tabs bookmark item is added here since it also needs the 
-padding that we remove in the next rule */ 
-menuitem, .bookmark-item .openintabs-menuitem,
-menupopup > menu {
-  padding-top: 1px !important;
-  padding-bottom: 1px !important}
-
-#main-menubar menuitem, #main-menubar menu, menupopup > menuitem, 
-#placesToolbar #organizeButton > *, #placesToolbar #viewMenu > *,
-#placesToolbar #maintenanceButton > * {
-  padding-top: 2px !important;
-  padding-bottom: 2px !important}
-
-/* This removes the unnecesary padding from the bookmark items */
-.bookmark-item menupopup:not([emptyplacesresult="true"]) menuitem {
-  padding-top: 0px !important;
-  padding-bottom: 0px !important}
-
-.bookmark-item menupopup[emptyplacesresult="true"] menuitem {
-  min-height: 25px !important;
-}
+  color: var(--Context-menu-text-color) !important}
 
 /* This changes the color on hover of the context-menu items */
 menubar > menu[_moz-menuactive="true"],
 menupopup > menu[_moz-menuactive="true"],
 popup > menu[_moz-menuactive="true"],
-menuitem[_moz-menuactive="true"]
-{background-color: var(--Context-menu-highlight) !important}
+menuitem[_moz-menuactive="true"] {
+  background-color: var(--Context-menu-highlight) !important;
+  --menuitem-hover-background-color: var(--Context-menu-highlight) !important}
 
 /* This does the same but for disabled ones */
 menubar > menu[_moz-menuactive="true"][disabled="true"],
@@ -530,14 +624,18 @@ popup > menu[_moz-menuactive="true"][disabled="true"],
 menuitem[_moz-menuactive="true"][disabled="true"] 
 {background-color: rgba(0,0,0,0.3) !important} 
 
+
 /* This changes the text color of the greyed out actions on the context menus */
-menuitem[disabled="true"], popup > menu[disabled="true"],
-menupopup > menu[disabled="true"], menubar > menu[disabled="true"]{color: #777 !important}
+menuitem[disabled="true"], menu[disabled="true"], 
+menuitem[disabled="true"] label, menu[disabled="true"] label {
+  color: #666 !important;
+}
 
 /* This one applies to all context menus (If you want to theme the browser this one is better instead 
 of going one by one) */
-menupopup:not(.PanelUI-subView):not([placespopup="true"]) {
-  background-color: var(--Context-menu-background) !important}
+menupopup:not(.PanelUI-subView):not([placespopup="true"]), .menupopup-arrowscrollbox {
+  background-color: var(--Context-menu-background) !important;
+  border-color: #555 !important}
 
 /* The following code changes the borders of all the context menus (except the ones above mentioned),
 as well as ignoring the bookmark menu context menu */
@@ -556,7 +654,6 @@ menuseparator {
 
 /* Context menu navigation tools (back, forward, reload) background color */
 #context-navigation {
-  -moz-appearance: none !important;
   background-color: var(--Context-menu-background) !important;
   padding-bottom: 0px !important}
 
@@ -584,8 +681,6 @@ menupopup::part(drop-indicator) {background-color: #5af !important}
 /* Other colors of the bookmark popup */
 .panel-header, 
 #identity-popup-mainView-panel-header {background-color: rgba(0,0,0,0.2) !important}
-
-#editBookmarkPanelBottomButtons.panel-footer {background-color: #444 !important}
 
 /* Remove cookies headers on url bar popup */
 .identity-popup-cookiesView-list-header {color: #ddd !important}
@@ -675,7 +770,6 @@ if necessary depending on if you are using a custom OS theme (which may mess up 
 #editBMPanel_namePicker, #editBMPanel_tagsField,
 #editBMPanel_tagsSelector, #editBMPanel_locationField, 
 #editBMPanel_keywordField, #searchFilter {
-  transition: all 0.25s ease-in-out !important;
   -moz-appearance: none !important; 
   border: 1px solid #555 !important;
   background-color: #404040 !important;
@@ -732,25 +826,22 @@ if necessary depending on if you are using a custom OS theme (which may mess up 
   color: #fff !important}
 
 #editBMPanel_folderMenuList {
-	-moz-appearance: none !important;
-	border: none !important;
-	background: #484848 !important;
-	color: #ddd !important;
-	padding: 3px;}
+  -moz-appearance: none !important;
+  border: none !important;
+  background: #484848 !important;
+  color: #ddd !important;
+  padding: 3px;}
 
 #editBMPanel_folderMenuList:hover, #editBMPanel_folderMenuList:focus {
-	background: #555 !important;
-	color: #fff !important}
+  background: #555 !important;
+  color: #fff !important}
 
 dropmarker {
-	background-color: transparent !important;
+  background-color: transparent !important;
 }
 
 /* These change the downloads history list background */
 #downloadsRichListBox {background: #444 !important; color: #ccc !important}
-
-/* BOOKMARK PROPERTIES WINDOW */
-#bookmarkproperties {width: 55em}
 
 /* PAGE INFORMATION WINDOW */
 
@@ -937,16 +1028,16 @@ dropmarker {
 
 /* Changes all autocomplete popups */
 #PopupAutoComplete .autocomplete-richlistbox {
-	background-color: var(--Autocomplete-popup-background) !important;
-	color: var(--Autocomplete-popup-text-color) !important}
+  background-color: var(--Autocomplete-popup-background) !important;
+  color: var(--Autocomplete-popup-text-color) !important}
 
 #PopupAutoComplete > richlistbox > richlistitem[originaltype="loginsFooter"] {
-	background-color: rgba(255,255,255,0.2) !important;
-	color: #ddd !important}
+  background-color: rgba(255,255,255,0.2) !important;
+  color: #ddd !important}
 
 #PopupAutoComplete > richlistbox > richlistitem[originaltype="loginsFooter"]:hover {
-	background-color: rgba(255,255,255,0.3) !important;
-	color: #fff !important}
+  background-color: rgba(255,255,255,0.3) !important;
+  color: #fff !important}
 
 .line1-label {color: #ddd !important}
 .line2-label {color: #aaa !important}
@@ -976,20 +1067,8 @@ dropmarker {
   background: var(--Search-engine-choices-gradient) !important}
 
 /* Changes the color of search engine options button */
-.search-setting-button {
-  background: #222 !important;
-  color: #777 !important;
-  border-top: 3px solid #333 !important;
-  border-left: 3px solid #333;
-  border-right: 3px solid #111;
-  border-bottom: 3px solid #111;}
-
 .search-setting-button:hover {
-  background: #111 !important;
-  border-top: 3px solid #111 !important;
-  border-left: 3px solid #111;
-  border-right: 3px solid #333;
-  border-bottom: 3px solid #333;}
+  background: rgba(255,255,255,0.1) !important}
 
 /* Changes the color of searched item on the search popup */
 .search-panel-input-value {
@@ -1104,7 +1183,7 @@ Enable this if you are having issues with some addon popup texts and you are not
 #customizationui-widget-panel .panel-arrow {fill: #fff !important}
 .webextension-popup-browser {background: #fff !important}
 
-/* Fix for the panel arrows for extensions (Only enable if using the addons file) */
+/* Fix for the panel arrows for extensions (Only enable if using the addons file) *//*
 #customizationui-widget-panel[viewId="PanelUI-webext-_b9db16a4-6edc-47ec-a1f4-b86292ed211d_-browser-action-view"] .panel-arrow,
 #customizationui-widget-panel[viewId="PanelUI-webext-jid1-mnnxcxisbpnsxq_jetpack-browser-action-view"] .panel-arrow,
 #customizationui-widget-panel[viewId="PanelUI-webext-s3download_statusbar-browser-action-view"] .panel-arrow {
@@ -1118,583 +1197,4 @@ Enable this if you are having issues with some addon popup texts and you are not
 
 #customizationui-widget-panel[viewId="PanelUI-webext-tab-session-manager_sienori-browser-action-view"] .panel-arrow {
   fill: #36b2b2 !important}
-
-/* Make temporary containers (pink color) bottom line invisible *//*
-.identity-color-pink .tab-bottom-line {
-  --identity-tab-color: transparent !important}
-
-#userContext-icons.identity-color-pink {display: none !important}
-
-
-/* ^ COLORING PART ENDS HERE - FEATURES PART STARTS HERE v */
-
-/* This deletes the space that comes before the min/max/close button (space where you can place addons), but
-after the tabs section */
-.titlebar-spacer {width: 5px !important}
-
-/* SIDEBAR */
-
-/* Allow sidebar to be closed completely using the slider */
-#sidebar-box {overflow-x: hidden !important}
-
-#sidebar {
-  min-width: 0px !important;
-  max-width: none !important;
-  overflow-x: hidden !important}
-
-/* URL bar */
-
-/* Disables resizing of the URL-bar when the search suggestions popup isn't open */
-#urlbar[breakout-extend]:not([open]) {
-  width: 100% !important;
-  top: calc((var(--urlbar-toolbar-height) - var(--urlbar-height)) / 2) !important;
-  left: 0 !important;
-  height: var(--urlbar-height) !important;
-}
-
-#urlbar[breakout-extend]:not([open]) > #urlbar-input-container {
-  height: 100% !important;
-  padding-inline: 0 !important;
-  padding-block: 0 !important;
-}
-
-#urlbar[breakout-extend]:not([open]) > #urlbar-background {
-  box-shadow: none !important;
-}
-
-/* This allows you to change the font of the url to prevent ULR spoofing with a more
-differentiable font (Thanks to BelladonnavGF for the tip) */ 
-
-/* v Delete the "/*" after this comment to use it */ 
- /*
-#urlbar {font-family: Georgia !important}
-
-/* TABS */
-
-/* Tab bar below (You can set the order of each bar here. 1 for top, and 3 bottom) */
-
-/* Explanation of what each rule affects:
-- #nav-bar is the ID for the URL bar. 
-- #PersonalToolbar the ID for the bookmarks bar.
-- #titlebar should be affects the tabs bar and the menu bar (where file/tools menus are) */
-/*
-#nav-bar {-moz-box-ordinal-group: 1 !important}
-#PersonalToolbar {-moz-box-ordinal-group: 2 !important}
-#titlebar {-moz-box-ordinal-group: 3 !important}
-
-#toolbar-menubar .titlebar-buttonbox-container {
-  display: block !important;
-  float: right !important}
-
-/* You may need to change this to remove padding above tabs *//*
-#titlebar {margin-top: -7px !important}
-
-/* Change the non 0 px values to any other to make the area of each menubar item bigger. 
-The values are 1px 0 1px 0 by default (corresponding to Top, Right, Down, Left sides) *//*
-#main-menubar > menu {padding: 5px 0 5px 0 !important}
-
-/* Don't change the #navigator-toolbox margin unless you want more margin on top *//*
-#main-window:not([sizemode="fullscreen"]) #navigator-toolbox {margin-top: 35px !important}
-/* ^ Don't change the margin to anything lower than 35px if you want to see the menu bar on top of all bars ^ */
-/* ^ Change to 10px to use menu-over-tabs instead ^ */
-
-/* v This changes the menu bar on top of the screen instead of over the tab bar. Delete or comment out 
-if you want to use menu-over-tabs version *//*
-#toolbar-menubar {
-  position: fixed !important; 
-  width: 100% !important;
-  top: 0 !important;
-  margin-top: 7px !important}
-
-#main-window[sizemode="fullscreen"] #toolbar-menubar {display: none !important}
-#main-window:not([sizemode="fullscreen"]) #toolbar-menubar {display: block !important}
-/* ^ There seems to be an issue with the "top:" rule inside #toolbar-menubar that would not allow fullscreen
-to autohide, so it's safest to just hide it on fullscreen */
-
-/* ROUNDED TABS */ 
-/* v Delete the "/*" after this comment to use it */ 
-  /*
-.tab-background {
-  border-radius: 15px 15px 0px 0px !important;
-  border-image: none !important}
-
-.tab-line {
-  margin-left: 12px;
-  margin-right: 12px} 
-
-/* TAB CLOSE BUTTON ALWAYS VISIBLE */
-#tabbrowser-tabs .tabbrowser-tab:not([pinned]) .tab-close-button {
-  	visibility: visible !important;
-  	display: block !important}
-
-#tabbrowser-tabs .tabbrowser-tab:not([pinned])[faviconized="true"] .tab-close-button {
-  	visibility: collapse !important;
-  	display: none !important}
-
-#tabbrowser-tabs .tabbrowser-tab[soundplaying="true"] {
-  min-width: calc(var(--tab-min-width) + 18px) !important}
-
-/* MULTIROW BOOKMARKS */
-#PersonalToolbar {
-  max-height: unset !important}
-
-#PlacesToolbar > hbox:first-child {
-  display: block}
-
-#PlacesToolbarItems {
-    display: flex;
-    flex-wrap: wrap}
-
-#PlacesChevron {
-  padding-top: 0 !important;
-  padding-bottom: 0 !important}
-
-/* CONTEXT MENU COMMANDS */
-
-/* All of these commands are divided so that they can be explained, but they are all
-part of the same rule */
-
-/* -----TABS CONTEXT MENU----- */
-
-/* RELOAD TABS */
-
-/* Reload tab *//*
-#context_reloadTab,
-
-/* Reload selected tabs *//*
-#context_reloadSelectedTabs, 
-
-/* Reload selected tabs (title bar context menu) */
-#toolbar-context-reloadSelectedTabs,
-#toolbar-context-reloadSelectedTab,
-
-
-/* MUTE TABS */
-
-/* Mute tab */
-#context_toggleMuteTab,
-
-/* Mute selected tabs *//*
-#context_toggleMuteSelectedTabs,
-
-
-/* SELECT TABS */
-
-/* Select all tabs */
-#context_selectAllTabs,
-
-/* Select all tabs (title bar context menu) *//*
-#toolbar-context-selectAllTabs
-
-
-/* PIN/UNPIN TABS */
-
-/* Pin tab */
-#context_pinTab,
-
-/* Pin selected tabs */
-#context_pinSelectedTabs,
-
-/* Unpin tab */
-#context_unpinTab,
-
-/* Unpin selected tabs */
-#context_unpinSelectedTabs,
-
-
-/* OPEN/DUPLICATE/RE-OPEN TABS */
-
-/* Duplicate tab *//*
-#context_duplicateTab,
-
-/* Duplicate selected tabs *//*
-#context_duplicateTabs,
-
-/* Open tab in new window */
-#context_openTabInWindow,
-
-/* Reopen in container *//*
-#context_reopenInContainer,
-
-
-/* BOOKMARK TABS */
-
-/* Bookmark tab */
-#context_bookmarkTab,
-
-/* Bookmark selected tabs */
-#context_bookmarkSelectedTabs, 
-
-/* Bookmark selected tabs (title bar context menu) */
-#toolbar-context-bookmarkSelectedTab,
-
-
-/* CLOSE/UNDO-CLOSE TABS */
-
-/* Close multiple tabs */
-#context_closeTabOptions,
-
-/* Close all tabs to the right */
-#context_closeTabsToTheEnd,
-
-/* Close all other tabs */
-#context_closeOtherTabs,
-
-/* Close tab *//*
-#context_closeTab,
-
-/* Undo tab closing *//*
-#context_undoCloseTab, 
-
-
-/* SEPARATORS */
-
-/* Separator after "Duplicate tab" *//*
-#context_duplicateTabs + menuseparator,
-
-/* Separator after "Close tab" *//*
-#context_closeTab + menuseparator,
-
-/* Separator after "Send tab to device" */
-#context_sendTabToDevice + menuseparator,
-
-
-/* OTHER */
-
-/* Move tab */
-#context_moveTabOptions,
-
-/* Send tab to device */
-#context_sendTabToDevice,
-
-
-/* -----BOOKMARK ITEMS CONTEXT MENU----- */
-
-/* OPEN BOOKMARKS */
-
-/* Open bookmark */
-#placesContext_open,
-
-/* Open bookmark in new tab */
-#placesContext_open\:newtab,
-
-/* Open bookmark in new window */
-#placesContext_open\:newwindow,
-
-/* Open bookmark in new private window */
-#placesContext_open\:newprivatewindow,
-
-/* Open all tabs in a bookmark folder & it's separator */
-#placesContext_openContainer\:tabs, 
-#placesContext_open\:newprivatewindow[disabled="true"],
-
-/* NEW ELEMENT */
-
-/* Create new bookmark *//*
-#placesContext_new\:bookmark,
-
-/* Create new folder *//*
-#placesContext_new\:folder,
-
-/* Create new separator *//*
-#placesContext_new\:separator,
-
-
-/* EDIT ACTIONS */
-
-/* Cut *//*
-#placesContext_cut,
-
-/* Copy *//*
-#placesContext_copy,
-
-/* Paste *//*
-#placesContext_paste,
-
-/* Delete & it's separator *//*
-#placesContext_delete, #placesContext_deleteSeparator,
-
-/* SEPARATORS (Only those with more than 1 element in their section) */
-
-/* Separator after "Open in a new private window" */
-#placesContext_openSeparator,
-
-/* Separator after "Create new separator" *//*
-#placesContext_newSeparator,
-
-/* Separator after "Paste" *//*
-#placesContext_editSeparator,
-
-
-/* OTHER */
-
-/* Sort by name & it's separator *//*
-#placesContext_sortBy\:name, #placesContext_sortSeparator
-
-/* Properties & it's separator *//*
-#placesContext_show\:info, #placesContext_show\:info + menuseparator,
-
-
-/* -----WEBAREA CONTEXT MENU----- */
-
-/* NAVIGATION BUTTONS (individual) */
-
-/* Navigation back arrow *//*
-#context-back,
-/* Navigation forward arrow *//*
-#context-forward,
-/* Navigation reload *//*
-#context-reload,
-/* Navigation stop reloading *//*
-#context-stop,
-/* Navigation bookmark this page *//*
-#context-bookmarkpage,
-
-/* NAVIGATION BUTTONS CONTAINER (All navigation buttons & it's separator) */
-#context-navigation, #context-sep-navigation,
-
-
-/* SAVE ELEMENT AS... */
-
-/* Save Page As... *//*
-#context-savepage,
-
-/* Save Link As... *//*
-#context-savelink,
-
-/* Save Page to Pocket */
-#context-pocket,
-
-/* Save Link to Pocket */
-#context-savelinktopocket,
-
-/* Save image as... *//*
-#context-saveimage,
-
-/* Save video as... *//*
-#context-savevideo,
-
-/* Save video screenshot *//*
-#context-video-saveimage,
-
-/* Save audio as... *//*
-#context-saveaudio, 
-
-
-/* COPY ELEMENT */
-
-/* Copy link *//*
-#context-copylink,
-
-/* Copy email *//*
-#context-copyemail,
-
-/* Copy image *//*
-#context-copyimage-contents,
-
-/* Copy image location *//*
-#context-copyimage, 
-
-/* Copy video location *//*
-#context-copyvideourl, 
-
-/* Copy audio location *//*
-#context-copyaudiourl,
-
-
-/* SEND ELEMENT (via email) */
-
-/* Send page... */ 
-#context-sendpage,
-
-/* Send video... */
-#context-sendvideo,
-
-/* Send image... */ 
-#context-sendimage,
-
-/* Send link... */ 
-#context-sendlink,
-
-
-/* SEND TAB TO DEVICE */
-
-/* Send page to device... (including it's separator)*/ 
-#context-sendpagetodevice, #context-sep-sendpagetodevice,
-
-/* Send link to device... (including it's separator)*/ 
-#context-sendlinktodevice, #context-sep-sendlinktodevice,
-
-
-/* SEARCH ENGINE */
-
-/* Search X on your default search engine & it's separator */
-#context-searchselect,
-#context-sep-selectall,
-
-/* Search X on your default search engine privately */
-#context-searchselect-private,
-
-/* Add a keyword for this search... */
-#context-keywordfield,
-
-
-/* IMAGE RELATED */
-
-/* Set image as desktop background... */
-#context-setDesktopBackground, 
-
-/* Separator before "Set image as background" */
-#context-sep-setbackground,
-
-/* View image Info */
-#context-viewimageinfo,
-
-/* View background image *//*
-#context-viewbgimage,
-
-
-/* INSPECT */
-
-/* Inspect Element *//*
-#context-inspect,
-
-/* Inspect accessibility properties */
-#context-inspect-a11y,
-
-/* Inspect separator *//*
-#inspect-separator,
-
-/* View source code *//*
-#context-viewsource,
-
-/* View selected source code *//*
-#context-viewpartialsource-selection,
-
-/* View page info *//*
-#context-viewinfo,
-
-
-/* OPEN LINK IN *
-
-/* Open link in a new tab */
-#context-openlinkintab,
-/* Open link in a new window */
-#context-openlink,
-/* Open link in a new private window */
-#context-openlinkprivate,
-/* Open Link in New Container Tab *//*
-#context-openlinkinusercontext-menu,
-
-/* EDIT ACTIONS */
-
-/* Undo *//*
-#context-undo, 
-
-/* Cut *//*
-#context-cut,
-
-/* Copy *//*
-#context-copy,
-
-/* Paste *//*
-#context-paste,
-
-/* Delete *//*
-#context-delete,
-
-
-/* IFRAME CONTEXT MENU */
-
-/* This frame *//*
-#contentAreaContextMenu #frame,
-
-/* Show only this frame *//*
-#context-showonlythisframe,
-
-/* Open frame in a new window */
-#context-openframe,
-
-/* Reload frame & it's separator *//*
-#context-reloadframe, #context-reloadframe + menuseparator,
-
-/* Bookmark this frame */
-#context-bookmarkframe,
-
-/* Save frame as... */
-#context-saveframe,
-
-/* Separator after "Open this frame in..." actions */
-#open-frame-sep,
-
-/* Separator after "Save frame as..." */
-#context-saveframe + menuseparator,
-
-/* Print frame & it's separator */
-#context-printframe, #context-printframe + menuseparator,
-
-/* View frame source code *//*
-#context-viewframesource,
-
-/* View frame info *//*
-#context-viewframeinfo,
-
-
-/* SEPARATORS (Special context menus or sections with only 1 element not included here) */
-
-/* Separator after navigation buttons *//*
-#context-sep-navigation,
-
-/* Separator after "Open link in..." commands  */
-#context-sep-open,
-
-/* Separator after link manipulation (add to bookmarks, save link, copy link...) commands *//*
-#context-sep-copylink,
-
-/* Separator after "Copy media" section *//*
-#context-sep-copyimage,
-
-/* Separator after "Fill login" section *//*
-#fill-login-and-generated-password-separator, 
-
-/* Separator after edit actions section */
-#context-sep-paste,
-
-/* Separator after "set image as desktop background" */
-#context-sep-ctp,
-
-/* Separator after "Select all" *//*
-#context-sep-selectall, 
-
-/* Separator after "take screenshot" */
-#spell-separator,
-
-/* Separator before "This frame" */
-#frame-sep,
-
-
-/* MISC */
-
-/* Bookmark this link */
-#context-bookmarklink,
-
-/* Select everything */
-#context-selectall,
-
-/* Fill login info *//*
-#fill-login,
-
-/* Use generated password *//*
-#fill-login-generated-password, 
-
-/* Take a screenshot & it's separator *//*
-#screenshots_mozilla_org-menuitem-_create-screenshot, #_context-media-eme-separator 
-
-/* Addon shits */
-#context-openlinkinusercontext-menu
-
-/* Don't delete this last line */
-{display: none !important}
-
-/* Add some separators that are required after removing items */
-#inspect-separator {display: block !important}
+*/
