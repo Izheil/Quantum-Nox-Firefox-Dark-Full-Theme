@@ -18,6 +18,7 @@ If you want to know how to change some colors of the theme, check the [wiki](htt
 Files updated:
 
 * __userChrome.css__: Last update aimed at Photon layout. Fixed some white dialogs.
+* __userContent.css__: Last update aimed at Photon layout. Fixed some issues with `about:` category colors and checkboxes on `about:preferences`.
 
 ### Pre-Last update: 22/04/2021
 

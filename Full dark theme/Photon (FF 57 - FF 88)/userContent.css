@@ -1,7 +1,7 @@
 /* You can find an updated version here: https://github.com/Izheil/Quantum-Nox-Firefox-Dark-Full-Theme */
 /* Made by Izheil */
 
-/* Last updated: 06/04/2021 */
+/* Last updated: 27/04/2021 */
 
 /* This part imports the Addons file if there is one, so that you don't have to edit the dynamic URL
 from the addons rules every time we update anything here */
@@ -1319,10 +1319,16 @@ input[type="checkbox"]:checked {
 	--in-content-item-hover: rgba(0,90,170,0.25) !important;
 	background-color: #303030 !important}
 
+#sidebar {background-color: #303030}
+
 /* Main Content */
 .main-content {
  	background-color: var(--in-content-page-background) !important;
     color: #AAA !important}
+
+.category {color: #ddd !important}
+.category[selected="true"], .category.selected, 
+.category[aria-selected="true"] {color: var(--in-content-category-text-selected) !important}
 
 .groupbox-title, 
 
@@ -1413,11 +1419,11 @@ menulist:hover {background: rgba(255,255,255,0.3) !important; color: #fff !impor
 
 .no-results-image, .checkbox-icon {filter: invert(85%)}
 
-.radio-check[selected], .checkbox-check[checked] {
-	border: 1px solid #666 !important;}
+.radio-check:not([selected]), .checkbox-check:not([checked]) {
+	border: 1px solid #666 !important}
 
-checkbox:not([disabled]):hover > .checkbox-check {background-color: #333 !important}
-radio:not([disabled]):hover > .radio-check {background-color: #333 !important}
+checkbox:not([disabled]):hover > .checkbox-check:not([checked]) {background-color: #333 !important}
+radio:not([disabled]):hover > .radio-check:not([selected]) {background-color: #333 !important}
 }
 
 /*------ EXTENSIONS PAGE (about:addons) ------*/
