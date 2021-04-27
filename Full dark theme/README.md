@@ -1,15 +1,20 @@
 # Full dark theme for firefox
-Following the method described here, you will be able to give dark colors to firefox as shown in the following picture:
+**With Firefox 89 a new interface will be introduced to Firefox, which is known as "Proton". This new interface will introduce some changes that will require some changes in this theme.
+
+This is why now there are a "Photon" (for the old interface) and "Proton" (for the new interface) folders in here.
+Proton dark theme is still work in progress, but should work for the most part. It should be ready by the time it hits Firefox stable.**
+
+Following the method described here, you will be able to give dark colors to firefox as shown in the following pictures:
 
 ![Dark firefox UI](https://i.imgur.com/I4x1a8w.png)
 
 ![Dark addons](https://i.imgur.com/t1Nf65V.png)
 
-** As of Firefox 89 (Nightly), Proton will be introducing changes to the interface, so the theme will not look too great on it, and it won't be updated for Nightly until it stabilizes and Proton is released fully.**
-
 ## Installation
 
-**Note: As of Firefox 69, you will need to enable the use of these files through a configuration setting.** The preference in question is `toolkit.legacyUserProfileCustomizations.stylesheets`. Here is how you change its value:
+First you need to know which version of Firefox you are running. If you are running Firefox 88 or lower, use the files inside "Photon" folder, if you are running Firefox 89 or higher, use the ones on "Proton".
+
+**Note: As of Firefox 69+, you will need to enable the use of these files through a configuration setting.** The preference in question is `toolkit.legacyUserProfileCustomizations.stylesheets`. Here is how you change its value:
 
 1. Load `about:config` in the Firefox address bar.
 	1. Confirm that you will be careful.
@@ -21,7 +26,7 @@ Following the method described here, you will be able to give dark colors to fir
 * Click the "open folder" button inside the "profile folder" section.
 * Create a folder named "chrome" in your profile folder if it doesn't exist yet.
 * [Download the repository files](https://github.com/Izheil/Quantum-Nox-Firefox-Dark-Full-Theme/archive/master.zip) and uncompress them anywhere you like.
-* Place all files (.css files) from the "Full dark theme" folder to your "chrome" folder.
+* Place all files (.css files) from the "Full dark theme" folder that corresponds to your Firefox version to your "chrome" folder.
 * **Optional**: If you want to use the custom dark scrollbars, or dark tooltips, you will also have to enable JS injection using the installer in [releases](https://github.com/Izheil/Quantum-Nox-Firefox-Dark-Full-Theme/releases) (just don't select any function to install when patching if you don't need them), or patch your firefox manually with the method described [here](https://github.com/Izheil/Quantum-Nox-Firefox-Dark-Full-Theme/tree/master/Multirow%20and%20other%20functions/JS%20Loader).
 * **Optional**: Edit userChrome.css to change any style you aren't fully convinced with (or to give a different style to the unread tabs, etc...).
 * **Optional**: You can also edit userChrome.css to change the background of the `about:home` page.
