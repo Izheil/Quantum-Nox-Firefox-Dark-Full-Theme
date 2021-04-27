@@ -215,26 +215,72 @@ dialog, window, .prefpane,
  	background-color: #202020 !important;
  	color: #ccc !important}
 
+button[dlgtype="accept"] {
+	background-color: #004d99 !important;
+	color: #fff !important}
+
+button[dlgtype="accept"]:hover {
+	background-color: #0058af !important}
+
+button[dlgtype="accept"]:active {
+	background-color: #00264d !important}
+
 dialog button, window[subdialog="true"] button, 
-.certerror #advancedButton, .certerror #exceptionDialogButton {
-    background: #555 !important;
-    color: #ddd !important;
-    border: 1px solid #555 !important}
+.certerror #advancedButton, .certerror #exceptionDialogButton, dialog input[type="color"],
+button[dlgtype="cancel"], button[dlgtype="help"] {
+    background: #444 !important;
+    color: #ddd !important}
 
 dialog button:hover, window[subdialog="true"] button:hover, 
-.certerror #advancedButton:hover, .certerror #exceptionDialogButton:hover {
-	background: #666 !important;
+.certerror #advancedButton:hover, .certerror #exceptionDialogButton:hover,
+dialog input[type="color"]:hover, button[dlgtype="cancel"]:hover, button[dlgtype="help"]:hover {
+	background: #555 !important;
     color: #FFF !important;
 	text-decoration: none !important}
- 	
+
+button[dlgtype="cancel"]:active, button[dlgtype="help"]:active {
+	background-color: #111 !important;
+	color: #fff !important}
+
 dialog menulist .menulist-label-box {background: transparent !important}
-dialog menulist {
-	background: rgba(255,255,255,0.2) !important; 
+dialog menulist, dialog richlistbox {
+	background: rgba(255,255,255,0.1) !important; 
 	color: #ddd !important}
 
-dialog menulist:hover {
-	background: rgba(255,255,255,0.3) !important; 
+dialog menulist:hover, dialog richlistitem:not([selected]):hover {
+	background: rgba(255,255,255,0.2) !important; 
 	color: #fff !important}
+
+dialog richlistitem[selected] {
+	background-color: rgb(17, 93, 168) !important;
+	color: #fff !important}
+
+dialog menupopup {
+	background-color: #333 !important}
+
+dialog menupopup > menuitem:hover {
+	background-color: #444 !important;
+	color: #fff !important}
+
+dialog menupopup > menuitem[selected] {
+	background-color: rgb(3, 111, 179) !important;
+	color: #fff !important}
+
+dialog input:not([type="submit"]):not([type="button"]):not([type="checkbox"]):not([type="radio"]):not([type="color"]), 
+dialog textarea {
+	background-color: #333 !important;
+	color: #ccc !important;
+	border-color: #555 !important}
+
+dialog checkbox:not([checked]) .checkbox-check,
+dialog radio:not([selected]) .radio-check {
+	background-color: #333 !important;
+	border-color: #555 !important}
+
+dialog checkbox[checked] .checkbox-check,
+dialog radio[selected] .radio-check {
+	background-color: rgb(2, 128, 206) !important;
+	border: none !important}
 
 /* This changes the "add certificate exception" dialog background color */
 #badCertAdvancedPanel {background-color: #303030 !important; border-color: #666 !important}
