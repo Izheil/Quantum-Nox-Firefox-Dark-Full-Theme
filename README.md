@@ -43,6 +43,7 @@ You can enable multirow tabs as well as other functions using the installer in t
 ### Photon:
 ![Dark firefox UI (Photon)](https://i.imgur.com/I4x1a8w.png)
 
+### Example dialog window
 ![Dark firefox Dialog](https://i.imgur.com/q8MhDSX.png)
 
 If you are using Linux or Mac, or want to add some more functionability (like deleting some useless context menu commands), you will have to use the methods described inside one of the 3 main folders of this repository:
