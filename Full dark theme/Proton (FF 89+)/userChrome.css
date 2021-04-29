@@ -1,6 +1,6 @@
 /* You can find an updated version here: https://github.com/Izheil/Quantum-Nox-Firefox-Dark-Full-Theme */
 /* Made by Izheil */
-/* Last updated: 27/04/2021 */
+/* Last updated: 29/04/2021 */
 
 /* COLORING PART STARTS HERE */
 
@@ -657,7 +657,7 @@ menupopup:not(.PanelUI-subView):not([placespopup="true"]), .menupopup-arrowscrol
   background-color: var(--Context-menu-background) !important;
   border-color: #555 !important}
 
-#PlacesToolbarItems menupopup, #main-menubar menupopup {
+#PlacesToolbarItems menupopup, #main-menubar menupopup, #PlacesChevronPopup {
   -moz-appearance: none !important;
   background-color: var(--Context-menu-background) !important;
   border: 1px solid #555 !important}
