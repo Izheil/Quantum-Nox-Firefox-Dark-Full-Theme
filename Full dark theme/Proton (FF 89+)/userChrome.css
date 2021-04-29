@@ -653,7 +653,7 @@ menuitem[disabled="true"] label, menu[disabled="true"] label {
 
 /* These apply to all context menus (If you want to theme the browser this one is better instead 
 of going one by one) */
-menupopup:not(.PanelUI-subView):not([placespopup="true"]), .menupopup-arrowscrollbox {
+menupopup:not(.PanelUI-subView):not([id^="BMB_"]), .menupopup-arrowscrollbox {
   background-color: var(--Context-menu-background) !important;
   border-color: #555 !important}
 
@@ -662,9 +662,12 @@ menupopup:not(.PanelUI-subView):not([placespopup="true"]), .menupopup-arrowscrol
   background-color: var(--Context-menu-background) !important;
   border: 1px solid #555 !important}
 
+#BMB_bookmarksPopup menupopup {
+  background-color: transparent !important}
+
 /* The following code changes the borders of all the context menus (except the ones above mentioned),
 as well as ignoring the bookmark menu context menu */
-menupopup:not(.PanelUI-subView):not([placespopup="true"]) {
+menupopup:not(.PanelUI-subView):not([id^="BMB_"]) {
   -moz-appearance: none !important;
   border: 1px solid #555 !important}
 
