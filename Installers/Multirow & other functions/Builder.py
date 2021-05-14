@@ -50,7 +50,8 @@ if OSinUse == "Linux":
             accRoot = True
 
 elif OSinUse == "Windows" and ctypes.windll.shell32.IsUserAnAdmin() == 0:
-    ctypes.windll.shell32.ShellExecuteW(None, "runas", sys.executable, __file__, None, 1)
+    print("Not running as admin, restarting as admin...")
+    ctypes.windll.shell32.ShellExecuteW(None, "runas", sys.executable, subprocess.list2cmdline(sys.argv), None, 1)
     sys.exit()
 
 def readProfiles(profile):
@@ -368,6 +369,34 @@ def fullPatcher(FFversion, FFprofile):
     "This method patches both the root and profile folders"
     try:
         if FFversion != None:
+
+            configFiles = []
+            removeAltConfig = False
+            for r, d, f in os.walk(os.path.normpath(FFversion + "/defaults/pref")):
+                for file in f:
+                    configFiles.append(os.path.join(r, file))
+
+            # Removes non-standard configuration files if required
+            for conFile in configFiles:
+                if (conFile != os.path.normpath(FFversion + "/defaults/pref/channel-prefs.js") and
+                    conFile != os.path.normpath(FFversion + "/defaults/pref/config-prefs.js")):
+                    confError = ("A non-standard configuration file was detected on Firefox root folder " +
+                        "which might prevent the functions to work properly.\n" +
+                        "\nWould you like to remove the following configuration file " +
+                        "to fix the issue?\n\n" + conFile)
+                    if not argumentsInUse:
+                        removeAltConfig = messagebox.askyesno("Alternative configuration detected", confError)
+                        if removeAltConfig:
+                            os.remove(conFile)
+                        else:
+                            messagebox.showwarning("Possible compatibility problem", 
+                            "It is possible that the installed functions won't work until " +
+                            "you remove the non-standard configuration files inside this path:\n" +
+                            os.path.normpath(FFversion + "/defaults/pref"))
+                    else:
+                        print("The file " + conFile + " might prevent the functions from working as they should.\n" + 
+                              "If you added this file, remove it or merge it with 'config-prefs.js' in the same location.")
+
             # We first define the location of the files
             ConfPref = os.path.normpath(FFversion + "/defaults/pref/config-prefs.js")
             ConfJS = os.path.normpath(FFversion + "/config.js")
@@ -375,9 +404,9 @@ def fullPatcher(FFversion, FFprofile):
             # We patch the root folder here
             if os.access(ConfJS, os.F_OK) and os.access(ConfPref, os.F_OK):
 
-                distutils.file_util.copy_file(os.path.normpath(sys._MEIPASS + "/root/defaults/pref/config-prefs.js"), 
+                distutils.file_util.copy_file(os.path.normpath(sys._MEIPASS + "/root/defaults/pref/config-prefs.js"),
                                               os.path.normpath(FFversion + "/defaults/pref/"), update=True)
-                distutils.file_util.copy_file(os.path.normpath(sys._MEIPASS + "/root/config.js"), 
+                distutils.file_util.copy_file(os.path.normpath(sys._MEIPASS + "/root/config.js"),
                                               FFversion, update=True)
 
             elif os.access(os.path.normpath(FFversion + "/config.js"), os.F_OK) or \
@@ -413,7 +442,7 @@ def fullPatcher(FFversion, FFprofile):
                         os.path.normpath(FFprofile + "/chrome/utils"), update=True)
 
             else: 
-                shutil.copytree(os.path.normpath(sys._MEIPASS + "/utils"), 
+                shutil.copytree(os.path.normpath(sys._MEIPASS + "/utils"),
                                 os.path.normpath(FFprofile + "/chrome/utils"))
 
             if OSinUse == "Linux":
