@@ -62,7 +62,7 @@ but is disabled by default in this theme (Disable for the default tab line color
 /* Sets the hover color of some buttons */
 .tab-close-button:hover, #PlacesToolbarItems > .bookmark-item:hover, #nav-bar toolbarbutton:hover .toolbarbutton-badge-stack,
 #nav-bar toolbarbutton:hover > .toolbarbutton-icon, #titlebar .toolbarbutton-1:hover .toolbarbutton-badge-stack,
-#PersonalToolbar .toolbarbutton-1:hover {
+#PersonalToolbar .toolbarbutton-1:hover, #tabs-newtab-button:hover > .toolbarbutton-icon {
   background: rgba(255,255,255,0.15) !important;
   --toolbarbutton-hover-background: rgba(255,255,255,0.15) !important}
 
