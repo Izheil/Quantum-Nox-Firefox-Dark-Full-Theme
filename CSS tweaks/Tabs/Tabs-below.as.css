@@ -1,6 +1,6 @@
 /* You can find an updated version here: https://github.com/Izheil/Quantum-Nox-Firefox-Dark-Full-Theme */
 /* Made by Izheil */
-/* Last updated: 01/08/2020 */
+/* Last updated: 01/06/2021 */
 
 /* TAB BAR BELOW
 You can set the order of each bar here. 1 for top, and 3 bottom.
@@ -24,7 +24,7 @@ Explanation of what each rule affects:
 /* This enforces the size of the tabs+menu container to only be as big as the tabs container */
 #main-window #titlebar {
   -moz-appearance: none !important;
-  height: var(--tab-min-height) !important;
+  height: calc(var(--tab-min-height) + 8px) !important;
   box-sizing: border-box !important}
 
 /* This makes sure that the min/max/close buttons are as big as the tab bar */
@@ -59,6 +59,11 @@ if you want to use menu-over-tabs version */
 /* There seems to be an issue with the "top:" rule inside #toolbar-menubar that would not allow fullscreen
 to autohide, so it's safest to just hide it on fullscreen. Not necessary for menu-over-tabs. */
 #main-window[sizemode="fullscreen"] #toolbar-menubar {display: none !important}
+
+/* Fixes missing color on the titlebar */
+body > box {
+  background-color: var(--lwt-accent-color) !important;
+}
 
 /* Windows-only fixes. Not necesary for menu-over-tabs. */
 @media (-moz-os-version: windows-win10), (-moz-os-version: windows-win8), (-moz-os-version: windows-win7) {
