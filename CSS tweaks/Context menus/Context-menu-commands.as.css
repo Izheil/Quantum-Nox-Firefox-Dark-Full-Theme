@@ -432,7 +432,7 @@ Make sure to only do line breaks after a comma if you really need to (like in th
 #context-sep-selectall, 
 
 /* Separator after "take screenshot" */
-#spell-separator,
+#spell-separator, #context-sep-screenshots,
 
 /* Separator before "This frame" */
 #frame-sep,
