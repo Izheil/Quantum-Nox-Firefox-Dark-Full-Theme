@@ -1,7 +1,7 @@
 /* You can find an updated version here: https://github.com/Izheil/Quantum-Nox-Firefox-Dark-Full-Theme */
 /* Made by Izheil */
 
-/* Last updated: 28/04/2021 */
+/* Last updated: 01/06/2021 */
 
 /* This part imports the Addons file if there is one, so that you don't have to edit the dynamic URL
 from the addons rules every time we update anything here */
@@ -1426,6 +1426,8 @@ table {border-collapse: collapse}
 
 menulist[sizetopopup="pref"] .menulist-label-box {background: transparent !important}
 
+.sidebar-footer-link:hover {background-color: rgba(0,0,0,0.1) !important}
+
 .learnMore {color: var(--in-content-link-color) !important}
 .learnMore:hover {color: var(--in-content-link-color-hover) !important}
 .learnMore:active {color: var(--in-content-link-color-active) !important}
@@ -1501,6 +1503,12 @@ radio:not([disabled]):hover > .radio-check:not([selected]) {background-color: #3
 /* Context menus*/
 #header-utils-btn .scrollbox-innerbox,
 .arrowscrollbox-scrollbox {background-color: #444 !important}
+
+/* Context menu highlights */
+panel-list panel-item:hover {background: var(--in-content-context-highlight) !important}
+
+panel-item {
+	--in-content-button-background-hover: var(--in-content-context-highlight) !important}
 
 /* Element cards */
 .card.addon {
