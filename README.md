@@ -17,6 +17,7 @@ If you want to know how to change some colors of the theme, check the [wiki](htt
 
 Files updated:
 
+* __Context-menu-commands.as.css__: Added the missing separator after take screenshots.
 * __userChrome.css__: Fixes for the color of some hover buttons.
 * __userContent.css__: Fixes for highlight colors of elements on `about:addons` and `about:preferences` pages.
 
