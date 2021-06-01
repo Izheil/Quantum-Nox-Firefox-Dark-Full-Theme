@@ -22,7 +22,7 @@ Explanation of what each rule affects:
 /* This enforces the size of the tabs+menu container to only be as big as the tabs container */
 #main-window #titlebar {
   -moz-appearance: none !important;
-  min-height: var(--tab-min-height) !important;
+  min-height: calc(var(--tab-min-height) + 8px) !important;
   box-sizing: border-box !important}
 
 /* This makes sure that the min/max/close buttons are as big as the tab bar */

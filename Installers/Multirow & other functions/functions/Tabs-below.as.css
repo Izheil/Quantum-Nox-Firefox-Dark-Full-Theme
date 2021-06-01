@@ -61,9 +61,7 @@ to autohide, so it's safest to just hide it on fullscreen. Not necessary for men
 #main-window[sizemode="fullscreen"] #toolbar-menubar {display: none !important}
 
 /* Fixes missing color on the titlebar */
-body > box {
-  background-color: var(--lwt-accent-color) !important;
-}
+body > box {background-color: var(--lwt-accent-color)}
 
 /* Windows-only fixes. Not necesary for menu-over-tabs. */
 @media (-moz-os-version: windows-win10), (-moz-os-version: windows-win8), (-moz-os-version: windows-win7) {
