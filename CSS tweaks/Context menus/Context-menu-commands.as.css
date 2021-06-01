@@ -287,8 +287,8 @@ Make sure to only do line breaks after a comma if you really need to (like in th
 /* Send page to device... (including it's separator)*/ 
 #context-sendpagetodevice, #context-sep-sendpagetodevice,
 
-/* Send link to device... (including it's separator)*/ 
-#context-sendlinktodevice, #context-sep-sendlinktodevice,
+/* Send link to device... */ 
+#context-sendlinktodevice,
 
 
 /* SEARCH ENGINE */
@@ -412,6 +412,9 @@ Make sure to only do line breaks after a comma if you really need to (like in th
 
 /* Separator after "Open link in..." commands  */
 #context-sep-open,
+
+/* Separator after "Send link to device..." */
+#context-sep-sendlinktodevice,
 
 /* Separator after link manipulation (add to bookmarks, save link, copy link...) commands */
 #context-sep-copylink,
