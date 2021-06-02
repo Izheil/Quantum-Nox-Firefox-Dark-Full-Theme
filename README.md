@@ -18,6 +18,7 @@ If you want to know how to change some colors of the theme, check the [wiki](htt
 Files updated:
 
 * __Tab-state-coloring.as.css__: Fixed some selectors for proton.
+* __userChrome.css__: Removed some obsolete code.
 
 ### Pre-Last update: 02/04/2021
 
