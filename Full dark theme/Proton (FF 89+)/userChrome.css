@@ -8,7 +8,7 @@
 
 /* This root class will modify the colors of toolbar background color (by default is transparent white 
 without this change) */
-#main-window:not([lwt-default-theme-in-dark-mode]){
+#main-window:not([lwtheme-mozlightdark]){
   --toolbar-bgcolor: rgba(0,0,0,.6) !important;
   --lwt-selected-tab-background-color: var(--toolbar-bgcolor) !important;
   --tabs-toolbar-bgcolor: transparent !important;
@@ -66,9 +66,9 @@ but is disabled by default in this theme. If you want to override your lightweig
   box-shadow: none !important}
 
 /* Sets the hover color of some buttons */
-.tab-close-button:hover, #PlacesToolbarItems > .bookmark-item:hover, #nav-bar toolbarbutton:hover .toolbarbutton-badge-stack,
-#nav-bar toolbarbutton:hover > .toolbarbutton-icon, #titlebar .toolbarbutton-1:hover .toolbarbutton-badge-stack,
-#PersonalToolbar .toolbarbutton-1:hover, #tabs-newtab-button:hover > .toolbarbutton-icon {
+.tab-close-button:hover, #PlacesToolbarItems > .bookmark-item:hover, #nav-bar toolbarbutton:not([disabled]):hover .toolbarbutton-badge-stack,
+#nav-bar toolbarbutton:not([disabled]):hover > .toolbarbutton-icon, #titlebar .toolbarbutton-1:not([disabled]):hover .toolbarbutton-badge-stack,
+#PersonalToolbar .toolbarbutton-1:not([disabled]):hover, #tabs-newtab-button:hover > .toolbarbutton-icon, .tabbrowser-tab:hover .tab-background {
   background: rgba(255,255,255,0.15) !important;
   --toolbarbutton-hover-background: rgba(255,255,255,0.15) !important}
 
@@ -132,7 +132,7 @@ but is disabled by default in this theme. If you want to override your lightweig
   and for bold, use either "bold" or "normal" in the same way. You'll want to use semi-transparent
   colors (if any) for background colors, otherwise it will show as too bright opaque colors.
   Requires the use of setAttribute_unread.uc.js for unread tabs editting. */
-  --lwt-selected-tab-background-color: transparent !important;
+  --lwt-selected-tab-background-color: var(--toolbar-bgcolor) !important;
 
   --Loaded-and-selected-text: #eee;
   --Loaded-and-selected-italic: normal;
