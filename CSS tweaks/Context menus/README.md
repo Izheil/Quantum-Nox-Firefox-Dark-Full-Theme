@@ -1,6 +1,14 @@
 # Context menu fixes
 
-### Context-menu-commands.css
+### Menu-icons.as.css
+
+This file adds back hamburguer menu icons to Proton, and can be used as a standalone to be copied to your chrome folder as far as you have `.as.css` files support enabled by patching your Firefox.
+
+![Hamburguer menu icons](https://i.imgur.com/pdgp0wK.png)
+
+It's a port from [Lepton](https://github.com/black7375/Firefox-UI-Fix) repository, so all credit goes to it's owner, the only difference is that this one can be used as a separate file without the need to have it on your [userChrome.css](https://github.com/black7375/Firefox-UI-Fix).
+
+### Context-menu-commands.as.css
 
 This file contains selectors that target most commands contained in context menus (like send image, reload tab, etc..), so that you can hide them to make your context menus look less cluttered with commands that you may never or rarely use.
 

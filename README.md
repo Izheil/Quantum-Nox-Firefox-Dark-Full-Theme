@@ -19,6 +19,7 @@ Files updated:
 
 * __Tab-state-coloring.as.css__: Fixed some selectors for proton.
 * __userChrome.css__: Removed some obsolete code.
+* __Menu-icons.as.css__: Added a the option to add the icons to the hamburguer menu from [Lepton](https://github.com/black7375/Firefox-UI-Fix)'s repository as a standalone file, so that you can add it or remove it as you see fit.
 
 ### Pre-Last update: 02/04/2021
 
