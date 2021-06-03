@@ -3,6 +3,8 @@
 ### Always-show-sound-icon-when-playing.as.css
 Makes the sound icon to be always visible on normal and touch density (since otherwise it is only visible on hover), while also showing the favicon.
 
+![Sound icon always shown preview](https://i.imgur.com/NfkFqZR.png)
+
 ### Post-tabs-space-resizing.as
 This makes the space that comes before the min/max/close button (space where you can place addons), but
 after the tabs section thinner. You will still be able to place addons here, this only modifies the unused space before those addons in that space.
