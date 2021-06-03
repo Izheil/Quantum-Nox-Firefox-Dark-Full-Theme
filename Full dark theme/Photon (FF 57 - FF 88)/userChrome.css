@@ -1,6 +1,6 @@
 /* You can find an updated version here: https://github.com/Izheil/Quantum-Nox-Firefox-Dark-Full-Theme */
 /* Made by Izheil */
-/* Last updated: 29/04/2021 */
+/* Last updated: 03/06/2021 */
 
 /* COLORING PART STARTS HERE */
 
@@ -66,6 +66,13 @@ but is disabled by default in this theme (Disable for the default tab line color
 .tab-close-button:hover {background: rgba(255,255,255,0.15) !important}
 
 *|*:root {
+  /* These variable changes the scrollbars size and color. If you use the JS method instead, you don't need to change these.
+  The scrollbars-width only has 3 acceptable values, auto, thin, and none:
+  auto = default OS size | thin = half the width (will be hidden in about: pages) | none = hidden scrollbar */
+  --scrollbars-width: auto;
+  --scrollbars-thumb-color: #05a;
+  --scrollbars-track-color: #252525;
+
   /* Main menu colors */
   --panel-separator-color: rgba(95,95,95, .6)  !important;
   --arrowpanel-background: #383838 !important;
@@ -136,9 +143,8 @@ but is disabled by default in this theme (Disable for the default tab line color
 /* These change the scrollbar color inside dialogs (not pages) */
 scrollbar, *|*:root {
   /* The first value changes the scrollbar thumb color, the other one the track */
-  scrollbar-color: #05a #252525 !important;
-  /* auto = default OS size | thin = half the width (will be hidden in about: pages) | none = hidden scrollbar */
-  scrollbar-width: auto !important;
+  scrollbar-color: var(--scrollbars-thumb-color) var(--scrollbars-track-color) !important;
+  scrollbar-width: var(--scrollbars-width) !important;
 }
 
 /* This changes some of the tooltip colors */

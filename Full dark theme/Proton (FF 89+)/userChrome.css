@@ -71,6 +71,13 @@ but is disabled by default in this theme (Disable for the default tab line color
 }
 
 *|*:root {
+  /* These variable changes the scrollbars size and color. If you use the JS method instead, you don't need to change these.
+  The scrollbars-width only has 3 acceptable values, auto, thin, and none:
+  auto = default OS size | thin = half the width (will be hidden in about: pages) | none = hidden scrollbar */
+  --scrollbars-width: auto;
+  --scrollbars-thumb-color: #05a;
+  --scrollbars-track-color: #252525;
+
   /* Main menu colors */
   --panel-separator-color: rgba(95,95,95, .6)  !important;
   --arrowpanel-background: #383838 !important;
@@ -158,6 +165,13 @@ but is disabled by default in this theme (Disable for the default tab line color
   --panel-separator-zap-gradient: linear-gradient(90deg, rgb(1, 71, 114) 1%, #2af 50%, rgb(115, 199, 252) 99%) !important;
 }
 
+/* These change the scrollbar color inside dialogs (not pages) */
+scrollbar, *|*:root {
+  /* The first value changes the scrollbar thumb color, the other one the track */
+  scrollbar-color: var(--scrollbars-thumb-color) var(--scrollbars-track-color) !important;
+  scrollbar-width: var(--scrollbars-width) !important;
+}
+
 /* Tabs bar background color */
 #TabsToolbar, #toolbar-menubar {background-color: var(--tabs-toolbar-bgcolor) !important}
 
@@ -209,14 +223,6 @@ but is disabled by default in this theme (Disable for the default tab line color
 .tabbrowser-tab .tab-context-line {
   height: var(--tab-min-height) !important;
   clip-path: polygon(5% 95%, 95% 95%, 95% 100%, 5% 100%)
-}
-
-/* These change the scrollbar color inside dialogs (not pages) */
-scrollbar, *|*:root {
-  /* The first value changes the scrollbar thumb color, the other one the track */
-  scrollbar-color: #05a #252525 !important;
-  /* auto = default OS size | thin = half the width (will be hidden in about: pages) | none = hidden scrollbar */
-  scrollbar-width: auto !important;
 }
 
 /* This changes some of the tooltip colors */
