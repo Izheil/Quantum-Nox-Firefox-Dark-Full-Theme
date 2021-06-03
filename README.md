@@ -17,6 +17,7 @@ If you want to know how to change some colors of the theme, check the [wiki](htt
 
 Files updated:
 
+* __Always-show-sound-icon-when-playing.as.css__: Shows the sound icon when playing some audio or video with sound, while also showing the favicon. By default proton only shows the mute icon when you hover over a tab with sound.
 * __Tab-state-coloring.as.css__: Fixed some selectors for proton.
 * __userChrome.css__: Removed some obsolete code.
 * __Menu-icons.as.css__: Added a the option to add the icons to the hamburguer menu from [Lepton](https://github.com/black7375/Firefox-UI-Fix)'s repository as a standalone file, so that you can add it or remove it as you see fit.

@@ -1,0 +1,25 @@
+/* You can find an updated version of the standalone here: https://github.com/Izheil/Quantum-Nox-Firefox-Dark-Full-Theme */
+/* Made by Izheil */
+/* Last updated: 03/06/2021 */
+
+/* Shows the sound icon next to the "Playing" label so that it's always visible */
+.tab-icon-overlay:not([pinned], [sharing], [crashed]):is([soundplaying], [muted], [activemedia-blocked]),
+.tabbrowser-tab:is([soundplaying], [muted], [activemedia-blocked]) .tab-icon-image {
+  opacity: 1 !important
+}
+
+.tabbrowser-tab:is([soundplaying], [muted], [activemedia-blocked]) .tab-icon-image {
+  margin-top: 2px;
+}
+
+#main-window[uidensity="touch"] .tabbrowser-tab:is([soundplaying], [muted], [activemedia-blocked]) .tab-icon-image {
+  margin-top: 3px;
+}
+
+.tab-icon-overlay:is([soundplaying], [muted]) {
+  margin-top: 15px;
+}
+
+#main-window[uidensity="touch"] .tab-icon-overlay:is([soundplaying], [muted]) {
+  margin-top: 16px;
+}
