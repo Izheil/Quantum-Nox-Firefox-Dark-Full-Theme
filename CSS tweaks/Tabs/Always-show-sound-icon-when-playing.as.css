@@ -16,10 +16,10 @@
   margin-top: 3px;
 }
 
-.tab-icon-overlay:is([soundplaying], [muted]) {
+.tab-icon-overlay:is([soundplaying], [muted], [activemedia-blocked]) {
   margin-top: 15px;
 }
 
-#main-window[uidensity="touch"] .tab-icon-overlay:is([soundplaying], [muted]) {
+#main-window[uidensity="touch"] .tab-icon-overlay:is([soundplaying], [muted], [activemedia-blocked]) {
   margin-top: 16px;
 }
