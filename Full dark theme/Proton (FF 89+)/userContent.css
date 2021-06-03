@@ -48,6 +48,12 @@ To use, instead of "none;", type: url("URL-OF-THE-IMAGE-GOES-HERE"); <- Don't fo
 	--in-content-border-color: #666 !important;
 	--about-title-color: #1C7BFF; /* This one is used for about: pages titles */
 
+	/* This changes the tile color of new tab page (change the value to transparent if you want big favicons like in photon) */
+	--newtab-topsites-bg-color: #38383d;
+
+	/* This changes the sizing of top site icons on new tab page (change to 100% if you want big favicons like in photon) */
+	--newtab-topsites-icon-size: 48px;
+
 	/* These change the border highlight of some search boxes on about: pages */
 	--blue-50: #06d !important;
 	--blue-50-a30: rgba(0,100,200,0.4) !important;
@@ -615,7 +621,16 @@ input[type=text] {color: #aaa !important}
 	height: 20px !important;
 	line-height: 20px !important}
 
-.title.pinned .icon-pin-small {top: 5px !important}
+.title.pinned .icon-pin-small {
+	margin-inline-end: 5px !important;
+	margin-top: -3px !important}
+
+.top-site-button .icon-wrapper {
+	height: var(--newtab-topsites-icon-size) !important;
+	width: var(--newtab-topsites-icon-size) !important}
+
+.top-site-button .tile {
+	background-color: var(--newtab-topsites-bg-color) !important}
 
 .title span {
 	background-color: rgba(0,0,0,.6) !important;
