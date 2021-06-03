@@ -50,10 +50,16 @@ without this change) */
 #main-menubar menu:not([disabled="true"])label {
     color: #ccc !important}
 
-/* Tab line color. Using -moz-win-accentcolor as the color value changes it to the current window color (on Windows)
-but is disabled by default in this theme (Disable for the default tab line color). *//*
-.tabbrowser-tab {
-  --tab-line-color: #2af}
+/* Changes default tab line color for built-in dark theme */
+#main-window[lwtheme-mozlightdark] #tabbrowser-tabs {
+  --tab-line-color: rgb(0, 133, 221) !important;
+}
+
+/* Tab line color for lightweight themes. Using -moz-win-accentcolor as the color value changes it to the current window color (on Windows)
+but is disabled by default in this theme. If you want to override your lightweight theme tab color, add !important after the color */
+#tabbrowser-tabs {
+  --tab-line-color: rgb(0, 133, 221);
+}
 
 /* This removes the tab shadowing for lightweight themes */
 .tab-background {
