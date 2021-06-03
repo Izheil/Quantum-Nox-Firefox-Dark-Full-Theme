@@ -5,6 +5,7 @@
 // @include        main
 // @compatibility  Firefox 70 to Firefox 87.0a1 (2021-02-10)
 // @author         Alice0775, Endor8, TroudhuK, Izheil, Merci-chao
+// @version        04/06/2021 00:43 Fix for some lightweight themes background not displaying correctly
 // @version        07/03/2021 23:24 Compatibility fix with Simple Tab Groups addon
 // @version        12/02/2021 06:23 Added the option to make the scrollbar thin and change its color
 // @version        12/02/2021 02:18 The new tab button now wont start a new row by itself, and multiple tab selection fixed
@@ -92,7 +93,7 @@ function zzzz_MultiRowTabLite() {
     /*-------- Don't edit past here unless you know what you are doing --------*/
     
     #navigator-toolbox:-moz-lwtheme {
-        background-repeat: repeat-y !important;
+        background-repeat: repeat !important;
     }
     
     .tabbrowser-tab:not([pinned]) {
