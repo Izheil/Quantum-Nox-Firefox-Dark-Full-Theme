@@ -1,5 +1,5 @@
 /* You can find an updated version here: https://github.com/Izheil/Quantum-Nox-Firefox-Dark-Full-Theme */
-/* Last updated: 06/09/2018 */
+/* Last updated: 03/06/2021 */
 
 scrollbar,
 scrollbar * {
@@ -58,11 +58,11 @@ scrollbar thumb {
 
 scrollbar:hover thumb,
 scrollbar thumb:active {
-	box-shadow: 0 0 0 8px #46b inset !important;
+	box-shadow: 0 0 0 8px #05a inset !important;
 }
 
 scrollbar thumb:active {
-	background: #46b !important;
+	background: #05a !important;
 }
 
 scrollcorner {
