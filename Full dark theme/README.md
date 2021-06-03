@@ -1,5 +1,5 @@
 # Full dark theme for firefox
-**With Firefox 89 a new interface will be introduced to Firefox, which is known as "Proton". This new interface will introduce some changes that will require some changes in this theme.
+**With Firefox 89 a new interface will be introduced to Firefox, which is known as "Proton". This new interface will introduce some changes that will require some changes in this theme.**
 
 This is why now there are a "Photon" (for the old interface) and "Proton" (for the new interface) folders in here.
 Proton dark theme is still work in progress, but should work for the most part. It should be ready by the time it hits Firefox stable.**
