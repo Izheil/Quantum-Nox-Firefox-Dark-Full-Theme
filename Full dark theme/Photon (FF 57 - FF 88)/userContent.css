@@ -1,7 +1,7 @@
 /* You can find an updated version here: https://github.com/Izheil/Quantum-Nox-Firefox-Dark-Full-Theme */
 /* Made by Izheil */
 
-/* Last updated: 28/04/2021 */
+/* Last updated: 04/06/2021 */
 
 /* This part imports the Addons file if there is one, so that you don't have to edit the dynamic URL
 from the addons rules every time we update anything here */
@@ -41,7 +41,6 @@ To use, instead of "none;", type: url("URL-OF-THE-IMAGE-GOES-HERE"); <- Don't fo
 	--checkbox-checked-bgcolor: rgb(2, 128, 206) !important;
 	--checkbox-checked-hover-bgcolor: #2af !important;
 	--checkbox-checked-active-bgcolor: rgb(22, 106, 158) !important;
-	--in-content-primary-button-background: #004d99 !important;
 	--in-content-primary-button-background: #05a !important;
 	--in-content-primary-button-background-hover: #0040aa !important;
 	--in-content-primary-button-background-active: #002070 !important;
@@ -1210,9 +1209,9 @@ span.target-status {background-color: #151515 !important; color: #ddd !important
 :root {
 	--in-content-page-color: #aaa !important;
 	--in-content-page-background: #202020 !important;
-	--in-content-primary-button-background: #d55 !important;
-	--in-content-primary-button-background-hover: #d22 !important;
-	--in-content-primary-button-background-active: #D00 !important;
+	--in-content-primary-button-background: #0280ce !important;
+	--in-content-primary-button-background-hover: #0040aa !important;
+	--in-content-primary-button-background-active: #002070 !important;
 	--in-content-text-color: #0da !important;
 	--in-content-item-selected: #4080CC !important;
 	--in-content-box-background: #333 !important;
