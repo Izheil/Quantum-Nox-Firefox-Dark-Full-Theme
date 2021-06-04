@@ -13,7 +13,14 @@ You can use it to fully change the colors of most of firefox UI to dark-gray col
 
 If you want to know how to change some colors of the theme, check the [wiki](https://github.com/Izheil/Quantum-Nox-Firefox-Dark-Full-Theme/wiki/Editting-CSS-files).
 
-### Last update: 03/06/2021
+### Last update: 04/06/2021
+
+Files updated:
+
+* __userContent.css__: Fixed some button colors on `about:config`.
+
+
+### Pre-Last update: 03/06/2021
 
 Files updated:
 
@@ -22,13 +29,6 @@ Files updated:
 * __userChrome.css__: Removed some obsolete code, and fixed default tab line color, default dark theme, and disabled button hover colors.
 * __userContent.css__: Fixed error pages primary button text color, and pinned sites.
 * __Menu-icons.as.css__: Added a the option to add the icons to the hamburguer menu from [Lepton](https://github.com/black7375/Firefox-UI-Fix)'s repository as a standalone file, so that you can add it or remove it as you see fit.
-
-### Pre-Last update: 02/04/2021
-
-Files updated:
-* __Context-menu-commands.as.css__: Added the missing separator after take screenshots.
-* __userChrome.css__: Fixes for the color of some hover buttons.
-* __userContent.css__: Fixes for highlight colors of elements on `about:addons` and `about:preferences` pages.
 
 
 ### A note on people looking to replace some Tab Mix Plus features:
