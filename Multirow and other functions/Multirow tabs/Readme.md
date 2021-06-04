@@ -24,10 +24,26 @@ Shows all tabs you currently have open splitting them on rows up to a max of 3 r
 This version is the same as scrollable multirow, except the scrollbars are only shown when you hover over the tabs area. It fixes some very specific issue when loading a session restore and loading a long page with a lot of content, which sometimes would make some webarea scrollbars get "stuck".
 
 ## Tab sizing
-The size of tabs in the last row is by default resizable, (like in the pictures above, which is the default Firefox behaviour) which will make them shrink as more tabs are fit inside the row. If you want to make all the tabs have a fixed width (so that tabs in the last row won't resize depending on how many tabs are open in that row), you will have to edit the file and change the variable `--tab-growth` to 0 (which will use the value of `browser.tabs.tabMinWidth` in **about:config** as their fixed width).
+
+### Tab width
+The width of tabs in the last row is by default resizable, (like in the pictures above, which is the default Firefox behaviour) which will make them shrink as more tabs are fit inside the row. If you want to make all the tabs have a fixed width (so that tabs in the last row won't resize depending on how many tabs are open in that row), you will have to edit the file and change the variable `--tab-growth` to 0 (which will use the value of `browser.tabs.tabMinWidth` in **about:config** as their fixed width).
 
 ![Tab sizing example](https://i.imgur.com/twzsQ6V.png)
 
 It's also possible to keep tab resizability but change the min-width of tabs through `browser.tabs.tabMinWidth` as well.
 
 As for tab max size, it can't be changed without causing issues with tab session managers (The issue made tab session managers to save the last 3 closed tabs when they were not suposed to), which is the reason why there isn't an option to change this inside here anymore.
+
+### Tab Height
+If you want a smaller tabs in height, you can toggle compact mode by setting `browser.compactmode.show` as `true` on **about:config**, and then turn on compact density on the customize page (right click empty space on tab bar -> Customize/personalize toolbar (should be the last option) -> Density select box). 
+
+Using compact mode will make your tabs smaller in height in a more supported way than the variables inside multirow tabs will.  
+
+If you want a custom tab height smaller than the default but different than compact view, change the `inherit` value from the `--tab-min-height` variable to the value you want. 
+
+For reference, in Proton, the default heights by density are as follows:
+- Compact mode: 29px
+- Regular mode: 36px
+- Touch mode: 41px
+
+Note that with Proton, when there is media playing, the tab text will appear in 2 lines, and unlike with compact mode this won't be changed to fit with a custom height set by this variable, so anything lower than 30px might make the text to go outside the tab area.
