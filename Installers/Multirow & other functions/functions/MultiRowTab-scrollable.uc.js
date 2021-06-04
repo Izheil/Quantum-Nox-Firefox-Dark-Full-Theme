@@ -3,9 +3,9 @@
 // @namespace      https://github.com/Izheil/Quantum-Nox-Firefox-Dark-Full-Theme
 // @description    Multi-row tabs draggability fix with scrollable rows
 // @include        main
-// @compatibility  Firefox 70 to Firefox 87.0a1 (2021-02-10)
+// @compatibility  Firefox 70 to Firefox 91.0a1 (2021-06-03)
 // @author         Alice0775, Endor8, TroudhuK, Izheil, Merci-chao
-// @version        04/06/2021 00:43 Fix for some lightweight themes background not displaying correctly
+// @version        04/06/2021 01:34 Lightweight themes bg fix, and tab height fix for Proton
 // @version        07/03/2021 23:24 Compatibility fix with Simple Tab Groups addon
 // @version        12/02/2021 06:23 Added the option to make the scrollbar thin and change its color
 // @version        12/02/2021 02:18 The new tab button now wont start a new row by itself, and multiple tab selection fixed
@@ -52,16 +52,16 @@ function zzzz_MultiRowTabLite() {
     // CSS section
 	var css =`
     /* MULTIROW TABS CSS */
-    /* You can set the max number of rows before the scrollbar appears here.
+
+    /* EDITABLE CSS VARIABLES */
+
+    /* You can set the max number of rows before the scrollbar appears and the tab width here.
 
      - For tab minimum width, you have to go to about:config and modify [browser.tabs.tabMinWidth] 
        to the value you want. You shouldn't use values lower than 58 for this setting or tabs will
        start to overlap, and scrolling with the wheel will stop working.
 
-     - For tab minimum height, change the "inherit" value in #TabsToolbar --tab-min-height variable 
-       to the value you want.
-
-     - For tab growth v 
+     - For tab width growth v 
         Value of 1 -> Tab grows. Fixed max width of 226px.
         Value of 0 -> Tab doesn't grow. Uses tab min width as fixed width.
         
@@ -74,10 +74,8 @@ function zzzz_MultiRowTabLite() {
        "useThinScrollbar" (setting it as true) JavaScript variable above. If you want to color the 
        scrollbar but keep it as normal size, use userContent.css or any of the .as.css scrollbar 
        files available.
-
     */
 
-    /* EDITABLE CSS VARIABLES */
     :root {
         --max-tab-rows: TABROWS;
         --tab-growth: 1;
@@ -86,8 +84,33 @@ function zzzz_MultiRowTabLite() {
         --tabs-scrollbar-color: #05a; /* Only applicable if "useThinScrollbar" JS variable is set as true */
     }
 
+    /* You can change the height of tabs here.
+
+       If you want a more compact view, you can toggle compact mode by setting [browser.compactmode.show] as 
+       "true" on about:config, and then turn on compact density on the customize page (right click empty space
+       on tab bar -> Customize/personalize toolbar (should be the last option) -> Density select box). 
+
+       Using compact view will make your tabs smaller in height in a more supported way than the variables 
+       here can.  
+    
+       If you want a custom tab height smaller than the default but different than compact view, change the 
+       "inherit" value in #TabsToolbar --tab-min-height variable to the value you want. 
+
+       For reference, in Proton, the default heights by density are as follows:
+       - Compact mode: 29px
+       - Regular mode: 36px
+       - Touch mode: 41px
+       
+       Note that with Proton, when there is media playing, the tab text will appear in 2 lines, and unlike
+       with compact mode this won't be changed to fit with a custom height set by this variable, so anything 
+       lower than 30px might make the text to go outside the tab area.
+    */
+
     #TabsToolbar {
         --tab-min-height: inherit !important;
+
+        /* You don't need to change this last one */
+        --toolbarbutton-inner-padding: inherit !important;
     }
 
     /*-------- Don't edit past here unless you know what you are doing --------*/
