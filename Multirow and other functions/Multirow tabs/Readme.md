@@ -39,11 +39,11 @@ If you want a smaller tabs in height, you can toggle compact mode by setting `br
 
 Using compact mode will make your tabs smaller in height in a more supported way than the variables inside multirow tabs will.  
 
-If you want a custom tab height smaller than the default but different than compact view, change the `inherit` value from the `--tab-min-height` variable to the value you want. 
+If you want a custom tab height either way, change the `inherit` value from the `--tab-min-height` variable to the value you want. 
 
 For reference, in Proton, the default heights by density are as follows:
-- Compact mode: 29px
-- Regular mode: 36px
-- Touch mode: 41px
+- Compact mode: `29px`
+- Regular mode: `36px`
+- Touch mode: `41px`
 
 Note that with Proton, when there is media playing, the tab text will appear in 2 lines, and unlike with compact mode this won't be changed to fit with a custom height set by this variable, so anything lower than 30px might make the text to go outside the tab area.
