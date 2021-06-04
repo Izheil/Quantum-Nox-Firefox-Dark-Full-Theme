@@ -1,6 +1,6 @@
 /* You can find an updated version here: https://github.com/Izheil/Quantum-Nox-Firefox-Dark-Full-Theme */
 /* Made by Izheil */
-/* Last updated: 03/06/2021 */
+/* Last updated: 05/06/2021 */
 
 /* TAB READ/UNREAD COLORS */
 
@@ -33,8 +33,8 @@
   font-style: italic !important;
   font-weight: normal !important}
 
-.tabbrowser-tab:not([selected="true"])[pending] .tab-content,
-.tabbrowser-tab:not([selected="true"])[visited] .tab-content {
+.tabbrowser-tab:not([selected="true"])[pending] .tab-background,
+.tabbrowser-tab:not([selected="true"])[visited] .tab-background {
   background-color: transparent !important}
 
 /* loading */
