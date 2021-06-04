@@ -45,8 +45,6 @@ if (keysForFSTabs.length == 2) {
 	keyToggleTabs = keysForFSTabs[0];
 }
 
-
-
 // We move the elements here
 bottomBox.appendChild(tabsParent);
 
@@ -62,24 +60,24 @@ if (menuHidden) {
 var observer = new MutationObserver(function(mutations) {
   mutations.forEach(function(mutation) {
     if (mutation.type == "attributes") {
-    	switch(mutation.attributeName) {
-    		case "inactive":
-    			if (document.querySelector("#toolbar-menubar[inactive]")) {
-    				menuParent.setAttribute("inactiveMenu", "true")
-    				console.log("hidden")
-    			} else {
-    				menuParent.removeAttribute("inactiveMenu");
-    				console.log("shown")
-    			}
-    			break;
-    		case "autohide":
-    			if (document.querySelector("#toolbar-menubar[autohide='false']")) {
-    				menuParent.removeAttribute("inactiveMenu");
-    				console.log("shown")
-    			}
-    			break;
-    	};
-    };
+        switch(mutation.attributeName) {
+			case "inactive":
+				if (document.querySelector("#toolbar-menubar[inactive]")) {
+					menuParent.setAttribute("inactiveMenu", "true")
+					console.log("hidden")
+				} else {
+					menuParent.removeAttribute("inactiveMenu");
+					console.log("shown")
+				}
+				break;
+		case "autohide":
+				if (document.querySelector("#toolbar-menubar[autohide='false']")) {
+					menuParent.removeAttribute("inactiveMenu");
+					console.log("shown")
+				}
+				break;
+        }
+    }
   });
 });
 
@@ -139,8 +137,8 @@ if (hideFSTabs) {
 				case "Cmd":
 					modKeyToggleTabs = e.metaKey;
 					break;
-			};
-		};
+			}
+		}
 
 		if (window.fullScreen && modKeyToggleTabs && e.key == keyToggleTabs) {
 			console.log(tabsParent.style.marginBottom)
@@ -149,8 +147,8 @@ if (hideFSTabs) {
 			} else {
 				showTabs();
 			}
-		};
-	};
+		}
+	}
 
 // If we don't hide tabs completelly by default
 } else {
