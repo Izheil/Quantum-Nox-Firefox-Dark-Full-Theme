@@ -51,10 +51,11 @@ If you are using Linux or Mac, or want to add some more functionability (like de
 #### Short review of each folder:
 
 * [CSS tweaks](https://github.com/Izheil/Quantum-Nox-Firefox-Dark-Full-Theme/tree/master/CSS%20tweaks): Enables removal of context menu items, multirow bookmarks, changing tab bar position (so that it could be under the bookmarks bar for example).
-* [Full dark theme](https://github.com/Izheil/Quantum-Nox-Firefox-Dark-Full-Theme/tree/master/Full%20dark%20theme): Gives dark colors to firefox UI, including the scrollbars and the tooltips. Can also change the background image of `about:home` and the header image used as a persona.
 * [Multirow and other functions](https://github.com/Izheil/Quantum-Nox-Firefox-Dark-Full-Theme/tree/master/Multirow%20and%20other%20functions): You can find the JS files that add extra functionability to Firefox that couldn't be done with CSS alone.
+* [Full dark theme](https://github.com/Izheil/Quantum-Nox-Firefox-Dark-Full-Theme/tree/master/Full%20dark%20theme): Gives dark colors to firefox UI, including the scrollbars and the tooltips. Can also change the background image of `about:home` and the header image used as a persona.
 
 ![Custom Firefox home page](https://i.imgur.com/MliH06s.png)
+
 
 ## General sites dark theme
 You can find an all-around sites stylesheet that will paint every site you visit dark [here](https://github.com/Izheil/Dark-userstyles/tree/master/Global%20dark%20userstyle). **You need [Stylus addon](https://addons.mozilla.org/es/firefox/addon/styl-us/) to use it**.
