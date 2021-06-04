@@ -47,3 +47,12 @@ For reference, in Proton, the default heights by density are as follows:
 - Touch mode: `41px`
 
 Note that with Proton, when there is media playing, the tab text will appear in 2 lines, and unlike with compact mode this won't be changed to fit with a custom height set by this variable, so anything lower than 30px might make the text to go outside the tab area.
+
+## Max rows resizing
+
+You can toggle the option to resize the maximum number of rows at any time on any of the scrollable versions of multirow tabs setting the variable `useResizer` inside the files to `true`.
+
+This adds a resizer to the right of the tab bar that allows you to change the max rows.
+If you for example have 10 rows of tabs, and have set 3 max rows by default, you could use the resizer to temporally show 5 rows, or show less than 3 rows if you wanted without the need to edit the values in the script anymore.
+
+The value of `--max-tab-rows` will still be used as the default number of maximum rows to show by default before showing a scrollbar.
