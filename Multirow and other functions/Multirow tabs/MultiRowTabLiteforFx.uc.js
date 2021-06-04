@@ -5,7 +5,7 @@
 // @include        main
 // @compatibility  Firefox 70 to Firefox 91.0a1 (2021-06-03)
 // @author         Alice0775, Endor8, TroudhuK, Izheil, Merci-chao
-// @version        04/06/2021 00:43 Fix for some lightweight themes background not displaying correctly
+// @version        04/06/2021 04:39 Lightweight themes bg fix, and tab height fix for Proton
 // @version        07/03/2021 23:24 Compatibility fix with Simple Tab Groups addon
 // @version        12/02/2021 02:18 The new tab button now wont start a new row by itself, and multiple tab selection fixed
 // @version        07/12/2020 01:21 Stopped hidding tab right borders since it's not related to multirow
@@ -114,7 +114,7 @@ function zzzz_MultiRowTabLite() {
         #TabsToolbar .titlebar-buttonbox-container {display: block}
         
         #window-controls > toolbarbutton {
-            max-height: var(--tab-min-height);
+            max-height: calc(var(--tab-min-height) + 8px);
             display: inline;
         }
 
@@ -174,13 +174,13 @@ function zzzz_MultiRowTabLite() {
 
     // Here the FF71+ changes
 	if (document.querySelector("#tabbrowser-tabs > arrowscrollbox").shadowRoot) {
-	    css +=`
+        css +=`
 		scrollbar {-moz-window-dragging: no-drag !important}
 	    `;
 
-	    // This is a fix for the shadow elements:
-	    var style = document.createElement('style');
-	    style.innerHTML = `
+        // This is a fix for the shadow elements:
+        var style = document.createElement('style');
+        style.innerHTML = `
         .scrollbox-clip {
             overflow: visible;
             display: block}
@@ -210,7 +210,7 @@ function zzzz_MultiRowTabLite() {
             `;
         }
 
-	    document.querySelector("#tabbrowser-tabs > arrowscrollbox").shadowRoot.appendChild(style);
+        document.querySelector("#tabbrowser-tabs > arrowscrollbox").shadowRoot.appendChild(style);
 	} else {
         // Here the FF69-FF70 changes
 		css +=`
@@ -250,18 +250,18 @@ function zzzz_MultiRowTabLite() {
         var tabs = document.getElementsByClassName("tabbrowser-tab");
         var tab = this._getDragTargetTab(event, isLink);
         if (window.getComputedStyle(this).direction == "ltr") {
-        	for (let i = tab ? tab._tPos : 0; i < tabs.length; i++) {
+            for (let i = tab ? tab._tPos : 0; i < tabs.length; i++) {
                 let rect = tabs[i].getBoundingClientRect();
-        		if (event.clientX < rect.x + rect.width / 2
+                if (event.clientX < rect.x + rect.width / 2
                  && event.clientY < rect.y + rect.height) // multirow fix
-        			return i;
+                    return i;
             }
         } else {
-        	for (let i = tab ? tab._tPos : 0; i < tabs.length; i++) {
+            for (let i = tab ? tab._tPos : 0; i < tabs.length; i++) {
                 let rect = tabs[i].getBoundingClientRect();
-        		if (event.clientX > rect.x + rect.width / 2
+                if (event.clientX > rect.x + rect.width / 2
                  && event.clientY < rect.y + rect.height) // multirow fix
-        			return i;
+                    return i;
             }
         }
         return tabs.length;
@@ -405,7 +405,7 @@ function zzzz_MultiRowTabLite() {
                     
                     if (newIndex > -1)
                         selectedTabs.forEach(t => gBrowser.moveTabTo(t, newIndex));
-                };
+                }
             };
 
             // We then attach the event listeners for the new functionability to take effect
@@ -414,9 +414,9 @@ function zzzz_MultiRowTabLite() {
                 gBrowser.tabContainer.addEventListener("drop", function(event){this.onDrop(event);}, true);
                 Listeners = true;
             }
-        };
+        }
     };
-};
+}
 
 // copy of the original and overrided _getDropEffectForTabDrag method
 function orig_getDropEffectForTabDrag(event) {
@@ -460,4 +460,4 @@ function orig_getDropEffectForTabDrag(event) {
         return "link";
     }
     return "none";
-};
+}
