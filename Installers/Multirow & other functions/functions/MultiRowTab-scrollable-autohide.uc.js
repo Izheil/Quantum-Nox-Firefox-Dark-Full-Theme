@@ -224,7 +224,7 @@ function zzzz_MultiRowTabLite() {
 	        overflow-x: hidden;
 	        overflow-y: hidden;
 	        min-height: var(--tab-min-height);
-	        max-height: calc((var(--tab-min-height) + 8px) * var(--max-tab-rows));
+            max-height: calc(var(--tab-min-height) * var(--max-tab-rows));
 	    }
 
         scrollbox:hover {overflow-y: auto}
@@ -235,6 +235,15 @@ function zzzz_MultiRowTabLite() {
 	    .scrollbutton-up, .scrollbutton-down, spacer,
         #scrollbutton-up, #scrollbutton-down {display: none !important}
 	    `;
+
+        // This is a fix for FF89+ (Proton)
+        if (document.documentElement.hasAttribute("proton")) {
+            style.innerHTML += `
+            scrollbox {
+                max-height: calc((var(--tab-min-height) + 8px) * var(--max-tab-rows));
+            }
+            `;
+        }
 
         if (useThinScrollbar == true) {
             style.innerHTML += `
