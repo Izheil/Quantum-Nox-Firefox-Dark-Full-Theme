@@ -333,6 +333,12 @@ of the minimize, maximize and close buttons */
 #PersonalToolbar {color: var(--bookmark-toolbar-text) !important}
 
 /* Thinner bookmarks toolbar */
+#PlacesChevron {
+  padding-top: 0 !important;
+  padding-bottom: 0 !important;
+  margin-top: 0 !important;
+  margin-bottom: 0 !important}
+
 #PersonalToolbar, #PlacesToolbarItems {
   margin-bottom: -1px}
 
