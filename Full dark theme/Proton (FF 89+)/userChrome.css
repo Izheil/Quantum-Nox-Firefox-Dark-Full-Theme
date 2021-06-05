@@ -227,15 +227,8 @@ scrollbar, *|*:root {
 
 /* Tabs container line */
 .tabbrowser-tab .tab-context-line {
-  max-width: 50% !important;
-  margin-right: 20px !important;
-  margin-left: 20px !important;
-  height: 1px !important;
-  margin-top: calc(var(--tab-min-height) - 6px) !important;
-}
-
-.tabbrowser-tab:not([visuallyselected]):not([beforeselected-visible]) .tab-context-line {
-  margin-right: 19px !important;
+  height: var(--tab-min-height) !important;
+  clip-path: polygon(5% 95%, 95% 95%, 95% 100%, 5% 100%)
 }
 
 /* This changes some of the tooltip colors */
