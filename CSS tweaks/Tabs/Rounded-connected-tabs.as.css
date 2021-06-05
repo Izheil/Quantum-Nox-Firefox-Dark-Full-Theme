@@ -60,10 +60,16 @@ It has the side effect of showing a "glow" effect on some dark themes, so set bo
 }
 
 /* These rules adds separators between tabs. Remove them you don't want borders at the left of each tab. */
-#main-window[lwt-toolbar-field-brighttext] .tab-background:not([selected="true"]):not(.tab-background[multiselected="true"]) {
-  border-right: 1px solid rgba(255,255,255,.15) !important;
+.tabbrowser-tab::after {
+  content: "";
+  max-height: calc(var(--tab-min-height) - 8px) !important;
+  width: 1px;
+  display: flex;
+  margin-top: 4px !important;
 }
 
-#main-window:not([lwt-toolbar-field-brighttext]) .tab-background:not([selected="true"]):not(.tab-background[multiselected="true"]) {
-  border-right: 1px solid rgba(0,0,0,.2) !important;
-}
+#main-window[lwt-toolbar-field-brighttext] .tabbrowser-tab:not([visuallyselected]):not([beforeselected-visible])::after {
+  box-shadow: 1px 0 0 0 rgba(255,255,255,.15) !important}
+
+#main-window:not([lwt-toolbar-field-brighttext]) .tabbrowser-tab:not([visuallyselected]):not([beforeselected-visible])::after {
+  box-shadow: 1px 0 0 0 rgba(0,0,0,.2) !important}
