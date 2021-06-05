@@ -36,7 +36,8 @@ above tabs */
   border-top-color: transparent !important;
 }
 
-/* Changes the box shadow to fix themes that use it for tab borders */
+/* Changes the box shadow to fix themes that use it for tab borders. 
+It has the side effect of showing a "glow" effect on some dark themes, so set box-shadow to "none" if you don't want this. */
 #main-window:not([lwtheme-mozlightdark]) .tab-background[multiselected="true"], 
 #main-window:not([lwtheme-mozlightdark]) .tab-background[selected="true"]{
   box-shadow: 0 0 1px var(--tab-line-color, rgba(128,128,142,0.9)), 0 0 4px rgba(128,128,142,0.5) !important;
