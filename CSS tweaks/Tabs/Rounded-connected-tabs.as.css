@@ -29,6 +29,18 @@
   border-top-width: 2px !important;
 }
 
+/* This moves the tab containers context line below */
+.tabbrowser-tab .tab-context-line {
+  max-width: 50% !important;
+  margin-right: 20px !important;
+  margin-left: 20px !important;
+  margin-top: calc(var(--tab-min-height) - 6px) !important;
+}
+
+.tabbrowser-tab[visuallyselected] .tab-context-line {
+  margin-top: calc(var(--tab-min-height) - 8px) !important;
+}
+
 /* This rule removes the tab-border from the default light and dark themes, remove it if you want to use the tab line
 above tabs */
 #main-window[lwtheme-mozlightdark] .tab-background[multiselected="true"], 
