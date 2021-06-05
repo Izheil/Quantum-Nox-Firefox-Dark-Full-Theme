@@ -13,12 +13,12 @@ You can use it to fully change the colors of most of firefox UI to dark-gray col
 
 If you want to know how to change some colors of the theme, check the [wiki](https://github.com/Izheil/Quantum-Nox-Firefox-Dark-Full-Theme/wiki/Editting-CSS-files).
 
-### Last update: 04/06/2021
+### Last update: 05/06/2021
 
 Files updated:
 
 * __Rounded-connected-tabs.as.css__: Added the option to re-connect tabs to the toolbar while keeping the rounded top corners.
-* __userChrome.css__: Fixes for tab container lines.
+* __userChrome.css__: Fixes for tab container lines and tab separators.
 
 
 ### Pre-Last update: 04/06/2021

@@ -281,11 +281,6 @@ dialog richlistitem[clear-site-data-cookies-with-data] {border: 1px solid red !i
 /* v Fix to make the pre-render loading page dark instead of white v */
 #tabbrowser-tabpanels {background-color: #202025 !important}
 
-/* Tabs border color */
-.tabbrowser-tab::after {
-  opacity: 1 !important;
-  border-left: 1px solid rgba(255,255,255, .15) !important}
-
 /* Tabs close icon color always whiteish */
 .tabbrowser-tab[selected="true"] .close-icon {fill: #ddd !important}
 
