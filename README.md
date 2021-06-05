@@ -18,6 +18,7 @@ If you want to know how to change some colors of the theme, check the [wiki](htt
 Files updated:
 
 * __Rounded-connected-tabs.as.css__: Added the option to re-connect tabs to the toolbar while keeping the rounded top corners.
+* __userChrome.css__: Fixes for tab container lines.
 
 
 ### Pre-Last update: 04/06/2021

@@ -1,6 +1,6 @@
 /* You can find an updated version here: https://github.com/Izheil/Quantum-Nox-Firefox-Dark-Full-Theme */
 /* Made by Izheil */
-/* Last updated: 03/06/2021 */
+/* Last updated: 05/06/2021 */
 
 /* COLORING PART STARTS HERE */
 
@@ -227,8 +227,15 @@ scrollbar, *|*:root {
 
 /* Tabs container line */
 .tabbrowser-tab .tab-context-line {
-  height: var(--tab-min-height) !important;
-  clip-path: polygon(5% 95%, 95% 95%, 95% 100%, 5% 100%)
+  max-width: 50% !important;
+  margin-right: 20px !important;
+  margin-left: 20px !important;
+  height: 1px !important;
+  margin-top: calc(var(--tab-min-height) - 6px) !important;
+}
+
+.tabbrowser-tab:not([visuallyselected]):not([beforeselected-visible]) .tab-context-line {
+  margin-right: 19px !important;
 }
 
 /* This changes some of the tooltip colors */
