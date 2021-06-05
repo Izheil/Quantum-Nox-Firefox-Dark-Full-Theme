@@ -213,11 +213,19 @@ scrollbar, *|*:root {
 }
 
 /* Tab separators */
-.tabbrowser-tab:not([visuallyselected]) .tab-background {
-  border-right: 1px solid rgba(60,60,60,0.6) !important}
+.tabbrowser-tab::after {
+  content: "";
+  max-height: calc(var(--tab-min-height) - 4px);
+  width: 1px;
+  display: flex;
+  margin-top: 6px;
+}
 
-.tabbrowser-tab[beforeselected-visible] .tab-background {
-  border-right: none !important}
+#main-window[lwt-toolbar-field-brighttext] .tabbrowser-tab:not([visuallyselected]):not([beforeselected-visible])::after {
+  box-shadow: 2px 0 0 0 rgba(255,255,255,.15) !important}
+
+#main-window:not([lwt-toolbar-field-brighttext]) .tabbrowser-tab:not([visuallyselected]):not([beforeselected-visible])::after {
+  box-shadow: 2px 0 0 0 rgba(0,0,0,.2) !important}
 
 /* Tabs background color when using a lightweight theme */
 #main-window:not([lwt-default-theme-in-dark-mode]) #tabbrowser-tabs:not([movingtab]) .tab-background[selected="true"]:-moz-lwtheme {
