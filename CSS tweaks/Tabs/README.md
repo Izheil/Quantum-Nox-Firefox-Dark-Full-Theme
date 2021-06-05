@@ -24,6 +24,10 @@ Changes the order of the toolbars inside the navigation box. This one sets the p
 
 As with the `Tabs-below.as.css` file, the code is optimized for `1920x1080` resolutions, so see above for fixes if you have issues with the tabs overlapping the bookmarks toolbar.
 
+### Tab-separators.as.css
+Adds subtle separators between tabs.
+![Tab separators preview](https://i.imgur.com/BkOtU5b.png)
+
 ### Tab-state-coloring.as.css
 This will change the tabs text color when the state of tabs is unread, loading, loaded but unread...
 **You can also change the background color of tabs for each state with it**, just make sure to change the `background-color` rules for the tab background color, and the `color` one for text color.

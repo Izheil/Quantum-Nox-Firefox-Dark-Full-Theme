@@ -222,7 +222,7 @@ scrollbar, *|*:root {
 }
 
 #main-window[lwt-toolbar-field-brighttext] .tabbrowser-tab:not([visuallyselected]):not([beforeselected-visible])::after {
-  box-shadow: 2px 0 0 0 rgba(255,255,255,.15) !important}
+  box-shadow: 2px 0 0 0 rgba(255,255,255,.2) !important}
 
 #main-window:not([lwt-toolbar-field-brighttext]) .tabbrowser-tab:not([visuallyselected]):not([beforeselected-visible])::after {
   box-shadow: 2px 0 0 0 rgba(0,0,0,.2) !important}

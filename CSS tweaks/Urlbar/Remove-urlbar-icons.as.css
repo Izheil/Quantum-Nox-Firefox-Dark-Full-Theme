@@ -1,0 +1,14 @@
+/* You can find an updated version here: https://github.com/Izheil/Quantum-Nox-Firefox-Dark-Full-Theme */
+/* Made by Izheil */
+/* Last updated: 10/05/2020 */
+
+/* This file is not intended to be used as-is. You are suposed to copy the elements you want to remove to your userChrome.css, 
+or remove the ones you want to keep from this file before using it */
+
+/* Remove Multi-account containers item from the urlbar */
+#pageAction-urlbar-_testpilot-containers {display: none !important}
+
+/* Remove bookmarking icon from the urlbar */
+#star-button-box {display: none !important}
+
+/* You can remove the "reader mode" icon toggling 'reader.parse-on-load.enabled' as false on about:config */

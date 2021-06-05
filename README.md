@@ -20,6 +20,7 @@ Files updated:
 * __Rounded-connected-tabs.as.css__: Added the option to re-connect tabs to the toolbar while keeping the rounded top corners.
 * __userChrome.css__: Fixes for tab container lines and tab separators.
 * __MultiRowTab-Scrollable*.as.css__: Fixed some long-standing issue with tab size jumping on autohide version, and added the option to change scrollbar sizes and color.
+* __Tab-separators.as.css__: Added a standalone version to add tab separators between tabs.
 
 ### Pre-Last update: 04/06/2021
 

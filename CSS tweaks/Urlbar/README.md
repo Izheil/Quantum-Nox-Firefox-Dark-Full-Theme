@@ -6,8 +6,8 @@ Since Firefox 76, the address bar now resizes when you open a new tab or when it
 ### Megabar-disabled-until-focus.as.css
 Since Firefox 76, the address bar now resizes when you open a new tab or when it's on focus. This will disable the resizing effect until you have focused the urlbar by clicking on it. This means that it won't resize when you for example open a new tab.
 
-### Remove-multi-acc-container-url-icon.as
-Since Firefox 89, Multi-accounts container addon adds an icon to the url bar that shows the "always open this site in container". Since this action can already be done with the addon button, this icon is not really necessary. This scripts removes the icon from the url bar.
+### Remove-urlbar-icons.as
+Since Firefox 89, you can't hide icons from the urlbar, so the only way to hide them is with CSS. The icons included are the bookmarks icon, multi-account containers, and reader mode (the file is intended just to show the rules to copy & paste on your `userChrome.css`, not to be used as-is).
 
 ### Urlbar-font.as.css
 This changes the font of the urlbar so that it's easier for the user to detect url spoofing. Georgia font is used by default, but you can choose any other one that you want editing the value in the file.
