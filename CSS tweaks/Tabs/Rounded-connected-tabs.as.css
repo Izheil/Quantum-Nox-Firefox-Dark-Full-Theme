@@ -1,0 +1,58 @@
+/* You can find an updated version here: https://github.com/Izheil/Quantum-Nox-Firefox-Dark-Full-Theme */
+/* Made by Izheil */
+/* Last updated: 05/06/2021 */
+
+/* ROUNDED TABS CONNECTED TABS */
+
+/* You can change the first 2 values of the border-radius to increase 
+* or decrease how round the tabs are */
+.tab-background {
+  border-radius: 8px 8px 0px 0px !important;
+  border-image: none !important;
+  margin-top: 0 !important;
+  margin-bottom: 0 !important}
+
+/* This removes padding between tabs */
+.tabbrowser-tab {
+  padding: 0 !important;
+}
+
+.tab-background[multiselected="true"], .tab-background[selected="true"] {
+  /* You can choose the color of the tab line here, just change the default color for any you want*/
+  /* Remove the ending "/*" of this comment line if you want a colored line on your tab -> */
+  border-top-color: var(--tab-line-color) !important; 
+
+  /* Leave these as is */
+  background-color: var(--toolbar-bgcolor) !important;
+  background-image: none !important;
+  border-top-style: solid !important;
+  border-top-width: 2px !important;
+}
+
+/* This rule removes the tab-border from the default light and dark themes, remove it if you want to use the tab line
+above tabs */
+#main-window[lwtheme-mozlightdark] .tab-background[multiselected="true"], 
+#main-window[lwtheme-mozlightdark] .tab-background[selected="true"]{
+  border-top-color: transparent !important;
+}
+
+/* Changes the box shadow to fix themes that use it for tab borders */
+#main-window:not([lwtheme-mozlightdark]) .tab-background[multiselected="true"], 
+#main-window:not([lwtheme-mozlightdark]) .tab-background[selected="true"]{
+  box-shadow: 0 0 1px var(--tab-line-color, rgba(128,128,142,0.9)), 0 0 4px rgba(128,128,142,0.5) !important;
+}
+
+/* Support for repository dark theme */
+.tabbrowser-tab::before {
+  background-color: transparent !important;
+  background-image: none !important;
+}
+
+/* These rules adds separators between tabs. Remove them you don't want borders at the left of each tab. */
+#main-window[lwt-toolbar-field-brighttext] .tab-background:not([selected="true"]):not(.tab-background[multiselected="true"]) {
+  border-right: 1px solid rgba(255,255,255,.15) !important;
+}
+
+#main-window:not([lwt-toolbar-field-brighttext]) .tab-background:not([selected="true"]):not(.tab-background[multiselected="true"]) {
+  border-right: 1px solid rgba(0,0,0,.2) !important;
+}

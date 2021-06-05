@@ -34,3 +34,9 @@ You can patch your Firefox using the [patcher](https://github.com/Izheil/Quantum
 This will add a "utils" folder and a "setAttribute_unread.uc.js" file to your chrome folder, which are required to customize unread tabs with userChrome.
 
 Alternatively, if you use MacOS or something goes wrong with the patcher, you can always do the manual patching with the method explained in [JS Loader](https://github.com/Izheil/Quantum-Nox-Firefox-Dark-Full-Theme/tree/master/Multirow%20and%20other%20functions/JS%20Loader) folder from this repository, and then copying the [setAttribute_unread.uc.js](https://raw.githubusercontent.com/Izheil/Quantum-Nox-Firefox-Dark-Full-Theme/master/CSS%20tweaks/Tabs/setAttribute_unread.uc.js) file to your [chrome folder](https://github.com/Izheil/Quantum-Nox-Firefox-Dark-Full-Theme/wiki/Chrome-and-Root-folders#the-chrome-folder).
+
+### Rounded-contected-tabs.as.css
+Adds rounded tabs similar to those of chromium browsers.
+You can change the tab line to be any color you want (by default uses your lightweight theme color).
+
+![Rounded tabs preview](https://i.imgur.com/0K2E48w.png)
