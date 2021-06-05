@@ -26,6 +26,7 @@ As with the `Tabs-below.as.css` file, the code is optimized for `1920x1080` reso
 
 ### Tab-separators.as.css
 Adds subtle separators between tabs.
+
 ![Tab separators preview](https://i.imgur.com/BkOtU5b.png)
 
 ### Tab-state-coloring.as.css
