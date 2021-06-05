@@ -5,6 +5,7 @@
 // @include        main
 // @compatibility  Firefox 70 to Firefox 91.0a1 (2021-06-03)
 // @author         Alice0775, Endor8, TroudhuK, Izheil, Merci-chao
+// @version        05/06/2021 12:12 Support for changing scrollbar size and color
 // @version        05/06/2021 03:11 Lightweight themes fix
 // @version        04/06/2021 04:39 Tab height fix for Proton
 // @version        07/03/2021 23:24 Compatibility fix with Simple Tab Groups addon
@@ -47,8 +48,9 @@ function zzzz_MultiRowTabLite() {
     // Enables the use of the rows resizer
     var useResizer = false;
 
-    // Use thin scrollbar for tabs
-    var useThinScrollbar = false;
+    // Size of the scrollbar
+    // auto = default OS size | thin = half the width | none = always hidden scrollbar
+    var scrollbarSize = "auto";
 
     // CSS section
 	var css =`
@@ -71,10 +73,8 @@ function zzzz_MultiRowTabLite() {
        By default, the resizer uses the color of the other text elements in the toolbar that your 
        lightweight theme uses. 
 
-     - You can change the scrollbar color using the --tabs-scrollbar-color variable if you enabled
-       "useThinScrollbar" (setting it as true) JavaScript variable above. If you want to color the 
-       scrollbar but keep it as normal size, use userContent.css or any of the .as.css scrollbar 
-       files available.
+     - You can change the scrollbar color using the --tabs-scrollbar-color variable. The first value
+       is the thumb color, the second is the track.
     */
 
     :root {
@@ -82,7 +82,7 @@ function zzzz_MultiRowTabLite() {
         --tab-growth: 1;
         --resizer-color: var(--lwt-text-color);
         --resizer-width: 10px;
-        --tabs-scrollbar-color: #05a; /* Only applicable if "useThinScrollbar" JS variable is set as true */
+        --tabs-scrollbar-color: inherit; /* An example of using a custom color would be "#05a #252525" */
     }
 
     /* You can change the height of tabs here.
@@ -244,11 +244,25 @@ function zzzz_MultiRowTabLite() {
             `;
         }
 
-        if (useThinScrollbar == true) {
+        // Possible sizes of the scrollbar
+        if (scrollbarSize == "thin") {
             style.innerHTML += `
             scrollbox {
-                scrollbar-color: var(--tabs-scrollbar-color) transparent;
+                scrollbar-color: var(--tabs-scrollbar-color);
                 scrollbar-width: thin;
+            }
+            `
+        } else if (scrollbarSize == "none") {
+            style.innerHTML += `
+            scrollbox {
+                scrollbar-width: none;
+            }
+            `
+        } else {
+            style.innerHTML += `
+            scrollbox {
+                scrollbar-color: var(--tabs-scrollbar-color);
+                scrollbar-width: auto;
             }
             `
         }
@@ -256,7 +270,7 @@ function zzzz_MultiRowTabLite() {
         if (australisElement) {
             css += `
             .tabbrowser-tab[first-visible-tab="true"] {
-              padding-left: 0 !important;
+                padding-left: 0 !important;
             }
             `;
 
