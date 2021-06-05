@@ -31,14 +31,12 @@
 
 /* This moves the tab containers context line below */
 .tabbrowser-tab .tab-context-line {
-  max-width: 50% !important;
-  margin-right: 20px !important;
-  margin-left: 20px !important;
-  margin-top: calc(var(--tab-min-height) - 6px) !important;
+  margin-top: calc(var(--tab-min-height) - 4px) !important;
+  clip-path: polygon(6% 0, 94% 0, 94% 100%, 6% 100%);
 }
 
 .tabbrowser-tab[visuallyselected] .tab-context-line {
-  margin-top: calc(var(--tab-min-height) - 8px) !important;
+  margin-top: calc(var(--tab-min-height) - 6px) !important;
 }
 
 /* This rule removes the tab-border from the default light and dark themes, remove it if you want to use the tab line
