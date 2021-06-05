@@ -1,7 +1,7 @@
 /* You can find an updated version here: https://github.com/Izheil/Quantum-Nox-Firefox-Dark-Full-Theme */
 /* Made by Izheil */
 
-/* Last updated: 03/06/2021 */
+/* Last updated: 06/06/2021 */
 
 /* This part imports the Addons file if there is one, so that you don't have to edit the dynamic URL
 from the addons rules every time we update anything here */
@@ -247,6 +247,22 @@ button[dlgtype="cancel"]:active, button[dlgtype="help"]:active {
 	background-color: #111 !important;
 	color: #fff !important}
 
+dialog listheader treecol {
+	border-color: #666 !important;
+	background-color: #444 !important}
+
+dialog listheader treecol:hover {background-color: #505050 !important}
+dialog listheader treecol:active {background-color: #222 !important}
+
+dialog listheader, dialog richlistbox {
+	border-color: #666 !important;
+}
+
+dialog search-textbox, .options-container {
+	color: #ccc !important;
+	background-color: #333 !important;
+	border-color: #666 !important}
+
 dialog menulist .menulist-label-box {background: transparent !important}
 dialog menulist, dialog richlistbox {
 	background: rgba(255,255,255,0.1) !important; 
@@ -286,6 +302,9 @@ dialog checkbox[checked] .checkbox-check,
 dialog radio[selected] .radio-check {
 	background-color: rgb(2, 128, 206) !important;
 	border: none !important}
+
+radio > image, checkbox > image {
+	fill: #fff !important}
 
 /* This changes the "add certificate exception" dialog background color */
 #badCertAdvancedPanel {background-color: #303030 !important; border-color: #666 !important}

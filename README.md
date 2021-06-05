@@ -21,6 +21,7 @@ Files updated:
 * __userChrome.css__: Fixes for tab lines, container lines, and tab separators.
 * __MultiRowTab-Scrollable*.as.css__: Fixed some long-standing issue with tab size jumping on autohide version, and added the option to change scrollbar sizes and color.
 * __Tab-separators.as.css__: Added a standalone version to add tab separators between tabs.
+* __userContent.css__: Fixes for `about:preferences` and checkboxes.
 
 ### Pre-Last update: 04/06/2021
 
