@@ -64,10 +64,6 @@ To use, instead of "none;", type: url("URL-OF-THE-IMAGE-GOES-HERE"); <- Don't fo
 	Change that 1 for 0.9 for semitransparent backgrounds */
 	--in-content-context-background: rgba(68,68,68, 1); 
 
-	/* Variable to change the about:addons page extension names color */
-	--addons-addon-name: #38f;
-	--addons-addon-name-active: #0ef;
-
 	/* These change the description text color of about:addons */
 	--in-content-deemphasized-text: #aaa !important;
 
@@ -255,8 +251,7 @@ dialog listheader treecol:hover {background-color: #505050 !important}
 dialog listheader treecol:active {background-color: #222 !important}
 
 dialog listheader, dialog richlistbox {
-	border-color: #666 !important;
-}
+	border-color: #666 !important}
 
 dialog search-textbox, .options-container {
 	color: #ccc !important;
@@ -303,7 +298,7 @@ dialog radio[selected] .radio-check {
 	background-color: rgb(2, 128, 206) !important;
 	border: none !important}
 
-radio > image, checkbox > image {
+radio > image, checkbox > image, input[type="checkbox"], input[type="radio"] {
 	fill: #fff !important}
 
 /* This changes the "add certificate exception" dialog background color */
@@ -1519,6 +1514,10 @@ panel-item {
 .card.addon {
 	background-color: #333 !important;
 }
+
+/* Addon options selected tab */ 
+.tab-group button.tab-button[selected] {
+	filter: brightness(2)}
 
 /* Recommended extension buttons */
 button.primary {
