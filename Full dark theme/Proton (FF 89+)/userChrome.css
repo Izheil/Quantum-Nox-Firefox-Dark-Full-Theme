@@ -1,6 +1,6 @@
 /* You can find an updated version here: https://github.com/Izheil/Quantum-Nox-Firefox-Dark-Full-Theme */
 /* Made by Izheil */
-/* Last updated: 05/06/2021 */
+/* Last updated: 07/06/2021 */
 
 /* COLORING PART STARTS HERE */
 
@@ -217,10 +217,10 @@ scrollbar, *|*:root {
   margin-top: 6px;
 }
 
-#main-window[lwt-toolbar-field-brighttext] .tabbrowser-tab:not([visuallyselected]):not([beforeselected-visible]):not([before-multiselected]):not([multiselected="true"])::after {
+#main-window[lwt-toolbar-field-brighttext] .tabbrowser-tab:not([visuallyselected]):not([beforeselected-visible]):not([before-multiselected]):not([multiselected="true"]):not([last-visible-tab])::after {
   box-shadow: 2px 0 0 0 rgba(255,255,255,.2) !important}
 
-#main-window:not([lwt-toolbar-field-brighttext]) .tabbrowser-tab:not([visuallyselected]):not([beforeselected-visible]):not([before-multiselected]):not([multiselected="true"])::after {
+#main-window:not([lwt-toolbar-field-brighttext]) .tabbrowser-tab:not([visuallyselected]):not([beforeselected-visible]):not([before-multiselected]):not([multiselected="true"]):not([last-visible-tab])::after {
   box-shadow: 2px 0 0 0 rgba(0,0,0,.2) !important}
 
 /* Tabs background color when using a lightweight theme */

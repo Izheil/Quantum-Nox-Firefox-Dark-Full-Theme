@@ -13,7 +13,13 @@ You can use it to fully change the colors of most of firefox UI to dark-gray col
 
 If you want to know how to change some colors of the theme, check the [wiki](https://github.com/Izheil/Quantum-Nox-Firefox-Dark-Full-Theme/wiki/Editting-CSS-files).
 
-### Last update: 05/06/2021
+### Last update: 07/06/2021
+
+Files updated:
+
+* __userChrome.css__: Removed the tab separator after last tab.
+
+### Pre-Last update: 05/06/2021
 
 Files updated:
 
@@ -22,16 +28,6 @@ Files updated:
 * __MultiRowTab-Scrollable*.as.css__: Fixed some long-standing issue with tab size jumping on autohide version, and added the option to change scrollbar sizes and color.
 * __Tab-separators.as.css__: Added a standalone version to add tab separators between tabs.
 * __userContent.css__: Fixes for `about:preferences` and checkboxes.
-
-### Pre-Last update: 04/06/2021
-
-Files updated:
-
-* __Always-show-sound-icon-when-playing.as.css__: Shows the sound icon when playing some audio or video with sound, while also showing the favicon. By default proton only shows the mute icon when you hover over a tab with sound.
-* __Tab-state-coloring.as.css__: Fixed some selectors for proton.
-* __userChrome.css__: Removed some obsolete code, and fixed default tab line color, default dark theme, and disabled button hover colors.
-* __userContent.css__: Fixed error pages primary button text color, and pinned sites. Also fixed some button colors on `about:config`
-* __Menu-icons.as.css__: Added a the option to add the icons to the hamburguer menu from [Lepton](https://github.com/black7375/Firefox-UI-Fix)'s repository as a standalone file, so that you can add it or remove it as you see fit.
 
 
 ### A note on people looking to replace some Tab Mix Plus features:
