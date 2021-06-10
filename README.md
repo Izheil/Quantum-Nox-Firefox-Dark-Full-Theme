@@ -13,21 +13,17 @@ You can use it to fully change the colors of most of firefox UI to dark-gray col
 
 If you want to know how to change some colors of the theme, check the [wiki](https://github.com/Izheil/Quantum-Nox-Firefox-Dark-Full-Theme/wiki/Editting-CSS-files).
 
-### Last update: 07/06/2021
+### Last update: 10/06/2021
+
+Files updated:
+
+* __userContent.css__: Fixed the theme of `about:logins`.
+
+### Pre-Last update: 07/06/2021
 
 Files updated:
 
 * __userChrome.css__: Removed the tab separator after last tab.
-
-### Pre-Last update: 05/06/2021
-
-Files updated:
-
-* __Rounded-connected-tabs.as.css__: Added the option to re-connect tabs to the toolbar while keeping the rounded top corners.
-* __userChrome.css__: Fixes for tab lines, container lines, and tab separators.
-* __MultiRowTab-Scrollable*.as.css__: Fixed some long-standing issue with tab size jumping on autohide version, and added the option to change scrollbar sizes and color.
-* __Tab-separators.as.css__: Added a standalone version to add tab separators between tabs.
-* __userContent.css__: Fixes for `about:preferences` and checkboxes.
 
 
 ### A note on people looking to replace some Tab Mix Plus features:

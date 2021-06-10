@@ -1,7 +1,7 @@
 /* You can find an updated version here: https://github.com/Izheil/Quantum-Nox-Firefox-Dark-Full-Theme */
 /* Made by Izheil */
 
-/* Last updated: 06/06/2021 */
+/* Last updated: 10/06/2021 */
 
 /* This part imports the Addons file if there is one, so that you don't have to edit the dynamic URL
 from the addons rules every time we update anything here */
@@ -710,12 +710,58 @@ a.button {color: #fff !important}
 
 /*------  LOCKWISE PAGE ------*/
 @-moz-document url-prefix(about:logins) {
-:root {
---in-content-page-background: #2A2A2E !important;
---in-content-page-color: rgb(249, 249, 250) !important;
---in-content-box-background: #202023 !important;
---in-content-box-background-hover: rgba(249,249,250,0.15) !important;
---in-content-box-background-active: rgba(249,249,250,0.2) !important}
+
+a:not(.alert-link):not(.alert-learn-more-link), 
+a:not(.alert-link):not(.alert-learn-more-link):link {color: var(--in-content-link-color) !important}
+a:not(.alert-link):not(.alert-learn-more-link):hover {color: var(--in-content-link-color-hover) !important}
+a:not(.alert-link):not(.alert-learn-more-link):active {color: var(--in-content-link-color-active) !important}
+
+login-list, .meta, li:not(.selected):hover, #login-sort:not([disabled]):hover, 
+#login-sort:not([disabled]):active, #login-sort:not([disabled]):focus {
+	background-color: rgba(255,255,255,0.05) !important;
+	color: #fff !important}
+
+button:not(.ghost-button) {
+	background-color: rgba(255,255,255,0.1) !important;
+	color: #ccc !important}
+
+button.danger-button {
+	background-color: rgba(255,50,50,0.2) !important}
+
+button:hover  {
+	background-color: rgba(255,255,255,0.15) !important;
+	color: #fff !important}
+
+button.danger-button:hover {
+	background-color: rgba(255,50,50,0.3) !important}
+
+button:active, li.selected {
+	background-color: rgba(0,0,0,0.4) !important;
+	color: #fff !important}
+
+button.danger-button:active {
+	background-color: rgba(150,50,50,0.2) !important}
+
+input[type="text"]:not([readonly]), input[type="password"]:not([readonly]),
+input[type="url"]:not([readonly]) {
+	--in-content-focus-outline-color: rgb(3, 111, 179) !important;
+	background-color: #333 !important;
+	border: 1px solid #555 !important;
+	color: #ccc !important}
+
+.menu, option, .vulnerable-alert, .tooltip-container .arrow-box {
+	background-color: #303030 !important;
+	color: #ccc !important;
+	border-color: #555 !important}
+
+.tooltip-container .arrow-box::before {
+	border-inline-end-color: #555 !important}
+
+.tooltip-container .arrow-box::after {
+	border-inline-end-color: #303030 !important}
+
+.container[role="dialog"] {
+	background-color: #202020 !important}
 }
 
 /*------ COMMON ATTRIBUTES ON MOST ABOUT PAGES ------*/
