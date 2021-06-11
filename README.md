@@ -18,6 +18,7 @@ If you want to know how to change some colors of the theme, check the [wiki](htt
 Files updated:
 
 * __userChrome.css__: Themed some missing checkboxes, fixed printing dialog, and improved findbar buttons.
+* __userContent.css__: Fixed some black icons on the "connect" part of `about:debugging`.
 
 ### Pre-Last update: 10/06/2021
 

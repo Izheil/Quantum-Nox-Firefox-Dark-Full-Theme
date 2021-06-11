@@ -1250,7 +1250,8 @@ treechildren::-moz-tree-row(selected){
 	--grey-20: #666 !important;
 }
 
-.sidebar__footer__icon {filter: invert(100%) !important}
+.sidebar__footer__icon {filter: invert(100%)}
+.connect-section__header__icon {filter: invert(.7)}
 .primary-button {color: #ddd !important}
 .sidebar {background-color: #333 !important}
 
