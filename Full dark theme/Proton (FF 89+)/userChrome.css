@@ -358,7 +358,7 @@ findbar {
 findbar .findbar-textbox {
   background: var(--in-content-box-background-hover) !important;
   color: #fff !important;
-  border-color: #000 !important}
+  border-color: #555 !important}
 
 findbar .findbar-textbox[focused="true"], findbar .findbar-textbox:hover {
   border-color: Highlight !important}
@@ -370,26 +370,35 @@ findbar .findbar-textbox[focused="true"], findbar .findbar-textbox:hover {
   color: black !important}
 
 findbar .findbar-find-previous, findbar .findbar-find-next {
-  background: linear-gradient(var(--in-content-box-background-hover), var(--in-content-box-background)) !important;
-  border-top: 1px solid #000 !important;
-  border-right: 1px solid #000 !important;
-  border-bottom: 1px solid #000 !important;
-  border-left: none !important}
+  background: #444 !important}
+
+findbar .findbar-find-previous {margin-right: 3px !important}
+
+findbar .findbar-find-previous:not([disabled]):not(:active):hover, findbar .findbar-find-next:not([disabled]):not(:active):hover {
+  background: #555 !important}
 
 findbar .findbar-find-previous:active, findbar .findbar-find-next:active {
-  background: linear-gradient(var(--in-content-box-background), var(--in-content-box-background-hover)) !important}
+  background: #222 !important}
 
 /* Color for most dialogs */
 dialog .dialogBox, dialog caption, dialog select, .tabmodalprompt-buttonContainer, 
-#SiteDataRemoveSelectedDialog, wizardpage, #importSource, wizardpage * {
+#SiteDataRemoveSelectedDialog, wizardpage, #importSource, wizardpage *, #print {
   -moz-appearance: none !important;
   background-color: #353535 !important;
   color: #ccc !important}
 
+body[role="dialog"] .header-container {
+  background-color: #222 !important;
+  color: #fff !important;
+}
+
 fieldset {border-color: #666 !important}
 
-#printPageSetupDialog caption, .tabmodalprompt-mainContainer {background-color: #444 !important}
+.dialog-window a, body[role="dialog"] a {color: #09f !important}
+.dialog-window a:hover, body[role="dialog"] a:hover {color: #0cf  !important}
+.dialog-window a:active, body[role="dialog"] a:active {color: #0070aa !important}
 
+.tabmodalprompt-mainContainer, dialog #items {background-color: #444 !important}
 .tabmodalprompt-mainContainer {color: #ccc !important}
 
 .tabmodalprompt-mainContainer button {
@@ -418,20 +427,24 @@ radio:not([selected]) .radio-check, checkbox:not([checked]) .checkbox-check {
   background-color: #404040 !important;
   border-color: #555 !important}
 
-input[type="checkbox"]:not(:checked):hover, input[type="radio"]:not(:selected):hover,
+input[type="checkbox"]:not(:checked):hover, input[type="radio"]:not(:checked):hover,
 radio:not([selected]):hover .radio-check, checkbox:not([checked]):hover .checkbox-check {
   background-color: #505050 !important;
   border-color: #08f !important}
 
 checkbox:not([disabled]):hover .checkbox-check, 
-radio:not([disabled]):hover .radio-check  {
+radio:not([disabled]):hover .radio-check,
+input[type="checkbox"]:hover, input[type="radio"]:hover  {
   box-shadow: 0 0 4px #0084ff !important;
   border-color: #0084ff !important}
 
 checkbox[checked] .checkbox-check, menuitem[type="checkbox"] .menu-iconic-left[checked="true"],
-radio[selected] .radio-check {
+radio[selected] .radio-check, input[type="checkbox"]:checked, input[type="radio"]:checked {
   background-color: #0084ff !important;
   border: 1px solid #0084ff !important}
+
+input[type="checkbox"]:focus, input[type="radio"]:focus {
+  outline-color: #0084ff !important}
 
 #main-menubar .menu-iconic-left[checked="true"], #toolbar-context-menu .menu-iconic-left[checked="true"] {
   background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="15px" height="15px" viewBox="1 1 15 15" ><path fill="rgb(200,200,200)" d="M 13.09,2.87 C 13.09,2.87 6.00,11.00 6.00,11.00 6.00,11.00 2.00,9.00 2.00,9.00 4.25,12.81 7.00,14.00 7.00,14.00 9.24,10.42 12.04,7.39 13.09,2.87 Z" /></svg>') no-repeat center center !important;
@@ -440,18 +453,18 @@ radio[selected] .radio-check {
 radio[disabled], checkbox[disabled] {opacity: 0.8}
 
 /* Select boxes coloring */
-dialog menulist, #print-preview-scale, #printPageSetupDialog menulist, #permission-popup-mainView menulist {
+dialog menulist, #print select, #permission-popup-mainView menulist {
   -moz-appearance: none !important;
   background: #444 url("data:image/svg+xml;charset=utf-8,%3Csvg width='11' height='7' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M434.574 488L430.5 492.147 426.428 488 425 489.399 430.5 494.999 436 489.399z' transform='translate(-425 -488)' fill='%23cccccc' fill-rule='evenodd'/%3E%3C/svg%3E") no-repeat calc(100% - 5px) 50% !important;
   padding: 3px;
   color: #ccc !important}
 
-dialog menulist:hover, #print-preview-scale:hover, #printPageSetupDialog menulist:hover, #permission-popup-mainView menulist:hover {
+dialog menulist:hover, #print select:hover, #permission-popup-mainView menulist:hover {
   background: #252525 url("data:image/svg+xml;charset=utf-8,%3Csvg width='11' height='7' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M434.574 488L430.5 492.147 426.428 488 425 489.399 430.5 494.999 436 489.399z' transform='translate(-425 -488)' fill='%23cccccc' fill-rule='evenodd'/%3E%3C/svg%3E") no-repeat calc(100% - 5px) 50% !important;
   color: #fff !important}
 
-#printPageSetupDialog menulist {background-color: #555 !important}
-#printPageSetupDialog menulist:hover {background-color: #666 !important}
+#print select > option {
+  background-color: #303030 !important}
 
 dropmarker[exportparts="icon: dropmarker-icon"] {
   -moz-appearance: none !important}
@@ -467,7 +480,7 @@ window:not(#main-window):not(#CookiesDialog):not(#SignonViewerDialog):not(.theme
 
 /* Color for most buttons */
 dialog button, toolbar[printpreview="true"] button, 
-#print-preview-toolbar button{
+button[type="button"], button[type="submit"] {
   -moz-appearance: none !important;
   border-radius: 3px !important;
   background-color: #555 !important;
@@ -475,9 +488,25 @@ dialog button, toolbar[printpreview="true"] button,
   padding: 2px !important}
 
 dialog button:hover, toolbar[printpreview="true"] button:hover,
-#print-preview-toolbar button:hover {
+button[type="button"]:hover {
   background-color: #222 !important;
   color: #fff !important}
+
+button.primary {
+  background-color: #0565af !important}
+
+button.primary:hover {
+  background-color: #0a78cc !important}
+
+.toggle-group-input:not(:checked) + .toggle-group-label {
+  background-color: #555 !important;
+  color: #ccc !important;
+}
+
+.toggle-group-input:checked + .toggle-group-label {
+  background-color: #0565af !important;
+  color: #fff !important;
+}
 
 .dialog-button-box button {
   -moz-appearance: none !important;
