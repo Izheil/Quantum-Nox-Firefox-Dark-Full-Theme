@@ -409,62 +409,35 @@ fieldset {border-color: #666 !important}
 .error-icon,
 .question-icon {filter: brightness(500%)}
 
-/* Checkbox coloring */
-checkbox .checkbox-check {
-  -moz-appearance: none !important;
-  border: 1px solid #666 !important;
-  border-radius: 2px;
-  background-color: #444 !important;
-  transition: color 0.3s;
-  min-width: 12px;
-  min-height: 12px;}
+/* Radio & checkbox coloring */
+radio > image, checkbox > image {
+	fill: #fff !important}
 
-checkbox:not([disabled]):hover .checkbox-check {
+input[type="checkbox"]:not(:checked), input[type="radio"]:not(:checked), 
+radio:not([selected]) .radio-check, checkbox:not([checked]) .checkbox-check {
+  background-color: #404040 !important;
+  border-color: #555 !important}
+
+input[type="checkbox"]:not(:checked):hover, input[type="radio"]:not(:selected):hover,
+radio:not([selected]):hover .radio-check, checkbox:not([checked]):hover .checkbox-check {
+  background-color: #505050 !important;
+  border-color: #08f !important}
+
+checkbox:not([disabled]):hover .checkbox-check, 
+radio:not([disabled]):hover .radio-check  {
   box-shadow: 0 0 4px #0084ff !important;
   border-color: #0084ff !important}
 
-checkbox[checked] .checkbox-check, menuitem[type="checkbox"] .menu-iconic-left[checked="true"] {
-  background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="15px" height="15px" viewBox="1 1 15 15" ><path fill="rgb(200,200,200)" d="M 13.09,2.87 C 13.09,2.87 6.00,11.00 6.00,11.00 6.00,11.00 2.00,9.00 2.00,9.00 4.25,12.81 7.00,14.00 7.00,14.00 9.24,10.42 12.04,7.39 13.09,2.87 Z" /></svg>') no-repeat center center !important;
-  border: 1px solid #0084ff !important;
-  background-color: transparent !important}
+checkbox[checked] .checkbox-check, menuitem[type="checkbox"] .menu-iconic-left[checked="true"],
+radio[selected] .radio-check {
+  background-color: #0084ff !important;
+  border: 1px solid #0084ff !important}
 
 #main-menubar .menu-iconic-left[checked="true"], #toolbar-context-menu .menu-iconic-left[checked="true"] {
   background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="15px" height="15px" viewBox="1 1 15 15" ><path fill="rgb(200,200,200)" d="M 13.09,2.87 C 13.09,2.87 6.00,11.00 6.00,11.00 6.00,11.00 2.00,9.00 2.00,9.00 4.25,12.81 7.00,14.00 7.00,14.00 9.24,10.42 12.04,7.39 13.09,2.87 Z" /></svg>') no-repeat center center !important;
 }
 
-/* Radio button coloring */
-radio .radio-check, #printPageSetupDialog radio .radio-check {
-  -moz-appearance: none !important;
-  border: 1px solid #666 !important;
-  list-style-image: none !important;
-  border-radius: 10em;
-  background-color: #444 !important;
-  transition: color 0.3s;
-  min-width: 12px;
-  min-height: 12px;}
-
-radio:not([disabled]):hover .radio-check, 
-#printPageSetupDialog radio:not([disabled]):hover .radio-check {
-  box-shadow: 0 0 4px #0084ff !important;
-  border-color: #0084ff !important}
-
-radio[selected] .radio-check, #printPageSetupDialog radio[selected] .radio-check {
-  background: #444 url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="10px" height="10px" viewBox="0 0 16 16" ><path fill="rgb(200,200,200)" d="M 6.17,3.01 C -0.84,6.78 4.35,15.22 9.89,13.22 15.68,11.20 13.99,1.10 6.17,3.01 Z" /></svg>') no-repeat center center !important}
-
 radio[disabled], checkbox[disabled] {opacity: 0.8}
-
-/* Other radio & checkboxes */
-dialog input[type="checkbox"]:not(:checked), dialog input[type="radio"]:not(:checked) {
-	background-color: #333 !important;
-	border-color: #555 !important}
-
-dialog input[type="checkbox"]:not(:checked):hover, dialog input[type="radio"]:not(:checked):hover {
-  background-color: #444 !important;
-  border-color: #08f !important}
-
-radio > image, checkbox > image, input[type="checkbox"], input[type="radio"]  {
-  background-color: #0084ff !important;
-	fill: #fff !important}
 
 /* Select boxes coloring */
 dialog menulist, #print-preview-scale, #printPageSetupDialog menulist, #permission-popup-mainView menulist {
