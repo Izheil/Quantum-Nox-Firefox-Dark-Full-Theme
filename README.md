@@ -13,17 +13,17 @@ You can use it to fully change the colors of most of firefox UI to dark-gray col
 
 If you want to know how to change some colors of the theme, check the [wiki](https://github.com/Izheil/Quantum-Nox-Firefox-Dark-Full-Theme/wiki/Editting-CSS-files).
 
-### Last update: 10/06/2021
+### Last update: 11/06/2021
+
+Files updated:
+
+* __userChrome.css__: Themed some missing checkboxes.
+
+### Pre-Last update: 10/06/2021
 
 Files updated:
 
 * __userContent.css__: Fixed the theme of `about:logins`.
-
-### Pre-Last update: 07/06/2021
-
-Files updated:
-
-* __userChrome.css__: Removed the tab separator after last tab.
 
 
 ### A note on people looking to replace some Tab Mix Plus features:

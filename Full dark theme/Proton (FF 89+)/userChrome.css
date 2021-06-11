@@ -453,6 +453,19 @@ radio[selected] .radio-check, #printPageSetupDialog radio[selected] .radio-check
 
 radio[disabled], checkbox[disabled] {opacity: 0.8}
 
+/* Other radio & checkboxes */
+dialog input[type="checkbox"]:not(:checked), dialog input[type="radio"]:not(:checked) {
+	background-color: #333 !important;
+	border-color: #555 !important}
+
+dialog input[type="checkbox"]:not(:checked):hover, dialog input[type="radio"]:not(:checked):hover {
+  background-color: #444 !important;
+  border-color: #08f !important}
+
+radio > image, checkbox > image, input[type="checkbox"], input[type="radio"]  {
+  background-color: #0084ff !important;
+	fill: #fff !important}
+
 /* Select boxes coloring */
 dialog menulist, #print-preview-scale, #printPageSetupDialog menulist, #permission-popup-mainView menulist {
   -moz-appearance: none !important;
