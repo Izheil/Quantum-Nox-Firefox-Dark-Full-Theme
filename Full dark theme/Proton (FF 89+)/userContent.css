@@ -1,7 +1,7 @@
 /* You can find an updated version here: https://github.com/Izheil/Quantum-Nox-Firefox-Dark-Full-Theme */
 /* Made by Izheil */
 
-/* Last updated: 10/06/2021 */
+/* Last updated: 12/06/2021 */
 
 /* This part imports the Addons file if there is one, so that you don't have to edit the dynamic URL
 from the addons rules every time we update anything here */
@@ -1643,7 +1643,7 @@ a.Addon-all-reviews-link, .MetadataCard, .Card-contents ul li, .LandingPage-head
 
 .AddonMoreInfo .Card-content {color: #aaa !important}
 
-.SecondaryHero-module-icon, .Permission > .Icon {filter: invert(80%)}
+.SecondaryHero-module-icon, .Permission > .Icon, .AutoSearchInput-search-box .Icon-magnifying-glass {filter: invert(80%)}
 
 .ShowMoreCard-contents::after 
 {background: linear-gradient(rgba(48, 48, 48, 0.3), #303030) !important}
