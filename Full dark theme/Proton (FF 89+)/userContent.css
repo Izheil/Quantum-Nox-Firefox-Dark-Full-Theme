@@ -1,7 +1,7 @@
 /* You can find an updated version here: https://github.com/Izheil/Quantum-Nox-Firefox-Dark-Full-Theme */
 /* Made by Izheil */
 
-/* Last updated: 12/06/2021 */
+/* Last updated: 25/06/2021 */
 
 /* This part imports the Addons file if there is one, so that you don't have to edit the dynamic URL
 from the addons rules every time we update anything here */
@@ -1613,8 +1613,22 @@ span, .statsBoxSection-header {color: #fff !important}
 /*------ MOZILLA ADDONS PAGE ------*/
 @-moz-document url-prefix(https://addons.mozilla.org) {
 html, .App-content, tr.LanguageTools-table-row:nth-child(even), 
-.Paginate, section.scheme-light, section.scheme-default, .Page-content
+.Paginate, section.scheme-light, section.scheme-default, .Page-content, body
 {background: #202020 !important}
+
+.blogpost-nav {
+	background-color: #252525 !important;
+	color: #ccc !important}
+
+.share-twitter-link {color: #fff !important}
+
+.blogpost-nav time {
+	color: #888 !important}
+
+.blogpost-nav svg > polyline {
+	stroke: #fff !important}
+
+.share-pocket-link {border-color: transparent !important}
 
 .scheme-medium {background-color: #1d3770 !important}
 
@@ -1633,7 +1647,7 @@ tr.LanguageTools-table-row:nth-child(odd) {background-color: #252525 !important}
 .Card-footer-text, a.ShowMoreCard-expand-link,
 a.Addon-all-reviews-link, .MetadataCard, .Card-contents ul li, .LandingPage-header,
 .highlight, .AutoSearchInput-query, .Search .SearchResults-message, .DevHub-callout-box,
-.SecondaryHero-module {
+.SecondaryHero-module, .StaticAddonCard, .share-pocket-link  {
 	background-color: #303030 !important;
 	color: #ccc !important}
 
@@ -1709,7 +1723,7 @@ a.SectionLinks-clientApp-android:not(:hover),
 
 .Paginate .Paginate-item {margin-left: 3px !important; margin-right: 3px !important}
 
-a.SearchResult-link:hover h2, a:not(.Button):hover,
+a.SearchResult-link:hover h2, a:not(.Button):not([class*="share"]):hover,
 .SearchResult-wrapper:hover .SearchResult-link,
 .SecondaryHero-message-linkText, .SecondaryHero-module-linkText,
 .Card-footer-link {color: #1494FB !important}

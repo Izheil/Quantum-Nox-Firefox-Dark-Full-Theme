@@ -1,7 +1,7 @@
 /* You can find an updated version here: https://github.com/Izheil/Quantum-Nox-Firefox-Dark-Full-Theme */
 /* Made by Izheil */
 
-/* Last updated: 04/06/2021 */
+/* Last updated: 25/06/2021 */
 
 /* This part imports the Addons file if there is one, so that you don't have to edit the dynamic URL
 from the addons rules every time we update anything here */
@@ -1507,8 +1507,22 @@ span, .statsBoxSection-header {color: #fff !important}
 /*------ MOZILLA ADDONS PAGE ------*/
 @-moz-document url-prefix(https://addons.mozilla.org) {
 html, .App-content, tr.LanguageTools-table-row:nth-child(even), 
-.Paginate, section.scheme-light, section.scheme-default, .Page-content
+.Paginate, section.scheme-light, section.scheme-default, .Page-content, body
 {background: #202020 !important}
+
+.blogpost-nav {
+	background-color: #252525 !important;
+	color: #ccc !important}
+
+.share-twitter-link {color: #fff !important}
+
+.blogpost-nav time {
+	color: #888 !important}
+
+.blogpost-nav svg > polyline {
+	stroke: #fff !important}
+
+.share-pocket-link {border-color: transparent !important}
 
 .scheme-medium {background-color: #1d3770 !important}
 
@@ -1527,7 +1541,7 @@ tr.LanguageTools-table-row:nth-child(odd) {background-color: #252525 !important}
 .Card-footer-text, a.ShowMoreCard-expand-link,
 a.Addon-all-reviews-link, .MetadataCard, .Card-contents ul li, .LandingPage-header,
 .highlight, .AutoSearchInput-query, .Search .SearchResults-message, .DevHub-callout-box,
-.SecondaryHero-module {
+.SecondaryHero-module, .StaticAddonCard, .share-pocket-link {
 	background-color: #303030 !important;
 	color: #ccc !important}
 
@@ -1537,7 +1551,7 @@ a.Addon-all-reviews-link, .MetadataCard, .Card-contents ul li, .LandingPage-head
 
 .AddonMoreInfo .Card-content {color: #aaa !important}
 
-.SecondaryHero-module-icon, .Permission > .Icon {filter: invert(80%)}
+.SecondaryHero-module-icon, .Permission > .Icon, .AutoSearchInput-search-box .Icon-magnifying-glass {filter: invert(80%)}
 
 .ShowMoreCard-contents::after 
 {background: linear-gradient(rgba(48, 48, 48, 0.3), #303030) !important}
@@ -1603,7 +1617,7 @@ a.SectionLinks-clientApp-android:not(:hover),
 
 .Paginate .Paginate-item {margin-left: 3px !important; margin-right: 3px !important}
 
-a.SearchResult-link:hover h2, a:not(.Button):hover,
+a.SearchResult-link:hover h2, a:not(.Button):not([class*="share"]):hover,
 .SearchResult-wrapper:hover .SearchResult-link,
 .SecondaryHero-message-linkText, .SecondaryHero-module-linkText,
 .Card-footer-link {color: #1494FB !important}
@@ -1633,32 +1647,32 @@ input#search-q, textarea {
 
 /* Checkbox coloring */
 input[type="checkbox"] {
-  -moz-appearance: none !important;
-  border: 1px solid #666 !important;
-  background-color: #444 !important;
-  transition: color 0.3s;
-  min-width: 12px;
-  min-height: 12px;
-  margin-bottom: 0 !important}
+	-moz-appearance: none !important;
+	border: 1px solid #666 !important;
+	background-color: #444 !important;
+	transition: color 0.3s;
+	min-width: 12px;
+	min-height: 12px;
+	margin-bottom: 0 !important}
 
 input[type="checkbox"]:not([disabled]):hover {
-  box-shadow: 0 0 4px #0084ff !important;
-  border-color: #0084ff !important}
+	box-shadow: 0 0 4px #0084ff !important;
+	border-color: #0084ff !important}
 
 input[type="checkbox"]:checked {
-  background: #444 url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="15px" height="15px" viewBox="0 0 16 16" ><path fill="rgb(200,200,200)" d="M 13.09,2.87 C 13.09,2.87 6.00,11.00 6.00,11.00 6.00,11.00 2.00,9.00 2.00,9.00 4.25,12.81 7.00,14.00 7.00,14.00 9.24,10.42 12.04,7.39 13.09,2.87 Z" /></svg>') no-repeat center center !important}
+	background: #444 url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="15px" height="15px" viewBox="0 0 16 16" ><path fill="rgb(200,200,200)" d="M 13.09,2.87 C 13.09,2.87 6.00,11.00 6.00,11.00 6.00,11.00 2.00,9.00 2.00,9.00 4.25,12.81 7.00,14.00 7.00,14.00 9.24,10.42 12.04,7.39 13.09,2.87 Z" /></svg>') no-repeat center center !important}
 
 /* Select boxes coloring */
 select {
-  -moz-appearance: none !important;
-  background: #444 url("data:image/svg+xml;charset=utf-8,%3Csvg width='11' height='7' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M434.574 488L430.5 492.147 426.428 488 425 489.399 430.5 494.999 436 489.399z' transform='translate(-425 -488)' fill='%23cccccc' fill-rule='evenodd'/%3E%3C/svg%3E") no-repeat calc(100% - 5px) 50% !important;
-  border: none !important;
-  padding: 3px;
-  color: #ccc !important}
+	-moz-appearance: none !important;
+	background: #444 url("data:image/svg+xml;charset=utf-8,%3Csvg width='11' height='7' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M434.574 488L430.5 492.147 426.428 488 425 489.399 430.5 494.999 436 489.399z' transform='translate(-425 -488)' fill='%23cccccc' fill-rule='evenodd'/%3E%3C/svg%3E") no-repeat calc(100% - 5px) 50% !important;
+	border: none !important;
+	padding: 3px;
+	color: #ccc !important}
 
 select:hover {
-  background: #222 url("data:image/svg+xml;charset=utf-8,%3Csvg width='11' height='7' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M434.574 488L430.5 492.147 426.428 488 425 489.399 430.5 494.999 436 489.399z' transform='translate(-425 -488)' fill='%23cccccc' fill-rule='evenodd'/%3E%3C/svg%3E") no-repeat calc(100% - 5px) 50% !important;
-  color: #fff !important}
+	background: #222 url("data:image/svg+xml;charset=utf-8,%3Csvg width='11' height='7' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M434.574 488L430.5 492.147 426.428 488 425 489.399 430.5 494.999 436 489.399z' transform='translate(-425 -488)' fill='%23cccccc' fill-rule='evenodd'/%3E%3C/svg%3E") no-repeat calc(100% - 5px) 50% !important;
+	color: #fff !important}
 
 select .menulist-dropmarker {display: none}
 }
