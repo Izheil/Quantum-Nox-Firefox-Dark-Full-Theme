@@ -1,6 +1,6 @@
 /* You can find an updated version here: https://github.com/Izheil/Quantum-Nox-Firefox-Dark-Full-Theme */
 /* Made by Izheil */
-/* Last updated: 07/06/2021 */
+/* Last updated: 08/07/2021 */
 
 /* COLORING PART STARTS HERE */
 
@@ -190,6 +190,7 @@ scrollbar, *|*:root {
   border-radius: 5px;
   content: '';
   background-color: var(--tab-line-color);
+  min-height: var(--tab-min-height);
   background-image: linear-gradient(90deg, rgba(0,0,0,0.6) 1%, transparent 50%, rgba(0,0,0,0.6) 99%);
   clip-path: polygon(0 0, 100% 0%, 100% 100%, 0% 100%, 0% 88%, 2% 95%, 98% 95%, 100% 85%, 100% 20%, 98.5% 6%, 1.5% 6%, 0% 20%);
   position: absolute;

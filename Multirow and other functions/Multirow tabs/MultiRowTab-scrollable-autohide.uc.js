@@ -5,6 +5,7 @@
 // @include        main
 // @compatibility  Firefox 70 to Firefox 91.0a1 (2021-06-03)
 // @author         Alice0775, Endor8, TroudhuK, Izheil, Merci-chao
+// @version        08/07/2021 07:31 Fixed some issue when having only pinned tabs
 // @version        05/06/2021 12:12 Support for changing scrollbar size and color, fixing tab size jumping
 // @version        05/06/2021 03:11 Lightweight themes fix
 // @version        04/06/2021 04:39 Tab height fix for Proton
@@ -152,6 +153,15 @@ function zzzz_MultiRowTabLite() {
     @media (-moz-os-version: windows-win7), (-moz-os-version: windows-win8) {
         #tabbrowser-tabs .tabbrowser-tab {
             border-top: none !important}
+    }
+
+    /* A fix for pinned tabs getting smaller when they are alone */
+    .tabbrowser-tab[pinned] .tab-content {
+        max-height: var(--tab-min-height) !important;
+    }
+
+    .tabbrowser-tab[pinned] {
+        height: calc(var(--tab-min-height) + 8px) !important;
     }
 
     /* This fixes the new tab button overflowing to the new row alone */
