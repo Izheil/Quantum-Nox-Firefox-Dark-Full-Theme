@@ -17,14 +17,14 @@ If you want to know how to change some colors of the theme, check the [wiki](htt
 
 Files updated:
 
-* __userChrome.css__: Fixed some issue with tab borders on pinned tabs.
-* __MultiRowTab*.uc.js__: Fixed some issue when only having pinned tabs open.
+* __addons.css__: Themed the cloud banner from [Ublock Origin](https://addons.mozilla.org/en-US/firefox/addon/ublock-origin/) theme.
 
 ### Pre-Last update: 11/06/2021
 
 Files updated:
 
-* __userContent.css__: Themed the new "blog" posts from addons.mozilla.org page.
+* __userChrome.css__: Fixed some issue with tab borders on pinned tabs.
+* __MultiRowTab*.uc.js__: Fixed some issue when only having pinned tabs open.
 
 
 ### A note on people looking to replace some Tab Mix Plus features:
