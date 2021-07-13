@@ -260,7 +260,7 @@ tooltip, #statuspanel-label {
 #bookmarks-view treechildren, #historyTree treechildren, 
 dialog richlistitem {color: var(--arrowpanel-color) !important}
 
-/* This is a fix for treechildren that might look whiteish in linux */
+/* This is a fix for even row treechildren that might look whiteish otherwise */
 treechildren::-moz-tree-row, dialog richlistitem {background: transparent !important}
 
 /* This changes all treechildren elements highlights (list-like elements) */
