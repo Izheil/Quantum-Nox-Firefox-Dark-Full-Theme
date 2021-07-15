@@ -1281,6 +1281,10 @@ button[disabled] {opacity: 0.7 !important}
 
 .CodeMirror-selected, .CodeMirror-line *::selection {background: #055 !important}
 
+.CodeMirror-merge-left .CodeMirror-merge-l-chunk {background-color: rgb(0, 66, 133) !important}
+.CodeMirror-merge-editor .CodeMirror-merge-l-chunk {background-color: #053 !important}
+.CodeMirror-merge-spacer {background-color: #620 !important}
+
 .cm-comment {color: #aaa !important}
 .CodeMirror-cursor {border-left-color: #aaa !important}
 .cm-staticnetBlock {color: #f62 !important}
@@ -1328,13 +1332,13 @@ input[type="checkbox"]:checked {
 /* Select boxes coloring */
 select {
   -moz-appearance: none !important;
-  background: #555 url("data:image/svg+xml;charset=utf-8,%3Csvg width='11' height='7' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M434.574 488L430.5 492.147 426.428 488 425 489.399 430.5 494.999 436 489.399z' transform='translate(-425 -488)' fill='%23cccccc' fill-rule='evenodd'/%3E%3C/svg%3E") no-repeat calc(100% - 5px) 50% !important;
+  background: #555 url("data:image/svg+xml;charset=utf-8,%3Csvg width='11' height='7' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M434.574 488L430.5 492.147 426.428 488 425 489.399 430.5 494.999 436 489.399z' transform='translate(-425 -488)' fill='%23dddddd' fill-rule='evenodd'/%3E%3C/svg%3E") no-repeat calc(100% - 5px) 50% !important;
   border: none !important;
   padding: 3px 30px 3px 3px !important;
   color: #ccc !important}
 
 select:hover {
-  background: #222 url("data:image/svg+xml;charset=utf-8,%3Csvg width='11' height='7' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M434.574 488L430.5 492.147 426.428 488 425 489.399 430.5 494.999 436 489.399z' transform='translate(-425 -488)' fill='%23cccccc' fill-rule='evenodd'/%3E%3C/svg%3E") no-repeat calc(100% - 5px) 50% !important;
+  background: #222 url("data:image/svg+xml;charset=utf-8,%3Csvg width='11' height='7' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M434.574 488L430.5 492.147 426.428 488 425 489.399 430.5 494.999 436 489.399z' transform='translate(-425 -488)' fill='%23ffffff' fill-rule='evenodd'/%3E%3C/svg%3E") no-repeat calc(100% - 5px) 50% !important;
   color: #fff !important}
 
 select .menulist-dropmarker {display: none}
