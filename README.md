@@ -13,18 +13,18 @@ You can use it to fully change the colors of most of firefox UI to dark-gray col
 
 If you want to know how to change some colors of the theme, check the [wiki](https://github.com/Izheil/Quantum-Nox-Firefox-Dark-Full-Theme/wiki/Editting-CSS-files).
 
-### Last update: 15/07/2021
+### Last update: 19/07/2021
+
+Files updated:
+
+* __addons.css__: Merged split code for [Ublock Origin](https://addons.mozilla.org/en-US/firefox/addon/ublock-origin/) from userContent.
+* __userContent.css__: Merged split code for [Ublock Origin](https://addons.mozilla.org/en-US/firefox/addon/ublock-origin/) on addons.css.
+
+### Pre-Last update: 15/06/2021
 
 Files updated:
 
 * __addons.css__: Themed the cloud banner from [Ublock Origin](https://addons.mozilla.org/en-US/firefox/addon/ublock-origin/) theme.
-
-### Pre-Last update: 11/06/2021
-
-Files updated:
-
-* __userChrome.css__: Fixed some issue with tab borders on pinned tabs.
-* __MultiRowTab*.uc.js__: Fixed some issue when only having pinned tabs open.
 
 
 ### A note on people looking to replace some Tab Mix Plus features:

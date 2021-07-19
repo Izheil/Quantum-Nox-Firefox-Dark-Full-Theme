@@ -1344,6 +1344,51 @@ select:hover {
 select .menulist-dropmarker {display: none}
 }
 
+
+/*------ UBLOCK ORIGIN ELEMENT PICKER ------*/
+
+/* Ublock Origin element picker window */
+#ublock0-epicker aside {
+	background: #333 !important;
+	color: #ccc !important;
+	border: 1px solid #666 !important}
+
+#ublock0-epicker .cm-variable {
+	color: #ccc !important}	
+
+#ublock0-epicker #resultsetCount {background-color: #666 !important; color: #ddd !important}
+
+#ublock0-epicker section > div:first-child > textarea {
+	background: #555 !important; 
+	color: #ddd !important;
+	border: 1px solid #666 !important}
+
+#ublock0-epicker section > div:first-child {border: 1px solid #666 !important}
+
+#ublock0-epicker aside #cosmeticFilters li:hover {background: rgba(255,255,255,0.2) !important}
+
+#ublock0-epicker aside button:not(#create) {
+    -moz-appearance: none !important;
+    border-radius: 3px !important;
+    background: #555 !important;
+    color: #ddd !important;
+    border: none !important}
+
+#ublock0-epicker aside button:not(#create):hover {
+    background: #111 !important;
+    color: #ddd !important}
+
+#ublock0-epicker aside #create {
+	-moz-appearance: none !important;
+    border-radius: 3px !important;
+    background: #ffbb33 !important;
+    color: #000 !important;
+    border: none !important}
+
+#ublock0-epicker aside #create:hover {
+    background: #cc8800 !important;
+    color: #ddd !important}
+
 /*------ UBLOCK ORIGIN MENU POPUP ------*/
 @-moz-document url-prefix(moz-extension://TYPE-UUID-OF-UBLOCK-ORIGIN-ADDON-HERE/popup.html) {
 
