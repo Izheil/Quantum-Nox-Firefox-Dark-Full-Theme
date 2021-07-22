@@ -1,7 +1,7 @@
 /* You can find an updated version here: https://github.com/Izheil/Quantum-Nox-Firefox-Dark-Full-Theme */
 /* Made by Izheil */
 
-/* Last updated: 19/07/2021 */
+/* Last updated: 22/07/2021 */
 
 /* This part imports the Addons file if there is one, so that you don't have to edit the dynamic URL
 from the addons rules every time we update anything here */
@@ -1747,32 +1747,75 @@ select .menulist-dropmarker {display: none}
 /*------ MOZILLA LOGIN PAGE (The login page inside https://addons.mozilla.org) ------*/
 @-moz-document url-prefix(https://accounts.firefox.com) {
 
-html, body {background-color: #202020 !important}
+	html, body {background-color: #202020 !important}
 
-#stage #main-content.panel {
-	background: #303030 !important;
-	color: #ccc !important}
-
-.card, .firefox-family-services, .settings-child-view  {
-	background: #404040 !important;
-	color: #ccc !important}
-
-.secondary-button {background-color: #666 !important; color: #ddd !important}
-.secondary-button:hover {background-color: #888 !important; color: #fff !important}
-
-h1, h2 {color: #fff !important}
-
-p, label {color: #ccc !important}
-
-form input::placeholder {color: #aaa !important}
-
-a{color: #0d96ff !important}
-
-a:hover{color: #0080dd !important}
-
-form input:not([type="radio"]), .show-password-label {
-	background-color: #444 !important;
-	color: #ccc !important}
+	#stage #main-content.panel, header.sticky, .bg-white:not(.fixed) {
+		background: #303030 !important;
+		color: #ccc !important}
+	
+	#main-content {
+		box-shadow: 0 12px 18px 2px rgba(150,150,150,.04),0 6px 22px 4px rgba(150,150,150,.12),0 6px 10px -4px rgba(150,150,150,.12) !important;
+	}
+	
+	#about-mozilla, img[src^="/settings/static/media/mobile"], img[src^="/settings/static/media/vpn-logo"] {
+		filter: invert(80%);
+	}
+	
+	.card, .firefox-family-services, .settings-child-view, .cta-neutral, .flex.flex-wrap:not(footer) > div {
+		background: #404040 !important;
+		color: #ccc !important;
+		border-color: #666 !important}
+	
+	.mobileLandscape\:drop-down-menu::before, .drop-down-menu::before {
+		border-bottom-color: #404040 !important}
+	
+	.border-solid, hr {
+		border-color: #666 !important}
+	
+	.cta-neutral:hover {
+		background: #454545 !important;
+		color: #fff !important}
+	
+	span[data-testid="totp-input-label"] {
+		color: #ccc !important;
+	}
+	
+	.bg-white svg:not(img), .bg-white svg > rect, .bg-white  svg > path, svg.w-5 > path:not([fill="#20123A"]),
+	.cursor-pointer > rect, a[data-testid="link-mozilla"] > svg > path {
+		fill: #fff !important}
+	
+	.cta-caution {
+		background: rgb(172, 24, 24) !important;
+		color: #ccc !important;
+	}
+	
+	.cta-caution:hover {
+		background: rgb(194, 44, 44) !important;
+		color: #fff !important;
+	}
+	
+	.mt-3 a.bg-grey-50 {
+		background-color: transparent !important}
+	
+	*[class*="hover"]:hover, .mt-3:hover a.bg-grey-50 {
+		background-color: rgba(255,255,255,0.05) !important}
+	
+	.secondary-button {background-color: #666 !important; color: #ddd !important}
+	.secondary-button:hover {background-color: #888 !important; color: #fff !important}
+	
+	h1, h2, .prefillEmail {color: #fff !important}
+	
+	p, label {color: #ccc !important}
+	
+	form input::placeholder {color: #aaa !important}
+	
+	a{color: #0d96ff !important}
+	
+	a:hover{color: #0080dd !important}
+	
+	form input:not([type="radio"]), .show-password-label {
+		background-color: #444 !important;
+		color: #ccc !important}
 }
 
 /*------ MOZILLA SUPPORT PAGE (https://support.mozilla.org) ------*/

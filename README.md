@@ -17,14 +17,14 @@ If you want to know how to change some colors of the theme, check the [wiki](htt
 
 Files updated:
 
-* __addons.css__: Merged split code for [Ublock Origin](https://addons.mozilla.org/en-US/firefox/addon/ublock-origin/) from userContent.
-* __userContent.css__: Merged split code for [Ublock Origin](https://addons.mozilla.org/en-US/firefox/addon/ublock-origin/) on addons.css.
+* __userContent.css__: Fixed [Firefox account login](https://accounts.firefox.com) page theme.
 
-### Pre-Last update: 15/06/2021
+### Pre-Last update: 19/06/2021
 
 Files updated:
 
-* __addons.css__: Themed the cloud banner from [Ublock Origin](https://addons.mozilla.org/en-US/firefox/addon/ublock-origin/) theme.
+* __addons.css__: Merged split code for [Ublock Origin](https://addons.mozilla.org/en-US/firefox/addon/ublock-origin/) from userContent.
+* __userContent.css__: Merged split code for [Ublock Origin](https://addons.mozilla.org/en-US/firefox/addon/ublock-origin/) on addons.css.
 
 
 ### A note on people looking to replace some Tab Mix Plus features:
