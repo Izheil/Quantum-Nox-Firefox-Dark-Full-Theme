@@ -5,8 +5,8 @@ import shutil
 import requests
 import subprocess
 import webbrowser
-import distutils.core
 from pathlib import Path
+
 
 def SystemOS():
     "Identifies the OS"
@@ -19,6 +19,7 @@ def SystemOS():
         SystemOS = "Mac"
     else: SystemOS = "Unknown"
     return SystemOS
+
 
 OSinUse = SystemOS()
 
@@ -33,6 +34,7 @@ idArrays = ["All", "anttoolbar@ant.com", "CookieAutoDelete@kennydo.com",
             "{c607c8df-14a7-4f28-894f-29e8722976af}", "uBlock0@raymondhill.net", 
             "uMatrix@raymondhill.net", "{b9db16a4-6edc-47ec-a1f4-b86292ed211d}",
             "{00000c4c-fcfd-49bc-9f0d-78db44456c9c}"]
+
 
 def readProfiles(profile):
     "Fetches the profile folders"
@@ -62,6 +64,7 @@ def readProfiles(profile):
                         Paths.append(os.path.normpath(profilepath.group(1)))
     return Paths
 
+
 def readDefaults(profile):
     "Fetches the default profile folders"
 
@@ -82,6 +85,7 @@ def readDefaults(profile):
                     else:
                         Paths.append(os.path.normpath(defaultspath.group(1)))
         return Paths
+
 
 # We get the user folders here
 if OSinUse == "Windows":
@@ -112,7 +116,7 @@ if OSinUse == "Windows":
                     users.append(str(userRead.group(1)).rstrip())
 
     except Exception as err:
-        print("Couldn't locate login user, backing to default profile path.")
+        print("Couldn't locate login user, backing to default profile path. \n" + err)
 
     # Make sure the user array isn't empty
     if users == []:
@@ -126,11 +130,11 @@ if OSinUse == "Windows":
     adminProfile = os.getenv('USERPROFILE')
     adminName = os.getenv('USERNAME')
 
-    appdataPath = (adminProfile[0:-(len(adminName))] 
-                  + users[0].capitalize() 
+    appdataPath = (adminProfile[0:-(len(adminName))]
+                  + users[0].capitalize()
                   + "\\AppData\\Roaming")
 
-    altPath = os.path.join("C:\\Users\\", users[0].capitalize() 
+    altPath = os.path.join("C:\\Users\\", users[0].capitalize()
                            + "\\AppData\\Roaming")
 
     if os.access(appdataPath, os.F_OK):
@@ -162,15 +166,15 @@ else:
 # We get the default folder where programs are installed here
 if OSinUse == "Windows":
     PFolder = r"C:\Program Files"
-    if os.access(PFolder, os.F_OK) == False:
+    if not os.access(PFolder, os.F_OK):
         PFolder = ""
 elif OSinUse == "Linux" or OSinUse == "Unknown":
     PFolder = r"/usr/lib"
-    if os.access(PFolder, os.F_OK) == False:
+    if not os.access(PFolder, os.F_OK):
         PFolder = ""
 elif OSinUse == "Mac":
     PFolder = r"/Applications/"
-    if os.access(PFolder, os.F_OK) == False:
+    if not os.access(PFolder, os.F_OK):
         PFolder = ""
 
 # We get the default folders for each installation here
@@ -220,6 +224,7 @@ elif OSinUse == "Mac":
         rootN = "Not found"
     if not os.access(rootD, os.F_OK):
         rootD = "Not found"
+
 
 # We get the default folders here
 def RPFinder():
@@ -340,6 +345,7 @@ if not os.access(defPLocation, os.F_OK):
     else:
         defPLocation = MozPFolder
 
+
 # Function to get the UUIDs of the installed extensions
 def parseUUIDS(selectedProfile):
     # We get the string with the extension UUIDs here
@@ -369,6 +375,7 @@ def parseUUIDS(selectedProfile):
 
     return UUIDDict
 
+
 # This function handles the addons placeholders replacement
 def addonsPatcher(FFprofile, UUIDDict):
     "This method patches both the root and profile folders"
@@ -385,67 +392,67 @@ def addonsPatcher(FFprofile, UUIDDict):
                                   UUIDDict['anttoolbar@ant.com'])
                 # History autodelete
                 if isAddonInstalled[x] == "{7e79d10d-9667-4d38-838d-471281c568c3}":
-                   s = s.replace("TYPE-UUID-OF-HISTORY-AUTODELETE-ADDON-HERE", 
+                    s = s.replace("TYPE-UUID-OF-HISTORY-AUTODELETE-ADDON-HERE",
                                   UUIDDict['{7e79d10d-9667-4d38-838d-471281c568c3}'])
                 # Cookie autodelete
                 if isAddonInstalled[x] == "CookieAutoDelete@kennydo.com":
-                   s = s.replace("TYPE-UUID-OF-COOKIE-AUTODELETE-ADDON-HERE", 
+                    s = s.replace("TYPE-UUID-OF-COOKIE-AUTODELETE-ADDON-HERE",
                                   UUIDDict['CookieAutoDelete@kennydo.com'])
                 # Download Manager (S3)
                 if isAddonInstalled[x] == "s3download@statusbar":
-                   s = s.replace("TYPE-UUID-OF-DOWNLOAD-MANAGER-(S3)-ADDON-HERE", 
+                    s = s.replace("TYPE-UUID-OF-DOWNLOAD-MANAGER-(S3)-ADDON-HERE",
                                   UUIDDict['s3download@statusbar'])
                 # Forget me not
                 if isAddonInstalled[x] == "forget-me-not@lusito.info":
-                   s = s.replace("TYPE-UUID-OF-FORGET-ME-NOT-ADDON-HERE", 
+                    s = s.replace("TYPE-UUID-OF-FORGET-ME-NOT-ADDON-HERE",
                                   UUIDDict['forget-me-not@lusito.info'])
                 # HTTPS everywhere
                 if isAddonInstalled[x] == "https-everywhere@eff.org":
-                   s = s.replace("TYPE-UUID-OF-HTTPS-EVERYWHERE-ADDON-HERE", 
+                    s = s.replace("TYPE-UUID-OF-HTTPS-EVERYWHERE-ADDON-HERE",
                                   UUIDDict['https-everywhere@eff.org'])
                 # Noscript
                 if isAddonInstalled[x] == "{73a6fe31-595d-460b-a920-fcc0f8843232}":
-                   s = s.replace("TYPE-UUID-OF-NOSCRIPT-ADDON-HERE", 
+                    s = s.replace("TYPE-UUID-OF-NOSCRIPT-ADDON-HERE",
                                   UUIDDict['{73a6fe31-595d-460b-a920-fcc0f8843232}'])
                 # Notifier for Gmail (restartless)
                 if isAddonInstalled[x] == "jid0-GjwrPchS3Ugt7xydvqVK4DQk8Ls@jetpack":
-                   s = s.replace("TYPE-UUID-OF-NOTIFIER-FOR-GMAIL-ADDON-HERE", 
+                    s = s.replace("TYPE-UUID-OF-NOTIFIER-FOR-GMAIL-ADDON-HERE",
                                   UUIDDict['jid0-GjwrPchS3Ugt7xydvqVK4DQk8Ls@jetpack'])
                 # Multi-accounts container
                 if isAddonInstalled[x] == "@testpilot-containers":
-                   s = s.replace("TYPE-UUID-OF-MULTI-ACCOUNTS-CONTAINER-ADDON-HERE", 
+                    s = s.replace("TYPE-UUID-OF-MULTI-ACCOUNTS-CONTAINER-ADDON-HERE",
                                   UUIDDict['@testpilot-containers'])
                 # Onetab
                 if isAddonInstalled[x] == "extension@one-tab.com":
-                   s = s.replace("TYPE-UUID-OF-ONETAB-ADDON-HERE", 
+                    s = s.replace("TYPE-UUID-OF-ONETAB-ADDON-HERE",
                                   UUIDDict['extension@one-tab.com'])
                 # Privacy Badger
                 if isAddonInstalled[x] == "jid1-MnnxcxisBPnSXQ@jetpack":
-                   s = s.replace("TYPE-UUID-OF-PRIVACY-BADGER-ADDON-HERE", 
+                    s = s.replace("TYPE-UUID-OF-PRIVACY-BADGER-ADDON-HERE",
                                   UUIDDict['jid1-MnnxcxisBPnSXQ@jetpack'])
                 # Privacy Possum
                 if isAddonInstalled[x] == "woop-NoopscooPsnSXQ@jetpack":
-                   s = s.replace("TYPE-UUID-OF-PRIVACY-POSSUM-ADDON-HERE", 
+                    s = s.replace("TYPE-UUID-OF-PRIVACY-POSSUM-ADDON-HERE",
                                   UUIDDict['woop-NoopscooPsnSXQ@jetpack'])
                 # Tab Session Manager
                 if isAddonInstalled[x] == "Tab-Session-Manager@sienori":
-                   s = s.replace("TYPE-UUID-OF-TAB-SESSION-MANAGER-ADDON-HERE", 
+                    s = s.replace("TYPE-UUID-OF-TAB-SESSION-MANAGER-ADDON-HERE",
                                   UUIDDict['Tab-Session-Manager@sienori'])
                 # Temporary Containers
                 if isAddonInstalled[x] == "{c607c8df-14a7-4f28-894f-29e8722976af}":
-                   s = s.replace("TYPE-UUID-OF-TEMPORARY-CONTAINERS-ADDON-HERE", 
+                    s = s.replace("TYPE-UUID-OF-TEMPORARY-CONTAINERS-ADDON-HERE",
                                   UUIDDict['{c607c8df-14a7-4f28-894f-29e8722976af}'])
                 # uBlock Origin
                 if isAddonInstalled[x] == "uBlock0@raymondhill.net":
-                   s = s.replace("TYPE-UUID-OF-UBLOCK-ORIGIN-ADDON-HERE", 
+                    s = s.replace("TYPE-UUID-OF-UBLOCK-ORIGIN-ADDON-HERE",
                                   UUIDDict['uBlock0@raymondhill.net'])
                 # uMatrix
                 if isAddonInstalled[x] == "uMatrix@raymondhill.net":
-                   s = s.replace("TYPE-UUID-OF-UMATRIX-ADDON-HERE", 
+                    s = s.replace("TYPE-UUID-OF-UMATRIX-ADDON-HERE",
                                   UUIDDict['uMatrix@raymondhill.net'])
                 # Viewhance
                 if isAddonInstalled[x] == "{00000c4c-fcfd-49bc-9f0d-78db44456c9c}":
-                   s = s.replace("TYPE-UUID-OF-VIEWHANCE-ADDON-HERE", 
+                    s = s.replace("TYPE-UUID-OF-VIEWHANCE-ADDON-HERE",
                                   UUIDDict['{00000c4c-fcfd-49bc-9f0d-78db44456c9c}'])
 
             f.seek(0, 0)
@@ -484,6 +491,7 @@ def addonsPatcher(FFprofile, UUIDDict):
 
     return 0
 
+
 # Function to open a profile folder
 def openProfile(profileFolder):
     if os.access(profileFolder, os.F_OK):
@@ -496,6 +504,7 @@ def openProfile(profileFolder):
     else: 
         print("Couldn't locate the profile folder."
         + "\nSelect a valid one and try again.")
+
 
 # We define some default variables here
 developerIsDefault = (os.access(rootD, os.F_OK) and
@@ -514,6 +523,9 @@ if OSinUse == "Windows":
 else:
     char2Esc = "/"
 
+# Set default value for the default profile
+defaultCLProfile = ""
+
 if developerIsDefault or devOverNightly:
     defaultCLProfile = DProfile.split(char2Esc)[-1]
 elif nightlyIsDefault:
@@ -525,16 +537,44 @@ else:
 print("This program will replace all the UUID placeholder strings in 'addons.css' file for their corresponding identifiers.")
 print("First choose the profile folder where the file will be installed:\n")
 
-print("The current default profile is " + defaultCLProfile + ".\n")
+SelChoice = -1
+ProfilesLen = len(Profiles)
 
-for x in range(len(Profiles)):
-    profName = Profiles[x].split(char2Esc)
-    Str2Print = "{}. {}".format(x + 1, profName[-1])
-    print(Str2Print)
+while SelChoice < 0 or SelChoice > ProfilesLen + 1:
+    if defaultCLProfile != "":
+        print("The current default profile is " + defaultCLProfile + ".\n")
 
-SelChoice = int(input("Choice: "))
+    for x in range(ProfilesLen):
+        profName = Profiles[x].split(char2Esc)
+        Str2Print = "{}. {}".format(x + 1, profName[-1])
+        print(Str2Print)
 
-SelProfile = Profiles[SelChoice - 1]
+    print(str(ProfilesLen + 1) + ". Choose a custom profile folder.")
+
+    try:
+        SelChoice = int(input("Choice: "))
+        if SelChoice < 0 or SelChoice > ProfilesLen + 1:
+            print("\nYou need to choose a valid number option between the ones provided.")
+    except TypeError:
+        print("\nThe given choice wasn't a number.")
+
+SelProfile = ""
+
+if SelChoice <= len(Profiles):
+    SelProfile = Profiles[SelChoice - 1]
+else:
+    while SelProfile == "":
+        print("\nEnter the base path of the profile you want to use below.")
+        SelProfile = os.path.normpath(input("Custom path: "))
+        if not os.access(SelProfile, os.F_OK):
+            print("\nThe provided path doesn't exist, or isn't written correctly.")
+            SelProfile = ""
+        elif not os.access(os.path.normpath(SelProfile + "/prefs.js"), os.F_OK):
+            print("\nCouldn't locate 'prefs.js' in the chosen profile, " +
+                  "which is required to parse the UUIDs of addons." +
+                  "\nMake sure that the profile folder you chose has it inside.")
+            SelProfile = ""
+
 
 print("\nSelect the addons you want to theme:\n")
 
