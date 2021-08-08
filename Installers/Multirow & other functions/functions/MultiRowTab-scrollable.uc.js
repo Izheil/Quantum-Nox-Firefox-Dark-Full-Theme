@@ -5,7 +5,7 @@
 // @include        main
 // @compatibility  Firefox 70 to Firefox 91.0a1 (2021-06-03)
 // @author         Alice0775, Endor8, TroudhuK, Izheil, Merci-chao
-// @version        07/08/2021 13:34 Fix for some linux issue when going out of fullscreen
+// @version        07/08/2021 07:36 Fix for some linux issue when going out of fullscreen
 // @version        08/07/2021 07:31 Fixed some issue when having only pinned tabs
 // @version        05/06/2021 12:12 Support for changing scrollbar size and color
 // @version        05/06/2021 03:11 Lightweight themes fix
@@ -387,11 +387,20 @@ function zzzz_MultiRowTabLite() {
         }
     }
 
+    // Detects if exiting fullscreen for fullscreenchange event
+    function checkFullScreenScrolling() {
+        if (!document.fullscreenElement) {
+            let selTab = document.querySelector(".tabbrowser-tab[selected='true']");
+            selTab.scrollIntoView();
+        }
+    }
+
     gBrowser.tabContainer.addEventListener('TabOpen', scrollToView, false);
     gBrowser.tabContainer.addEventListener("TabSelect", scrollToView, false);
     document.addEventListener("SSTabRestoring", scrollToView, false);
+
     // Fix for some linux issue when going out of fullscreen
-    document.addEventListener("fullscreenchange", scrollToView, false);
+    document.addEventListener("fullscreenchange", checkFullScreenScrolling, false);
 
     // Handles resizing of rows when enabled
     if (useResizer) {
