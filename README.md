@@ -121,12 +121,3 @@ The code to be able to edit anonymous content (in our case the scrollbars and to
 Special thanks to **Messna** for noting the class turning into an ID on FF58, and **Snwflake** for fixing Firefox root folder location on MacOS.
 
 Also thanks to **532910**, **BelladonnavGF**, **DallasBelt**, **Demir-delic**, **Gitut2007**, **Hakerdefo**, **Tkhquang** and **YiannisNi** for noting some issues with the theme, and the requests for new features that extended this project.
-
-## Donations
-If you want to support this project, consider buying me a coffee to motivate me keep this repository up and running.
-​<br><br>
-<a href="https://ko-fi.com/K3K4TQ97" target="_blank"><img height="36" style="border:0px;height:36px;" src="https://az743702.vo.msecnd.net/cdn/kofi2.png?v=2" border="0" alt="Buy Me a Coffee at ko-fi.com" /></a>
-
-...or any other amount you see fit on paypal.
-
-<a href="https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=BMUFYBSRA7ENL&source=url"><img alt="" border="0" src="https://www.paypalobjects.com/webstatic/mktg/logo/pp_cc_mark_74x46.jpg"/></a>
