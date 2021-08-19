@@ -3,8 +3,9 @@
 // @namespace      https://github.com/Izheil/Quantum-Nox-Firefox-Dark-Full-Theme
 // @description    Multi-row tabs draggability fix with autohiding scrollbar
 // @include        main
-// @compatibility  Firefox 70 to Firefox 91.0a1 (2021-06-03)
+// @compatibility  Firefox 70 to Firefox 93.0a1 (2021-08-14)
 // @author         Alice0775, Endor8, TroudhuK, Izheil, Merci-chao
+// @version        19/08/2021 03:15 Compatibility fix for FF91
 // @version        07/08/2021 07:36 Fix for some linux issue when going out of fullscreen
 // @version        08/07/2021 07:31 Fixed some issue when having only pinned tabs
 // @version        05/06/2021 12:12 Support for changing scrollbar size and color, fixing tab size jumping
@@ -209,6 +210,13 @@ function zzzz_MultiRowTabLite() {
                            .getPropertyValue('--svg-selected-after');
     }
     
+    // Check if it's proton past FF91
+    var tabsHavePadding = false;
+    let tabBackground = document.getElementsByClassName("tab-background")[0];
+    if (parseInt(getComputedStyle(tabBackground).getPropertyValue('--tab-block-margin').substring(0,1)) > 0) {
+        tabsHavePadding = true;
+    }
+    
     // Here the FF71+ changes
 	if (document.querySelector("#tabbrowser-tabs > arrowscrollbox").shadowRoot) {
 
@@ -250,7 +258,7 @@ function zzzz_MultiRowTabLite() {
 	    `;
 
         // This is a fix for FF89+ (Proton)
-        if (document.documentElement.hasAttribute("proton")) {
+        if (document.documentElement.hasAttribute("proton") || tabsHavePadding) {
             style.innerHTML += `
             scrollbox {
                 max-height: calc((var(--tab-min-height) + 8px) * var(--max-tab-rows));
