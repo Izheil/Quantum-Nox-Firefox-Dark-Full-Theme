@@ -13,14 +13,6 @@ sudo apt install python3-pip
 sudo apt-get install python3-tk
 ```
 
-You will also need to install the required module after installing Python and pip **(on any OS)** using:
-
-```
-pip3 install elevate
-```
-
-After that you can run `Quantum-Nox-Installer.py` to start the patcher.
-
 ### Windows
 
 On Windows you can run it double clicking the file when having python installed, or through the console (asuming you opened the console where the .py file is):
