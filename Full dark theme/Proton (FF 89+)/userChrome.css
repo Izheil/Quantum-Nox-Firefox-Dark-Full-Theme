@@ -1,6 +1,6 @@
 /* You can find an updated version here: https://github.com/Izheil/Quantum-Nox-Firefox-Dark-Full-Theme */
 /* Made by Izheil */
-/* Last updated: 08/07/2021 */
+/* Last updated: 08/09/2021 */
 
 /* COLORING PART STARTS HERE */
 
@@ -30,18 +30,24 @@ without this change) */
   background-position: left top !important}
 
 /* Url and search bars */
-#nav-bar, #mainPopupSet {
-  --lwt-toolbar-field-background-color: rgb(61,61,61) !important;
-  --lwt-toolbar-field-focus: rgb(71,71,71) !important;
-  --lwt-toolbar-field-color: #ccc !important;
-  --lwt-toolbar-field-focus-color: var(--lwt-toolbar-field-color) !important;
-  --lwt-toolbar-field-border-color: #333 !important;
-  --toolbar-field-focus-border-color: #666 !important;
+#nav-bar, #mainPopupSet { 
+  --toolbar-field-background-color: rgb(61,61,61) !important;
+  --toolbar-field-focus-background-color: rgb(71,71,71) !important;
+  --toolbar-field-border-color: var(--toolbar-field-background-color) !important;
+  --toolbar-field-focus-border-color: rgb(0, 114, 221) !important;
+  --toolbar-field-color: #ccc !important;
+  --toolbar-field-focus-color: #ddd !important;
   --urlbar-popup-url-color: rgb(90,170,230) !important;
   --urlbar-popup-action-color: var(--urlbar-popup-url-color) !important;
   --urlbar-separator-color: #666 !important;
   --autocomplete-popup-highlight-background: rgba(100,100,100,0.4) !important;
-  --autocomplete-popup-highlight-color: #ddd !important;}
+  --autocomplete-popup-highlight-color: #ddd !important;
+  --lwt-toolbar-field-background-color: var(--toolbar-field-background-color) !important;
+  --lwt-toolbar-field-focus: var(--toolbar-field-focus-background-color) !important;
+  --lwt-toolbar-field-color: var(--toolbar-field-color) !important;
+  --lwt-toolbar-field-focus-color: var(--lwt-toolbar-field-color) !important;
+  --lwt-toolbar-field-border-color: var(--toolbar-field-focus-border-color) !important;
+}
 
 /* Search panel background gradient */
 .search-panel-one-offs-container {
@@ -681,6 +687,22 @@ menupopup {
   overflow: clip;
   border-radius: 8px !important}
 
+/* Fixes extra padding on FF92+ */
+#PlacesToolbar menupopup {
+  padding-top: 0 !important;
+  padding-inline-start: 0 !important;
+}
+
+menu.bookmark-item, menuitem.bookmark-item, .openintabs-menuitem, .menupopup-arrowscrollbox {
+  padding-top: 3px !important;
+  padding-bottom: 3px !important;
+  margin: 0 !important;
+}
+
+bookmark-item.bookmark-item menupopup {
+  margin: 0 !important
+}
+
 /* This changes the text color of the greyed out actions on the context menus */
 menuitem[disabled="true"], menu[disabled="true"], 
 menuitem[disabled="true"] label, menu[disabled="true"] label {
@@ -1127,7 +1149,7 @@ dropmarker {
   color: var(--autocomplete-popup-highlight-color) !important}
 
 /* Changes the color of search engines choices */
-#PopupSearchAutoComplete .search-panel-one-offs {
+#PopupSearchAutoComplete .search-panel-one-offs-container {
   background: var(--Search-engine-choices-gradient) !important}
 
 /* Changes the color of search engine options button */

@@ -17,13 +17,13 @@ If you want to know how to change some colors of the theme, check the [wiki](htt
 
 Files updated:
 
-* __addons.css__: Fixed an issue with Ublock Origin's unsaved changes banner.
+* __userChrome.css__: Fixes for urlbar background color and bookmark popups extra padding after FF92.
 
-### Pre-Last update: 07/08/2021
+### Pre-Last update: 02/09/2021
 
 Files updated:
 
-* __MultiRowTab-scrollable*.uc.js__: Fixed an issue of tabs scrolling all the way up on Linux when going out of fullscreen.
+* __addons.css__: Fixed an issue with Ublock Origin's unsaved changes banner.
 
 
 ### A note on people looking to replace some Tab Mix Plus features:
