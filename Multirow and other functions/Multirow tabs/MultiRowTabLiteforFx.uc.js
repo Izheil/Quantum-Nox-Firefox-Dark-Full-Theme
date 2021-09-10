@@ -81,17 +81,23 @@ function zzzz_MultiRowTabLite() {
        Note that with Proton, when there is media playing, the tab text will appear in 2 lines, and unlike
        with compact mode this won't be changed to fit with a custom height set by this variable, so anything 
        lower than 30px might make the text to go outside the tab area.
+
+       With compact mode enabled on Proton, the min value you should be using for --tab-min-height below is 20px.
+       Anything below that will cause issues.
     */
 
     #TabsToolbar {
         --tab-min-height: inherit !important;
-
-        /* You don't need to change this last one */
-        --toolbarbutton-inner-padding: inherit !important;
     }
 
     /*-------- Don't edit past here unless you know what you are doing --------*/
-
+    
+    /* This controls the padding of the new tab button. It can help to make tabs smaller, 
+    but will cause issues with too small values */
+    #TabsToolbar {
+        --toolbarbutton-inner-padding: inherit !important;
+    }
+    
     #navigator-toolbox:-moz-lwtheme {
         background-color: var(--toolbar-bgcolor) !important;
     }
@@ -151,9 +157,6 @@ function zzzz_MultiRowTabLite() {
     #alltabs-button, #tabs-newtab-button .new-tab-popup, 
     #TabsToolbar:not([customizing="true"]) #tabbrowser-tabs[hasadjacentnewtabbutton] ~ #new-tab-button 
     {display: none}
-
-    #tabbrowser-tabs .tab-background, #tabbrowser-tabs .tabbrowser-tab {
-        min-height: var(--tab-min-height) !important}
 
     #tabbrowser-tabs, #tabbrowser-arrowscrollbox, .tabbrowser-tab[style^="margin-inline-start"], 
     #tabbrowser-tabs[positionpinnedtabs] > #tabbrowser-arrowscrollbox > .tabbrowser-tab[pinned] {
