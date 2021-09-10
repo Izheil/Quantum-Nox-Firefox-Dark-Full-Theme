@@ -1,7 +1,7 @@
 /* You can find an updated version here: https://github.com/Izheil/Quantum-Nox-Firefox-Dark-Full-Theme */
 /* Made by Izheil */
 
-/* Last updated: 22/07/2021 */
+/* Last updated: 10/09/2021 */
 
 /* This part imports the Addons file if there is one, so that you don't have to edit the dynamic URL
 from the addons rules every time we update anything here */
@@ -1195,6 +1195,13 @@ treechildren::-moz-tree-row(selected){
 	--text-color: #ccc !important;
 	--category-text: #fff !important;
 	--category-text-selected: var(--in-content-category-text-selected) !important;
+	--card-background-color: #383838 !important;
+	--button-background-color: var(--in-content-button-background) !important;
+	--button-hover-background-color: var(--in-content-button-background-hover) !important;
+	--button-active-background-color: var(--in-content-button-background-active) !important;
+	--primary-button-background-color: var(--in-content-primary-button-background) !important;
+	--primary-button-hover-background-color: var(--in-content-primary-button-background-hover) !important;
+	--sidebar-background-hover: rgba(255,255,255,0.1) !important;
 	--link-color: var(--in-content-link-color) !important;
 	--link-color-active: var(--in-content-link-color-active) !important;
 	--link-color-hover: var(--in-content-link-color-hover) !important;
@@ -1211,9 +1218,11 @@ treechildren::-moz-tree-row(selected){
 	--grey-20: #666 !important;
 }
 
-.sidebar__footer__icon {filter: invert(100%)}
+.sidebar__footer__icon {fill: #fff !important}
 .connect-section__header__icon {filter: invert(.7)}
-.primary-button {color: #ddd !important}
+.primary-button, .default-button {color: #ddd !important}
+.primary-button:hover, .default-button:hover, 
+.primary-button:active, .default-button:active {color: #fff !important}
 .sidebar {background-color: #333 !important}
 
 /*-- Old layout starts here --*/

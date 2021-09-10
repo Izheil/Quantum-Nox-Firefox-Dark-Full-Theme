@@ -13,17 +13,17 @@ You can use it to fully change the colors of most of firefox UI to dark-gray col
 
 If you want to know how to change some colors of the theme, check the [wiki](https://github.com/Izheil/Quantum-Nox-Firefox-Dark-Full-Theme/wiki/Editting-CSS-files).
 
-### Last update: 02/09/2021
+### Last update: 10/09/2021
+
+Files updated:
+
+* __userContent.css__: Fixed some issues with `about:Debugging`.
+
+### Pre-Last update: 08/09/2021
 
 Files updated:
 
 * __userChrome.css__: Fixes for urlbar background color and bookmark popups extra padding after FF92.
-
-### Pre-Last update: 02/09/2021
-
-Files updated:
-
-* __addons.css__: Fixed an issue with Ublock Origin's unsaved changes banner.
 
 
 ### A note on people looking to replace some Tab Mix Plus features:
