@@ -36,3 +36,8 @@ exe = EXE(pyz,
           runtime_tmpdir=None,
           console=False,
           icon="icon.gif")
+
+app = BUNDLE(exe,
+             name='Multirow-Patcher-Quantum-Nox-Installer-Mac-x-y-z.app',
+             icon="icon.icns",
+             bundle_identifier=None)
