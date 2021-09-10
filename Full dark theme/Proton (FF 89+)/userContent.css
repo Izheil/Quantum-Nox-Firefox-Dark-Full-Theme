@@ -108,6 +108,11 @@ To use, instead of "none;", type: url("URL-OF-THE-IMAGE-GOES-HERE"); <- Don't fo
 /* This changes about: categories sidebar */
 #full > #sidebar {background-color: #303030 !important}
 
+/* Some missing popups */
+menulist menupopup {
+	--panel-background: #333 !important;
+}
+
 /*------ FILE BROWSING PAGE ------*/
 /* This was placed here for bug fixing of styles overriding when testing things, for the 
 coloring part, go to the common part for all firefox pages (if you use a global userstyle,

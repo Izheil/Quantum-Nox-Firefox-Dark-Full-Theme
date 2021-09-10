@@ -17,7 +17,7 @@ If you want to know how to change some colors of the theme, check the [wiki](htt
 
 Files updated:
 
-* __userContent.css__: Fixed some issues with `about:Debugging`.
+* __userContent.css__: Fixed some issues with `about:debugging`, and `about:preferences`.
 
 ### Pre-Last update: 08/09/2021
 
