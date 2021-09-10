@@ -5,6 +5,7 @@
 // @include        main
 // @compatibility  Firefox 70 to Firefox 93.0a1 (2021-08-14)
 // @author         Alice0775, Endor8, TroudhuK, Izheil, Merci-chao
+// @version        10/09/2021 09:49 Fixed regression of pinned tabs icon showing unaligned
 // @version        19/08/2021 03:15 Compatibility fix for FF91
 // @version        07/08/2021 07:36 Fix for some linux issue when going out of fullscreen
 // @version        08/07/2021 07:31 Fixed some issue when having only pinned tabs
@@ -157,11 +158,7 @@ function zzzz_MultiRowTabLite() {
             border-top: none !important}
     }
 
-    /* A fix for pinned tabs getting smaller when they are alone */
-    .tabbrowser-tab[pinned] .tab-content {
-        max-height: var(--tab-min-height) !important;
-    }
-
+    /* A fix for pinned tabs triggering another row when only pinned tabs are shown in a row */
     .tabbrowser-tab[pinned] {
         height: calc(var(--tab-min-height) + 8px) !important;
     }

@@ -130,11 +130,7 @@ function zzzz_MultiRowTabLite() {
             border-top: none !important}
     }
 
-    /* A fix for pinned tabs getting smaller when they are alone */
-    .tabbrowser-tab[pinned] .tab-content {
-        max-height: var(--tab-min-height) !important;
-    }
-
+    /* A fix for pinned tabs triggering another row when only pinned tabs are shown in a row */
     .tabbrowser-tab[pinned] {
         height: calc(var(--tab-min-height) + 8px) !important;
     }
