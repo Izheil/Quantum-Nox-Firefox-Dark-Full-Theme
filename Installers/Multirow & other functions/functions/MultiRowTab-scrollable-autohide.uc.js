@@ -3,7 +3,7 @@
 // @namespace      https://github.com/Izheil/Quantum-Nox-Firefox-Dark-Full-Theme
 // @description    Multi-row tabs draggability fix with autohiding scrollbar
 // @include        main
-// @compatibility  Firefox 70 to Firefox 93.0a1 (2021-08-14)
+// @compatibility  Firefox 70 to Firefox 94.0a1 (2021-09-14)
 // @author         Alice0775, Endor8, TroudhuK, Izheil, Merci-chao
 // @version        15/09/2021 11:39 Added experimental support for tab sizing below 20px
 // @version        10/09/2021 09:49 Fixed regression of pinned tabs icon showing unaligned
