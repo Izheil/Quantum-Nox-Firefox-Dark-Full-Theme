@@ -5,6 +5,8 @@
 // @include        main
 // @compatibility  Firefox 70 to Firefox 91.0a1 (2021-06-03)
 // @author         Alice0775, Endor8, TroudhuK, Izheil, Merci-chao
+// @version        15/09/2021 11:39 Added experimental support for tab sizing below 20px
+// @version        10/09/2021 09:49 Fixed regression of pinned tabs icon showing unaligned
 // @version        08/07/2021 07:31 Fixed some issue when having only pinned tabs
 // @version        05/06/2021 03:11 Lightweight themes fix
 // @version        04/06/2021 04:39 Tab height fix for Proton
@@ -90,6 +92,21 @@ function zzzz_MultiRowTabLite() {
         --tab-min-height: inherit !important;
     }
 
+    /*  These below control the padding of the new tab button and min/max/close buttons respectively.
+        YOU DON'T NEED TO CHANGE THESE unless you want to use values of --tab-min-height lower than 20px. 
+        Before changing them, you need to UNCOMMENT the 2 rules below for them TO TAKE EFFECT. */
+
+    /*
+    #TabsToolbar {
+        --toolbarbutton-inner-padding: inherit !important;
+    }
+
+    .titlebar-buttonbox .titlebar-button {
+        padding-top: 8px !important;
+        padding-bottom: 8px !important;
+    }
+    */
+
     /*-------- Don't edit past here unless you know what you are doing --------*/
     
     /* This controls the padding of the new tab button. It can help to make tabs smaller, 
@@ -116,7 +133,8 @@ function zzzz_MultiRowTabLite() {
 
     #tabbrowser-tabs > arrowscrollbox{
         overflow: visible;
-        display: block}
+        display: block;
+        height: var(--tab-min-height)}
 
     @media (-moz-os-version: windows-win10) {
         #TabsToolbar .titlebar-buttonbox-container {display: block}
