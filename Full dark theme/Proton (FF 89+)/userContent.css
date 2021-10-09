@@ -1,7 +1,7 @@
 /* You can find an updated version here: https://github.com/Izheil/Quantum-Nox-Firefox-Dark-Full-Theme */
 /* Made by Izheil */
 
-/* Last updated: 10/09/2021 */
+/* Last updated: 09/10/2021 */
 
 /* This part imports the Addons file if there is one, so that you don't have to edit the dynamic URL
 from the addons rules every time we update anything here */
@@ -719,6 +719,10 @@ input[type="url"]:not([readonly]) {
 	background-color: #303030 !important;
 	color: #ccc !important;
 	border-color: #555 !important}
+
+.login-list-header {
+	background-color: #202020 !important;
+	color: #fff !important}
 
 .tooltip-container .arrow-box::before {
 	border-inline-end-color: #555 !important}
