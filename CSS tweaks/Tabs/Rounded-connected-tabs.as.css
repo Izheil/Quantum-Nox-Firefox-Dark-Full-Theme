@@ -1,6 +1,6 @@
 /* You can find an updated version here: https://github.com/Izheil/Quantum-Nox-Firefox-Dark-Full-Theme */
 /* Made by Izheil */
-/* Last updated: 05/06/2021 */
+/* Last updated: 21/10/2021 */
 
 /* ROUNDED TABS CONNECTED TABS */
 
@@ -15,6 +15,17 @@
 /* This removes padding between tabs */
 .tabbrowser-tab {
   padding: 0 !important;
+}
+
+/* This ensures that the side arrows when tabs become scrollable sideways don't create a gap below tabs */
+#scrollbutton-up, #scrollbutton-down {
+  padding: 0 !important;
+  max-height: var(--tab-min-height) !important;
+}
+
+#alltabs-button, #tabs-newtab-button, #TabsToolbar-customization-target .webextension-browser-action,
+#wrapper-alltabs-button, #wrapper-new-tab-button, #new-tab-button {
+  margin-bottom: 0 !important
 }
 
 .tab-background[multiselected="true"], .tab-background[selected="true"] {

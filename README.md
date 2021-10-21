@@ -13,17 +13,17 @@ You can use it to fully change the colors of most of firefox UI to dark-gray col
 
 If you want to know how to change some colors of the theme, check the [wiki](https://github.com/Izheil/Quantum-Nox-Firefox-Dark-Full-Theme/wiki/Editting-CSS-files).
 
-### Last update: 15/09/2021
+### Last update: 21/10/2021
+
+Files updated:
+
+* __Rounded-connected-tabs.as.css__: Fixed some issues with gaps below tabs without multirow tabs on.
+
+### Pre-Last update: 15/09/2021
 
 Files updated:
 
 * __MultiRowTab*.uc.js__: Added experimental support for yet smaller and more compact tabs.
-
-### Pre-Last update: 10/09/2021
-
-Files updated:
-
-* __userContent.css__: Fixed some issues with `about:debugging`, and `about:preferences`.
 
 
 ### A note on people looking to replace some Tab Mix Plus features:
