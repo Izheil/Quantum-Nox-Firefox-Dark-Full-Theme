@@ -9,6 +9,7 @@ import tkinter
 import argparse
 import subprocess
 import webbrowser
+import configparser
 import distutils.core
 from pathlib import Path
 from tkinter import (LabelFrame, Checkbutton, Frame, Label, Entry,
@@ -21,12 +22,10 @@ def SystemOS():
 
     if sys.platform.startswith('win'):
         SystemOS = "Windows"
-    elif sys.platform.startswith('linux'):
-        SystemOS = "Linux"
     elif sys.platform.startswith('darwin'):
         SystemOS = "Mac"
     else:
-        SystemOS = "Unknown"
+        SystemOS = "Linux"
     return SystemOS
 
 
@@ -175,6 +174,18 @@ elif OSinUse == "Mac":
     home = str(Path.home())
     MozPFolder = home + r"/Library/Application Support/Firefox"
 
+# Get the path of last saved installation paths if they exist
+if OSinUse == "Windows":
+    QNFolder = home + r"\Quantum Nox"
+
+elif OSinUse == "Linux":
+    QNFolder = home + r"/.Quantum Nox"
+
+elif OSinUse == "Mac":
+    QNFolder = home + r"/Library/Application Support/Quantum Nox"
+
+FFPathsINI = os.path.normpath(QNFolder + '/FFPaths.ini')
+
 # Make sure that the default Firefox folder exists or that it's correctly fetched
 if os.access(MozPFolder, os.F_OK):
     Profiles = readProfiles(MozPFolder)
@@ -187,12 +198,26 @@ else:
     Profiles = ["None"]
     defaultProf = ["None"]
 
+if (Profiles == ["None"] or defaultProf == ["None"]) and os.path.isfile(FFPathsINI):
+    config = configparser.ConfigParser()
+
+    if Profiles == ["None"]:
+        config.read(FFPathsINI)
+        for profilePath in config['FIREFOX_PROFILE_PATH']:
+            if os.path.exists(config['FIREFOX_PROFILE_PATH'][profilePath]):
+                Profiles = [config['FIREFOX_PROFILE_PATH'][profilePath]]
+    if defaultProf == ["None"]:
+        for profilePath in config['FIREFOX_PROFILE_PATH']:
+            if os.path.exists(config['FIREFOX_PROFILE_PATH'][profilePath]):
+                defaultProf = [config['FIREFOX_PROFILE_PATH'][profilePath]]
+                break
+
 # We get the default folder where programs are installed here
 if OSinUse == "Windows":
     PFolder = r"C:\Program Files"
     if os.access(PFolder, os.F_OK) == False:
         PFolder = ""
-elif OSinUse == "Linux" or OSinUse == "Unknown":
+elif OSinUse == "Linux":
     PFolder = r"/usr/lib"
     if os.access(PFolder, os.F_OK) == False:
         PFolder = ""
@@ -210,19 +235,40 @@ if OSinUse == "Windows":
         root = r"C:\Program Files\Mozilla Firefox"
         if not os.access(root, os.F_OK):
             root = "Not found"
+            if os.path.isfile(FFPathsINI):
+                config = configparser.ConfigParser()
+                config.read(FFPathsINI)
+                if config['FIREFOX_ROOT_PATH']['stable']:
+                    root = config['FIREFOX_ROOT_PATH']['stable']
+                    if not os.path.exists(root):
+                        root = "Not found"
     if not os.access(rootN, os.F_OK):
         rootN = r"C:\Program Files (x86)\Firefox Nightly"
         if not os.access(rootN, os.F_OK):
             rootN = r"C:\Program Files\Firefox Nightly"
             if not os.access(rootN, os.F_OK):
                 rootN = "Not found"
+                if os.path.isfile(FFPathsINI):
+                    config = configparser.ConfigParser()
+                    config.read(FFPathsINI)
+                    if config['FIREFOX_ROOT_PATH']['nightly']:
+                        rootN = config['FIREFOX_ROOT_PATH']['nightly']
+                        if not os.path.exists(rootN):
+                            rootN = "Not found"
     if not os.access(rootD, os.F_OK):
         rootD = r"C:\Program Files (x86)\Firefox Developer Edition"
         if not os.access(rootD, os.F_OK):
             rootD = r"C:\Program Files\Firefox Developer Edition"
             if not os.access(rootD, os.F_OK):
                 rootD = "Not found"
-elif OSinUse == "Linux" or OSinUse == "Unknown":
+                if os.path.isfile(FFPathsINI):
+                    config = configparser.ConfigParser()
+                    config.read(FFPathsINI)
+                    if config['FIREFOX_ROOT_PATH']['developer']:
+                        rootD = config['FIREFOX_ROOT_PATH']['developer']
+                        if not os.path.exists(rootD):
+                            rootD = "Not found"
+elif OSinUse == "Linux":
     root = r"/usr/lib/firefox/"
     rootN = r"/opt/nightly"
     rootD = r"/opt/developer"
@@ -230,24 +276,66 @@ elif OSinUse == "Linux" or OSinUse == "Unknown":
         root = r"/usr/lib64/firefox/"
         if not os.access(root, os.F_OK):
             root = "Not found"
+            if os.path.isfile(FFPathsINI):
+                config = configparser.ConfigParser()
+                config.read(FFPathsINI)
+                if config['FIREFOX_ROOT_PATH']['stable']:
+                    root = config['FIREFOX_ROOT_PATH']['stable']
+                    if not os.path.exists(root):
+                        root = "Not found"
     if not os.access(rootN, os.F_OK):
         rootN = r"/opt/firefox"
         if not os.access(rootN, os.F_OK):
             rootN = "Not found"
+            if os.path.isfile(FFPathsINI):
+                config = configparser.ConfigParser()
+                config.read(FFPathsINI)
+                if config['FIREFOX_ROOT_PATH']['nightly']:
+                    rootN = config['FIREFOX_ROOT_PATH']['nightly']
+                    if not os.path.exists(rootN):
+                        rootN = "Not found"
     if not os.access(rootD, os.F_OK):
         rootD = r"/opt/firefox"
         if not os.access(rootD, os.F_OK):
             rootD = "Not found"
+            if os.path.isfile(FFPathsINI):
+                config = configparser.ConfigParser()
+                config.read(FFPathsINI)
+                if config['FIREFOX_ROOT_PATH']['developer']:
+                    rootD = config['FIREFOX_ROOT_PATH']['developer']
+                    if not os.path.exists(rootD):
+                        rootD = "Not found"
 elif OSinUse == "Mac":
     root = r"/Applications/Firefox.app/Contents/Resources"
     rootN = r"/Applications/Firefox Nightly.app/Contents/Resources"
     rootD = r"/Applications/Firefox Developer Edition.app/Contents/Resources"
     if not os.access(root, os.F_OK):
         root = "Not found"
+        if os.path.isfile(FFPathsINI):
+            config = configparser.ConfigParser()
+            config.read(FFPathsINI)
+            if config['FIREFOX_ROOT_PATH']['stable']:
+                root = config['FIREFOX_ROOT_PATH']['stable']
+                if not os.path.exists(root):
+                    root = "Not found"
     if not os.access(rootN, os.F_OK):
         rootN = "Not found"
+        if os.path.isfile(FFPathsINI):
+            config = configparser.ConfigParser()
+            config.read(FFPathsINI)
+            if config['FIREFOX_ROOT_PATH']['nightly']:
+                rootN = config['FIREFOX_ROOT_PATH']['nightly']
+                if not os.path.exists(rootN):
+                    rootN = "Not found"
     if not os.access(rootD, os.F_OK):
         rootD = "Not found"
+        if os.path.isfile(FFPathsINI):
+            config = configparser.ConfigParser()
+            config.read(FFPathsINI)
+            if config['FIREFOX_ROOT_PATH']['developer']:
+                rootD = config['FIREFOX_ROOT_PATH']['developer']
+                if not os.path.exists(rootD):
+                    rootD = "Not found"
 
 # We get the default folders here
 def RPFinder():
@@ -325,6 +413,29 @@ def DPFinder():
 RProfile = RPFinder()
 NProfile = NPFinder()
 DProfile = DPFinder()
+
+# If any of the profile values is "Not found" and there is a value stored, we restore it
+if os.path.isfile(FFPathsINI):
+    config = configparser.ConfigParser()
+    if RProfile == "Not found":
+        config.read(FFPathsINI)
+        if config['FIREFOX_PROFILE_PATH']['stable']:
+            RProfile = config['FIREFOX_PROFILE_PATH']['stable']
+            if not os.path.exists(RProfile):
+                RProfile = "Not found"
+    if NProfile == "Not found":
+        config.read(FFPathsINI)
+        if config['FIREFOX_PROFILE_PATH']['nightly']:
+            NProfile = config['FIREFOX_PROFILE_PATH']['nightly']
+            if not os.path.exists(NProfile):
+                NProfile = "Not found"
+    if DProfile == "Not found":
+        config.read(FFPathsINI)
+        if config['FIREFOX_PROFILE_PATH']['developer']:
+            DProfile = config['FIREFOX_PROFILE_PATH']['developer']
+            if not os.path.exists(DProfile):
+                DProfile = "Not found"
+
 
 # Check if only 1 profile exists and only 1 installation exists
 # so that if not using the default profile names, it will get
@@ -413,6 +524,7 @@ def fullPatcher(FFversion, FFprofile):
                                               os.path.normpath(FFversion + "/defaults/pref/"), update=True)
                 distutils.file_util.copy_file(os.path.normpath(os.getcwd() + "/root/config.js"),
                                               FFversion, update=True)
+
 
             elif os.access(os.path.normpath(FFversion + "/config.js"), os.F_OK) or \
             os.access(os.path.normpath(FFversion + "/defaults/pref/config-prefs.js"), os.F_OK):
@@ -1196,29 +1308,60 @@ class patcherUI(Frame):
             # We handle the choices below
             # v v v v v v v v v v v v v v v v v v v
 
+            # Create the config element to store the installed paths
+            config = configparser.ConfigParser()
+            config['FIREFOX_ROOT_PATH'] = {}
+            config['FIREFOX_PROFILE_PATH'] = {}
+
             # This is the call for Firefox Stable functions
             if CkFF.get() == 1:
                 FFVersion = "Firefox"
                 FFroot = rpCkFF12.get()
                 FFprofile = rpCkFF22.get()
-                Error += copyRFunctions(FFroot, FFVersion)
-                Error += copyPFunctions(FFprofile, FFVersion)
+                FFError = 0
+                FFError += copyRFunctions(FFroot, FFVersion)
+                FFError += copyPFunctions(FFprofile, FFVersion)
+                if FFError == 0:
+                    config['FIREFOX_ROOT_PATH']['stable'] = FFroot
+                    config['FIREFOX_PROFILE_PATH']['stable'] = FFprofile
+                Error += FFError
 
             # This is the call for Firefox Nightly functions
             if CkFFD.get() == 1:
                 FFDVersion = "Firefox Developer"
                 FFDroot = rpCkFFD12.get()
                 FFDprofile = rpCkFFD22.get()
-                Error += copyRFunctions(FFDroot, FFDVersion)
-                Error += copyPFunctions(FFDprofile, FFDVersion)
+                FFError = 0
+                FFError += copyRFunctions(FFDroot, FFDVersion)
+                FFError += copyPFunctions(FFDprofile, FFDVersion)
+                if FFError == 0:
+                    config['FIREFOX_ROOT_PATH']['developer'] = FFDroot
+                    config['FIREFOX_PROFILE_PATH']['developer'] = FFDprofile
+                Error += FFError
 
             # This is the call for Firefox Nightly functions
             if CkFFN.get() == 1:
                 FFNVersion = "Firefox Nightly"
                 FFNroot = rpCkFFN12.get()
                 FFNprofile = rpCkFFN22.get()
-                Error += copyRFunctions(FFNroot, FFNVersion)
-                Error += copyPFunctions(FFNprofile, FFNVersion)
+                FFError = 0
+                FFError += copyRFunctions(FFNroot, FFNVersion)
+                FFError += copyPFunctions(FFNprofile, FFNVersion)
+                if FFError == 0:
+                    config['FIREFOX_ROOT_PATH']['nightly'] = FFNroot
+                    config['FIREFOX_PROFILE_PATH']['nightly'] = FFNprofile
+                Error += FFError
+
+            # Make sure that folder exists and create/update the file
+            try:
+                if not os.path.exists(QNFolder):
+                    os.mkdir(QNFolder)
+                with open(FFPathsINI, 'w') as configfile:
+                    config.write(configfile)
+            except OSError:
+                messagebox.showerror("Error saving last used paths",
+                                     "There was an error while storing the last "
+                                     + "used paths for the next patching.")
 
             # This installs functions for each of the selected Profile folders
             if CkFFP.get() == 1:
