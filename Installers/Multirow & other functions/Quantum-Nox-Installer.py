@@ -186,6 +186,13 @@ elif OSinUse == "Mac":
 
 FFPathsINI = os.path.normpath(QNFolder + '/FFPaths.ini')
 
+# Get the location keys for later usage
+if os.path.isfile(FFPathsINI):
+    config = configparser.ConfigParser()
+    config.read(FFPathsINI)
+    FFRootPath = config['FIREFOX_ROOT_PATH']
+    FFProfilePath = config['FIREFOX_PROFILE_PATH']
+
 # Make sure that the default Firefox folder exists or that it's correctly fetched
 if os.access(MozPFolder, os.F_OK):
     Profiles = readProfiles(MozPFolder)
@@ -199,17 +206,15 @@ else:
     defaultProf = ["None"]
 
 if (Profiles == ["None"] or defaultProf == ["None"]) and os.path.isfile(FFPathsINI):
-    config = configparser.ConfigParser()
 
     if Profiles == ["None"]:
-        config.read(FFPathsINI)
-        for profilePath in config['FIREFOX_PROFILE_PATH']:
-            if os.path.exists(config['FIREFOX_PROFILE_PATH'][profilePath]):
-                Profiles = [config['FIREFOX_PROFILE_PATH'][profilePath]]
+        for profilePath in FFProfilePath:
+            if os.path.exists(FFProfilePath.get(profilePath)):
+                Profiles = [FFProfilePath.get(profilePath)]
     if defaultProf == ["None"]:
-        for profilePath in config['FIREFOX_PROFILE_PATH']:
-            if os.path.exists(config['FIREFOX_PROFILE_PATH'][profilePath]):
-                defaultProf = [config['FIREFOX_PROFILE_PATH'][profilePath]]
+        for profilePath in FFProfilePath:
+            if os.path.exists(FFProfilePath.get(profilePath)):
+                defaultProf = [FFProfilePath.get(profilePath)]
                 break
 
 # We get the default folder where programs are installed here
@@ -236,10 +241,8 @@ if OSinUse == "Windows":
         if not os.access(root, os.F_OK):
             root = "Not found"
             if os.path.isfile(FFPathsINI):
-                config = configparser.ConfigParser()
-                config.read(FFPathsINI)
-                if config['FIREFOX_ROOT_PATH']['stable']:
-                    root = config['FIREFOX_ROOT_PATH']['stable']
+                if FFRootPath.get('stable') is not None:
+                    root = FFRootPath.get('stable')
                     if not os.path.exists(root):
                         root = "Not found"
     if not os.access(rootN, os.F_OK):
@@ -249,10 +252,8 @@ if OSinUse == "Windows":
             if not os.access(rootN, os.F_OK):
                 rootN = "Not found"
                 if os.path.isfile(FFPathsINI):
-                    config = configparser.ConfigParser()
-                    config.read(FFPathsINI)
-                    if config['FIREFOX_ROOT_PATH']['nightly']:
-                        rootN = config['FIREFOX_ROOT_PATH']['nightly']
+                    if FFRootPath.get('nightly') is not None:
+                        rootN = FFRootPath.get('nightly')
                         if not os.path.exists(rootN):
                             rootN = "Not found"
     if not os.access(rootD, os.F_OK):
@@ -262,10 +263,8 @@ if OSinUse == "Windows":
             if not os.access(rootD, os.F_OK):
                 rootD = "Not found"
                 if os.path.isfile(FFPathsINI):
-                    config = configparser.ConfigParser()
-                    config.read(FFPathsINI)
-                    if config['FIREFOX_ROOT_PATH']['developer']:
-                        rootD = config['FIREFOX_ROOT_PATH']['developer']
+                    if FFRootPath.get('developer') is not None:
+                        rootD = FFRootPath.get('developer')
                         if not os.path.exists(rootD):
                             rootD = "Not found"
 elif OSinUse == "Linux":
@@ -277,10 +276,8 @@ elif OSinUse == "Linux":
         if not os.access(root, os.F_OK):
             root = "Not found"
             if os.path.isfile(FFPathsINI):
-                config = configparser.ConfigParser()
-                config.read(FFPathsINI)
-                if config['FIREFOX_ROOT_PATH']['stable']:
-                    root = config['FIREFOX_ROOT_PATH']['stable']
+                if FFRootPath.get('stable') is not None:
+                    root = FFRootPath.get('stable')
                     if not os.path.exists(root):
                         root = "Not found"
     if not os.access(rootN, os.F_OK):
@@ -288,10 +285,8 @@ elif OSinUse == "Linux":
         if not os.access(rootN, os.F_OK):
             rootN = "Not found"
             if os.path.isfile(FFPathsINI):
-                config = configparser.ConfigParser()
-                config.read(FFPathsINI)
-                if config['FIREFOX_ROOT_PATH']['nightly']:
-                    rootN = config['FIREFOX_ROOT_PATH']['nightly']
+                if FFRootPath.get('nightly') is not None:
+                    rootN = FFRootPath.get('nightly')
                     if not os.path.exists(rootN):
                         rootN = "Not found"
     if not os.access(rootD, os.F_OK):
@@ -299,10 +294,8 @@ elif OSinUse == "Linux":
         if not os.access(rootD, os.F_OK):
             rootD = "Not found"
             if os.path.isfile(FFPathsINI):
-                config = configparser.ConfigParser()
-                config.read(FFPathsINI)
-                if config['FIREFOX_ROOT_PATH']['developer']:
-                    rootD = config['FIREFOX_ROOT_PATH']['developer']
+                if FFRootPath.get('developer') is not None:
+                    rootD = FFRootPath.get('developer')
                     if not os.path.exists(rootD):
                         rootD = "Not found"
 elif OSinUse == "Mac":
@@ -312,28 +305,22 @@ elif OSinUse == "Mac":
     if not os.access(root, os.F_OK):
         root = "Not found"
         if os.path.isfile(FFPathsINI):
-            config = configparser.ConfigParser()
-            config.read(FFPathsINI)
-            if config['FIREFOX_ROOT_PATH']['stable']:
-                root = config['FIREFOX_ROOT_PATH']['stable']
+            if FFRootPath.get('stable') is not None:
+                root = FFRootPath.get('stable')
                 if not os.path.exists(root):
                     root = "Not found"
     if not os.access(rootN, os.F_OK):
         rootN = "Not found"
         if os.path.isfile(FFPathsINI):
-            config = configparser.ConfigParser()
-            config.read(FFPathsINI)
-            if config['FIREFOX_ROOT_PATH']['nightly']:
-                rootN = config['FIREFOX_ROOT_PATH']['nightly']
+            if FFRootPath.get('nightly') is not None:
+                rootN = FFRootPath.get('nightly')
                 if not os.path.exists(rootN):
                     rootN = "Not found"
     if not os.access(rootD, os.F_OK):
         rootD = "Not found"
         if os.path.isfile(FFPathsINI):
-            config = configparser.ConfigParser()
-            config.read(FFPathsINI)
-            if config['FIREFOX_ROOT_PATH']['developer']:
-                rootD = config['FIREFOX_ROOT_PATH']['developer']
+            if FFRootPath.get('developer') is not None:
+                rootD = FFRootPath.get('developer')
                 if not os.path.exists(rootD):
                     rootD = "Not found"
 
@@ -416,23 +403,19 @@ DProfile = DPFinder()
 
 # If any of the profile values is "Not found" and there is a value stored, we restore it
 if os.path.isfile(FFPathsINI):
-    config = configparser.ConfigParser()
     if RProfile == "Not found":
-        config.read(FFPathsINI)
-        if config['FIREFOX_PROFILE_PATH']['stable']:
-            RProfile = config['FIREFOX_PROFILE_PATH']['stable']
+        if FFProfilePath.get('stable') is not None:
+            RProfile = FFProfilePath.get('stable')
             if not os.path.exists(RProfile):
                 RProfile = "Not found"
     if NProfile == "Not found":
-        config.read(FFPathsINI)
-        if config['FIREFOX_PROFILE_PATH']['nightly']:
-            NProfile = config['FIREFOX_PROFILE_PATH']['nightly']
+        if FFProfilePath.get('nightly') is not None:
+            NProfile = FFProfilePath.get('nightly')
             if not os.path.exists(NProfile):
                 NProfile = "Not found"
     if DProfile == "Not found":
-        config.read(FFPathsINI)
-        if config['FIREFOX_PROFILE_PATH']['developer']:
-            DProfile = config['FIREFOX_PROFILE_PATH']['developer']
+        if FFProfilePath.get('developer') is not None:
+            DProfile = FFProfilePath.get('developer')
             if not os.path.exists(DProfile):
                 DProfile = "Not found"
 

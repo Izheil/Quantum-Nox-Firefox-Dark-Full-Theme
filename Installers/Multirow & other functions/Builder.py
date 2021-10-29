@@ -53,6 +53,7 @@ elif OSinUse == "Windows" and ctypes.windll.shell32.IsUserAnAdmin() == 0:
     ctypes.windll.shell32.ShellExecuteW(None, "runas", sys.executable, subprocess.list2cmdline(sys.argv), None, 1)
     sys.exit()
 
+
 def readProfiles(profile):
     "Fetches the profile folders"
 
@@ -71,7 +72,7 @@ def readProfiles(profile):
         with open(ProfilesINI, 'r') as f:
             for line in f.readlines():
                 profilepath = re.match("Path=(.*)", line, re.M|re.I)
-                if profilepath is not None:
+                if profilepath != None:
                     rotationpath = profilepath.group(1)
                     if (((OSinUse == "Windows" or OSinUse == "Mac") and
                         rotationpath[0:9] == "Profiles/") or
@@ -92,7 +93,7 @@ def readDefaults(profile):
         with open(installsINI, 'r') as f:
             for line in f.readlines():
                 defaultspath = re.match("Default=(.*)", line, re.M|re.I)
-                if defaultspath is not None:
+                if defaultspath != None:
                     defaultrotation = defaultspath.group(1)
                     if (((OSinUse == "Windows" or OSinUse == "Mac") and
                         defaultrotation[0:9] == "Profiles/") or
@@ -130,7 +131,7 @@ if OSinUse == "Windows":
                 if userRead is not None:
                     users.append(str(userRead.group(1)).rstrip())
 
-    except Exception as err:
+    except Exception:
         print("Couldn't locate login user, backing to default profile path.")
 
     # Make sure the user array isn't empty
@@ -145,9 +146,9 @@ if OSinUse == "Windows":
     adminProfile = os.getenv('USERPROFILE')
     adminName = os.getenv('USERNAME')
 
-    appdataPath = (adminProfile[0:-(len(adminName))] 
-                  + users[0].capitalize() 
-                  + "\\AppData\\Roaming")
+    appdataPath = (adminProfile[0:-(len(adminName))]
+                   + users[0].capitalize()
+                   + "\\AppData\\Roaming")
 
     altPath = os.path.join("C:\\Users\\", users[0].capitalize()
                            + "\\AppData\\Roaming")
@@ -182,6 +183,13 @@ elif OSinUse == "Mac":
 
 FFPathsINI = os.path.normpath(QNFolder + '/FFPaths.ini')
 
+# Get the location keys for later usage
+if os.path.isfile(FFPathsINI):
+    config = configparser.ConfigParser()
+    config.read(FFPathsINI)
+    FFRootPath = config['FIREFOX_ROOT_PATH']
+    FFProfilePath = config['FIREFOX_PROFILE_PATH']
+
 # Make sure that the default Firefox folder exists or that it's correctly fetched
 if os.access(MozPFolder, os.F_OK):
     Profiles = readProfiles(MozPFolder)
@@ -195,17 +203,15 @@ else:
     defaultProf = ["None"]
 
 if (Profiles == ["None"] or defaultProf == ["None"]) and os.path.isfile(FFPathsINI):
-    config = configparser.ConfigParser()
 
     if Profiles == ["None"]:
-        config.read(FFPathsINI)
-        for profilePath in config['FIREFOX_PROFILE_PATH']:
-            if os.path.exists(config['FIREFOX_PROFILE_PATH'][profilePath]):
-                Profiles = [config['FIREFOX_PROFILE_PATH'][profilePath]]
+        for profilePath in FFProfilePath:
+            if os.path.exists(FFProfilePath.get(profilePath)):
+                Profiles = [FFProfilePath.get(profilePath)]
     if defaultProf == ["None"]:
-        for profilePath in config['FIREFOX_PROFILE_PATH']:
-            if os.path.exists(config['FIREFOX_PROFILE_PATH'][profilePath]):
-                defaultProf = [config['FIREFOX_PROFILE_PATH'][profilePath]]
+        for profilePath in FFProfilePath:
+            if os.path.exists(FFProfilePath.get(profilePath)):
+                defaultProf = [FFProfilePath.get(profilePath)]
                 break
 
 # We get the default folder where programs are installed here
@@ -232,10 +238,8 @@ if OSinUse == "Windows":
         if not os.access(root, os.F_OK):
             root = "Not found"
             if os.path.isfile(FFPathsINI):
-                config = configparser.ConfigParser()
-                config.read(FFPathsINI)
-                if config['FIREFOX_ROOT_PATH']['stable']:
-                    root = config['FIREFOX_ROOT_PATH']['stable']
+                if FFRootPath.get('stable') is not None:
+                    root = FFRootPath.get('stable')
                     if not os.path.exists(root):
                         root = "Not found"
     if not os.access(rootN, os.F_OK):
@@ -245,10 +249,8 @@ if OSinUse == "Windows":
             if not os.access(rootN, os.F_OK):
                 rootN = "Not found"
                 if os.path.isfile(FFPathsINI):
-                    config = configparser.ConfigParser()
-                    config.read(FFPathsINI)
-                    if config['FIREFOX_ROOT_PATH']['nightly']:
-                        rootN = config['FIREFOX_ROOT_PATH']['nightly']
+                    if FFRootPath.get('nightly') is not None:
+                        rootN = FFRootPath.get('nightly')
                         if not os.path.exists(rootN):
                             rootN = "Not found"
     if not os.access(rootD, os.F_OK):
@@ -258,10 +260,8 @@ if OSinUse == "Windows":
             if not os.access(rootD, os.F_OK):
                 rootD = "Not found"
                 if os.path.isfile(FFPathsINI):
-                    config = configparser.ConfigParser()
-                    config.read(FFPathsINI)
-                    if config['FIREFOX_ROOT_PATH']['developer']:
-                        rootD = config['FIREFOX_ROOT_PATH']['developer']
+                    if FFRootPath.get('developer') is not None:
+                        rootD = FFRootPath.get('developer')
                         if not os.path.exists(rootD):
                             rootD = "Not found"
 elif OSinUse == "Linux":
@@ -273,10 +273,8 @@ elif OSinUse == "Linux":
         if not os.access(root, os.F_OK):
             root = "Not found"
             if os.path.isfile(FFPathsINI):
-                config = configparser.ConfigParser()
-                config.read(FFPathsINI)
-                if config['FIREFOX_ROOT_PATH']['stable']:
-                    root = config['FIREFOX_ROOT_PATH']['stable']
+                if FFRootPath.get('stable') is not None:
+                    root = FFRootPath.get('stable')
                     if not os.path.exists(root):
                         root = "Not found"
     if not os.access(rootN, os.F_OK):
@@ -284,10 +282,8 @@ elif OSinUse == "Linux":
         if not os.access(rootN, os.F_OK):
             rootN = "Not found"
             if os.path.isfile(FFPathsINI):
-                config = configparser.ConfigParser()
-                config.read(FFPathsINI)
-                if config['FIREFOX_ROOT_PATH']['nightly']:
-                    rootN = config['FIREFOX_ROOT_PATH']['nightly']
+                if FFRootPath.get('nightly') is not None:
+                    rootN = FFRootPath.get('nightly')
                     if not os.path.exists(rootN):
                         rootN = "Not found"
     if not os.access(rootD, os.F_OK):
@@ -295,10 +291,8 @@ elif OSinUse == "Linux":
         if not os.access(rootD, os.F_OK):
             rootD = "Not found"
             if os.path.isfile(FFPathsINI):
-                config = configparser.ConfigParser()
-                config.read(FFPathsINI)
-                if config['FIREFOX_ROOT_PATH']['developer']:
-                    rootD = config['FIREFOX_ROOT_PATH']['developer']
+                if FFRootPath.get('developer') is not None:
+                    rootD = FFRootPath.get('developer')
                     if not os.path.exists(rootD):
                         rootD = "Not found"
 elif OSinUse == "Mac":
@@ -308,28 +302,22 @@ elif OSinUse == "Mac":
     if not os.access(root, os.F_OK):
         root = "Not found"
         if os.path.isfile(FFPathsINI):
-            config = configparser.ConfigParser()
-            config.read(FFPathsINI)
-            if config['FIREFOX_ROOT_PATH']['stable']:
-                root = config['FIREFOX_ROOT_PATH']['stable']
+            if FFRootPath.get('stable') is not None:
+                root = FFRootPath.get('stable')
                 if not os.path.exists(root):
                     root = "Not found"
     if not os.access(rootN, os.F_OK):
         rootN = "Not found"
         if os.path.isfile(FFPathsINI):
-            config = configparser.ConfigParser()
-            config.read(FFPathsINI)
-            if config['FIREFOX_ROOT_PATH']['nightly']:
-                rootN = config['FIREFOX_ROOT_PATH']['nightly']
+            if FFRootPath.get('nightly') is not None:
+                rootN = FFRootPath.get('nightly')
                 if not os.path.exists(rootN):
                     rootN = "Not found"
     if not os.access(rootD, os.F_OK):
         rootD = "Not found"
         if os.path.isfile(FFPathsINI):
-            config = configparser.ConfigParser()
-            config.read(FFPathsINI)
-            if config['FIREFOX_ROOT_PATH']['developer']:
-                rootD = config['FIREFOX_ROOT_PATH']['developer']
+            if FFRootPath.get('developer') is not None:
+                rootD = FFRootPath.get('developer')
                 if not os.path.exists(rootD):
                     rootD = "Not found"
 
@@ -412,25 +400,22 @@ DProfile = DPFinder()
 
 # If any of the profile values is "Not found" and there is a value stored, we restore it
 if os.path.isfile(FFPathsINI):
-    config = configparser.ConfigParser()
     if RProfile == "Not found":
-        config.read(FFPathsINI)
-        if config['FIREFOX_PROFILE_PATH']['stable']:
-            RProfile = config['FIREFOX_PROFILE_PATH']['stable']
+        if FFProfilePath.get('stable') is not None:
+            RProfile = FFProfilePath.get('stable')
             if not os.path.exists(RProfile):
                 RProfile = "Not found"
     if NProfile == "Not found":
-        config.read(FFPathsINI)
-        if config['FIREFOX_PROFILE_PATH']['nightly']:
-            NProfile = config['FIREFOX_PROFILE_PATH']['nightly']
+        if FFProfilePath.get('nightly') is not None:
+            NProfile = FFProfilePath.get('nightly')
             if not os.path.exists(NProfile):
                 NProfile = "Not found"
     if DProfile == "Not found":
-        config.read(FFPathsINI)
-        if config['FIREFOX_PROFILE_PATH']['developer']:
-            DProfile = config['FIREFOX_PROFILE_PATH']['developer']
+        if FFProfilePath.get('developer') is not None:
+            DProfile = FFProfilePath.get('developer')
             if not os.path.exists(DProfile):
                 DProfile = "Not found"
+
 
 # Check if only 1 profile exists and only 1 installation exists
 # so that if not using the default profile names, it will get
@@ -478,6 +463,7 @@ if not os.access(defPLocation, os.F_OK):
 def fullPatcher(FFversion, FFprofile):
     "This method patches both the root and profile folders"
     try:
+        # Check that the provided Firefox path is not empty
         if FFversion is not None:
 
             configFiles = []
@@ -499,12 +485,12 @@ def fullPatcher(FFversion, FFprofile):
                         if removeAltConfig:
                             os.remove(conFile)
                         else:
-                            messagebox.showwarning("Possible compatibility problem",
+                            messagebox.showwarning("Possible compatibility problem", 
                             "It is possible that the installed functions won't work until " +
                             "you remove the non-standard configuration files inside this path:\n" +
                             os.path.normpath(FFversion + "/defaults/pref"))
                     else:
-                        print("The file " + conFile + " might prevent the functions from working as they should.\n" +
+                        print("The file " + conFile + " might prevent the functions from working as they should.\n" + 
                               "If you added this file, remove it or merge it with 'config-prefs.js' in the same location.")
 
             # We first define the location of the files
@@ -519,6 +505,7 @@ def fullPatcher(FFversion, FFprofile):
                 distutils.file_util.copy_file(os.path.normpath(sys._MEIPASS + "/root/config.js"),
                                               FFversion, update=True)
 
+
             elif os.access(os.path.normpath(FFversion + "/config.js"), os.F_OK) or \
             os.access(os.path.normpath(FFversion + "/defaults/pref/config-prefs.js"), os.F_OK):
 
@@ -528,7 +515,7 @@ def fullPatcher(FFversion, FFprofile):
 
                 else: shutil.copy2(os.path.normpath(sys._MEIPASS + "/root/config.js"), FFversion)
 
-            else: 
+            else:
                 shutil.copy2(os.path.normpath(sys._MEIPASS + "/root/config.js"), FFversion)
                 shutil.copy2(os.path.normpath(sys._MEIPASS + "/root/defaults/pref/config-prefs.js"),
                              os.path.normpath(FFversion + "/defaults/pref/"))
@@ -539,6 +526,7 @@ def fullPatcher(FFversion, FFprofile):
                 shutil.chown(ConfJS, rootUser, rootGroup)
                 os.chmod(ConfJS, 0o775)
 
+        # Check that the provided profile path is not empty
         if FFprofile is not None:
 
             # We patch the profile folder here
@@ -603,15 +591,15 @@ def functionInstall(FFprofile, Func2Inst, FuncSettings="0"):
     elif Func2Inst.startswith('Tabs-below'):
         FFTBoT = os.path.normpath(FFprofile
                     + "/chrome/Tabs-below-Menu-overTabs.as.css")
-        FFTBaA = os.path.normpath(FFprofile 
+        FFTBaA = os.path.normpath(FFprofile
                     + "/chrome/Tabs-below-Menu-onTop.as.css")
-        FFTB = os.path.normpath(FFprofile 
+        FFTB = os.path.normpath(FFprofile
                     + "/chrome/Tabs-below.as.css")
 
     elif Func2Inst.startswith('Megabar'):
-        FFMB = os.path.normpath(FFprofile 
+        FFMB = os.path.normpath(FFprofile
                     + "/chrome/Megabar-disabled-until-focus.as.css")
-        FFMBAR = os.path.normpath(FFprofile 
+        FFMBAR = os.path.normpath(FFprofile
                     + "/chrome/Megabar-disabled-all-resizing.as.css")
 
     # These write the settings to the files
@@ -639,7 +627,7 @@ def functionInstall(FFprofile, Func2Inst, FuncSettings="0"):
             os.remove(FFCMRL)
 
         if os.access(FFCMRA71, os.F_OK):
-            os.remove(FFCMRA71)    
+            os.remove(FFCMRA71)
         if os.access(FFCMR71, os.F_OK):
             os.remove(FFCMR71)
         if os.access(FFCMRL71, os.F_OK):
@@ -702,12 +690,12 @@ def functionInstall(FFprofile, Func2Inst, FuncSettings="0"):
         elif Func2Inst == "Focus-tab":
             FireFunct = os.path.normpath(sys._MEIPASS
                         + "/functions/Focus-tab-on-hover.uc.js")
-            InstFunct = os.path.normpath(FFprofile 
+            InstFunct = os.path.normpath(FFprofile
                         + "/chrome/Focus-tab-on-hover.uc.js")
         elif Func2Inst == "Unread-state":
             FireFunct = os.path.normpath(sys._MEIPASS
                         + "/functions/setAttribute_unread.uc.js")
-            InstFunct = os.path.normpath(FFprofile 
+            InstFunct = os.path.normpath(FFprofile
                         + "/chrome/setAttribute_unread.uc.js")
 
         try:
@@ -769,7 +757,7 @@ def erasePatch(FFversion, FFprofile):
                 if os.access(os.path.normpath(FFversion + "/config.js"), os.F_OK):
                     os.remove(os.path.normpath(FFversion + "/config.js"))
 
-                else: os.remove(os.path.normpath(FFversion 
+                else: os.remove(os.path.normpath(FFversion
                                 + "/defaults/pref/config-prefs.js"))
 
         if FFprofile is not None:
@@ -939,7 +927,7 @@ def openProfile(profileFolder):
             messagebox.showerror("Error",
             "Couldn't locate the profile chrome folder."
             + "\nSelect a valid one and try again.")
-    else: 
+    else:
         messagebox.showerror("Error",
         "Couldn't locate the profile folder."
         + "\nSelect a valid one and try again.")
@@ -1179,7 +1167,7 @@ class patcherUI(Frame):
                os.access(os.path.normpath(rpCkFF12.get() + "/defaults/pref/config-prefs.js"), os.F_OK):
                 if os.access(os.path.normpath(rpCkFF22.get() + "/chrome/utils"), os.F_OK):
                     PatchStatusFFr.config(text="Patched", fg="#339900")
-                else: 
+                else:
                     PatchStatusFFr.config(text="Profile not patched", fg="#cc0000")
             elif os.access(os.path.normpath(rpCkFF22.get() + "/chrome/utils"), os.F_OK):
                 PatchStatusFFr.config(text="Root not patched", fg="#cc0000")
