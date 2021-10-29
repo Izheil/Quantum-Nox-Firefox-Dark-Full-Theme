@@ -71,7 +71,7 @@ def readProfiles(profile):
         with open(ProfilesINI, 'r') as f:
             for line in f.readlines():
                 profilepath = re.match("Path=(.*)", line, re.M|re.I)
-                if profilepath != None:
+                if profilepath is not None:
                     rotationpath = profilepath.group(1)
                     if (((OSinUse == "Windows" or OSinUse == "Mac") and
                         rotationpath[0:9] == "Profiles/") or
@@ -92,7 +92,7 @@ def readDefaults(profile):
         with open(installsINI, 'r') as f:
             for line in f.readlines():
                 defaultspath = re.match("Default=(.*)", line, re.M|re.I)
-                if defaultspath != None:
+                if defaultspath is not None:
                     defaultrotation = defaultspath.group(1)
                     if (((OSinUse == "Windows" or OSinUse == "Mac") and
                         defaultrotation[0:9] == "Profiles/") or
@@ -478,7 +478,7 @@ if not os.access(defPLocation, os.F_OK):
 def fullPatcher(FFversion, FFprofile):
     "This method patches both the root and profile folders"
     try:
-        if FFversion != None:
+        if FFversion is not None:
 
             configFiles = []
             removeAltConfig = False
@@ -499,12 +499,12 @@ def fullPatcher(FFversion, FFprofile):
                         if removeAltConfig:
                             os.remove(conFile)
                         else:
-                            messagebox.showwarning("Possible compatibility problem", 
+                            messagebox.showwarning("Possible compatibility problem",
                             "It is possible that the installed functions won't work until " +
                             "you remove the non-standard configuration files inside this path:\n" +
                             os.path.normpath(FFversion + "/defaults/pref"))
                     else:
-                        print("The file " + conFile + " might prevent the functions from working as they should.\n" + 
+                        print("The file " + conFile + " might prevent the functions from working as they should.\n" +
                               "If you added this file, remove it or merge it with 'config-prefs.js' in the same location.")
 
             # We first define the location of the files
@@ -523,14 +523,14 @@ def fullPatcher(FFversion, FFprofile):
             os.access(os.path.normpath(FFversion + "/defaults/pref/config-prefs.js"), os.F_OK):
 
                 if os.access(ConfJS, os.F_OK):
-                    shutil.copy2(os.path.normpath(sys._MEIPASS + "/root/defaults/pref/config-prefs.js"), 
+                    shutil.copy2(os.path.normpath(sys._MEIPASS + "/root/defaults/pref/config-prefs.js"),
                                  os.path.normpath(FFversion + "/defaults/pref/"))
 
                 else: shutil.copy2(os.path.normpath(sys._MEIPASS + "/root/config.js"), FFversion)
 
             else: 
                 shutil.copy2(os.path.normpath(sys._MEIPASS + "/root/config.js"), FFversion)
-                shutil.copy2(os.path.normpath(sys._MEIPASS + "/root/defaults/pref/config-prefs.js"), 
+                shutil.copy2(os.path.normpath(sys._MEIPASS + "/root/defaults/pref/config-prefs.js"),
                              os.path.normpath(FFversion + "/defaults/pref/"))
 
             if OSinUse == "Linux":
@@ -539,7 +539,7 @@ def fullPatcher(FFversion, FFprofile):
                 shutil.chown(ConfJS, rootUser, rootGroup)
                 os.chmod(ConfJS, 0o775)
 
-        if FFprofile != None:
+        if FFprofile is not None:
 
             # We patch the profile folder here
             if os.access(os.path.normpath(FFprofile + "/chrome/utils"), os.F_OK):
@@ -548,10 +548,10 @@ def fullPatcher(FFversion, FFprofile):
                     for file in f:
                             utilFiles.append(os.path.join(r, file))
                 for file in utilFiles:
-                    distutils.file_util.copy_file(file, 
+                    distutils.file_util.copy_file(file,
                         os.path.normpath(FFprofile + "/chrome/utils"), update=True)
 
-            else: 
+            else:
                 shutil.copytree(os.path.normpath(sys._MEIPASS + "/utils"),
                                 os.path.normpath(FFprofile + "/chrome/utils"))
 
@@ -567,8 +567,8 @@ def fullPatcher(FFversion, FFprofile):
                     shutil.chown(file, rootUser, rootGroup)
                     os.chmod(file, 0o775)
 
-    except IOError:
-        errorMessage = "You need higher privileges to apply the patch."
+    except IOError as err:
+        errorMessage = "You need higher privileges to apply the patch.\n\n" + str(err)
         if not argumentsInUse:
             messagebox.showerror("Error", errorMessage)
         else:
@@ -587,21 +587,21 @@ def functionInstall(FFprofile, Func2Inst, FuncSettings="0"):
 
     # We define the common variables used for each function next
     if Func2Inst.startswith('Multirow'):
-        FFCMR = os.path.normpath(FFprofile 
+        FFCMR = os.path.normpath(FFprofile
                     + "/chrome/MultiRowTab-scrollable.uc.js")
-        FFCMRL = os.path.normpath(FFprofile 
+        FFCMRL = os.path.normpath(FFprofile
                     + "/chrome/MultiRowTabLiteforFx.uc.js")
-        FFCMRA = os.path.normpath(FFprofile 
+        FFCMRA = os.path.normpath(FFprofile
                     + "/chrome/MultiRowTab-scrollable-autohide.uc.js")
-        FFCMR71 = os.path.normpath(FFprofile 
+        FFCMR71 = os.path.normpath(FFprofile
                     + "/chrome/MultiRowTab-scrollableFF71.uc.js")
-        FFCMRL71 = os.path.normpath(FFprofile 
+        FFCMRL71 = os.path.normpath(FFprofile
                     + "/chrome/MultiRowTabLiteforFF71.uc.js")
-        FFCMRA71 = os.path.normpath(FFprofile 
+        FFCMRA71 = os.path.normpath(FFprofile
                     + "/chrome/MultiRowTab-scrollable-autohideFF71.uc.js")
 
     elif Func2Inst.startswith('Tabs-below'):
-        FFTBoT = os.path.normpath(FFprofile 
+        FFTBoT = os.path.normpath(FFprofile
                     + "/chrome/Tabs-below-Menu-overTabs.as.css")
         FFTBaA = os.path.normpath(FFprofile 
                     + "/chrome/Tabs-below-Menu-onTop.as.css")
@@ -1349,27 +1349,6 @@ class patcherUI(Frame):
                 if not os.path.exists(QNFolder):
                     os.mkdir(QNFolder)
                 with open(FFPathsINI, 'w') as configfile:
-                    config.write(configfile)
-            except OSError:
-                messagebox.showerror("Error saving last used paths",
-                                     "There was an error while storing the last "
-                                     + "used paths for the next patching.")
-
-            # Write last known paths to recover them next time a patch is required
-            if OSinUse == "Windows":
-                QNFolder = home + r"\Quantum Nox"
-
-            elif OSinUse == "Linux":
-                QNFolder = home + r"/.Quantum Nox"
-
-            elif OSinUse == "Mac":
-                QNFolder = home + r"/Library/Application Support/Quantum Nox"
-
-            # Make sure that folder exists
-            try:
-                if not os.path.exists(QNFolder):
-                    os.mkdir(QNFolder)
-                with open(os.path.normpath(QNFolder + '\FFPaths.ini'), 'w') as configfile:
                     config.write(configfile)
             except OSError:
                 messagebox.showerror("Error saving last used paths",
