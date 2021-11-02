@@ -5,6 +5,7 @@
 // @include        main
 // @compatibility  Firefox 70 to Firefox 94.0a1 (2021-09-14)
 // @author         Alice0775, Endor8, TroudhuK, Izheil, Merci-chao
+// @version        02/11/2021 03:15 Made pinned tabs to not have forced Proton sizing
 // @version        15/09/2021 11:39 Added experimental support for tab sizing below 20px
 // @version        10/09/2021 09:49 Fixed regression of pinned tabs icon showing unaligned
 // @version        19/08/2021 03:15 Compatibility fix for FF91
@@ -176,7 +177,7 @@ function zzzz_MultiRowTabLite() {
 
     /* A fix for pinned tabs triggering another row when only pinned tabs are shown in a row */
     .tabbrowser-tab[pinned] {
-        height: calc(var(--tab-min-height) + 8px) !important;
+        max-height: calc(var(--tab-min-height) + 8px);
     }
 
     /* This fixes the new tab button overflowing to the new row alone */

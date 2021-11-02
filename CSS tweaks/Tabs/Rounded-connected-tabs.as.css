@@ -1,6 +1,6 @@
 /* You can find an updated version here: https://github.com/Izheil/Quantum-Nox-Firefox-Dark-Full-Theme */
 /* Made by Izheil */
-/* Last updated: 21/10/2021 */
+/* Last updated: 02/11/2021 */
 
 /* ROUNDED TABS CONNECTED TABS */
 
@@ -21,6 +21,16 @@
 #scrollbutton-up, #scrollbutton-down {
   padding: 0 !important;
   max-height: var(--tab-min-height) !important;
+}
+
+/* Makes sure pinned tabs won't take more space than they should */
+.tabbrowser-tab[pinned] {
+  max-height: var(--tab-min-height) !important;
+}
+
+.tabbrowser-tab[visuallyselected]::before {
+  top: 0 !important;
+  bottom: 0 !important;
 }
 
 #alltabs-button, #tabs-newtab-button, #TabsToolbar-customization-target .webextension-browser-action,
