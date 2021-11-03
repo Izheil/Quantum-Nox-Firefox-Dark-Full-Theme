@@ -1,7 +1,7 @@
 /* You can find an updated version here: https://github.com/Izheil/Quantum-Nox-Firefox-Dark-Full-Theme */
 /* Made by Izheil */
 
-/* Last updated: 09/10/2021 */
+/* Last updated: 03/11/2021 */
 
 /* This part imports the Addons file if there is one, so that you don't have to edit the dynamic URL
 from the addons rules every time we update anything here */
@@ -348,7 +348,8 @@ body {
 input[data-l10n-id="onboarding-join-form-email"] {color: #ddd !important}
 .modalOverlayOuter {background: rgba(0,0,0,0.7) !important}
 
-.trailheadCards, .trailheadCard {background: rgba(0,0,0,0.5) !important}
+.trailheadCards, .trailheadCard,
+.top-sites-list:not(.dnd-active) .top-site-outer:is(.active, :focus, :hover) {background: rgba(0,0,0,0.5) !important}
 .trailheadCards h1 {color: #fff !important; font-weight: bold !important}
 .trailheadCard h3 {color: #fff !important}
 .trailheadCard p {color: #ccc !important}

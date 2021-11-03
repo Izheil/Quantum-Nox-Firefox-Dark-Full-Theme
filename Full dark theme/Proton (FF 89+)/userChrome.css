@@ -1,6 +1,6 @@
 /* You can find an updated version here: https://github.com/Izheil/Quantum-Nox-Firefox-Dark-Full-Theme */
 /* Made by Izheil */
-/* Last updated: 08/09/2021 */
+/* Last updated: 03/11/2021 */
 
 /* COLORING PART STARTS HERE */
 
@@ -164,6 +164,7 @@ but is disabled by default in this theme. If you want to override your lightweig
   --buttons-primary-button-hover-bgcolor: rgb(49, 139, 212) !important;
   --buttons-primary-button-active-bgcolor: rgb(0, 68, 124) !important;
   --buttons-primary-button-color: #fff !important;
+  --in-content-primary-button-text-color: var(--buttons-primary-button-color);
   --panelview-toolbarbutton-hover-bgcolor: rgba(255,255,255,0.1) !important;
   --checkbox-checked-bgcolor: rgb(5, 103, 184) !important;
   --checkbox-checked-color: rgb(43, 43, 43);
