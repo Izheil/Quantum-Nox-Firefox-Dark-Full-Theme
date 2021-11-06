@@ -861,7 +861,7 @@ treechildren::-moz-tree-row(selected) {background-color: #0a84ff !important}
 @-moz-document url-prefix(about:cache), url-prefix(about:plugins), 
 url-prefix(about:buildconfig), url-prefix(about:networking),
 url-prefix(about:telemetry), url-prefix(about:profiles), 
-url-prefix(about:support),
+url-prefix(about:support), url-prefix(about:unloads),
 url(about:url-classifier) {
 
 th {background: #252525 !important; 
