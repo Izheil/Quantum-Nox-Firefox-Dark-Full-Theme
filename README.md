@@ -19,6 +19,7 @@ Files updated:
 
 * __addons.css__: Themed [simplelogin addon](https://addons.mozilla.org/en-US/firefox/addon/simplelogin/).
 * __userChrome.css__: Minor fixes for white outline for some addon popups.
+* __userContent.css__: Updated `about:debugging`.
 
 ### Pre-Last update: 06/11/2021
 
