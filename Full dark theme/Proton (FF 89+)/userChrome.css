@@ -1,6 +1,6 @@
 /* You can find an updated version here: https://github.com/Izheil/Quantum-Nox-Firefox-Dark-Full-Theme */
 /* Made by Izheil */
-/* Last updated: 06/11/2021 */
+/* Last updated: 16/11/2021 */
 
 /* COLORING PART STARTS HERE */
 
@@ -1253,6 +1253,12 @@ treechildren::-moz-tree-separator {
   font-weight: var(--Loading-bold) !important}
 
 /* ADDON POPUPS */
+
+/* This removes a white border around some addon popups */
+#customizationui-widget-panel {
+  --arrowpanel-background: transparent !important;
+}
+
 /* This resets the color of addon popups before applying any other color (for better text readibility).
 Enable this if you are having issues with some addon popup texts and you are not using addons.css file *//*
 #customizationui-widget-panel .panel-arrow {fill: #fff !important}

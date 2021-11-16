@@ -1,6 +1,6 @@
 /* You can find an updated version here: https://github.com/Izheil/Quantum-Nox-Firefox-Dark-Full-Theme */
 /* Made by Izheil */
-/* Last updated: 02/09/2021 */
+/* Last updated: 16/11/2021 */
 
 /*------ HOW TO MAKE THE ADDON THEMES WORK ------*/
 /* To use this part of the code, you will have to find the dynamic UUID of your extensions, and replace it where the 
@@ -1042,6 +1042,75 @@ input[type="checkbox"]:not([disabled]):hover {
 input[type="checkbox"]:checked {
   background: #444 url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="10px" height="10px" viewBox="1 3 12 12" ><path fill="rgb(200,200,200)" d="M 13.09,2.87 C 13.09,2.87 6.00,11.00 6.00,11.00 6.00,11.00 2.00,9.00 2.00,9.00 4.25,12.81 7.00,14.00 7.00,14.00 9.24,10.42 12.04,7.39 13.09,2.87 Z" /></svg>') no-repeat center center !important}
 
+}
+
+/*------ SIMPLELOGIN ADDON ------*/
+@-moz-document url-prefix(moz-extension://TYPE-UUID-OF-SIMPLELOGIN-ADDON-HERE) {
+  html, .app {
+    background-color: #222 !important;
+    color: #ccc !important;
+  }
+
+  .app .screen-left {
+    background: linear-gradient(144deg, #8e0b3f 0%, #521446 100%) !important;
+  }
+
+  .left-content {
+    color: #fff !important;
+  }
+
+  .btn-primary {
+    background-color: #8e0b3f !important;
+    border-color: #521446 !important;
+  }
+
+  .btn-outline-primary {
+    border-color: #cd32a6 !important;
+    color: #cd32a6 !important;
+  }
+
+  .btn-outline-primary:hover, .btn-outline-primary:focus {
+    border-color: transparent !important;
+    color: #fff !important;
+  }
+
+  input[type="email"], input[type="password"], input[type="text"], textarea, .form-control {
+    background-color: #303030 !important;
+    border-color: #666 !important;
+    color: #ccc !important
+  }
+
+  input[type="email"]:focus, input[type="password"]:focus, input[type="text"]:focus, textarea:focus, .form-control:focus {
+    background-color: #444 !important;
+  }
+
+  .form-control:focus {
+    box-shadow: 0 0 0 .2rem rgba(176,42,143,0.5) !important; 
+  }
+
+  em {
+    background-color: #f50 !important;
+  }
+
+  .back > img:first-child {
+    filter: invert(80%);
+  }
+
+  .list-item-email-fade {
+    background: linear-gradient(to right, transparent, #222) !important
+  }
+
+  .v-switch-core[style*="background-color: rgb(191, 203, 217);"] {
+    background-color: #444 !important;
+  }
+
+  .small-text .float-right {
+    color: #0cc !important;
+  }
+
+  a, .text-primary {color: #cd32a6 !important}
+  a:hover {color: #a42885 !important}
+  a:active {color: #7b1e64 !important}
 }
 
 /*------ TAB SESSION MANAGER ------*/

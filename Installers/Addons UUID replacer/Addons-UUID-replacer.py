@@ -30,9 +30,10 @@ idArrays = ["All", "anttoolbar@ant.com", "CookieAutoDelete@kennydo.com",
             "https-everywhere@eff.org", "{73a6fe31-595d-460b-a920-fcc0f8843232}",
             "jid0-GjwrPchS3Ugt7xydvqVK4DQk8Ls@jetpack", "@testpilot-containers",
             "extension@one-tab.com", "jid1-MnnxcxisBPnSXQ@jetpack",
-            "woop-NoopscooPsnSXQ@jetpack", "Tab-Session-Manager@sienori",
-            "{c607c8df-14a7-4f28-894f-29e8722976af}", "uBlock0@raymondhill.net", 
-            "uMatrix@raymondhill.net", "{b9db16a4-6edc-47ec-a1f4-b86292ed211d}",
+            "woop-NoopscooPsnSXQ@jetpack", "addon@simplelogin",
+            "Tab-Session-Manager@sienori", "{c607c8df-14a7-4f28-894f-29e8722976af}",
+            "uBlock0@raymondhill.net", "uMatrix@raymondhill.net",
+            "{b9db16a4-6edc-47ec-a1f4-b86292ed211d}",
             "{00000c4c-fcfd-49bc-9f0d-78db44456c9c}"]
 
 
@@ -385,8 +386,9 @@ def addonsPatcher(FFprofile, UUIDDict):
         with open(addonsFile, "r+") as f:
             s = f.read()
             isAddonInstalled = list(UUIDDict.keys())
-            # Ant video downloader
+
             for x in range(len(isAddonInstalled)):
+                # Ant video downloader
                 if isAddonInstalled[x] == "anttoolbar@ant.com":
                     s = s.replace("TYPE-UUID-OF-ANT-VIDEO-DOWNLOADER-ADDON-HERE", 
                                   UUIDDict['anttoolbar@ant.com'])
@@ -434,6 +436,10 @@ def addonsPatcher(FFprofile, UUIDDict):
                 if isAddonInstalled[x] == "woop-NoopscooPsnSXQ@jetpack":
                     s = s.replace("TYPE-UUID-OF-PRIVACY-POSSUM-ADDON-HERE",
                                   UUIDDict['woop-NoopscooPsnSXQ@jetpack'])
+                # SimpleLogin
+                if isAddonInstalled[x] == "addon@simplelogin":
+                    s = s.replace("TYPE-UUID-OF-SIMPLELOGIN-ADDON-HERE",
+                                  UUIDDict['addon@simplelogin'])
                 # Tab Session Manager
                 if isAddonInstalled[x] == "Tab-Session-Manager@sienori":
                     s = s.replace("TYPE-UUID-OF-TAB-SESSION-MANAGER-ADDON-HERE",
@@ -587,23 +593,24 @@ for x in idArrays:
 
 while SelChoice2 != 0:
     print("1. [" + themeArray[0] + "] All")
-    print("2. ["  + themeArray[1] + "] Ant video downloader")
-    print("3. ["  + themeArray[2] + "] Cookie autodelete")
-    print("4. ["  + themeArray[3] + "] History autodelete")
-    print("5. ["  + themeArray[4] + "] Download Manager (s3)")
-    print("6. ["  + themeArray[5] + "] Forget me not")
-    print("7. ["  + themeArray[6] + "] HTTPS everywhere")
-    print("8. ["  + themeArray[7] + "] Noscript")
-    print("9. ["  + themeArray[8] + "] Notifier for Gmail (restartless)")
-    print("10. ["  + themeArray[9] + "] Multi-accounts container")
-    print("11. ["  + themeArray[10] + "] Onetab")
-    print("12. ["  + themeArray[11] + "] Privacy Badger")
-    print("13. ["  + themeArray[12] + "] Privacy Possum")
-    print("14. ["  + themeArray[13] + "] Tab Session Manager")
-    print("15. ["  + themeArray[15] + "] Temporary Containers")
-    print("16. ["  + themeArray[16] + "] Ublock Origin")
-    print("17. ["  + themeArray[16] + "] Umatrix")
-    print("18. ["  + themeArray[17] + "] Viewhance")
+    print("2. [" + themeArray[1] + "] Ant video downloader")
+    print("3. [" + themeArray[2] + "] Cookie autodelete")
+    print("4. [" + themeArray[3] + "] History autodelete")
+    print("5. [" + themeArray[4] + "] Download Manager (s3)")
+    print("6. [" + themeArray[5] + "] Forget me not")
+    print("7. [" + themeArray[6] + "] HTTPS everywhere")
+    print("8. [" + themeArray[7] + "] Noscript")
+    print("9. [" + themeArray[8] + "] Notifier for Gmail (restartless)")
+    print("10. [" + themeArray[9] + "] Multi-accounts container")
+    print("11. [" + themeArray[10] + "] Onetab")
+    print("12. [" + themeArray[11] + "] Privacy Badger")
+    print("13. [" + themeArray[12] + "] Privacy Possum")
+    print("14. [" + themeArray[13] + "] SimpleLogin")
+    print("15. [" + themeArray[14] + "] Tab Session Manager")
+    print("16. [" + themeArray[15] + "] Temporary Containers")
+    print("17. [" + themeArray[16] + "] Ublock Origin")
+    print("18. [" + themeArray[17] + "] Umatrix")
+    print("19. [" + themeArray[18] + "] Viewhance")
     print("0. Continue\n")
 
     SelChoice2 = int(input("Choice: "))

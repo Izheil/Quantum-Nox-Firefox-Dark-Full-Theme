@@ -13,18 +13,18 @@ You can use it to fully change the colors of most of firefox UI to dark-gray col
 
 If you want to know how to change some colors of the theme, check the [wiki](https://github.com/Izheil/Quantum-Nox-Firefox-Dark-Full-Theme/wiki/Editting-CSS-files).
 
-### Last update: 06/11/2021
+### Last update: 16/11/2021
 
 Files updated:
 
-* __userContent.cs__: Themed table on new `about:unloads` page.
+* __addons.css__: Themed [simplelogin addon](https://addons.mozilla.org/en-US/firefox/addon/simplelogin/).
+* __userChrome.css__: Minor fixes for white outline for some addon popups.
 
-### Pre-Last update: 02/02/2021
+### Pre-Last update: 06/11/2021
 
 Files updated:
 
-* __userChrome.css__: Fixes for primary button colors.
-* __userContent.cs__: Minor fixes for home screen.
+* __userContent.css__: Themed table on new `about:unloads` page.
 
 
 ### A note on people looking to replace some Tab Mix Plus features:
@@ -78,6 +78,7 @@ Here is a list of the themed addons:
 * [OneTab](https://addons.mozilla.org/en-US/firefox/addon/onetab/)
 * [Privacy badger](https://addons.mozilla.org/en-US/firefox/addon/privacy-badger17/)
 * [Privacy possum](https://addons.mozilla.org/en-US/firefox/addon/privacy-possum/)
+* [Simplelogin](https://addons.mozilla.org/en-US/firefox/addon/simplelogin/)
 * [Tab session manager](https://addons.mozilla.org/en-US/firefox/addon/tab-session-manager/)
 * [Temporary containers](https://addons.mozilla.org/en-US/firefox/addon/temporary-containers/)
 * [Ublock Origin](https://addons.mozilla.org/en-US/firefox/addon/ublock-origin/)
