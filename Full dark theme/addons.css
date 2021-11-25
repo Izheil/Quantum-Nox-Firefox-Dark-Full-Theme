@@ -1,6 +1,6 @@
 /* You can find an updated version here: https://github.com/Izheil/Quantum-Nox-Firefox-Dark-Full-Theme */
 /* Made by Izheil */
-/* Last updated: 16/11/2021 */
+/* Last updated: 25/11/2021 */
 
 /*------ HOW TO MAKE THE ADDON THEMES WORK ------*/
 /* To use this part of the code, you will have to find the dynamic UUID of your extensions, and replace it where the 
@@ -690,39 +690,52 @@ select .menulist-dropmarker {display: none}
 
 /*------ MULTI-ACCOUNTS CONTAINER ADDON ------*/
 @-moz-document url-prefix(moz-extension://TYPE-UUID-OF-MULTI-ACCOUNTS-CONTAINER-ADDON-HERE/) {
-html, body, .delete-container {background-color: #333 !important}
+  html, body, .panel, .collapsible-content, .proxy-section {background-color: #333 !important}
 
-h3, legend {color: #fff !important}
-span:not(#current-container), #container-info-movetabs,
-.container-info-tab-title, .truncate-text {color: #ccc !important}
-
-hr, #manage-containers-link, #edit-container-panel-name-input, .delete-container {border-color: #555 !important}
-
-#manage-containers-link, .cancel-button, #deny, #delete-container-button {
-  background-color: #444 !important;
-  color: #ccc !important}
-
-#manage-containers-link:hover, .cancel-button:hover, .hover-highlight:focus, #deny:hover,
-#delete-container-button:hover {
-  background-color: #555 !important;
-  color: #fff !important}
-
-.menu-item:hover {
-  background-color: #444 !important;
-  color: #fff !important;
-}
-
-.onboarding-title {color: #fff !important}
-
-.achievement-panel p, .onboarding p, .container-options .options-label {color: #ccc !important}
-
-.radio-choice > .radio-container > [type="radio"]:checked + label {
-  background-color: #222 !important}
-
-.btn-return.arrow-left {background-color: transparent !important}
-
-.info-icon, .menu:not(#identities-list):not(#picker-identities-list):not(#edit-sites-assigned) .menu-icon, 
-.menu-arrow > img, .btn-return.arrow-left {filter: invert(80%)}
+  h3, legend {color: #fff !important}
+  span:not(#current-container), #container-info-movetabs,
+  .container-info-tab-title, .truncate-text {color: #ccc !important}
+  
+  hr, #manage-containers-link, #edit-container-panel-name-input {border-color: #555 !important}
+  
+  #edit-container-panel-name-input {
+    background-color: #252525 !important;
+  }
+  
+  #manage-containers-link, .cancel-button, #deny, #manage-container-link, #delete-container-button {
+    background-color: #444 !important;
+    color: #ccc !important}
+  
+  #manage-containers-link:hover, .cancel-button:hover, .hover-highlight:focus, #deny:hover,
+  #manage-container-link:hover, #delete-container-button:hover {
+    background-color: #555 !important;
+    color: #fff !important}
+  
+  .slider {
+    --grey30: #444 !important;
+    --grey40: #505050 !important;
+  }
+  
+  .menu-item:hover {
+    background-color: #444 !important;
+    color: #fff !important}
+  
+  #new-container .menu-icon {
+    filter: brightness(200%) !important}
+  
+  .onboarding-title {color: #fff !important}
+  
+  .achievement-panel p, .onboarding p {color: #ccc !important}
+  
+  .radio-choice > .radio-container > [type="radio"]:checked + label {
+    background-color: #222 !important}
+  
+  .btn-return.arrow-left {
+    background-color: transparent !important;
+    filter: brightness(200%)}
+  
+  .info-icon, .menu:not(#identities-list):not(#picker-identities-list):not(#new-container) .menu-icon, 
+  .menu-arrow > img {filter: invert(80%)}
 }
 
 @-moz-document url-prefix(moz-extension://TYPE-UUID-OF-MULTI-ACCOUNTS-CONTAINER-ADDON-HERE/options.html) {

@@ -17,15 +17,15 @@ If you want to know how to change some colors of the theme, check the [wiki](htt
 
 Files updated:
 
-* __addons.css__: Themed [simplelogin addon](https://addons.mozilla.org/en-US/firefox/addon/simplelogin/).
-* __userChrome.css__: Minor fixes for white outline for some addon popups.
-* __userContent.css__: Updated `about:debugging`.
+* __addons.css__: Updated multi-accoounts container addon theme.
 
 ### Pre-Last update: 06/11/2021
 
 Files updated:
 
-* __userContent.css__: Themed table on new `about:unloads` page.
+* __addons.css__: Themed [simplelogin addon](https://addons.mozilla.org/en-US/firefox/addon/simplelogin/).
+* __userChrome.css__: Minor fixes for white outline for some addon popups.
+* __userContent.css__: Updated `about:debugging`.
 
 
 ### A note on people looking to replace some Tab Mix Plus features:
