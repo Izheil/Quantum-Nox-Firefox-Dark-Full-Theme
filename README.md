@@ -13,19 +13,17 @@ You can use it to fully change the colors of most of firefox UI to dark-gray col
 
 If you want to know how to change some colors of the theme, check the [wiki](https://github.com/Izheil/Quantum-Nox-Firefox-Dark-Full-Theme/wiki/Editting-CSS-files).
 
-### Last update: 16/11/2021
+### Last update: 28/11/2021
+
+Files updated:
+
+* __addons.css__: Themed missing uBO click2load icon.
+
+### Pre-Last update: 16/11/2021
 
 Files updated:
 
 * __addons.css__: Updated multi-accoounts container addon theme.
-
-### Pre-Last update: 06/11/2021
-
-Files updated:
-
-* __addons.css__: Themed [simplelogin addon](https://addons.mozilla.org/en-US/firefox/addon/simplelogin/).
-* __userChrome.css__: Minor fixes for white outline for some addon popups.
-* __userContent.css__: Updated `about:debugging`.
 
 
 ### A note on people looking to replace some Tab Mix Plus features:
