@@ -17,6 +17,7 @@ If you want to know how to change some colors of the theme, check the [wiki](htt
 
 Files updated:
 
+* __userChrome__.css__: Minor context menu fixes.
 * __userContent.css__: Themed missing warning on "clean history" dialog.
 
 ### Pre-Last update: 28/11/2021
