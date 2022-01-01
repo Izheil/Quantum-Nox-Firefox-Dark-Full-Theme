@@ -1,6 +1,6 @@
 /* You can find an updated version here: https://github.com/Izheil/Quantum-Nox-Firefox-Dark-Full-Theme */
 /* Made by Izheil */
-/* Last updated: 28/11/2021 */
+/* Last updated: 01/01/2022 */
 
 /*------ HOW TO MAKE THE ADDON THEMES WORK ------*/
 /* To use this part of the code, you will have to find the dynamic UUID of your extensions, and replace it where the 
@@ -12,11 +12,13 @@ If you did everything right, next time you start (or restart) firefox, the addon
 
 /*------ ANT VIDEO DOWNLOADER ADDON POPUP ------*/
 @-moz-document url-prefix(moz-extension://TYPE-UUID-OF-ANT-VIDEO-DOWNLOADER-ADDON-HERE/) {
-html, .application--wrap, body, .application {background-color: #333 !important}
+html, .application--wrap, body, .application, .v-navigation-drawer, .v-alert {background-color: #333 !important}
 
-.v-toolbar .v-toolbar__content {
+.v-toolbar .v-toolbar__content, .v-main__wrap, .v-application {
   background-color: #222 !important;
   color: #ccc !important}
+
+.v-slide-group__content {background-color: #000 !important}
 
 a:not(.v-list__tile), #linkOpenFolder, #linkClearDownloads, 
 #linkClearDownloadsFinished, #linkClearDownloadsErrored, #linkChangeDownloadsLocation,
@@ -32,24 +34,37 @@ a:not(.v-list__tile):hover, #linkOpenFolder:hover, #linkClearDownloads:hover,
 
 a:not(.v-list__tile):active {color: #0050dd !important}
 
-.v-card, div[role="list"], form {
+.v-card, div[role="list"], form, .streamSelectDropdown > option {
   background-color: #444 !important; 
   color: #ccc !important}
 
 .caption, .font-weight-light, button.theme--light, .v-select__selection, .v-list__tile__title,
-i, i::before {color: #ccc !important}
+i, i::before, .pa-2 span, .v-list-item:not(.v-item--active), .v-alert__content, .v-card__text, .selectStreamLabel, 
+.v-data-table tr, .v-data-table th {color: #ccc !important}
 
-.openSettingsButton {
+.v-tabs-items, .v-data-table {background-color: transparent !important}
+
+.v-list-item__title.title, span[style*="color: black"], .dropDownDefault, .streamSelectDropdown {color: #fff !important}
+
+span[style*="color: black"] {
+  font-weight: bold;
+}
+
+.openSettingsButton, .v-select-list {
   -moz-appearance: none !important;
   background-color: #666 !important;
   border: none !important;
   color: #ccc !important}
 
-.openSettingsButton:hover {
+.openSettingsButton:hover, .v-expansion-panel {
   background-color: #333 !important;
   color: #fff !important}
 
-button:not(.v-btn--flat):not(.v-btn--icon).theme--light {background-color: #555 !important}
+.v-select__slot {
+  border: 1px solid #444 !important
+}
+
+button:not(.v-btn--flat):not(.v-btn--icon).theme--light, input[aria-checked="false"][role="switch"] {background-color: #555 !important}
 
 button.theme--light:hover, div[role="list"]:not(.v-list--dense) .v-list__tile:hover {
   background-color: rgba(255,255,255,0.1) !important;
@@ -61,6 +76,8 @@ span[style="background-color: #e6e6e6; color: #000000"] {
   color: #fff !important}
 
 .v-list__tile__sub-title {color: #aaa !important}
+
+.listCardStyle {border-color: transparent !important}
 }
 
 @-moz-document url-prefix(https://www.ant.com) {

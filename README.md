@@ -13,18 +13,18 @@ You can use it to fully change the colors of most of firefox UI to dark-gray col
 
 If you want to know how to change some colors of the theme, check the [wiki](https://github.com/Izheil/Quantum-Nox-Firefox-Dark-Full-Theme/wiki/Editting-CSS-files).
 
-### Last update: 05/12/2021
+### Last update: 01/01/2022
 
 Files updated:
 
-* __userChrome__.css__: Minor context menu fixes.
+* __addons.css__: Updated the theme of Ant Video Downloader addon.
+
+### Pre-Last update: 05/12/2021
+
+Files updated:
+
+* __userChrome.css__: Minor context menu fixes.
 * __userContent.css__: Themed missing warning on "clean history" dialog.
-
-### Pre-Last update: 28/11/2021
-
-Files updated:
-
-* __addons.css__: Themed missing uBO click2load icon.
 
 
 ### A note on people looking to replace some Tab Mix Plus features:
