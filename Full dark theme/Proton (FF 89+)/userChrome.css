@@ -216,6 +216,10 @@ scrollbar, *|*:root {
   width: 100%;
 }
 
+.tabbrowser-tab[visuallyselected] .tab-background, .tabbrowser-tab[multiselected] .tab-background {
+  border-color: transparent !important;
+}
+
 /* Tab separators */
 .tabbrowser-tab::after {
   content: "";
