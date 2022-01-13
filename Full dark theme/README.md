@@ -6,11 +6,11 @@ Proton dark theme is still work in progress, but should work for the most part. 
 
 Following the method described here, you will be able to give dark colors to firefox as shown in the following pictures:
 
-### Photon (FF89+):
-![Dark firefox UI (Photon)](https://i.imgur.com/I4x1a8w.png)
-
-### Proton (FF57-88):
+### Proton (FF89+):
 ![Dark firefox UI (Proton)](https://i.imgur.com/vOHJn1D.png)
+
+### Photon (FF57-88):
+![Dark firefox UI (Photon)](https://i.imgur.com/I4x1a8w.png)
 
 ### Addons:
 ![Dark addons](https://i.imgur.com/t1Nf65V.png)
