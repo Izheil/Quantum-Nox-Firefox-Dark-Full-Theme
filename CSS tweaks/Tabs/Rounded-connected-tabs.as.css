@@ -1,8 +1,8 @@
 /* You can find an updated version here: https://github.com/Izheil/Quantum-Nox-Firefox-Dark-Full-Theme */
 /* Made by Izheil */
-/* Last updated: 02/11/2021 */
+/* Last updated: 14/01/2022 */
 
-/* ROUNDED TABS CONNECTED TABS */
+/* ROUNDED CONNECTED TABS */
 
 /* You can change the first 2 values of the border-radius to increase 
 * or decrease how round the tabs are */
@@ -69,8 +69,8 @@ above tabs */
 
 /* Changes the box shadow to fix themes that use it for tab borders. 
 It has the side effect of showing a "glow" effect on some dark themes, so set box-shadow to "none" if you don't want this. */
-#main-window:not([lwtheme-mozlightdark]) .tab-background[multiselected="true"], 
-#main-window:not([lwtheme-mozlightdark]) .tab-background[selected="true"]{
+#main-window:not([lwtheme-mozlightdark]):not([lwthemetextcolor="bright"]) .tab-background[multiselected="true"], 
+#main-window:not([lwtheme-mozlightdark]):not([lwthemetextcolor="bright"]) .tab-background[selected="true"]{
   box-shadow: 0 0 1px var(--tab-line-color, rgba(128,128,142,0.9)), 0 0 4px rgba(128,128,142,0.5) !important;
 }
 

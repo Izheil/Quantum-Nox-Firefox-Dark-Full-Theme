@@ -1,6 +1,6 @@
 /* You can find an updated version here: https://github.com/Izheil/Quantum-Nox-Firefox-Dark-Full-Theme */
 /* Made by Izheil */
-/* Last updated: 06/12/2021 */
+/* Last updated: 14/01/2022 */
 
 /* COLORING PART STARTS HERE */
 
@@ -8,7 +8,7 @@
 
 /* This root class will modify the colors of toolbar background color (by default is transparent white 
 without this change) */
-#main-window:not([lwtheme-mozlightdark]){
+#main-window[lwtheme-image="true"]:not([lwtheme-mozlightdark]):not([lwthemetextcolor="bright"]) {
   --toolbar-bgcolor: rgba(0,0,0,.6) !important;
   --lwt-selected-tab-background-color: var(--toolbar-bgcolor) !important;
   --tabs-toolbar-bgcolor: transparent !important;
@@ -57,7 +57,7 @@ without this change) */
     color: #ccc !important}
 
 /* Changes default tab line color for built-in dark theme */
-#main-window[lwtheme-mozlightdark] #tabbrowser-tabs {
+#main-window[lwtheme-mozlightdark] #tabbrowser-tabs, #main-window:not([lwtheme-image="true"]) #tabbrowser-tabs{
   --tab-line-color: rgb(0, 133, 221) !important;
 }
 

@@ -13,18 +13,18 @@ You can use it to fully change the colors of most of firefox UI to dark-gray col
 
 If you want to know how to change some colors of the theme, check the [wiki](https://github.com/Izheil/Quantum-Nox-Firefox-Dark-Full-Theme/wiki/Editting-CSS-files).
 
-### Last update: 13/01/2022
+### Last update: 14/01/2022
+
+Files updated:
+
+* __userChrome.css__: Fix for dark theme new selector.
+* __rounded-connected-tabs.as.css__: Fix for tab borders.
+
+### Pre-Last update: 13/01/2022
 
 Files updated:
 
 * __userChrome.css__: Fix for tab borders.
-
-### Pre-Last update: 01/01/2022
-
-Files updated:
-
-* __userChrome.css__: Minor context menu fixes.
-* __addons.css__: Updated the theme of Ant Video Downloader addon.
 
 
 ### A note on people looking to replace some Tab Mix Plus features:
