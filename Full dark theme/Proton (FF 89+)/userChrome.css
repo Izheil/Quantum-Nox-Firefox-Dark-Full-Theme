@@ -8,7 +8,7 @@
 
 /* This root class will modify the colors of toolbar background color (by default is transparent white 
 without this change) */
-#main-window[lwtheme-image="true"]:not([lwtheme-mozlightdark]):not([lwthemetextcolor="bright"]) {
+#main-window[lwtheme-image="true"]:not([lwtheme-mozlightdark]) {
   --toolbar-bgcolor: rgba(0,0,0,.6) !important;
   --lwt-selected-tab-background-color: var(--toolbar-bgcolor) !important;
   --tabs-toolbar-bgcolor: transparent !important;
