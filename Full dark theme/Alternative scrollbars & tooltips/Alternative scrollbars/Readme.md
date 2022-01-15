@@ -8,6 +8,10 @@ You can find other scrollbar styles in here with some screenshots. You should on
 
 A semi-transparent slim scrollbar with no background. It widens by 1 px when you click it.
 
+### Editable-Scrollbar.as.css
+
+Same as the default scrollbar added with userChrome and userContent from the dark theme, but you can edit it's sizing on px, if it should have buttons, etc.
+
 ## Files inside the colored scrollbar folders
 
 ### Scrollbars-default-(color).as.css
