@@ -5,6 +5,7 @@
 // @include        main
 // @compatibility  Firefox 70 to Firefox 94.0a1 (2021-09-14)
 // @author         Alice0775, Endor8, TroudhuK, Izheil, Merci-chao
+// @version        22/01/2022 16:50 Tab sizing fixes
 // @version        02/11/2021 03:15 Made pinned tabs to not have forced Proton sizing
 // @version        15/09/2021 11:39 Added experimental support for tab sizing below 20px
 // @version        10/09/2021 09:49 Fixed regression of pinned tabs icon showing unaligned
@@ -137,6 +138,14 @@ function zzzz_MultiRowTabLite() {
 
     /*-------- Don't edit past here unless you know what you are doing --------*/
 
+    /* These 2 rules are a fix to make sure that tabs become smaller on smaller --tab-min-height values */
+    .tabbrowser-tab {
+        max-height: calc(var(--tab-min-height) + var(--toolbarbutton-inner-padding)) !important;
+    }
+
+    .toolbar-items {-moz-box-align: start !important}
+
+    /* Common multirow code */
     #navigator-toolbox:-moz-lwtheme {
         background-color: var(--toolbar-bgcolor) !important;
     }
