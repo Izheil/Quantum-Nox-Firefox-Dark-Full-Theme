@@ -17,14 +17,14 @@ If you want to know how to change some colors of the theme, check the [wiki](htt
 
 Files updated:
 
-* __userChrome.css__: Fix for dark theme new selector.
-* __rounded-connected-tabs.as.css__: Fix for tab borders.
+* __MultirowTab*.uc.js__: Minor fixes for tab sizing on lower tab heights.
 
-### Pre-Last update: 13/01/2022
+### Pre-Last update: 14/01/2022
 
 Files updated:
 
-* __userChrome.css__: Fix for tab borders.
+* __userChrome.css__: Fix for dark theme new selector.
+* __rounded-connected-tabs.as.css__: Fix for tab borders.
 
 
 ### A note on people looking to replace some Tab Mix Plus features:
