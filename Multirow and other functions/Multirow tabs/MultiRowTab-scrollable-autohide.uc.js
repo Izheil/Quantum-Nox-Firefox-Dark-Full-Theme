@@ -123,7 +123,13 @@ function zzzz_MultiRowTabLite() {
 
     /*  These below control the padding of the new tab button and min/max/close buttons respectively.
         YOU DON'T NEED TO CHANGE THESE unless you want to use values of --tab-min-height lower than 20px. 
-        Before changing them, you need to UNCOMMENT the 2 rules below for them TO TAKE EFFECT. */
+        Before changing them, you need to UNCOMMENT the 2 rules below for them TO TAKE EFFECT. 
+
+        The first rule (#TabsToolbar) controls the padding around the "new tab" button. Make sure to always use "px" 
+        as unit for it to work, even on 0 value. Reducing it will allow a lower limit on the tabs height. 
+        
+        The second rule (.titlebar-buttonbox) has paddings control the padding of the min/max/close buttons. 
+        Changing these are required if you want the tab bar to be smaller when having 1 row. */
 
     /*
     #TabsToolbar {
