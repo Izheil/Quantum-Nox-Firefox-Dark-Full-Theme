@@ -13,18 +13,17 @@ You can use it to fully change the colors of most of firefox UI to dark-gray col
 
 If you want to know how to change some colors of the theme, check the [wiki](https://github.com/Izheil/Quantum-Nox-Firefox-Dark-Full-Theme/wiki/Editting-CSS-files).
 
-### Last update: 22/01/2022
+### Last update: 26/01/2022
+
+Files updated:
+
+* __Addons.css__: Updated Ublock origin addon dark theme to just fix some of the minor issues of the official dark theme.
+
+### Pre-Last update: 22/01/2022
 
 Files updated:
 
 * __MultirowTab*.uc.js__: Minor fixes for tab sizing on lower tab heights.
-
-### Pre-Last update: 14/01/2022
-
-Files updated:
-
-* __userChrome.css__: Fix for dark theme new selector.
-* __rounded-connected-tabs.as.css__: Fix for tab borders.
 
 
 ### A note on people looking to replace some Tab Mix Plus features:

@@ -1237,471 +1237,85 @@ input[type="text"]:focus, #scriptCode:focus {border: 1px solid #0a84ff !importan
 label::before, .ui.popup {filter: invert(75%)}
 }
 
-/*------ UBLOCK ORIGIN BLOCKING PAGE ------*/
-@-moz-document url-prefix(moz-extension://TYPE-UUID-OF-UBLOCK-ORIGIN-ADDON-HERE/document-blocked.html){
-
-html, body, .code {background-color: #222 !important}
-
-body {margin-top: 10em}
-
-p, span {color: #ccc !important}
-
-.fa {color: #fa0 !important}
-
-a:link {color: #0084ff !important}
-a:hover {color: #0ff !important}
-a:active {color: #0050aa !important}
-
-button {
-  -moz-appearance: none !important;
-  border-radius: 3px !important;
-  background: #333 !important;
-  color: #ddd !important;
-  border: none !important}
-
-button:hover {
-  background: #111 !important;
-  color: #ddd !important}
-}
-
-/*------ UBLOCK ORIGIN CONTROL PANEL TOP BUTTONS ------*/
-@-moz-document url-prefix(moz-extension://TYPE-UUID-OF-UBLOCK-ORIGIN-ADDON-HERE/dashboard.html) {
-
-#dashboard-nav {background: #222 !important; border-bottom: 1px solid black !important}
-
-#dashboard-nav span {color: #ccc !important}
-
-.tabButton:not(.selected):hover {
-  background-color: #444 !important; 
-  color: #ddd !important;
-  border-bottom-color: #555 !important}
-}
-
 /*------ UBLOCK ORIGIN CONTROL PANEL CONTENT PAGES ------*/
 @-moz-document url-prefix(moz-extension://TYPE-UUID-OF-UBLOCK-ORIGIN-ADDON-HERE/) {
-html:not(#ublock0-epicker) > body, html:not(#ublock0-epicker), #actions {
-  background: #333 !important;
-  color: #ccc !important;
-}
-
-:root {
-  --ink-20: #666 !important;
-  --ink-50: #fff !important;
-  --sf-variable-ink: #6b3 !important;
-  --fg-0-40: #aaa !important;
-  --fg-0-50: #999 !important;
-  --fg-0-60: #888 !important;
-  --fg-icon-info-lvl-1-dimmed: #09f !important;
-  --fg-icon-info-lvl-1: #0bf !important;
-  --fg-icon-info-lvl-4-dimmed: #920 !important;
-  --hor-separator-color: #666 !important;
-  --bg-1: #222 !important;
-  --bg-transient-notice: #640 !important;
-}
-
-a:link {color: #09f !important}
-a:visited {color: #0070aa !important}
-a:hover {color: #0bf !important}
-a:active {color: #0050aa !important}
-
-.fa.info:hover, .fa-icon.info:hover,
-.listEntry .fa-icon.content:hover,
-.listEntry .fa-icon.support:hover,
-.listEntry .fa-icon.status.cache:hover
-  {fill: #fff !important}
-
-#ruleFilter .fa-icon svg, #frameURL .fa-icon svg {fill: #ccc !important}
-
-.resultsetModifier > span > span:nth-of-type(1),
-.resultsetModifier > span > span:nth-of-type(2) {
-  background-color: #07c !important;
-}
-
-.resultsetModifier > span {
-  border-color: #999 !important;
-}
-
-#cloudWidget {
-  background-color: rgba(0,0,0,0.1) !important;
-  border-radius: 6px !important}
-
-#cloudOptions.show {
-  background-color: #333 !important;
-  border-color: #555 !important;
-  border-radius: 6px !important}
-
-#cloudCapacity {
-  background-color: #222 !important}
-
-#cloudCapacity> div {
-    background-color: #2080af !important}
-
-#cloudCog:hover {
-  fill: #fff !important}
-
-#diff {border-color: #555 !important}
-
-button:not(#buttonUpdate) {
-  background: #555 !important;
-  color: #ddd !important;
-    fill: #ddd !important}
-
-button:not(#buttonUpdate):hover {
-    background: #444 !important;
-    color: #fff !important}
-
-button[disabled] {opacity: 0.7 !important}
-
-#buttonUpdate {
-  background: #ffbb33 !important;
-  color: #000 !important}
-
-#buttonUpdate:hover{
-  background: #cc8800 !important}
-
-.cm-search-widget, .CodeMirror-gutters, 
-.CodeMirror-merge-gap {background: #222 !important; border: none !important}
-
-.cm-search-widget {border-bottom: 1px solid #000 !important;}
-
-.CodeMirror, .CodeMirror-merge, .cm-search-widget input {
-  -moz-appearance: none !important;
-  background: #444 !important; 
-  color: #aaa !important; 
-  border: none !important}
-
-.CodeMirror-activeline-background {background: #033 !important}
-
-.cm-staticext {color: #0aa !important}
-.cm-builtin {color: #07F !important}
-.cm-keyword {color: rgb(250, 40, 100) !important}
-.cm-value {color: #d90 !important}
-.cm-def {color: #0cd !important}
-.cm-searching {background-color: #000 !important}
-
-.CodeMirror-selected, .CodeMirror-line *::selection {background: #055 !important}
-
-.CodeMirror-merge-left .CodeMirror-merge-l-chunk {background-color: rgb(0, 66, 133) !important}
-.CodeMirror-merge-editor .CodeMirror-merge-l-chunk {background-color: #053 !important}
-.CodeMirror-merge-spacer {background-color: #620 !important}
-
-.cm-comment {color: #aaa !important}
-.CodeMirror-cursor {border-left-color: #aaa !important}
-.cm-staticnetBlock {color: #f62 !important}
-.cm-staticOpt {background-color: #111 !important}
-.cm-sortkey {color: #f6a !important}
-.cm-nooprule {color: #47a8a8 !important}
-.cm-allowrule {color: #1fa61f !important}
-
-textarea, input[type="text"], input[type="search"] {
-  -moz-appearance: none !important; 
-  background-color: #222 !important; 
-  color: #aaa !important;
-  border: 1px solid #555 !important}
-
-code {background-color: #222 !important}
-
-.CodeMirror-code > div:nth-child(odd),
-.CodeMirror-code > pre:nth-child(odd) {background-color: #383838 !important}
-.CodeMirror-code > div:nth-child(even),
-.CodeMirror-code > pre:nth-child(even) {background-color: #444 !important}
-
-input[type=number] {
-  -moz-appearance: none !important;
-  background: #222 !important;
-  border: 1px solid #000 !important;
-  color: #ccc !important}
-
-/* Checkbox coloring */
-input[type="checkbox"] {
-  -moz-appearance: none !important;
-  border: 1px solid #666 !important;
-  background-color: #444 !important;
-  transition: color 0.3s;
-  min-width: 12px;
-  min-height: 12px;
-  margin-bottom: 0 !important}
-
-input[type="checkbox"]:not([disabled]):hover {
-  box-shadow: 0 0 4px #0084ff !important;
-  border-color: #0084ff !important}
-
-input[type="checkbox"]:checked {
-  background: #444 url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="10px" height="10px" viewBox="1 3 12 12" ><path fill="rgb(200,200,200)" d="M 13.09,2.87 C 13.09,2.87 6.00,11.00 6.00,11.00 6.00,11.00 2.00,9.00 2.00,9.00 4.25,12.81 7.00,14.00 7.00,14.00 9.24,10.42 12.04,7.39 13.09,2.87 Z" /></svg>') no-repeat center center !important}
-
-/* Select boxes coloring */
-select {
-  -moz-appearance: none !important;
-  background: #555 url("data:image/svg+xml;charset=utf-8,%3Csvg width='11' height='7' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M434.574 488L430.5 492.147 426.428 488 425 489.399 430.5 494.999 436 489.399z' transform='translate(-425 -488)' fill='%23dddddd' fill-rule='evenodd'/%3E%3C/svg%3E") no-repeat calc(100% - 5px) 50% !important;
-  border: none !important;
-  padding: 3px 30px 3px 3px !important;
-  color: #ccc !important}
-
-select:hover {
-  background: #222 url("data:image/svg+xml;charset=utf-8,%3Csvg width='11' height='7' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M434.574 488L430.5 492.147 426.428 488 425 489.399 430.5 494.999 436 489.399z' transform='translate(-425 -488)' fill='%23ffffff' fill-rule='evenodd'/%3E%3C/svg%3E") no-repeat calc(100% - 5px) 50% !important;
-  color: #fff !important}
-
-select .menulist-dropmarker {display: none}
-}
-
-
-/*------ UBLOCK ORIGIN ELEMENT PICKER ------*/
-
-/* Ublock Origin element picker window */
-#ublock0-epicker aside {
-	background: #333 !important;
-	color: #ccc !important;
-	border: 1px solid #666 !important}
-
-#ublock0-epicker .cm-variable {
-	color: #6b3 !important}	
-
-#ublock0-epicker #resultsetCount {background-color: #666 !important; color: #ddd !important}
-
-#ublock0-epicker section > div:first-child > textarea {
-	background: #555 !important; 
-	color: #ddd !important;
-	border: 1px solid #666 !important}
-
-#ublock0-epicker section > div:first-child {border: 1px solid #666 !important}
-
-#ublock0-epicker aside #cosmeticFilters li:hover {background: rgba(255,255,255,0.2) !important}
-
-#ublock0-epicker aside button:not(#create) {
+  .cm-search-widget, .CodeMirror-gutters, 
+  .CodeMirror-merge-gap {background: #1b1b23 !important; border: none !important}
+  
+  .cm-search-widget {border-bottom: 1px solid #000 !important;}
+  
+  .CodeMirror, .CodeMirror-merge, .cm-search-widget input {
     -moz-appearance: none !important;
-    border-radius: 3px !important;
-    background: #555 !important;
-    color: #ddd !important;
+    background: #21212b !important; 
+    color: #aaa !important; 
     border: none !important}
-
-#ublock0-epicker aside button:not(#create):hover {
-    background: #111 !important;
-    color: #ddd !important}
-
-#ublock0-epicker aside #create {
-	-moz-appearance: none !important;
-    border-radius: 3px !important;
-    background: #ffbb33 !important;
-    color: #000 !important;
-    border: none !important}
-
-#ublock0-epicker aside #create:hover {
-    background: #cc8800 !important;
-    color: #ddd !important}
-
-/*------ UBLOCK ORIGIN MENU POPUP ------*/
-@-moz-document url-prefix(moz-extension://TYPE-UUID-OF-UBLOCK-ORIGIN-ADDON-HERE/popup.html) {
-
-#appinfo {background: #111 !important}
-
-#refresh, #saveRules, #revertRules {background-color: #222 !important; border: 1px solid #000 !important}
-
-/* Basic menu */
-.tooltipContainer, #panes {background-color: #333 !important}
-
-.tool.enabled:hover, .hnSwitch.fa-icon.fa-icon-badged:hover {fill: #fff !important}
-
-body:not(.off) #switch .fa-icon {fill: var(--blue-60) !important}
-
-p {color: #ccc !important}
-.statValue {color: #888 !important}
-
-h2 {
-  background-color: #222 !important; 
-  color: #ddd !important}
-
-div:not(.tooltipContainer):not(#panes):not(#rulesetTools):not(#refresh) {
-  background-image: linear-gradient(rgba(0,0,0,0.7),rgba(0,0,0,0.7)) !important}
-
-span[data-i18n-tip="popupTipRevertRules"], span[data-i18n-tip="popupTipSaveRules"] {
-  background: #222 !important;
-  border: 1px solid black !important}
-
-#extraTools, #tooltip {
-  background: #ddd !important;
-  color: #ccc !important}
-
-#extraTools span:hover {color: #888 !important}
-
-/* Advanced menu */
-#actionSelector {filter: brightness(70%) !important}
-
-#firewallContainer > div:not(.isCname) > span:not([data-src="."]) {
-  color: #ccc !important}
-
-#firewallContainer span[data-src="."] {color: #fff !important}
-
-#firewallContainer > div.isCname > span:first-of-type {color: #09f !important}
-
-#firewallContainer span:hover {background-image: linear-gradient(rgba(255,255,255,0.2),rgba(255,255,255,0.2)) !important}
-
-#firewallContainer > div.isCname > span:first-of-type:hover {color: #2020dd !important}
-
-#firewallContainer span span, #firewallContainer span span:hover {
-  background-image: none !important;
-  border-bottom: 1px solid transparent !important}
-
-#firewallContainer > div > span:not(.blockRule):not(.noopRule):not(.allowRule) {
-  background-color: #444 !important}
-
-#firewallContainer > div {border: none !important}
-}
-
-@-moz-document url-prefix(moz-extension://TYPE-UUID-OF-UBLOCK-ORIGIN-ADDON-HERE/popup-fenix.html) {
-#sticky {
-  background: #333 !important}
-
-hr {border-color: #666 !important}
-
-.toolRibbon .fa-icon, #moreButton .fa-icon, 
-#lessButton .fa-icon, .rulesetTools .fa-icon {
-  fill: #ccc !important}
-
-.rulesetTools .fa-icon {
-  background: #222 !important;
-  border-color: #555 !important}
-
-body:not(.off) #switch .fa-icon {fill: #0250CC}
-body.off #switch .fa-icon {fill: #222}
-
-#switch:hover {background: transparent !important}
-
-.tool:hover {
-  background-color: #555 !important;
-  fill: #fff !important}
-
-#moreButton:hover, #lessButton:hover {
-  background-color: #555 !important}
-
-/* Advanced menu */
-#actionSelector {filter: brightness(70%) !important}
-
-#firewall > div:not(.isCname) > span:not([data-src="."]) {
-  color: #ccc !important}
-
-#firewall span[data-src="."] {color: #fff !important}
-
-#firewall > div.isCname > span:first-of-type {color: #09f !important}
-#firewall > div.isCname:hover > span > span {background: transparent !important}
-
-#firewall span:hover {background-image: linear-gradient(rgba(255,255,255,0.2),rgba(255,255,255,0.2)) !important}
-
-#firewall > div.isCname > span:first-of-type:hover {color: #2020dd !important}
-
-#firewall span span, #firewall span span:hover {
-  background-image: none !important;
-  border-bottom: 1px solid transparent !important}
-
-#firewall > div > span:not(.blockRule):not(.noopRule):not(.allowRule) {
-  background-color: #444 !important}
-}
-
-/*------ UBLOCK ORIGIN UI LOGGER ------*/
-@-moz-document url-prefix(moz-extension://TYPE-UUID-OF-UBLOCK-ORIGIN-ADDON-HERE/logger-ui.html) {
-
-body, .permatoolbar, .vscrollable, table, html {background: #222 !important}
-
-.button, input, textarea, .preview span {
-  -moz-appearance: none !important;
-  background: #444 !important;
-  border: 1px solid #000 !important}
-
-.button.fa-icon, .button.ubo-icon {fill: #ccc !important}
-.button.fa-icon:hover, .button.ubo-icon:hover {fill: #fff !important}
-
-select {background: #444 !important}
-select:hover {background: #666 !important}
-
-#vwRenderer .logEntry > div[data-tabid="-1"] {text-shadow: 0 0.2em 0.4em #000 !important}
-
-#modalOverlayClose, .tools .fa-icon {background: transparent !important; fill: #ddd !important}
-#modalOverlayClose svg {stroke: #ddd !important}
-
-#vwRenderer .logEntry > div > span, #filterExprPicker > div, 
-#netFilteringDialog > .panes > .details > div, .panes .details span, 
-.panes .entry, .action, .dynamic .toolbar span {border-color: #000 !important}
-
-.logEntry, #netFilteringDialog > .panes > .details > div, .panes .entry {background: rgba(255,255,255,0.1) !important}
-
-.logEntry:hover, .panes .entry.row:hover {background: rgba(255,255,255,0.2) !important}
-
-#loggerExportDialog .options span[data-i18n] {border-color: #888 !important}
-#loggerExportDialog .options span[data-i18n]:hover, .tools .fa-icon:hover {background-color: #555 !important}
-
-#filterExprPicker span[data-filtex]:not(.on):hover {
-  background-color: #666 !important; 
-  border-color: #888 !important}
-
-#loggerExportDialog .options span.on[data-i18n], #filterExprPicker .on {background-color: #666 !important}
-
-input, .logEntry, #modalOverlayContainer, textarea, #filterExprPicker {color: #ddd !important}
-
-#vwRenderer .logEntry > div[data-aliasid] {color: #09f !important}
-#vwRenderer .logEntry > div[data-aliasid]:hover {color: #02a !important}
-
-#netInspector #filterInput {border: none !important}
-
-.inspector {border-color: #666 !important}
-
-#modalOverlayContainer {background-color: #333 !important}
-
-#netInspector div#popupContainer {
-  background: #333 !important; 
-  border: 1px solid #111 !important}
-
-#popupContainer > div {background: #555 !important}
-
-.toolbar td, #filterExprPicker {
-  border: none !important;
-  background: #444 !important}
-
-.headers {border-bottom: 1px solid #000 !important}
-
-.toolbar span#saveRules { 
-  background-color: #444 !important; 
-  border: 1px solid #000 !important;
-  color: #eee !important}
-
-.toolbar span#saveRules:hover { 
-  background-color: #222 !important;
-  color: #fff !important}
-
-button.important {
-  -moz-appearance: none !important;
-  border-radius: 3px !important;
-  background: #ffbb33 !important;
-  color: #000 !important;
-  border: none !important}
-
-button.important:hover {
-  background: #cc8800 !important;
-  color: #ddd !important}
-
-.action .noop:hover, .action.noop.own {background: #ddd !important}
-
-.header.dynamic, .header.static, .header.details {
-  background-color: #222 !important; 
-  color: #777 !important;
-  border: 1px solid black !important;
-  border-bottom: 1px solid transparent !important}
-
-#netFilteringDialog[data-pane="dynamic"] .header.dynamic, 
-#netFilteringDialog[data-pane="static"] .header.static, 
-#netFilteringDialog[data-pane="details"] .header.details {
-  background-color: #333 !important; 
-  color: #ccc !important;
-  border: 1px solid black !important;
-  border-bottom: 1px solid transparent !important}
-
-#modalOverlayContainer a:link {color: #0084ff !important}
-#modalOverlayContainer a:hover {color: #0ff !important}
-#modalOverlayContainer a:active {color: #0050aa !important}
-
-.button.disabled {opacity: 0.5 !important}
-
-#domTree, #domTree ul {background: #222 !important}
-
-#domTree .isCosmeticHide, #domTree .isCosmeticHide li {background: rgba(255, 150, 150, 0.2) !important}
+  
+  .CodeMirror-activeline-background {background: #033 !important}
+  
+  .cm-staticext {color: #0aa !important}
+  .cm-builtin {color: #07F !important}
+  .cm-keyword {color: rgb(250, 40, 100) !important}
+  .cm-value {color: #d90 !important}
+  .cm-def {color: #0cd !important}
+  .cm-searching {background-color: #000 !important}
+  
+  .CodeMirror-selected, .CodeMirror-line *::selection {background: #055 !important}
+  
+  .cm-comment {color: #aaa !important}
+  .CodeMirror-cursor {border-left-color: #aaa !important}
+  .cm-staticnetBlock {color: #f62 !important}
+  .cm-staticOpt {background-color: #111 !important}
+  .cm-sortkey {color: #f6a !important}
+  .cm-nooprule {color: #47a8a8 !important}
+  .cm-allowrule {color: #1fa61f !important}
+  
+  textarea, input[type="text"], input[type="search"], input[type="color"] {
+    -moz-appearance: none !important; 
+    background-color: #21212b !important;
+    color: #aaa !important;
+    border: 1px solid #454555 !important}
+  
+  input[type=number] {filter: invert(1)}
+  
+  code {background-color: #222 !important}
+  
+  .changeFilter li.active {color: #08f}
+  
+  .CodeMirror-code > div:nth-child(odd),
+  .CodeMirror-code > pre:nth-child(odd) {background-color: #2c2c3a !important}
+  .CodeMirror-code > div:nth-child(even),
+  .CodeMirror-code > pre:nth-child(even) {background-color: #21212b !important}
+  
+  /* Checkbox coloring */
+  input[type="checkbox"] {
+    -moz-appearance: none !important;
+    border: 1px solid #5c5c70 !important;
+    background-color: #21212b !important;
+    transition: color 0.3s;
+    min-width: 12px;
+    min-height: 12px;
+    margin-bottom: 0 !important}
+  
+  input[type="checkbox"]:not([disabled]):hover {
+    box-shadow: 0 0 4px #0084ff !important;
+    border-color: #0084ff !important}
+  
+  input[type="checkbox"]:checked {
+    background: #444 url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="10px" height="10px" viewBox="1 3 12 12" ><path fill="rgb(200,200,200)" d="M 13.09,2.87 C 13.09,2.87 6.00,11.00 6.00,11.00 6.00,11.00 2.00,9.00 2.00,9.00 4.25,12.81 7.00,14.00 7.00,14.00 9.24,10.42 12.04,7.39 13.09,2.87 Z" /></svg>') no-repeat center center !important}
+  
+  /* Select boxes coloring */
+  select {
+    -moz-appearance: none !important;
+    background: #454555 url("data:image/svg+xml;charset=utf-8,%3Csvg width='11' height='7' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M434.574 488L430.5 492.147 426.428 488 425 489.399 430.5 494.999 436 489.399z' transform='translate(-425 -488)' fill='%23cccccc' fill-rule='evenodd'/%3E%3C/svg%3E") no-repeat calc(100% - 5px) 50% !important;
+    border: none !important;
+    padding: 3px 30px 3px 3px !important;
+    color: #ccc !important}
+  
+  select:hover {
+    background: #5c5c70 url("data:image/svg+xml;charset=utf-8,%3Csvg width='11' height='7' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M434.574 488L430.5 492.147 426.428 488 425 489.399 430.5 494.999 436 489.399z' transform='translate(-425 -488)' fill='%23cccccc' fill-rule='evenodd'/%3E%3C/svg%3E") no-repeat calc(100% - 5px) 50% !important;
+    color: #fff !important}
+  
+  select .menulist-dropmarker {display: none}
 }
 
 /*------ UMATRIX ADDON COMMON SECTION ------*/
