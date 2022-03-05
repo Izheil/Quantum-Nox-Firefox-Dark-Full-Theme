@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Mod customization | QN Mod Manager</title>
+	<link rel="stylesheet" href="../CSS/Frame.css">
+</head>
+<body id="centerContent">
+	<div id="instScripts">
+		<h1>Customize Mod</h1>
+		<hr>
+		<p>Change the mod settings of <b id="namePlaceholder">the selected mod</b>.</p>
+		<div id="modSettings">
+			<div id="basicSettings">
+				<label>Name </label><br>
+				<input type="text" id="inputModName" name="name"></input>
+				<button class="resetInputBtn" title="Reset to default value">&#10799</button>
+				<br><br>
+				<label>Description </label><br>
+				<textarea id="inputModDesc" name="description" rows="5"></textarea>
+				<button class="resetInputBtn" title="Reset to default value">&#10799</button>
+				<br><br>
+				<label>Update URL </label><br>
+				<input type="url" id="inputModURL" name="updateURL"></input>
+				<button class="resetInputBtn" title="Reset to default value">&#10799</button>
+				<br><br>
+				<label>Update interval </label><br>
+				<select id="inputUpdInterval" name="updateInterval">
+					<option value="default">Default</option>
+					<option value="startup">On startup</option>
+					<option value="daily">Once a day</option>
+					<option value="weekly">Once a week</option>
+					<option value="monthly">Once a month</option>
+					<option value="never">Never</option>
+				</select>
+				<button class="resetInputBtn" title="Reset to default value">&#10799</button>
+			</div>
+			<div id="advancedSettings">
+			</div>
+			<div id="modSettingsBtnSet">
+				<button id="saveChangesBtn">Save</button>
+				<button id="cancelChangesBtn">Cancel</button>
+			</div>
+		</div>
+	</div><br>
+	<div id="bottom-notice"></div>
+	<script src="../JS/database-load.js"></script>
+</body>
+</html>

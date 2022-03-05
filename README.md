@@ -1,5 +1,7 @@
 ![Quantum Nox Logo](https://i.imgur.com/F7qziom.png)
 
+Reason of the repo being archived can be found [here](https://gist.github.com/Izheil/8df68cf71a5096f15d07fdde93cc447c).
+
 ### Firefox customizations for a full dark theme, multi-row tabs, custom scrollbar, and other functions.
 
 #### Since Firefox 69, you have to enable `toolkit.legacyUserProfileCustomizations.stylesheets` in `about:config` for userChrome and userContent to be loaded at all as per [bug #1541233](https://bugzilla.mozilla.org/show_bug.cgi?id=1541233#c35).
@@ -13,17 +15,17 @@ You can use it to fully change the colors of most of firefox UI to dark-gray col
 
 If you want to know how to change some colors of the theme, check the [wiki](https://github.com/Izheil/Quantum-Nox-Firefox-Dark-Full-Theme/wiki/Editting-CSS-files).
 
-### Last update: 26/01/2022
+### Last update: 05/03/2022
+
+Files updated:
+
+* __Mod manager (folder)__: Added the beta of the mod manager extension (used to auto-update mods).
+
+### Pre-Last update: 26/02/2022
 
 Files updated:
 
 * __Addons.css__: Updated Ublock origin addon dark theme to just fix some of the minor issues of the official dark theme.
-
-### Pre-Last update: 22/01/2022
-
-Files updated:
-
-* __MultirowTab*.uc.js__: Minor fixes for tab sizing on lower tab heights.
 
 
 ### A note on people looking to replace some Tab Mix Plus features:

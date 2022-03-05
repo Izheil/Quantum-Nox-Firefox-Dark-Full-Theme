@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Edit new mod | QN Mod Manager</title>
+	<link rel="stylesheet" href="../CSS/Mod-edit.css">
+	<link rel="stylesheet" href="../CodeMirror/lib/codemirror.css">
+	<script src="../CodeMirror/lib/codemirror.js"></script>
+	<script src="../CodeMirror/mode/css/css.js"></script>
+	<script src="../CodeMirror/mode/javascript/javascript.js"></script>
+</head>
+<body>
+	<header id="editModHead">
+		<div id="codeModHeader">
+			<ul>
+				<li id="codeBtn" class="active">&#128393 Code</li>
+				<li id="configBtn">&#9881 Config</li>
+				<li id="helpBtn">&#63 Help</li>
+			</ul>
+		</div>
+		<div id="editModTitle">New Mod</div>
+		<div id="saveModHeader">
+			<ul>
+				<li id="exportModBtn">&#8683 Export</li>
+				<li id="saveModBtn">&#128427 Save</li>
+				<li id="closeEditBtn">&#10799 Close</li>
+			</ul>
+		</div>
+	</header>
+	<main>
+		<!-- This is the code area -->
+		<textarea id="editModFrame" class="activeFrame">Here be dragons</textarea>
+
+		<!-- This is the configuration area -->
+		<div id="configModFrame" hidden>
+			<h3>Updates configuration</h3>
+			<p>Leave these empty to use the script-defined values.</p><br>
+			<label>Update interval: </label><br>
+			<select id="updateInterval">
+				<option value="default">Default</option>
+				<option value="startup">On startup</option>
+				<option value="daily">Once a day</option>
+				<option value="weekly">Once a week</option>
+				<option value="monthly">Once a month</option>
+				<option value="never">Never</option>
+			</select><br>
+			<label>Update URL: </label><br>
+			<input type="url" id="inputModURL" name="updateURL" placeholder="https://..."></input><br>
+			<h3>Scripts metadata</h3>
+			<label>Name: </label><br>
+			<input type="text" id="inputModName" name="name" placeholder="My awesome Firefox mod"></input><br>
+			<label>Description: </label><br>
+			<textarea id="inputModDesc" name="description" rows="5" placeholder="This mod makes Firefox great again"></textarea>
+		</div>
+
+		<!-- This is the help area -->
+		<div id="helpModFrame" hidden>
+			<h2>How to write a userScript for Firefox</h2>
+			<p>Userscripts for Firefox are made in the same way as you'd make a Tampermonkey/Violentmonkey script, except that the page 
+				it will apply to will be Firefox's main interface window.</p>
+			<p>You can also add customizable variables like in a stylus userCSS script where the variable name will be replaced by the value set for it 
+				in the script content before it's parsed, and where it will be editable by the user in the "customize" section of each mod.</p><br>
+			<p>An example of these variables would be creating a <b>color</b> variable named <b>myFirstVar</b>:</p>
+			<pre>@var        color     myFirstVar    "This is the description of myFirstVar"    #ff0000</pre><br>
+			<p>We first start declaring it with <code>@var</code>, and then we add the <b>type, name, description, and value</b> in that order.</p>
+			<p>Only the variables declared in the header with <code>@var</code> will appear in the "customize" section of each mod to be editable faster 
+				by the end users, or anyone not using the "advanced user" setting.</p><br>
+			<h3>Metadata header</h3>
+			<p>The metadata header contains the information that will be shown and edited by the user, as well as the URL used for updates.</p>
+			<p>Here is an example of the header metadata:</p>
+			<pre>/* ==UserScript==
+@name           Test Script
+@description    Test
+@author         ExampleMan
+@var        color 		colortest	"Color test"		#000000
+@var        checkbox 	checktest	"Checkbox test"		true
+@var        number	 	numbetest	"Number test"		["%", 2, 1, 10]
+@var        select 		selectest	"Select test"		{
+  "Select option 1": "option1Val", 
+  "Select option 2": "Option2Val"}	
+==/UserScript== */</pre><br>
+			<h3>Type of variables</h3>
+			<p>To avoid problems when using variables in more than 1 line (for anything that isn't a select variable), you should use multi-line comments
+				for the metadata header <code>/* Like this */</code>.
+			</p>
+			<p>There are 5 types of variables:</p>
+			<ul>
+				<li><p><b>Text</b>: This is the most basic, replaces the variable name in the script with a string.</p>
+					<pre>@var        text     myTextVar    "This is the description of the text variable"    "This is string to be used as value"</pre>
+				</li>
+				<li><p><b>Color</b>: Replaces the variable name in the script content with the value of a color. Shows a color picker to the user 
+					in the "customize" section, and can use any color format (Hex, HSL, or rgb).</p>
+					<pre>@var        color     myColorVar    "This is the description of the color variable"    #FF0000</pre>
+				</li>
+				<li><p><b>Checkbox</b>: Replaces the variable name in the script content with a boolean. Shows a switch to the user in the "customize"
+					section, and only accepts <b>true</b> or <b>false</b> as values.</p>
+					<pre>@var        checkbox     myCheckVar    "This is the description of the checkbox variable"    true</pre>
+				</li>
+				<li><p><b>Number</b>: Replaces the variable name in the script content with a number. Shows a number input to the user in the "customize"
+					section, and you can use it in 2 ways, either give a single number, or give 4 values in an array corresponding to 
+					<b>["type of number", value to be used, min value acceptable, max value acceptable]</b>.</p>
+					<pre>@var        number     myNumberVar    "This is the description of the number variable"    ["%", 2, 1, 10]</pre>
+				</li>
+				<li><p><b>Select</b>: Replaces the variable name in the script content with a string. Shows a select box to the user in the "customize"
+					section, and you can set as many options as you want.</p>
+					<p> It's the only one that accepts multi-line declarations using single line comments <code>// like this </code> on the header. 
+					For the options, only the option name will be shown to the user.</p>
+					<pre>// @var        select 		testShiet	"This is the description of the select variable"	{
+//  "Option1Name": "Option1Value", 
+//  "Option2Name": "Option2Value"}</pre>
+				</li>
+			</ul>
+
+			<h3>Other links of interest:</h3>
+			<ul>
+				<li><a href="https://developer.mozilla.org/en-US/docs/Tools/Browser_Toolbox">How to enable the browser toolbox to find the selectors of Firefox interface</a>.</li>
+				<li><a href="https://www.userchrome.org/">UserChrome and usercontent examples</a>.</li>
+			</ul>
+		</div>
+	</main>
+	<div id="bottom-notice"></div>
+	<script src="../JS/database-load.js"></script>
+</body>
+</html>

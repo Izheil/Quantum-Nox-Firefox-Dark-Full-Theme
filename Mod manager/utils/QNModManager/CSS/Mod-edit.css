@@ -1,0 +1,287 @@
+p {
+	color: #ccc;
+}
+
+label, pre, ul, code {
+	color: #aaa;
+}
+
+pre, code {
+	background-color: #111;
+	border-radius: 5px;
+}
+
+main, header {
+	width: 98%;
+	margin-left: 1%;
+	margin-right: 1%;
+}
+
+header {
+	padding: 10px;
+}
+
+h2, h3 {
+	color: #fff;
+}
+
+h2 {
+	text-align: center;
+}
+
+hr {
+	width: 50%;
+	text-align: center;
+}
+
+input[type="url"], input[type="text"], textarea {
+	background-color: #333;
+	border: 1px solid #666;
+	color: #ccc;
+	margin-bottom: 2em;
+	min-width: 500px;
+	width: 50%;
+}
+
+select {
+	background-color: #333;
+	border: 1px solid transparent;
+	color: #ccc;
+	margin-bottom: 2em;
+}
+
+label + br {
+	margin-bottom: 0.5em;
+}
+
+option:hover {
+	background-color: rgba(255,255,255,0.1)}
+
+input[type="url"]:hover, input[type="text"]:hover, textarea:hover, 
+input[type="url"]:focus, input[type="text"]:focus, textarea:focus
+select:not(:focus):hover {
+	background-color: #444;
+}
+
+button {
+	background-color: #444;
+	padding: 5px 10px;
+	color: #ccc;
+	border: 1px solid transparent;
+	border-radius: 3px;
+	margin-right: 5px;
+	font-weight: bold;
+	font-size: 0.9em;
+}
+
+button:not([disabled]):hover {
+	background-color: #555;
+	color: #fff;
+}
+
+button:not([disabled]):active {
+	background-color: #111;
+	color: #fff;
+}
+
+*[disabled] {
+	opacity: 0.5}
+
+a:link {color: #09f}
+a:visited {color: #007acc}
+a:hover {color: #0cf}
+a:active {color: #0070aa}
+
+/* Save notification */
+#bottom-notice {
+	position: fixed;
+	bottom: -30px;
+	right: 10px;
+	color: #ccc;
+	padding: 15px;
+	text-align: right;
+	border-radius: 6px;
+	background-color: rgb(42, 90, 42);
+	transition: all 200ms;
+}
+
+/* Loader */
+#loader-container {
+	position: fixed;
+	height: 100%;
+	width: 100%;
+	background-color: rgba(0,0,0,0.5);
+	z-index: 500;
+	margin: -8px;
+}
+	
+#loader,
+#loader::before,
+#loader::after {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	border: 1px solid #252560;
+	border-left-color: #0bf;
+	border-radius: 974px;
+}
+
+#loader {
+	margin: -24px 0 0 -24px;
+	height: 49px;
+	width: 49px;
+	animation: loader-rotate 1150ms linear infinite;
+
+}
+
+#loader::before {
+	content: "";
+	margin: -22px 0 0 -22px;
+	height: 43px;
+	width: 43px;
+	animation: loader-rotate 1150ms linear infinite;
+
+}
+
+#loader::after {
+	content: "";
+	margin: -28px 0 0 -28px;
+	height: 55px;
+	width: 55px;
+	animation: loader-rotate 2300ms linear infinite;
+
+}
+
+@keyframes loader-rotate {
+	100% {
+		transform: rotate(360deg);
+	}
+}
+
+
+/* ID */
+#headerLeft, #headerRight {
+	display: inline-block;
+	width: 48%;
+	max-width: 98%;
+}
+
+#editModHead {
+	width: 100%;
+	margin: 0;
+	padding: 0;
+}
+
+#codeModHeader, #saveModHeader {
+	display: inline-flex;
+	width: 24%;
+}
+
+#codeModHeader {
+	justify-content: left;
+}
+
+#saveModHeader {
+	justify-content: right;
+}
+
+#codeModHeader li, #saveModHeader li {
+	border: 1px solid #666;
+	background-color: rgba(255,255,255,0.1);
+	display: inline;
+	padding: 8px 10px;
+	list-style-type: none;
+	color: #ccc;
+}
+
+#codeModHeader li.active {
+	color: #ddd;
+	background-color: rgba(255,255,255,0.2);
+}
+
+#codeModHeader li:not(.active):hover, #saveModHeader li:not([disabled]):hover {
+	color: #fff;
+	background-color: rgba(0,0,0,0.5);
+	cursor: pointer;
+}
+
+#editModTitle {
+	display: inline-flex;
+	justify-content: center;
+	text-align: center;
+	font-size: 1.3em;
+	color: #fff;
+	width: 50%;
+}
+
+#newModButtons {
+	width: 98%;
+}
+
+#scriptCode {
+	display: flex;
+	margin-bottom: 1em;
+	height: 75vh;
+	width: 100%;
+}
+
+#editModFrame {
+	display: flex;
+	width: 100%;
+	height: 90vh;
+}
+
+#installModBtn:hover, #installModBtn:active {
+	border: 1px solid #09f;
+	color: #09f;
+}
+
+#reloadModBtn {
+	float: right;
+}
+
+/* Light mode */
+.light p {
+	color: #000;
+}
+
+.light #editModHead li {
+	color: #000;
+}
+
+.light #editModHead li.active {
+	background-color: #aaa;
+}
+
+.light pre, .light code {
+	background-color: #aaa;
+	color: #000;
+}
+
+/* Resize elements when lower than 1150px */
+@media screen and (max-width: 1150px){
+	#headerLeft, #headerRight {
+		display: inline;
+		padding: 0px;
+	}
+}
+
+@media screen and (max-width: 1285px){
+	#codeModHeader, #saveModHeader {
+		justify-content: center;
+		width: 32%;
+	}
+
+	#editModTitle {
+		width: 32%;
+	}
+
+	#codeModHeader li, #saveModHeader li {
+		display: block;
+		margin-top: 5px;
+	}
+
+	#codeModHeader ul, #saveModHeader ul {
+		padding-left: 0;
+	}
+}

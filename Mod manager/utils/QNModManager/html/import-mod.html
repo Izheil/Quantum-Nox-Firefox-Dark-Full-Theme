@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Add new Firefox mod | QN Mod Manager</title>
+	<link rel="stylesheet" href="../CSS/Mod-edit.css">
+	<link rel="stylesheet" href="../CodeMirror/lib/codemirror.css">
+	<link rel="icon" type="image/png" href="../icons/icon.png">
+	<script src="../CodeMirror/lib/codemirror.js"></script>
+	<script src="../CodeMirror/mode/css/css.js"></script>
+	<script src="../CodeMirror/mode/javascript/javascript.js"></script>
+</head>
+<body>
+	<div id="loader-container">
+		<div id="loader"></div>
+	</div>
+	<header>
+		<h2>Add new mod</h2>
+		<hr>
+		<div id="headerLeft">
+			<p>Name: <label id="name">Not set</label></p>
+			<p>Description: <label id="description">No description available</label></p>
+		</div>
+		<div id="headerRight">
+			<p>Version: <label id="version">Unknown</label></p>
+			<p>Author: <label id="author">Unknown</label></p>
+		</div>
+		<div id="newModButtons">
+			<button id="installModBtn">Install</button>
+			<button id="cancelModBtn">Cancel</button>
+			<button id="reloadModBtn">Reload</button>
+		</div>
+	</header>
+	<main>
+		<textarea id="scriptCode">Here be dragons</textarea>
+	</main>
+	<script src="../JS/fetch-mod.js"></script>
+	<script src="../JS/database-load.js"></script>
+</body>
+</html>

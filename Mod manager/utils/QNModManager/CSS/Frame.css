@@ -1,0 +1,366 @@
+body {
+	margin: 2em;
+}
+
+h1 {
+	text-align: center;
+	color: #fff;
+}
+
+h2, label, p {
+	color: #ccc;
+}
+
+.light h2, .light label, .light p, 
+.light h1 {
+	color: #000;
+}
+
+span, p, label {
+	font-family: "Arial";
+	line-height: 1.5em;
+}
+
+button:not(.resetInputBtn) {
+	background-color: #444;
+	padding: 5px 10px;
+	color: #ccc;
+	border: none;
+	border-radius: 3px;
+	margin-right: 10px;
+	font-weight: bold;
+	font-size: 0.9em;
+}
+
+button:not([disabled]):hover {
+	background-color: #555;
+	color: #fff;
+}
+
+button:not([disabled]):active {
+	background-color: #111;
+	color: #fff;
+}
+
+button[disabled] {
+	opacity: 0.5}
+
+input[type="text"], input[type="url"], input[type="number"], textarea {
+	border: 1px solid #666;
+	background-color: #282828;
+	color: #ccc;
+}
+
+input[type="number"] {
+	width: 70px;
+}
+
+input[type="color"] {
+	transform: translateY(3px);
+}
+
+input[type="text"]:focus, input[type="url"]:focus, input[type="number"]:focus, textarea:focus {
+	background-color: #222;
+}
+
+.resetInputBtn {
+	background-color: transparent;
+	border: none;
+	padding-left: 5px;
+	color: #ccc;
+	height: 1.5em;
+	width: 1.5em;
+}
+
+.mod {
+	background-color: rgb(51, 51, 51);
+	padding: 1em;
+	border-radius: 10px;
+	cursor: pointer;
+	text-align: justify;
+	width: 80%;
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 1.5em;
+}
+
+.mod h2 {
+	margin-block-start: 0;
+	margin-right: 2em;
+}
+
+.modFooter {
+	width: 100%;
+}
+
+.modSettingName {
+	margin-top: 15px;
+	margin-bottom: 5px;
+	display: flex;
+}
+
+.otherData label {
+	font-size: 0.8em;
+	color: #777;
+}
+
+.lastUpdate {
+	margin-right: 0.5em;
+}
+
+.disableButton, .buttonSet {
+	float: right;
+}
+
+.updateSingle label {
+	font-size: 1em;
+	color: #aaa;
+}
+
+.updateSingle:hover label {
+	color: #fff;
+}
+
+.btnIcon {
+	line-height: 1em;
+	font-size: 1.2em;
+}
+
+.mod.disabled .modName, .mod.disabled .modDesc {
+	opacity: 0.6;
+}
+
+.mod.disabled {
+	background-color: rgba(51,51,51, .7);
+}
+
+/* ID elements */
+
+#centerContent {
+	width: 60%;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+#updateInterval {
+	margin-left: 10px;
+}
+
+#instScripts {
+	text-align: center;
+}
+
+#addOrUpdateBtnSet {
+	text-align: center;
+}
+
+#addOrUpdateBtnSet button {
+	min-width: 150px;
+	padding: 8px;
+	border: 1px solid #333;
+}
+
+#updateAll .btnIcon {
+	font-weight: bold;
+}
+
+#saveChangesBtn {border: 1px solid transparent}
+
+#addModBtn:hover, #addModBtn:active, #importModBtn:hover, #importModBtn:active {
+	border: 1px solid #09f;
+	color: #09f;
+}
+
+#updateAllBtn:hover, #updateAllBtn:active,
+#saveChangesBtn:hover, #saveChangesBtn:active {
+	border: 1px solid #29a329;
+	color: #29a329;
+}
+
+#inputModName {
+	width: 50%;
+	min-width: 400px;
+}
+
+#inputModDesc, #inputModURL {
+	width: 95%;
+}
+
+#modSettings {
+	background-color: #333;
+	border-radius: 10px;
+	padding: 2em;
+	text-align: left;
+	width: 75%;
+	margin: auto;
+}
+
+#advancedSettings {
+	padding-top: 10px;
+	padding-bottom: 10px;
+}
+
+#modSettingsBtnSet {
+	margin-top: 10px;
+}
+
+#bottom-notice {
+	position: fixed;
+	bottom: -30px;
+	right: 10px;
+	color: #ccc;
+	padding: 15px;
+	text-align: right;
+	border-radius: 6px;
+	background-color: rgb(42, 90, 42);
+	transition: all 200ms;
+}
+
+/* Switch slider */
+.switch {
+  position: relative;
+  display: inline-flex;
+  width: 2em;
+  height: 1.2em;
+}
+
+.switch input, .switch + input[type="checkbox"] {
+  -moz-appearance: none;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0.3em;
+  left: 0;
+  right: 0;
+  bottom: -0.3em;
+  border-radius: 34px;
+  background-color: #444;
+  transition: .4s;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 12px;
+  width: 12px;
+  margin-left: 4px;
+  margin-top: 4px;
+  border-radius: 50%;
+  background-color: white;
+  transition: .4s;
+}
+
+input:checked + .slider, .switch[checked] > .slider {
+  background-color: #2170CC;
+}
+
+input:focus + .slider, .switch:focus > .slider {
+  box-shadow: 0 0 1px #2170CC;
+}
+
+input:checked + .slider:before, .switch[checked] > .slider:before {
+  transform: translateX(13px);
+}
+
+.checkText {
+	margin-left: 8px;
+}
+
+/* Select boxes */
+select {
+	-moz-appearance: none;
+	background: #151515 url("data:image/svg+xml;charset=utf-8,%3Csvg width='11' height='7' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M434.574 488L430.5 492.147 426.428 488 425 489.399 430.5 494.999 436 489.399z' transform='translate(-425 -488)' fill='%23cccccc' fill-rule='evenodd'/%3E%3C/svg%3E") no-repeat calc(100% - 5px) 50%;
+	border: 1px solid #444 !important;
+	padding-right: 30px;
+	color: #ccc;
+	font-size: 0.9em}
+
+select:hover {
+	background: rgba(255,255,255,0.05) url("data:image/svg+xml;charset=utf-8,%3Csvg width='11' height='7' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M434.574 488L430.5 492.147 426.428 488 425 489.399 430.5 494.999 436 489.399z' transform='translate(-425 -488)' fill='%23cccccc' fill-rule='evenodd'/%3E%3C/svg%3E") no-repeat calc(100% - 5px) 50%;
+	color: #fff}
+
+select option {
+	background: #222;
+	color: #ccc;}
+
+
+/* Light mode */
+
+.light .mod {
+	background-color: #ddd;
+}
+
+.light #modSettings {
+	background-color: #bbb;
+}
+
+.light button:not(.resetInputBtn):not(.btnIcon) {
+	background-color: #aaa;
+	color: #000;
+}
+
+.light button:not(.btnIcon):hover {
+	background-color: #999;
+}
+
+.light button:not(.btnIcon):active {
+	background-color: #777;
+}
+
+.light .resetInputBtn, .light p, .light h1 {color: #000}
+
+.light #addModBtn, .light #importModBtn, .light #updateAllBtn {
+	background-color: #fff;
+}
+
+.light .otherData label {
+	color: #555;
+}
+
+.light .updateSingle label {
+	color: #666;
+}
+
+.light .updateSingle:hover label {
+	color: #000;
+}
+
+.light #addModBtn:hover {
+	border: 1px solid #03f;
+	color: #03f;
+}
+
+.light #updateAllBtn:hover, .light #saveChangesBtn:hover {
+	border: 1px solid #060;
+	color: #060;
+}
+
+.light input[type="url"], .light input[type="text"], .light input[type="number"], .light textarea, 
+.light input[type="color"] {
+	border-color: #000;
+	background-color: #ddd;
+	color: #000;
+}
+
+.light input[type="url"]:focus, .light input[type="text"]:focus, .light input[type="number"]:hover
+.light input[type="url"]:hover, .light input[type="text"]:hover, .light input[type="number"]:focus,
+.light textarea:hover, .light textarea:focus {
+	background-color: #eee;
+}
+
+.light input[type="url"]:focus, .light input[type="text"]:focus, .light textarea:focus {
+	border-color: #0084ff;
+}
+
+.light select {
+	-moz-appearance: none;
+	background: #ddd url("data:image/svg+xml;charset=utf-8,%3Csvg width='11' height='7' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M434.574 488L430.5 492.147 426.428 488 425 489.399 430.5 494.999 436 489.399z' transform='translate(-425 -488)' fill='%23000000' fill-rule='evenodd'/%3E%3C/svg%3E") no-repeat calc(100% - 5px) 50%;
+	border-color: #888 !important;
+	color: #000;
+}
+
+.light select:hover {
+	background-color: #eee;
+}

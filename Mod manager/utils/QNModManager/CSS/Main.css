@@ -1,0 +1,287 @@
+html {
+	overflow: hidden;
+}
+
+body {
+	margin: 0;
+	background-color: #222;
+}
+
+li, p, span {
+	font-family: "Arial";
+	color: #ccc;
+}
+
+.sideLink.active {
+	color: #0af;
+	background-color: #202020;
+	border-left: 3px solid #05f;
+	cursor: default;
+}
+
+.sideLink:not(.active):hover {
+	color: #fff;
+	background-color: rgba(255,255,255,0.05);
+	border-left: 3px solid rgba(255,255,255,0.5);
+	cursor: pointer;
+}
+
+.diagHeader {
+	background-color: #222;
+	color: #fff;
+	text-align: center;
+	padding: 10px;
+	border-top-left-radius: 6px;
+	border-top-right-radius: 6px;
+}
+
+.diagBody {
+	background-color: #333;
+	color: #ccc;
+	padding: 1em;
+	border-bottom-left-radius: 6px;
+	border-bottom-right-radius: 6px;
+}
+
+.diagBody p:first-child {
+	margin-top: 0;
+}
+
+.diagBody input[type="url"], #filePath {
+	width: 90%;
+	margin-left: 2em;
+}
+
+.diagBody small {
+	color: #888;
+	margin-left: 2px;
+}
+
+.diagBody p {
+	margin-bottom: 5px;
+	margin-top: 10px;
+}
+
+.diagBtnContainer {
+	display: flex;
+	margin-top: 10px;
+	justify-content: right;
+}
+
+input[type="url"], input[type="text"] {
+	border: 1px solid #444;
+	background-color: #222;
+	color: #ccc;
+	padding: 5px;
+}
+
+input[type="url"]:not([disabled]):focus, input[type="text"]:not([disabled]):focus,
+input[type="url"]:not([disabled]):hover, input[type="text"]:not([disabled]):hover {
+	background-color: #282828;
+}
+
+input[disabled], #filePath[disabled] {
+	opacity: .5;
+}
+
+button {
+	background-color: #444;
+	padding: 5px 10px;
+	color: #ccc;
+	border: none;
+	border-radius: 3px;
+	margin-right: 10px;
+	font-weight: bold;
+	font-size: 0.9em;
+}
+
+button:not([disabled]):hover {
+	background-color: #555;
+	color: #fff;
+}
+
+button:not([disabled]):active {
+	background-color: #111;
+	color: #fff;
+}
+
+button[disabled] {
+	opacity: 0.5}
+
+label {
+	line-height: 2;
+}
+
+/* Radio button coloring */
+body:not(.light) input[type="radio"] {
+  -moz-appearance: none !important;
+  border: 1px solid #666 !important;
+  border-radius: 10em;
+  background-color: #444 !important;
+  transition: color 0.3s;
+  min-width: 12px;
+  min-height: 12px;}
+
+body:not(.light) input[type="radio"]:not([disabled]):hover {
+  box-shadow: 0 0 4px #0084ff !important;
+  border-color: #0084ff !important}
+
+body:not(.light) input[type="radio"]:checked {
+  background: #444 url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="10px" height="10px" viewBox="0 0 16 16" ><path fill="rgb(200,200,200)" d="M 6.17,3.01 C -0.84,6.78 4.35,15.22 9.89,13.22 15.68,11.20 13.99,1.10 6.17,3.01 Z" /></svg>') no-repeat center center !important}
+
+/* ID */
+
+#versionNum {
+	list-style-type: none;
+	text-align: center;
+	margin-bottom: 1.2em;
+	padding: 0 20px 5px;
+	font-size: 1.2em;
+}
+
+#versionNum > img {
+	max-width: 90%;
+}
+
+#secondaryLinks {
+	position: absolute;
+	bottom: 0;
+	width: 100%;
+}
+
+#content {
+	position: absolute;
+	left: 10em;
+	right: 0;
+	margin-top: 0;
+	margin-bottom: 0;
+	height: 100vh;
+}
+
+#contentFrame {
+	border: none;
+	width: 100%;
+	height: 100%;
+}
+
+#sidebarNav {
+	position: fixed;
+	left: 0;
+	max-width: 10em;
+	height: 100%;
+	background-color: #333;
+}
+
+#sidebarNav ul {
+	padding: 0;
+}
+
+#sidebarNav .sideLink {
+	list-style-type: none;
+	padding: 10px 20px 10px 30px;
+}
+
+#addMod, #remMod {
+	display: none;
+	position: fixed;
+	z-index: 101;
+	width: 700px;
+	top: 50%;
+	left: 50%;
+	margin-left: -350px;
+}
+
+#addMod {
+	margin-top: -150px;
+}
+
+#remMod {
+	margin-top: -125px;
+}
+
+#dialogOverlay {
+	display: none;
+	position: fixed;
+	z-index: 100;
+	width: 100%;
+	height: 100%;
+	background-color: rgba(0,0,0,0.5);
+}
+
+#remModName {
+	font-weight: bold;
+	font-style: italic;
+}
+
+#filePath {
+	pointer-events: none;
+}
+
+#filePath small {
+	display: inline-flex;
+	cursor: default;
+	width: 70%;
+}
+
+/* Light mode */
+.light {
+	background-color: #FFF;
+}
+
+.light li, .light p, .light span{
+	color: #000;
+}
+
+.light #sidebarNav {
+	background-color: #eee;
+}
+
+.light .diagHeader {
+	background-color: #ddd;
+	color: #000;
+}
+
+.light .diagBody {
+	background-color: #fff;
+	color: #000;
+}
+
+.light input[type="url"], .light input[type="text"] {
+	background-color: #ddd;
+	color: #000;
+}
+
+.light input[type="url"]:focus, .light input[type="text"]:focus,
+.light input[type="url"]:hover, .light input[type="text"]:hover {
+	background-color: #eee;
+}
+
+.light input[type="url"]:focus, .light input[type="text"]:focus {
+	border-color: #0084ff;
+}
+
+.light button {
+	background-color: #aaa;
+	color: #333;
+}
+
+.light button:hover {
+	background-color: #999;
+	color: #333;
+}
+
+.light button:active {
+	background-color: #777;
+	color: #fff;
+}
+
+.light .sideLink:not(.active):hover {
+	color: #000;
+	background-color: rgba(0,0,0,0.05);
+	border-left: 3px solid rgba(0,0,0,0.5);
+}
+
+.light .sideLink.active {
+	background-color: #fff;
+	color: #05c;
+}

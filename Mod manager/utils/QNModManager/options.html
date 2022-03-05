@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Mod Manager</title>
+	<link rel="stylesheet" href="CSS/main.css">
+	<link rel="icon" type="image/png" href="icons/icon.png">
+	<script src="./JS/common.js"></script>
+	<script src="./JS/database-load.js"></script>
+</head>
+<body>
+	<div id="dialogOverlay"></div>
+	<nav id="sidebarNav">
+		<ul id="mainLinks">
+			<li id="versionNum"><img src="./icons/icon.png">Mod Manager <b>1.0.0</b></li>
+			<li id="settingsLink" class="sideLink active">Settings</li>
+			<li id="cssLink" class="sideLink">CSS</li>
+			<li id="jsLink" class="sideLink">JavaScript</li>
+		</ul>
+		<ul id="secondaryLinks">
+			<li id="aboutLink" class="sideLink">About</li>
+		</ul>
+	</nav>
+	<div id="content">
+		<iframe id="contentFrame" src="./html/settings.html"></iframe>
+	</div>
+	<div id="addMod">
+		<div class="diagHeader">
+			<b>Add Mod</b>
+		</div>
+		<div class="diagBody">
+			<label class="noTop">
+				<input id="radioURL" type="radio" name="modSource" value="1" checked>
+				URL:
+			</label>
+			<br>
+			<input type="url" placeholder="Path to the raw script" pattern=".*(.css|.js)" title="Must end in .js or .css">
+			<br>
+			<label>
+				<input id="radioFile" type="radio" name="modSource" value="2">
+				Local file:
+			</label>
+			<br>
+			<span id="filePath" disabled>
+				<button id="fileFrontBtn">Examine</button>
+				<small>Select a file...</small>
+			</span>
+			<input id="fileInput" type="file" accept=".js, .css" hidden required>
+			<br>
+			<div class="diagBtnContainer">
+				<button class="actBtn">Add mod</button>
+				<button class="canBtn">Cancel</button>
+			</div>
+		</div>
+	</div>
+	<div id="remMod">
+		<div class="diagHeader">
+			<b>Remove Mod?</b>
+		</div>
+		<div class="diagBody">
+			<p>Are you sure that you want to remove the mod <span id="remModName"></span>?</p>
+			<p id="remModID" hidden></p>
+			<div class="diagBtnContainer">
+				<button class="actBtn">Remove</button>
+				<button class="canBtn">Cancel</button>
+			</div>
+		</div>
+	</div>
+</body>
+</html>

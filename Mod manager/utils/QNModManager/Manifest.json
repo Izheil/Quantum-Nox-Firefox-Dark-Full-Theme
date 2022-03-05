@@ -1,0 +1,33 @@
+{
+
+  "manifest_version": 2,
+  "name": "Mod Manager",
+  "version": "1.0",
+ 
+  "description": "Modificaciones para Firefox.",
+
+  "icons": {
+    "48": "icons/icon-48.png",
+    "96": "icons/icon-96.png"
+  },
+
+  "applications": {
+    "gecko": {
+      "id": "Mod-manager@Izheil.com"
+    }
+  },
+
+  "options_ui": {
+    "page": "options.html",
+    "open_in_tab": true
+  },
+
+  "permissions": [
+    "*://github.com/*",
+    "*://gitlab.com/*",
+    "storage",
+    "unlimitedStorage",
+    "nativeMessaging"
+  ]
+
+}
