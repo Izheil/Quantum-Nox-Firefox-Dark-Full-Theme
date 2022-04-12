@@ -1,18 +1,26 @@
 let EXPORTED_SYMBOLS = [];
 
-const {Services} = ChromeUtils.import('resource://gre/modules/Services.jsm');
-const {xPref} = ChromeUtils.import('chrome://userchromejs/content/xPref.jsm');
+const { Services } = ChromeUtils.import('resource://gre/modules/Services.jsm');
+const { xPref } = ChromeUtils.import('chrome://userchromejs/content/xPref.jsm');
+const { Management } = ChromeUtils.import('resource://gre/modules/Extension.jsm');
+const { AppConstants } = ChromeUtils.import('resource://gre/modules/AppConstants.jsm');
 
-let UC = {};
+let UC = {
+  webExts: new Map(),
+  sidebar: new Map()
+};
 
 let _uc = {
   ALWAYSEXECUTE: 'userChrome.uc.js',
-  BROWSERCHROME: 'chrome://browser/content/browser.xhtml',
+  BROWSERCHROME: AppConstants.MOZ_APP_NAME == 'thunderbird' ? 'chrome://messenger/content/messenger.xhtml' : 'chrome://browser/content/browser.xhtml',
+  BROWSERTYPE: AppConstants.MOZ_APP_NAME == 'thunderbird' ? 'mail:3pane' : 'navigator:browser',
+  BROWSERNAME: AppConstants.MOZ_APP_NAME.charAt(0).toUpperCase() + AppConstants.MOZ_APP_NAME.slice(1),
   PREF_ENABLED: 'userChromeJS.enabled',
   PREF_SCRIPTSDISABLED: 'userChromeJS.scriptsDisabled',
-  BASE_FILEURI: Services.io.getProtocolHandler('file').QueryInterface(Ci.nsIFileProtocolHandler).getURLSpecFromDir(Services.dirsvc.get('UChrm', Ci.nsIFile)),
 
   chromedir: Services.dirsvc.get('UChrm', Ci.nsIFile),
+  scriptsDir: '',
+
   sss: Cc["@mozilla.org/content/style-sheet-service;1"].getService(Ci.nsIStyleSheetService),
 
   getScripts: function () {
@@ -24,8 +32,7 @@ let _uc = {
       let fileURI = Services.io.newFileURI(file);
       if (/\.uc\.js$/i.test(file.leafName)) {
         _uc.getScriptData(file);
-      }
-      else if(/\.as\.css$/i.test(file.leafName)) {
+      } else if(/\.as\.css$/i.test(file.leafName)) {
         if(!sss.sheetRegistered(fileURI, sss.AGENT_SHEET))
           sss.loadAndRegisterSheet(fileURI, sss.AGENT_SHEET);
       }
@@ -55,9 +62,8 @@ let _uc = {
     return this.scripts[filename] = {
       filename: filename,
       file: aFile,
-      url: this.BASE_FILEURI + filename,
+      url: Services.io.getProtocolHandler('file').QueryInterface(Ci.nsIFileProtocolHandler).getURLSpecFromDir(this.chromedir) + filename,
       name: (header.match(/\/\/ @name\s+(.+)\s*$/im) || def)[1],
-      charset: (header.match(/\/\/ @charset\s+(.+)\s*$/im) || def)[1],
       description: (header.match(/\/\/ @description\s+(.+)\s*$/im) || def)[1],
       version: (header.match(/\/\/ @version\s+(.+)\s*$/im) || def)[1],
       author: (header.match(/\/\/ @author\s+(.+)\s*$/im) || def)[1],
@@ -109,11 +115,8 @@ let _uc = {
     }
 
     try {
-      if (script.charset) {
-        Services.scriptloader.loadSubScript(script.url + '?' + script.file.lastModifiedTime, win, script.charset);
-      } else {
-        Services.scriptloader.loadSubScript(script.url + '?' + script.file.lastModifiedTime, win, 'UTF-8');
-      }
+      Services.scriptloader.loadSubScript(script.url + '?' + script.file.lastModifiedTime,
+                                          script.onlyonce ? { window: win } : win);
       script.isRunning = true;
       if (script.startup) {
         eval(script.startup);
@@ -122,12 +125,12 @@ let _uc = {
         this.everLoaded.push(script.id);
       }
     } catch (ex) {
-      this.error(script.filename, ex);
+      Cu.reportError(ex);
     }
   },
 
   windows: function (fun, onlyBrowsers = true) {
-    let windows = Services.wm.getEnumerator(onlyBrowsers ? 'navigator:browser' : null);
+    let windows = Services.wm.getEnumerator(onlyBrowsers ? this.BROWSERTYPE : null);
     while (windows.hasMoreElements()) {
       let win = windows.getNext();
       if (!win._uc)
@@ -156,16 +159,6 @@ let _uc = {
       el.setAttribute(att, atts[att]);
     }
     return el
-  },
-
-  error: function (aMsg, err) {
-    let error = Cc['@mozilla.org/scripterror;1'].createInstance(Ci.nsIScriptError);
-    if (typeof err == 'object') {
-      error.init(aMsg + '\n' + err.name + ' : ' + err.message, err.fileName || null, null, err.lineNumber, null, 2, err.name);
-    } else {
-      error.init(aMsg + '\n' + err + '\n', null, null, null, null, 2, null);
-    }
-    Services.console.logMessage(error);
   }
 };
 
@@ -177,12 +170,7 @@ if (xPref.get(_uc.PREF_SCRIPTSDISABLED) === undefined) {
   xPref.set(_uc.PREF_SCRIPTSDISABLED, '', true);
 }
 
-function UserChrome_js() {
-  _uc.getScripts();
-  Services.obs.addObserver(this, 'chrome-document-global-created', false);
-}
-
-UserChrome_js.prototype = {
+let UserChrome_js = {
   observe: function (aSubject) {
     aSubject.addEventListener('DOMContentLoaded', this, {once: true});
   },
@@ -191,7 +179,14 @@ UserChrome_js.prototype = {
     let document = aEvent.originalTarget;
     let window = document.defaultView;
     let location = window.location;
-    if (/^(chrome:(?!\/\/(global\/content\/commonDialog|browser\/content\/webext-panels)\.x?html)|about:(?!blank))/i.test(location.href)) {
+
+    if (!this.sharedWindowOpened && location.href == 'chrome://extensions/content/dummy.xhtml') {
+      this.sharedWindowOpened = true;
+
+      Management.on('extension-browser-inserted', function (topic, browser) {
+        browser.messageManager.addMessageListener('Extension:ExtensionViewLoaded', this.messageListener.bind(this));
+      }.bind(this));
+    } else if (/^(chrome:(?!\/\/global\/content\/commonDialog\.x?html)|about:(?!blank))/i.test(location.href)) {
       window.UC = UC;
       window._uc = _uc;
       window.xPref = xPref;
@@ -206,8 +201,27 @@ UserChrome_js.prototype = {
         _uc.loadScript(_uc.scripts[_uc.ALWAYSEXECUTE], window);
       }
     }
+  },
+
+  messageListener: function (msg) {
+    const browser = msg.target;
+    const { addonId } = browser._contentPrincipal;
+
+    browser.messageManager.removeMessageListener('Extension:ExtensionViewLoaded', this.messageListener);
+
+    if (browser.ownerGlobal.location.href == 'chrome://extensions/content/dummy.xhtml') {
+      UC.webExts.set(addonId, browser);
+      Services.obs.notifyObservers(null, 'UCJS:WebExtLoaded', addonId);
+    } else {
+      let win = browser.ownerGlobal.windowRoot.ownerGlobal;
+      UC.sidebar.get(addonId)?.set(win, browser) || UC.sidebar.set(addonId, new Map([[win, browser]]));
+      Services.obs.notifyObservers(win, 'UCJS:SidebarLoaded', addonId);
+    }
   }
 };
 
-if (!Services.appinfo.inSafeMode)
-  new UserChrome_js();
+if (!Services.appinfo.inSafeMode) {
+  _uc.chromedir.append(_uc.scriptsDir);
+  _uc.getScripts();
+  Services.obs.addObserver(UserChrome_js, 'chrome-document-global-created', false);
+}

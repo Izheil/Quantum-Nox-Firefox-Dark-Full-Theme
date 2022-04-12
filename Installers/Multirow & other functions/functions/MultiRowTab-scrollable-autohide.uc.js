@@ -3,8 +3,9 @@
 // @namespace      https://github.com/Izheil/Quantum-Nox-Firefox-Dark-Full-Theme
 // @description    Multi-row tabs draggability fix with autohiding scrollbar
 // @include        main
-// @compatibility  Firefox 70 to Firefox 94.0a1 (2021-09-14)
+// @compatibility  Firefox 70 to Firefox 101.0a1 (2022-04-08)
 // @author         Alice0775, Endor8, TroudhuK, Izheil, Merci-chao
+// @version        12/04/2022 05:40 Min/Max/Close buttons resizing fix
 // @version        22/01/2022 16:50 Tab sizing fixes
 // @version        02/11/2021 03:15 Made pinned tabs to not have forced Proton sizing
 // @version        15/09/2021 11:39 Added experimental support for tab sizing below 20px
@@ -136,9 +137,13 @@ function zzzz_MultiRowTabLite() {
         --toolbarbutton-inner-padding: inherit !important;
     }
 
-    .titlebar-buttonbox .titlebar-button {
-        padding-top: 8px !important;
-        padding-bottom: 8px !important;
+    /* Sizing of the titlebar buttons */
+    .titlebar-buttonbox {
+        height: var(--tab-min-height) !important;
+    }
+
+    .titlebar-buttonbox-container {
+        display: block !important;
     }
     */
 

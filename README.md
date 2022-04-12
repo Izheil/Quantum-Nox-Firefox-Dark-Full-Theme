@@ -15,17 +15,19 @@ You can use it to fully change the colors of most of firefox UI to dark-gray col
 
 If you want to know how to change some colors of the theme, check the [wiki](https://github.com/Izheil/Quantum-Nox-Firefox-Dark-Full-Theme/wiki/Editting-CSS-files).
 
-### Last update: 05/03/2022
+### Last update: 12/04/2022
+
+Files updated:
+
+* __JS Loader (folder)__: Hot fix for JS Loader scripts, which would prevent them from working on nightly.
+* __Multirow*.uc.js__: The min/max/close buttons now stay the same height even when the window is resized on windows.
+* __Codemirror (folder)__: Updated the mod manager codemirror version to fix some security issues.
+
+### Pre-Last update: 05/03/2022
 
 Files updated:
 
 * __Mod manager (folder)__: Added the beta of the mod manager extension (used to auto-update mods).
-
-### Pre-Last update: 26/02/2022
-
-Files updated:
-
-* __Addons.css__: Updated Ublock origin addon dark theme to just fix some of the minor issues of the official dark theme.
 
 
 ### A note on people looking to replace some Tab Mix Plus features:

@@ -39,8 +39,8 @@ export function scrollPosIntoView(cm, pos, end, margin) {
     // Set pos and end to the cursor positions around the character pos sticks to
     // If pos.sticky == "before", that is around pos.ch - 1, otherwise around pos.ch
     // If pos == Pos(_, 0, "before"), pos and end are unchanged
-    pos = pos.ch ? Pos(pos.line, pos.sticky == "before" ? pos.ch - 1 : pos.ch, "after") : pos
     end = pos.sticky == "before" ? Pos(pos.line, pos.ch + 1, "before") : pos
+    pos = pos.ch ? Pos(pos.line, pos.sticky == "before" ? pos.ch - 1 : pos.ch, "after") : pos
   }
   for (let limit = 0; limit < 5; limit++) {
     let changed = false
@@ -91,14 +91,15 @@ function calculateScrollPos(cm, rect) {
     if (newTop != screentop) result.scrollTop = newTop
   }
 
-  let screenleft = cm.curOp && cm.curOp.scrollLeft != null ? cm.curOp.scrollLeft : display.scroller.scrollLeft
-  let screenw = displayWidth(cm) - (cm.options.fixedGutter ? display.gutters.offsetWidth : 0)
+  let gutterSpace = cm.options.fixedGutter ? 0 : display.gutters.offsetWidth
+  let screenleft = cm.curOp && cm.curOp.scrollLeft != null ? cm.curOp.scrollLeft : display.scroller.scrollLeft - gutterSpace
+  let screenw = displayWidth(cm) - display.gutters.offsetWidth
   let tooWide = rect.right - rect.left > screenw
   if (tooWide) rect.right = rect.left + screenw
   if (rect.left < 10)
     result.scrollLeft = 0
   else if (rect.left < screenleft)
-    result.scrollLeft = Math.max(0, rect.left - (tooWide ? 0 : 10))
+    result.scrollLeft = Math.max(0, rect.left + gutterSpace - (tooWide ? 0 : 10))
   else if (rect.right > screenw + screenleft - 3)
     result.scrollLeft = rect.right + (tooWide ? 0 : 10) - screenw
   return result

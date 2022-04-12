@@ -3,10 +3,9 @@
 // @namespace      https://github.com/Izheil/Quantum-Nox-Firefox-Dark-Full-Theme
 // @description    Multi-row tabs draggability fix with scrollable rows
 // @include        main
-// @compatibility  Firefox 70 to Firefox 94.0a1 (2021-09-14)
+// @compatibility  Firefox 70 to Firefox 101.0a1 (2022-04-08)
 // @author         Alice0775, Endor8, TroudhuK, Izheil, Merci-chao
-// @version        22/01/2022 16:50 Tab sizing fixes
-// @version        02/11/2021 03:15 Made pinned tabs to not have forced Proton sizing
+// @version        12/04/2022 05:40 Min/Max/Close buttons resizing fix
 // @version        15/09/2021 11:39 Added experimental support for tab sizing below 20px
 // @version        10/09/2021 09:49 Fixed regression of pinned tabs icon showing unaligned
 // @version        19/08/2021 03:15 Compatibility fix for FF91
@@ -122,36 +121,27 @@ function zzzz_MultiRowTabLite() {
     }
 
     /*  These below control the padding of the new tab button and min/max/close buttons respectively.
-    YOU DON'T NEED TO CHANGE THESE unless you want to use values of --tab-min-height lower than 20px. 
-    Before changing them, you need to UNCOMMENT the 2 rules below for them TO TAKE EFFECT. 
-
-    The first rule (#TabsToolbar) controls the padding around the "new tab" button. Make sure to always use "px" 
-    as unit for it to work, even on 0 value. Reducing it will allow a lower limit on the tabs height. 
-    
-    The second rule (.titlebar-buttonbox) has paddings control the padding of the min/max/close buttons. 
-    Changing these are required if you want the tab bar to be smaller when having 1 row. */
+        YOU DON'T NEED TO CHANGE THESE unless you want to use values of --tab-min-height lower than 20px. 
+        Before changing them, you need to UNCOMMENT the 2 rules below for them TO TAKE EFFECT. */
 
     /*
     #TabsToolbar {
         --toolbarbutton-inner-padding: inherit !important;
     }
 
-    .titlebar-buttonbox .titlebar-button {
-        padding-top: 8px !important;
-        padding-bottom: 8px !important;
+    /* Sizing of the titlebar buttons */
+    .titlebar-buttonbox {
+        height: var(--tab-min-height) !important;
     }
+
+    .titlebar-buttonbox-container {
+        display: block !important;
+    }
+
     */
 
     /*-------- Don't edit past here unless you know what you are doing --------*/
 
-    /* These 2 rules are a fix to make sure that tabs become smaller on smaller --tab-min-height values */
-    .tabbrowser-tab {
-        max-height: calc(var(--tab-min-height) + var(--toolbarbutton-inner-padding)) !important;
-    }
-
-    .toolbar-items {-moz-box-align: start !important}
-
-    /* Common multirow code */
     #navigator-toolbox:-moz-lwtheme {
         background-color: var(--toolbar-bgcolor) !important;
     }
@@ -192,7 +182,7 @@ function zzzz_MultiRowTabLite() {
 
     /* A fix for pinned tabs triggering another row when only pinned tabs are shown in a row */
     .tabbrowser-tab[pinned] {
-        max-height: calc(var(--tab-min-height) + 8px);
+        height: calc(var(--tab-min-height) + 8px) !important;
     }
 
     /* This fixes the new tab button overflowing to the new row alone */
@@ -243,6 +233,8 @@ function zzzz_MultiRowTabLite() {
         tabsHavePadding = true;
     }
 
+    console.log(getComputedStyle(tabBackground).getPropertyValue('--tab-block-margin').substring(0,1))
+
     // Here the FF71+ changes
     if (document.querySelector("#tabbrowser-tabs > arrowscrollbox").shadowRoot) {
 
@@ -281,7 +273,7 @@ function zzzz_MultiRowTabLite() {
         `;
 
         // This is a fix for FF89+ (Proton)
-        if (document.documentElement.hasAttribute("proton") || tabsHavePadding) {
+        if (tabsHavePadding) {
             style.innerHTML += `
             scrollbox {
                 max-height: calc((var(--tab-min-height) + 8px) * var(--max-tab-rows));
