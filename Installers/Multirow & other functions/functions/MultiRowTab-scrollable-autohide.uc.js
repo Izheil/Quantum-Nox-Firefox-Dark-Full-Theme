@@ -5,6 +5,7 @@
 // @include        main
 // @compatibility  Firefox 70 to Firefox 101.0a1 (2022-04-08)
 // @author         Alice0775, Endor8, TroudhuK, Izheil, Merci-chao
+// @version        15/04/2022 17:58 Fix for duplicated buttons when having titlebar enabled
 // @version        12/04/2022 05:40 Min/Max/Close buttons resizing fix
 // @version        22/01/2022 16:50 Tab sizing fixes
 // @version        02/11/2021 03:15 Made pinned tabs to not have forced Proton sizing
@@ -143,7 +144,7 @@ function zzzz_MultiRowTabLite() {
     }
 
     .titlebar-buttonbox-container {
-        display: block !important;
+        display: block;
     }
     */
 
