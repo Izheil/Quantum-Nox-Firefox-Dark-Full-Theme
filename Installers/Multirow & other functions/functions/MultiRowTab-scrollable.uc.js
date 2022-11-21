@@ -3,10 +3,9 @@
 // @namespace      https://github.com/Izheil/Quantum-Nox-Firefox-Dark-Full-Theme
 // @description    Multi-row tabs draggability fix with scrollable rows
 // @include        main
-// @compatibility  Firefox 70 to Firefox 101.0a1 (2022-04-08)
+// @compatibility  Firefox 70 to Firefox 108.0a1 (2022-11-03)
 // @author         Alice0775, Endor8, TroudhuK, Izheil, Merci-chao
-// @version        15/04/2022 17:58 Fix for duplicated buttons when having titlebar enabled
-// @version        12/04/2022 05:40 Min/Max/Close buttons resizing fix
+// @version        21/11/2022 18:38 Fixed issue with Firefox 108
 // @version        15/09/2021 11:39 Added experimental support for tab sizing below 20px
 // @version        10/09/2021 09:49 Fixed regression of pinned tabs icon showing unaligned
 // @version        19/08/2021 03:15 Compatibility fix for FF91
@@ -136,7 +135,7 @@ function zzzz_MultiRowTabLite() {
     }
 
     .titlebar-buttonbox-container {
-        display: block;
+        display: block !important;
     }
 
     */
@@ -234,20 +233,28 @@ function zzzz_MultiRowTabLite() {
         tabsHavePadding = true;
     }
 
-    console.log(getComputedStyle(tabBackground).getPropertyValue('--tab-block-margin').substring(0,1))
-
     // Here the FF71+ changes
     if (document.querySelector("#tabbrowser-tabs > arrowscrollbox").shadowRoot) {
+        css +=
+        `scrollbar, #tab-scrollbox-resizer {-moz-window-dragging: no-drag !important}
 
-        css +=`
         #tabbrowser-tabs > arrowscrollbox {
-          overflow: visible;
-          display: block;
-          height: var(--tab-min-height);
-        }
+            overflow: visible;
+            display: block;
+        `
         
-        scrollbar, #tab-scrollbox-resizer {-moz-window-dragging: no-drag !important}
-        `;
+        // Here FF108+ changes
+        if (!document.querySelector("#TabsToolbar[currentset]")) {
+            css +=`
+              height: unset;
+            }
+            `;
+        } else {
+            css +=`
+                height: var(--tab-min-height);
+            }
+            `;
+        }
 
         // This is a fix for the shadow elements:
         var style = document.createElement('style');
@@ -336,7 +343,8 @@ function zzzz_MultiRowTabLite() {
 
         #tabbrowser-tabs .tabbrowser-arrowscrollbox {
             overflow: visible;
-            display: block}
+            display: block;
+        }
 
 	    .arrowscrollbox-overflow-start-indicator,
     	.arrowscrollbox-overflow-end-indicator {position: fixed !important}

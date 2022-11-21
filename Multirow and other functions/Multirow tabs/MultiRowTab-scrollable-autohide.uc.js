@@ -3,8 +3,9 @@
 // @namespace      https://github.com/Izheil/Quantum-Nox-Firefox-Dark-Full-Theme
 // @description    Multi-row tabs draggability fix with autohiding scrollbar
 // @include        main
-// @compatibility  Firefox 70 to Firefox 101.0a1 (2022-04-08)
+// @compatibility  Firefox 70 to Firefox 108.0a1 (2022-11-03)
 // @author         Alice0775, Endor8, TroudhuK, Izheil, Merci-chao
+// @version        21/11/2022 18:38 Fixed issue with Firefox 108
 // @version        15/04/2022 17:58 Fix for duplicated buttons when having titlebar enabled
 // @version        12/04/2022 05:40 Min/Max/Close buttons resizing fix
 // @version        22/01/2022 16:50 Tab sizing fixes
@@ -254,16 +255,26 @@ function zzzz_MultiRowTabLite() {
     
     // Here the FF71+ changes
 	if (document.querySelector("#tabbrowser-tabs > arrowscrollbox").shadowRoot) {
+        css +=
+        `scrollbar, #tab-scrollbox-resizer {-moz-window-dragging: no-drag !important}
 
-        css +=`
-		#tabbrowser-tabs > arrowscrollbox {
-		  overflow: visible; 
-		  display: block;
-          height: var(--tab-min-height);
-		}
-
-		scrollbar, #tab-scrollbox-resizer {-moz-window-dragging: no-drag !important}
-	    `;
+        #tabbrowser-tabs > arrowscrollbox {
+            overflow: visible;
+            display: block;
+        `
+        
+        // Here FF108+ changes
+        if (!document.querySelector("#TabsToolbar[currentset]")) {
+            css +=`
+              height: unset;
+            }
+            `;
+        } else {
+            css +=`
+                height: var(--tab-min-height);
+            }
+            `;
+        }
 
         // This is a fix for the shadow elements:
         var style = document.createElement('style');
