@@ -1,6 +1,6 @@
 /* You can find an updated version here: https://github.com/Izheil/Quantum-Nox-Firefox-Dark-Full-Theme */
 /* Made by Izheil */
-/* Last updated: 01/08/2020 */
+/* Last updated: 14/12/2020 */
 
 /* TAB BAR BELOW
 You can set the order of each bar here. 1 for top, and 3 bottom.
@@ -15,25 +15,12 @@ Explanation of what each rule affects:
 #PersonalToolbar {-moz-box-ordinal-group: 2 !important}
 #titlebar {-moz-box-ordinal-group: 3 !important}
 
-#toolbar-menubar .titlebar-buttonbox-container {
-	display: block !important;
-    float: right !important}
-
-/* This enforces the size of the tabs+menu container to only be as big as the tabs container */
-#main-window #titlebar {
-  -moz-appearance: none !important;
-  min-height: calc(var(--tab-min-height) + 8px) !important;
-  box-sizing: border-box !important}
-
 /* This makes sure that the min/max/close buttons are as big as the tab bar */
 #TabsToolbar .titlebar-buttonbox .titlebar-button {
 	height: var(--tab-min-height) !important}
 
 /* Make sure that tabs stay right at the border of the webarea and not floating 1px above*/
 #main-window[sizemode="maximized"] #TabsToolbar {margin-bottom: -1px !important}
-
-/* Makes sure no duplicated min/max/close buttons show up */
-#main-window:not([sizemode="fullscreen"]) #window-controls {display: none !important}
 
 /* Default height of the menu bar */
 #main-menubar > menu {height: 28px !important}
@@ -43,8 +30,13 @@ Explanation of what each rule affects:
 /* ^ Set to 0 if you disabled the megabar enlarging ^ */
 
 /* Windows-only fixes. */
-@media (-moz-os-version: windows-win10), (-moz-os-version: windows-win8), (-moz-os-version: windows-win7) {
+@media (-moz-platform: windows-win11), (-moz-platform: windows-win10), (-moz-platform: windows-win8), (-moz-platform: windows-win7)  {
 	/* Don't change the #navigator-toolbox margin unless you want more margin on top */
-	#main-window[sizemode="maximized"] #nav-bar {margin-top: 10px !important}
+	#main-window[sizemode="maximized"] #nav-bar {margin-top: 3px !important}
 	/* ^ Change to lower than 10px if you want to have less space on top of the url bar ^ */
+
+	/* Disable duplicated min/max/close buttons */
+	#toolbar-menubar:not([inactive])~#TabsToolbar .titlebar-buttonbox-container {
+		width: 0 !important;
+	  }
 }
