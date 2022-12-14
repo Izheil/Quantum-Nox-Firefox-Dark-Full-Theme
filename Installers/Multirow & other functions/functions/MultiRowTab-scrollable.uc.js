@@ -5,7 +5,8 @@
 // @include        main
 // @compatibility  Firefox 70 to Firefox 108.0a1 (2022-11-03)
 // @author         Alice0775, Endor8, TroudhuK, Izheil, Merci-chao
-// @version        21/11/2022 18:38 Fixed issue with Firefox 108
+// @version        14/12/2022 19:11 Fixed issue with Firefox 108 (Stable)
+// @version        21/11/2022 18:38 Fixed issue with Firefox 108a (Nightly)
 // @version        15/09/2021 11:39 Added experimental support for tab sizing below 20px
 // @version        10/09/2021 09:49 Fixed regression of pinned tabs icon showing unaligned
 // @version        19/08/2021 03:15 Compatibility fix for FF91
@@ -242,19 +243,6 @@ function zzzz_MultiRowTabLite() {
             overflow: visible;
             display: block;
         `
-        
-        // Here FF108+ changes
-        if (!document.querySelector("#TabsToolbar[currentset]")) {
-            css +=`
-              height: unset;
-            }
-            `;
-        } else {
-            css +=`
-                height: var(--tab-min-height);
-            }
-            `;
-        }
 
         // This is a fix for the shadow elements:
         var style = document.createElement('style');
