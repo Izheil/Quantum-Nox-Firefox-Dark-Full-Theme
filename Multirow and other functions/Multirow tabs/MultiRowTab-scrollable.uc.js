@@ -3,8 +3,9 @@
 // @namespace      https://github.com/Izheil/Quantum-Nox-Firefox-Dark-Full-Theme
 // @description    Multi-row tabs draggability fix with scrollable rows
 // @include        main
-// @compatibility  Firefox 70 to Firefox 108.0a1 (2022-11-03)
+// @compatibility  Firefox 70 to Firefox 110.0a1 (2022-12-14)
 // @author         Alice0775, Endor8, TroudhuK, Izheil, Merci-chao
+// @version        15/12/2022 22:17 Fixed min/max/close button duplication when having menu bar always visible
 // @version        14/12/2022 19:11 Fixed issue with Firefox 108 (Stable)
 // @version        21/11/2022 18:38 Fixed issue with Firefox 108a (Nightly)
 // @version        15/09/2021 11:39 Added experimental support for tab sizing below 20px
@@ -143,9 +144,18 @@ function zzzz_MultiRowTabLite() {
 
     /*-------- Don't edit past here unless you know what you are doing --------*/
 
+    #tab-scrollbox-resizer {
+        width: var(--resizer-width);
+        border-bottom: 5px double var(--resizer-color);
+        cursor: n-resize;
+    }
+
+    /* Common multirow code */
     #navigator-toolbox:-moz-lwtheme {
         background-color: var(--toolbar-bgcolor) !important;
     }
+
+    :root[lwtheme-image] #navigator-toolbox {background-repeat: repeat-y !important}
     
     .tabbrowser-tab:not([pinned]) {
         flex-grow: var(--tab-growth)}
@@ -157,13 +167,7 @@ function zzzz_MultiRowTabLite() {
 
 	.tab-stack {width: 100%}
 
-    #tab-scrollbox-resizer {
-        width: var(--resizer-width);
-        border-bottom: 5px double var(--resizer-color);
-        cursor: n-resize;
-    }
-
-    @media (-moz-os-version: windows-win10) {
+    @media (-moz-platform: windows-win10), (-moz-platform: windows-win11) {
         #TabsToolbar .titlebar-buttonbox-container {display: block}
         
         #window-controls > toolbarbutton {
@@ -176,7 +180,7 @@ function zzzz_MultiRowTabLite() {
         }
     }
 
-    @media (-moz-os-version: windows-win7), (-moz-os-version: windows-win8) {
+    @media (-moz-platform: windows-win7), (-moz-platform: windows-win8) {
         #tabbrowser-tabs .tabbrowser-tab {
             border-top: none !important}
     }
@@ -184,6 +188,11 @@ function zzzz_MultiRowTabLite() {
     /* A fix for pinned tabs triggering another row when only pinned tabs are shown in a row */
     .tabbrowser-tab[pinned] {
         height: calc(var(--tab-min-height) + 8px) !important;
+    }
+
+    /* Disable duplicated min/max/close buttons */
+    #toolbar-menubar:not([inactive])~#TabsToolbar .titlebar-buttonbox-container {
+        width: 0 !important;
     }
 
     /* This fixes the new tab button overflowing to the new row alone */

@@ -15,20 +15,18 @@ You can use it to fully change the colors of most of firefox UI to dark-gray col
 
 If you want to know how to change some colors of the theme, check the [wiki](https://github.com/Izheil/Quantum-Nox-Firefox-Dark-Full-Theme/wiki/Editting-CSS-files).
 
-### Last update: 14/12/2022
+### Last update: 15/12/2022
+
+Files updated:
+
+* __Multirow*.uc.js__: Remove duplicated min/max/close buttons and fix the lite version.
+
+### Pre-Last update: 14/12/2022
 
 Files updated:
 
 * __Multirow*.uc.js__: Compatibility fix for FF108 stable.
 * __Tabs-below*.as.css__: Compatibility fix for FF108 stable.
-
-### Pre-Last update: 12/04/2022
-
-Files updated:
-
-* __JS Loader (folder)__: Hot fix for JS Loader scripts, which would prevent them from working on nightly.
-* __Multirow*.uc.js__: The min/max/close buttons now stay the same height even when the window is resized on windows.
-* __Codemirror (folder)__: Updated the mod manager codemirror version to fix some security issues.
 
 
 ### A note on people looking to replace some Tab Mix Plus features:
