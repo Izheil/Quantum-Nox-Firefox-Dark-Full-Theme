@@ -5,6 +5,7 @@
 // @include        main
 // @compatibility  Firefox 70 to Firefox 110.0a1 (2022-12-14)
 // @author         Alice0775, Endor8, TroudhuK, Izheil, Merci-chao
+// @version        14/01/2023 22:36 Fixed new tab button getting overlapped with last tab
 // @version        15/12/2022 22:17 Fixed min/max/close button duplication when having menu bar always visible
 // @version        14/12/2022 19:11 Fixed issue with Firefox 108 (Stable)
 // @version        21/11/2022 18:38 Fixed issue with Firefox 108a (Nightly)
@@ -215,7 +216,7 @@ function zzzz_MultiRowTabLite() {
     #tabs-newtab-button {
         margin-left: -32px !important} 
         
-    .tabbrowser-tab[last-visible-tab="true"] { 
+    .tabbrowser-tab:last-of-type {
         margin-right: 32px !important}
 
     /* These fix issues with pinned tabs on the overflow status */

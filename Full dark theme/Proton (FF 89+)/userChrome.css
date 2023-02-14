@@ -1,6 +1,6 @@
 /* You can find an updated version here: https://github.com/Izheil/Quantum-Nox-Firefox-Dark-Full-Theme */
 /* Made by Izheil */
-/* Last updated: 14/01/2022 */
+/* Last updated: 14/02/2023 */
 
 /* COLORING PART STARTS HERE */
 
@@ -193,47 +193,43 @@ scrollbar, *|*:root {
   background-color: #303030 !important}
   
 /* Selected tab lines */ 
-.tabbrowser-tab[visuallyselected]::before, .tabbrowser-tab[multiselected="true"]:not([visuallyselected]) .tab-background::before {
+.tab-background[selected]::before,
+.tab-background[multiselected="true"]::before {
   border-radius: 5px;
   content: '';
   background-color: var(--tab-line-color);
-  min-height: var(--tab-min-height);
+  height: var(--tab-min-height) !important;
   background-image: linear-gradient(90deg, rgba(0,0,0,0.6) 1%, transparent 50%, rgba(0,0,0,0.6) 99%);
   clip-path: polygon(0 0, 100% 0%, 100% 100%, 0% 100%, 0% 88%, 2% 95%, 98% 95%, 100% 85%, 100% 20%, 98.5% 6%, 1.5% 6%, 0% 20%);
+  z-index: 300;
   position: absolute;
-  z-index: -1;
-}
-
-.tabbrowser-tab[visuallyselected]::before {
-  top: 2px;
-  left: 2px;
-  bottom: 3px;
-  right: 2px;
-}
-
-.tabbrowser-tab[multiselected="true"]:not([visuallyselected]) .tab-background::before {
-  min-height: var(--tab-min-height);
   width: 100%;
 }
 
 .tabbrowser-tab[visuallyselected] .tab-background, .tabbrowser-tab[multiselected] .tab-background {
   border-color: transparent !important;
+  outline: none !important;
 }
 
 /* Tab separators */
-.tabbrowser-tab::after {
+.tabbrowser-tab::before {
   content: "";
-  max-height: calc(var(--tab-min-height) - 4px);
   width: 1px;
   display: flex;
   margin-top: 6px;
+  margin-left: -4px;
+  position: absolute;
+  height: calc(var(--tab-min-height) - 4px)
 }
 
-#main-window[lwt-toolbar-field-brighttext] .tabbrowser-tab:not([visuallyselected]):not([beforeselected-visible]):not([before-multiselected]):not([multiselected="true"]):not([last-visible-tab])::after {
-  box-shadow: 2px 0 0 0 rgba(255,255,255,.2) !important}
+#main-window[lwt-toolbar-field-brighttext] .tabbrowser-tab:not([visuallyselected]):not(:first-of-type)::before {
+  box-shadow: 2px 0 0 0 rgba(255,255,255,.15) !important}
 
-#main-window:not([lwt-toolbar-field-brighttext]) .tabbrowser-tab:not([visuallyselected]):not([beforeselected-visible]):not([before-multiselected]):not([multiselected="true"]):not([last-visible-tab])::after {
+#main-window:not([lwt-toolbar-field-brighttext]) .tabbrowser-tab:not([visuallyselected]):not(:first-of-type)::before {
   box-shadow: 2px 0 0 0 rgba(0,0,0,.2) !important}
+
+.tabbrowser-tab[visuallyselected] + .tabbrowser-tab:not([visuallyselected])::before{
+  display: none !important}
 
 /* Tabs background color when using a lightweight theme */
 #main-window:not([lwt-default-theme-in-dark-mode]) #tabbrowser-tabs:not([movingtab]) .tab-background[selected="true"]:-moz-lwtheme {
