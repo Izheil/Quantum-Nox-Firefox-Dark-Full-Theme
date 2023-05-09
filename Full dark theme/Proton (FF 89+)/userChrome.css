@@ -245,7 +245,7 @@ scrollbar, *|*:root {
 
 /* This changes some of the tooltip colors */
 tooltip, #statuspanel-label {
-  -moz-appearance: none !important;
+  appearance: none !important;
   background: #111 !important;
   color: #eee !important;
   border: 1px solid #333 !important;
@@ -333,7 +333,7 @@ of the minimize, maximize and close buttons */
 
 /* The downloads progress bar color */
 .progress-bar {
-  -moz-appearance: none !important;
+  appearance: none !important;
   background-color: var(--Progress-bar-color) !important}
 
 /* Bookmark toolbar text color */
@@ -391,7 +391,7 @@ findbar .findbar-find-previous:active, findbar .findbar-find-next:active {
 /* Color for most dialogs */
 dialog .dialogBox, dialog caption, dialog select, .tabmodalprompt-buttonContainer, 
 #SiteDataRemoveSelectedDialog, wizardpage, #importSource, wizardpage *, #print {
-  -moz-appearance: none !important;
+  appearance: none !important;
   background-color: #353535 !important;
   color: #ccc !important}
 
@@ -410,7 +410,7 @@ fieldset {border-color: #666 !important}
 .tabmodalprompt-mainContainer {color: #ccc !important}
 
 .tabmodalprompt-mainContainer button {
-  -moz-appearance: none !important;
+  appearance: none !important;
   border: 1px solid #111 !important;
   background: linear-gradient(var(--in-content-box-background-hover), var(--in-content-box-background)) !important;
   color: #ddd !important;
@@ -462,7 +462,7 @@ radio[disabled], checkbox[disabled] {opacity: 0.8}
 
 /* Select boxes coloring */
 dialog menulist, #print select, #permission-popup-mainView menulist {
-  -moz-appearance: none !important;
+  appearance: none !important;
   background: #444 url("data:image/svg+xml;charset=utf-8,%3Csvg width='11' height='7' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M434.574 488L430.5 492.147 426.428 488 425 489.399 430.5 494.999 436 489.399z' transform='translate(-425 -488)' fill='%23cccccc' fill-rule='evenodd'/%3E%3C/svg%3E") no-repeat calc(100% - 5px) 50% !important;
   padding: 3px;
   color: #ccc !important}
@@ -475,7 +475,7 @@ dialog menulist:hover, #print select:hover, #permission-popup-mainView menulist:
   background-color: #303030 !important}
 
 dropmarker[exportparts="icon: dropmarker-icon"] {
-  -moz-appearance: none !important}
+  appearance: none !important}
 
 /* Release version dialog */
 #aboutDialog {
@@ -489,7 +489,7 @@ window:not(#main-window):not(#CookiesDialog):not(#SignonViewerDialog):not(.theme
 /* Color for most buttons */
 dialog button, toolbar[printpreview="true"] button, 
 button[type="button"], button[type="submit"] {
-  -moz-appearance: none !important;
+  appearance: none !important;
   border-radius: 3px !important;
   background-color: #555 !important;
   color: #ddd !important;
@@ -518,7 +518,7 @@ button.primary:hover {
 }
 
 .dialog-button-box button {
-  -moz-appearance: none !important;
+  appearance: none !important;
   border-radius: 3px !important;
   padding: 2px 8px !important;
   background-color: #444 !important;
@@ -552,7 +552,7 @@ button.primary:hover {
 
 /* This changes the missing dialog buttons */
 .dialog-button, .wizard-button {
-  -moz-appearance: none !important;
+  appearance: none !important;
   background: #444 !important;
   color: #ccc !important;
   padding: 2px 0px;
@@ -578,7 +578,7 @@ button.primary:hover {
 /* Textboxes colors */
 dialog textbox, toolbar[printpreview="true"] textbox, #printPageSetupDialog input {
   transition: all 0.25s ease-in-out !important;
-  -moz-appearance: none !important;
+  appearance: none !important;
   border: 1px solid #666 !important;
   background-color: #555 !important;
   color: #ccc !important}
@@ -600,7 +600,7 @@ you aren't using the default dark theme of mozilla, that is) */
 
 /* The customization page button colors */
 .customizationmode-button {
-  -moz-appearance: none !important;
+  appearance: none !important;
   border-radius: 3px !important;
   background: #555 !important;
   color: #ddd !important;
@@ -622,7 +622,7 @@ you aren't using the default dark theme of mozilla, that is) */
 .button-menu-dropmarker .dropmarker-icon {filter: invert(75%) !important}
 
 #customization-done-button {
-  -moz-appearance: none !important;
+  appearance: none !important;
   border-radius: 3px !important;
   background: #2050AA !important;
   color: #fff !important;
@@ -674,7 +674,7 @@ menupopup:not([placespopup="true"]) > menuitem,
 menubar > menu, popup > menu,
 menupopup > menu,
 .openintabs-menuitem {
-  -moz-appearance: none !important;
+  appearance: none !important;
   padding-top: 3px;
   padding-bottom: 3px}
 
@@ -683,7 +683,7 @@ menupopup > menu,
 }
 
 menuitem {
-  -moz-appearance: none !important}
+  appearance: none !important}
 
 menupopup {
   overflow: clip;
@@ -698,7 +698,6 @@ menupopup {
 menu.bookmark-item, menuitem.bookmark-item, .openintabs-menuitem, .menupopup-arrowscrollbox {
   padding-top: 3px !important;
   padding-bottom: 3px !important;
-  margin: 0 !important;
 }
 
 bookmark-item.bookmark-item menupopup {
@@ -713,28 +712,22 @@ menuitem[disabled="true"] label, menu[disabled="true"] label {
 
 /* These apply to all context menus (If you want to theme the browser this one is better instead 
 of going one by one) */
-menupopup:not(.PanelUI-subView):not([id^="BMB_"]), .menupopup-arrowscrollbox,
+.menupopup-arrowscrollbox,
 .panel-viewcontainer, #allTabsMenu-allTabsView {
   background-color: var(--Context-menu-background) !important;
   border-color: #555 !important}
 
 #PlacesToolbarItems menupopup, #main-menubar menupopup {
-  -moz-appearance: none !important;
+  appearance: none !important;
   background-color: var(--Context-menu-background) !important;
   border: 1px solid #555 !important}
 
 #BMB_bookmarksPopup menupopup {
   background-color: transparent !important}
 
-/* The following code changes the borders of all the context menus (except the ones above mentioned),
-as well as ignoring the bookmark menu context menu */
-menupopup:not(.PanelUI-subView):not([id^="BMB_"]) {
-  -moz-appearance: none !important;
-  border: 1px solid #555 !important}
-
 /* Context menu separator color override */
 menuseparator {
-  -moz-appearance: none !important;
+  appearance: none !important;
   margin: 1px 0 1px 2.3em !important;
   height: 1px !important;
   border: none !important;
@@ -801,13 +794,13 @@ if necessary depending on if you are using a custom OS theme (which may mess up 
 #infoPane, #placesList, #placeContent, 
 /* This one changes the urlbar star bookmarking folder tree backgrund color */
 #editBMPanel_folderTree {
-  -moz-appearance: none !important; 
+  appearance: none !important; 
   background: #555 !important; 
   color: #ddd !important}
 
 /* These change the list header background and text colors */
 #placeContent treecol {
-  -moz-appearance: none !important; 
+  appearance: none !important; 
   background: #444 !important;
   padding: 3px !important;
   color: #ddd !important;
@@ -815,7 +808,7 @@ if necessary depending on if you are using a custom OS theme (which may mess up 
   border-bottom: 1px solid #333 !important}
 
 #placeContent treecol:hover {
-  -moz-appearance: none !important; 
+  appearance: none !important; 
   background: rgba(255,255,255, 0.15) !important;
   color: #fff !important}
 
@@ -859,7 +852,7 @@ if necessary depending on if you are using a custom OS theme (which may mess up 
 #editBMPanel_namePicker, #editBMPanel_tagsField,
 #editBMPanel_tagsSelector, #editBMPanel_locationField, 
 #editBMPanel_keywordField, #searchFilter {
-  -moz-appearance: none !important; 
+  appearance: none !important; 
   border: 1px solid #555 !important;
   background-color: #404040 !important;
   color: #ddd !important}
@@ -869,7 +862,7 @@ if necessary depending on if you are using a custom OS theme (which may mess up 
   color: var(--Lists-treechildren-selected-txt) !important}
 
 #editBMPanel_tagsSelector richlistitem[checked="true"] image {
-  -moz-appearance: none !important;
+  appearance: none !important;
   background: transparent url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="13px" height="13px" viewBox="0 0 14 14" ><path fill="rgb(200,200,200)" d="M 13.09,2.87 C 13.09,2.87 6.00,11.00 6.00,11.00 6.00,11.00 2.00,9.00 2.00,9.00 4.25,12.81 7.00,14.00 7.00,14.00 9.24,10.42 12.04,7.39 13.09,2.87 Z" /></svg>') no-repeat center center !important;
   border: none !important}
 
@@ -887,7 +880,7 @@ if necessary depending on if you are using a custom OS theme (which may mess up 
 #editBMPanel_newFolderButton, #editBookmarkPanelDoneButton, 
 #editBookmarkPanelRemoveButton, #tracking-action-unblock-private, 
 #identity-popup-popup-menulist, #tracking-action-block, #tracking-action-unblock {
-  -moz-appearance: none !important;
+  appearance: none !important;
   border-radius: 3px !important;
   background: #666 !important;
   color: #ddd !important;
@@ -905,7 +898,7 @@ if necessary depending on if you are using a custom OS theme (which may mess up 
 /* These change the expander buttons on the library and bookmarking popup */
 #editBMPanel_tagsSelectorExpander,
 #editBMPanel_foldersExpander, #detailsDeck button {
-  -moz-appearance: none !important;
+  appearance: none !important;
   background: #444 !important;
   color: #ddd !important}
 
@@ -915,7 +908,7 @@ if necessary depending on if you are using a custom OS theme (which may mess up 
   color: #fff !important}
 
 #editBMPanel_folderMenuList {
-  -moz-appearance: none !important;
+  appearance: none !important;
   border: none !important;
   background: #484848 !important;
   color: #ddd !important;
@@ -941,7 +934,7 @@ dropmarker {
   border-bottom: 1px solid #222 !important}
 
 #viewGroup > radio:hover {
-  -moz-appearance: none !important;
+  appearance: none !important;
   background-color: rgba(255,255,255,0.15) !important; 
   color: #eee !important}
 
@@ -952,7 +945,7 @@ dropmarker {
 /* This themes the base of the windows for all page information dialogs */
 #mainDeck, #mainDeck caption, #CookiesDialog,
 #SignonViewerDialog {
-  -moz-appearance: none !important;
+  appearance: none !important;
   background: #444 !important; 
   color: #ddd !important}
 
@@ -960,14 +953,14 @@ dropmarker {
 #mainDeck td input, #hostText {color: #aaa !important}
 
 #mainDeck groupbox, #cookieInfoBox {
-  -moz-appearance: none !important; 
+  appearance: none !important; 
   border: 1px solid #666 !important}
 
 /* This changes the feeds items links */
-#mainDeck richlistitem .text-link {-moz-appearance: none !important; color: #00aaff !important}
-#mainDeck richlistitem .text-link:hover {-moz-appearance: none !important; color: #0ff !important}
-#mainDeck richlistitem .text-link:active {-moz-appearance: none !important; color: #0050aa !important}
-#mainDeck richlistitem .text-link:visited {-moz-appearance: none !important; color: #0050dd !important}
+#mainDeck richlistitem .text-link {appearance: none !important; color: #00aaff !important}
+#mainDeck richlistitem .text-link:hover {appearance: none !important; color: #0ff !important}
+#mainDeck richlistitem .text-link:active {appearance: none !important; color: #0050aa !important}
+#mainDeck richlistitem .text-link:visited {appearance: none !important; color: #0050dd !important}
 
 /* A fix for certificates textboxes */
 #certDetails textbox {
@@ -979,7 +972,7 @@ dropmarker {
 #mainDeck tree, #imagecontainerbox, #brokenimagecontainer,
 #mainDeck richlistbox, #certDetails tree, #removalList,
 #certPrettyPrint textbox, #signonsTree {
-  -moz-appearance: none !important;
+  appearance: none !important;
   background: #555 !important;
   color: #ddd !important;
   border: 1px solid #222 !important}
@@ -1003,7 +996,7 @@ dropmarker {
 
 /* These theme the header of the lists on all windows related to the page info one */
 #mainDeck treecol, #cookiesList treecol, #signonsTree treecol {
-  -moz-appearance: none !important; 
+  appearance: none !important; 
   background: #333 !important;
   padding: 3px !important;
   color: #ddd !important;
@@ -1012,16 +1005,16 @@ dropmarker {
 
 #mainDeck treecol:hover, #cookiesList treecol:hover, 
 #signonsTree treecol:hover {
-  -moz-appearance: none !important; 
+  appearance: none !important; 
   background: rgba(255,255,255, 0.15) !important;
   color: #fff !important}
 
-#mediaPanel treecols *, #signonsTree treecols * {-moz-appearance: none !important}
+#mediaPanel treecols *, #signonsTree treecols * {appearance: none !important}
 #mediaPanel treecols, #signonsTree treecols {background: #333 !important}
 
 /* This themes the buttons on the main information window */
 #mainDeck button, #certDetails button {
-  -moz-appearance: none !important;
+  appearance: none !important;
   border-radius: 3px !important;
   background: #666 !important;
   color: #ddd !important;
@@ -1037,20 +1030,20 @@ dropmarker {
 
 /* This themes the permissions list */
 #permList {
-  -moz-appearance: none !important; 
+  appearance: none !important; 
   border: 1px solid #222 !important;
   background: #505050 !important;
   color: #ddd !important}
 
 #permList vbox:hover {
-  -moz-appearance: none !important;
+  appearance: none !important;
   background: rgba(0,0,0, 0.15) !important;
   color: #fff !important}
 
 /* This themes the cookies and the passwords window search box */
 #CookiesDialog #filter, #SignonViewerDialog #filter {
   transition: all 0.25s ease-in-out !important;
-  -moz-appearance: none !important; 
+  appearance: none !important; 
   border: 1px solid #666 !important;
   background-color: #555 !important;
   color: #aaa !important}
@@ -1063,7 +1056,7 @@ dropmarker {
 
 /* This themes the buttons on the cookies and passwords window */
 #CookiesDialog button, #SignonViewerDialog button {  
-  -moz-appearance: none !important;
+  appearance: none !important;
   border-radius: 3px !important;
   background: #666 !important;
   color: #ddd !important;
@@ -1076,7 +1069,7 @@ dropmarker {
 /* These are the certificates window tabs */
 #certDetails tabpanels, #certDetails tab, #printPageSetupDialog tab, 
 #printPageSetupDialog tabpanels {
-  -moz-appearance: none !important;
+  appearance: none !important;
   background: #444 !important;
   color: #ddd !important;
   border-left: 1px solid #555 !important;
@@ -1092,13 +1085,13 @@ dropmarker {
 #certDetails tabpanels textbox {color: #aaa !important}
 
 #verify_info_box textbox {
-  -moz-appearance: none !important; 
+  appearance: none !important; 
   background: #555 !important;
   border: 1px solid #666 !important}
 
 /* Sanitizer window */
 #itemList, #sanitizeEverythingWarningBox {
-  -moz-appearance:none !important;
+  appearance:none !important;
   background-color: #333 !important;
   border-color: transparent !important}
 
@@ -1169,17 +1162,17 @@ dropmarker {
 #sidebar-header {
   color: #fff !important;
   background-color: var(--Sidebar-header) !important;
-  -moz-appearance: none !important;
+  appearance: none !important;
   border-bottom: 1px solid #111 !important} 
 
 #sidebar-search-container, #sidebar, .sidebar-placesTree {
-  -moz-appearance: none !important;
+  appearance: none !important;
   background-color: #333 !important;
   color: #ccc !important}
 
 .sidebar-splitter {
   border-right: 2px solid #000 !important;
-  -moz-appearance: none !important}
+  appearance: none !important}
 
 treechildren::-moz-tree-separator {
   border-color: #000 !important}
@@ -1188,7 +1181,7 @@ treechildren::-moz-tree-separator {
 
 /* This changes the sidebar searchbar */
 #sidebar-search-container #search-box, .search-box {
-  -moz-appearance: none !important;
+  appearance: none !important;
   background-color: #222 !important;
   border: 1px solid #464646 !important;
   color: #fff !important}
