@@ -11,9 +11,9 @@ Explanation of what each rule affects:
 - #PersonalToolbar the ID for the bookmarks bar.
 - #titlebar should be affects the tabs bar and the menu bar (where file/tools menus are) */
 
-#nav-bar {-moz-box-ordinal-group: 1 !important}
-#PersonalToolbar {-moz-box-ordinal-group: 2 !important}
-#titlebar {-moz-box-ordinal-group: 3 !important}
+#nav-bar {order: 1 !important}
+#PersonalToolbar {order: 2 !important}
+#titlebar {order: 3 !important}
 
 /* This makes sure that the min/max/close buttons are as big as the tab bar */
 #TabsToolbar .titlebar-buttonbox .titlebar-button {
