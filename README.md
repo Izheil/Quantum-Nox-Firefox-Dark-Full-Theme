@@ -19,13 +19,14 @@ If you want to know how to change some colors of the theme, check the [wiki](htt
 
 Files updated:
 
-* Multirow*.uc.js: Updated multirow for FF110.
+- Multirow*.uc.js: Updated multirow for broken `--tab-growth` variable for FF113.
+- Tab-close-button-only-on-hover.as.css: Added a new CSS to show the close button on tabs only when hovering over the tabs.
 
-### Pre-Last update: 27/01/2023
+### Pre-Last update: 14/02/2023
 
 Files updated:
 
-* /root/*: Updated patch dependencies from xiaoxiaoflood's repository.
+- Multirow*.uc.js: Updated multirow for FF110.
 
 
 ### A note on people looking to replace some Tab Mix Plus features:
