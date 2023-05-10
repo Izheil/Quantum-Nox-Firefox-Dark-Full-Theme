@@ -3,8 +3,9 @@
 // @namespace      https://github.com/Izheil/Quantum-Nox-Firefox-Dark-Full-Theme
 // @description    Multi-row tabs draggability fix with unlimited rows
 // @include        main
-// @compatibility  Firefox 70 to Firefox 110.0a1 (2022-12-14)
+// @compatibility  Firefox 70 to Firefox 115.0a1 (2023-05-09)
 // @author         Alice0775, Endor8, TroudhuK, Izheil, Merci-chao
+// @version        10/05/2023 18:42 Fix tab-growth variable from not applying
 // @version        14/01/2023 22:36 Fixed new tab button getting overlapped with last tab
 // @version        15/12/2022 22:17 Fixed min/max/close button duplication when having menu bar always visible
 // @version        14/12/2022 19:11 Fixed issue with Firefox 108 (Stable)
@@ -142,7 +143,7 @@ function zzzz_MultiRowTabLite() {
     :root[lwtheme-image] #navigator-toolbox {background-repeat: repeat-y !important}
 
     .tabbrowser-tab:not([pinned]) {
-        flex-grow: var(--tab-growth)}
+        flex-grow: var(--tab-growth) !important}
 
     #tabbrowser-tabs .tab-background, #tabbrowser-tabs .tabbrowser-tab {
         min-height: var(--tab-min-height) !important}
