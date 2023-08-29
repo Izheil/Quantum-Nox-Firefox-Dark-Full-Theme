@@ -15,18 +15,19 @@ You can use it to fully change the colors of most of firefox UI to dark-gray col
 
 If you want to know how to change some colors of the theme, check the [wiki](https://github.com/Izheil/Quantum-Nox-Firefox-Dark-Full-Theme/wiki/Editting-CSS-files).
 
-### Last update: 14/02/2023
+### Last update: 29/08/2023
 
 Files updated:
 
-- Multirow*.uc.js: Updated multirow for broken `--tab-growth` variable for FF113.
-- Tab-close-button-only-on-hover.as.css: Added a new CSS to show the close button on tabs only when hovering over the tabs.
+- **userChrome.jsm**: Updated some dependency that was deprecated in FF117.
+- **xPref.jsm**: Updated some dependency that was deprecated in FF117.
 
 ### Pre-Last update: 14/02/2023
 
 Files updated:
 
-- Multirow*.uc.js: Updated multirow for FF110.
+- __Multirow*.uc.js__: Updated multirow for broken `--tab-growth` variable for FF113.
+- __Tab-close-button-only-on-hover.as.css__: Added a new CSS to show the close button on tabs only when hovering over the tabs.
 
 
 ### A note on people looking to replace some Tab Mix Plus features:
@@ -96,10 +97,6 @@ You might have noticed that we no longer have [Lastpass dark theme](https://gist
 This theme colors scrollbars using `userContent.css` to give them a basic re-color.
 
 ![Re-colored dark scrollbar](https://i.imgur.com/hqwoq9n.png)
-
-If you **want a different style on the scrollbars**, you can try using the `scrollbars.as.css` file inside the [Alternative scrollbars](https://github.com/Izheil/Quantum-Nox-Firefox-Dark-Full-Theme/tree/master/Full%20dark%20theme/Alternative%20scrollbars%20%26%20tooltips/Alternative%20scrollbars) folder, which will make the scrollbars look more rounded and will have some sort of "puffy" effect when clicking them.
-
-![Custom dark blue scrollbar](https://i.imgur.com/sOHN1ds.gif)
 
 If instead you just **don't want scrollbars to show at all but keep scrollability**, you can do this through `userContent.css` setting the variable `--scrollbars-width` to none (should be the first rule on the `:root` section (almost at the start)), and deleting `scrollbars.as.css`.
 
