@@ -23,6 +23,7 @@ Files updated:
 - **xPref.jsm**: Updated some dependency that was deprecated in FF131.
 - **config.js**: Updated some dependency that was deprecated in FF131.
 - **Multirow*.uc.js**: Updated multirow code to support FF131+.
+- __Megabar-*__: Fixed some issue with the megabar on FF131+.
 
 ### Pre-Last update: 29/08/2023
 
