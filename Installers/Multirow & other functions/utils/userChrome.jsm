@@ -26,15 +26,14 @@ let _uc = {
   getScripts: function () {
     this.scripts = {};
     let files = this.chromedir.directoryEntries.QueryInterface(Ci.nsISimpleEnumerator);
-    let sss = Cc['@mozilla.org/content/style-sheet-service;1'].getService(Ci.nsIStyleSheetService);
     while (files.hasMoreElements()) {
       let file = files.getNext().QueryInterface(Ci.nsIFile);
       let fileURI = Services.io.newFileURI(file);
       if (/\.uc\.js$/i.test(file.leafName)) {
         _uc.getScriptData(file);
-      } else if(/\.as\.css$/i.test(file.leafName)) {
-        if(!sss.sheetRegistered(fileURI, sss.AGENT_SHEET))
-          sss.loadAndRegisterSheet(fileURI, sss.AGENT_SHEET);
+      } else if (/\.as\.css$/i.test(file.leafName)) {
+        if(!this.sss.sheetRegistered(fileURI, this.sss.AGENT_SHEET))
+          this.sss.loadAndRegisterSheet(fileURI, this.sss.AGENT_SHEET);
       }
     }
   },
@@ -178,13 +177,17 @@ let UserChrome_js = {
   handleEvent: function (aEvent) {
     let document = aEvent.originalTarget;
     let window = document.defaultView;
+    this.load(window);
+  },
+
+  load: function (window) {
     let location = window.location;
 
     if (!this.sharedWindowOpened && location.href == 'chrome://extensions/content/dummy.xhtml') {
       this.sharedWindowOpened = true;
 
       Management.on('extension-browser-inserted', function (topic, browser) {
-        browser.messageManager.addMessageListener('Extension:ExtensionViewLoaded', this.messageListener.bind(this));
+        browser.messageManager.addMessageListener('Extension:BackgroundViewLoaded', this.messageListener.bind(this));
       }.bind(this));
     } else if (/^(chrome:(?!\/\/global\/content\/commonDialog\.x?html)|about:(?!blank))/i.test(location.href)) {
       window.UC = UC;
@@ -207,7 +210,7 @@ let UserChrome_js = {
     const browser = msg.target;
     const { addonId } = browser._contentPrincipal;
 
-    browser.messageManager.removeMessageListener('Extension:ExtensionViewLoaded', this.messageListener);
+    browser.messageManager.removeMessageListener('Extension:BackgroundViewLoaded', this.messageListener);
 
     if (browser.ownerGlobal.location.href == 'chrome://extensions/content/dummy.xhtml') {
       UC.webExts.set(addonId, browser);
@@ -223,5 +226,11 @@ let UserChrome_js = {
 if (!Services.appinfo.inSafeMode) {
   _uc.chromedir.append(_uc.scriptsDir);
   _uc.getScripts();
+  let windows = Services.wm.getEnumerator(null);
+  while (windows.hasMoreElements()) {
+    let win = windows.getNext();
+    if (!('UC' in win))
+      UserChrome_js.load(win)
+  }
   Services.obs.addObserver(UserChrome_js, 'chrome-document-global-created', false);
 }

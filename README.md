@@ -15,19 +15,21 @@ You can use it to fully change the colors of most of firefox UI to dark-gray col
 
 If you want to know how to change some colors of the theme, check the [wiki](https://github.com/Izheil/Quantum-Nox-Firefox-Dark-Full-Theme/wiki/Editting-CSS-files).
 
-### Last update: 29/08/2023
+### Last update: 07/09/2024
+
+Files updated:
+
+- **userChrome.jsm**: Updated some dependency that was deprecated in FF131.
+- **xPref.jsm**: Updated some dependency that was deprecated in FF131.
+- **config.js**: Updated some dependency that was deprecated in FF131.
+- **Multirow*.uc.js**: Updated multirow code to support FF131+.
+
+### Pre-Last update: 29/08/2023
 
 Files updated:
 
 - **userChrome.jsm**: Updated some dependency that was deprecated in FF117.
 - **xPref.jsm**: Updated some dependency that was deprecated in FF117.
-
-### Pre-Last update: 14/02/2023
-
-Files updated:
-
-- __Multirow*.uc.js__: Updated multirow for broken `--tab-growth` variable for FF113.
-- __Tab-close-button-only-on-hover.as.css__: Added a new CSS to show the close button on tabs only when hovering over the tabs.
 
 
 ### A note on people looking to replace some Tab Mix Plus features:

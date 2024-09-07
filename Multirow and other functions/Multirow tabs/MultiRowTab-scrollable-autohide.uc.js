@@ -3,8 +3,9 @@
 // @namespace      https://github.com/Izheil/Quantum-Nox-Firefox-Dark-Full-Theme
 // @description    Multi-row tabs draggability fix with autohiding scrollbar
 // @include        main
-// @compatibility  Firefox 70 to Firefox 115.0a1 (2023-05-09)
+// @compatibility  Firefox 70 to Firefox 131.0a1 (2024-09-07)
 // @author         Alice0775, Endor8, TroudhuK, Izheil, Merci-chao
+// @version        07/09/2024 13:25 Compatibility fix for FF131a (Nightly)
 // @version        10/05/2023 18:42 Fix tab-growth variable from not applying
 // @version        14/01/2023 22:36 Fixed new tab button getting overlapped with last tab
 // @version        15/12/2022 22:17 Fixed min/max/close button duplication when having menu bar always visible
@@ -61,14 +62,14 @@ function zzzz_MultiRowTabLite() {
     // EDITABLE JAVASCRIPT VARIABLES
 
     // Enables the use of the rows resizer
-    var useResizer = false;
+    let useResizer = false;
 
     // Size of the scrollbar
     // auto = default OS size (will show arrow handlers even when it's not needed) | thin = half the width | none = always hidden scrollbar
-    var scrollbarSize = "thin";
+    let scrollbarSize = "thin";
 
     // CSS section
-	var css =`
+	let css =`
     /* MULTIROW TABS CSS */
 
     /* EDITABLE CSS VARIABLES */
@@ -249,7 +250,7 @@ function zzzz_MultiRowTabLite() {
 	`;
 
     // We check if using australis here
-    var australisElement = getComputedStyle(document.getElementsByClassName("tabbrowser-tab")[0])
+    let australisElement = getComputedStyle(document.getElementsByClassName("tabbrowser-tab")[0])
                            .getPropertyValue('--svg-before-normal-density');
 
     if (australisElement == null) {
@@ -258,7 +259,7 @@ function zzzz_MultiRowTabLite() {
     }
     
     // Check if it's proton past FF91
-    var tabsHavePadding = false;
+    let tabsHavePadding = false;
     let tabBackground = document.getElementsByClassName("tab-background")[0];
     if (parseInt(getComputedStyle(tabBackground).getPropertyValue('--tab-block-margin').substring(0,1)) > 0) {
         tabsHavePadding = true;
@@ -275,7 +276,7 @@ function zzzz_MultiRowTabLite() {
         `
 
         // This is a fix for the shadow elements:
-        var style = document.createElement('style');
+        let style = document.createElement('style');
         style.innerHTML = `
         .scrollbox-clip {
             overflow: visible;
@@ -294,6 +295,11 @@ function zzzz_MultiRowTabLite() {
         scrollbox:hover {
             margin-right: 0;
             overflow-y: scroll}
+
+        /* Firefox 131+ fix */
+        scrollbox > slot {
+            flex-wrap: wrap;
+        }
 
 	    .arrowscrollbox-overflow-start-indicator,
 	    .arrowscrollbox-overflow-end-indicator {position: fixed !important}
@@ -400,13 +406,13 @@ function zzzz_MultiRowTabLite() {
         }
 	}
 
-	var sss = Cc['@mozilla.org/content/style-sheet-service;1'].getService(Ci.nsIStyleSheetService);
-	var uri = makeURI('data:text/css;charset=UTF=8,' + encodeURIComponent(css));
+	let sss = Cc['@mozilla.org/content/style-sheet-service;1'].getService(Ci.nsIStyleSheetService);
+	let uri = makeURI('data:text/css;charset=UTF=8,' + encodeURIComponent(css));
 	sss.loadAndRegisterSheet(uri, sss.AGENT_SHEET);
 
     gBrowser.tabContainer._getDropIndex = function(event, isLink) {
-        var tabs = document.getElementsByClassName("tabbrowser-tab");
-        var tab = this._getDragTargetTab(event, isLink);
+        let tabs = document.getElementsByClassName("tabbrowser-tab");
+        let tab = this._getDragTargetTab(event, isLink);
         if (window.getComputedStyle(this).direction == "ltr") {
             for (let i = tab ? tab._tPos : 0; i < tabs.length; i++) {
                 let rect = tabs[i].getBoundingClientRect();
@@ -464,7 +470,7 @@ function zzzz_MultiRowTabLite() {
 
     // Handles resizing of rows when enabled
     if (useResizer) {
-        var tabsScrollbox;
+        let tabsScrollbox;
         // FF71+
         if (document.querySelector("#tabbrowser-tabs > arrowscrollbox").shadowRoot) {
             tabsScrollbox = document.querySelector("#tabbrowser-tabs > arrowscrollbox").shadowRoot.querySelector(".scrollbox-clip > scrollbox");
@@ -473,11 +479,11 @@ function zzzz_MultiRowTabLite() {
             tabsScrollbox = document.querySelector("#tabbrowser-tabs .arrowscrollbox-scrollbox");
         }
         
-        var tabsContainer = document.getElementById("TabsToolbar-customization-target");
-        var mainWindow = document.getElementById("main-window");
+        let tabsContainer = document.getElementById("TabsToolbar-customization-target");
+        let mainWindow = document.getElementById("main-window");
 
         // Adds the resizer element to tabsContainer
-        var tabsResizer = document.createElement("div");
+        let tabsResizer = document.createElement("div");
         tabsResizer.setAttribute('id', "tab-scrollbox-resizer");
         tabsContainer.appendChild(tabsResizer);
         console.log("Potato")
@@ -504,7 +510,7 @@ function zzzz_MultiRowTabLite() {
     }
 
     // We set this to check if the listeners were added before
-    var Listeners = false;
+    let Listeners = false;
 
     // This sets when to apply the fix (by default a new row starts after the 23th open tab, unless you changed the min-size of tabs)
     gBrowser.tabContainer.ondragstart = function(){
@@ -512,7 +518,7 @@ function zzzz_MultiRowTabLite() {
 
             /* fix for moving multiple selected tabs */
             gBrowser.visibleTabs.forEach(t => t.style.transform && "");
-            var tab = this._getDragTargetTab(event, false);
+            let tab = this._getDragTargetTab(event, false);
             let selectedTabs = gBrowser.selectedTabs;
             while (selectedTabs.length) {
                 let t = selectedTabs.pop();
@@ -529,9 +535,9 @@ function zzzz_MultiRowTabLite() {
                 event.preventDefault();
                 event.stopPropagation();
 
-                var ind = this._tabDropIndicator;
+                let ind = this._tabDropIndicator;
 
-                var effects = orig_getDropEffectForTabDrag(event);
+                let effects = orig_getDropEffectForTabDrag(event);
                 if (effects == "link") {
                     let tab = this._getDragTargetTab(event, true);
                     if (tab) {
@@ -545,14 +551,14 @@ function zzzz_MultiRowTabLite() {
                     }
                 }
 
-                var newIndex = this._getDropIndex(event, effects == "link");
+                let newIndex = this._getDropIndex(event, effects == "link");
                 if (newIndex == null)
                     return;
 
-                var tabs = document.getElementsByClassName("tabbrowser-tab");
-                var ltr = (window.getComputedStyle(this).direction == "ltr");
-                var rect = this.arrowScrollbox.getBoundingClientRect();
-                var newMarginX, newMarginY;
+                let tabs = document.getElementsByClassName("tabbrowser-tab");
+                let ltr = (window.getComputedStyle(this).direction == "ltr");
+                let rect = this.arrowScrollbox.getBoundingClientRect();
+                let newMarginX, newMarginY;
                 if (newIndex == tabs.length) {
                     let tabRect = tabs[newIndex - 1].getBoundingClientRect();
                     if (ltr)
@@ -587,11 +593,11 @@ function zzzz_MultiRowTabLite() {
             };
 
             gBrowser.tabContainer.onDrop = function(event) {
-                var newIndex;
-                var dt = event.dataTransfer;
-                var dropEffect = dt.dropEffect;
-                var draggedTab;
-                var movingTabs;
+                let newIndex;
+                let dt = event.dataTransfer;
+                let dropEffect = dt.dropEffect;
+                let draggedTab;
+                let movingTabs;
                 if (dt.mozTypesAt(0)[0] == TAB_DROP_TYPE) {
                     draggedTab = dt.mozGetDataAt(TAB_DROP_TYPE, 0);
                     if (!draggedTab) {
@@ -630,7 +636,7 @@ function zzzz_MultiRowTabLite() {
 
 // copy of the original and overrided _getDropEffectForTabDrag method
 function orig_getDropEffectForTabDrag(event) {
-    var dt = event.dataTransfer;
+    let dt = event.dataTransfer;
 
     let isMovingTabs = dt.mozItemCount > 0;
     for (let i = 0; i < dt.mozItemCount; i++) {
