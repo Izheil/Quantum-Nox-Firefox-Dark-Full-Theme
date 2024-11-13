@@ -5,6 +5,7 @@
 // @include        main
 // @compatibility  Firefox 70 to Firefox 131.0a1 (2024-09-07)
 // @author         Alice0775, Endor8, TroudhuK, Izheil, Merci-chao
+// @version        13/11/2024 23:13 Fixed issue with Firefox 133+
 // @version        07/09/2024 13:25 Compatibility fix for FF131a (Nightly)
 // @version        10/05/2023 18:42 Fix tab-growth variable from not applying
 // @version        14/01/2023 22:36 Fixed new tab button getting overlapped with last tab
@@ -112,7 +113,6 @@ function zzzz_MultiRowTabLite() {
         The second rule (.titlebar-buttonbox) has paddings control the padding of the min/max/close buttons. 
         Changing these are required if you want the tab bar to be smaller when having 1 row. */
 
-    /*
     #TabsToolbar {
         --toolbarbutton-inner-padding: inherit !important;
     }
@@ -121,11 +121,6 @@ function zzzz_MultiRowTabLite() {
     .titlebar-buttonbox {
         height: var(--tab-min-height) !important;
     }
-
-    .titlebar-buttonbox-container {
-        display: block !important;
-    }
-    */
 
     /*-------- Don't edit past here unless you know what you are doing --------*/
     
@@ -209,6 +204,15 @@ function zzzz_MultiRowTabLite() {
 
     #tabbrowser-tabs[positionpinnedtabs] {
         padding-inline-start: 0 !important;
+    }
+
+    /* Remove duplicated min/max/close buttons */
+    #nav-bar > .titlebar-buttonbox-container {
+        display: none !important;
+    }
+
+    #TabsToolbar .titlebar-buttonbox-container {
+        display: block !important;
     }
 
 	`;
@@ -330,10 +334,10 @@ function zzzz_MultiRowTabLite() {
 
     // This scrolls down to the current tab when you open a new one, or restore a session.
     function scrollToView() {
-        let selTab = document.querySelectorAll(".tabbrowser-tab[selected='true']")[0];
-        let wrongTab = document.querySelectorAll('.tabbrowser-tab[style^="margin-inline-start"]');
-        let hiddenToolbox = document.querySelector('#navigator-toolbox[style^="margin-top"]');
-        let fullScreen = document.querySelector('#main-window[sizemode="fullscreen"]');
+        const selTab = document.querySelectorAll(".tabbrowser-tab[selected='true']")[0];
+        const wrongTab = document.querySelectorAll('.tabbrowser-tab[style^="margin-inline-start"]');
+        const hiddenToolbox = document.querySelector('#navigator-toolbox[style^="margin-top"]');
+        const fullScreen = document.querySelector('#main-window[sizemode="fullscreen"]');
         selTab.scrollIntoView({behavior: "smooth", block: "nearest", inline: "nearest"});
         if (wrongTab[0]) {
             for(let i = 0; i < wrongTab.length; i++) {
@@ -344,8 +348,8 @@ function zzzz_MultiRowTabLite() {
         // If in fullscreen we also make sure to keep the toolbar hidden when a new row is created
         // when opening a new tab in the background
         if (fullScreen && hiddenToolbox) {
-            let toolboxHeight = hiddenToolbox.getBoundingClientRect().height;
-            let tabsHeight = selTab.getBoundingClientRect().height;
+            const toolboxHeight = hiddenToolbox.getBoundingClientRect().height;
+            const tabsHeight = selTab.getBoundingClientRect().height;
             hiddenToolbox.style.marginTop = ((toolboxHeight + tabsHeight) * -1) + "px";
         }
     }
@@ -363,7 +367,7 @@ function zzzz_MultiRowTabLite() {
 
             /* fix for moving multiple selected tabs */
             gBrowser.visibleTabs.forEach(t => t.style.transform && "");
-            let tab = this._getDragTargetTab(event, false);
+            const tab = this._getDragTargetTab(event, false);
             let selectedTabs = gBrowser.selectedTabs;
             while (selectedTabs.length) {
                 let t = selectedTabs.pop();
@@ -401,8 +405,8 @@ function zzzz_MultiRowTabLite() {
                     return;
 
                 let tabs = document.getElementsByClassName("tabbrowser-tab");
-                let ltr = (window.getComputedStyle(this).direction == "ltr");
-                let rect = this.arrowScrollbox.getBoundingClientRect();
+                const ltr = (window.getComputedStyle(this).direction == "ltr");
+                const rect = this.arrowScrollbox.getBoundingClientRect();
                 let newMarginX, newMarginY;
                 if (newIndex == tabs.length) {
                     let tabRect = tabs[newIndex - 1].getBoundingClientRect();
@@ -442,17 +446,20 @@ function zzzz_MultiRowTabLite() {
                 let dt = event.dataTransfer;
                 let dropEffect = dt.dropEffect;
                 let draggedTab;
-                let movingTabs;
                 if (dt.mozTypesAt(0)[0] == TAB_DROP_TYPE) {
                     draggedTab = dt.mozGetDataAt(TAB_DROP_TYPE, 0);
                     if (!draggedTab) {
                         return;
                     }
-                    movingTabs = draggedTab._dragData.movingTabs;
-                    draggedTab.container._finishGroupSelectedTabs(draggedTab);
+                    
+                    // Fix for FF133+
+                    if (draggedTab.container._finishMoveTogetherSelectedTabs) {
+                        draggedTab.container._finishMoveTogetherSelectedTabs(draggedTab);
+                    } else {
+                        draggedTab.container._finishGroupSelectedTabs(draggedTab);
+                    }
                 }
-                if (draggedTab && dropEffect == "copy") {}
-                else if (draggedTab && draggedTab.container == this) {
+                if (draggedTab && dropEffect != "copy" && draggedTab.container == this) {
                     newIndex = this._getDropIndex(event, false);
 
                     /* fix for moving multiple selected tabs */
@@ -470,7 +477,7 @@ function zzzz_MultiRowTabLite() {
             };
 
             // We then attach the event listeners for the new functionability to take effect
-            if (Listeners == false) {
+            if (!Listeners) {
                 gBrowser.tabContainer.addEventListener("dragover", gBrowser.tabContainer._onDragOver, true);
                 gBrowser.tabContainer.addEventListener("drop", function(event){this.onDrop(event);}, true);
                 Listeners = true;

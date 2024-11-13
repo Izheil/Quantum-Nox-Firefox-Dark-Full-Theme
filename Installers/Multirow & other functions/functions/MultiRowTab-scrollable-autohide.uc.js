@@ -3,8 +3,10 @@
 // @namespace      https://github.com/Izheil/Quantum-Nox-Firefox-Dark-Full-Theme
 // @description    Multi-row tabs draggability fix with autohiding scrollbar
 // @include        main
-// @compatibility  Firefox 70 to Firefox 115.0a1 (2023-05-09)
+// @compatibility  Firefox 70 to Firefox 131.0a1 (2024-09-07)
 // @author         Alice0775, Endor8, TroudhuK, Izheil, Merci-chao
+// @version        13/11/2024 23:13 Fixed issue with Firefox 133+
+// @version        07/09/2024 13:25 Compatibility fix for FF131a (Nightly)
 // @version        10/05/2023 18:42 Fix tab-growth variable from not applying
 // @version        14/01/2023 22:36 Fixed new tab button getting overlapped with last tab
 // @version        15/12/2022 22:17 Fixed min/max/close button duplication when having menu bar always visible
@@ -61,11 +63,11 @@ function zzzz_MultiRowTabLite() {
     // EDITABLE JAVASCRIPT VARIABLES
 
     // Enables the use of the rows resizer
-    let useResizer = false;
+    const useResizer = false;
 
     // Size of the scrollbar
     // auto = default OS size (will show arrow handlers even when it's not needed) | thin = half the width | none = always hidden scrollbar
-    let scrollbarSize = "thin";
+    const scrollbarSize = "thin";
 
     // CSS section
 	let css =`
@@ -138,7 +140,6 @@ function zzzz_MultiRowTabLite() {
         The second rule (.titlebar-buttonbox) has paddings control the padding of the min/max/close buttons. 
         Changing these are required if you want the tab bar to be smaller when having 1 row. */
 
-    /*
     #TabsToolbar {
         --toolbarbutton-inner-padding: inherit !important;
     }
@@ -147,11 +148,6 @@ function zzzz_MultiRowTabLite() {
     .titlebar-buttonbox {
         height: var(--tab-min-height) !important;
     }
-
-    .titlebar-buttonbox-container {
-        display: block;
-    }
-    */
 
     /*-------- Don't edit past here unless you know what you are doing --------*/
     
@@ -246,6 +242,15 @@ function zzzz_MultiRowTabLite() {
         padding-inline-start: 0 !important;
     }
 
+    /* Remove duplicated min/max/close buttons */
+    #nav-bar > .titlebar-buttonbox-container {
+        display: none !important;
+    }
+
+    #TabsToolbar .titlebar-buttonbox-container {
+        display: block !important;
+    }
+
 	`;
 
     // We check if using australis here
@@ -294,6 +299,11 @@ function zzzz_MultiRowTabLite() {
         scrollbox:hover {
             margin-right: 0;
             overflow-y: scroll}
+
+        /* Firefox 131+ fix */
+        scrollbox > slot {
+            flex-wrap: wrap;
+        }
 
 	    .arrowscrollbox-overflow-start-indicator,
 	    .arrowscrollbox-overflow-end-indicator {position: fixed !important}
@@ -378,7 +388,7 @@ function zzzz_MultiRowTabLite() {
 	        -moz-window-dragging: no-drag}
 	    `;
 
-        if (useThinScrollbar == true) {
+        if (scrollbarSize == "thin") {
             style.innerHTML += `
             #tabbrowser-tabs .arrowscrollbox-scrollbox {
                 scrollbar-color: var(--tabs-scrollbar-color) transparent;
@@ -473,8 +483,8 @@ function zzzz_MultiRowTabLite() {
             tabsScrollbox = document.querySelector("#tabbrowser-tabs .arrowscrollbox-scrollbox");
         }
         
-        let tabsContainer = document.getElementById("TabsToolbar-customization-target");
-        let mainWindow = document.getElementById("main-window");
+        const tabsContainer = document.getElementById("TabsToolbar-customization-target");
+        const mainWindow = document.getElementById("main-window");
 
         // Adds the resizer element to tabsContainer
         let tabsResizer = document.createElement("div");
@@ -512,7 +522,7 @@ function zzzz_MultiRowTabLite() {
 
             /* fix for moving multiple selected tabs */
             gBrowser.visibleTabs.forEach(t => t.style.transform && "");
-            let tab = this._getDragTargetTab(event, false);
+            const tab = this._getDragTargetTab(event, false);
             let selectedTabs = gBrowser.selectedTabs;
             while (selectedTabs.length) {
                 let t = selectedTabs.pop();
@@ -538,7 +548,7 @@ function zzzz_MultiRowTabLite() {
                         if (!this._dragTime)
                             this._dragTime = Date.now();
                         if (!tab.hasAttribute("pendingicon") && // annoying fix
-                            Date.now() >= this._dragTime + this._dragOverDelay);
+                            Date.now() >= this._dragTime + this._dragOverDelay)
                             this.selectedItem = tab;
                         ind.hidden = true;
                         return;
@@ -591,17 +601,18 @@ function zzzz_MultiRowTabLite() {
                 let dt = event.dataTransfer;
                 let dropEffect = dt.dropEffect;
                 let draggedTab;
-                let movingTabs;
                 if (dt.mozTypesAt(0)[0] == TAB_DROP_TYPE) {
                     draggedTab = dt.mozGetDataAt(TAB_DROP_TYPE, 0);
                     if (!draggedTab) {
                         return;
                     }
-                    movingTabs = draggedTab._dragData.movingTabs;
-                    draggedTab.container._finishGroupSelectedTabs(draggedTab);
+                    if (draggedTab.container._finishMoveTogetherSelectedTabs) {
+                        draggedTab.container._finishMoveTogetherSelectedTabs(draggedTab);
+                    } else {
+                        draggedTab.container._finishGroupSelectedTabs(draggedTab);
+                    }
                 }
-                if (draggedTab && dropEffect == "copy") {}
-                else if (draggedTab && draggedTab.container == this) {
+                if (draggedTab && dropEffect != "copy" && draggedTab.container == this) {
                     newIndex = this._getDropIndex(event, false);
 
                     /* fix for moving multiple selected tabs */
@@ -619,7 +630,7 @@ function zzzz_MultiRowTabLite() {
             };
 
             // We then attach the event listeners for the new functionability to take effect
-            if (Listeners == false) {
+            if (!Listeners) {
                 gBrowser.tabContainer.addEventListener("dragover", gBrowser.tabContainer._onDragOver, true);
                 gBrowser.tabContainer.addEventListener("drop", function(event){this.onDrop(event);}, true);
                 Listeners = true;
