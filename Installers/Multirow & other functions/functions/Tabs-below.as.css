@@ -1,6 +1,6 @@
 /* You can find an updated version here: https://github.com/Izheil/Quantum-Nox-Firefox-Dark-Full-Theme */
 /* Made by Izheil */
-/* Last updated: 14/12/2022 */
+/* Last updated: 14/11/2024 */
 
 /* TAB BAR BELOW
 You can set the order of each bar here. 1 for top, and 3 bottom.
@@ -9,11 +9,11 @@ Don't use this one if you already have the tabs below fix on your userChrome.
 Explanation of what each rule affects:
 - #nav-bar is the ID for the URL bar. 
 - #PersonalToolbar the ID for the bookmarks bar.
-- #titlebar should be affects the tabs bar and the menu bar (where file/tools menus are) */
+- #TabsToolbar should be affects the tabs bar and the menu bar (where file/tools menus are) */
 
 #nav-bar {order: 1 !important}
 #PersonalToolbar {order: 2 !important}
-#titlebar {order: 3 !important}
+#TabsToolbar {order: 3 !important}
 
 #toolbar-menubar .titlebar-buttonbox-container {
   display: block !important;
@@ -25,11 +25,11 @@ Explanation of what each rule affects:
 #TabsToolbar .titlebar-buttonbox .titlebar-button {
   height: var(--tab-min-height) !important}
 
-/* Make sure that tabs stay right at the border of the webarea and not floating 1px above*/
-#TabsToolbar {margin-bottom: -1px !important}
-
 /* Default height of the menu bar */
 #main-menubar > menu {height: 28px !important}
+
+/* Set theme image on menu bar */
+#main-window[lwtheme-image="true"] > body {background-image: var(--lwt-header-image), var(--lwt-additional-images)}
 
 /* These control the space to leave on top of the window for the menu toolbar.
    Don't change the #navigator-toolbox margins to anything lower than 28px if you want to see the menu bar 
@@ -55,9 +55,11 @@ to autohide, so it's safest to just hide it on fullscreen. Not necessary for men
 body > box {background-color: var(--lwt-accent-color)}
 
 /* Windows-only fixes. Not necesary for menu-over-tabs. */
-@media (-moz-platform: windows-win11), (-moz-platform: windows-win10), (-moz-platform: windows-win8), (-moz-platform: windows-win7) {
+@media (-moz-platform: windows) {
   /* Windows requires more padding on top of the window for some reason */
-  #main-window[sizemode="maximized"] #navigator-toolbox {margin-top: 36px !important}
+  #main-window[sizemode="maximized"] #navigator-toolbox {
+    margin-top: 36px !important;
+  }
 
   /* These add spacing above the menu bar v */
   #main-window[sizemode="normal"] #toolbar-menubar {

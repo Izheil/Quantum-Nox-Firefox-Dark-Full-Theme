@@ -1,6 +1,6 @@
 /* You can find an updated version here: https://github.com/Izheil/Quantum-Nox-Firefox-Dark-Full-Theme */
 /* Made by Izheil */
-/* Last updated: 14/12/2020 */
+/* Last updated: 14/11/2024 */
 
 /* TAB BAR BELOW
 You can set the order of each bar here. 1 for top, and 3 bottom.
@@ -9,11 +9,13 @@ Don't use this one if you are using the multirow version of tabs below.
 Explanation of what each rule affects:
 - #nav-bar is the ID for the URL bar. 
 - #PersonalToolbar the ID for the bookmarks bar.
+- #toolbar-menubar the ID for the menu bar.
 - #titlebar should be affects the tabs bar and the menu bar (where file/tools menus are) */
 
 #nav-bar {order: 1 !important}
 #PersonalToolbar {order: 2 !important}
-#titlebar {order: 3 !important}
+#toolbar-menubar {order: 3 !important}
+#TabsToolbar {order: 4 !important}
 
 /* This makes sure that the min/max/close buttons are as big as the tab bar */
 #TabsToolbar .titlebar-buttonbox .titlebar-button {
@@ -30,7 +32,7 @@ Explanation of what each rule affects:
 /* ^ Set to 0 if you disabled the megabar enlarging ^ */
 
 /* Windows-only fixes. */
-@media (-moz-platform: windows-win11), (-moz-platform: windows-win10), (-moz-platform: windows-win8), (-moz-platform: windows-win7)  {
+@media (-moz-platform: windows) {
 	/* Don't change the #navigator-toolbox margin unless you want more margin on top */
 	#main-window[sizemode="maximized"] #nav-bar {margin-top: 3px !important}
 	/* ^ Change to lower than 10px if you want to have less space on top of the url bar ^ */
