@@ -1,6 +1,6 @@
 /* You can find an updated version here: https://github.com/Izheil/Quantum-Nox-Firefox-Dark-Full-Theme */
 /* Made by Izheil */
-/* Last updated: 14/11/2024 */
+/* Last updated: 28/11/2024 */
 
 /* TAB BAR BELOW
 You can set the order of each bar here. 1 for top, and 3 bottom.
@@ -41,11 +41,16 @@ Explanation of what each rule affects:
 /* This changes the menu bar on top of the screen instead of over the tab bar. Delete or comment out 
 if you want to use menu-over-tabs version */
 #toolbar-menubar {
+  background-color: -moz-headerbar !important;
   display: flex !important;
   position: fixed !important;
   flex-wrap: nowrap;
   width: 100% !important;
   top: 0}
+
+#toolbar-menubar[inactive] {
+  background-color: -moz-headerbarinactive !important;
+}
 
 /* There seems to be an issue with the "top:" rule inside #toolbar-menubar that would not allow fullscreen
 to autohide, so it's safest to just hide it on fullscreen. Not necessary for menu-over-tabs. */

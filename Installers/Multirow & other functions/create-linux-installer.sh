@@ -1,2 +1,2 @@
 #!/bin/sh
-docker run -v "$(pwd):/src" fydeinc/pyinstaller -e "PLATFORMS=linux" ./Linux.spec
+docker run -v "$(pwd):/src" -e "PLATFORMS=linux" fydeinc/pyinstaller ./Linux.spec

@@ -15,23 +15,20 @@ You can use it to fully change the colors of most of firefox UI to dark-gray col
 
 If you want to know how to change some colors of the theme, check the [wiki](https://github.com/Izheil/Quantum-Nox-Firefox-Dark-Full-Theme/wiki/Editting-CSS-files).
 
-### Last update: 14/11/2024
+### Last update: 28/11/2024
+
+Files updated:
+
+- __Tabs-below*as.css__: Fix for Linux title bar being transparent.
+- __create-*-installer.sh__: Added some script to create linux and windows binaries using docker from linux.
+
+### Pre-Last update: 14/11/2024
 
 Files updated:
 
 - __Megabar-*.as.css__: Updated megabar resizing code.
 - __Tabs-below*as.css__: Updated tabs below code.
 - __Multirow*.uc.js__: Updated multirow code to support FF133+.
-
-### Pre-Last update: 07/09/2024
-
-Files updated:
-
-- **userChrome.jsm**: Updated some dependency that was deprecated in FF131.
-- **xPref.jsm**: Updated some dependency that was deprecated in FF131.
-- **config.js**: Updated some dependency that was deprecated in FF131.
-- __Multirow*.uc.js__: Updated multirow code to support FF131+.
-- __Megabar-*__: Fixed some issue with the megabar on FF131+.
 
 
 ### A note on people looking to replace some Tab Mix Plus features:

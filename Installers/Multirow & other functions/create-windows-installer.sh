@@ -1,2 +1,2 @@
 #!/bin/sh
-docker run -v "$(pwd):/src" fydeinc/pyinstaller -e "PLATFORMS=windows" ./Windows.spec
+docker run -v "$(pwd):/src" -e "PLATFORMS=windows" fydeinc/pyinstaller ./Windows.spec
