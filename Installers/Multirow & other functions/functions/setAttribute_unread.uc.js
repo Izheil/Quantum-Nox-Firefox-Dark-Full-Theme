@@ -1,4 +1,4 @@
-(function(){
+function addUnreadAttributeListeners() {
 	if (location.href != 'chrome://browser/content/browser.xhtml') return;
 
 	let func = {
@@ -19,4 +19,6 @@
 		gBrowser.tabContainer.removeEventListener('TabClose', func.remove, false);
 		window.removeEventListener('unload', uninit, false);
 	}, false);
-})()
+}
+
+window.addEventListener("load", () => addUnreadAttributeListeners(), false);

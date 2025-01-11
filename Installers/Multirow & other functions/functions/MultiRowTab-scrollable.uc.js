@@ -3,8 +3,9 @@
 // @namespace      https://github.com/Izheil/Quantum-Nox-Firefox-Dark-Full-Theme
 // @description    Multi-row tabs draggability fix with scrollable rows
 // @include        main
-// @compatibility  Firefox 70 to Firefox 131.0a1 (2024-09-07)
+// @compatibility  Firefox 70 to Firefox 136.0a1 (2025-01-10)
 // @author         Alice0775, Endor8, TroudhuK, Izheil, Merci-chao
+// @version        11/01/2025 01:59 Fixed gBrowser issue with Firefox 134+
 // @version        13/11/2024 23:13 Fixed issue with Firefox 133+
 // @version        07/09/2024 13:25 Compatibility fix for FF131a (Nightly)
 // @version        10/05/2023 18:42 Fix tab-growth variable from not applying
@@ -52,7 +53,7 @@
 // @version        30/11/2018 06:12 Now only the necesary rows appear, not static number of rows
 // @version        23/11/2018 00:41 Firefox 65
 // ==/UserScript==
-zzzz_MultiRowTabLite();
+window.addEventListener("load", () => zzzz_MultiRowTabLite(), false);
 function zzzz_MultiRowTabLite() {
     // EDITABLE JAVASCRIPT VARIABLES
 

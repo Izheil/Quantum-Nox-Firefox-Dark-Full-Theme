@@ -14,7 +14,7 @@
 // ==/UserScript==
 
 // We define all variables first
-var navBox = document.getElementById("navigator-toolbox"),
+let navBox = document.getElementById("navigator-toolbox"),
 	fsToggler = document.getElementById("fullscr-toggler");
 
 // This shows the navigation bar when hovering over the fullscr-toggler element (div on top of screen)
@@ -23,16 +23,16 @@ fsToggler.onmouseover = function() {
 	navBox.style.opacity = "1";
 	fsToggler.style.display = "none";
 	
-    var bookmarkItems = document.querySelectorAll("#PlacesToolbarItems .bookmark-item");
-		  for (var i = 0; i < bookmarkItems.length; i++) {
-		  	bookmarkItems[i].style.visibility = "visible";
-		  }
+    let bookmarkItems = document.querySelectorAll("#PlacesToolbarItems .bookmark-item");
+	for (const element of bookmarkItems) {
+		element.style.visibility = "visible";
+	}
 }
 
 // This hides the navigation bar when hovering over the web area
 document.getElementById("browser").onmouseover = function() {
-  	navBox.style.visibility = "collapse";
-  	navBox.style.opacity = "0";
+	navBox.style.visibility = "collapse";
+	navBox.style.opacity = "0";
     fsToggler.style.display = "block";
     fsToggler.style.height = "10px";
 }

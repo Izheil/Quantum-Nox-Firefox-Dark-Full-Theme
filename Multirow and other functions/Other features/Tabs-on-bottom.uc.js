@@ -3,8 +3,9 @@
 // @namespace      https://github.com/Izheil/Quantum-Nox-Firefox-Dark-Full-Theme
 // @description    Moves tabs to the bottom of the window, below the content area
 // @include        main
-// @compatibility  Firefox 70 to Firefox 83.0a1 (2020-09-22)
+// @compatibility  Firefox 134
 // @author         Izheil
+// @version        11/01/2025 02:45 Fixed tabs not showing at bottom after proton
 // @version        05/10/2020 01:10 Added the option to hide tabs on fullscreen completelly until keypress
 // @version        03/10/2020 05:32 Initial release
 // ==/UserScript==
@@ -12,31 +13,32 @@
 // Start of editable area
 
 // You can set if the min/max/resize buttons are visible from the tabs toolbar here
-var hideResButtons = true; // Set to false to show the buttons
+let hideResButtons = true; // Set to false to show the buttons
 
 // You can choose to always hide tabs in fullscreen here to avoid some issues
-var hideFSTabs = true; // Set to false to show the tabs on fullscreen
+let hideFSTabs = false; // Set to true to show the tabs only when pressing the key combination
 
 // Choose key combination to show tabs on fullscreen (a max of 2 is allowed, and the first must be Ctrl, Alt, or Shift).
 // The first letter of each key must be capital.
 // This only makes sense if tabs are hidden on fullscreen (if hideFSTabs == true).
-var keysForFSTabs = ["Shift", "T"]; // The default is ["Shift", "T"]
+let keysForFSTabs = ["Shift", "T"]; // The default is ["Shift", "T"]
 
 // End of editable area
 
 // We get the tab parent element and the bottom container, among other elements
-var tabsParent = document.getElementById("TabsToolbar");
-var bottomBox = document.getElementById("browser-bottombox");
-var menuParent = document.getElementById("titlebar");
-var menuHidden = document.querySelector("#toolbar-menubar[inactive]");
-var menuShown = document.querySelector("#toolbar-menubar[autohide='false']");
-var menuElement = document.getElementById("toolbar-menubar");
-var resizeButtons = document.querySelector("#TabsToolbar > .titlebar-buttonbox-container");
-var browserContent = document.getElementById("browser");
-var navToolbox = document.getElementById("navigator-toolbox");
-var modKeyToggleTabs;
-var keyToggleTabs;
+let tabsParent = document.getElementById("TabsToolbar");
 
+let menuHidden = document.querySelector("#toolbar-menubar[inactive]");
+let menuShown = document.querySelector("#toolbar-menubar[autohide='false']");
+let menuElement = document.getElementById("toolbar-menubar");
+let resizeButtons = document.querySelector("#TabsToolbar > .titlebar-buttonbox-container");
+let browserContent = document.getElementById("browser");
+let navToolbox = document.getElementById("navigator-toolbox");
+let modKeyToggleTabs;
+let keyToggleTabs;
+
+// Create bottom box
+let bottomBox = createNewElement("div", "browser-bottombox");
 
 if (keysForFSTabs.length == 2) {
 	modKeyToggleTabs = keysForFSTabs[0];
@@ -45,63 +47,22 @@ if (keysForFSTabs.length == 2) {
 	keyToggleTabs = keysForFSTabs[0];
 }
 
-// We move the elements here
-bottomBox.appendChild(tabsParent);
-
 // Hide the unneeded
 if (hideResButtons) {
 	resizeButtons.style.display = "none";
 } 
 
-if (menuHidden) {
-	menuParent.setAttribute("inactiveMenu", "true")
-}
-
-var observer = new MutationObserver(function(mutations) {
-  mutations.forEach(function(mutation) {
-    if (mutation.type == "attributes") {
-        switch(mutation.attributeName) {
-			case "inactive":
-				if (document.querySelector("#toolbar-menubar[inactive]")) {
-					menuParent.setAttribute("inactiveMenu", "true")
-					console.log("hidden")
-				} else {
-					menuParent.removeAttribute("inactiveMenu");
-					console.log("shown")
-				}
-				break;
-		case "autohide":
-				if (document.querySelector("#toolbar-menubar[autohide='false']")) {
-					menuParent.removeAttribute("inactiveMenu");
-					console.log("shown")
-				}
-				break;
-        }
-    }
-  });
-});
-
-observer.observe(menuElement, {
-    attributeFilter: ["inactive", "autohide"],
-});
-
 // This is the element creation function for the fullscreen toggler on bottom
-function addElement(elementTag, elementId) {
+function createNewElement(elementTag, elementId) {
     // Adds an element to the document
-    var p = document.body;
-    var newElement = document.createElement(elementTag);
+    let newElement = document.createElement(elementTag);
     newElement.setAttribute('id', elementId);
-    p.appendChild(newElement);
+	return newElement;
 }
 
 // Creation of the toggle to show tabs on fullscreen
-addElement("hbox", "fullscr-toggler-bottom")
-var bottomFSTogglr = document.getElementById("fullscr-toggler-bottom");
-var topFSTogglr = document.getElementById("fullscr-toggler");
-
-topFSTogglr.onmouseover = function() {
-	navToolbox.style.transition = "none";
-}
+let bottomFSTogglr = createNewElement("div", "fullscr-toggler-bottom");
+let topFSTogglr = document.getElementById("fullscr-toggler");
 
 // Function to show tabs when they are hidden
 function showTabs() {
@@ -154,7 +115,6 @@ if (hideFSTabs) {
 } else {
 	// Event listener for tabs area
 	bottomFSTogglr.addEventListener("mouseover", showTabs, false);
-
 }
 
 browserContent.onmouseover = function() {
@@ -163,29 +123,27 @@ browserContent.onmouseover = function() {
 }
 
 // We hide the titlebar when not shown as well as the tabs when in fullscreen
-var css = `
-#main-window:not([sizemode="fullscreen"]) #titlebar[inactiveMenu] {
-	margin-top: -28px !important;
+let css = `
+#main-window[inFullscreen]) #toolbar-menubar:not([inactive]) {
+	margin-top: 28px !important;
 }
 
-#main-window[sizemode="fullscreen"] #fullscr-toggler-bottom {
+#main-window[inFullscreen] #fullscr-toggler-bottom {
 	display: block;
-	position: absolute;
-	bottom: 0;
 	height: 1px;
 	width: 100%;
 }
 
-#main-window:not([sizemode="fullscreen"]) #fullscr-toggler-bottom {
+#main-window:not([inFullscreen]) #fullscr-toggler-bottom {
 	display: none;
 }
 
-#main-window[sizemode="fullscreen"] #TabsToolbar, 
-#main-window[sizemode="fullscreen"] #navigator-toolbox {
+#main-window[inFullscreen] #TabsToolbar, 
+#main-window[inFullscreen] #navigator-toolbox {
 	transition: margin 300ms;
 }
 
-#main-window:not([sizemode="fullscreen"]) #TabsToolbar {
+#main-window:not([inFullscreen]) #TabsToolbar {
 	margin-bottom: 0 !important;
 }
 
@@ -196,6 +154,11 @@ var css = `
 }
 
 `
-var sss = Cc['@mozilla.org/content/style-sheet-service;1'].getService(Ci.nsIStyleSheetService);
-var uri = makeURI('data:text/css;charset=UTF=8,' + encodeURIComponent(css));
+let sss = Cc['@mozilla.org/content/style-sheet-service;1'].getService(Ci.nsIStyleSheetService);
+let uri = makeURI('data:text/css;charset=UTF=8,' + encodeURIComponent(css));
 sss.loadAndRegisterSheet(uri, sss.AGENT_SHEET);
+
+// We move the elements here
+bottomBox.appendChild(tabsParent);
+document.body.appendChild(bottomFSTogglr);
+document.body.appendChild(bottomBox);
