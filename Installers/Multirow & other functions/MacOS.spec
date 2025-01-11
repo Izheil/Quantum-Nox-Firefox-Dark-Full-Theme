@@ -4,7 +4,6 @@ block_cipher = None
 
 a = Analysis(['Builder.py'],
              pathex=['.'],
-             binaries=[('/System/Library/Frameworks/Tk.framework/Tk', 'tk'), ('/System/Library/Frameworks/Tcl.framework/Tcl', 'tcl')],
              datas=[("icon.gif", ".")],
              hiddenimports=[],
              hookspath=[],
