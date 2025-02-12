@@ -12,5 +12,5 @@ try {
 } catch (ex) {}
 
 try {
-  ChromeUtils.import('chrome://userchromejs/content/userChrome.jsm');
+  Services.scriptloader.loadSubScript('chrome://userchromejs/content/userChrome.js'); 
 } catch (ex) {}

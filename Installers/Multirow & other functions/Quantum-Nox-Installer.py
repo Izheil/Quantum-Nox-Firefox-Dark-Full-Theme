@@ -788,6 +788,8 @@ def remove_profile_patch(firefox_profile):
         remove_file_if_exists(os.path.normpath(firefox_profile + "/chrome/utils/RDFManifestConverter.jsm"))
         remove_file_if_exists(os.path.normpath(firefox_profile + "/chrome/utils/userChrome.jsm"))
         remove_file_if_exists(os.path.normpath(firefox_profile + "/chrome/utils/xPref.jsm"))
+        remove_file_if_exists(os.path.normpath(firefox_profile + "/chrome/utils/xPref.sys.mjs"))
+        remove_file_if_exists(os.path.normpath(firefox_profile + "/chrome/utils/userChrome.js"))
 
         util_chrome_files = []
         for r, d, f in os.walk(os.path.normpath(firefox_profile + CHROME_FOLDER + UTILS_FOLDER)):

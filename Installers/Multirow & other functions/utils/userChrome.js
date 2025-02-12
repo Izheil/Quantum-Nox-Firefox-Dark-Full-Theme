@@ -1,9 +1,11 @@
-let EXPORTED_SYMBOLS = [];
+'use strict';
 
 const Services = globalThis.Services || ChromeUtils.import("resource://gre/modules/Services.jsm").Services;
-const { xPref } = ChromeUtils.import('chrome://userchromejs/content/xPref.jsm');
-const { Management } = ChromeUtils.import('resource://gre/modules/Extension.jsm');
-const { AppConstants } = ChromeUtils.import('resource://gre/modules/AppConstants.jsm');
+ChromeUtils.defineESModuleGetters(this, {
+    xPref: 'chrome://userchromejs/content/xPref.sys.mjs',
+    Management: 'resource://gre/modules/Extension.sys.mjs',
+    AppConstants: 'resource://gre/modules/AppConstants.sys.mjs',
+});
 
 let UC = {
   webExts: new Map(),
