@@ -5,6 +5,7 @@
 // @include        main
 // @compatibility  Firefox 70 to Firefox 136.0a1 (2025-01-10)
 // @author         Alice0775, Endor8, TroudhuK, Izheil, Merci-chao
+// @version        04/04/2025 06:56 Fixed issue with Firefox 139.0a1 (2025-04-02)+
 // @version        11/01/2025 01:59 Fixed gBrowser issue with Firefox 134+
 // @version        13/11/2024 23:13 Fixed issue with Firefox 133+
 // @version        07/09/2024 13:25 Compatibility fix for FF131a (Nightly)
@@ -312,179 +313,211 @@ function zzzz_MultiRowTabLite() {
 	let uri = makeURI('data:text/css;charset=UTF=8,' + encodeURIComponent(css));
 	sss.loadAndRegisterSheet(uri, sss.AGENT_SHEET);
 
-    gBrowser.tabContainer._getDropIndex = function(event, isLink) {
-        let tabs = document.getElementsByClassName("tabbrowser-tab");
-        let tab = this._getDragTargetTab(event, isLink);
+    gBrowser.tabContainer._getDropIndex = function(event) {
+        let tabToDropAt = getTabFromEventTarget(event, false);
+        const tabPos = gBrowser.tabContainer.getIndexOfItem(tabToDropAt);
+
         if (window.getComputedStyle(this).direction == "ltr") {
-            for (let i = tab ? tab._tPos : 0; i < tabs.length; i++) {
-                let rect = tabs[i].getBoundingClientRect();
-                if (event.clientX < rect.x + rect.width / 2
-                 && event.clientY < rect.y + rect.height) // multirow fix
-                    return i;
-            }
+            let rect = tabToDropAt.getBoundingClientRect();
+            if (event.clientX < rect.x + rect.width / 2)
+                return tabPos;
+            else 
+                return tabPos + 1;
+            
         } else {
-            for (let i = tab ? tab._tPos : 0; i < tabs.length; i++) {
-                let rect = tabs[i].getBoundingClientRect();
-                if (event.clientX > rect.x + rect.width / 2
-                 && event.clientY < rect.y + rect.height) // multirow fix
-                    return i;
-            }
+            let rect = tabToDropAt.getBoundingClientRect();
+            if (event.clientX > rect.x + rect.width / 2)
+                return tabPos;
+            else
+                return tabPos + 1;
         }
-        return tabs.length;
     };
 
-    // This scrolls down to the current tab when you open a new one, or restore a session.
-    function scrollToView() {
-        const selTab = document.querySelectorAll(".tabbrowser-tab[selected='true']")[0];
-        const wrongTab = document.querySelectorAll('.tabbrowser-tab[style^="margin-inline-start"]');
-        const hiddenToolbox = document.querySelector('#navigator-toolbox[style^="margin-top"]');
-        const fullScreen = document.querySelector('#main-window[sizemode="fullscreen"]');
-        selTab.scrollIntoView({behavior: "smooth", block: "nearest", inline: "nearest"});
-        if (wrongTab[0]) {
-            for(let i = 0; i < wrongTab.length; i++) {
-                wrongTab[i].removeAttribute("style");
+    // We set this to check if the listeners were added before
+    let listenersActive = false;
+
+    // This sets when to apply the fix (by default a new row starts after the 23th open tab, unless you changed the min-size of tabs)
+    gBrowser.tabContainer.addEventListener("dragstart", () => {
+        if(gBrowser.tabContainer.arrowScrollbox.clientHeight > document.getElementsByClassName("tabbrowser-tab")[0].clientHeight) {
+            // Multiple tab select fix
+            gBrowser.visibleTabs.forEach(t => t.style.transform = "");
+            
+            // Event handling
+            if (!listenersActive) {
+                gBrowser.tabContainer.getDropEffectForTabDrag = function(){};
+                gBrowser.tabContainer._getDropEffectForTabDrag = function(){};
+                gBrowser.tabContainer.on_dragover = (dragoverEvent) => performTabDragOver(dragoverEvent);
+                gBrowser.tabContainer._onDragOver = (dragoverEvent) => performTabDragOver(dragoverEvent);
+                gBrowser.tabContainer.ondrop = (dropEvent) => performTabDropEvent(dropEvent);
+                listenersActive = true;
             }
         }
-        
-        // If in fullscreen we also make sure to keep the toolbar hidden when a new row is created
-        // when opening a new tab in the background
-        if (fullScreen && hiddenToolbox) {
-            const toolboxHeight = hiddenToolbox.getBoundingClientRect().height;
-            const tabsHeight = selTab.getBoundingClientRect().height;
-            hiddenToolbox.style.marginTop = ((toolboxHeight + tabsHeight) * -1) + "px";
+    });
+}
+
+var lastKnownIndex = null;
+var lastGroupStart = null;
+var lastGroupEnd = null;
+
+/**
+ * Gets the tab from the event target.
+ * @param {*} event The event.
+ * @returns The tab if it was part of the target or its parents, otherwise null
+ */
+function getTabFromEventTarget(event, { ignoreTabSides = false } = {}) {
+    let { target } = event;
+    if (target.nodeType != Node.ELEMENT_NODE) {
+        target = target.parentElement;
+    }
+    let tab = target?.closest("tab") || target?.closest("tab-group");
+    const selectedTab = gBrowser.selectedTab;
+    if (tab && ignoreTabSides) {
+        let { width, height } = tab.getBoundingClientRect();
+        if (
+            event.screenX < tab.screenX + width * 0.25 ||
+            event.screenX > tab.screenX + width * 0.75 ||
+            ((event.screenY < tab.screenY + height * 0.25 ||
+                event.screenY > tab.screenY + height * 0.75) &&
+                gBrowser.tabContainer.verticalMode)
+        ) {
+            return selectedTab;
+        }
+    }
+    if (!tab) {
+        return selectedTab;
+    }
+    return tab;
+}
+
+/**
+ * Performs the tab drag over event.
+ * @param {*} event The drag over event.
+ */
+function performTabDragOver(event) {
+    event.preventDefault();
+    event.stopPropagation();
+
+    let ind = gBrowser.tabContainer._tabDropIndicator;
+
+    let effects = orig_getDropEffectForTabDrag(event);
+    let tab;
+    if (effects == "link") {
+        tab = getTabFromEventTarget(event, true);
+        if (tab) {
+            if (!gBrowser.tabContainer._dragTime)
+                gBrowser.tabContainer._dragTime = Date.now();
+            if (!tab.hasAttribute("pendingicon") && // annoying fix
+                Date.now() >= gBrowser.tabContainer._dragTime + gBrowser.tabContainer._dragOverDelay)
+                gBrowser.tabContainer.selectedItem = tab;
+            ind.hidden = true;
+            return;
         }
     }
 
-    gBrowser.tabContainer.addEventListener('TabOpen', scrollToView, false);
-    gBrowser.tabContainer.addEventListener("TabSelect", scrollToView, false);
-    document.addEventListener("SSTabRestoring", scrollToView, false);
+    if (!tab) {
+        tab = getTabFromEventTarget(event, false);
+    }
+    
+    let newIndex = gBrowser.tabContainer._getDropIndex(event);
+    if (newIndex == null)
+        return;
 
-    // We set this to check if the listeners were added before
-    let Listeners = false;
+    // Update the last known index and group position
+    lastKnownIndex = newIndex;
+    
+    if (tab.nodeName == "tab-group" && !lastGroupStart) {
+        lastGroupStart = tab.querySelector("tab:first-of-type")._tPos;
+        lastGroupEnd = tab.querySelector("tab:last-of-type")._tPos;
+    }
 
-    // This sets when to apply the fix (by default a new row starts after the 23th open tab, unless you changed the min-size of tabs)
-    gBrowser.tabContainer.ondragstart = function(){
-        if(gBrowser.tabContainer.clientHeight > document.getElementsByClassName("tabbrowser-tab")[0].clientHeight) {
+    let tabs = document.querySelectorAll("tab");
+    let ltr = (window.getComputedStyle(gBrowser.tabContainer).direction == "ltr");
+    let rect = gBrowser.tabContainer.arrowScrollbox.getBoundingClientRect();
+    let newMarginX, newMarginY;
+    if (newIndex == tabs.length) {
+        let tabRect = tabs[newIndex - 1].getBoundingClientRect();
+        if (ltr)
+            newMarginX = tabRect.right - rect.left;
+        else
+            newMarginX = rect.right - tabRect.left;
+        newMarginY = tabRect.top + tabRect.height - rect.top - rect.height; // multirow fix
 
-            /* fix for moving multiple selected tabs */
-            gBrowser.visibleTabs.forEach(t => t.style.transform && "");
-            const tab = this._getDragTargetTab(event, false);
-            let selectedTabs = gBrowser.selectedTabs;
-            while (selectedTabs.length) {
-                let t = selectedTabs.pop();
-                if (t._tPos > tab._tPos)
-                    gBrowser.moveTabTo(t, tab._tPos + 1);
-                else if (t == tab)
-                    selectedTabs.reverse();
-                else if (t._tPos < tab._tPos)
-                    gBrowser.moveTabTo(t, tab._tPos - 1);
-            }
+        if (CSS.supports("offset-anchor", "left bottom")) // Compatibility fix for FF72+
+            newMarginY += rect.height / 2 - tabRect.height / 2;
+        
+    } else if (newIndex != null || newIndex != 0) {
+        let tabRect = tabs[newIndex].getBoundingClientRect();
+        if (ltr)
+            newMarginX = tabRect.left - rect.left;
+        else
+            newMarginX = rect.right - tabRect.right;
+        newMarginY = tabRect.top + tabRect.height - rect.top - rect.height; // multirow fix
 
-            gBrowser.tabContainer._getDropEffectForTabDrag = function(event){return "";}; // multirow fix: to make the default "dragover" handler do nothing
-            gBrowser.tabContainer._onDragOver = function(event) {
-                event.preventDefault();
-                event.stopPropagation();
+        if (CSS.supports("offset-anchor", "left bottom")) // Compatibility fix for FF72+
+            newMarginY += rect.height / 2 - tabRect.height / 2;
+    }
 
-                let ind = this._tabDropIndicator;
+    newMarginX += ind.clientWidth / 2;
+    if (!ltr)
+        newMarginX *= -1;
 
-                let effects = orig_getDropEffectForTabDrag(event);
-                if (effects == "link") {
-                    let tab = this._getDragTargetTab(event, true);
-                    if (tab) {
-                        if (!this._dragTime)
-                            this._dragTime = Date.now();
-                        if (!tab.hasAttribute("pendingicon") && // annoying fix
-                            Date.now() >= this._dragTime + this._dragOverDelay);
-                            this.selectedItem = tab;
-                        ind.hidden = true;
-                        return;
-                    }
-                }
+    ind.hidden = false;
 
-                let newIndex = this._getDropIndex(event, effects == "link");
-                if (newIndex == null)
-                    return;
+    ind.style.transform = "translate(" + Math.round(newMarginX) + "px," + Math.round(newMarginY) + "px)"; // multirow fix
+    ind.style.marginInlineStart = (-ind.clientWidth) + "px";
+}
 
-                let tabs = document.getElementsByClassName("tabbrowser-tab");
-                const ltr = (window.getComputedStyle(this).direction == "ltr");
-                const rect = this.arrowScrollbox.getBoundingClientRect();
-                let newMarginX, newMarginY;
-                if (newIndex == tabs.length) {
-                    let tabRect = tabs[newIndex - 1].getBoundingClientRect();
-                    if (ltr)
-                        newMarginX = tabRect.right - rect.left;
-                    else
-                        newMarginX = rect.right - tabRect.left;
-                    newMarginY = tabRect.top + tabRect.height - rect.top - rect.height; // multirow fix
+/**
+ * Performs the tab drop event.
+ * @param {*} event The drop event.
+ */
+function performTabDropEvent(event) {
+    let newIndex;
+    let dt = event.dataTransfer;
+    let dropEffect = dt.dropEffect;
+    let draggedTab;
+    if (dt.mozTypesAt(0)[0] == TAB_DROP_TYPE) {
+        draggedTab = dt.mozGetDataAt(TAB_DROP_TYPE, 0);
+        if (!draggedTab) {
+            return;
+        }
+    }
 
-                    if (CSS.supports("offset-anchor", "left bottom")) // Compatibility fix for FF72+
-                        newMarginY += rect.height / 2 - tabRect.height / 2;
-                    
-                } else if (newIndex != null || newIndex != 0) {
-                    let tabRect = tabs[newIndex].getBoundingClientRect();
-                    if (ltr)
-                        newMarginX = tabRect.left - rect.left;
-                    else
-                        newMarginX = rect.right - tabRect.right;
-                    newMarginY = tabRect.top + tabRect.height - rect.top - rect.height; // multirow fix
+    if (draggedTab && dropEffect != "copy" && draggedTab.container == gBrowser.tabContainer) {
+        newIndex = gBrowser.tabContainer._getDropIndex(event);
 
-                    if (CSS.supports("offset-anchor", "left bottom")) // Compatibility fix for FF72+
-                        newMarginY += rect.height / 2 - tabRect.height / 2;
-                }
-
-                newMarginX += ind.clientWidth / 2;
-                if (!ltr)
-                    newMarginX *= -1;
-
-                ind.hidden = false;
-
-                ind.style.transform = "translate(" + Math.round(newMarginX) + "px," + Math.round(newMarginY) + "px)"; // multirow fix
-                ind.style.marginInlineStart = (-ind.clientWidth) + "px";
-            };
-
-            gBrowser.tabContainer.onDrop = function(event) {
-                let newIndex;
-                let dt = event.dataTransfer;
-                let dropEffect = dt.dropEffect;
-                let draggedTab;
-                if (dt.mozTypesAt(0)[0] == TAB_DROP_TYPE) {
-                    draggedTab = dt.mozGetDataAt(TAB_DROP_TYPE, 0);
-                    if (!draggedTab) {
-                        return;
-                    }
-                    
-                    // Fix for FF133+
-                    if (draggedTab.container._finishMoveTogetherSelectedTabs) {
-                        draggedTab.container._finishMoveTogetherSelectedTabs(draggedTab);
-                    } else {
-                        draggedTab.container._finishGroupSelectedTabs(draggedTab);
-                    }
-                }
-                if (draggedTab && dropEffect != "copy" && draggedTab.container == this) {
-                    newIndex = this._getDropIndex(event, false);
-
-                    /* fix for moving multiple selected tabs */
-                    let selectedTabs = gBrowser.selectedTabs;
-                    if (newIndex > selectedTabs[selectedTabs.length - 1]._tPos + 1)
-                        newIndex--;
-                    else if (newIndex >= selectedTabs[0]._tPos)
-                        newIndex = -1;
-                    else
-                        selectedTabs.reverse();
-                    
-                    if (newIndex > -1)
-                        selectedTabs.forEach(t => gBrowser.moveTabTo(t, newIndex));
-                }
-            };
-
-            // We then attach the event listeners for the new functionability to take effect
-            if (!Listeners) {
-                gBrowser.tabContainer.addEventListener("dragover", gBrowser.tabContainer._onDragOver, true);
-                gBrowser.tabContainer.addEventListener("drop", function(event){this.onDrop(event);}, true);
-                Listeners = true;
+        /* fix for moving multiple selected tabs and tab groups */
+        let selectedTabs = gBrowser.selectedTabs;
+        if (lastGroupStart) {
+            selectedTabs = [draggedTab?.closest("tab-group")];
+            if (lastKnownIndex >= lastGroupStart && lastKnownIndex <= lastGroupEnd) {
+                newIndex = lastGroupStart;
+            } else if (lastKnownIndex == lastGroupEnd + 1) {
+                newIndex = lastGroupStart + 1;
             }
         }
-    };
+
+        if (selectedTabs[selectedTabs.length - 1] == null){
+            newIndex = lastKnownIndex;
+        } else if (newIndex > selectedTabs[selectedTabs.length - 1]._tPos + 1)
+            newIndex--;
+        else if (newIndex >= selectedTabs[0]._tPos)
+            newIndex = -1;
+
+        if (newIndex == -1) {
+            newIndex = lastKnownIndex;
+        }
+        
+        const tabToMoveAt = gBrowser.tabContainer.getItemAtIndex(newIndex);
+        console.log("tabToMoveAt", tabToMoveAt);
+        console.log("newIndex", newIndex);
+        selectedTabs.forEach(t => gBrowser.moveTabBefore(t, tabToMoveAt));
+
+        // Restart global vars
+        lastKnownIndex = null;
+        lastGroupStart = null;
+        lastGroupEnd = null;
+    }
 }
 
 // copy of the original and overrided _getDropEffectForTabDrag method
@@ -498,35 +531,39 @@ function orig_getDropEffectForTabDrag(event) {
         if (types[0] != TAB_DROP_TYPE) {
             isMovingTabs = false;
             break;
-        
         }
     }
+
     if (isMovingTabs) {
-    let sourceNode = dt.mozGetDataAt(TAB_DROP_TYPE, 0);
-    if (
-        sourceNode instanceof XULElement &&
-        sourceNode.localName == "tab" &&
-        sourceNode.ownerGlobal.isChromeWindow &&
-        sourceNode.ownerDocument.documentElement.getAttribute("windowtype") ==
-        "navigator:browser" &&
-        sourceNode.ownerGlobal.gBrowser.tabContainer == sourceNode.container
-    ) {
-        // Do not allow transfering a private tab to a non-private window
-        // and vice versa.
-        if (PrivateBrowsingUtils.isWindowPrivate(window) !=
-        PrivateBrowsingUtils.isWindowPrivate(sourceNode.ownerGlobal)) {
-            return "none";
+        let sourceNode = dt.mozGetDataAt(TAB_DROP_TYPE, 0);
+        if (XULElement.isInstance(sourceNode) &&
+            sourceNode.localName == "tab" &&
+            sourceNode.ownerGlobal.isChromeWindow &&
+            sourceNode.ownerDocument.documentElement.getAttribute("windowtype") ==
+            "navigator:browser" &&
+            sourceNode.ownerGlobal.gBrowser.tabContainer == sourceNode.container) {
+            // Do not allow transfering a private tab to a non-private window
+            // and vice versa.
+            if (PrivateBrowsingUtils.isWindowPrivate(window) !=
+                PrivateBrowsingUtils.isWindowPrivate(sourceNode.ownerGlobal))
+                return "none";
+        
+
+            if (window.gMultiProcessBrowser !=
+                sourceNode.ownerGlobal.gMultiProcessBrowser)
+                return "none";
+        
+
+            if (window.gFissionBrowser != sourceNode.ownerGlobal.gFissionBrowser)
+                return "none";
+        
+
+            return dt.dropEffect == "copy" ? "copy" : "move";
         }
-
-        if (window.gMultiProcessBrowser !=
-            sourceNode.ownerGlobal.gMultiProcessBrowser) {
-        return "none";}
-
-        return dt.dropEffect == "copy" ? "copy" : "move";
-    }}
-
-    if (browserDragAndDrop.canDropLink(event)) {
-        return "link";
     }
+
+    if (Services.droppedLinkHandler.canDropLink(event, true)) 
+        return "link";
+
     return "none";
 }
