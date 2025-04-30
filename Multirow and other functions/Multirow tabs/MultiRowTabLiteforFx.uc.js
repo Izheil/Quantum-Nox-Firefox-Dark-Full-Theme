@@ -5,6 +5,7 @@
 // @include        main
 // @compatibility  Firefox 70 to Firefox 136.0a1 (2025-01-10)
 // @author         Alice0775, Endor8, TroudhuK, Izheil, Merci-chao
+// @version        30/04/2025 05:30 Fixed arrowscrollbox selector on FF137+
 // @version        04/04/2025 06:56 Fixed issue with Firefox 139.0a1 (2025-04-02)+
 // @version        11/01/2025 01:59 Fixed gBrowser issue with Firefox 134+
 // @version        13/11/2024 23:13 Fixed issue with Firefox 133+
@@ -229,7 +230,13 @@ function zzzz_MultiRowTabLite() {
     }
 
     // Here the FF71+ changes
-	if (document.querySelector("#tabbrowser-tabs > arrowscrollbox").shadowRoot) {
+    let style = document.createElement('style');
+    let arrowScrollbox = document.querySelector("#tabbrowser-tabs > arrowscrollbox");
+    const newScrollbox = document.getElementById("tabbrowser-arrowscrollbox");
+    if (newScrollbox) {
+        arrowScrollbox = newScrollbox;
+    }
+	if (arrowScrollbox.shadowRoot) {
         css +=
         `scrollbar, #tab-scrollbox-resizer {-moz-window-dragging: no-drag !important}
 
@@ -239,7 +246,6 @@ function zzzz_MultiRowTabLite() {
         `
 
         // This is a fix for the shadow elements:
-        let style = document.createElement('style');
         style.innerHTML = `
         .scrollbox-clip {
             overflow: visible;
@@ -277,7 +283,7 @@ function zzzz_MultiRowTabLite() {
             `;
         }
 
-        document.querySelector("#tabbrowser-tabs > arrowscrollbox").shadowRoot.appendChild(style);
+        arrowScrollbox.shadowRoot.appendChild(style);
 	} else {
         // Here the FF69-FF70 changes
 		css +=`
