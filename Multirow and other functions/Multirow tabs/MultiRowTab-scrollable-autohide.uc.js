@@ -3,8 +3,9 @@
 // @namespace      https://github.com/Izheil/Quantum-Nox-Firefox-Dark-Full-Theme
 // @description    Multi-row tabs draggability fix with autohiding scrollbar
 // @include        main
-// @compatibility  Firefox 70 to Firefox 136.0a1 (2025-01-10)
+// @compatibility  Firefox 70 to Firefox 141
 // @author         Alice0775, Endor8, TroudhuK, Izheil, Merci-chao
+// @version        11/01/2025 01:59 Fixed pinned tabs with Firefox 142.0a1 (2025-06-29)+
 // @version        30/04/2025 05:30 Fixed arrowscrollbox selector on FF137+
 // @version        04/04/2025 06:56 Fixed issue with Firefox 139.0a1 (2025-04-02)+
 // @version        11/01/2025 01:59 Fixed gBrowser issue with Firefox 134+
@@ -62,6 +63,13 @@
 // @version        23/11/2018 00:41 Firefox 65
 // ==/UserScript==
 window.addEventListener("load", () => zzzz_MultiRowTabLite(), false);
+
+// Don't change these
+let lastKnownIndex = null;
+let lastGroupStart = null;
+let lastGroupEnd = null;
+let draggedTabIndex = null;
+
 function zzzz_MultiRowTabLite() {
     // EDITABLE JAVASCRIPT VARIABLES
 
@@ -219,6 +227,19 @@ function zzzz_MultiRowTabLite() {
     .tabbrowser-tab:last-of-type { 
         margin-right: 32px !important}
 
+    /* This fixes issues with tab dragging */
+    .tabbrowser-tab[dragtarget] {
+        z-index: 1 !important;
+        position: initial !important;
+    }
+
+    .tabbrowser-tab {
+        left: 0 !important;
+    }
+
+    #tabbrowser-arrowscrollbox-periphery {
+        transform: none !important}
+
     /* These fix issues with pinned tabs on the overflow status */
     #tabbrowser-tabs[overflow="true"] > #tabbrowser-arrowscrollbox > #tabs-newtab-button,
     #TabsToolbar:not([customizing="true"]) #tabbrowser-tabs[hasadjacentnewtabbutton] > #tabbrowser-arrowscrollbox > #tabs-newtab-button {
@@ -274,11 +295,22 @@ function zzzz_MultiRowTabLite() {
     
     // Here the FF71+ changes
     let style = document.createElement('style');
-    let arrowScrollbox = document.querySelector("#tabbrowser-tabs > arrowscrollbox");
-    const newScrollbox = document.getElementById("tabbrowser-arrowscrollbox");
-    if (newScrollbox) {
-        arrowScrollbox = newScrollbox;
+    let arrowScrollbox = resolveTabsContainer();
+
+    // Fix pinned tabs past FF141+
+    const pinnedTabsContainer = document.getElementById("pinned-tabs-container");
+    if (pinnedTabsContainer) {
+        const pinnedObserver = new MutationObserver((mutationList) => {
+            for (const mutation of mutationList) {
+                migratePinnedTabs(arrowScrollbox, mutation.addedNodes);
+            }
+        });
+        pinnedObserver.observe(pinnedTabsContainer, { childList: true });
+
+        document.getElementById("context_unpinTab").addEventListener("click", moveUnpinnedTabsAfterPinned, false);
+        document.getElementById("context_unpinSelectedTabs").addEventListener("click", moveUnpinnedTabsAfterPinned, false);
     }
+
 	if (arrowScrollbox.shadowRoot) {
         css +=
         `scrollbar, #tab-scrollbox-resizer {-moz-window-dragging: no-drag !important}
@@ -424,7 +456,7 @@ function zzzz_MultiRowTabLite() {
 
     gBrowser.tabContainer._getDropIndex = function(event) {
         let tabToDropAt = getTabFromEventTarget(event, false);
-        const tabPos = gBrowser.tabContainer.getIndexOfItem(tabToDropAt);
+        const tabPos = findIndexOfTab(arrowScrollbox, tabToDropAt);
 
         if (window.getComputedStyle(this).direction == "ltr") {
             let rect = tabToDropAt.getBoundingClientRect();
@@ -500,27 +532,26 @@ function zzzz_MultiRowTabLite() {
     let listenersActive = false;
 
     // This sets when to apply the fix (by default a new row starts after the 23th open tab, unless you changed the min-size of tabs)
-    gBrowser.tabContainer.addEventListener("dragstart", () => {
-        if(gBrowser.tabContainer.arrowScrollbox.clientHeight > document.getElementsByClassName("tabbrowser-tab")[0].clientHeight) {
+    gBrowser.tabContainer.ondragstart = (event) => {
+        const pinnedTabsCount = arrowScrollbox.querySelectorAll(".tabbrowser-tab[newPin]").length;
+        draggedTabIndex = findIndexOfTab(arrowScrollbox, getTabFromEventTarget(event, false));
+        if(gBrowser.tabContainer.arrowScrollbox.clientHeight > document.getElementsByClassName("tabbrowser-tab")[0].clientHeight || pinnedTabsCount > 0) {
+
             // Multiple tab select fix
             gBrowser.visibleTabs.forEach(t => t.style.transform = "");
             
             // Event handling
             if (!listenersActive) {
-                gBrowser.tabContainer.getDropEffectForTabDrag = function(){};
-                gBrowser.tabContainer._getDropEffectForTabDrag = function(){};
+                gBrowser.tabContainer.getDropEffectForTabDrag = (event) => orig_getDropEffectForTabDrag(event);
+                gBrowser.tabContainer._getDropEffectForTabDrag = (event) => orig_getDropEffectForTabDrag(event);
                 gBrowser.tabContainer.on_dragover = (dragoverEvent) => performTabDragOver(dragoverEvent);
                 gBrowser.tabContainer._onDragOver = (dragoverEvent) => performTabDragOver(dragoverEvent);
                 gBrowser.tabContainer.ondrop = (dropEvent) => performTabDropEvent(dropEvent);
                 listenersActive = true;
             }
         }
-    });
+    };
 }
-
-var lastKnownIndex = null;
-var lastGroupStart = null;
-var lastGroupEnd = null;
 
 /**
  * Gets the tab from the event target.
@@ -647,10 +678,13 @@ function performTabDropEvent(event) {
     }
 
     if (draggedTab && dropEffect != "copy" && draggedTab.container == gBrowser.tabContainer) {
-        newIndex = gBrowser.tabContainer._getDropIndex(event);
+        newIndex = lastKnownIndex;
 
         /* fix for moving multiple selected tabs and tab groups */
         let selectedTabs = gBrowser.selectedTabs;
+        const tabsContainer = resolveTabsContainer();
+        let pinnedTabsCount = tabsContainer.querySelectorAll(".tabbrowser-tab[newPin]").length;
+        
         if (lastGroupStart) {
             selectedTabs = [draggedTab?.closest("tab-group")];
             if (lastKnownIndex >= lastGroupStart && lastKnownIndex <= lastGroupEnd) {
@@ -660,21 +694,42 @@ function performTabDropEvent(event) {
             }
         }
 
-        if (selectedTabs[selectedTabs.length - 1] == null){
+        if (selectedTabs[selectedTabs.length - 1] == null)
             newIndex = lastKnownIndex;
-        } else if (newIndex > selectedTabs[selectedTabs.length - 1]._tPos + 1)
-            newIndex--;
-        else if (newIndex >= selectedTabs[0]._tPos)
-            newIndex = -1;
 
-        if (newIndex == -1) {
-            newIndex = lastKnownIndex;
-        }
+        if (newIndex > gBrowser.tabContainer.itemCount)
+            newIndex = gBrowser.tabContainer.itemCount;
         
-        const tabToMoveAt = gBrowser.tabContainer.getItemAtIndex(newIndex);
-        console.log("tabToMoveAt", tabToMoveAt);
-        console.log("newIndex", newIndex);
-        selectedTabs.forEach(t => gBrowser.moveTabBefore(t, tabToMoveAt));
+        // Pin the tab if it wasn't pinned
+        if (newIndex < pinnedTabsCount) {
+            selectedTabs.forEach(t => {
+                if (newIndex > draggedTabIndex) {
+                    newIndex--;
+                }
+
+                if (t.pinned) {
+                    gBrowser.unpinTab(t);
+                }
+
+                gBrowser.pinTab(t);
+                migratePinnedTabs(tabsContainer, document.querySelectorAll("#pinned-tabs-container .tabbrowser-tab"));
+                setTimeout(() => {
+                    const tab = tabsContainer.querySelector(`.tabbrowser-tab[newPin]:nth-child(${tabsContainer.querySelectorAll("tab[newPin]").length})`);
+                    const tabToMoveAt = tabsContainer.childNodes[newIndex];
+                    if (tabToMoveAt == null)
+                        tabsContainer.insertBefore(tab, document.getElementById("tabbrowser-arrowscrollbox-periphery"));
+                    else
+                        tabsContainer.insertBefore(tab, tabToMoveAt);
+                }, 10);
+            });
+        } else {
+            selectedTabs.forEach(t => {
+                if (t.hasAttribute("newPin")) {
+                    t.removeAttribute("newPin");
+                }
+                gBrowser.moveTabBefore(t, tabsContainer.childNodes[newIndex])
+            });
+        }
 
         // Scroll to view since the scroll goes up when moving a tab down
         scrollToView(false);
@@ -688,7 +743,7 @@ function performTabDropEvent(event) {
 
 // This scrolls down to the current tab when you open a new one, or restore a session.
 function scrollToView(smooth = true) {
-    let selTab = document.querySelectorAll(".tabbrowser-tab[selected='true']")[0];
+    let selTab = document.querySelector(".tabbrowser-tab[selected='true']");
     let wrongTab = document.querySelectorAll('.tabbrowser-tab[style^="margin-inline-start"]');
     let hiddenToolbox = document.querySelector('#navigator-toolbox[style^="margin-top"]');
     let fullScreen = document.querySelector('#main-window[sizemode="fullscreen"]');
@@ -757,4 +812,67 @@ function orig_getDropEffectForTabDrag(event) {
         return "link";
 
     return "none";
+}
+
+/**
+ * The pinned tabs to migrate to the main container.
+ * @param {Tab} pinnedTabs 
+ */
+function migratePinnedTabs(newContainer, pinnedTabs) {
+    if (!pinnedTabs || pinnedTabs.length == 0)
+        return;
+    pinnedTabs.forEach((tab) => {
+        tab.setAttribute("newPin", "true");
+        let firstUnpinnedTab = newContainer.querySelector(".tabbrowser-tab:not([pinned])");
+        if (firstUnpinnedTab)
+            newContainer.insertBefore(tab, firstUnpinnedTab);
+        else
+            newContainer.insertBefore(tab, document.getElementById("tabbrowser-arrowscrollbox-periphery"));
+    });
+}
+
+/**
+ * Returns the current tabs container.
+ * @returns {Arrowscrollbox} The arrow scrollbox that contains tabs.
+ */
+function resolveTabsContainer() {
+    let arrowScrollbox = document.querySelector("#tabbrowser-tabs > arrowscrollbox");
+    const newScrollbox = document.getElementById("tabbrowser-arrowscrollbox");
+    if (newScrollbox) {
+        arrowScrollbox = newScrollbox;
+    }
+
+    return arrowScrollbox;
+}
+
+/**
+ * Finds the index of a tab in a parent container.
+ * @param {*} tabsContainer The parent container with all tabs.
+ * @param {*} tab The tab to calculate the position of.
+ * @returns The index of the tab inside the parent container.
+ */
+function findIndexOfTab(tabsContainer, tab) {
+    return Array.prototype.indexOf.call(tabsContainer.childNodes, tab)
+}
+
+/**
+ * Moves unpinned tabs after pinned tabs.
+ */
+function moveUnpinnedTabsAfterPinned() {
+    const tabsContainer = resolveTabsContainer();
+    setTimeout(() => {
+        const pinnedTabs = tabsContainer.querySelectorAll(".tabbrowser-tab[pinned]");
+        const lastPinnedTab = pinnedTabs[pinnedTabs.length - 1];
+        const lastPinnedTabIndex = findIndexOfTab(tabsContainer, lastPinnedTab);
+
+        for (let i = lastPinnedTabIndex; i >= 0; i--) {
+            const tab = tabsContainer.childNodes[i];
+            tab.style.display = "flex";
+            if (!tab.hasAttribute("pinned")) {
+                tab.removeAttribute("newPin");
+                const lastPinnedIndex = findIndexOfTab(tabsContainer, lastPinnedTab) + 1;
+                tabsContainer.insertBefore(tab, tabsContainer.childNodes[lastPinnedIndex]);
+            }
+        }
+    }, 50);
 }
