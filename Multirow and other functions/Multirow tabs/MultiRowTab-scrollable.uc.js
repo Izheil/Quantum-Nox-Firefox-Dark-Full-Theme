@@ -5,7 +5,7 @@
 // @include        main
 // @compatibility  Firefox 70 to Firefox 141
 // @author         Alice0775, Endor8, TroudhuK, Izheil, Merci-chao
-// @version        11/01/2025 01:59 Fixed pinned tabs with Firefox 142.0a1 (2025-06-29)+
+// @version        01/07/2025 17:12 Fixed pinned tabs with Firefox 142.0a1 (2025-06-29)+
 // @version        11/01/2025 01:59 Fixed issue with Firefox 139.0a1 (2025-04-02)+
 // @version        11/01/2025 01:59 Fixed gBrowser issue with Firefox 134+
 // @version        13/11/2024 23:13 Fixed issue with Firefox 133+
@@ -58,6 +58,7 @@
 
 window.addEventListener("load", () => zzzz_MultiRowTabLite(), false);
 
+// Don't change these
 let lastKnownIndex = null;
 let lastGroupStart = null;
 let lastGroupEnd = null;
@@ -285,8 +286,7 @@ function zzzz_MultiRowTabLite() {
         });
         pinnedObserver.observe(pinnedTabsContainer, { childList: true });
 
-        document.getElementById("context_unpinTab").addEventListener("click", moveUnpinnedTabsAfterPinned, false);
-        document.getElementById("context_unpinSelectedTabs").addEventListener("click", moveUnpinnedTabsAfterPinned, false);
+        gBrowser.tabContainer.addEventListener("TabUnpinned", fixUnpinnedTabsPosition, false);
     }
     
     
@@ -456,7 +456,7 @@ function zzzz_MultiRowTabLite() {
 
 
     gBrowser.tabContainer.addEventListener("TabSelect", scrollToView, false);
-    document.addEventListener("SSTabRestoring", scrollToView, false);
+    gBrowser.tabContainer.addEventListener("SSTabRestoring", scrollToView, false);
 
     // Fix for some linux issue when going out of fullscreen
     document.addEventListener("fullscreenchange", checkFullScreenScrolling, false);
@@ -831,22 +831,16 @@ function findIndexOfTab(tabsContainer, tab) {
 
 /**
  * Moves unpinned tabs after pinned tabs.
+ * @param {Event} event The unpinning event.
  */
-function moveUnpinnedTabsAfterPinned() {
+function fixUnpinnedTabsPosition(event) {
+    const tab = event.target;
+    tab.removeAttribute("newPin");
     const tabsContainer = resolveTabsContainer();
-    setTimeout(() => {
-        const pinnedTabs = tabsContainer.querySelectorAll(".tabbrowser-tab[pinned]");
-        const lastPinnedTab = pinnedTabs[pinnedTabs.length - 1];
-        const lastPinnedTabIndex = findIndexOfTab(tabsContainer, lastPinnedTab);
-
-        for (let i = lastPinnedTabIndex; i >= 0; i--) {
-            const tab = tabsContainer.childNodes[i];
-            tab.style.display = "flex";
-            if (!tab.hasAttribute("pinned")) {
-                tab.removeAttribute("newPin");
-                const lastPinnedIndex = findIndexOfTab(tabsContainer, lastPinnedTab) + 1;
-                tabsContainer.insertBefore(tab, tabsContainer.childNodes[lastPinnedIndex]);
-            }
-        }
-    }, 50);
+    const pinnedTabs = tabsContainer.querySelectorAll(".tabbrowser-tab[pinned]");
+    if (!pinnedTabs || pinnedTabs.length == 0)
+        return;
+    const lastPinnedTab = pinnedTabs[pinnedTabs.length - 1];
+    const indexToInsertBefore = findIndexOfTab(tabsContainer, lastPinnedTab) + 1;
+    tabsContainer.insertBefore(tab, tabsContainer.childNodes[indexToInsertBefore]);
 }
