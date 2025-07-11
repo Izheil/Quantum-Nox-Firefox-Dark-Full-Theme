@@ -15,19 +15,18 @@ You can use it to fully change the colors of most of firefox UI to dark-gray col
 
 If you want to know how to change some colors of the theme, check the [wiki](https://github.com/Izheil/Quantum-Nox-Firefox-Dark-Full-Theme/wiki/Editting-CSS-files).
 
-### Last update: 01/07/2025
+### Last update: 07/07/2025
+
+Files updated:
+
+- __Multirow*uc.js__: Fix extra spacing after tab groups.
+
+
+### Pre-Last update: 01/07/2025
 
 Files updated:
 
 - __Multirow*uc.js__: Updated multirow files to work with current firefox nightly (FF142)
-
-
-### Pre-Last update: 30/04/2025
-
-Files updated:
-
-- __MultiRowTabLiteforFx.uc.js__: Fixed issue with tabs container selector.
-- __MultiRowTab-scrollable-autohide.uc.js__: Fixed issue with tabs container selector.
 
 ### A note on people looking to replace some Tab Mix Plus features:
 You can find some of the basic settings that can be simulated through `about:config`, some userscripts, and some addons [here](https://github.com/Izheil/Quantum-Nox-Firefox-Dark-Full-Theme/wiki/Useful-about:config-settings#some-tab-mix-plus-features).

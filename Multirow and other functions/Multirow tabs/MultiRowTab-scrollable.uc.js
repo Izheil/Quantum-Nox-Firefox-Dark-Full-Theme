@@ -5,6 +5,7 @@
 // @include        main
 // @compatibility  Firefox 70 to Firefox 141
 // @author         Alice0775, Endor8, TroudhuK, Izheil, Merci-chao
+// @version        12/07/2025 00:28 Fix spacing with tab groups and new tab button
 // @version        01/07/2025 17:12 Fixed pinned tabs with Firefox 142.0a1 (2025-06-29)+
 // @version        11/01/2025 01:59 Fixed issue with Firefox 139.0a1 (2025-04-02)+
 // @version        11/01/2025 01:59 Fixed gBrowser issue with Firefox 134+
@@ -206,7 +207,8 @@ function zzzz_MultiRowTabLite() {
     #tabs-newtab-button {
         margin-left: -32px !important} 
         
-    .tabbrowser-tab:last-of-type {
+    .tabbrowser-tab:has(+#tabbrowser-arrowscrollbox-periphery), tab-group:has(+#tabbrowser-arrowscrollbox-periphery),
+    tab-group:has(+#tabbrowser-arrowscrollbox-periphery) > tab:last-of-type {
         margin-right: 32px !important}
 
     /* This fixes issues with tab dragging */
