@@ -5,6 +5,7 @@
 // @include        main
 // @compatibility  Firefox 150 to Firefox 156.0a1 (2026-08-21)
 // @author         Alice0775, Endor8, TroudhuK, Izheil, Merci-chao
+// @version        30/08/2026 03:03 Fix tab sizing calculation for Nova design.
 // @version        01/09/2026 18:48 Fix issues with tab dragging.
 // @version        21/08/2026 16:15 Fix issue with group before pinned tabs on session restore.
 // @version        14/05/2026 18:13 Fix ownerGlobal property being deprecated in FF152+
@@ -59,16 +60,16 @@ function zzzz_MultiRowTabLite() {
        "inherit" value in #TabsToolbar --tab-min-height variable to the value you want. 
 
        For reference, in Proton, the default heights by density are as follows:
-       - Compact mode: 29px
-       - Regular mode: 36px
-       - Touch mode: 41px
+       - Compact mode: 25px
+       - Regular mode: 32px
+       - Touch mode: 37px
        
-       Note that with Proton, when there is media playing, the tab text will appear in 2 lines, and unlike
+       Note that with Nova, when there is media playing, the tab text will appear in 2 lines, and unlike
        with compact mode this won't be changed to fit with a custom height set by this variable, so anything 
        lower than 30px might make the text to go outside the tab area.
 
-       With compact mode enabled on Proton, the min value you should be using for --tab-min-height below is 20px.
-       Anything below that will cause issues.
+       With compact mode enabled on Nova, the min value to not cause issues you should be using 
+       for --tab-min-height is 20px.
     */
 
     #TabsToolbar {
@@ -124,7 +125,7 @@ function zzzz_MultiRowTabLite() {
         #TabsToolbar .titlebar-buttonbox-container {display: block}
         
         #window-controls > toolbarbutton {
-            max-height: calc(var(--tab-min-height) + 8px);
+            max-height: calc(var(--tab-min-height) + 12px);
             display: inline;
         }
 
@@ -140,7 +141,7 @@ function zzzz_MultiRowTabLite() {
 
     /* A fix for pinned tabs triggering another row when only pinned tabs are shown in a row */
     .tabbrowser-tab[pinned] {
-        height: calc(var(--tab-min-height) + 8px) !important;
+        height: calc(var(--tab-min-height) + 12px) !important;
     }
 
     /* Make tab split view container not be bigger in height than the size of a tab */
