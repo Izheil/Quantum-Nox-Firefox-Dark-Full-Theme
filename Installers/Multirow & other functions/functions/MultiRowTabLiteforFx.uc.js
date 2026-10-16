@@ -61,9 +61,9 @@ function zzzz_MultiRowTabLite() {
        "inherit" value in #TabsToolbar --tab-min-height variable to the value you want. 
 
        For reference, in Proton, the default heights by density are as follows:
-       - Compact mode: 25px
-       - Regular mode: 32px
-       - Touch mode: 37px
+       - Compact mode: 28px (with 8px padding)
+       - Regular mode: 32px (with 12px padding)
+       - Touch mode: 36px (with 12px padding)
        
        Note that with Nova, when there is media playing, the tab text will appear in 2 lines, and unlike
        with compact mode this won't be changed to fit with a custom height set by this variable, so anything 

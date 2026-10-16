@@ -12,7 +12,7 @@ For anyone looking for the old code like the dark theme or the attempt of a mod 
 
 Files updated:
 
-- __MultiRowTab*.uc.js__: Fixed issue with tab pinning.
+- __MultiRowTab*.uc.js__: Fixed issue with tab pinning, and make tab padding adjust automatically.
 
 ### Pre-last update: 30/09/2026
 

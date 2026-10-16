@@ -5,6 +5,7 @@
 // @include        main
 // @compatibility  Firefox 157 to Firefox 160.0a1 (2026-10-16)
 // @author         Alice0775, Endor8, TroudhuK, Izheil, Merci-chao
+// @version        16/10/2026 22:20 Make the tab padding to adjust automatically.
 // @version        16/10/2026 17:40 Fix issue with tab pinning of the last pinned tab.
 // @version        30/09/2026 03:03 Fix tab sizing calculation for Nova design.
 // @version        22/08/2026 04:20 Fix tab sizing calculation.
@@ -83,9 +84,9 @@ function zzzz_MultiRowTabLite() {
        "inherit" value in #TabsToolbar --tab-min-height variable to the value you want. 
 
        For reference, in Nova, the default heights by density are as follows:
-       - Compact mode: 25px
-       - Regular mode: 32px
-       - Touch mode: 37px
+       - Compact mode: 28px (with 8px padding)
+       - Regular mode: 32px (with 12px padding)
+       - Touch mode: 36px (with 12px padding)
        
        Note that with Nova, when there is media playing, the tab text will appear in 2 lines, and unlike
        with compact mode this won't be changed to fit with a custom height set by this variable, so anything 
@@ -143,7 +144,7 @@ function zzzz_MultiRowTabLite() {
         #TabsToolbar .titlebar-buttonbox-container {display: block}
         
         #window-controls > toolbarbutton {
-            max-height: calc(var(--tab-min-height) + 12px);
+            max-height: calc(var(--tab-min-height) + 2 * var(--tab-margin-block));
             display: inline;
         }
 
@@ -159,7 +160,7 @@ function zzzz_MultiRowTabLite() {
 
     /* A fix for pinned tabs triggering another row when only pinned tabs are shown in a row */
     .tabbrowser-tab[pinned] {
-        height: calc(var(--tab-min-height) + 12px) !important;
+        height: calc(var(--tab-min-height) + 2 * var(--tab-margin-block)) !important;
     }
 
     /* Make tab split view container not be bigger in height than the size of a tab */
@@ -323,7 +324,7 @@ function zzzz_MultiRowTabLite() {
     if (tabsHavePadding) {
         style.innerHTML += `
         scrollbox {
-            max-height: calc((var(--tab-min-height) + 12px) * var(--max-tab-rows));
+            max-height: calc((var(--tab-min-height) + 2 * var(--tab-margin-block)) * var(--max-tab-rows));
         }
         `;
     }
