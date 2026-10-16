@@ -3,9 +3,10 @@
 // @namespace      https://github.com/Izheil/Quantum-Nox-Firefox-Customizations
 // @description    Multi-row tabs draggability fix with scrollable rows
 // @include        main
-// @compatibility  Firefox 157 to Firefox 159.0a1 (2026-09-29)
+// @compatibility  Firefox 157 to Firefox 160.0a1 (2026-10-16)
 // @author         Alice0775, Endor8, TroudhuK, Izheil, Merci-chao
-// @version        30/08/2026 03:03 Fix tab sizing calculation for Nova design.
+// @version        16/10/2026 17:40 Fix issue with tab pinning of the last pinned tab.
+// @version        30/09/2026 03:03 Fix tab sizing calculation for Nova design.
 // @version        22/08/2026 04:20 Fix tab sizing calculation.
 // @version        21/08/2026 16:15 Fix issue with group before pinned tabs on session restore.
 // @version        29/03/2026 03:58 Fix issue with new button and split view
@@ -252,8 +253,6 @@ function zzzz_MultiRowTabLite() {
             }
         });
         pinnedObserver.observe(pinnedTabsContainer, { childList: true });
-
-        gBrowser.tabContainer.addEventListener("TabUnpinned", fixUnpinnedTabsPosition, false);
     }
     
     css +=
@@ -764,8 +763,18 @@ function moveSelectedTabs(newIndex, tabsContainer, event) {
             tabToMoveTo = allTabs[newIndex - 1];
         
         selectedTabs.forEach(t => {
+            let tabWasPinned = t.hasAttribute("newPin");
+
             if (t.hasAttribute("newPin")) {
+                if (t.pinned) {
+                    gBrowser.unpinTab(t)
+                }
                 t.removeAttribute("newPin");
+            }
+
+            if ((tabWasPinned && newIndex == pinnedTabsCount) || (!tabWasPinned && newIndex < pinnedTabsCount)) {
+                gBrowser.pinTab(t)
+                migratePinnedTabs(tabsContainer, document.querySelectorAll("#pinned-tabs-container .tabbrowser-tab"));
             }
             
             if (!shouldMoveAfter)
@@ -817,33 +826,67 @@ function orig_getDropEffectForTabDrag(event) {
             break;
         }
     }
-    
+
     if (isMovingTabs) {
         let sourceNode = dt.mozGetDataAt(TAB_DROP_TYPE, 0);
-        let nodeOwnerGlobal = sourceNode.ownerGlobal;
-        if (!nodeOwnerGlobal)
-            nodeOwnerGlobal = sourceNode.documentGlobal;
-        if ((gBrowser.isTab(sourceNode) || gBrowser.isTabGroupLabel(sourceNode)) &&
-            nodeOwnerGlobal.isChromeWindow &&
-            sourceNode.ownerDocument.documentElement.getAttribute("windowtype") ==
-            "navigator:browser") {
-            // Do not allow transfering a private tab to a non-private window
-            // and vice versa.
-            if (PrivateBrowsingUtils.isWindowPrivate(window) !=
-                PrivateBrowsingUtils.isWindowPrivate(nodeOwnerGlobal))
-                return "none";
-        
 
-            if (window.gMultiProcessBrowser !=
-                nodeOwnerGlobal.gMultiProcessBrowser)
-                return "none";
-        
+        try {
+            // Assume we are using firefox above 160
+            const { isTab, isTabGroupLabel, isSplitViewWrapper } = Tabbrowser;
+            usingNewerVersion = false;
+            if (
+                (isTab(sourceNode) ||
+                isTabGroupLabel(sourceNode) ||
+                isSplitViewWrapper(sourceNode)) &&
+                sourceNode.documentGlobal.isChromeWindow &&
+                sourceNode.ownerDocument.documentElement.getAttribute("windowtype") ==
+                "navigator:browser"
+            ) {
+                // Do not allow transfering a private tab to a non-private window
+                // and vice versa.
+                if (PrivateBrowsingUtils.isWindowPrivate(window) !=
+                PrivateBrowsingUtils.isWindowPrivate(sourceNode.documentGlobal)) {
+                    return "none";
+                }
 
-            if (window.gFissionBrowser != nodeOwnerGlobal.gFissionBrowser)
-                return "none";
-        
+                if (window.gMultiProcessBrowser !=
+                sourceNode.documentGlobal.gMultiProcessBrowser) {
+                    return "none";
+                }
 
-            return dt.dropEffect == "copy" ? "copy" : "move";
+                if (window.gFissionBrowser != sourceNode.documentGlobal.gFissionBrowser) {
+                    return "none";
+                }
+
+                return dt.dropEffect == "copy" ? "copy" : "move";
+            }
+        } catch (ReferenceError) {
+            // Assume we are using FF159 or older
+            let nodeOwnerGlobal = sourceNode.ownerGlobal;
+            if (!nodeOwnerGlobal)
+                nodeOwnerGlobal = sourceNode.documentGlobal;
+            if ((gBrowser.isTab(sourceNode) || gBrowser.isTabGroupLabel(sourceNode)) &&
+                nodeOwnerGlobal.isChromeWindow &&
+                sourceNode.ownerDocument.documentElement.getAttribute("windowtype") ==
+                "navigator:browser") {
+                // Do not allow transfering a private tab to a non-private window
+                // and vice versa.
+                if (PrivateBrowsingUtils.isWindowPrivate(window) !=
+                    PrivateBrowsingUtils.isWindowPrivate(nodeOwnerGlobal))
+                    return "none";
+            
+
+                if (window.gMultiProcessBrowser !=
+                    nodeOwnerGlobal.gMultiProcessBrowser)
+                    return "none";
+            
+
+                if (window.gFissionBrowser != nodeOwnerGlobal.gFissionBrowser)
+                    return "none";
+            
+
+                return dt.dropEffect == "copy" ? "copy" : "move";
+            }
         }
     }
 
@@ -920,22 +963,6 @@ function moveTabsToGroup(selectedTabs, event) {
  */
 function findDropIndexOfTab(tabsContainer, tab) {
     return Array.prototype.indexOf.call(tabsContainer.querySelectorAll(TAB_SELECTOR), tab)
-}
-
-/**
- * Moves unpinned tabs after pinned tabs.
- * @param {Event} event The unpinning event.
- */
-function fixUnpinnedTabsPosition(event) {
-    const tab = event.target;
-    tab.removeAttribute("newPin");
-    const tabsContainer = resolveTabsContainer();
-    const pinnedTabs = tabsContainer.querySelectorAll(".tabbrowser-tab[pinned]");
-    if (!pinnedTabs || pinnedTabs.length == 0)
-        return;
-    const lastPinnedTab = pinnedTabs[pinnedTabs.length - 1];
-    const indexToInsertBefore = findDropIndexOfTab(tabsContainer, lastPinnedTab) + 1;
-    tabsContainer.insertBefore(tab, tabsContainer.childNodes[indexToInsertBefore]);
 }
 
 /**
